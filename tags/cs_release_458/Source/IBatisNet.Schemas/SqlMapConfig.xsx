@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Ce fichier est automatiquement généré par le Concepteur de schéma XML. Il contient des informations de disposition pour les composants dans l'aire du concepteur.-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="0" viewPortTop="0" zoom="100">
+    <alias_XmlElement left="317" top="254" width="5292" height="3916" selected="0" zOrder="1" index="0" expanded="1">
+        <ref_x003D_typeAlias_XmlElement left="317" top="4678" width="5292" height="3916" selected="0" zOrder="2" index="0" expanded="0" />
+    </alias_XmlElement>
+    <dataSource_XmlElement left="6243" top="254" width="5292" height="3916" selected="0" zOrder="5" index="1" expanded="1" />
+    <database_XmlElement left="18095" top="254" width="5292" height="3916" selected="0" zOrder="7" index="2" expanded="1">
+        <ref_x003D_provider_XmlElement left="12169" top="4678" width="5292" height="3916" selected="0" zOrder="9" index="0" expanded="0" />
+        <ref_x003D_dataSource_XmlElement left="18095" top="4678" width="5292" height="3916" selected="0" zOrder="12" index="1" expanded="0" />
+        <ref_x003D_transactionManager_XmlElement left="24021" top="4678" width="5292" height="3916" selected="0" zOrder="15" index="2" expanded="0" />
+    </database_XmlElement>
+    <properties_XmlElement left="29947" top="254" width="5292" height="3916" selected="0" zOrder="18" index="3" expanded="1" />
+    <provider_XmlElement left="35873" top="254" width="5292" height="3916" selected="0" zOrder="19" index="4" expanded="1" />
+    <providers_XmlElement left="41799" top="254" width="5292" height="3916" selected="0" zOrder="20" index="5" expanded="1" />
+    <setting_XmlElement left="47725" top="254" width="5292" height="3916" selected="0" zOrder="21" index="6" expanded="1" />
+    <settings_XmlElement left="53651" top="254" width="5292" height="3916" selected="0" zOrder="22" index="7" expanded="1">
+        <ref_x003D_setting_XmlElement left="53651" top="4678" width="5292" height="3916" selected="0" zOrder="23" index="0" expanded="0" />
+    </settings_XmlElement>
+    <sqlMap_XmlElement left="59577" top="254" width="5292" height="3916" selected="0" zOrder="25" index="8" expanded="1" />
+    <sqlMapConfig_XmlElement left="80318" top="254" width="5292" height="3916" selected="0" zOrder="26" index="9" expanded="1">
+        <ref_x003D_settings_XmlElement left="65503" top="4678" width="5292" height="3916" selected="0" zOrder="27" index="0" expanded="0" />
+        <ref_x003D_properties_XmlElement left="71429" top="4678" width="5292" height="3916" selected="0" zOrder="29" index="1" expanded="0" />
+        <ref_x003D_providers_XmlElement left="77355" top="4678" width="5292" height="3916" selected="0" zOrder="31" index="2" expanded="0" />
+        <ref_x003D_database_XmlElement left="83281" top="4678" width="5292" height="3916" selected="0" zOrder="33" index="3" expanded="0" />
+        <ref_x003D_alias_XmlElement left="89207" top="4678" width="5292" height="3916" selected="0" zOrder="35" index="4" expanded="0" />
+        <ref_x003D_sqlMaps_XmlElement left="95133" top="4678" width="5292" height="3916" selected="0" zOrder="37" index="5" expanded="0" />
+    </sqlMapConfig_XmlElement>
+    <sqlMaps_XmlElement left="101059" top="254" width="5292" height="3916" selected="0" zOrder="39" index="10" expanded="1">
+        <ref_x003D_sqlMap_XmlElement left="101059" top="4678" width="5292" height="3916" selected="0" zOrder="40" index="0" expanded="0" />
+    </sqlMaps_XmlElement>
+    <transactionManager_XmlElement left="106985" top="254" width="5292" height="3916" selected="0" zOrder="42" index="11" expanded="1" />
+    <typeAlias_XmlElement left="112911" top="254" width="5292" height="3916" selected="0" zOrder="43" index="12" expanded="1" />
+</XSDDesignerLayout>

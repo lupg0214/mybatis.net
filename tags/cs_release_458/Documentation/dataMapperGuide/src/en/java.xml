@@ -1,0 +1,1681 @@
+<chapter id="java">
+  <title>Java Developer Guide</title>
+	<sect1>
+		<title>Installing iBATIS Data Mapper for Java</title>
+
+      <para>Installing the iBATIS Data Mapper framework is simply a matter of
+      placing the appropriate JAR files on the classpath. This can either be
+      the classpath specified at JVM startup time (java argument), or it could
+      be the /WEB-INF/lib directory of a web application. A full discussion of
+      the Java classpath is beyond the scope of this document. If you are new
+      to Java and/or the classpath, please refer to the following
+      resources:</para>
+
+      <simplelist>
+        <member>http://java.sun.com/j2se/1.4/docs/tooldocs/win32/classpath.html
+        http://java.sun.com/j2se/1.4.2/docs/api/java/lang/ClassLoader.html
+        http://java.sun.com/j2se/1.4.2/docs/</member>
+      </simplelist>
+
+      <para>iBATIS Data Mapper comes with the following JAR files that should
+      be on the classpath:</para>
+
+      <table>
+        <title>JAR files used by iBATIS Data Mapper</title>
+
+        <tgroup cols="3">
+          <tbody>
+            <row>
+              <entry><emphasis>Filename</emphasis></entry>
+
+              <entry><emphasis>Description</emphasis></entry>
+
+              <entry><emphasis>Required</emphasis></entry>
+            </row>
+
+            <row>
+              <entry>ibatis-common.jar</entry>
+
+              <entry>iBATIS Common Utilities</entry>
+
+              <entry>YES</entry>
+            </row>
+
+            <row>
+              <entry>ibatis-sqlmap.jar</entry>
+
+              <entry>iBATIS Data Mapper Framework</entry>
+
+              <entry>YES</entry>
+            </row>
+
+            <row>
+              <entry>ibatis-dao-1-x-x-b.jar</entry>
+
+              <entry>Legacy iBATIS Data Access Objects for backward
+              compatibility.</entry>
+
+              <entry>NO</entry>
+            </row>
+
+            <row>
+              <entry>ibatis-compat</entry>
+
+              <entry>Legacy iBATIS Java API for backward
+              compatibility.</entry>
+
+              <entry>NO</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+      <sect2>
+        <title>JAR Files and Dependencies</title>
+
+        <para>When a framework has too many dependencies, it makes it
+        difficult to integrate into an application and with other frameworks.
+        One of the key focus points of 2.0 was dependency management and
+        reduction. Therefore, if you're running JDK 1.4, then the only real
+        dependency is on the Jakarta Commons Logging framework. The optional
+        JAR file libraries are organized into a package structure found in the
+        /lib/optional directory of the distribution. They are categorized by
+        function. The following is a summary of when you would need to use the
+        optional packages.</para>
+
+        <table>
+          <title>When to use optional packages</title>
+
+          <tgroup cols="3">
+            <tbody>
+              <row>
+                <entry><emphasis>Description</emphasis></entry>
+
+                <entry><emphasis>When to use</emphasis></entry>
+
+                <entry><emphasis>Directories</emphasis></entry>
+              </row>
+
+              <row>
+                <entry>Legacy JDK Support</entry>
+
+                <entry>If you're running less than JDK 1.4 and if your app
+                server also doesn't already supply these JARs, then you will
+                need these optional packages.</entry>
+
+                <entry>/lib/optional/jdbc /lib/optional/jta
+                /lib/optional/xml</entry>
+              </row>
+
+              <row>
+                <entry>Legacy DAO Support</entry>
+
+                <entry>If you are using the old iBATIS (1.x) DAO framework, you
+                can continue to do so by simply including the existing DAO
+                JAR. One is included with the framework in this optional
+                package.</entry>
+
+                <entry>/lib/optional/old_dao</entry>
+              </row>
+
+              <row>
+                <entry>Runtime Bytecode Enhancement</entry>
+
+                <entry>If you want to enable CGLIB 2.0 bytecode enhancement to
+                improve lazy loading and reflection performance.</entry>
+
+                <entry>/lib/optional/enhancement</entry>
+              </row>
+
+              <row>
+                <entry>DataSource Implementation</entry>
+
+                <entry>If you want to use the Jakarta DBCP connection
+                pool.</entry>
+
+                <entry>/lib/optional/dbcp</entry>
+              </row>
+
+              <row>
+                <entry>Distributed Caching</entry>
+
+                <entry>If you want to use OSCache for centralized or
+                distributed caching support.</entry>
+
+                <entry>/lib/optional/caching</entry>
+              </row>
+
+              <row>
+                <entry>Logging Solution</entry>
+
+                <entry>If you want to use Log4J logging.</entry>
+
+                <entry>/lib/optional/logging</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect2>
+
+      <sect2>
+        <title>Upgrading from version 1.x to version 2.x</title>
+
+        <sect3>
+          <title>Should you Upgrade?</title>
+
+          <para>The best way to determine if you should upgrade is to try it.
+          There are a few upgrade paths.</para>
+
+          <orderedlist>
+            <listitem>
+              <para>Version 2.0 has maintained nearly complete backward
+              compatibility with the 1.x releases, so for some people simply
+              replacing the JAR files might be enough. This approach yields
+              the fewest benefits, but is also the simplest. You don’t need to
+              change your XML files or your Java code. Some incompatibilities
+              may be found though.</para>
+            </listitem>
+
+            <listitem>
+              <para>The second option is to convert your XML files to the 2.0
+              specification, but continue using the 1.x Java API. This is a
+              safe solution in that fewer compatibility issues will occur
+              between the mapping files (there are a few). An Ant task is
+              included with the framework to convert your XML files for you
+              (described below).</para>
+            </listitem>
+
+            <listitem>
+              <para>The third option is to convert your XML files (as in #2)
+              and your Java code. There is no tool for converting Java code,
+              and therefore it must be done by hand.</para>
+            </listitem>
+
+            <listitem>
+              <para>The final option is to not upgrade at all. If you have
+              difficulty, don’t be afraid to leave your working systems on the
+              1.x release. It’s probably not a bad idea to leave your old
+              applications on 1.x and start only new applications on 2.0. Of
+              course, if an old application is being heavily refactored beyond
+              the point of recognition anyway, you might as well upgrade
+              iBATIS Data Mapper too.</para>
+            </listitem>
+          </orderedlist>
+        </sect3>
+
+        <sect3>
+          <title>Converting XML Configuration Files from 1.x to 2.x</title>
+
+          <para>The 2.0 framework includes an XML document converter that runs
+          via the Ant build system. Converting your XML documents is
+          completely optional as 1.x code will automatically transform old XML
+          files on the fly. Still, it’s a good idea to convert your files once
+          you’re comfortable with the idea of upgrading. You will experience
+          fewer compatibility issues and you’ll be able to take advantage of
+          some of the new features (even if you’re still using the 1.x Java
+          API).</para>
+
+          <para>The Ant task looks like this in your build.xml file:</para>
+
+          <example>
+            <title>Ant TaskDef</title>
+
+            <programlisting>&lt;target&gt;
+  &lt;taskdef name="convertSqlMaps"
+    classname="com.ibatis.db.sqlmap.upgrade.ConvertTask"
+    classpathref="classpath"/&gt; &lt;target name="convert"&gt;
+  &lt;convertSqlMaps todir="D:/targetDirectory/" overwrite="true"&gt;
+    &lt;fileset dir="D/sourceDirectory/"&gt; &lt;include
+      name="**/maps/*.xml"/&gt; 
+    &lt;/fileset&gt; 
+  &lt;/convertSqlMaps&gt;
+&lt;/target&gt;</programlisting>
+          </example>
+
+          <para>As you can see, it works exactly like the Ant copy task, and
+          in fact it extends the Ant copy task, so you can really do anything
+          with this task that Copy can do (see the Ant Copy task documentation
+          for details).</para>
+        </sect3>
+
+        <sect3>
+          <title>JAR Files: Out with the Old, In with the New</title>
+
+          <para>When upgrading, it's a good idea to remove all existing (old)
+          iBATIS SQL Map files and dependencies, and replace them with the new
+          files. Be sure not to remove any that your other components or
+          frameworks might still need. Note that most of the JAR files are
+          optional depending on your circumstances. Please see the discussion
+          above for more information about JAR files and dependencies</para>
+
+          <para>The following table summarizes the old files and the new
+          ones.</para>
+
+          <para><table>
+              <title>Old files versus new files</title>
+
+              <tgroup cols="2">
+                <tbody>
+                  <row>
+                    <entry>Old Files</entry>
+
+                    <entry>New Files</entry>
+                  </row>
+
+                  <row>
+                    <entry><para> <programlisting>ibatis-db.jar After
+    release 1.2.9b, this file was split into the following 3 files:
+    batis-common.jar ibatis-dao.jar
+    ibatis-sqlmap.jar</programlisting> </para></entry>
+
+                    <entry><para> <programlisting>ibatis-common.jar (required)
+    ibatis-sqlmap.jar (required) ibatis-dao-1-2-9-b.jar (optional 1.x DAO)
+    ibatis-compat (optional 1.x compatibility)</programlisting>
+                    </para></entry>
+                  </row>
+
+                  <row>
+                    <entry><programlisting>commons-logging.jar
+    commons-logging-api.jar commons-collections.jar commons-dbcp.jar
+    commons-pool.jar oscache.jar jta.jar dbc2_0-stdext.jar xercesImpl.jar
+    xmlParserAPIs.jar jjdom.jar</programlisting></entry>
+
+                    <entry><programlisting>commons-logging-1-0-3.jar (required)
+    commons-collections-2-1.jar (optional) commons-dbcp-1-1.jar (optional)
+    commons-pool-1-1.jar (optional) oscache-2-0-1.jar (optional)
+    jta-1-0-1a.jar (optional) jdbc2_0-stdext.jar (optional)
+    xercesImpl-2-4-0.jar (optional) xmlParserAPIs-2-4-0.jar (optional)
+    xalan-2-5-2.jar (optional) log4j-1.2.8.jar (optional)
+    cglib-full-2-0-rc2.jar (optional)</programlisting></entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table></para>
+        </sect3>
+      </sect2>
+    </sect1>
+
+    <sect1>
+      <title>Configuring the Data Mapper for Java</title>
+
+      <para>iBATIS Data Mapper is configured using a central XML descriptor,
+      which provides the detail for your data source, data maps, and other
+      features like caching, transactions, and thread management. At runtime,
+      your application code calls a iBATIS library routine which reads and
+      parses the main configuration file. Other XML descriptors may be
+      incorporated by reference, but each Data Mapper client instance "boots"
+      from a single configuration file.</para>
+
+      <sect2>
+        <title>Data Mapper clients</title>
+
+        <para>Each Data Mapper client (instance of SqlMapClient) is created by
+        reading a single configuration file. Each configuration file can
+        specify only one database or datasource. However, you can use multiple
+        Data Mapper clients in your application. Just create another
+        configuration file and pass the name of that file when the Data Mapper
+        client is created. The configuration files might use a different
+        account with the same database, or reference different databases on
+        different servers. You can even read from one client and write to
+        another, if that's what you need to do.</para>
+      </sect2>
+
+      <sect2>
+        <title>Data Mapper Configuration File (SqlMapConfig.xml)</title>
+
+        <para>A sample configuration file is shown in the following
+        example:</para>
+
+        <para><example>
+            <title>SqlMapConfig.xml for Java</title>
+
+            <para><programlisting>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!DOCTYPE sqlMapConfig 
+  PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" 
+  "http://www.ibatis.com/dtd/sql-map-config-2.dtd"&gt;
+
+&lt;sqlMapConfig&gt;
+
+  &lt;properties resource="properties/database.properties"/&gt;
+
+  &lt;settings
+    cacheModelsEnabled="true"
+    enhancementEnabled="true"
+    maxSessions="64"
+    maxTransactions="8"
+    maxRequests="128"/&gt;
+
+  &lt;transactionManager type="JDBC"&gt;
+    &lt;dataSource type="SIMPLE"&gt;
+      &lt;property value="${driver}" name="JDBC.Driver"/&gt;
+      &lt;property value="${url}" name="JDBC.ConnectionURL"/&gt;
+      &lt;property value="${username}" name="JDBC.Username"/&gt;
+      &lt;property value="${password}" name="JDBC.Password"/&gt;
+      &lt;property value="15" name="Pool.MaximumActiveConnections"/&gt;
+      &lt;property value="15" name="Pool.MaximumIdleConnections"/&gt;
+      &lt;property value="1000" name="Pool.MaximumWait"/&gt;
+    &lt;/dataSource&gt;
+  &lt;/transactionManager&gt;
+
+  &lt;sqlMap resource="com/ibatis/jpetstore/persistence/sqlmapdao/sql/Account.xml"/&gt;
+  &lt;sqlMap resource="com/ibatis/jpetstore/persistence/sqlmapdao/sql/Category.xml"/&gt;
+  &lt;sqlMap resource="com/ibatis/jpetstore/persistence/sqlmapdao/sql/Product.xml"/&gt;
+  &lt;sqlMap resource="com/ibatis/jpetstore/persistence/sqlmapdao/sql/Sequence.xml"/&gt;
+  &lt;sqlMap resource="com/ibatis/jpetstore/persistence/sqlmapdao/sql/LineItem.xml"/&gt;
+  &lt;sqlMap resource="com/ibatis/jpetstore/persistence/sqlmapdao/sql/Order.xml"/&gt;
+  &lt;sqlMap resource="com/ibatis/jpetstore/persistence/sqlmapdao/sql/Item.xml"/&gt;
+
+&lt;/sqlMapConfig&gt;</programlisting></para>
+          </example></para>
+      </sect2>
+
+      <sect2>
+        <title>Data Mapper Configuration Elements</title>
+
+        <para>The next few sections describe the elements of the Data Mapper
+        configuration document for Java.</para>
+
+        <sect3>
+          <title>The &lt;properties&gt; Element</title>
+
+          <para>Sometimes the values we use in an XML configuration file occur
+          in more than one element. Often, there are values that change when
+          we move the application from one server to another. To help you
+          manage configuration values, you can specify a standard properties
+          file (name=value) as part of a Data Mapper configuration. Each named
+          value in the properties file becomes a "shell" variable that can be
+          used throughout the Data Mapper configuration, including the Data
+          Map definition files (see Section 3). For example, if the properties
+          file contains</para>
+
+          <informalexample>
+            <programlisting>username=iBATIS</programlisting>
+          </informalexample>
+
+          <para>then any element in the Data Mapper configuration, including
+          the data maps, can use the variable ${username} to insert the value
+          "iBATIS". For example:</para>
+
+          <informalexample>
+            <programlisting>&lt;dataSource connectionString="user id=${username}; </programlisting>
+          </informalexample>
+
+          <para>Properties are handy during building, testing, and deployment.
+          Properties make it easy to reconfigure your application for multiple
+          environments or use automated tools for configuration (e.g. Ant
+          ).</para>
+
+          <para>The properties can be loaded from the classpath (use the
+          resource attribute) or from any valid URL (use the url attribute).
+          For example, to load a fixed path file, use:</para>
+
+          <informalexample>
+            <programlisting>&lt;properties url=”file:///c:/config/my.properties” /&gt;</programlisting>
+          </informalexample>
+
+          <sect4>
+            <title>&lt;properties&gt; attributes</title>
+
+            <para>There can be only one &lt;properties&gt; element, which can
+            accept one of two attributes: resources and url. <simplelist>
+                <member><emphasis>resource</emphasis> - A properties file
+                found somewhere on the classpath.</member>
+
+                <member><emphasis>url</emphasis> - A properties found on the
+                local file system or other uniform location.</member>
+              </simplelist></para>
+          </sect4>
+        </sect3>
+
+        <sect3>
+          <title>The &lt;settings&gt; Element</title>
+
+          <para>There are a number of minimums, maximums, and other settings
+          used by the framework. The settings appropriate for one application
+          may not be appropriate for another. The &lt;settings&gt; element
+          lets you configure these options and optimizations for the
+          SqlMapClient instance that is created from the XML document. All of
+          the settings have defaults, and you can omit the setting element or
+          any of its attributes. The setting attributes and their behavior
+          they control are described in Table 9.</para>
+
+          <table>
+            <title>Attributes of the settings element</title>
+
+            <tgroup cols="2">
+              <tbody>
+                <row>
+                  <entry><emphasis>cacheModelsEnabled </emphasis></entry>
+
+                  <entry><para>This setting globally enables or disables all
+                  cache models for an SqlMapClient. This can come in handy for
+                  debugging.</para> <programlisting>Example: cacheModelsEnabled=”true”
+Default: true (enabled)</programlisting></entry>
+                </row>
+
+                <row>
+                  <entry><para> <emphasis>useStatementNamespaces
+                  (Java)</emphasis> </para></entry>
+
+                  <entry><para>With this setting enabled, you must always
+                  refer to mapped statements by their fully qualified name,
+                  which is the combination of the sqlMap name and the
+                  statement name. For example:</para> <programlisting>queryForObject(“sqlMapName.statementName”);
+(See the Developers Guide for your platform (Section 4 or 5) for more about creating Data Map clients.)
+Example: useStatementNamespaces=”false”
+Default: false (disabled)</programlisting></entry>
+                </row>
+
+                <row>
+                  <entry><emphasis>maxRequests</emphasis></entry>
+
+                  <entry><para>This is the maximum number of threads that can
+                  execute an SQL statement at a time. Threads beyond the set
+                  value will be blocked until another thread completes
+                  execution. Different DBMS have different limits, but no
+                  database is without these limits. This should usually be at
+                  least 10 times maxTransactions (see below) and should always
+                  be greater than both maxSessions and maxTransactions. Often
+                  reducing the maximum number of concurrent requests can
+                  <emphasis>increase</emphasis> performance.</para>
+                  <programlisting>Example: maxRequests=”256”
+Default: 512</programlisting></entry>
+                </row>
+
+                <row>
+                  <entry><emphasis>maxSessions</emphasis></entry>
+
+                  <entry><para>This is the number of sessions (or clients)
+                  that can be active at a given time. A session is either an
+                  explicit session, requested programmatically, or it is
+                  automatic whenever a thread makes use of an SqlMapClient
+                  instance (e.g. executes a statement etc.). This should
+                  always be greater than or equal to maxTransactions and less
+                  than maxRequests. Reducing the maximum number of concurrent
+                  sessions can reduce the overall memory footprint.</para>
+                  <programlisting>Example: maxSessions=”64”
+Default: 128</programlisting></entry>
+                </row>
+
+                <row>
+                  <entry><emphasis>maxTransactions</emphasis></entry>
+
+                  <entry><para>This is the maximum number of threads that can
+                  enter SqlMapClient.startTransaction() at a time. Threads
+                  beyond the set value will be blocked until another thread
+                  exits. Different DBMS have different limits, but no database
+                  is without these limits. This value should always be less
+                  than or equal to maxSessions and always much less than
+                  maxRequests. Often reducing the maximum number of concurrent
+                  comes in transactions can increase performance.</para>
+                  <programlisting>Example: maxTransactions=”16”
+Default: 32</programlisting></entry>
+                </row>
+
+                <row>
+                  <entry><emphasis>lazyLoadingEnabled</emphasis></entry>
+
+                  <entry><para>This setting globally enables or disables all
+                  lazy loading for an SqlMapClient. This can come in handy for
+                  debugging.</para> <programlisting>Example: lazyLoadingEnabled=”true”
+Default: true (enabled)</programlisting></entry>
+                </row>
+
+                <row>
+                  <entry><emphasis>enhancementEnabled</emphasis></entry>
+
+                  <entry><para>This setting enables runtime bytecode
+                  enhancement to facilitate optimized JavaBean property access
+                  as well as enhanced lazy loading.</para> <programlisting>Example: enhancementEnabled=”true”
+Default: false (disabled)</programlisting></entry>
+                </row>
+
+                <row>
+                  <entry><emphasis>errorTracingEnabled</emphasis></entry>
+
+                  <entry>TODO:</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </sect3>
+
+        <sect3>
+          <title>The &lt;typeAlias&gt; Element</title>
+
+          <para>The typeAlias element lets you specify a shorter name in lieu
+          of fully-qualified classname. For
+          example:<programlisting>&lt;typeAlias name="Account"
+          assembly="NPetshop.Domain.dll"
+          class="NPetshop.Domain.Accounts.Account"
+          /&gt;</programlisting></para>
+
+          <para>You can then refer to "account" or "Account" where you would
+          normally have to spell-out the fully qualified class name.</para>
+
+          <sect4><title>&lt;typeAlias&gt; Attributes</title></sect4>
+
+          <para>The &lt;typeAlias&gt; element has two required
+          properties:<simplelist> <member> <emphasis>alias</emphasis> - A
+          unique identifier for this alias</member> <member>
+          <emphasis>class</emphasis> - The fully-qualified classname,
+          including package reference</member></simplelist></para>
+
+          <sect4><title>Predefined type aliases</title> <para>There are
+          several predefined aliases for Java, they
+          are:<table><title>Transaction Manager Aliases (Java)</title> <tgroup
+          cols="1"> <tbody> <row> <entry> <programlisting>JDBC =
+          com.ibatis.sqlmap.engine.transaction.jdbc.JdbcTransactionConfig JTA
+          = com.ibatis.sqlmap.engine.transaction.jta.JtaTransactionConfig
+          EXTERNALcom.ibatis.sqlmap.engine.transaction.external.ExternalTransactionConfig</programlisting>
+          </entry> </row> <row></row> </tbody> </tgroup> </table> <table>
+          <title>Data Source Factory Aliases (Java)</title> <tgroup cols="1">
+          <tbody> <row> <entry> <programlisting>SIMPLE =
+          com.ibatis.sqlmap.engine.datasource.SimpleDataSourceFactory DBCP =
+          com.ibatis.sqlmap.engine.datasource.DbcpDataSourceFactory JNDI =
+          com.ibatis.sqlmap.engine.datasource.JndiDataSourceFactory</programlisting>
+          </entry> </row> <row></row> </tbody> </tgroup> </table>
+          </para></sect4>
+        </sect3>
+
+        <sect3>
+          <title>The &lt;transactionManager&gt; Element</title>
+
+          <para>The .NET implementation only supports ADO-controlled
+          transaction.</para>
+
+          <sect4>
+            <title>The &lt;dataSource&gt; Element (within
+            transactionManger)</title>
+
+            <para>The Datasource element can specify a datasource
+            implementation. The bundled DataSourceFactory implementations are
+            discussed in the next section.</para>
+          </sect4>
+        </sect3>
+
+        <sect3>
+          <title>DataSource factories</title>
+
+          <para>Three DataSource factories are provided with the Java
+          implementation, and you can also write your own. The bundled
+          DataSourceFactory implementations are discussed in Sections
+          4.2.3.5.1 through Section 4.2.3.5.3.</para>
+
+          <sect4>
+            <title>SimpleDataSourceFactory</title>
+
+            <para>The SimpleDataSource factory provides a basic implementation
+            of a pooling DataSource that is ideal for providing connections in
+            cases where there is no container provided DataSource. It is based
+            on the iBATIS SimpleDataSource connection pool
+            implementation.</para>
+
+            <example>
+              <title>TransactionManager element for SimpleDataSourceFactory
+              (Java)</title>
+
+              <programlisting>&lt;transactionManager type="JDBC"&gt;
+            &lt;dataSource type="SIMPLE"&gt; &lt;property name="JDBC.Driver"
+            value="org.postgresql.Driver"/&gt; &lt;property
+            name="JDBC.ConnectionURL"
+            value="jdbc:postgresql://server:5432/dbname"/&gt; &lt;property
+            name="JDBC.Username" value="user"/&gt; &lt;property
+            name="JDBC.Password" value="password"/&gt; &lt;!-- OPTIONAL
+            PROPERTIES BELOW --&gt; &lt;property
+            name="Pool.MaximumActiveConnections" value="10"/&gt; &lt;property
+            name="Pool.MaximumIdleConnections" value="5"/&gt; &lt;property
+            name="Pool.MaximumCheckoutTime" value="120000"/&gt; &lt;property
+            name="Pool.TimeToWait" value="10000"/&gt; &lt;property
+            name="Pool.PingQuery" value="select * from dual"/&gt; &lt;property
+            name="Pool.PingEnabled" value="false"/&gt; &lt;property
+            name="Pool.PingConnectionsOlderThan" value="0"/&gt; &lt;property
+            name="Pool.PingConnectionsNotUsedFor" value="0"/&gt;
+            &lt;/dataSource&gt; &lt;/transactionManager&gt;</programlisting>
+            </example>
+          </sect4>
+
+          <sect4>
+            <title>DbcpDataSourceFactory</title>
+
+            <para>This implementation uses Jakarta DBCP (Database Connection
+            Pool) to provide connection pooling services via the DataSource
+            API. This DataSource is ideal where the application/web container
+            cannot provide a DataSource implementation, or you’re running a
+            standalone application. An example of the configuration parameters
+            that must be specified for the DbcpDataSourceFactory are as
+            follows:</para>
+
+            <example>
+              <title>TransactionManager element for DbcpDataSourceFactory
+              (Java)</title>
+
+              <para><programlisting>&lt;transactionManager
+            type="JDBC"&gt; &lt;dataSource type="DBCP"&gt; &lt;property
+            name="JDBC.Driver" value="${driver}"/&gt; &lt;property
+            name="JDBC.ConnectionURL" value="${url}"/&gt; &lt;property
+            name="JDBC.Username" value="${username}"/&gt; &lt;property
+            name="JDBC.Password" value="${password}"/&gt; &lt;!-- OPTIONAL
+            PROPERTIES BELOW --&gt; &lt;property
+            name="Pool.MaximumActiveConnections" value="10"/&gt; &lt;property
+            name="Pool.MaximumIdleConnections" value="5"/&gt; &lt;property
+            name="Pool.MaximumWait" value="60000"/&gt; &lt;!-- Use of the
+            validation query can be problematic. If you have difficulty, try
+            without it. --&gt; &lt;property name="Pool.ValidationQuery"
+            value="select * from ACCOUNT"/&gt; &lt;property
+            name="Pool.LogAbandoned" value="false"/&gt; &lt;property
+            name="Pool.RemoveAbandoned" value="false"/&gt; &lt;property
+            name="Pool.RemoveAbandonedTimeout" value="50000"/&gt;
+            &lt;/datasource&gt;
+            &lt;/transactionManager&gt;</programlisting></para>
+            </example>
+          </sect4>
+
+          <sect4>
+            <title>JndiDataSourceFactory</title>
+
+            <para>This implementation will retrieve a DataSource
+            implementation from a JNDI context from within an application
+            container. This is typically used when an application server is in
+            use and a container managed connection pool and associated
+            DataSource implementation are provided. The standard way to access
+            a JDBC DataSource implementation is via a JNDI context.
+            JndiDataSourceFactory provides functionality to access such a
+            DataSource via JNDI. The configuration parameters that must be
+            specified in the datasource stanza are as follows:<example>
+                <title>TransactionManager element for JndiDataSourceFactory
+                (Java)</title>
+
+                <para><programlisting>&lt;transactionManager
+            type="JDBC" &gt; &lt;dataSource type="JNDI"&gt; &lt;property
+            name="DataSource" value="java:comp/env/jdbc/jpetstore"/&gt;
+            &lt;/dataSource&gt; &lt;/transactionManager&gt;</programlisting></para>
+              </example></para>
+
+            <para>The above configuration will use normal JDBC transaction
+            management. But with a container managed resource, you might also
+            want to configure it for global transactions as follows:<example>
+                <title>TransactionManager element configured for global
+                transactions (Java)</title>
+
+                <programlisting>&lt;transactionManager type="JTA" &gt;
+            &lt;property name="UserTransaction"
+            value="java:/ctx/con/UserTransaction"/&gt; &lt;dataSource
+            type="JNDI"&gt; &lt;property name="DataSource"
+            value="java:comp/env/jdbc/jpetstore"/&gt; &lt;/dataSource&gt;
+            &lt;/transactionManager&gt;</programlisting>
+              </example></para>
+
+            <para>Notice the UserTransaction property that points to the JNDI
+            location where the UserTransaction instance can be found. This is
+            required for JTA transaction management so that your Data Map can
+            take part in a wider scoped transaction involving other databases
+            and transactional resources.</para>
+          </sect4>
+        </sect3>
+
+        <sect3>
+          <title>The &lt;sqlMap&gt; Element</title>
+
+          <para>On a daily basis, most of your work will be with the Data
+          Maps. The Data Maps define the actual SQL statements or stored
+          procedures used by your application. The parameter and result
+          objects are also defined as part of the Data Map. As your
+          application grows, you may have several varieties of Data Map. To
+          help you keep your Data Maps organized, you can create any number of
+          Data Map definition files and incorporate them by reference into the
+          Data Mapper configuration. All of the definition files used by a
+          Data Mapper instance must be listed in the configuration
+          file.</para>
+
+          <para>Example 32 shows &lt;sqlMap&gt; elements for loading a set of
+          Data Map definitions, either from the classpath or an URL.<example>
+              <title>Data Map elements</title>
+
+              <para><programlisting>&lt;!-- CLASSPATH RESOURCES (Java) --&gt;
+&lt;sqlMap resource="com/ibatis/jpetstore/persistence/sqlmapdao/sql/Category.xml"/&gt;
+&lt;sqlMap resource="com/ibatis/jpetstore/persistence/sqlmapdao/sql/Product.xml"/&gt;
+
+&lt;!-- URL RESOURCES (Java)(absolute) --&gt;
+&lt;sqlMap url="file:///c:/config/Category.xml" /&gt;
+&lt;sqlMap url="file:///c:/config/Product.xml" /&gt;
+
+&lt;!-- Application path (.NET) --&gt;
+&lt;sqlMap resource="sql/Category.xml"/&gt;
+&lt;sqlMap resource="://sql/Product.xml"/&gt;
+
+&lt;!-- URL RESOURCES (.NET)(absolute) --&gt;
+&lt;sqlMap url="c:/config/maps/Category.xml"/&gt;
+&lt;sqlMap url="c:/config/Maps/Product.xml"/&gt;</programlisting></para>
+            </example></para>
+
+          <para>Section 3 describes the Data Map definition files.</para>
+        </sect3>
+      </sect2>
+    </sect1>
+
+    <sect1>
+      <title>Programming with iBATIS Data Mapper: The Java API</title>
+
+      <para>The SqlMap client API is meant to be simple and minimal. It
+      provides the programmer with the ability to do four primary functions:
+      configure a Data Map, execute an SQL update (including insert and
+      delete), execute a query for a single object, and execute a query for a
+      list of objects.</para>
+
+      <sect2>
+        <title>Configuration</title>
+
+        <para>Configuring iBATIS Data Mapper is trivial once you have created
+        your Data Map definition files and Data Mapper configuration file
+        (discussed above). SqlMapClient instances are built using
+        SqlMapClientBuilder. This class has one primary static method named
+        buildSqlMap(). The buildSqlMap() method simply takes a Reader instance
+        that can read in the contents of an sqlMap-config.xml (not necessarily
+        named that).</para>
+
+        <informalexample>
+          <programlisting>String resource = “com/ibatis/example/sqlMap-config.xml”;
+Reader reader = Resources.getResourceAsReader (resource);
+SqlMapClient sqlMap = SqlMapClientBuilder.buildSqlMap(reader);</programlisting>
+        </informalexample>
+      </sect2>
+
+      <sect2>
+        <title>Transactions</title>
+
+        <para>By default, calling any executeXxxx() method on an SqlMapClient
+        instance will auto-commit/rollback. This means that each call to
+        executeXxxx() will be a single unit of work. This is simple indeed,
+        but not ideal if you have a number of statements that must execute as
+        a single unit of work (i.e. either succeed or fail as a group). This
+        is where transactions come into play.</para>
+
+        <para>If you’re using Global Transactions (configured by the Data
+        Mapper configuration file), you can use autocommit and still achieve
+        unit-of-work behavior. However, it still might be ideal for
+        performance reasons to demarcate transaction boundaries, as it reduces
+        the traffic on the connection pool and database connection
+        initializations.</para>
+
+        <para>The SqlMapClient interface has methods that allow you to
+        demarcate transactional boundaries. A transaction can be started,
+        committed and/or rolled back using the following methods on the
+        SqlMapClient interface:</para>
+
+        <informalexample>
+          <para><programlisting>public void startTransaction () throws SQLException
+public void commitTransaction () throws SQLException
+public void endTransaction () throws SQLException</programlisting></para>
+        </informalexample>
+
+        <para>By starting a transaction you are retrieving a connection from
+        the connection pool, and opening it to receive SQL queries and
+        updates.</para>
+
+        <para>An example of using transactions is as follows:</para>
+
+        <example>
+          <title>Using transactions</title>
+
+          <para><programlisting>private Reader reader = new Resources.getResourceAsReader ("com/ibatis/example/sqlMapconfig.xml");
+
+private SqlMapClient sqlMap = XmlSqlMapBuilder.buildSqlMap(reader);
+
+public updateItemDescription (String itemId, String newDescription)throws SQLException {
+  try {
+    sqlMap.startTransaction ();
+    Item item = (Item) sqlMap.queryForObject ("getItem", itemId);
+    item.setDescription (newDescription);
+    sqlMap.update ("updateItem", item);
+    sqlMap.commitTransaction ();
+  } finally {
+  sqlMap.endTransaction ();
+  }
+}</programlisting></para>
+        </example>
+
+        <para>Notice how endTransaction() is called regardless of an error.
+        This is an important step to ensure cleanup. The rule is: if you call
+        startTransaction() be absolutely certain to call endTransaction()
+        (whether you commit or not).<emphasis></emphasis> <note>
+            <para>Transactions cannot be nested. Calling .startTransaction()
+            from the same thread more than once, before calling commit() or
+            rollback(), will cause an exception to be thrown. In other words,
+            each thread can have -at most- one transaction open, per
+            SqlMapClient instance.</para>
+          </note> <note>
+            <para>SqlMapClient transactions use Java’s ThreadLocal store for
+            storing transactional objects. This means that each thread that
+            calls startTransaction() will get a unique Connection object for
+            their transaction. The only way to return a connection to the
+            DataSource (or close the connection) is to call
+            commitTransaction() or endTransaction(). Not doing so could cause
+            your pool to run out of connections and lock up.</para>
+          </note></para>
+
+        <sect3>
+          <title>Automatic Transactions</title>
+
+          <para>Although using explicit transactions is very highly
+          recommended, there is a simplified semantic that can be used for
+          simple requirements (generally read-only). If you do not explicitly
+          demarcate transactions using the startTransaction(),
+          commitTransaction() and endTransaction() methods, they will all be
+          called automatically for you whenever you execute a statement
+          outside of a transactional block as demonstrated in the above. For
+          example:</para>
+
+          <para><example>
+              <title>Setting up an automatic transaction</title>
+
+              <para><programlisting>private Reader reader = new Resources.getResourceAsReader ("com/ibatis/example/sqlMapconfig.xml");
+
+private SqlMapClient sqlMap = XmlSqlMapBuilder.buildSqlMap(reader);
+
+public updateItemDescription (String itemId, String newDescription) throws SQLException {
+  try {
+    Item item = (Item) sqlMap.queryForObject ("getItem", itemId);
+    item.setDescription (“TX1”);
+    // No transaction demarcated, so transaction will be automatic (implied)
+    sqlMap.update ("updateItem", item);
+    item.setDescription (newDescription);
+    item.setDescription (“TX2”);
+    // No transaction demarcated, so transaction will be automatic (implied)
+    sqlMap.update("updateItem", item);
+  } 
+  catch (SQLException e) {
+    throw (SQLException) e.fillInStackTrace();
+  }
+}</programlisting></para>
+
+              <para><note>
+                  <para>Be very careful using automatic transactions, for
+                  although they can be attractive, you will run into trouble
+                  if your unit of work requires more than a single update to
+                  the database. In the above example, if the second call to
+                  “updateItem” fails, the item description will still be
+                  updated with the first new description of “TX1” (i.e. this
+                  is not transactional behavior).</para>
+                </note></para>
+            </example></para>
+        </sect3>
+      </sect2>
+
+      <sect2>
+        <title>Global (DISTRIBUTED) Transactions</title>
+
+        <para>The iBATIS Data Mapper framework supports global transactions as
+        well. Global transactions, also known as distributed transactions,
+        will allow you to update multiple databases (or other JTA compliant
+        resources) in the same unit of work (i.e. updates to multiple
+        DataSources can succeed or fail as a group).</para>
+
+        <sect3>
+          <title>External/Programmatic Global Transactions</title>
+
+          <para>You can choose to manage global transactions externally,
+          either programmatically (coded by hand), or by implementing another
+          framework such as the very common EJB. Using EJBs you can
+          declaratively demarcate (set the boundaries of) a transaction in an
+          EJB deployment descriptor. Further discussion of how this is done is
+          beyond the scope of this document. To enable support external or
+          programmatic global transactions, you must set the
+          &lt;transactionManager&gt; type attribute to “EXTERNAL” in your Data
+          Mapper configuration file (see above). When using externally
+          controlled global transactions, the SQL Map transaction control
+          methods are somewhat redundant, because the begin, commit and
+          rollback of transactions will be controlled by the external
+          transaction manager. However, there can be a performance benefit to
+          still demarcating your transactions using the SqlMapClient methods
+          startTransaction(), commitTransaction() and endTransaction() (vs.
+          allowing an automatic transaction to started and committed or rolled
+          back). By continuing to use these methods, you will maintain a
+          consistent programming paradigm, as well as you will be able to
+          reduce the number of requests for connections from the connection
+          pool. Further benefit is that in some cases you may need to change
+          the order in which resources are closed (commitTransaction() or
+          endTransaction()) versus when the global transaction is committed.
+          Different app servers and transaction managers have different rules
+          (unfortunately). Other than these simple considerations, there are
+          really no changes required to your Data Mapper code to make use of a
+          global transaction.</para>
+        </sect3>
+
+        <sect3>
+          <title>Managed Global Transactions</title>
+
+          <para>The iBATIS Data Mapper framework can also manage global
+          transactions for you. To enable support for managed global
+          transactions, you must set the &lt;transactionManager&gt; type
+          attribute to “JTA” in your SQL Map configuration file and set the
+          “UserTransaction” property to the full JNDI name of where the
+          SqlMapClient instance will find the UserTransaction instance. See
+          the &lt;transactionManager&gt; discussion above for full
+          configuration details.</para>
+
+          <para>Programming for global transactions is not much different,
+          however there are some small considerations. Here is an
+          example:</para>
+
+          <para><programlisting>try {
+  orderSqlMap.startTransaction();
+  storeSqlMap.startTransaction();
+  orderSqlMap.insertOrder(…);
+  orderSqlMap.updateQuantity(…);
+  storeSqlMap.commitTransaction();
+  orderSqlMap.commitTransaction();
+  } 
+  finally {
+    try {
+      storeSqlMap.endTransaction()
+    } 
+    finally {
+      orderSqlMap.endTransaction()
+    }
+}</programlisting>In this example, there are two SqlMapClient instances that
+          we will assume are using two different databases. The first
+          SqlMapClient (orderSqlMap) that we use to start a transaction will
+          also start the global transaction. After that, all other activity is
+          considered part of the global transaction until that same
+          SqlMapClient (orderSqlMap) calls commitTransaction() and
+          endTransaction(), at which point the global transaction is committed
+          and all other work is considered done.<warning>
+              <para>Although this seems simple, it is very important that you
+              don’t overuse global (distributed) transactions. There are
+              performance implications, as well as additional complex
+              configuration requirements for your application server and
+              database drivers. Although it looks easy, you might still
+              experience some difficulties. Remember, EJBs have a lot more
+              industry support and tools to help you along, and you still
+              might be better off using Session EJBs for any work that
+              requires distributed transactions. The JPetStore example app
+              found at www.ibatis.com is an example usage of Data Mapper
+              global transactions.</para>
+            </warning></para>
+        </sect3>
+      </sect2>
+
+      <sect2>
+        <title>Batches (Java only)</title>
+
+        <para>If you have a great number of non-query (insert/update/delete)
+        statements to execute, you might like to execute them as a batch to
+        minimize network traffic and allow the JDBC driver to perform
+        additional optimization (e.g. compression). Using batches is simple
+        with the iBATIS Data Mapper API, two simple methods allow you to
+        demarcate the boundaries of the batch:</para>
+
+        <informalexample>
+          <para><programlisting>sqlMap.startBatch();
+//…execute statements in between
+sqlMap.executeBatch();</programlisting></para>
+        </informalexample>
+
+        <para>Upon calling executeBatch(), all batched statements will
+        executed through the JDBC driver.</para>
+      </sect2>
+
+      <sect2>
+        <title>Executing Statements via the SqlMapClient API</title>
+
+        <para>SqlMapClient provides an API to execute all mapped statements
+        associated to it. These methods are as follows:</para>
+
+        <example>
+          <title>iBATIS Data Mapper Client API</title>
+
+          <para><programlisting>public int insert(String statementName, Object parameterObject)
+throws SQLException
+
+public int update(String statementName, Object parameterObject)
+throws SQLException
+
+public int delete(String statementName, Object parameterObject)
+throws SQLException
+
+public Object queryForObject(String statementName,
+Object parameterObject)
+throws SQLException
+
+public Object queryForObject(String statementName,
+Object parameterObject, Object resultObject)
+throws SQLException
+
+public List queryForList(String statementName, Object parameterObject)
+throws SQLException
+
+public List queryForList(String statementName, Object parameterObject,
+int skipResults, int maxResults)
+throws SQLException
+
+public List queryForList (String statementName,
+Object parameterObject, RowHandler rowHandler)
+throws SQLException
+
+public PaginatedList queryForPaginatedList(String statementName,
+Object parameterObject, int pageSize)
+throws SQLException
+
+public Map queryForMap (String statementName, Object parameterObject,
+String keyProperty)
+throws SQLException
+
+public Map queryForMap (String statementName, Object parameterObject,
+String keyProperty, String valueProperty)
+throws SQLException</programlisting></para>
+
+          <para>In each case a the name of the Mapped Statement is passed in
+          as the first parameter. This name corresponds to the name attribute
+          of the &lt;statement&gt; element described above. In addition, a
+          parameter object can always be optionally passed in. A null
+          parameter object can be passed if no parameters are expected,
+          otherwise it is required. For the most part the similarities end
+          there. The remaining differences in behavior are outlined
+          below.</para>
+        </example>
+
+        <sect3>
+          <title>insert(), update(), delete():</title>
+
+          <para>These methods are specifically meant for update statements
+          (a.k.a. non-query). That said, it’s not impossible to execute an
+          update statement using one of the query methods below, however this
+          is an odd semantic and obviously driver dependent. In the case of
+          executeUpdate(), the statement is simply executed and the number of
+          rows effected is returned.</para>
+        </sect3>
+
+        <sect3>
+          <title>queryForObject():</title>
+
+          <para>There are two versions of executeQueryForObject(), one that
+          returns a newly allocated object, and another that uses a
+          pre-allocated object that is passed in as a parameter. The latter is
+          useful for objects that are populated by more than one
+          statement.</para>
+        </sect3>
+
+        <sect3>
+          <title>queryForList():</title>
+
+          <para>There are three versions of queryForList(). The first executes
+          a query and returns all of the results from that query. The second
+          allows for specifying a particular number of results to be skipped
+          (i.e. a starting point) and also the maximum number of records to
+          return. This is valuable when dealing with extremely large data sets
+          that you do not want to return in their entirety.</para>
+
+          <para>Finally there is a queryForList() method that takes a row
+          handler. This method allows you to process result sets row by row
+          but using the result object rather than the usual columns and rows.
+          The method is passed the typical name and parameter object, but it
+          also takes a RowHandler. The row handler is an instance of a class
+          that implements the RowHandler interface. The RowHandler interface
+          has only one method as follows:</para>
+
+          <informalexample>
+            <programlisting>public void handleRow (Object object, List list);</programlisting>
+          </informalexample>
+        </sect3>
+
+        <sect3>
+          <title>queryForPaginatedList():</title>
+
+          <para>This very useful method returns a list that can manage a
+          subset of data that can be navigated forward and back. This is
+          commonly used in implementing user interfaces that only display a
+          subset of all of the available records returned from a query. An
+          example familiar to most would be a web search engine that finds
+          10,000 hits, but only displays 100 at a time. The PaginatedList
+          interface includes methods for navigating through pages (nextPage(),
+          previousPage(), gotoPage()) and also checking the status of the page
+          (isFirstPage(), isMiddlePage(), isLastPage(), isNextPageAvailable(),
+          isPreviousPageAvailable(), getPageIndex(), getPageSize()). Although
+          the total number of records available is not accessible from the
+          PaginatedList interface, this should be easily accomplished by
+          simply executing a second statement that counts the expected
+          results. Too much overhead would be associated with the
+          PaginatedList otherwise.</para>
+        </sect3>
+
+        <sect3>
+          <title>queryForMap():</title>
+
+          <para>This method provides an alternative to loading a collection of
+          results into a list. Instead it loads the results into a map keyed
+          by the parameter passed in as the keyProperty. For example, if
+          loading a collection of Employee objects, you might load them into a
+          map keyed by the employeeNumber property. The value of the map can
+          either be the entire employee object, or another property from the
+          employee object as specified in the optional second parameter called
+          valueProperty. For example, you might simply want a map of employee
+          names keyed by the employee number. Do not confuse this method with
+          the concept of using a Map type as a result object. This method can
+          be used whether the result object is a JavaBean or a Map (or a
+          primitive wrapper, but that would likely be useless).</para>
+        </sect3>
+
+        <sect3>
+          <title>Examples</title>
+
+          <para><example>
+              <title>Executing Update (insert, update, delete)</title>
+
+              <programlisting>sqlMap.startTransaction();
+Product product = new Product();
+product.setId (1);
+product.setDescription (“Shih Tzu”);
+int rows = sqlMap.insert (“insertProduct”, product);
+sqlMap.commitTransaction();</programlisting>
+            </example> <example>
+              <title>Executing Query for Object (select)</title>
+
+              <programlisting>sqlMap.startTransaction();
+Integer key = new Integer (1);
+Product product = (Product)sqlMap.queryForObject (“getProduct”, key);
+sqlMap.commitTransaction();</programlisting>
+            </example> <example>
+              <title>Executing Query for Object (select) With Preallocated
+              Result Object</title>
+
+              <programlisting>sqlMap.startTransaction();
+Customer customer = new Customer();
+sqlMap.queryForObject(“getCust”, parameterObject, customer);
+sqlMap.queryForObject(“getAddr”, parameterObject, customer);
+sqlMap.commitTransaction();</programlisting>
+            </example> <example>
+              <title>Executing Query for List (select)</title>
+
+              <programlisting>sqlMap.startTransaction();
+List list = sqlMap.queryForList (“getProductList”, null);
+sqlMap.commitTransaction();</programlisting>
+            </example> <example>
+              <title>Auto-commit</title>
+
+              <programlisting>// When startTransaction is not called, the statements will
+// auto-commit. Calling commit/rollback is not needed.
+int rows = sqlMap.insert (“insertProduct”, product);</programlisting>
+            </example> <example>
+              <title>Executing Query for List (select) With Result
+              Boundaries</title>
+
+              <programlisting>sqlMap.startTransaction();
+List list = sqlMap.queryForList (“getProductList”, null, 0, 40);
+sqlMap.commitTransaction();</programlisting>
+            </example> <example>
+              <title>Executing Query with a RowHandler (select)</title>
+
+              <programlisting>public class MyRowHandler implements RowHandler {
+  public void handleRow (Object object, List list) throws
+    SQLException {
+      Product product = (Product) object;
+      product.setQuantity (10000);
+      sqlMap.update (“updateProduct”, product);
+      // Optionally you could add the result object to the list.
+      // The list is returned from the queryForList() method.
+    }
+  }
+  sqlMap.startTransaction();
+  RowHandler rowHandler = new MyRowHandler();
+  List list = sqlMap.queryForList (“getProductList”, null, rowHandler);
+  sqlMap.commitTransaction();
+}</programlisting>
+            </example> <example>
+              <title>Executing Query for Paginated List (select)</title>
+
+              <programlisting>PaginatedList list =
+  sqlMap.queryForPaginatedList (“getProductList”, null, 10);
+list.nextPage();
+list.previousPage();</programlisting>
+            </example> <example>
+              <title>Executing Query for Map</title>
+
+              <programlisting>sqlMap.startTransaction();
+Map map = sqlMap.queryForMap (“getProductList”, null, “productCode”);
+sqlMap.commitTransaction();
+Product p = (Product) map.get(“EST-93”);</programlisting>
+            </example></para>
+        </sect3>
+      </sect2>
+    </sect1>
+
+    <sect1>
+      <title>The One Page JavaBeans Course</title>
+
+      <para>The iBATIS Data Mapper framework requires a firm understanding of
+      JavaBeans. Luckily, there’s not much to the JavaBeans API as far as it
+      relates to SqlMaps. So here’s a quick introduction to JavaBeans if you
+      haven’t been exposed to them before.</para>
+
+      <para>What is a JavaBean? A JavaBean is a class that adheres to a strict
+      convention for naming methods that access or mutates the state of the
+      class. Another way of saying this is that a JavaBean follows certain
+      conventions for “getting” and “setting” properties. The properties of a
+      JavaBean are defined by its method definitions (not by its fields).
+      Methods that start with the word “set” are write-able properties (e.g.
+      setEngine), whereas methods that start with “get” are readable
+      properties (e.g. getEngine). For boolean properties the readable
+      property method can also start with the word “is” (e.g.
+      isEngineRunning). Set methods should not define a return type (i.e it
+      should be void), and should take only a single parameter of the
+      appropriate type for the property (e.g. String). Get methods should
+      return the appropriate type (e.g. String) and should take no parameters.
+      Although it’s usually not enforced, the parameter type of the set method
+      and the return type of the get method should be the same. JavaBeans
+      should also implement the Serializable interface. JavaBeans also support
+      other features (events etc.), and must have a no-argument constructor,
+      but these are unimportant in the context of iBATIS Data Mapper and
+      usually equally unimportant in the context of a web application.</para>
+
+      <para>That said, here is an example of a JavaBean:<example>
+          <title>A typical JavaBean</title>
+
+          <programlisting>public class Product implements Serializable {
+
+  private String id;
+  private String description;
+
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+}</programlisting>
+        </example> <note>
+          <para>Don’t mix data types of the get and set properties for a given
+          property. For example, for a numeric “account” property, be sure to
+          use the same numeric type for both the getter and setter, as
+          follows:<programlisting>public void setAccount (int acct) {….}
+public int getAccount () {….}</programlisting></para>
+        </note></para>
+
+      <para>Notice both use the “int” type. Returning a “long” from the get
+      method, for example, would cause problems.</para>
+
+      <note>
+        <para>Similarly, make sure you only have one method named getXxxx()
+        and setXxxx(). Be judicious with polymorphic methods. You’re better
+        off naming them more specifically anyway.As a Stream: For simple
+        read-only binary or text data.</para>
+      </note>
+
+      <note>
+        <para>An alternate getter syntax exists for boolean type properties.
+        The get methods may be named in the format of isXxxxx(). Be sure that
+        you either have an “is” method or a “get” method, not both!</para>
+      </note>
+
+      <para><emphasis>Congratulations! You’ve passed the
+      course!</emphasis></para>
+
+      <sidebar>
+        <para>Object Graph Navigation (JavaBeans Properties, Maps,
+        Lists)</para>
+
+        <para>Throughout this document you may have seen objects accessed
+        through a special syntax that might be familiar to anyone who has used
+        Struts or any other JavaBeans compatible framework. The iBATIS Data
+        Mapper framework allows object graphs to be navigated via JavaBeans
+        properties, Maps (key/value) and Lists. Consider the following
+        navigation (includes a List, a Map and a JavaBean):</para>
+
+        <para><programlisting>Employee emp = getSomeEmployeeFromSomewhere();
+((Address) ( (Map)emp.getDepartmentList().get(3) ).get (“address”)).getCity();</programlisting></para>
+
+        <para>This property of the employee object could be navigated in an
+        SqlMapClient property (ResultMap, ParameterMap etc…) as follows (given
+        the employee object as above): “departmentList[3].address.city”</para>
+      </sidebar>
+    </sect1>
+
+    <sect1>
+      <title>Logging SqlMap Activity with Jakarta Commons Logging</title>
+
+      <para>The iBATIS Data Mapper framework provides logging information
+      through the use of Jakarta Commons Logging (JCL – NOT Job Control
+      Language!). This JCL framework provides logging services in an
+      implementation independent way. You can “plug-in” various logging
+      providers including Log4J and the JDK 1.4 Logging API. The specifics of
+      Jakarta Commons Logging, Log4J and the JDK 1.4 Logging API are beyond
+      the scope of this document. However the example configuration below
+      should get you started. If you would like to know more about these
+      frameworks, you can get more information from the following
+      locations:<table>
+          <title>Logging Frameworks supported by iBATIS Data Mapper</title>
+
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Jakarta Commons Logging</entry>
+
+                <entry>http://jakarta.apache.org/commons/logging/index.html</entry>
+              </row>
+
+              <row>
+                <entry>Log4J</entry>
+
+                <entry>http://jakarta.apache.org/log4j/docs/index.html</entry>
+              </row>
+
+              <row>
+                <entry>JDK 1.4 Logging API</entry>
+
+                <entry>http://java.sun.com/j2se/1.4.1/docs/guide/util/logging/</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+
+      <sect2>
+        <title>Log Configuration</title>
+
+        <para>Configuring the commons logging services is very simply a matter
+        of including one or more extra configuration files (e.g.
+        "log4j.properties") and sometimes a new JAR file (e.g."log4j.jar").
+        The following example configuration will configure full logging
+        services using Log4J as a provider. There are 2 steps.</para>
+
+        <sect3>
+          <title>Step 1: Add the Log4J JAR file</title>
+
+          <para>Because we’re using Log4J, we’ll need to ensure its JAR file
+          is available to our application. Remember, Commons Logging is an
+          abstraction API. It is not meant to provide its implementations. So
+          to use Log4J, you need to add the JAR file to your application
+          classpath. You can download Log4J from the URL above or use the JAR
+          included with the iBATIS Data Mapper framework. For web or
+          enterprise applications you can add the "log4j.jar" to your
+          WEB-INF/lib directory, or for a standalone application you can
+          simply add it to the JVM - classpath startup parameter.</para>
+        </sect3>
+
+        <sect3>
+          <title>Step 2: Configure Log4J</title>
+
+          <para>Configuring Log4J is simple. Like Commons Logging, you’ll
+          again be adding a properties file to your classpath root (i.e. not
+          in a package). This time the file is called log4j.properties and it
+          looks like the following:</para>
+
+          <example>
+            <title>log4j.properties</title>
+
+            <programlisting>1  # Global logging configuration
+2  log4j.rootLogger=ERROR, stdout
+3  # SqlMap logging configuration...
+4  #log4j.logger.com.ibatis=DEBUG
+5  #log4j.logger.com.ibatis.common.jdbc.SimpleDataSource=DEBUG
+6  #log4j.logger.com.ibatis.common.jdbc.ScriptRunner=DEBUG
+7  #log4j.logger.com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate=DEBUG
+8  #log4j.logger.java.sql.Connection=DEBUG
+9  #log4j.logger.java.sql.Statement=DEBUG
+10 #log4j.logger.java.sql.PreparedStatement=DEBUG
+11 #log4j.logger.java.sql.ResultSet=DEBUG
+12 # Console output...
+13 log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+14 log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+15 log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n</programlisting>
+          </example>
+
+          <para>The above file is the minimal configuration that will cause
+          logging to only report on errors. Line 2 of the file is what is
+          shown to be configuring Log4J to only report errors to the stdout
+          appender. An appender is a component that collects output (e.g.
+          console, file, database etc.). To maximize the level of reporting,
+          we could change line 2 as follows:</para>
+
+          <informalexample>
+            <programlisting>log4j.rootLogger=DEBUG, stdout</programlisting>
+          </informalexample>
+
+          <para>By changing line 2 as above, Log4J will now report on all
+          logged events to the ‘stdout’ appender (console). If you want to
+          tune the logging at a finer level, you can configure each class that
+          logs to the system using the ‘Data Mapper logging configuration’
+          section of the file above (commented out in lines 5 through 12
+          above). So if we wanted to log PreparedStatement activity (SQL
+          statements) to the console at the DEBUG level, we would simply
+          change line 11 to the following (notice it’s not #commented out
+          anymore):</para>
+
+          <informalexample>
+            <programlisting>log4j.logger.java.sql.PreparedStatement=DEBUG</programlisting>
+          </informalexample>
+
+          <para>The remaining configuration in the log4j.properties file is
+          used to configure the appenders, which is beyond the scope of this
+          document. However, you can find more information at the Log4J
+          website (URL above). Or, you could simply play around with it to see
+          what effects the different configuration options have.</para>
+        </sect3>
+      </sect2>
+    </sect1>
+
+    <sect1>
+      <title>SimpleDataSource (com.ibatis.common.jdbc.*)</title>
+
+      <para>The SimpleDataSource class is a simple implementation of a JDBC
+      2.0 compliant DataSource. It supports a convenient set of connection
+      pooling features and is completely synchronous (no spawned threads)
+      which makes it a very lightweight and portable connection pooling
+      solution. SimpleDataSource is used exactly like any other JDBC
+      DataSource implementation, and is documented as part of the JDBC
+      Standard Extensions API, which can be found here:
+      http://java.sun.com/products/jdbc/jdbc20.stdext.javadoc/<note>
+          <para>The JDBC 2.0 API is now included as a standard part of J2SE
+          1.4.x</para>
+        </note> <note>
+          <para>SimpleDataSource is quite convenient, efficient and effective.
+          However, for large enterprise or mission critical applications, it
+          is recommended that you use an enterprise level DataSource
+          implementation (such as those that come with app servers and
+          commercial O/R mapping tools).</para>
+        </note></para>
+
+      <para>The constructor of SimpleDataSource requires a Properties
+      parameter that takes a number of configuration properties. The following
+      table names and describes the properties. Only the “JDBC.” properties
+      are required.<table>
+          <title>SimpleDataSource properties</title>
+
+          <tgroup cols="4">
+            <tbody>
+              <row>
+                <entry>Property Name</entry>
+
+                <entry>Required</entry>
+
+                <entry>Default</entry>
+
+                <entry>Description</entry>
+              </row>
+
+              <row>
+                <entry><remark>[:TODO:]</remark></entry>
+
+                <entry></entry>
+
+                <entry></entry>
+
+                <entry></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table> <example>
+          <title>Using SimpleDataSource</title>
+
+          <para><programlisting>DataSource dataSource = new SimpleDataSource(props); //properties usually loaded from a file
+Connection conn = dataSource.getConnection();
+//…..database queries and updates
+conn.commit();
+conn.close(); //connections retrieved from SimpleDataSource will return to the pool when closed</programlisting></para>
+        </example></para>
+    </sect1>
+
+    <sect1>
+      <title>ScriptRunner (com.ibatis.common.jdbc.*)</title>
+
+      <para>The ScriptRunner class is a very useful utility for running SQL
+      scripts that may do such things as create database schemas or insert
+      default or test data. Rather than discuss the ScriptRunner in length,
+      consider the following examples that shows how simple it is to
+      use.</para>
+
+      <example>
+        <title>Script: initializeHere are some examples:-db.sql</title>
+
+        <programlisting>-- Creating Tables – Double hyphens are comment lines
+CREATE TABLE SIGNON (USERNAME VARCHAR NOT NULL, PASSWORD VARCHAR NOT
+NULL, UNIQUE(USERNAME));
+-- Creating Indexes
+CREATE UNIQUE INDEX PK_SIGNON ON SIGNON(USERNAME);
+-- Creating Test Data
+INSERT INTO SIGNON VALUES('username','password');</programlisting>
+      </example>
+
+      <example>
+        <title>Usage: Using an Existing Connection</title>
+
+        <programlisting>Connection conn = getConnection(); //some method to get a Connection
+ScriptRunner runner = new ScriptRunner ();
+runner.runScript(conn, Resources.getResourceAsReader("com/some/resource/path/initialize.sql"));
+conn.close();</programlisting>
+      </example>
+
+      <example>
+        <title>Usage: Using a New Connection</title>
+
+        <programlisting>ScriptRunner runner = new ScriptRunner (“com.some.Driver”, “jdbc:url://db”, “login”, “password”);
+runner.runScript(conn, new FileReader("/usr/local/db/scripts/ initialize-db.sql"));</programlisting>
+      </example>
+
+      <example>
+        <title>Usage 2: Using a New Connection from Properties</title>
+
+        <programlisting>Properties props = getProperties (); // some properties from somewhere
+ScriptRunner runner = new ScriptRunner (props);
+runner.runScript(conn, new FileReader("/usr/local/db/scripts/ initialize-db.sql"));</programlisting>
+      </example>
+
+      <para>The properties file (Map) used in the example above must contain
+      the following properties:</para>
+
+      <informalexample>
+        <programlisting>driver=org.hsqldb.jdbcDriver
+url=jdbc:hsqldb:.
+username=dba
+password=whatever
+stopOnError=true</programlisting>
+      </informalexample>
+
+      <para>A few methods that you may find useful are:</para>
+
+      <informalexample>
+        <programlisting>// if you want the script runner to stop running after a single error
+scriptRunner.setStopOnError (true);
+// if you want to log output to somewhere other than System.out
+scriptRunner.setLogWriter (new PrintWriter(…));</programlisting>
+      </informalexample>
+    </sect1>
+
+    <sect1>
+      <title>Resources (com.ibatis.common.resources.*)</title>
+
+      <para>The Resources class provides methods that make it very easy to
+      load resources from the classpath. Dealing with ClassLoaders can be
+      challenging, especially in an application server/container. The
+      Resources class attempts to simplify dealing with this sometimes tedious
+      task.</para>
+
+      <para>Common uses of the resources file are:<simplelist>
+          <member>Loading the Data Mapper configuration file (e.g.
+          "sqlMap-config.xml") from the classpath.&#160;</member>
+
+          <member>Loading the DAO Manager configuration file (e.g. "dao.xml")
+          from the classpath</member>
+
+          <member>Loading various *.properties files from the
+          classpath.</member>
+
+          <member>Etc.</member>
+        </simplelist></para>
+
+      <para>There are many different ways to load a resource,
+      including:<simplelist>
+          <member>As a Reader: For simple read-only text data.</member>
+
+          <member>As a Stream: For simple read-only binary or text
+          data.</member>
+
+          <member>As a File: For read/write binary or text files.</member>
+
+          <member>As a Properties File: For read-only configuration properties
+          files.</member>
+
+          <member>As a URL: For read-only generic resources</member>
+        </simplelist></para>
+
+      <para>The various methods of the Resources class that load resources
+      using any one of the above schemes are as follows (in order):</para>
+
+      <informalexample>
+        <para><programlisting>Reader getResourceAsReader(String resource);
+Stream getResourceAsStream(String resource);
+File getResourceAsFile(String resource);
+Properties getResourceAsProperties(String resource);
+Url getResourceAsUrl(String resource);</programlisting></para>
+      </informalexample>
+
+      <para>In each case the ClassLoader used to load the resources will be
+      the same as that which loaded the Resources class, or when that fails,
+      the system class loader will be used. In the event you are in an
+      environment where the ClassLoader is troublesome (e.g. within certain
+      app servers), you can specify the ClassLoader to use (e.g. use the
+      ClassLoader from one of your own application classes). Each of the above
+      methods has a sister method that takes a ClassLoader as the first
+      parameter. They are:</para>
+
+      <informalexample>
+        <programlisting>Reader getResourceAsReader (ClassLoader classLoader, String resource);
+Stream getResourceAsStream (ClassLoader classLoader, String resource);
+File getResourceAsFile (ClassLoader classLoader, String resource);
+Properties getResourceAsProperties (ClassLoader classLoader, String resource);
+Url getResourceAsUrl (ClassLoader classLoader, String resource);</programlisting>
+      </informalexample>
+
+      <para>The resource named by the resource parameter should be the full
+      package name plus the full file/resource name. For example, if you have
+      a resource on your classpath such as
+      ‘com.domain.mypackage.MyPropertiesFile.properties’, you could load as a
+      Properties file using the Resources class using the following code
+      (notice that the resource does not start with a slash “/”):</para>
+
+      <informalexample>
+        <programlisting>String resource = “com/domain/mypackage/MyPropertiesFile.properties”;
+Properties props = Resources.getResourceAsProperties (resource);</programlisting>
+      </informalexample>
+
+      <para>Similarly you could load your Data Mapper configuration file from
+      the classpath as a Reader. Say it’s in a simple properties package on
+      our classpath ("properties.sqlMap-config.xml"):</para>
+
+      <informalexample>
+        <programlisting>String resource = “properties/sqlMap-config.xml”;
+Reader reader = Resources.getResourceAsReader(resource);
+SqlMapClient sqlMap = XmlSqlMapBuilder.buildSqlMap(reader);</programlisting>
+      </informalexample>
+    </sect1>
+  </sect1>
+
+</chapter>  

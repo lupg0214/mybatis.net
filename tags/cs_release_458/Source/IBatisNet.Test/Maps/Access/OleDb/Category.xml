@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap name="Category" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:noNamespaceSchemaLocation="..\..\Nausicaa.Framework.Dal\Schemas\SqlMap.xsd">
+	
+	<alias>
+		<typeAlias name="Category" assembly="IBatisNet.Test.dll" class="IBatisNet.Test.Domain.Category"/>
+	</alias>
+	
+	<statements>
+	
+		<select name="GetCategory" parameterClass="Integer" resultClass="Category">
+			select
+			Category_ID as Id,
+			Category_Name as Name,
+			Category_Guid as Guid
+			from Categories  
+			where Category_ID = #value# 
+		</select>
+		
+		<!-- Test for statement as insert -->
+		<statement name="InsertCategory" parameterClass="Category" resultClass="int">
+			insert into Categories  
+				(Category_Name, Category_Guid) 
+			values 
+				(#Name#, #Guid:Guid#);
+			select CAST(SCOPE_IDENTITY() as int) as value
+		</statement><!--Guid for Oledb, UniqueIdentifier for SqlClient,Odbc -->
+		
+		<!--  -->
+		<insert name="InsertCategoryViaInsertSatement" parameterClass="Category" >
+			<selectKey property="Id" type="post" resultClass="int">
+				select CAST(@@IDENTITY as int) as value
+            </selectKey>			
+            insert into Categories  
+				(Category_Name, Category_Guid) 
+			values 
+				(#Name#, #Guid:Guid#)
+		</insert><!--Guid for Oledb, UniqueIdentifier for SqlClient, Odbc -->
+		
+		<procedure name="InsertCategoryViaStoreProcedure" parameterMap="insert-params">
+			sp_InsertCategorie
+		</procedure>
+		
+	</statements>
+	
+	<parameterMaps>
+		<parameterMap name="insert-params">
+			<parameter property="Id" column="Category_Id" dbType="Integer" /><!-- Int for SqlClient, Obdc; Integer for Oledb -->
+			<parameter property="Name" column="Category_Name"/>
+			<parameter property="Guid" column="Category_Guid" dbType="Guid"/><!--Guid for Oledb, UniqueIdentifier for SqlClient,Odbc -->
+		</parameterMap>
+	</parameterMaps>
+	
+</sqlMap>

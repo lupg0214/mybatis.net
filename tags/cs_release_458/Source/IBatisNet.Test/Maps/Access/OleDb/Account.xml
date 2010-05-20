@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<sqlMap name="Account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="..\..\Nausicaa.Framework.Dal\Schemas\SqlMap.xsd">
+
+	<alias>
+		<typeAlias name="Account" assembly="IBatisNet.Test.dll" class="IBatisNet.Test.Domain.Account" />
+	</alias>
+	
+	<!-- =============================================                
+                <resultMap 
+					name="name"  
+					class="name"
+					extend="resultMap" 
+				>
+				<result 
+					property="name" 
+					column="name" 
+					columnIndex="name" 
+					nullValue="value"
+					select="name"
+					resultMap="name"
+					lazyLoad="true/false"
+					dbType=""
+				/>
+				<procedure 
+					name="name" 
+					parameterMap="name"
+				>
+				<statement 
+						name="name"
+						parameterClass="name"
+						parameterMap="name"
+						resultClass="name"
+						resultMap="name"
+						listClass="name"
+				>
+				<parameterMap 
+						name="name" 
+						class=""
+				>
+				<parameter 
+						property="name" 
+						dbType="" 
+						output="true/false" 
+						type=""
+						nullValue=""
+				/>
+
+       ============================================= -->
+       
+    <cacheModels>
+		<cacheModel name="account-cache" implementation="MEMORY" >
+			<flushInterval hours="24"/>
+			<flushOnExecute  statement="UpdateAccountViaInlineParameters"/>
+			<flushOnExecute  statement="UpdateAccountViaParameterMap"/>
+			<property name="Type" value="Weak"/>
+		</cacheModel>
+		
+		<!-- <cacheModel name="account-cache" implementation="LRU" >
+			<flushInterval hours="24"/>
+			<flushOnExecute statement="UpdateAccountViaInlineParameters"/>
+			<flushOnExecute statement="UpdateAccountViaParameterMap"/>
+			<property name="CacheSize" value="50"/>
+		</cacheModel> -->
+		
+    </cacheModels>
+       
+	<resultMaps>                                    
+		<resultMap name="account-result"  class="Account" >
+			<result property="Id"           column="Account_ID"/>
+			<result property="FirstName"    column="Account_FirstName"/>
+			<result property="LastName"     column="Account_LastName"/>
+			<result property="EmailAddress" column="Account_Email" nullValue="no_email@provided.com"/>
+		</resultMap>
+		<resultMap name="indexed-account-result" class="Account">
+			<result property="Id"           column="Account_ID"			columnIndex="0"/>
+			<result property="FirstName"    column="Account_FirstName"	columnIndex="1"/>
+			<result property="LastName"     column="Account_LastName"	columnIndex="2"/>
+			<result property="EmailAddress" column="Account_Email"		columnIndex="3"	nullValue="no_email@provided.com"/>
+		</resultMap>
+		<resultMap name="account-result-nullable-email" class="Account">
+			<result property="Id"           column="Account_ID"/>
+			<result property="FirstName"    column="Account_FirstName"/>
+			<result property="LastName"     column="Account_LastName"/>
+			<result property="EmailAddress" column="Account_Email"/>
+		</resultMap>
+		
+		<resultMap name="email-result" class="string">
+			<result property="value" column="Account_Email"/>
+		</resultMap>
+		
+		<resultMap name="account-hashtable-result" class="Hashtable">
+			<result property="Id"           column="Account_ID"/>
+			<result property="FirstName"    column="Account_FirstName"/>
+			<result property="LastName"     column="Account_LastName"/>
+			<result property="EmailAddress" column="Account_Email"/>
+		</resultMap>
+		
+	</resultMaps>
+	
+	<!-- =============================================
+        MAPPED STATEMENTS - w/Inline Parameters
+    ============================================= 
+    -->
+	<statements>
+	
+		<select name="GetCachedAccountsViaResultMap"
+					resultMap="account-result"
+					cacheModel="account-cache" >
+			select *
+			from Accounts
+			order by Account_ID
+		</select>
+  
+		<select name="GetAccountAsHashtable"
+						parameterClass="Integer"
+						resultMap="account-hashtable-result">
+			select *
+			from Accounts
+			where Account_ID = #value#
+		</select>
+  
+		<select name="GetAllAccountsAsHashMapViaResultMap"
+						resultMap="account-hashtable-result">
+			select *
+			from Accounts
+			order by Account_ID
+		</select>
+  
+		<select name="GetAccountAsHashtableResultClass"
+						parameterClass="int"
+						resultClass="HashMap">
+			select
+			Account_ID as Id,
+			Account_FirstName as FirstName,
+			Account_LastName as LastName,
+			Account_Email as EmailAddress
+			from Accounts
+			where Account_ID = #value#
+		</select>
+  
+		<select name="GetAllAccountsAsHashtableViaResultClass"
+						resultClass="Hashtable">
+			select
+			Account_ID as Id,
+			Account_FirstName as FirstName,
+			Account_LastName as LastName,
+			Account_Email as EmailAddress
+			from Accounts
+			order by Account_ID
+		</select>
+    
+		<select name="GetAccountViaColumnName"
+				parameterClass="int"
+				resultMap="account-result">
+			select
+			Account_ID,
+			Account_FirstName,
+			Account_LastName,
+			Account_Email
+			from Accounts
+			where Account_ID = #value#
+		</select>
+		
+		<select name="GetAccountViaColumnIndex"
+				parameterClass="int"
+				resultMap="indexed-account-result">
+			select
+			Account_ID,
+			Account_FirstName,
+			Account_LastName,
+			Account_Email
+			from Accounts
+			where Account_ID = #value#
+		</select>
+  
+		<select name="GetAllAccountsViaResultMap"
+					resultMap="account-result">
+			select * from Accounts
+			order by Account_ID
+		</select>
+				
+		<select name="GetAllAccountsViaResultClass" 
+			resultClass="Account">
+			select
+			Account_ID as Id,
+			Account_FirstName as FirstName,
+			Account_LastName as LastName,
+			Account_Email as EmailAddress
+			from Accounts
+			order by Account_ID
+		</select>
+		
+		<select name="GetNoAccountsViaResultMap"
+					resultMap="account-result">
+			select * from Accounts
+			where Account_ID > 1000
+			order by Account_ID
+		</select>
+
+  
+		<select name="GetAccountNullableEmail" 
+			resultMap="account-result-nullable-email">
+			select
+			Account_ID,
+			Account_FirstName,
+			Account_LastName,
+			Account_Email
+			from Accounts
+			where Account_ID = #value#
+		</select>
+  
+		<select name="GetAccountViaResultClass" 
+			resultClass="Account">
+			<![CDATA[
+					select
+					Account_ID as Id,
+					Account_FirstName as FirstName,
+					Account_LastName as LastName,
+					Account_Email as EmailAddress
+					from Accounts
+					where Account_ID = #value#
+			]]>
+		</select>
+		
+		<select name="GetAccountViaInlineParameters"
+				resultMap="account-result">
+			select
+			Account_ID,
+			Account_FirstName,
+			Account_LastName,
+			Account_Email
+			from Accounts
+			where Account_ID = #Id# and Account_ID = #Id#
+		</select>
+		
+		 <select name="GetEmailAddressViaResultClass" resultClass="string">
+			select Account_Email as value
+			from Accounts
+			where Account_ID = #value#
+		</select>
+ 
+		<select name="GetEmailAddressViaResultMap"
+						parameterClass="int"
+						resultMap="email-result">
+			select Account_Email
+			from Accounts
+			where Account_ID = #value#
+		</select>
+
+		<select name="GetAllEmailAddressesViaResultClass"
+							resultClass="string">
+			select Account_Email
+			from Accounts
+			order by Account_ID
+		</select>
+		
+		 <select name="GetAllEmailAddressesViaResultMap"
+                    resultMap="email-result">
+			select Account_Email
+			from Accounts
+			order by Account_ID
+		</select>
+					
+		 <insert name="InsertAccountViaParameterMap"
+                    parameterMap="insert-params">
+			insert into Accounts  
+				(Account_ID, Account_FirstName, Account_LastName, Account_Email) 
+			values 
+				(?, ?, ?, ?)
+		</insert>
+		
+		 <update name="UpdateAccountViaParameterMap"
+                    parameterMap="update-params">
+			update Accounts set
+			Account_FirstName = ?,
+			Account_LastName = ?,
+			Account_Email = ?
+			where
+			Account_ID = ?
+		</update>
+		
+		<update name="UpdateAccountViaParameterMap2"
+                    parameterMap="update-params2">
+			update Accounts set
+			Account_ID = ?,
+			Account_FirstName = ?,
+			Account_LastName = ?,
+			Account_Email = ?
+			where
+			Account_ID = ?
+		</update>
+				
+		<delete name="DeleteAccountViaInlineParameters">
+			delete from Accounts 
+			where
+			Account_ID = #Id#
+		</delete>
+		
+		<select name="GetAccountComplexMapping"
+					resultMap="indexed-account-result"
+                    parameterClass="Hashtable">
+			select *
+			from Accounts 
+			where 
+			Account_FirstName = #Account.FirstName# 
+			And Account_LastName = #Order.City#
+		</select>
+		
+		<select name="GetDynamicOrderedEmailAddressesViaResultMap"
+                    resultMap="email-result">
+			select Account_Email
+			from Accounts
+			order by $value$
+		</select>
+		
+		<!-- Dynamic statements -->
+		<select name="GetAllAccountsViaResultMapWithDynamicElement"
+				resultMap="account-result">
+			select * from Accounts
+			where Account_Email $value$ '%@%'
+			order by Account_ID
+		</select>
+		
+		<select name="SimpleDynamicSubstitution"
+             parameterClass="Hashtable"
+             resultClass="Account">
+			$statement$
+		</select>
+		
+		<!-- Public Fields -->
+		<insert name="InsertAccountViaPublicFields">
+			insert into Accounts 
+				(Account_ID, Account_FirstName, Account_LastName, Account_Email) 
+			values 
+				(#Id#, #FirstName#, #LastName#, #EmailAddress#
+			)
+		</insert>
+		
+		<!-- Inline Parameters -->
+		<update name="UpdateAccountViaInlineParameters"
+			parameterClass="Account">
+			update Accounts set
+			Account_FirstName = #FirstName#,
+			Account_LastName = #LastName#,
+			Account_Email = #EmailAddress:VarChar:no_email@provided.com#
+			where
+			Account_ID = #Id#
+		</update>
+
+		<insert name="InsertAccountViaInlineParameters"
+			parameterClass="Account" >
+			insert into Accounts 
+				(Account_ID, Account_FirstName, Account_LastName, Account_Email) 
+			values 
+				(#Id#, #FirstName#, #LastName#, #EmailAddress:VarChar:no_email@provided.com#
+			)
+		</insert>
+
+		<insert name="InsertAccountNullableEmail"
+			parameterClass="Account" >
+			insert into Accounts 
+				(Account_ID, Account_FirstName, Account_LastName, Account_Email) 
+			values 
+				( #Id#, #FirstName#, #LastName#, #EmailAddress:VarChar# )
+		</insert>
+
+		<insert name="InsertAccountUknownParameterClass">
+			insert into Accounts 
+				(Account_ID, Account_FirstName, Account_LastName, Account_Email) 
+			values 
+				( #Id#, #FirstName#, #LastName#, #EmailAddress:VarChar# )
+		</insert>
+  
+		<delete name="DeleteAccount"
+			parameterClass="Account">
+			delete from Accounts
+			where Account_ID = #Id#
+			and Account_ID = #Id#
+		</delete>
+		
+		<!-- For procedure, the parameters of the parameterMap must in the same order 
+		as for the procedure paramaters-->
+		<procedure name="InsertAccountViaStoreProcedure" parameterMap="insert-params">
+			sp_InsertAccount
+		</procedure>
+		
+		<procedure name="SwapEmailAddresses" parameterMap="swap-params">
+			ps_swap_email_address
+		</procedure>
+	</statements>
+
+	<!-- =============================================
+            OPTIONAL EXPLICIT PARAMETER MAP
+    ============================================= -->
+	<parameterMaps>   
+		
+		<parameterMap name="swap-params">
+			<parameter property="email1" column="First_Email" />
+			<parameter property="email2" column="Second_Email" />
+		</parameterMap>
+		
+		<parameterMap name="insert-params">
+			<parameter property="Id" />
+			<parameter property="FirstName" />
+			<parameter property="LastName" />			
+			<parameter property="EmailAddress" nullValue="no_email@provided.com"/>
+		</parameterMap>
+		
+		<parameterMap name="update-params">
+			<parameter property="FirstName" />
+			<parameter property="LastName" />			
+			<parameter property="EmailAddress" nullValue="no_email@provided.com"/>
+			<parameter property="Id" />
+		</parameterMap>
+		
+		<parameterMap name="update-params2">
+			<parameter property="Id" />
+			<parameter property="FirstName" />
+			<parameter property="LastName" />			
+			<parameter property="EmailAddress" nullValue="no_email@provided.com"/>
+			<parameter property="Id" />
+		</parameterMap>
+		
+	</parameterMaps>
+	
+</sqlMap>
