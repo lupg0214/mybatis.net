@@ -2,5 +2,5 @@
 
 == Pages ==
 
-  * Welcome
-  * List
+  * [Welcome]
+  * [List]
