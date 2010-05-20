@@ -1,0 +1,873 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{33AF5FB1-4ADD-43BB-BE05-31F28C1AE0C3}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "IBatisNet.Test"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "IBatisNet.Test"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "IBatisNet.Common"
+                    Project = "{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "IBatisNet.DataAccess"
+                    Project = "{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "IBatisNet.DataMapper"
+                    Project = "{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "D:\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "log4net"
+                    AssemblyName = "log4net"
+                    HintPath = "..\External-Bin\Net\1.1\log4net.dll"
+                />
+                <Reference
+                    Name = "ICSharpCode.SharpZipLib"
+                    AssemblyName = "ICSharpCode.SharpZipLib"
+                    HintPath = "..\External-Bin\Net\1.1\ICSharpCode.SharpZipLib.dll"
+                />
+                <Reference
+                    Name = "ByteFX.MySqlClient"
+                    AssemblyName = "ByteFX.MySqlClient"
+                    HintPath = "..\External-Bin\Net\1.1\ByteFX.MySqlClient.dll"
+                />
+                <Reference
+                    Name = "nunit.framework"
+                    AssemblyName = "nunit.framework"
+                    HintPath = "G:\Program Files\NUnit 2.2\bin\nunit.framework.dll"
+                    AssemblyFolderKey = "hklm\dn\nunit.framework"
+                />
+                <Reference
+                    Name = "NHibernate"
+                    AssemblyName = "NHibernate"
+                    HintPath = "..\External-Bin\Net\1.1\NHibernate.dll"
+                />
+                <Reference
+                    Name = "IBatisNet.DataAccess.Extensions"
+                    Project = "{342C92B4-2742-4C55-9374-A504FE3B6972}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "cool.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataBase.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "IBatisNet.Test.build"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "IBatisNet.Test.nunit"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "properties.xml"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReadMe.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "User.hbm.xml"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "bin\Debug\dao_MSSQL_Odbc.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\dao_MSSQL_OleDb.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\dao_MSSQL_SqlClient.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\dao_MySql_ByteFx.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\dao_Oracle_ODP.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\dao_Oracle_OracleClient.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\IBatisNet.Test.dll.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\providers.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\SqlMap_MSSQL_Odbc.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\SqlMap_MSSQL_OleDb.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\SqlMap_MSSQL_SqlClient.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\SqlMap_MySql_ByteFx.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\SqlMap_Oracle_ODP.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\SqlMap_Oracle_OracleClient.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\test.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Dao\Implementations\BaseDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dao\Implementations\Ado\AccountDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dao\Implementations\Ado\MySqlAccountDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dao\Implementations\Ado\OracleAccountDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dao\Implementations\DataMapper\AccountDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dao\Implementations\NHibernate\UserDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dao\Interfaces\IAccountDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dao\Interfaces\IUserDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\Account.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\AccountBis.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\AccountCollection.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\Category.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\Complex.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\Enumeration.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\LineItem.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\LineItemCollection.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\Order.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\Other.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\Search.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Domain\User.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Maps\Access\OleDb\Account.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Access\OleDb\Category.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Access\OleDb\Complex.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Access\OleDb\DynamicAccount.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Access\OleDb\Enumeration.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Access\OleDb\LineItem.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Access\OleDb\Order.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\Odbc\Account.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\Odbc\Category.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\Odbc\Complex.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\Odbc\DynamicAccount.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\Odbc\Enumeration.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\Odbc\LineItem.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\Odbc\Order.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\Odbc\Other.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\OleDb\Account.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\OleDb\Category.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\OleDb\Complex.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\OleDb\DynamicAccount.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\OleDb\Enumeration.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\OleDb\LineItem.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\OleDb\Order.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\OleDb\Other.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\SqlClient\Account.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\SqlClient\Category.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\SqlClient\Complex.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\SqlClient\DynamicAccount.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\SqlClient\Enumeration.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\SqlClient\LineItem.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\SqlClient\Order.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MSSQL\SqlClient\Other.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MySql\ByteFx\Account.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MySql\ByteFx\Category.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MySql\ByteFx\Complex.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MySql\ByteFx\DynamicAccount.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MySql\ByteFx\Enumeration.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MySql\ByteFx\LineItem.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MySql\ByteFx\Order.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\MySql\ByteFx\Other.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\ODP\Account.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\ODP\Category.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\ODP\Complex.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\ODP\DynamicAccount.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\ODP\Enumeration.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\ODP\LineItem.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\ODP\Order.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\ODP\Other.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\OracleClient\Account.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\OracleClient\Category.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\OracleClient\Complex.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\OracleClient\DynamicAccount.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\OracleClient\Enumeration.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\OracleClient\LineItem.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\OracleClient\Order.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Oracle\OracleClient\Other.xml"
+                    BuildAction = "Content"
+                />
+                <Folder RelPath = "NPerf\" />
+                <File
+                    RelPath = "NUnit\CommonTests\ConfigWatcher\ConfigWatcherTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\CommonTests\DynamicProxy\IMyInterface.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\CommonTests\DynamicProxy\IMySecondInterface.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\CommonTests\DynamicProxy\MyInterfaceImpl.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\CommonTests\DynamicProxy\MySecondInterfaceImpl.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\CommonTests\DynamicProxy\ProxyTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\CommonTests\Pagination\PaginatedArrayListTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\CommonTests\Transaction\TransactionTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\CommonTests\Utilities\ResourcesTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\DaoTests\BaseDaoTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\DaoTests\MutipleDaoTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\DaoTests\NHibernateDaoTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\DaoTests\SqlMapDaoTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\DaoTests\ADO\MSSQL\AdoDaoTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\DaoTests\ADO\MySql\AdoDaoTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\DaoTests\ADO\Oracle\AdoDaoTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\BaseTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\CacheTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\ComplexTypeTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\DynamicPrependTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\DynamicTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\ParameterMapTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\ResultMapTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\StatementTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\ThreadTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\TransactionTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\MSSQL\ProcedureTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\MSSQL\StatementGenerate.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\MSSQL\StatementTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\MySql\StatementGenerate.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\MySql\StatementTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\Oracle\ProcedureTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\Oracle\StatementGenerate.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NUnit\SqlMapTests\Oracle\StatementTest.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\account-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\account-procedure.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\category-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\category-procedure.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\DataBase.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\enumeration-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\line-item-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\more-account-records.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\order-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\other-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\swap-procedure.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MSSQL\user-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\account-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\account-procedure.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\category-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\category-procedure.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\DataBase.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\enumeration-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\line-item-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\more-account-records.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\order-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\other-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\swap-procedure.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\MySql\user-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\account-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\account-procedure.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\category-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\category-procedure.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\DataBase.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\DataBaseNHibernate.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\enumeration-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\line-item-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\more-account-records.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\order-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\other-init.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\swap-procedure.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Scripts\Oracle\user-init.sql"
+                    BuildAction = "Content"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

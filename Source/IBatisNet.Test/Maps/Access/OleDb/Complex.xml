@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap name="Category" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:noNamespaceSchemaLocation="..\..\Nausicaa.Framework.Dal\Schemas\SqlMap.xsd">
+	
+	<statements>
+	
+		<statement name="ComplexMap"
+			resultClass="int" >
+			select Account_ID from Accounts where Account_ID = #obj.Map.Id#
+		</statement>
+		
+	</statements>
+
+	
+</sqlMap>

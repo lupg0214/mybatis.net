@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="configuration">
+  <title>Configuration</title>
+
+  <sect1>
+    <title>Installation</title>
+
+    <para>There are three steps to using the iBATIS Data Access Objects (DAO)
+    framework with your application for the first time. <orderedlist>
+        <listitem>
+           Setup the distribution 
+        </listitem>
+
+        <listitem>
+           Add assembly references 
+        </listitem>
+
+        <listitem>
+           Setup XML configuration documents 
+        </listitem>
+      </orderedlist></para>
+
+    <sect2>
+      <title>Setup the Distribution</title>
+
+      <para>The official site for iBATIS for .NET is our Apache site
+      &lt;http://incubator.apache.org/ibatis/site/&gt;. To download the
+      distribution, follow the link to the Downloads area, and select the
+      latest release. The distribution is in the form of a ZIP archive. You
+      can extract the distribution using a utility, like WinZip, or the
+      extractor built into newer versions of Windows. We suggest that you
+      create an <filename>ibatisnet</filename> folder in your Visual
+      Studio.NET project directory and extract the distribution there.</para>
+
+      <para>Under the distribution's <filename>source</filename> folder are
+      five other folders that make up the iBATIS.NET distribution, as shown in
+      Table 19.<table>
+          <title>Folders found in the iBATIS.NET distribution</title>
+
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>External-Bin</entry>
+
+                <entry>Precompiled assemblies provided for your
+                convenience.</entry>
+              </row>
+
+              <row>
+                <entry>IBatisNet-Common</entry>
+
+                <entry>Assembly of classes shared by DataAccess and
+                DataMapper</entry>
+              </row>
+
+              <row>
+                <entry>IBatisNet-DataAccess</entry>
+
+                <entry>The Data Access Objects framework</entry>
+              </row>
+
+              <row>
+                <entry>iBatisNet-DataMapper</entry>
+
+                <entry>The Data Mapper framework (see separate DataMapper
+                Guide)</entry>
+              </row>
+
+              <row>
+                <entry>IBatisNet-Test</entry>
+
+                <entry>NUnit tests for the solution</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+
+      <para>You can load the <filename>IBatisNet.sln</filename> solution file
+      into Visual Studio and build the solution to generate the needed
+      assemblies or use Nant with the provided
+      <filename>iBATIS.build</filename> file. There are four projects in the
+      solution, and all should succeed. The assemblies we need will be created
+      under <filename>\source\IBatisNet.DataAccess\bin\Debug</filename>. The
+      created assemblies are : <filename>iBatisNet.Common.dll</filename>,
+      <filename>iBatisNet.DataAccess.dll</filename>.</para>
+    </sect2>
+
+    <sect2>
+      <title>Add Assembly References</title>
+
+      <para>Switching to your own solution, open the project that will be
+      using the iBATIS.NET DAO Framework. Depending on how your organize your
+      solutions, this might not be the project for your Windows or Web
+      application. It may be a library project that your application project
+      references. You need to add two references to your project: <orderedlist>
+          <listitem>
+             iBatisNet.Common.dll 
+          </listitem>
+
+          <listitem>
+            <para>iBatisNet.DataAccess.dll</para>
+          </listitem>
+        </orderedlist></para>
+
+      <para>Additionally, the DAO framework has the following external
+      dependencies:<table>
+          <title>Dependencies</title>
+
+          <tgroup cols="3">
+            <thead>
+              <row>
+                <entry>Name</entry>
+
+                <entry>Description</entry>
+
+                <entry>Assembly DLLs</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry>Castle dynamic proxy 1.0.3.0</entry>
+
+                <entry>Dynamic proxy generator</entry>
+
+                <entry>Castle.DynamicProxy.dll</entry>
+              </row>
+
+              <row>
+                <entry>Log4NET 1.2.0.30714</entry>
+
+                <entry>Logging framework</entry>
+
+                <entry>log4net.dll</entry>
+              </row>
+
+              <row>
+                <entry>NHibernate 0.5</entry>
+
+                <entry>Object persistence library; required if using
+                NHibernate DAO Session Handler</entry>
+
+                <entry>HashCodeProvider.dll NHibernate.dll
+                Iesi.Collections.dll</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+    </sect2>
+
+    <sect2>
+      <title>Setup XML configuration documents</title>
+
+      <para>You will need to add two or more XML file items to your Windows or
+      Web application project (and Test project if you have one). These files
+      are:</para>
+
+      <para><itemizedlist>
+          <listitem>
+             dao.config - The Data Access configuration file (usually one) 
+          </listitem>
+
+          <listitem>
+             providers.config - The database provider definition file 
+          </listitem>
+
+          <listitem>
+             SqlMap.config and Data Map definition XML files - Required when using the iBATIS DAO framework in conjunction with the iBATIS Data Mapper framework 
+          </listitem>
+        </itemizedlist></para>
+
+      <para>The <filename>dao.config</filename> and
+      <filename>providers.config</filename> files must be placed in a location
+      where the framework can find them at runtime. The default location
+      differs by the type of project, as shown in the following table. The
+      specifics of configuring the DAO framework through the
+      <filename>dao.config</filename> file are described in the next section
+      and in the Appendix.</para>
+
+      <table>
+        <title>Where to place the dao.config file</title>
+
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Windows, Library, or Test projects (using NUnit or
+              equivalent)</entry>
+
+              <entry>Place in <filename>/bin/Debug</filename> folder, with the
+              assembly (.dll) files, with the <filename>app.config</filename>
+              file</entry>
+            </row>
+
+            <row>
+              <entry>Web projects</entry>
+
+              <entry>Place in the project root, with the
+              <filename>web.config</filename> file</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+  </sect1>
+
+  <sect1>
+    <title>The Configuration File (dao.config)</title>
+
+    <para>The DaoManager class is responsible for the configuration of the DAO
+    Framework by parsing a special configuration XML file. The configuration
+    XML file specifies the following items:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>DAO contexts</para>
+      </listitem>
+
+      <listitem>
+        <para>properties for configuration</para>
+      </listitem>
+
+      <listitem>
+        <para>data source information</para>
+      </listitem>
+
+      <listitem>
+        <para>DAO implementations for each associated DAO interface</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>A DAO context is a grouping of related configuration information and
+    DAO implementations. Usually a context is associated with a single data
+    source such as a relational database or a flat file. By configuring
+    multiple contexts, you can easily centralize the data access configuration
+    for multiple databases. The structure of the DAO configuration file
+    (commonly called <filename>dao.config</filename> but not required) is as
+    follows. Values that you will likely change for your application are
+    highlighted.</para>
+
+    <example>Example dao.config file<title></title>
+    <programlisting>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;daoConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="DaoConfig.xsd"&gt;
+
+<emphasis role="comment">&lt;!-- Example ADO.NET DAO Configuration --&gt;</emphasis>
+&lt;context id="<emphasis role="blue">SimpleDao</emphasis>" default="<emphasis
+        role="blue">true</emphasis>"&gt;
+  &lt;properties resource="<emphasis role="blue">database.config</emphasis>"/&gt;
+
+  &lt;database&gt;
+    &lt;!-- Optional ( default ) --&gt;
+    &lt;provider name="<emphasis role="blue">sqlServer1.1</emphasis>"/&gt;
+    &lt;dataSource name="<emphasis role="blue">iBatisNet</emphasis>" 
+                connectionString="<emphasis role="blue">data source=${datasource};database=${database};
+                                  user id=${userid};password=${password};</emphasis>"/&gt;
+  &lt;/database&gt;
+
+  &lt;daoFactory&gt;
+    &lt;dao interface="<emphasis role="blue">IBatisNet.Test.Dao.Interfaces.IAccountDao, IBatisNet.Test</emphasis>"
+         implementation="<emphasis role="blue">IBatisNet.Test.Dao.Implementations.Ado.AccountDao, IBatisNet.Test</emphasis>"/&gt;
+  &lt;/daoFactory&gt;
+&lt;/context&gt;
+
+<emphasis role="comment">&lt;!-- Example SQL Maps DAO Configuration --&gt;</emphasis>
+&lt;context id="<emphasis role="blue">SqlMapDao</emphasis>"&gt;
+  &lt;properties resource="<emphasis role="blue">database2.config</emphasis>"/&gt;
+    
+  &lt;database&gt;
+     &lt;provider name="<emphasis role="blue">OleDb1.1</emphasis>"/&gt; 
+     &lt;dataSource name="<emphasis role="blue">iBatisNet</emphasis>" 
+                 connectionString="<emphasis role="blue">Provider=SQLOLEDB;Server=${database};database=IBatisNet;
+                                   user id=${userid};password=${password};</emphasis>"/&gt;
+  &lt;/database&gt;
+
+  &lt;daoSessionHandler id="SqlMap"&gt;
+    &lt;property name="sqlMapConfigFile" value="<emphasis role="blue">SqlMap.config</emphasis>"/&gt;
+  &lt;/daoSessionHandler&gt;
+
+  &lt;daoFactory&gt;
+    &lt;dao interface="<emphasis role="blue">IBatisNet.Test.Dao.Interfaces.IAccountDao, IBatisNet.Test</emphasis>"
+         implementation="<emphasis role="blue">IBatisNet.Test.Dao.Implementations.DataMapper.AccountDao, IBatisNet.Test</emphasis>"/&gt;
+  &lt;/daoFactory&gt;
+&lt;/context&gt;
+
+&lt;/daoConfig&gt;     </programlisting></example>
+
+    <para>In the example above, what we end up with is two DAO contexts. DAOs
+    are automatically aware of which context they belong to and therefore
+    which session handler to use. Again, there can be any number of DAO
+    contexts specified in a <filename>dao.config</filename> file, and
+    generally, a context will refer to a single specific data source.</para>
+
+    <para>In order to manage multiple configurations for different
+    environments (DEVT, Q/A, PROD), you can also make use of the optional
+    <literal>&lt;properties&gt;</literal> element as shown above. This allows
+    you to use placeholders in the place of literal value elements. If you
+    have a properties file with the following values:</para>
+
+    <example><title>Example properties file</title>
+    <programlisting>&lt;add key="<emphasis role="blue">userid</emphasis>" value="<emphasis
+        role="blue">IBatisNet</emphasis>" /&gt;
+&lt;add key="<emphasis role="blue">password</emphasis>" value="<emphasis
+        role="blue">test</emphasis>" /&gt;
+&lt;add key="<emphasis role="blue">database</emphasis>" value="<emphasis
+        role="blue">iBatisNet</emphasis>" /&gt;
+&lt;add key="<emphasis role="blue">datasource</emphasis>" value="<emphasis
+        role="blue">(local)\NetSDK</emphasis>" /&gt;</programlisting></example>
+
+    <para>You can use placeholders defined in that properties file instead of
+    explicit values in the <filename>dao.config</filename> file. For
+    example:</para>
+
+    <programlisting>&lt;dataSource name="<emphasis role="blue">iBatisNet</emphasis>" 
+            connectionString="<emphasis role="blue">data source=${datasource};database=${database};
+                              user id=${userid};password=${password};</emphasis>"/&gt;</programlisting>
+
+    <para>This allows for easier management of different environment
+    configurations. Only one properties resource file may be specified per
+    context.</para>
+
+    <para>Continuing with the example above, the provider and the datasource
+    values are given within the <literal>database</literal> element. Following
+    that, an optional <literal>daoSessionHandler</literal> may be specified.
+    If none is specified, the default iBATIS.NET DAO SessionHandler called
+    <classname>SimpleDaoSessionHandler</classname> will be used. In the
+    example, the second context identifies the SessionHandler as
+    <literal>SqlMap</literal>, meaning that the DAO implementations will be
+    using iBATIS.NET Data Mapper SqlMaps instead of basic ADO calls.</para>
+
+    <para>Next in the context under <literal>daoFactory</literal>, is the
+    specification of all DAO interfaces and their associated implementations.
+    These mappings link a generic DAO interface to a concrete (specific)
+    implementation. This is where we can see the pluggable nature of Data
+    Access Objects. By simply replacing the implementation class for a given
+    DAO mapping, the persistence approach taken can be completely changed
+    (e.g. from ADO to iBATIS Data Mapper SqlMaps to NHibernate).</para>
+  </sect1>
+
+  <sect1>
+    <title>Configuration Elements</title>
+
+    <para>The sections below describe the elements of the Data Access
+    configuration document for .NET. The <filename>dao.config</filename> file
+    can be validated by the <filename>DaoConfig.xsd</filename> schema provided
+    with the distribution.</para>
+
+    <sect2>
+      <title>The &lt;context&gt; Element</title>
+
+      <para>A DAO context is a grouping of related configuration information
+      and DAO implementations for a specific database and provider.</para>
+
+      <table>
+        <title>Attributes of the &lt;context&gt; element</title>
+
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>Attribute</entry>
+
+              <entry>Description</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry><emphasis>id</emphasis></entry>
+
+              <entry>Context id</entry>
+            </row>
+
+            <row>
+              <entry><emphasis>default</emphasis></entry>
+
+              <entry>Global setting to indicate if this is the default
+              context</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+
+    <sect2>
+      <title>The &lt;properties&gt; Element</title>
+
+      <para>Sometimes the values we use in an XML configuration file occur in
+      more than one element. Often, there are values that change when we move
+      the application from one server to another. To help you manage
+      configuration values, you can specify a standard properties file (with
+      name=value entries) as part of a Data Access configuration. Each named
+      value in the properties file becomes a <emphasis>shell</emphasis>
+      variable that can be used throughout the Data Access
+      configuration.</para>
+
+      <para>Properties are handy during building, testing, and deployment.
+      Additionally, properties make it easy to reconfigure your application
+      for multiple environments or to use automated tools for configuration
+      such as NAnt.</para>
+
+      <para>The &lt;properties&gt; element can only accept one of the
+      following attributes to specify the location of the properties
+      file.</para>
+
+      <table>
+        <title>Attributes of the &lt;properties&gt; element</title>
+
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>Attribute</entry>
+
+              <entry>Description</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry><emphasis>resource</emphasis></entry>
+
+              <entry>Specify the properties file name files to be loaded from
+              the root directory of the application (relative
+              path)<programlisting>resource="database.config"</programlisting></entry>
+            </row>
+
+            <row>
+              <entry><emphasis>url</emphasis></entry>
+
+              <entry>Specify the properties file name files to be loaded as a
+              valid filepath<programlisting>url="<filename>c:\config\my.properties</filename>"</programlisting></entry>
+            </row>
+
+            <row>
+              <entry><emphasis>embedded</emphasis></entry>
+
+              <entry>Specify the properties file name to be loaded as an
+              embedded resource in an assembly. Syntax for the embedded
+              attribute is '<filename>filename,
+              assemblyNameContainingEmbeddedResource</filename>'<programlisting>embedded="database.config, IBatisNet.Test"</programlisting></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+
+    <sect2>
+      <title>The &lt;database&gt; Element</title>
+
+      <para>The &lt;database&gt; element encloses elements that configure the
+      database system for use by the framework. These are the &lt;provider&gt;
+      and &lt;datasource&gt; elements.</para>
+
+      <sect3>
+        <title>The &lt;provider&gt; Element</title>
+
+        <para>The &lt;provider&gt; element specifies a database provider from
+        the <filename>providers.config</filename> file.</para>
+
+        <para>Under ADO.NET, a database system is accessed through a provider.
+        A database system can use a custom provider or a generic ODBC
+        provider. iBATIS.NET uses a pluggable approach to installing
+        providers. Each provider is represented by an XML descriptor element.
+        The list of providers you might want to use can be kept in a separate
+        XML descriptor file. The iBATIS.NET distribution includes the standard
+        <filename>providers.config</filename> file with a set of seven
+        prewritten provider elements:</para>
+
+        <para><itemizedlist>
+            <listitem>
+               SqlServer 1.0 - Microsoft SQL Server 7.0/2000 provider available with .NET Framework 1.0 
+            </listitem>
+
+            <listitem>
+               SqlServer 1.1 -Microsoft SQL Server 7.0/2000 provider available with .NET Framework 1.1 
+            </listitem>
+
+            <listitem>
+               OleDb 1.1 - OleDb provider available with .NET Framework 1.1 (used for Access) 
+            </listitem>
+
+            <listitem>
+               ODBC 1.1 - Odbc provider available with .NET Framework 1.1 
+            </listitem>
+
+            <listitem>
+               oracle9.2 - Oracle provider V9.2.0.401 
+            </listitem>
+
+            <listitem>
+               oracleClient1.0 - MS Oracle provider V1.0.5 available with .NET Framework 1.1 
+            </listitem>
+
+            <listitem>
+               ByteFx - ByteFx MySQL provider V0.7.6.15073 
+            </listitem>
+          </itemizedlist></para>
+
+        <para>The <filename>providers.config</filename> file can be found
+        under <filename>\source\IBatisNet.Test\bin\Debug</filename> in the
+        iBATIS.NET distribution (see Section 5.1). To use it, you must copy it
+        into your project at the same location as the
+        <filename>SqlMap.config</filename> file (see section 4.2.3).</para>
+
+        <para>A provider may require libraries that you do not have
+        installed,. Therefore, the provider element has an attribute that
+        allows you to disable unused providers. One provider can also be
+        marked as the "default" and will be used if another is not specified
+        by your configuration (see Section 5.2.3.5).</para>
+
+        <para>The standard <filename>provider.config</filename> file has
+        SqlServer 1.1 set as the default and the SqlServer 1.0 provider
+        disabled. The Oracle and ByteFx providers are also disabled. (Oracle
+        is proprietary software, and ByteFx ships under a more restrictive
+        license.)</para>
+
+        <important>
+          <para>ByteFx is the recommended provider if you are using MySQL. You
+          may download ByteFx from the MySQLNet SourceForge site
+          (http://sf.net/projects/mysqlnet/). If the ByteFx license is
+          acceptable to you, you may install it as a reference within your
+          application and enable the ByteFx provider.</para>
+        </important>
+
+        <para><tip>
+            <para>Be sure to review the <filename>providers.config</filename>
+            file and confirm that the provider you intend to use is enabled!
+            (Set the enabled attribute to true.)</para>
+          </tip></para>
+
+        <table>
+          <title>Attributes of the &lt;provider&gt; element</title>
+
+          <tgroup cols="2">
+            <thead>
+              <row>
+                <entry>Attribute</entry>
+
+                <entry>Description</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry><emphasis>name</emphasis></entry>
+
+                <entry>Name used to uniquely identify the provider</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+
+      <sect3>
+        <title>The &lt;dataSource&gt; Element</title>
+
+        <para>The &lt;datasource&gt; element specifies the connection string
+        for a specific database and provider.</para>
+
+        <table>
+          <title>Attributes of the &lt;dataSource&gt; element</title>
+
+          <tgroup cols="2">
+            <thead>
+              <row>
+                <entry>Attribute</entry>
+
+                <entry>Description</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry><emphasis>name</emphasis></entry>
+
+                <entry>Name used to identify the data source</entry>
+              </row>
+
+              <row>
+                <entry><emphasis>connectionString</emphasis></entry>
+
+                <entry>The connection string to the database</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+
+    <sect2>
+      <title>The &lt;daoSessionHandler&gt; Element</title>
+
+      <para>The &lt;daoSessionHandler&gt; element specifies the component that
+      &lt;isPropertyAvailable property="id" &gt; ACCOUNT_ID=#id#
+      &lt;/isPropertyAvailable&gt;manages transaction and connections for a
+      session.</para>
+
+      <table>
+        <title>Attributes of the &lt;daoSessionHandler&gt; element</title>
+
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>Attribute</entry>
+
+              <entry>Description</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry><emphasis>id</emphasis></entry>
+
+              <entry>Id used to uniquely identify the handler</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+      <sect3>
+        <title>The &lt;property &gt; Element</title>
+
+        <para>Some &lt;daoSessionHandler&gt; implementations (such as SqlMap
+        and NHibernate) need additional information for configuration. The
+        &lt;property&gt; element is used to specify this information.</para>
+
+        <table>
+          <title>Attributes of the &lt;property&gt; element</title>
+
+          <tgroup cols="2">
+            <thead>
+              <row>
+                <entry>Attribute</entry>
+
+                <entry>Description</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry><emphasis>name</emphasis></entry>
+
+                <entry>The name of the property to configure.
+                Example:<programlisting>name="sqlMapConfigFile"</programlisting></entry>
+              </row>
+
+              <row>
+                <entry><emphasis>value</emphasis></entry>
+
+                <entry>The value of the property configuration.
+                Example:<programlisting>value="SqlMap_MSSQL_SqlClient.config"</programlisting></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+
+    <sect2>
+      <title>The &lt;daoFactory&gt; Element</title>
+
+      <para>The &lt;daoFactory&gt; element is a grouping of Dao interfaces and
+      implementations.</para>
+
+      <sect3>
+        <title>The &lt;dao&gt; Element</title>
+
+        <para>The &lt;dao&gt; element specifies a Dao interface and one
+        implementation of that interface.</para>
+
+        <table>
+          <title>Attributes of the &lt;dao&gt; element</title>
+
+          <tgroup cols="2">
+            <thead>
+              <row>
+                <entry>Attribute</entry>
+
+                <entry>Description</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry><emphasis>interface</emphasis></entry>
+
+                <entry>The interface that the Dao must implement. Structure
+                value must be : namespace-qualified name of the class,
+                followed by a comma, followed by (at a bare minimum) the name
+                of the assembly that contains the class. Example:
+                <programlisting>interface=
+"IBatisNet.Test.Dao.Interfaces.IAccountDao,
+IBatisNet.Test"</programlisting></entry>
+              </row>
+
+              <row>
+                <entry><emphasis>implementation</emphasis></entry>
+
+                <entry>An implementation of the Dao interface. Structure value
+                must be : namespace-qualified name of the class, followed by a
+                comma, followed by (at a bare minimum) the name of the
+                assembly that contains the class. Example: <programlisting>implementation=
+"IBatisNet.Test.Dao.Implementations.Ado.AccountDao, 
+IBatisNet.Test"</programlisting></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+  </sect1>
+</chapter>

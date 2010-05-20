@@ -1,0 +1,1583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="dotnet">
+  <title>.NET Developer Guide</title>
+
+  <sect1>
+    <title>Introduction</title>
+
+    <para>This guide explains how to install, configure, and use the iBATIS
+    Data Mapper with your .NET applications. This guide assumes that you are
+    using Microsoft Visual Studio .NET (VSN). If you are using another IDE,
+    please adapt these instructions accordingly.</para>
+  </sect1>
+
+  <sect1>
+    <title>Installing the Data Mapper for .NET</title>
+
+    <para>There are three steps to using iBATIS Data Mapper with your
+    application for the first time. <orderedlist>
+        <listitem>
+           Setup the distribution 
+        </listitem>
+
+        <listitem>
+           Add assembly references 
+        </listitem>
+
+        <listitem>
+           Add XML documents 
+        </listitem>
+      </orderedlist></para>
+
+    <sect2>
+      <title>Setup the Distribution</title>
+
+      <para>The official site for iBATIS Data Mapper for .NET is our Apache
+      site &lt;http://incubator.apache.org/ibatis/site/&gt;. To download the
+      distribution, follow the link to the Downloads area, and select the
+      iBATIS.NET V1.0 or later release. The distribution is in the form of a
+      ZIP archive. You can extract the distribution using a utility like
+      WinZip or the extractor built into newer versions of Windows. We suggest
+      that you create an <filename>ibatisnet</filename> folder in your VSN
+      project directory and extract the distribution there.</para>
+
+      <para>Under the distribution's <filename>source</filename> folder are
+      five other folders that make up the iBATIS.NET distribution, as shown in
+      Table 4.1.<table>
+          <title>Folders found in the iBATIS.NET distribution</title>
+
+          <tgroup cols="2">
+            <thead>
+              <row>
+                <entry>Folder name</entry>
+
+                <entry>Description</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry>External-Bin</entry>
+
+                <entry>Precompiled assemblies provided for your
+                convenience.</entry>
+              </row>
+
+              <row>
+                <entry>IBatisNet-Common</entry>
+
+                <entry>Assembly of classes shared by DataAccess and
+                DataMapper</entry>
+              </row>
+
+              <row>
+                <entry>IBatisNet-DataAccess</entry>
+
+                <entry>The Data Access Objects framework (see separate DAO
+                Guide)</entry>
+              </row>
+
+              <row>
+                <entry>iBatisNet-DataMapper</entry>
+
+                <entry>The Data Mapper framework</entry>
+              </row>
+
+              <row>
+                <entry>IBatisNet-Test</entry>
+
+                <entry>NUnit tests for the solution</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+
+      <para>You can load the <filename>IBatisNet.sln</filename> solution file
+      into Visual Studio.NET and build the solution to generate the needed
+      assemblies. There are four projects in the solution, and all should
+      succeed. The assemblies we need will be created under
+      <filename>\source\IBatisNet.DataMapper\bin\Debug</filename>. The created
+      assemblies are : <filename>IBatisNet.Common.dll</filename>,
+      <filename>iBatisNet.DataAccess.dll</filename>, and
+      <filename>iBatisNet.DataMapper.dll</filename>.</para>
+    </sect2>
+
+    <sect2>
+      <title>Add Assembly References</title>
+
+      <para>Switching to your own solution, open the project that will be
+      using the iBATIS.NET Data Mapper. Depending on how your organize your
+      solutions, this might not be the project for your Windows or Web
+      application. It may be a library project that your application project
+      references. To your project, you need to add two or three references:
+      <orderedlist>
+          <listitem>
+            iBatisNet.DataMapper.dll 
+          </listitem>
+
+          <listitem>
+            iBatisNet.Common.dll (implied) 
+          </listitem>
+
+          <listitem>
+            <para>iBatisNet.DataAccess.dll (optional)</para>
+          </listitem>
+        </orderedlist></para>
+
+      <para>If you are using the <classname>Mapper</classname> singleton (see
+      section 4.3.1), then the only reference you will need is to the
+      DataMapper assembly. The Common assembly is still needed, but Visual
+      Studio.NET will resolve the dependance for you. If you are using the
+      Data Access Objects framework, then you will need a reference to the
+      DataAccess assembly too. So, start with the first, and add the others
+      only if needed.</para>
+
+      <para>If you have built the iBatisNet solution as described in Section
+      5.2.1, all three assemblies should be in the
+      <filename>bin/Debug</filename> folder under the iBatisNet-DataMapper
+      project.</para>
+    </sect2>
+
+    <sect2>
+      <title>Add XML File Items</title>
+
+      <para>You will need to add three or more XML file items to your Windows
+      or Web application project (and Test project if you have one). These
+      files are:</para>
+
+      <para><itemizedlist>
+          <listitem>
+             SqlMap.config - The Data Mapper configuration file (usually one) 
+          </listitem>
+
+          <listitem>
+             SqlMap.xml - The Data Map definition file (usually one or more, with various names such as Account.xml or Product.xml) 
+          </listitem>
+
+          <listitem>
+             providers.config - The database provider definition file 
+          </listitem>
+        </itemizedlist></para>
+
+      <para>The <filename>SqlMap.config</filename> and
+      <filename>providers.config</filename> files must be placed where the
+      framework can find them at runtime. The default location differs by the
+      type of project, as shown in Table 4.2. <table>
+          <title>Where to place the SqlMap.config file</title>
+
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Windows, Library, or Test projects (using NUnit or
+                equivalent)</entry>
+
+                <entry>Place in <filename>/bin/Debug</filename> folder, with
+                the assembly (.dll) files, with the
+                <filename>app.config</filename> file</entry>
+              </row>
+
+              <row>
+                <entry>Web projects</entry>
+
+                <entry>Place in the project root, with the
+                <filename>web.config</filename> file</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+
+      <para>The <filename>SqlMap.config</filename> file includes a reference
+      to your Data Map definition files (e.g.
+      <filename>Account.xml</filename>). You may wish to put the map
+      definitions in a folder called <filename>Maps</filename> or
+      <filename>Resources</filename>, and then refer to the maps through
+      <parameter>resource="/Resources/Account.xml"</parameter>. The resource
+      reference is relative to the project root directory, so it can be the
+      same regardless of where the configuration file is placed.</para>
+
+      <para>You can also use an absolute path to your Data Map definition
+      files, if that is more convenient. Use use the url attribute instead
+      through
+      <parameter>uri="file:///C:/Projects/MySolution/MyProject/Maps/Account.xml"</parameter>,
+      and substitute the path to your own map document.</para>
+
+      <para>Of course, the <filename>SqlMap.config</filename> file must be in
+      the correct format as described in Section 5.2. The format for the Data
+      Map descriptions ("<filename>SqlMap.xml</filename>" files ) is covered
+      by Section 3.</para>
+    </sect2>
+  </sect1>
+
+  <sect1>
+    <title>Configuring the Data Mapper for .NET</title>
+
+    <para>iBATIS Data Mapper is configured using a central XML descriptor
+    file, usually named <filename>SqlMap.config</filename>, which provides the
+    details for your data source, data maps, and other features like caching,
+    transactions, and thread management. At runtime, your application code
+    calls a iBATIS library routine (see Section 5.3) which reads and parses
+    the main <filename>SqlMap.config</filename> file. Other XML descriptors
+    may be incorporated by reference, but each Data Mapper client instance is
+    initialized using a single <filename>SqlMap.config</filename>
+    configuration file.</para>
+
+    <sect2>
+      <title>Data Mapper clients</title>
+
+      <para>Currently, the Data Mapper framework revolves around the
+      <classname>SqlMapper</classname> class, which acts as a facade to the
+      Data Mapper framework API. You can create a Data Mapper client by
+      instantiating an object of the <classname>SqlMapper</classname> class.
+      An instance of the <classname>SqlMapper</classname> class (your Data
+      Mapper client) is created by reading a single configuration file. Each
+      configuration file can specify one database or datasource. However, you
+      can use multiple Data Mapper clients in your application. Just create
+      another configuration file and pass the name of that file when the Data
+      Mapper client is created. The configuration files might use a different
+      account with the same database, or reference different databases on
+      different servers. You can read from one client and write to another, if
+      that's what you need to do. See Section 5.4.1 for more details on
+      building a <classname>SqlMapper</classname> instance.</para>
+    </sect2>
+
+    <sect2>
+      <title>Data Mapper Configuration File (SqlMap.config)</title>
+
+      <para>A sample configuration file for .NET is shown in Example
+      4.1.</para>
+
+      <para><example>
+          <title>SqlMap.Config for .NET</title>
+
+          <programlisting>&lt;?xml version="1.0" encoding="utf-8"?&gt; 
+&lt;sqlMapConfig 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="SqlMapConfig.xsd"&gt;
+
+  &lt;properties resource="/Resources/database.properties"/&gt;
+
+  &lt;settings&gt;
+    &lt;setting useFullyQualifiedStatementNames="false"/&gt;
+    &lt;setting cacheModelsEnabled="true"/&gt;
+  &lt;/settings&gt;
+
+  &lt;database&gt;
+    &lt;provider name="sqlServer1.1"/&gt;
+    &lt;dataSource name="NPetshop" 
+                connectionString="user id=${username};
+                  password=${password};
+                  data source=${datasource};
+                  database=${database};"/&gt;
+  &lt;/database&gt;
+
+  &lt;alias&gt;
+    &lt;typeAlias alias="Account" type="IBatisNet.Test.Domain.Account, IBatisNet.Test"/&gt;
+  &lt;/alias&gt;
+
+  &lt;sqlMaps&gt;
+    &lt;sqlMap resource="/Resources/Category.xml"/&gt;
+    &lt;sqlMap resource="/Resources/Product.xml"/&gt;
+  &lt;/sqlMaps&gt; 
+&lt;/sqlMapConfig&gt;</programlisting>
+        </example></para>
+    </sect2>
+
+    <sect2>
+      <title>Data Mapper Configuration Elements</title>
+
+      <para>Sections 4..3.3.* describes the elements of the Data Mapper
+      configuration document for .NET.</para>
+
+      <sect3>
+        <title>The &lt;properties&gt; Element</title>
+
+        <para>Sometimes the values we use in an XML configuration file occur
+        in more than one element. Often, there are values that change when we
+        move the application from one server to another. To help you manage
+        configuration values, you can specify a standard properties file (with
+        name=value entries) as part of a Data Mapper configuration. Each named
+        value in the properties file becomes a <emphasis>shell</emphasis>
+        variable that can be used throughout the Data Mapper configuration,
+        including your Data Map definition files (see Section 3). For example,
+        if the properties file contains</para>
+
+        <informalexample>
+          <programlisting>&lt;add key="username" value="albert" /&gt;</programlisting>
+        </informalexample>
+
+        <para>then any element in the Data Mapper configuration, including the
+        data maps, can use the variable <varname>${username}</varname> to
+        insert the value "<emphasis>albert</emphasis>". For example:</para>
+
+        <programlisting>&lt;dataSource connectionString="user id=${username}; </programlisting>
+
+        <para>Properties are handy during building, testing, and deployment by
+        making it easy to reconfigure your application for multiple
+        environments or use automated tools for configuration such as
+        NAnt.</para>
+
+        <para>There can be only one &lt;properties&gt; element per Data Mapper
+        <filename>SqlMap.config</filename> file.</para>
+
+        <sect4>
+          <title>&lt;properties&gt; attributes</title>
+
+          <para>The &lt;properties&gt; element can only accept one of the
+          following attributes to specify the location of the properties
+          file.</para>
+
+          <table>
+            <title>Attributes of the &lt;properties&gt; element</title>
+
+            <tgroup cols="2">
+              <thead>
+                <row>
+                  <entry>Attribute</entry>
+
+                  <entry>Description</entry>
+                </row>
+              </thead>
+
+              <tbody>
+                <row>
+                  <entry><emphasis>resource</emphasis></entry>
+
+                  <entry>Specify the properties file name files to be loaded
+                  from the root directory of the application (relative path)
+                  as properties.config.<programlisting>resource="properties.config"</programlisting></entry>
+                </row>
+
+                <row>
+                  <entry><emphasis>url</emphasis></entry>
+
+                  <entry>Specify the properties file name files to be loaded
+                  as a valid filepath.<programlisting>url="<filename>c:\config\my.properties</filename>"</programlisting></entry>
+                </row>
+
+                <row>
+                  <entry><emphasis>embedded</emphasis></entry>
+
+                  <entry>Specify the properties file name to be loaded as an
+                  embedded resource in an assembly. Syntax for the embedded
+                  attribute is '<emphasis>file name, the name of the assembly
+                  which contains the embedded
+                  resource</emphasis>'<programlisting>embedded="properties.config, IBatisNet.Test"</programlisting></entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </sect4>
+      </sect3>
+
+      <sect3>
+        <title>The &lt;settings&gt; Element</title>
+
+        <para>There are two default settings used by the framework.. The
+        settings appropriate for one application may not be appropriate for
+        another. The &lt;settings&gt; element lets you configure these options
+        and optimizations for the Data Mapper instance that is created from
+        the XML document. Each &lt;settings&gt; attribute has a default, and
+        you can omit the &lt;settings&gt; element or any of its attributes.
+        The &lt;settings&gt; attributes and the behavior they control are
+        described in the following table.</para>
+
+        <table>
+          <title>Attributes of the &lt;settings&gt; element</title>
+
+          <tgroup cols="2">
+            <thead>
+              <row>
+                <entry>Attribute</entry>
+
+                <entry>Description</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry><emphasis>cacheModelsEnabled </emphasis></entry>
+
+                <entry><para>This setting globally enables or disables all
+                cache models for an Data Mapper client. This can come in handy
+                for debugging.</para><programlisting>Example: cacheModelsEnabled=”true”
+Default: true (enabled)</programlisting></entry>
+              </row>
+
+              <row>
+                <entry><para> <emphasis>useStatementNamespaces </emphasis>
+                </para></entry>
+
+                <entry><para>With this setting enabled, you must always refer
+                to mapped statements by their fully qualified name, which is
+                the combination of the sqlMap namesource and the statement id.
+                For example:
+                <methodname>queryForObject(“Namespace.statement.Id”);</methodname></para><programlisting>Example: useStatementNamespaces=”false”
+Default: false (disabled)</programlisting></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+
+      <sect3>
+        <title>The &lt;typeAlias&gt; Element</title>
+
+        <para>The &lt;typeAlias&gt; element lets you specify a shorter name in
+        lieu of a fully-qualified classname. For example:<programlisting>  &lt;typeAlias alias="LineItem" type="NPetshop.Domain.Billing.LineItem, NPetshop.Domain" /&gt;</programlisting></para>
+
+        <para>You can then refer to <classname>LineItem</classname> where you
+        would normally have to spell-out the fully qualified class name.<note>
+            <para>In the .NET implementation, zero or more &lt;typeAlias&gt;
+            elements can appear in the Data Map definition file, within an
+            enclosing &lt;alias&gt; element.</para>
+          </note></para>
+
+        <sect4>
+          <title>&lt;typeAlias&gt; attributes</title>
+
+          <para>The &lt;typeAlias&gt; element has two attributes: <table>
+              <title>Attributes of the &lt;typeAlias&gt; element</title>
+
+              <tgroup cols="2">
+                <thead>
+                  <row>
+                    <entry>Attribute</entry>
+
+                    <entry>Description</entry>
+                  </row>
+                </thead>
+
+                <tbody>
+                  <row>
+                    <entry><emphasis>alias</emphasis></entry>
+
+                    <entry>A unique identifier for this
+                    element<programlisting>alias="Category"</programlisting></entry>
+                  </row>
+
+                  <row>
+                    <entry><emphasis>type</emphasis></entry>
+
+                    <entry>The fully-qualified classname, including namespace
+                    reference<programlisting>type=
+"IBatisNet.Test.Domain.Category, 
+IBatisNet.Test"</programlisting></entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table></para>
+        </sect4>
+
+        <sect4>
+          <title>Predefined type aliases</title>
+
+          <para>The framework predefines some aliases that you can use in your
+          Data Mapper configuration and data map files, as shown in Table
+          4.5.<table>
+              <title>Predefined Aliases</title>
+
+              <tgroup cols="2">
+                <thead>
+                  <row>
+                    <entry>CLR Type</entry>
+
+                    <entry>Alias</entry>
+                  </row>
+                </thead>
+
+                <tbody>
+                  <row>
+                    <entry>System.ArrayList</entry>
+
+                    <entry>list</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Boolean</entry>
+
+                    <entry>Boolean, bool</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Byte</entry>
+
+                    <entry>Byte, byte</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Char</entry>
+
+                    <entry>Char, char</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.DateTime</entry>
+
+                    <entry>dateTime, date</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Decimal</entry>
+
+                    <entry>Decimal, decimal</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Double</entry>
+
+                    <entry>Double, double</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Guid</entry>
+
+                    <entry>guid</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Hashtable</entry>
+
+                    <entry>map, hashmap, hashtable</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Int16</entry>
+
+                    <entry>nt16, short, Short</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Int32</entry>
+
+                    <entry>Int32, int, Int, integer, Integer</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Int64</entry>
+
+                    <entry>Int64, long, Long</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.SByte</entry>
+
+                    <entry>SByte, sbyte</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.Single</entry>
+
+                    <entry>Float, float, Single, single</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.String</entry>
+
+                    <entry>String, string</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.TimeSpan</entry>
+
+                    <entry>N/A</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.UInt16</entry>
+
+                    <entry>Short, short</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.UInt32</entry>
+
+                    <entry>Uint, uint</entry>
+                  </row>
+
+                  <row>
+                    <entry>System.UInt64</entry>
+
+                    <entry>Ulong, ulong</entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table></para>
+        </sect4>
+      </sect3>
+
+      <sect3>
+        <title>The &lt;providers&gt; Element</title>
+
+        <para>Under ADO.NET, a database system is accessed through a provider.
+        A database system can use a custom provider or a generic ODBC
+        provider. iBATIS.NET uses a pluggable approach to installing
+        providers. Each provider is represented by an XML descriptor element.
+        The list of providers you might want to use can be kept in a separate
+        XML descriptor file. The iBATIS.NET distribution includes the standard
+        <filename>providers.config</filename> file with a set of seven
+        prewritten provider elements:</para>
+
+        <para><itemizedlist>
+            <listitem>
+               SqlServer 1.0 - Microsoft SQL Server 7.0/2000 provider available with .NET Framework 1.0 
+            </listitem>
+
+            <listitem>
+               SqlServer 1.1 -Microsoft SQL Server 7.0/2000 provider available with .NET Framework 1.1 
+            </listitem>
+
+            <listitem>
+               OleDb 1.1 - OleDb provider available with .NET Framework 1.1 (used for Access) 
+            </listitem>
+
+            <listitem>
+               ODBC 1.1 - Odbc provider available with .NET Framework 1.1 
+            </listitem>
+
+            <listitem>
+               oracle9.2 - Oracle provider V9.2.0.401 
+            </listitem>
+
+            <listitem>
+               oracleClient1.0 - MS Oracle provider V1.0.5 available with .NET Framework 1.1 
+            </listitem>
+
+            <listitem>
+               ByteFx - ByteFx MySQL provider V0.7.6.15073 
+            </listitem>
+          </itemizedlist></para>
+
+        <para>The <filename>providers.config</filename> file can be found
+        under <filename>\source\IBatisNet.Test\bin\Debug</filename> in the
+        iBATIS.NET distribution (see Section 5.1). To use it, you must copy it
+        into your project at the same location as the
+        <filename>SqlMap.config</filename> file (see section 4.2.3).</para>
+
+        <para>A provider may require libraries that you do not have
+        installed,. Therefore, the provider element has an attribute that
+        allows you to disable unused providers. One provider can also be
+        marked as the "default" and will be used if another is not specified
+        by your configuration (see Section 5.2.3.5).</para>
+
+        <para>The standard <filename>provider.config</filename> file has
+        SqlServer 1.1 set as the default and the SqlServer 1.0 provider
+        disabled. The Oracle and ByteFx providers are also disabled. (Oracle
+        is proprietary software, and ByteFx ships under a more restrictive
+        license.)</para>
+
+        <important>
+          <para>ByteFx is the recommended provider if you are using MySQL. You
+          may download ByteFx from the MySQLNet SourceForge site
+          (http://sf.net/projects/mysqlnet/). If the ByteFx license is
+          acceptable to you, you may install it as a reference within your
+          application and enable the ByteFx provider.</para>
+        </important>
+
+        <para><tip>
+            <para>Be sure to review the <filename>providers.config</filename>
+            file and confirm that the provider you intend to use is enabled!
+            (Set the enabled attribute to true.)</para>
+          </tip></para>
+      </sect3>
+
+      <sect3>
+        <title>The &lt;database&gt; Element</title>
+
+        <para>The &lt;database&gt; element encloses elements that configure
+        the database system for use by the framework. These database
+        configuration elements are the &lt;provider&gt; and &lt;datasource&gt;
+        elements.</para>
+
+        <sect4>
+          <title>The &lt;provider&gt; Element</title>
+
+          <para>If the default provider is being used, the &lt;provider&gt;
+          element is optional. Or, if several providers are available, one may
+          be selected using the provider element without modifying the
+          <filename>providers.config</filename> file. <programlisting>&lt;provider name="OleDb1.1"  /&gt;</programlisting></para>
+        </sect4>
+
+        <sect4>
+          <title>The &lt;datasource&gt; element</title>
+
+          <para>The &lt;datasource&gt; element specifies the ADO.NET
+          connection string. Example 4.2, shows sample elements for SQL
+          Server, Oracle, Access, and MySql.<example>
+              <title>Sample &lt;datasource&gt; and &lt;provider&gt; elements
+              (.NET)</title>
+
+              <para><programlisting><emphasis role="comment">&lt;!-- The ${properties} are defined in an external file, --&gt;</emphasis>
+<emphasis role="comment">&lt;!-- but the values could also be coded inline. --&gt;</emphasis>
+
+<emphasis role="comment">&lt;!-- Connecting to SQL Server --&gt;</emphasis>
+&lt;database&gt;
+  &lt;provider name="sqlServer1.1" /&gt;
+  &lt;dataSource name="NPetstore" default="true" 
+       connectionString="data source=(local)\NetSDK;database=${database};
+       user id=${username};password=${password};"/&gt;
+&lt;/database&gt;
+
+<emphasis role="comment">&lt;!-- Connecting to Oracle --&gt;</emphasis>
+&lt;database&gt;
+  &lt;provider name="oracleClient1.0"/&gt;
+  &lt;dataSource name="iBatisNet" 
+       connectionString="Data Source=${datasource};User Id=${userid};Password=${password}"/&gt;
+&lt;/database&gt;
+ 
+<emphasis role="comment">&lt;!-- Connecting to Access --&gt;</emphasis>
+&lt;database&gt;
+  &lt;provider name="OleDb1.1" /&gt;
+  &lt;dataSource name="NPetstore" default="true" 
+       connectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=${database}"/&gt;
+&lt;/database&gt;
+
+<emphasis role="comment">&lt;!-- Connecting to a MySQL database --&gt;</emphasis> 
+&lt;database&gt;
+  &lt;provider name="ByteFx" /&gt;
+  &lt;dataSource name="NPetstore" default="true" 
+       connectionString="Host=${host};Database=${database};
+       Password=${password};Username=${username}" /&gt;
+&lt;/database&gt;</programlisting></para>
+            </example></para>
+        </sect4>
+      </sect3>
+
+      <sect3>
+        <title>The &lt;sqlMap&gt; Element</title>
+
+        <para>On a daily basis, most of your work will be with the Data Maps,
+        which are covered by Section 3. The Data Maps define the actual SQL
+        statements or stored procedures used by your application. The
+        parameter and result objects are also defined as part of the Data Map.
+        As your application grows, you may have several varieties of Data Map.
+        To help you keep your Data Maps organized, you can create any number
+        of Data Map definition files and incorporate them by reference in the
+        Data Mapper configuration. All of the definition files used by a Data
+        Mapper instance must be listed in the configuration file.</para>
+
+        <para>Example 4.3 shows &lt;sqlMap&gt; elements for loading a set of
+        Data Map definitions. Note that the &lt;sqlMap&gt; elements are nested
+        in a &lt;sqlMaps&gt; element. <example>
+            <title>SqlMap elements</title>
+
+            <programlisting>&lt;sqlMaps&gt;
+  &lt;sqlMap resource="/Resources/Category.xml"/&gt;
+  &lt;sqlMap resource="/Resources/Product.xml"/&gt;
+&lt;/sqlMaps&gt;</programlisting>
+          </example></para>
+
+        <para>For more about Data Map definition files, see Section 3.</para>
+      </sect3>
+
+      <sect3>
+        <title>Migrating from version 0.9.x</title>
+
+        <para><remark>[TODO: Upgraders guide]</remark></para>
+      </sect3>
+    </sect2>
+  </sect1>
+
+  <sect1>
+    <title>Programming with iBATIS Data Mapper: The .NET API</title>
+
+    <para>The IBATIS.NET Data Mapper API provides four core functions:
+    <orderedlist>
+        <listitem>
+          <para>build a <classname>SqlMapper</classname> instance from a
+          configuration file</para>
+        </listitem>
+
+        <listitem>
+          <para>execute an update query (including insert and delete).</para>
+        </listitem>
+
+        <listitem>
+          <para>execute a select query for a single object</para>
+        </listitem>
+
+        <listitem>
+          <para>execute a select query for a list of objects</para>
+        </listitem>
+      </orderedlist></para>
+
+    <para>The API also provides support for retrieving paginated lists and
+    managing transactions.</para>
+
+    <sect2>
+      <title>Building a SqlMapper Instance</title>
+
+      <para>An XML document is a wonderful tool for describing a database
+      configuration (Section 5.2) or defining a set of data mappings (Section
+      3), but you can't <emphasis>execute</emphasis> XML. In order to use the
+      iBATIS.NET configuration and definitions in your .NET application, you
+      need a class you can call.</para>
+
+      <para>The framework provides service methods that you can call which
+      read the configuration file (and any of its definition files) and builds
+      a <classname>SqlMapper</classname> object. The
+      <classname>SqlMapper</classname> object provides access to the rest of
+      the framework. The <classname>SqlMapper</classname> is designed to be
+      multi-threaded and long-lived, and so makes for a good singleton.
+      Example 76 shows a singleton Mapper that is bundled with the
+      framework.</para>
+
+      <para><example>
+          <title>A Mapper singleton you can call from your own
+          applications</title>
+
+          <programlisting role="java">[C#]
+using IBatisNet.Common.Utilities;
+using IBatisNet.DataMapper;
+
+namespace IBatisNet.DataMapper
+{
+  public class Mapper
+  {  
+      private static volatile SqlMapper _mapper = null;
+
+      protected static void Configure (object obj)
+      {
+        _mapper = (SqlMapper) obj;
+      }
+     
+     protected static void InitMapper() {   
+        ConfigureHandler handler = new ConfigureHandler (Configure);
+        _mapper = SqlMapper.ConfigureAndWatch (handler);
+     }
+
+    public static SqlMapper Instance()
+    {
+      if (_mapper == null)
+      {
+        lock (typeof (SqlMapper))
+        {
+          if (_mapper == null) <emphasis role="comment">// double-check</emphasis>
+          {
+             InitMapper();
+          }
+        }
+     }
+     return _mapper;
+   }
+
+   public static SqlMapper Get()
+   {
+     return Instance();
+   }
+  }
+}</programlisting>
+        </example></para>
+
+      <para>To obtain the <classname>SqlMapper</classname> instance, just
+      call</para>
+
+      <para><programlisting>[C#]
+SqlMapper mapper = Mapper.Instance();</programlisting></para>
+
+      <para>anywhere in your application, and specify one of the
+      <classname>SqlMapper</classname> methods (see Section 5.3.2) . Here's an
+      example:</para>
+
+      <para><programlisting>[C#]
+IList list = Mapper.Instance() .QueryForList ("PermitNoForYearList", values);</programlisting></para>
+
+      <para>The first time <methodname>Mapper.Instance()</methodname> is
+      called, it will read the default configuration file,
+      <filename>SqlMap.config</filename>. On subsequent calls, it will reuse
+      the cached <varname>mapper</varname> instance. The
+      <methodname>ConfigureAndWatch</methodname> method monitors changes to
+      the configuration files. If the configuration or definitions files
+      change, the <classname>SqlMapper</classname> will be safely reloaded.
+      This is particularly useful in development, when you might make a change
+      to a Data Map definition and want to see it take effect without
+      restarting a debugging session. Likewise, in production, it can allow
+      you to make changes to the definitions without reloading the rest of the
+      application.</para>
+
+      <note>
+        <para>If you are using NUnit to test your mappings, you can run a test
+        suite, make changes to the XML mapping document, and run the test
+        again. NUnit will reload the configuration automatically.</para>
+      </note>
+
+      <para>If for some reason you do not want to monitor changes to the
+      configuration, you can create your own <classname>Mapper</classname>
+      class, and use the <methodname>Configure</methodname> method
+      instead:</para>
+
+      <para><programlisting>[C#]
+mapper = SqlMapper.Configure("file.name");</programlisting></para>
+
+      <sect3>
+        <title>Multiple Databases</title>
+
+        <para>If you need access to more than one database from the same
+        application, create a Data Mapper configuration file for that database
+        and another <classname>Mapper</classname> class to go with it. In the
+        new <classname>Mapper</classname> class, change the call to
+        <methodname>ConfigureAndWatch</methodname> to</para>
+
+        <para><programlisting>[C#]
+mapper = SqlMapper.Configure("anotherSqlMapConfig.config");</programlisting></para>
+
+        <para>and substitute the name of your configuration file. Each
+        database then has their own singleton you can call from your
+        application:</para>
+
+        <para><programlisting>[C#]
+SqlMapper sqlServer = SqlServerMapper.Get();
+SqlMapper access = AccessMapper.Get();</programlisting></para>
+      </sect3>
+    </sect2>
+
+    <sect2>
+      <title>Exploring the Data Mapper API through the SqlMapper</title>
+
+      <para>The <classname>SqlMapper</classname> instance acts as a facade to
+      provide access the rest of the Data Mapper framework. The Data Mapper
+      API methods are shown in Example 4.5.</para>
+
+      <example>
+        <title>The Data Mapper API for .NET</title>
+
+        <para><programlisting><emphasis role="comment">[C#]
+
+&lt;!-- Query API  --&gt;</emphasis>
+public object Insert(string statementName, object parameterObject);
+public int Update(string statementName, object parameterObject);
+public int Delete(string statementName, object parameterObject);
+
+public object QueryForObject(string statementName, object parameterObject);
+public object QueryForObject(string statementName, object parameterObject, object resultObject);
+
+public IList QueryForList(string statementName, object parameterObject);
+public void QueryForList(string statementName, object parameterObject, IList resultObject);
+public IList QueryForList(string statementName, object parameterObject, 
+                          int skipResults, int maxResults);
+
+public IList QueryWithRowDelegate(string statementName, object parameterObject, 
+                                  RowDelegate rowDelegate);
+
+public PaginatedList QueryForPaginatedList(String statementName, object parameterObject, 
+                                           int pageSize);
+
+public IDictionary QueryForDictionary(string statementName, object parameterObject, 
+                                      string keyProperty)
+public IDictionary QueryForDictionary(string statementName, object parameterObject, 
+                                      string keyProperty, string valueProperty)
+public IDictionary QueryForMap(string statementName, object parameterObject, string keyProperty)
+public IDictionary QueryForMap(string statementName, object parameterObject, 
+                               string keyProperty, string valueProperty)
+
+<emphasis role="comment">&lt;!-- Conenction API  --&gt;</emphasis>
+public void OpenConnection() 
+public void CloseConnection()
+
+<emphasis role="comment">&lt;!-- Transaction API  --&gt;</emphasis>
+public void BeginTransaction() 
+public void BeginTransaction(bool openConnection) 
+public void BeginTransaction(IsolationLevel isolationLevel)
+public void BeginTransaction(bool openConnection, IsolationLevel isolationLevel)
+
+public void CommitTransaction()
+public void CommitTransaction(bool closeConnection) 
+
+public void RollBackTransaction()
+public void RollBackTransaction(bool closeConnection)
+</programlisting></para>
+
+        <para>Note that each of the API methods accept the name of the Mapped
+        Statement as the first parameter. The <varname>statementName</varname>
+        parameter corresponds to the <parameter>id</parameter> of the Mapped
+        Statement in the Data Map definition (see Section 3.2.4.1). In each
+        case, a <parameter>parameterObject</parameter> also may be passed. If
+        the Mapped Statement expects no parameters, a null
+        <parameter>parameterObject</parameter> may be passed. If a statement
+        does expect parameters, then a valid
+        <parameter>parameterObject</parameter> is required. Section 4.4.2.*
+        describe how the API methods work.</para>
+      </example>
+
+      <sect3>
+        <title>Insert, Update, Delete</title>
+
+        <para><programlisting>
+public object Insert(string statementName,
+                     object parameterObject);
+public int Update(string statementName,
+                  object parameterObject);
+public int Delete(string statementName,
+                  object parameterObject);</programlisting></para>
+
+        <para>If a Mapped Statement uses one of the &lt;insert&gt;,
+        &lt;update&gt;, or &lt;delete&gt; statement-types, then it should use
+        the corresponding API method. The &lt;insert&gt; element supports a
+        nested &lt;selectKey&gt; element for generating primary keys (see
+        Section 3.2.3.2). If the &lt;selectKey&gt; stanza is used, then
+        <methodname>Insert</methodname> returns the generated key; otherwise a
+        null object is returned. Both the <methodname>Update</methodname> and
+        <methodname>Delete</methodname> methods return the number of rows
+        affected by the statement.</para>
+      </sect3>
+
+      <sect3>
+        <title>QueryForObject</title>
+
+        <para><programlisting>public object QueryForObject(string statementName,
+                             object parameterObject);
+public object QueryForObject(string statementName, 
+                             object parameterObject,
+                             object resultObject);</programlisting></para>
+
+        <para>If a Mapped Statement is expected to select a single row, then
+        call it using <methodname>QueryForObject</methodname>. Since the
+        Mapped Statement definition specifies the result class expected, the
+        framework can both create and populate the result class for you.
+        Alternatively, if you need to manage the result object yourself, say
+        because it is being populated by more than one statement, you can use
+        the alternate form and pass your <parameter>resultObject</parameter>
+        as the third parameter.</para>
+      </sect3>
+
+      <sect3>
+        <title>QueryForList</title>
+
+        <para><programlisting>public IList QueryForList(string statementName,
+                          object parameterObject);
+public void QueryForList(string statementName,
+                         object parameterObject,
+                         IList resultObject);
+public IList QueryForList(string statementName,
+                          object parameterObject,
+                          int skipResults,
+                          int maxResults);</programlisting></para>
+
+        <para>If a Mapped Statement is expected to select multiple rows, then
+        call it using <methodname>QueryForList</methodname> . Each entry in
+        the list will be an result object populated from the corresponding row
+        of the query result. If you need to manage the resultObject yourself,
+        then it can be passed as the third parameter.</para>
+
+        <para>If you need to obtain a partial result, the third form takes the
+        number of records to skip (the starting point) and the maximum number
+        to return, as the <parameter>skipResults</parameter> and
+        <parameter>maxResults</parameter> parameters. The
+        <methodname>PaginatedList</methodname> method (Section 5.3.2.5)
+        provides the same functionality but in a more convenient wrapper. The
+        <methodname>QueryWithRowDelegate</methodname> method (Section 5.3.2.4)
+        also works with multiple rows, but provides a post-processing
+        feature.</para>
+      </sect3>
+
+      <sect3>
+        <title>QueryWithRowDelegate</title>
+
+        <para>
+<programlisting>public delegate void RowDelegate(object obj,
+                                 IList list);
+public IList QueryWithRowDelegate(string statementName,
+                                  object parameterObject, 
+                                  RowDelegate rowDelegate);</programlisting></para>
+
+        <para>No matter how well our database is designed or how cleverly we
+        describe our maps, the result objects we get back may not be ideal.
+        You may need to perform some post-processing task on the result
+        objects. You might even want to omit an entry omitted from the list.
+        Or, you might want to use the result object to create some other, more
+        useful object. To save filtering the result objects from to one list
+        to another, you can pass a <classname>RowDelegate</classname> to the
+        method to do the dirty work. The <classname>SqlMapper</classname> will
+        go through each of the result objects and give the delegate a chance
+        to modify the object and determine if the object should be added to
+        the <interfacename>IList</interfacename> that will be returned.
+        <important>
+            <para>It is your responsibility to add the objects you want
+            returned to the list. If an object is not added, it is not
+            returned.</para>
+          </important></para>
+      </sect3>
+
+      <sect3>
+        <title>QueryForPaginatedList</title>
+
+        <para>
+		<programlisting>public PaginatedList QueryForPaginatedList(string statementName,
+                                           object parameterObject,
+                                           int pageSize);</programlisting></para>
+
+        <para>We live in an age of information overflow. A database query
+        often returns more hits than users want to see at once, and our
+        requirements may say that we need to offer a long list of results a
+        "page" at a time. If the query returns 1000 hits, we might need to
+        present the hits to the user in sets of fifty, and let them move back
+        and forth between the sets. Since this is such a common requirement,
+        the framework provides a convenience method.</para>
+
+        <para>The <classname>PaginatedList</classname> interface includes
+        methods for navigating through pages
+        (<methodname>nextPage()</methodname>,<methodname>
+        previousPage()</methodname>, <methodname>gotoPage()</methodname>) and
+        also checking the status of the page
+        (<methodname>isFirstPage()</methodname>,
+        <methodname>isMiddlePage()</methodname>,
+        <methodname>isLastPage()</methodname>,
+        <methodname>isNextPageAvailable()</methodname>,
+        <methodname>isPreviousPageAvailable()</methodname>,
+        <methodname>getPageIndex()</methodname>,
+        <methodname>getPageSize()</methodname>). Although the total number of
+        records available is not accessible from the
+        <classname>PaginatedList</classname> interface, this should be easily
+        accomplished by simply executing a second statement that counts the
+        expected results. Too much overhead would be associated with the
+        <classname>PaginatedList</classname> otherwise.<tip>
+            <para>The <classname>PaginatedList</classname> method is
+            convenient, but note that a larger set will first be returned by
+            the database provider and the smaller set extracted by the
+            framework. The higher the page, the larger set that will be
+            returned and thrown away. For very large sets, you may want to use
+            a stored procedure or your own query that used
+            <parameter>skipResults</parameter> and
+            <parameter>maxResults</parameter> as parameters. Unfortunately,
+            the semantics for the returning partial data sets is not
+            standardized, so <classname>PaginatedList</classname> is the best
+            we can do within the scope of a framework.</para>
+          </tip></para>
+      </sect3>
+
+      <sect3>
+        <title>QueryForDictionary, QueryForMap</title>
+
+        <para><programlisting>public IDictionary QueryForDictionary(string statementName,
+                                      object parameterObject,
+                                      string keyProperty)
+public IDictionary QueryForDictionary(string statementName,
+                                      object parameterObject,
+                                      string keyProperty,
+                                      string valueProperty)
+public IDictionary QueryForMap(string statementName,
+                               object parameterObject, 
+                               string keyProperty)
+public IDictionary QueryForMap(string statementName, 
+                               object parameterObject, 
+                               string keyProperty, 
+                               string valueProperty)</programlisting></para>
+
+        <para>The <methodname>QueryForList</methodname> methods return the
+        result objects within a <interfacename>IList</interfacename> instance.
+        Alternatively, the <methodname>QueryForDictionary</methodname> returns
+        a <interfacename>IDictionary</interfacename> instance. The value of
+        each entry is one of the result objects. The key to each entry is
+        indicated by the <parameter>keyProperty</parameter> parameter. This is
+        the name of the one of the properties of the result object, the value
+        of which is used as the key for each entry. For example, If you needed
+        a set of <classname>Employee</classname> objects, you might want them
+        returned as a <interfacename>IDictionary</interfacename> keyed by each
+        object's <property>EmployeeNumber</property> property.</para>
+
+        <para>If you don't need the entire result object in your
+        <classname>Dictionary</classname>, you can add the
+        <parameter>valueProperty</parameter> parameter to indicate which
+        result object property should be the value of an entry. For example,
+        you might just want the <property>EmployeeName</property> keyed by
+        <property>EmployeeNumber</property>. <important>
+            <para>You do not need to use this method just to obtain an
+            <interfacename>IDictionary</interfacename> result object. As
+            explained in Section 3.x.x., the result object for any query can
+            be a property object or a
+            <interfacename>IDictionary</interfacename> instance. This method
+            is used to generate a <emphasis>new</emphasis>
+            <interfacename>IDictionary</interfacename> result object from a
+            property object or (another)
+            <interfacename>IDictionary</interfacename> object. In this case,
+            the key is a property you specify, and the value is the row from
+            the result set.</para>
+          </important></para>
+
+        <para>The <methodname>QueryforMap</methodname> methods provide the
+        same functionality but under a different name, for the sake of
+        consistency with the Java implementation. (The .NET
+        <interfacename>IDictionary</interfacename> interface is equivalent to
+        the Java <classname>Map</classname> interface.)</para>
+      </sect3>
+    </sect2>
+
+    <sect2>
+      <title>Session</title>
+
+      <para>In the iBATIS DataMapper framework, a session is a container for
+      an ADO connection and transaction.</para>
+	  <para>The iBATIS.NET Data Mapper session <classname>IDalSession</classname> implement <classname>IDisposable</classname> interface. So you can use it with the <methodname>using</methodname> syntax.</para>
+ <example>
+        <title>using instruction</title>
+
+        <para><programlisting>[C#]
+<emphasis role="comment">using ( IDalSession session = sqlMap.OpenConnection() )</emphasis>
+{
+  Account account = sqlMap.QueryForObject("GetAccountViaColumnName", 1) as Account;
+}</programlisting></para>
+      </example>
+
+      <note>
+        <para>Sessions cannot be nested. An exception will be thrown if you
+        call
+        <methodname>BeginTransaction</methodname>/<methodname>OpenConnection</methodname>
+        from the same thread more than once or call
+        <methodname>CommitTransaction</methodname> or
+        <methodname>RollbackTransaction</methodname> first. In other words,
+        each thread can have <emphasis>at most</emphasis> one session open,
+        per <classname>SqlMapper</classname> instance.</para>
+      </note>
+    </sect2>
+
+    <sect2>
+      <title>Connection</title>
+
+      <para>The Data Mapper API includes methods to demarcate connection
+      boundaries. <programlisting><emphasis role="comment">// Open a session : Open an ADO connection</emphasis>
+public void OpenConnection() 
+<emphasis role="comment">// Close a session : Close the associated ADO connection</emphasis>
+public void CloseConnection()</programlisting></para>
+
+ <example>
+        <title>Connection example</title>
+
+        <para><programlisting>[C#]
+<emphasis role="blue">sqlMap.OpenConnection()</emphasis>
+Account account = sqlMap.QueryForObject("GetAccountViaColumnName", 1) as Account;
+<emphasis role="blue">sqlMap.CloseConnection()</emphasis>
+
+<emphasis role="comment">// Same thing with using instruction</emphasis>
+using ( IDalSession session = <emphasis role="blue">sqlMap.OpenConnection()</emphasis> )
+{
+  Account account = sqlMap.QueryForObject("GetAccountViaColumnName", 1) as Account;
+}</programlisting></para>
+      </example>
+    </sect2>
+
+    <sect2>
+      <title>Automatic Session</title>
+
+      <para>By default, calling any of the API methods (see Section 5.3.2) on
+      a <classname>SqlMapper</classname> instance will auto-open/close a
+      connection. This means that each call to these methods will be a single
+      unit of work. For many cases, this simple approach may be sufficient.
+      But it is not ideal if you have a number of statements that must execute
+      as a single unit of work, which is to say, succeed or fail as a group.
+      For cases like these, you can use <emphasis>explicit
+      transactions</emphasis>.</para>
+
+      <para>An example of using automatic session is shown as Example
+      4.6.</para>
+
+      <example>
+        <title>Using automatic session</title>
+
+        <para><programlisting>[C#]
+Item item = (Item) sqlMap.executeQueryForObject ("GetItem", itemId);
+item.Description = “TX1”;
+<emphasis role="comment">// No session demarcated, so open/close connection will be automatic (implied)</emphasis>
+sqlMap.Update("UpdateItem", item);
+item.Description = newDescription;
+item.Description = “TX2”;
+<emphasis role="comment">// No transaction demarcated, so open/close connection will be automatic (implied)</emphasis>
+sqlMap.Update("UpdateItem", item);</programlisting></para>
+      </example>
+
+      <note>
+        <para>Be careful to consider sessions when framing your queries.
+        Automatic sessions are convenient, but you will run into trouble if
+        your unit of work requires more than a single update to the database.
+        In Example 56, if the second call to
+        <parameter>"UpdateItem"</parameter> fails, the item description will
+        still be updated with the first new description of
+        <parameter>“TX1”</parameter>. Not what a user might expect.</para>
+      </note>
+    </sect2>
+
+    <sect2>
+      <title>Transaction</title>
+
+      <para>The Data Mapper API includes methods to demarcate transactional
+      boundaries. A transaction can be started, committed and/or rolled back.
+      You can call the transaction methods from the
+      <classname>SqlMapper</classname> instance (see Section 5.3.1)
+      .<programlisting>
+<emphasis role="comment">// Begin a transactional session : Open a connection and begin an ADO transaction</emphasis>
+public void BeginTransaction()
+<emphasis role="comment">// Begin a transactional session : Open a connection is specified and begin an ADO transaction </emphasis>
+public void BeginTransaction(bool openConnection) 
+<emphasis role="comment">// Begin a transactional session : Open a connection and begin an ADO transaction</emphasis> 
+<emphasis role="comment">// with the specified IsolationLevel</emphasis>
+public void BeginTransaction(IsolationLevel isolationLevel)
+<emphasis role="comment">// Begin a transactional session : Open a connection is specified and begin an ADO transaction</emphasis>
+<emphasis role="comment">// with the specified IsolationLevel</emphasis>
+public void BeginTransaction(bool openConnection, IsolationLevel isolationLevel)
+
+
+<emphasis role="comment">// Commit a session : Commit the ADO transaction and close the connection </emphasis> 
+public void CommitTransaction()
+<emphasis role="comment">// Commit a session : Commit the ADO transaction and close the connection if specified </emphasis> 
+public void CommitTransaction(bool closeConnection)
+<emphasis role="comment">// RollBack a session : RollBack the ADO transaction and close the connection </emphasis>
+public void RollBackTransaction()
+<emphasis role="comment">// RollBack a session : RollBack the ADO transaction and close the connection if specified </emphasis>
+public void RollBackTransaction(bool closeConnection)</programlisting></para>
+
+      <para>An example of using transactions is shown as Example 4.6.</para>
+
+      <example>
+        <title>Using transactions</title>
+
+        <para><programlisting>[C#]
+try 
+  {
+      <emphasis role="blue">sqlMap.BeginTransaction();</emphasis>
+      Item item = (Item) sqlMap.QueryForObject("getItem", itemId);
+      item.Description = newDescription;
+      sqlMap.Update("updateItem", item);
+      <emphasis role="blue">sqlMap.CommitTransaction();</emphasis>
+  } 
+catch {
+      <emphasis role="blue">sqlMap.RollBackTransaction();</emphasis>
+}
+ 
+<emphasis role="comment">// Same thing with using instruction</emphasis>
+<emphasis role="blue">using ( IDalSession session = sqlMap.BeginTransaction() )</emphasis>
+{
+  Item item = (Item) sqlMap.QueryForObject("getItem", itemId);
+  item.Description = newDescription;
+  sqlMap.Update("updateItem", item);
+
+  <emphasis role="blue">session.Complete();</emphasis> <emphasis role="comment">// Commit</emphasis>
+}
+</programlisting></para>
+      </example>
+
+      <para></para>
+    </sect2>
+
+    <sect2>
+      <title>Distributed Transactions</title>
+
+      <para>Distributed transactions are transactions that can span multiple
+      resource managers, such as SQL Server and Oracle, and reconcile
+      transactions among them.</para>
+
+      <para>iBATIS.NET introduces a new
+      <classname>TransactionScope</classname> class mimicking the new
+      <classname>TransactionScope</classname> found in the
+      <classname>System.Transactions</classname> namespace (.NET Framework
+      2.0). This class supports MSMQ, ADO.NET, SqlServer, and DTC transaction
+      models. This is a simple managed interface to COM+'s SWC (Services
+      Without Components) Transactions. It can be used only by developers
+      using .NET 1.1 and Windows XP SP2 or Windows Server 2003 since it
+      implements distributed transactional support using the
+      <classname>ServiceDomain</classname> class.</para>
+
+      <para>Usage is simple, as seen in the following example where a code
+      block is made transactional à la Indigo (moving to Indigo will be easier
+      since it is the same API):</para>
+
+      <example>
+        <title>Using distributed transactions</title>
+
+        <para><programlisting>[C#]
+using IBatisNet.Common.Transaction;
+
+<emphasis role="blue">using (TransactionScope tx = new TransactionScope())</emphasis>
+{
+   sqlMapSqlServer.OpenConnection();
+    <emphasis role="comment">// Transaction will be automatically associated with it</emphasis>
+   account = sqlMapSqlServer.QueryForObject("GetAccount", accountId) as Account;
+   account.FirstName = "Gilles";
+   sqlMapSqlServer.Update(account);
+   sqlMapSqlServer.CloseConnection();
+
+   sqlMapOracle.OpenConnection();
+   <emphasis role="comment">// Transaction will be automatically associated with it</emphasis>
+   product = sqlMapOracle.QueryForObject("GetProduct", productId) as Product;
+   product.Quantity = 1000;
+   sqlMapOracle.Update(product);
+   sqlMapOracle.CloseConnection();
+
+   <emphasis role="blue">tx.Complete();</emphasis> <emphasis role="comment">// Commit</emphasis>
+}</programlisting></para>
+
+        <para>It is important to make sure that each instance of this class
+        gets <methodname>Close()</methodname>'d. The easiest way to ensure
+        that each instance is closed is with the <literal>using</literal>
+        statement in C#. When <literal>using</literal> calls
+        <methodname>Dispose</methodname> on the transaction scope at the end
+        of the <literal>using</literal> code block, the
+        <emphasis>ambient</emphasis> transaction will be commited only if the
+        <methodname>Complete()</methodname> method has been called.</para>
+      </example>
+
+      <para><note>
+          <para>This <classname>TransactionScope</classname> class does not
+          support a nested transaction scope with different transaction
+          options.</para>
+        </note></para>
+    </sect2>
+
+    <sect2>
+      <title>Coding Examples [TODO: Expand in to a Cookbook of practical
+      examples]</title>
+
+      <para><example>
+          <title>Executing Update (insert, update, delete)</title>
+
+          <programlisting>[C#]
+Product product = new Product();
+product.Id = 1;
+product.Description = “Shih Tzu”;
+int key = sqlMap.Insert (“insertProduct”, product);</programlisting>
+        </example> <example>
+          <title>Executing Query for Object (select)</title>
+
+          <programlisting>[C#]
+int key = 1;
+Product product = sqlMap.QueryForObject (“getProduct”, key) as Product;</programlisting>
+        </example> <example>
+          <title>Executing Query for Object (select) With Preallocated Result
+          Object</title>
+
+          <programlisting>[C#]
+Customer customer = new Customer();
+sqlMap.BeginTransaction();
+sqlMap.QueryForObject(“getCust”, parameterObject, customer);
+sqlMap.QueryForObject(“getAddr”, parameterObject, customer);
+sqlMap.CommitTransaction();</programlisting>
+        </example> <example>
+          <title>Executing Query for List (select)</title>
+
+          <programlisting>[C#]
+IList list = sqlMap.QueryForList (“getProductList”, null);</programlisting>
+        </example> <example>
+          <title>Auto-Open/Close</title>
+
+          <programlisting>[C#]
+<emphasis role="comment">// When OpenConnection is not called, the statements will auto-Open/Close.</emphasis> 
+int key = sqlMap.Insert (“insertProduct”, product);</programlisting>
+        </example> <example>
+          <title>Executing Query for List (select) With Result
+          Boundaries</title>
+
+          <programlisting>[C#]
+List list = sqlMap.queryForList (“getProductList”, null, 0, 40);</programlisting>
+        </example> <example>
+          <title>Executing Query with a RowHandler (select)</title>
+
+          <programlisting>[C#]
+public void RowHandler(object obj, IList list)
+{
+  Product product = (Product) object;
+  product.Quantity = 10000;
+}
+
+SqlMapper.RowDelegate handler = new SqlMapper.RowDelegate(this.RowHandler);
+IList list = sqlMap.QueryWithRowDelegate("getProductList", null, handler);
+</programlisting>
+        </example> <example>
+          <title>Executing Query for Paginated List (select)</title>
+
+          <programlisting>[C#]
+PaginatedList list = sqlMap.QueryForPaginatedList (“getProductList”, null, 10);
+list.NextPage();
+list.PreviousPage();</programlisting>
+        </example> <example>
+          <title>Executing Query for Map</title>
+
+          <programlisting>[C#]
+IDictionary map = sqlMap.QueryForMap (“getProductList”, null, “productCode”);
+Product p = (Product) map[“EST-93”];</programlisting>
+        </example></para>
+    </sect2>
+  </sect1>
+
+  <sect1>
+    <title>Logging SqlMap Activity with Apache Log4Net</title>
+
+    <para>The iBATIS Data Mapper framework provides logging information
+    through the use of Apache Log4Net (http://logging.apache.org/log4net/).
+    The specifics of Log4Net are beyond the scope of this document. This
+    section provides a sample configuration to help you get started.</para>
+
+    <sect2>
+      <title>Log Configuration</title>
+
+      <para>The framework uses Log4Net internally and will automatically
+      include the assembly when your project is built. To use Log4Net with
+      your own application, you just need to provide your own Log4Net
+      configuration. You can do this by adding a configuration file for your
+      assembly that includes a &lt;log4Net&gt; element. The configuration file
+      is named after your assembly but adds a <filename>.config</filename>
+      extension, and is stored in the same folder as your assembly. Example 89
+      shows the configuration for the framework's Test project.</para>
+
+      <example>
+        <title>A sample Log4Net configuration block
+        (IBatisNet.Test.dll.Config)</title>
+
+        <programlisting>&lt;configuration&gt;
+ <emphasis role="comment">&lt;!-- Register a section handler for the log4net section --&gt;</emphasis>
+ &lt;configSections&gt;
+  &lt;section name="log4net" type="System.Configuration.IgnoreSectionHandler" /&gt;
+ &lt;/configSections&gt;
+ &lt;appSettings&gt;
+  <emphasis role="comment">&lt;!-- To enable internal log4net logging specify the following appSettings key --&gt;</emphasis>
+  &lt;!-- &lt;add key="log4net.Internal.Debug" value="true"/&gt; --&gt;
+ &lt;/appSettings&gt;
+
+ <emphasis role="comment">&lt;!-- This section contains the log4net configuration settings --&gt;</emphasis>
+ &lt;log4net&gt;
+  <emphasis role="comment">&lt;!-- Define some output appenders --&gt;</emphasis>
+  &lt;appender name="RollingLogFileAppender" type="log4net.Appender.RollingFileAppender"&gt;
+   &lt;param name="File" value="log.txt" /&gt;
+   &lt;param name="AppendToFile" value="true" /&gt;
+   &lt;param name="MaxSizeRollBackups" value="2" /&gt;
+   &lt;param name="MaximumFileSize" value="100KB" /&gt;
+   &lt;param name="RollingStyle" value="Size" /&gt;
+   &lt;param name="StaticLogFileName" value="true" /&gt;
+   &lt;layout type="log4net.Layout.PatternLayout"&gt;
+    &lt;param name="Header" value="[Header]\r\n" /&gt;
+    &lt;param name="Footer" value="[Footer]\r\n" /&gt;
+    &lt;param name="ConversionPattern" value="%d [%t] %-5p %c [%x] - %m%n" /&gt;
+   &lt;/layout&gt;
+  &lt;/appender&gt;
+  &lt;appender name="ConsoleAppender" type="log4net.Appender.ConsoleAppender"&gt;
+   &lt;layout type="log4net.Layout.PatternLayout"&gt;
+    &lt;param name="ConversionPattern" value="%d [%t] %-5p %c [%x] &amp;lt;%X{auth}&amp;gt; - %m%n" /&gt;
+   &lt;/layout&gt;
+  &lt;/appender&gt;
+
+  <emphasis role="comment">&lt;!-- Set root logger level to ERROR and its appenders --&gt;</emphasis>
+  &lt;root&gt;
+   &lt;level value="ERROR" /&gt;
+   &lt;appender-ref ref="RollingLogFileAppender" /&gt;
+   &lt;appender-ref ref="ConsoleAppender" /&gt;
+  &lt;/root&gt;
+
+ <emphasis role="comment"> &lt;!-- Print only messages of level DEBUG or above in the packages --&gt;</emphasis>
+  &lt;logger name="IBatisNet.DataMapper.Configuration.Cache.CacheModel"&gt;
+   &lt;level value="DEBUG" /&gt;
+  &lt;/logger&gt;
+  &lt;logger name="IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory"&gt;
+   &lt;level value="DEBUG" /&gt;
+  &lt;/logger&gt;
+  &lt;logger name="IBatisNet.DataMapper.LazyLoadList"&gt;
+   &lt;level value="DEBUG" /&gt;
+  &lt;/logger&gt;
+ &lt;/log4net&gt;
+&lt;/configuration&gt;</programlisting>
+      </example>
+
+      <para>To log all Prepared SQL command text, enable the logger for
+      <classname>IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory</classname>.
+      To log cache usage, enable the logger for
+      <classname>IBatisNet.DataMapper.Configuration.Cache.CacheModel</classname>.
+      To log lazyload usage, enable the logger for
+      <classname>IBatisNet.DataMapper.LazyLoadList</classname>.</para>
+    </sect2>
+  </sect1>
+</chapter>

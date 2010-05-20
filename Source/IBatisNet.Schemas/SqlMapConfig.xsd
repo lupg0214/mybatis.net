@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="alias">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="typeAlias"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="dataSource">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="connectionString" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="database">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="provider"/>
+				<xs:element ref="dataSource"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="properties">
+		<xs:complexType>
+			<xs:attribute name="resource" type="xs:string"/>
+			<xs:attribute name="url" type="xs:string"/>
+			<xs:attribute name="embeded" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="provider">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="setting">
+		<xs:complexType>
+			<xs:attribute name="useStatementNamespaces" type="xs:boolean"/>
+			<xs:attribute name="cacheModelsEnabled" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="settings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="setting" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sqlMap">
+		<xs:complexType>
+			<xs:attribute name="resource" type="xs:string"/>
+			<xs:attribute name="url" type="xs:string"/>
+			<xs:attribute name="embeded" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sqlMapConfig">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="settings" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="properties" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="database" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="alias" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="sqlMaps" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sqlMaps">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sqlMap" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="typeAlias">
+		<xs:complexType>
+			<xs:attribute name="alias" type="xs:string" use="required"/>
+			<xs:attribute name="type" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
