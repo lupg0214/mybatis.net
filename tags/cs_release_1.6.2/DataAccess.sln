@@ -1,0 +1,53 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisNet.DataAccess", "IBatisNet.DataAccess\IBatisNet.DataAccess.csproj", "{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisNet.Common", "IBatisNet.Common\IBatisNet.Common.csproj", "{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisNet.DataMapper", "IBatisNet.DataMapper\IBatisNet.DataMapper.csproj", "{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisNet.DataAccess.Test", "IBatisNet.DataAccess.Test\IBatisNet.DataAccess.Test.csproj", "{888FE332-F7B7-4248-AEE1-73E14EB9C042}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisNet.Common.Logging.Log4Net", "IBatisNet.Common.Logging.Log4Net\IBatisNet.Common.Logging.Log4Net.csproj", "{023FE8D7-7E1A-4DDF-A0EA-8FB0E1B3122B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}.Debug.ActiveCfg = Debug|.NET
+		{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}.Debug.Build.0 = Debug|.NET
+		{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}.Release.ActiveCfg = Release|.NET
+		{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}.Release.Build.0 = Release|.NET
+		{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}.Debug.ActiveCfg = Debug|.NET
+		{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}.Debug.Build.0 = Debug|.NET
+		{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}.Release.ActiveCfg = Release|.NET
+		{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}.Release.Build.0 = Release|.NET
+		{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}.Debug.ActiveCfg = Debug|.NET
+		{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}.Debug.Build.0 = Debug|.NET
+		{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}.Release.ActiveCfg = Release|.NET
+		{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}.Release.Build.0 = Release|.NET
+		{888FE332-F7B7-4248-AEE1-73E14EB9C042}.Debug.ActiveCfg = Debug|.NET
+		{888FE332-F7B7-4248-AEE1-73E14EB9C042}.Debug.Build.0 = Debug|.NET
+		{888FE332-F7B7-4248-AEE1-73E14EB9C042}.Release.ActiveCfg = Release|.NET
+		{888FE332-F7B7-4248-AEE1-73E14EB9C042}.Release.Build.0 = Release|.NET
+		{023FE8D7-7E1A-4DDF-A0EA-8FB0E1B3122B}.Debug.ActiveCfg = Debug|.NET
+		{023FE8D7-7E1A-4DDF-A0EA-8FB0E1B3122B}.Debug.Build.0 = Debug|.NET
+		{023FE8D7-7E1A-4DDF-A0EA-8FB0E1B3122B}.Release.ActiveCfg = Release|.NET
+		{023FE8D7-7E1A-4DDF-A0EA-8FB0E1B3122B}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
