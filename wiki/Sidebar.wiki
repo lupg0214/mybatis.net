@@ -3,4 +3,9 @@
 == Pages ==
 
   * [Welcome]
-  * [List]
+  * [http://code.google.com/p/mybatisnet/w/list List]
+
+== Documentation ==
+
+  * Doc 1
+  * Doc 2
