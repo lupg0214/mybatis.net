@@ -1,0 +1,85 @@
+
+----------------------------------------
+************** SCHEDULED **************
+----------------------------------------
+
+
+DataMapper 1.2.1
+--------------------
+ + Include Sample-SqlMap.config file
+ + providers.config file needs to have enabled="false" for all providers except sqlServer1.1, OleDb, and Odbc
+ + Release DataMapper Guide 1.2.1
+
+
+DataAccess 1.6.1
+--------------------
+ + Include Sample-dao.config file
+ + providers.config file needs to have enabled="false" for all providers except sqlServer1.1, OleDb, and Odbc
+ + Release DataAccess Guide 1.6.1
+
+
+Source 
+--------------------
+ + DataAccess to have updated Castle.DynamicProxy assembly (but NHibernate dependency!)
+
+
+Tutorial 1.?
+--------------------
+
+ + New Release of Doc (using docs/tutorial) and Solution (source)
+
+
+NPetshop 1.?
+--------------------
+
+ + Update?
+
+
+
+----------------------------------------
+************* UNSCHEDULED *************
+----------------------------------------
+
+
+DataMapper
+--------------------
+
+MySql/MySql 1.0.4
+ + ICloneable exception with no connectionstring
+
+Oracle/ODP.NET 10g
+ + ResultClassTest.TestSingle invalid cast provider/db issue
+ + ResultClassTest.TestDouble invalid cast provider/db issue
+
+PostgreSQL/Npgsql 0.7
+ + StatementGenerate.TestSelectByPK
+ + Add Stored function NUnit tests
+
+Firebird/Firebird 1.7
+ + ICloneable exception with no connectionstring
+
+Clover.NET
+ + Add NUnit tests to cover IBatisNet.Common.Exceptions
+ + Add NUnit tests to cover LRU Cache
+ + Add NUnit tests to cover FIFO Cache
+
+
+DataAccess
+--------------------
+
+ + Castle.DynamicProxy update (tested?)
+ + Merge with DataMapper NUnit tests or keep seperate and update (need to add PostgreSQL!)?
+ + Create NHibernate stub classes/methods
+
+
+Docs
+--------------------
+ + Add more .NET DataMapper coding examples (at least the code!)
+
+
+Wiki
+--------------------
+
+ + DONE FAQ Explanation for Oracle and multiple SQL statements in one <statement> (as in TestDeleteWithComments)
+ + FAQ CTH explanation for Oracle ODP.NET 10g and Boolean parameters
+ + FAQ CTH explanation for Oracle Decimals and Hashtable resultClass

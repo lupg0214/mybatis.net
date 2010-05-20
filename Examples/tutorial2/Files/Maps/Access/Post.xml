@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap 
+	namespace="Post" 
+	xmlns="http://ibatis.apache.org/mapping" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<alias>
+		<typeAlias alias="Post" type="Tutorial2.Domain.Post, Tutorial2.Domain" />
+	</alias>
+
+	<resultMaps>
+		<resultMap id="Post-Result" class="Post">
+			<result property="_id" column="ID" />
+			<result property="Title" column="Title" />
+			<result property="Content" column="Content" />
+			<result property="Date" column="Date" />
+		</resultMap>
+	</resultMaps>
+
+	<statements>
+
+    <select id="Post-Select" parameterClass="Post" resultMap="Post-Result">
+      SELECT *
+      FROM [Posts]
+      WHERE
+      ([ID] = #Id#)
+    </select>
+
+    <select id="Post-Fill" parameterClass="int" resultMap="Post-Result" >
+      SELECT *
+      FROM [Posts]
+      WHERE
+      ([BlogID] = #Id#)
+    </select>
+
+
+    <insert id="Post-Insert" parameterClass="Post">
+      INSERT INTO [Posts] (
+      [BlogID],
+      [Title],
+      [Content],
+      [Date]
+      ) VALUES (
+      #Blog.Id#,
+      #Title#,
+      #Content#,
+      #Date:Date#
+      )
+
+      <selectKey resultClass="int" property="_id" type="post">
+				select @@IDENTITY
+			</selectKey>
+		</insert>
+
+
+    <update id="Post-Update" parameterClass="Post">
+      UPDATE [Posts] SET
+      [Title] = #Title#,
+      [Content] = #Content#,
+      [Date] = #Date:Date#
+      WHERE
+      ([ID] = #Id#)
+    </update>
+
+		<delete id="Post-Delete" parameterClass="Post">
+      DELETE FROM [Posts]
+      WHERE
+      ([ID] = #Id#)
+    </delete>
+	</statements>
+</sqlMap>

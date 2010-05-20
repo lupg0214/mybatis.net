@@ -1,0 +1,254 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{CD60B882-160E-4BC9-A580-3A8079A60499}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "NPetshop.Persistence"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "NPetshop.Persistence"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "D:\WINNT\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "D:\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "D:\WINNT\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "NPetshop.Domain"
+                    Project = "{7D1DA776-6341-43C8-B9C7-8FA344996665}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "IBatisNet.DataAccess"
+                    AssemblyName = "IBatisNet.DataAccess"
+                    HintPath = "..\External-bin\IBatisNet.DataAccess.dll"
+                />
+                <Reference
+                    Name = "IBatisNet.Common"
+                    AssemblyName = "IBatisNet.Common"
+                    HintPath = "..\External-bin\IBatisNet.Common.dll"
+                />
+                <Reference
+                    Name = "IBatisNet.DataMapper"
+                    AssemblyName = "IBatisNet.DataMapper"
+                    HintPath = "..\External-bin\IBatisNet.DataMapper.dll"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "dao.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "providers.config"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SqlMap.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Ddl\MSSQL\DataLoad.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Ddl\MSSQL\DBUser.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Ddl\MSSQL\Schema.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Ddl\MySQL\DataLoad.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Ddl\MySQL\DBUser.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Ddl\MySQL\Schema.sql"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Interfaces\ISequenceDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Interfaces\Accounts\IAccountDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Interfaces\Billing\IOrderDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Interfaces\Catalog\ICategoryDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Interfaces\Catalog\IItemDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Interfaces\Catalog\IProductDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MapperDao\BaseSqlMapDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MapperDao\SequenceSqlMapDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MapperDao\Accounts\AccountSqlMapDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MapperDao\Billing\OrderSqlMapDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MapperDao\Billing\MSSQL\OrderSqlMapDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MapperDao\Billing\MSSQL\SequenceSqlMapDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MapperDao\Catalog\CategorySqlMapDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MapperDao\Catalog\ItemSqlMapDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MapperDao\Catalog\ProductSqlMapDao.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Maps\Account.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Category.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Item.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\LineItem.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Order.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Product.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Maps\Sequence.xml"
+                    BuildAction = "Content"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

@@ -1,0 +1,2199 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IBatisNet.Common</name>
+    </assembly>
+    <members>
+        <member name="T:IBatisNet.Common.Exceptions.ConfigurationException">
+            <summary>
+            A ConfigurationException is thrown when an error has occured in the configuration process.
+            </summary>
+            <remarks>
+            When this exception occurs check the .xml or .config file.
+            </remarks>
+        </member>
+        <member name="T:IBatisNet.Common.Exceptions.IBatisNetException">
+            <summary>
+            The DalException is thrown when an error in the Dal occurs.
+            </summary>
+            <remarks>
+            This is the base exception for all exceptions thrown in the framework. 
+            </remarks>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.IBatisNetException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.IBatisNetException"/> class.
+            </summary>
+            <remarks>
+            This constructor initializes the <para>Message</para> property of the new instance 
+            to a system-supplied message that describes the error.
+            </remarks>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.IBatisNetException.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.IBatisNetException"/> 
+            class with a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <remarks>
+            This constructor initializes the Message property of the new instance 
+            using the message parameter.
+            </remarks>
+            <param name="ex">
+            The exception that is the cause of the current exception. 
+            If the innerException parameter is not a null reference (Nothing in Visual Basic), 
+            the current exception is raised in a catch block that handles the inner exception.
+            </param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.IBatisNetException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.IBatisNetException"/> 
+            class with a specified error message.
+            </summary>
+            <remarks>
+            This constructor initializes the Message property of the new instance to 
+            the Message property of the passed in exception. 
+            </remarks>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.IBatisNetException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.IBatisNetException"/> 
+            class with a specified error message and a reference to the inner exception 
+            that is the cause of this exception.
+            </summary>
+            <remarks>
+            An exception that is thrown as a direct result of a previous exception should include a reference to the previous 
+            exception in the InnerException property. 
+            The InnerException property returns the same value that is passed into the constructor, or a null reference 
+            (Nothing in Visual Basic) if the InnerException property does not supply the inner exception value to the constructor.
+            </remarks>
+            <param name="message">The message that describes the error.</param>
+            <param name="inner">The exception that caused the error</param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.IBatisNetException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.IBatisNetException"/> 
+            class with serialized data.
+            </summary>
+            <remarks>
+            This constructor is called during deserialization to reconstitute the 
+            exception object transmitted over a stream.
+            </remarks>
+            <param name="info">
+            The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized 
+            object data about the exception being thrown.
+            </param>
+            <param name="context">
+            The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual 
+            information about the source or destination. 
+            </param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ConfigurationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.ConfigurationException"/> class.
+            </summary>
+            <remarks>
+            This constructor initializes the Message property of the new instance to a system-supplied message 
+            that describes the error. 
+            </remarks>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ConfigurationException.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.ConfigurationException"/> 
+            class with a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <remarks>
+            This constructor initializes the Message property of the new instance to the Message property 
+            of the passed in exception. 
+            </remarks>
+            <param name="ex">
+            The exception that is the cause of the current exception. 
+            If the innerException parameter is not a null reference (Nothing in Visual Basic), 
+            the current exception is raised in a catch block that handles the inner exception.
+            </param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ConfigurationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.ConfigurationException"/> 
+            class with a specified error message.
+            </summary>
+            <remarks>
+            This constructor initializes the Message property of the new instance using 
+            the message parameter.
+            </remarks>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ConfigurationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.ConfigurationException"/> 
+            class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <remarks>
+            An exception that is thrown as a direct result of a previous exception should include a reference to the previous exception in the InnerException property. 
+            The InnerException property returns the same value that is passed into the constructor, or a null reference (Nothing in Visual Basic) if the InnerException property does not supply the inner exception value to the constructor.
+            </remarks>
+            <param name="message">The message that describes the error.</param>
+            <param name="inner">The exception that caused the error</param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ConfigurationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the Exception class with serialized data.
+            </summary>
+            <remarks>
+            This constructor is called during deserialization to reconstitute the exception 
+            object transmitted over a stream.
+            </remarks>
+            <param name="info">
+            The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.
+            </param>
+            <param name="context">
+            The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination. 
+            </param>
+        </member>
+        <member name="T:IBatisNet.Common.Exceptions.ForeignKeyException">
+            <summary>
+            A DALForeignKeyException is thrown when foreign key error occured in a sql statement.
+            </summary>
+            <remarks>
+            This exception is not used by the framework.
+            </remarks>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ForeignKeyException.#ctor">
+            <summary>
+            Initializes a new instance of the <b>DalException</b> class.
+            </summary>
+            <remarks>
+            This constructor initializes the <para>Message</para> property of the new instance 
+            to a system-supplied message that describes the error.
+            </remarks>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ForeignKeyException.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.ForeignKeyException"/> 
+            class with a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <remarks>
+            This constructor initializes the Message property of the new instance to the Message property 
+            of the passed in exception. 
+            </remarks>
+            <param name="ex">
+            The exception that is the cause of the current exception. 
+            If the innerException parameter is not a null reference (Nothing in Visual Basic), 
+            the current exception is raised in a catch block that handles the inner exception.
+            </param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ForeignKeyException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.ForeignKeyException"/> 
+            class with a specified error message.
+            </summary>
+            <remarks>
+            This constructor initializes the Message property of the new instance using 
+            the message parameter.
+            </remarks>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ForeignKeyException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.ForeignKeyException"/> 
+            class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <remarks>
+            An exception that is thrown as a direct result of a previous exception should include a reference to the previous exception in the InnerException property. 
+            The InnerException property returns the same value that is passed into the constructor, or a null reference (Nothing in Visual Basic) if the InnerException property does not supply the inner exception value to the constructor.
+            </remarks>
+            <param name="message">The message that describes the error.</param>
+            <param name="inner">The exception that caused the error</param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ForeignKeyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the Exception class with serialized data.
+            </summary>
+            <remarks>
+            This constructor is called during deserialization to reconstitute the exception 
+            object transmitted over a stream.
+            </remarks>
+            <param name="info">
+            The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.
+            </param>
+            <param name="context">
+            The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination. 
+            </param>
+        </member>
+        <member name="T:IBatisNet.Common.Exceptions.ProbeException">
+            <summary>
+            Summary description for ProbeException.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ProbeException.#ctor">
+            <summary>
+            Initializes a new instance of the <b>ProbeException</b> class.
+            </summary>
+            <remarks>
+            This constructor initializes the <para>Message</para> property of the new instance 
+            to a system-supplied message that describes the error.
+            </remarks>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ProbeException.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.ProbeException"/> 
+            class with a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <remarks>
+            This constructor initializes the Message property of the new instance to the Message property 
+            of the passed in exception. 
+            </remarks>
+            <param name="ex">
+            The exception that is the cause of the current exception. 
+            If the innerException parameter is not a null reference (Nothing in Visual Basic), 
+            the current exception is raised in a catch block that handles the inner exception.
+            </param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ProbeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.ProbeException"/> 
+            class with a specified error message.
+            </summary>
+            <remarks>
+            This constructor initializes the Message property of the new instance using 
+            the message parameter.
+            </remarks>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ProbeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.Common.Exceptions.ProbeException"/> 
+            class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <remarks>
+            An exception that is thrown as a direct result of a previous exception should include a reference to the previous exception in the InnerException property. 
+            The InnerException property returns the same value that is passed into the constructor, or a null reference (Nothing in Visual Basic) if the InnerException property does not supply the inner exception value to the constructor.
+            </remarks>
+            <param name="message">The message that describes the error.</param>
+            <param name="inner">The exception that caused the error</param>
+        </member>
+        <member name="M:IBatisNet.Common.Exceptions.ProbeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the Exception class with serialized data.
+            </summary>
+            <remarks>
+            This constructor is called during deserialization to reconstitute the exception 
+            object transmitted over a stream.
+            </remarks>
+            <param name="info">
+            The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.
+            </param>
+            <param name="context">
+            The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination. 
+            </param>
+        </member>
+        <member name="T:IBatisNet.Common.Logging.IDbConnectionProxy">
+            <summary>
+            Summary description for IDbConnectionProxy.
+            </summary>
+            <remarks>Not used.</remarks>
+        </member>
+        <member name="M:IBatisNet.Common.Logging.IDbConnectionProxy.#ctor(System.Data.IDbConnection,IBatisNet.Common.Provider)">
+            <summary>
+            Constructor for a connection proxy
+            </summary>
+            <param name="connection">The connection which been proxified.</param>
+            <param name="provider">The provider used</param>
+        </member>
+        <member name="M:IBatisNet.Common.Logging.IDbConnectionProxy.NewInstance(System.Data.IDbConnection,IBatisNet.Common.Provider)">
+            <summary>
+            Static constructor
+            </summary>
+            <param name="connection">The connection which been proxified.</param>
+            <param name="provider">The provider used</param>
+            <returns>A proxy</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Logging.IDbConnectionProxy.Intercept(Castle.DynamicProxy.IInvocation,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="invocation"></param>
+            <param name="arguments"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IBatisNet.Common.Pagination.IPaginatedList">
+            <summary>
+            Summary description for IPaginatedList.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.IPaginatedList.NextPage">
+            <summary>
+            Moves to the next page after the current page.  If the current
+            page is the last page, wrap to the first page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.IPaginatedList.PreviousPage">
+            <summary>
+            Moves to the page before the current page.  If the current
+            page is the first page, wrap to the last page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.IPaginatedList.GotoPage(System.Int32)">
+            <summary>
+            Moves to a specified page.  If the specified
+            page is beyond the last page, wrap to the first page.
+            If the specified page is before the first page, wrap
+            to the last page.
+            </summary>
+            <param name="pageIndex">The index of the specified page.</param>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.IPaginatedList.PageSize">
+            <summary>
+            The maximum number of items per page.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.IPaginatedList.IsFirstPage">
+            <summary>
+            Is the current page the first page ?
+            True if the current page is the first page or if only
+            a single page exists.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.IPaginatedList.IsMiddlePage">
+            <summary>
+            Is the current page a middle page (i.e. not first or last) ?
+            Return True if the current page is not the first or last page,
+            and more than one page exists (always returns false if only a
+            single page exists).
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.IPaginatedList.IsLastPage">
+            <summary>
+            Is the current page the last page ?
+            Return True if the current page is the last page or if only
+            a single page exists.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.IPaginatedList.IsNextPageAvailable">
+            <summary>
+            Is a page available after the current page ?
+            Return True if the next page is available
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.IPaginatedList.IsPreviousPageAvailable">
+            <summary>
+            Is a page available before the current page ?
+            Return True if the previous page is available
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.IPaginatedList.PageIndex">
+            <summary>
+            Returns the current page index, which is a zero based integer.
+            All paginated list implementations should know what index they are
+            on, even if they don't know the ultimate boundaries (min/max)
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Pagination.PaginatedArrayList">
+            <summary>
+            Summary description for PaginatedArrayList.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.#ctor(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="initialCapacity"></param>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.#ctor(System.Collections.ICollection,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="c"></param>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.Repaginate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.SubList(System.Collections.IList,System.Int32,System.Int32)">
+            <summary>
+            Provides a view of the IList pramaeter 
+            from the specified position <paramref name="fromIndex"/> 
+            to the specified position <paramref name="toIndex"/>. 
+            </summary>
+            <param name="list">The IList elements.</param>
+            <param name="fromIndex">Starting position for the view of elements. </param>
+            <param name="toIndex">Ending position for the view of elements. </param>
+            <returns> A view of list.
+            </returns>
+            <remarks>
+            The list that is returned is just a view, it is still backed
+            by the orignal list.  Any changes you make to it will be 
+            reflected in the orignal list.
+            </remarks>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.NextPage">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.PreviousPage">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.GotoPage(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="pageIndex"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.RemoveAt(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.Insert(System.Int32,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.Remove(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.Contains(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.IndexOf(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.Add(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.CopyTo(System.Array,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.Reset">
+            <summary>
+            Sets the enumerator to its initial position, 
+            which is before the first element in the collection.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Pagination.PaginatedArrayList.MoveNext">
+            <summary>
+            Advances the enumerator to the next element of the collection.
+            </summary>
+            <returns>
+            true if the enumerator was successfully advanced to the next element; 
+            false if the enumerator has passed the end of the collection.
+            </returns>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.IsEmpty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.PageSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.IsFirstPage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.IsMiddlePage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.IsLastPage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.IsNextPageAvailable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.IsPreviousPageAvailable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.PageIndex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.IsReadOnly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.IsFixedSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.IsSynchronized">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.SyncRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Pagination.PaginatedArrayList.Current">
+            <summary>
+            Gets the current element in the page.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Transaction.IsolationLevel">
+            <summary>
+            Specifies the isolation level of a transaction.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.IsolationLevel.Serializable">
+            <summary>
+            Volatile data can be read but not modified, 
+            and no new data can be added during the transaction.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.IsolationLevel.RepeatableRead">
+            <summary>
+            Volatile data can be read but not modified during the transaction. 
+            New data may be added during the transaction.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.IsolationLevel.ReadCommitted">
+            <summary>
+            Volatile data cannot be read during the transaction, but can be modified.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.IsolationLevel.ReadUncommitted">
+            <summary>
+            Volatile data can be read and modified during the transaction.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.IsolationLevel.Unspecified">
+            <summary>
+            Volatile data can be read but not modified, 
+            and no new data can be added during the transaction.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Transaction.TransactionOptions">
+            <summary>
+            Contains parameters that specify Transaction behaviors.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.TransactionOptions.TimeOut">
+            <summary>
+            Length of time that the transaction waits before automatically 
+            closing itself
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.TransactionOptions.IsolationLevel">
+            <summary>
+            The isolation level of the transaction.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Transaction.TransactionScope">
+            <summary>
+            Simple interface to COM+ transactions through Enterprise Service. 
+            Makes a code block transactional à la Indigo (evolution will be easier, it's the same API)
+            It's important to make sure that each instance 
+            of this class gets Close()'d. 
+            Easiest way to do that is with the using statement in C#.
+            </summary>
+            <remarks>
+            Don't support nested transaction scope with different transaction options.
+             
+            System.EnterpriseServices.ServiceDomain is available only on 
+            - XP SP2 (or higher) 
+            - Windows Server 2003 
+            - XP SP1 + Hotfix 828741 
+            and only in .Net 1.1.
+            It CAN'T be used on Windows 2000.
+            
+            http://support.microsoft.com/default.aspx/kb/319177/EN-US/
+            </remarks>
+            <example>
+            using (TransactionScope tx = new TransactionScope())
+            {
+            	
+            	// Open connection to database 1	
+            	// Transaction will be automatically enlist into it
+            	// Execute update in database 1
+            	// Open connection to database 2
+            	// Transaction will be automatically enlist into it
+            	// Execute update in database 2
+            
+            	// the following code will be executed only if no exception
+            	// occured in the above code; since we got here ok, let's vote for commit;
+            	tx.Completed(); 
+            }
+            when “using” call Dispose on the transaction scope at the end
+            of the “using” code block, the "ambient" transaction will be commited only and only if
+            the Completed method have been called.
+            </example>
+        </member>
+        <member name="M:IBatisNet.Common.Transaction.TransactionScope.#ctor">
+            <summary>
+            Creates a new instance with a TransactionScopeOptions.Required 
+            and TransactionOptions.IsolationLevel.ReadCommitted.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Transaction.TransactionScope.#ctor(IBatisNet.Common.Transaction.TransactionScopeOptions)">
+            <summary>
+            Creates a new instance with the specified TransactionScopeOptions
+             and TransactionOptions.IsolationLevel.ReadCommitted.
+            </summary>
+            <param name="txScopeOptions">The specified TransactionScopeOptions</param>
+        </member>
+        <member name="M:IBatisNet.Common.Transaction.TransactionScope.#ctor(IBatisNet.Common.Transaction.TransactionScopeOptions,IBatisNet.Common.Transaction.TransactionOptions)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="txScopeOptions">The specified TransactionScopeOptions.</param>
+            <param name="options">The specified TransactionOptions.</param>
+        </member>
+        <member name="M:IBatisNet.Common.Transaction.TransactionScope.EnterTransactionContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Transaction.TransactionScope.TransactionScopeOptions2TransactionOption(IBatisNet.Common.Transaction.TransactionScopeOptions)">
+            <summary>
+            Give the correpondance of a TransactionScopeOptions (à la Indigo) object in a TransactionOption (COM+) object
+            </summary>
+            <param name="transactionScopeOptions">The TransactionScopeOptions to macth.</param>
+            <returns>The TransactionOption correspondance</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Transaction.TransactionScope.IsolationLevel2TransactionIsolationLevel(IBatisNet.Common.Transaction.IsolationLevel)">
+            <summary>
+            Give the correpondance of a TransactionIsolationLevel (à la Indigo) object in a IsolationLevel (COM+) object
+            </summary>
+            <param name="isolation">The IsolationLevel to macth.</param>
+            <returns>The TransactionIsolationLevel correspondance</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Transaction.TransactionScope.Close">
+            <summary>
+            Close the TransactionScope
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Transaction.TransactionScope.Complete">
+            <summary>
+            Complete (commit) a transsaction
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Transaction.TransactionScope.System#IDisposable#Dispose">
+            <summary>
+            Implementation of IDisposable so that this class 
+            can be used with C#'s using statement.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Transaction.TransactionScope.Consistent">
+            <summary>
+            Changes the vote to commit (true) or to abort (false).
+            If all the TransactionScope instances involved in a 
+            transaction have voted to commit, then the entire thing is committed.
+            If any TransactionScope instances involved in a 
+            transaction vote to abort, then the entire thing is aborted.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Transaction.TransactionScope.TransactionScopeCount">
+            <summary>
+            Count of the TransactionScope that have been open.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Transaction.TransactionScope.IsInTransaction">
+            <summary>
+            Returns whether or not the current thread is in a transaction context.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Transaction.TransactionScope.IsVoteCommit">
+            <summary>
+            Gets the current value of the vote.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Transaction.TransactionScopeOptions">
+            <summary>
+            Describes how a transaction scope is associated with a transaction.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.TransactionScopeOptions.Required">
+            <summary>
+            The transaction scope must be associated with a transaction.
+            If we are in a transaction scope join it. If we aren't, create a new one.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.TransactionScopeOptions.RequiresNew">
+            <summary>
+            Always creates a new transaction scope.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.TransactionScopeOptions.Supported">
+            <summary>
+            Don't need a transaction scope, but if we are in a transaction scope then join it.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.TransactionScopeOptions.NotSupported">
+            <summary>
+            Means that cannot cannot be associated with a transaction scope.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Transaction.TransactionScopeOptions.Mandatory">
+            <summary>
+            The transaction scope must be associated with an existing transaction scope.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.Objects.ObjectProbe">
+            <summary>
+            Description résumée de ObjectProbe.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.GetReadablePropertyNames(System.Object)">
+            <summary>
+            Returns an array of the readable properties names exposed by an object
+            </summary>
+            <param name="obj">The object</param>
+            <returns>The properties name</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.GetWriteablePropertyNames(System.Object)">
+            <summary>
+            Returns an array of the writeable properties name exposed by a object
+            </summary>
+            <param name="obj">The object</param>
+            <returns>The properties name</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.GetPropertyTypeForSetter(System.Object,System.String)">
+            <summary>
+             Returns the type that the set expects to receive as a parameter when
+             setting a property value.
+            </summary>
+            <param name="obj">The object to check</param>
+            <param name="propertyName">The name of the property</param>
+            <returns>The type of the property</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.GetPropertyTypeForSetter(System.Type,System.String)">
+            <summary>
+             Returns the type that the set expects to receive as a parameter when
+             setting a property value.
+            </summary>
+            <param name="type">The type to check</param>
+            <param name="propertyName">The name of the property</param>
+            <returns>The type of the property</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.GetPropertyTypeForGetter(System.Object,System.String)">
+            <summary>
+             Returns the type that the get expects to receive as a parameter when
+             setting a property value.
+            </summary>
+            <param name="obj">The object to check</param>
+            <param name="propertyName">The name of the property</param>
+            <returns>The type of the property</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.GetPropertyTypeForGetter(System.Type,System.String)">
+            <summary>
+             Returns the type that the get expects to receive as a parameter when
+             setting a property value.
+            </summary>
+            <param name="type">The type to check</param>
+            <param name="propertyName">The name of the property</param>
+            <returns>The type of the property</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.GetProperty(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.SetProperty(System.Object,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.GetPropertyValue(System.Object,System.String)">
+            <summary>
+            Return the specified property on an object. 
+            </summary>
+            <param name="obj">The Object on which to invoke the specified property.</param>
+            <param name="propertyName">The name of the property.</param>
+            <returns>An Object representing the return value of the invoked property.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.SetPropertyValue(System.Object,System.String,System.Object)">
+            <summary>
+            Set the specified property on an object 
+            </summary>
+            <param name="obj">The Object on which to invoke the specified property.</param>
+            <param name="propertyName">The name of the property to set.</param>
+            <param name="propertyValue">The new value to set.</param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.HasWritableProperty(System.Object,System.String)">
+            <summary>
+            Checks to see if a Object has a writable property/field be a given name
+            </summary>
+            <param name="obj"> The object to check</param>
+            <param name="propertyName">The property to check for</param>
+            <returns>True if the property exists and is writable</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.HasReadableProperty(System.Object,System.String)">
+            <summary>
+            Checks to see if the Object have a property/field be a given name.
+            </summary>
+            <param name="obj">The Object on which to invoke the specified property.</param>
+            <param name="propertyName">The name of the property to check for.</param>
+            <returns>
+            True or false if the property exists and is readable.
+            </returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.IsSimpleType(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.ObjectHashCode(System.Object)">
+            <summary>
+             Calculates a hash code for all readable properties of a object.
+            </summary>
+            <param name="obj">The object to calculate the hash code for.</param>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ObjectProbe.ObjectHashCode(System.Object,System.String[])">
+            <summary>
+            Calculates a hash code for a subset of the readable properties of a object.
+            </summary>
+            <param name="obj">The object to calculate the hash code for.</param>
+            <param name="properties">A list of the properties to hash.</param>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.Objects.ReflectionInfo">
+            <summary>
+            This class represents a cached set of class definition information that
+            allows for easy mapping between property names and get/set methods.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.Objects.ReflectionInfo.BINDING_FLAGS_GET">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.Objects.ReflectionInfo.BINDING_FLAGS_SET">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.#cctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.#ctor(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.AddPropertiess(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.GetSetter(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.GetGetter(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.GetSetterType(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.GetGetterType(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.GetReadablePropertyNames">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.GetWriteablePropertyNames">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.HasWritableProperty(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.HasReadableProperty(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.IsKnownType(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Objects.ReflectionInfo.GetInstance(System.Type)">
+            <summary>
+            Gets an instance of ReflectionInfo for the specified type.
+            </summary>summary>
+            <param name="type">The type for which to lookup the method cache.</param>
+            <returns>The properties cache for the type</returns>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.Objects.ReflectionInfo.ClassName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.TypesResolver.CachedTypeResolver">
+            <summary>
+            Summary description for CachedTypeResolver.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.TypesResolver.TypeResolver">
+            <summary>
+            Resolves a <see cref="T:System.Type"/> by name.
+            </summary>
+            <remarks>
+            <p>
+            The rationale behind the creation of this class is to centralise the
+            resolution of type names to <see cref="T:System.Type"/> instances beyond that
+            offered by the plain vanilla <see cref="M:System.Type.GetType(System.String,System.Boolean,System.Boolean)"/> method call.
+            </p>
+            </remarks>
+            <version>$Id: TypeResolver.cs,v 1.5 2004/09/28 07:51:47 springboy Exp $</version>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.TypesResolver.TypeResolver.#ctor">
+            <summary>
+            Creates a new instance of the TypeResolver class.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.TypesResolver.TypeResolver.Resolve(System.String)">
+            <summary>
+            Resolves the supplied type name into a <see cref="T:System.Type"/>
+            instance.
+            </summary>
+            <param name="typeName">
+            The (possibly partially assembly qualified) name of a <see cref="T:System.Type"/>.
+            </param>
+            <returns>
+            A resolved <see cref="T:System.Type"/> instance.
+            </returns>
+            <exception cref="T:System.TypeLoadException">
+            If the type could not be resolved.
+            </exception>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.TypesResolver.TypeResolver.TypeAssemblyInfo">
+            <summary>
+            Holds data about a <see cref="T:System.Type"/> and it's
+            attendant <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeResolver.TypeAssemblyInfo.TypeAssemblySeparator">
+            <summary>
+            The string that separates <see cref="T:System.Type"/> names
+            from their attendant <see cref="T:System.Reflection.Assembly"/>
+            names in an assembly qualified type name.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.TypesResolver.TypeResolver.TypeAssemblyInfo.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the TypeAssemblyInfo class.
+            </summary>
+            <param name="unresolvedTypeName">
+            The unresolved name of a <see cref="T:System.Type"/>.
+            </param>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.TypesResolver.TypeResolver.TypeAssemblyInfo.TypeName">
+            <summary>
+            The (unresolved) type name portion of the original type name.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.TypesResolver.TypeResolver.TypeAssemblyInfo.AssemblyName">
+            <summary>
+            The (unresolved, possibly partial) name of the attandant assembly.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.TypesResolver.TypeResolver.TypeAssemblyInfo.IsAssemblyQualified">
+            <summary>
+            Is the type name being resolved assembly qualified?
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.TypesResolver.TypeResolver.TypeAssemblyInfo.OriginalTypeName">
+            <summary>
+            The (possibly assembly qualified) <see cref="T:System.Type"/> name.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.TypesResolver.CachedTypeResolver.#ctor">
+            <summary>
+            Creates a new instance of the CachedTypeResolver class.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.TypesResolver.CachedTypeResolver.Resolve(System.String)">
+            <summary>
+            Resolves the supplied type name into a <see cref="T:System.Type"/>
+            instance.
+            </summary>
+            <param name="typeName">
+            The (possibly partially assembly qualified) name of a <see cref="T:System.Type"/>.
+            </param>
+            <returns>
+            A resolved <see cref="T:System.Type"/> instance.
+            </returns>
+            <exception cref="T:System.TypeLoadException">
+            If the type could not be resolved.
+            </exception>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.TypesResolver.CachedTypeResolver.TypeCache">
+            <summary>
+            The cache, mapping type names against a <see cref="T:System.Type"/>
+            instance.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver">
+            <summary>
+            Provides (and resolves) alias' for the common types.
+            </summary>
+            <remarks>
+            <p>
+            It's really just syntactic sugar so that a type definition
+            (in, say, a config file) can use 'int' instead of 'System.Int32'.
+            </p>
+            </remarks>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.ArrayListAlias1">
+            <summary>
+            The alias around the 'list' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.ArrayListAlias2">
+            <summary>
+            An other alias around the 'list' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.BoolAlias1">
+            <summary>
+            The alias around the 'bool' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.BoolAlias2">
+            <summary>
+            An other alias around the 'bool' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.ByteAlias">
+            <summary>
+            The alias around the 'byte' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.CharAlias">
+            <summary>
+            The alias around the 'char' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.DateAlias1">
+            <summary>
+            The alias around the 'DateTime' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.DateAlias2">
+            <summary>
+            An other alias around the 'DateTime' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.DecimalAlias">
+            <summary>
+            The alias around the 'decimal' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.DoubleAlias">
+            <summary>
+            The alias around the 'double' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.FloatAlias1">
+            <summary>
+            The alias around the 'float' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.FloatAlias2">
+            <summary>
+            An other alias around the 'float' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.GuidAlias">
+            <summary>
+            The alias around the 'guid' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.HashtableAlias1">
+            <summary>
+            The alias around the 'Hashtable' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.HashtableAlias2">
+            <summary>
+            An other alias around the 'Hashtable' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.HashtableAlias3">
+            <summary>
+            An other alias around the 'Hashtable' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.Int16Alias1">
+            <summary>
+            The alias around the 'short' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.Int16Alias2">
+            <summary>
+            An other alias around the 'short' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.Int32Alias1">
+            <summary>
+            The alias around the 'int' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.Int32Alias2">
+            <summary>
+            An other alias around the 'int' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.Int32Alias3">
+            <summary>
+            An other alias around the 'int' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.Int64Alias1">
+            <summary>
+            The alias around the 'long' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.Int64Alias2">
+            <summary>
+            An other alias around the 'long' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.UInt16Alias1">
+            <summary>
+            The alias around the 'unsigned short' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.UInt16Alias2">
+            <summary>
+            An other alias around the 'unsigned short' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.UInt32Alias1">
+            <summary>
+            The alias around the 'unsigned int' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.UInt32Alias2">
+            <summary>
+            An other alias around the 'unsigned int' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.UInt64Alias1">
+            <summary>
+            The alias around the 'unsigned long' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.UInt64Alias2">
+            <summary>
+            An other alias around the 'unsigned long' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.SByteAlias">
+            <summary>
+            The alias around the 'SByte' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.StringAlias">
+            <summary>
+            The alias around the 'string' type.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.TimeSpanAlias">
+            <summary>
+            The alias around the 'TimeSpan' type.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.#ctor">
+            <summary>
+            Creates a new instance of the TypeAliasFactory class.
+            </summary>
+            <remarks>
+            <p>
+            This is a utility class, and as such has no publicly visible
+            constructors.
+            </p>
+            </remarks>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.#cctor">
+            <summary>
+            Initialises the static properties of the TypeAliasResolver class.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.Resolve(System.String)">
+            <summary>
+            Resolves the supplied type name.
+            </summary>
+            <remarks>
+            <p>
+            If the supplied type name is an alias, the fully resolved
+            type name is returned. If no alias could be found that matches
+            the supplied type name, then the type name will be returned as is.
+            </p>
+            </remarks>
+            <param name="type">The supplied type name.</param>
+            <returns>
+            If the supplied type name is an alias, the fully resolved
+            type name is returned. If no alias could be found that matches
+            the supplied type name, then the type name will be returned as is.
+            </returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.TypesResolver.TypeAliasResolver.InstantiatePrimitiveType(System.TypeCode)">
+            <summary>
+            Instantiate a 'Primitive' Type.
+            </summary>
+            <param name="typeCode">a typeCode.</param>
+            <returns>An object.</returns>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.ConfigureHandler">
+            <summary>
+            Represents the method that handles calls from Configure.
+            </summary>
+            <remarks>
+            obj is a null object in a DaoManager context.
+            obj is the reconfigured sqlMap in a SqlMap context.
+            </remarks>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.StateConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.StateConfig.FileName">
+            <summary>
+            Master Config File name.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.StateConfig.ConfigureHandler">
+            <summary>
+            Delegate called when a file is changed, use it to rebuild.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.ConfigWatcherHandler">
+            <summary>
+            Class used to watch config files.
+            </summary>
+            <remarks>
+            Uses the <see cref="T:System.IO.FileSystemWatcher"/> to monitor
+            changes to a specified file. Because multiple change notifications
+            may be raised when the file is modified, a timer is used to
+            compress the notifications into a single event. The timer
+            waits for <see cref="F:IBatisNet.Common.Utilities.ConfigWatcherHandler.TimoutMillis"/> time before delivering
+            the event notification. If any further <see cref="T:System.IO.FileSystemWatcher"/>
+            change notifications arrive while the timer is waiting it
+            is reset and waits again for <see cref="F:IBatisNet.Common.Utilities.ConfigWatcherHandler.TimoutMillis"/> to
+            elaps.
+            </remarks>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.ConfigWatcherHandler.TimoutMillis">
+            <summary>
+            The default amount of time to wait after receiving notification
+            before reloading the config file.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.ConfigWatcherHandler._timer">
+            <summary>
+            The timer used to compress the notification events.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.ConfigWatcherHandler._filesToWatch">
+            <summary>
+            A list of configuration files to watch.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.ConfigWatcherHandler._filesWatcher">
+            <summary>
+            The list of FileSystemWatcher.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.ConfigWatcherHandler.#ctor(System.Threading.TimerCallback,IBatisNet.Common.Utilities.StateConfig)">
+             <summary>
+            -
+             </summary>
+             <param name="state">
+             Represent the call context of the SqlMap or DaoManager ConfigureAndWatch method call.
+             </param>
+             <param name="onWhatchedFileChange"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.ConfigWatcherHandler.AddFileToWatch(System.IO.FileInfo)">
+            <summary>
+            Add a file to be monitored.
+            </summary>
+            <param name="configFile"></param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.ConfigWatcherHandler.ClearFilesMonitored">
+            <summary>
+            Reset the list of files being monitored.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.ConfigWatcherHandler.ConfigWatcherHandler_OnChanged(System.Object,System.IO.FileSystemEventArgs)">
+            <summary>
+            Event handler used by <see cref="T:IBatisNet.Common.Utilities.ConfigWatcherHandler"/>.
+            </summary>
+            <param name="source">The <see cref="T:System.IO.FileSystemWatcher"/> firing the event.</param>
+            <param name="e">The argument indicates the file that caused the event to be fired.</param>
+            <remarks>
+            This handler reloads the configuration from the file when the event is fired.
+            </remarks>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.ConfigWatcherHandler.ConfigWatcherHandler_OnRenamed(System.Object,System.IO.RenamedEventArgs)">
+            <summary>
+            Event handler used by <see cref="T:IBatisNet.Common.Utilities.ConfigWatcherHandler"/>.
+            </summary>
+            <param name="source">The <see cref="T:System.IO.FileSystemWatcher"/> firing the event.</param>
+            <param name="e">The argument indicates the file that caused the event to be fired.</param>
+            <remarks>
+            This handler reloads the configuration from the file when the event is fired.
+            </remarks>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.DBHelperParameterCache">
+            <summary>
+            DBHelperParameterCache provides functions to leverage a 
+            static cache of procedure parameters, and the
+            ability to discover parameters for stored procedures at run-time.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.DBHelperParameterCache.DiscoverSpParameterSet(IBatisNet.Common.IDalSession,System.String,System.Boolean)">
+            <summary>
+            Resolve at run time the appropriate set of Parameters for a stored procedure
+            </summary>
+            <param name="session">a valid session</param>
+            <param name="spName">the name of the stored procedure</param>
+            <param name="includeReturnValueParameter">whether or not to include their return value parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.DBHelperParameterCache.InternalDiscoverSpParameterSet(IBatisNet.Common.Provider,System.Data.IDbConnection,System.String,System.Boolean)">
+            <summary>
+            resolve at run time the appropriate set of Parameters for a stored procedure
+            </summary>
+            <param name="provider"></param>
+            <param name="connection">a valid open IDbConnection</param>
+            <param name="spName">the name of the stored procedure</param>
+            <param name="includeReturnValueParameter">whether or not to include their return value parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.DBHelperParameterCache.CloneParameters(System.Data.IDataParameter[])">
+            <summary>
+            Deep copy of cached IDataParameter array.
+            </summary>
+            <param name="originalParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.DBHelperParameterCache.CacheParameterSet(System.String,System.String,System.Data.IDataParameter[])">
+            <summary>
+            Add parameter array to the cache
+            </summary>
+            <param name="connectionString">a valid connection string for an IDbConnection</param>
+            <param name="commandText">the stored procedure name or SQL command</param>
+            <param name="commandParameters">an array of IDataParameters to be cached</param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.DBHelperParameterCache.Clear">
+            <summary>
+            Clear the parameter cache.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.DBHelperParameterCache.GetCachedParameterSet(System.String,System.String)">
+            <summary>
+            retrieve a parameter array from the cache
+            </summary>
+            <param name="connectionString">a valid connection string for an IDbConnection</param>
+            <param name="commandText">the stored procedure name or SQL command</param>
+            <returns>an array of IDataParameters</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.DBHelperParameterCache.GetSpParameterSet(IBatisNet.Common.IDalSession,System.String)">
+            <summary>
+            Retrieves the set of IDataParameters appropriate for the stored procedure
+            </summary>
+            <remarks>
+            This method will query the database for this information, and then store it in a cache for future requests.
+            </remarks>
+            <param name="session">a valid session</param>
+            <param name="spName">the name of the stored procedure</param>
+            <returns>an array of IDataParameters</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.DBHelperParameterCache.GetSpParameterSet(IBatisNet.Common.IDalSession,System.String,System.Boolean)">
+            <summary>
+            Retrieves the set of IDataParameters appropriate for the stored procedure
+            </summary>
+            <remarks>
+            This method will query the database for this information, and then store it in a cache for future requests.
+            </remarks>
+            <param name="session">a valid csession</param>
+            <param name="spName">the name of the stored procedure</param>
+            <param name="includeReturnValueParameter">a bool value indicating whether the return value parameter should be included in the results</param>
+            <returns>an array of IDataParameters</returns>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.HashCodeProvider">
+            <summary>
+            Summary description for HashCodeProvider.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.HashCodeProvider.GetIdentityHashCode(System.Object)">
+            <summary>
+            Supplies a hash code for an object.
+            </summary>
+            <param name="obj">The object.</param>
+            <returns>A hash code</returns>
+            <remarks>
+            Buggy in .NET V1.0
+            .NET Fx v1.1 Update: 
+            As of v1.1 of the framework, there is a method System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(object) that does this as well.
+            I will not use to Keep compatiblity with .NET V1.0
+            </remarks>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.Resources">
+            <summary>
+            A class to simplify access to resources.
+            
+            The file can be loaded from the application root directory 
+            (use the resource attribute) 
+            or from any valid URL (use the url attribute). 
+            For example,to load a fixed path file, use:
+            &lt;properties url=”file:///c:/config/my.properties” /&gt;
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.Resources.PROTOCOL_SEPARATOR">
+            <summary>
+            Protocole separator
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetFileSystemResourceWithoutProtocol(System.String)">
+            <summary>
+            Strips protocol name from the resource name
+            </summary>
+            <param name="filePath">Name of the resource</param>
+            <returns>Name of the resource without protocol name</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetConfigAsXmlDocument(System.String)">
+            <summary>
+            Get config file
+            </summary>
+            <param name="resourcePath">
+            A config resource path.
+            </param>
+            <returns>An XmlDocument representation of the config file</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.FileExists(System.String)">
+            <summary>
+            Determines whether the specified file exists.
+            </summary>
+            <param name="filePath">The file to check.</param>
+            <returns>
+            true if the caller has the required permissions and path contains the name of an existing file
+            false if the caller has the required permissions and path doesn't contain the name of an existing file
+            else exception
+            </returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetAsXmlDocument(System.Xml.XmlNode,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Load an XML resource from a location specify by the node.
+            </summary>
+            <param name="node">An location node</param>
+            <param name="properties">the global properties</param>
+            <returns>Return the Xml document load.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetValueOfNodeResourceUrl(System.Xml.XmlNode,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Get the path resource of an url or resource location.
+            </summary>
+            <param name="node">The specification from where to load.</param>
+            <param name="properties">the global properties</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetStreamAsXmlDocument(System.IO.Stream)">
+            <summary>
+            Get XmlDocument from a stream resource
+            </summary>
+            <param name="resource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetFileInfoAsXmlDocument(System.IO.FileInfo)">
+            <summary>
+            Get XmlDocument from a FileInfo resource
+            </summary>
+            <param name="resource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetUriAsXmlDocument(System.Uri)">
+            <summary>
+            Get XmlDocument from a Uri resource
+            </summary>
+            <param name="resource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetResourceAsXmlDocument(System.String)">
+            <summary>
+            Get XmlDocument from relative (from root directory of the application) path resource
+            </summary>
+            <param name="resource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetUrlAsXmlDocument(System.String)">
+            <summary>
+            Get XmlDocument from absolute path resource
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetEmbeddedResourceAsXmlDocument(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.GetFileInfo(System.String)">
+            <summary>
+            Load a file from a given resource path
+            </summary>
+            <param name="resourcePath">
+            The resource path
+            </param>
+            <returns>return a FileInfo</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.ParsePropertyTokens(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Replace properties by their values in the given string
+            </summary>
+            <param name="str"></param>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.TypeForName(System.String)">
+            <summary>
+            Find a type by his class name
+            </summary>
+            <param name="className">The className ot the type to find.</param>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.Resources.ApplicationBase">
+            <summary>
+            The name of the directory containing the application
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.Resources.BaseDirectory">
+            <summary>
+            The name of the directory used to probe the assemblies.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.Resources.FileAssemblyInfo">
+            <summary>
+            Holds data about a <see cref="T:System.Type"/> and it's
+            attendant <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.Common.Utilities.Resources.FileAssemblyInfo.FileAssemblySeparator">
+            <summary>
+            The string that separates file name
+            from their attendant <see cref="T:System.Reflection.Assembly"/>
+            names in an assembly qualified type name.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.FileAssemblyInfo.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the FileAssemblyInfo class.
+            </summary>
+            <param name="unresolvedFileName">
+            The unresolved name of a <see cref="T:System.Type"/>.
+            </param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.Resources.FileAssemblyInfo.SplitFileAndAssemblyNames(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="originalFileName"></param>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.Resources.FileAssemblyInfo.ResourceFileName">
+            <summary>
+            The resource file name .
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.Resources.FileAssemblyInfo.OriginalFileName">
+            <summary>
+            The original name.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.Resources.FileAssemblyInfo.FileName">
+            <summary>
+            The file name portion.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.Resources.FileAssemblyInfo.AssemblyName">
+            <summary>
+            The (unresolved, possibly partial) name of the attandant assembly.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.Resources.FileAssemblyInfo.IsAssemblyQualified">
+            <summary>
+            Is the type name being resolved assembly qualified?
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.ScriptRunner">
+            <summary>
+            Description résumée de ScriptRunner.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.ScriptRunner.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.ScriptRunner.RunScript(IBatisNet.Common.DataSource,System.String)">
+            <summary>
+            Run an sql script
+            </summary>
+            <param name="dataSource">The dataSouce that will be used to run the script.</param>
+            <param name="sqlScriptPath">a path to an sql script file.</param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.ScriptRunner.RunScript(IBatisNet.Common.DataSource,System.String,System.Boolean)">
+            <summary>
+            Run an sql script
+            </summary>
+            <param name="dataSource">The dataSouce that will be used to run the script.</param>
+            <param name="sqlScriptPath">a path to an sql script file.</param>
+            <param name="doParse">parse out the statements in the sql script file.</param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.ScriptRunner.ExecuteStatements(IBatisNet.Common.DataSource,System.Collections.ArrayList)">
+            <summary>
+            Execute the given sql statements
+            </summary>
+            <param name="dataSource">The dataSouce that will be used.</param>
+            <param name="sqlStatements">An ArrayList of sql statements to execute.</param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.ScriptRunner.ParseScript(System.String)">
+            <summary>
+            Parse and tokenize the sql script into multiple statements
+            </summary>
+            <param name="script">the script to parse</param>
+        </member>
+        <member name="T:IBatisNet.Common.Utilities.StringTokenizer">
+            <summary>
+            A StringTokenizer java like object 
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.StringTokenizer.#ctor(System.String)">
+            <summary>
+            Constructs a StringTokenizer on the specified String, using the
+            default delimiter set (which is " \t\n\r\f").
+            </summary>
+            <param name="str">The input String</param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.StringTokenizer.#ctor(System.String,System.String)">
+            <summary>
+            Constructs a StringTokenizer on the specified String, 
+            using the specified delimiter set.
+            </summary>
+            <param name="str">The input String</param>
+            <param name="delimiters">The delimiter String</param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.StringTokenizer.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Constructs a StringTokenizer on the specified String, 
+            using the specified delimiter set.
+            </summary>
+            <param name="str">The input String</param>
+            <param name="delimiters">The delimiter String</param>
+            <param name="returnDelimiters">Returns delimiters as tokens or skip them</param>
+        </member>
+        <member name="M:IBatisNet.Common.Utilities.StringTokenizer.GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:IBatisNet.Common.Utilities.StringTokenizer.TokenNumber">
+            <summary>
+            Returns the number of tokens in the String using
+            the current deliminter set.  This is the number of times
+            nextToken() can return before it will generate an exception.
+            Use of this routine to count the number of tokens is faster
+            than repeatedly calling nextToken() because the substrings
+            are not constructed and returned for each token.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.DataSource">
+            <summary>
+            Information about a data source.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.DataSource.#ctor">
+            <summary>
+            Do not use direclty, only for deserialization.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.DataSource.ToString">
+            <summary>
+            ToString implementation.
+            </summary>
+            <returns>A string that describes the data source</returns>
+        </member>
+        <member name="P:IBatisNet.Common.DataSource.ConnectionString">
+            <summary>
+            The connection string.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.DataSource.Name">
+            <summary>
+            Name used to identify the provider amongst the others.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.DataSource.Provider">
+            <summary>
+            The provider to use for this data source.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.IDalSession">
+            <summary>
+            A template for a session in the iBATIS.NET framwork.
+            Holds the connection, the transaction ...
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.Complete">
+            <summary>
+            Complete (commit) a transsaction
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.OpenConnection">
+            <summary>
+            Open a connection.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.CloseConnection">
+            <summary>
+            close a connection
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.BeginTransaction">
+            <summary>
+            Open a connection and begin a transaction
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.BeginTransaction(System.Boolean)">
+            <summary>
+            Begins a database transaction
+            </summary>
+            <param name="openConnection">Open a connection.</param>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.BeginTransaction(System.Data.IsolationLevel)">
+            <summary>
+            Open a connection and begin a transaction at the data source 
+            with the specified IsolationLevel value.
+            </summary>
+            <param name="isolationLevel">The transaction isolation level for this connection.</param>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.BeginTransaction(System.Boolean,System.Data.IsolationLevel)">
+            <summary>
+            Begins a transaction on the current connection
+            with the specified IsolationLevel value.
+            </summary>
+            <param name="isolationLevel">The transaction isolation level for this connection.</param>
+            <param name="openConnection">Open a connection.</param>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.CommitTransaction">
+            <summary>
+            Commit a transaction and close the associated connection
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.CommitTransaction(System.Boolean)">
+            <summary>
+            Commits the database transaction.
+            </summary>
+            <param name="closeConnection">Close the connection</param>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.RollBackTransaction">
+            <summary>
+            Rollbak a transaction and close the associated connection
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.RollBackTransaction(System.Boolean)">
+            <summary>
+            Rolls back a transaction from a pending state.
+            </summary>
+            <param name="closeConnection">Close the connection</param>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.CreateCommand(System.Data.CommandType)">
+            <summary>
+            Create a command
+            </summary>
+            <param name="commandType">The type of the command</param>
+            <returns>An IDbCommand.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.CreateDataParameter">
+            <summary>
+            Create an IDataParameter
+            </summary>
+            <returns>An IDataParameter.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.CreateDataAdapter(System.Data.IDbCommand)">
+            <summary>
+            Create a DataAdapter
+            </summary>
+            <param name="command">The statement or stored procedure 
+            used to select records in the data source.</param>
+            <returns>An IDbDataAdapter.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.IDalSession.CreateDataAdapter">
+            <summary>
+            Create a DataAdapter
+            </summary>
+            <returns>An IDbDataAdapter.</returns>
+        </member>
+        <member name="P:IBatisNet.Common.IDalSession.DataSource">
+            <summary>
+            The data source use by the session.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.IDalSession.Connection">
+            <summary>
+            The Connection use by the session.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.IDalSession.Transaction">
+            <summary>
+            The Transaction use by the session.
+            </summary>
+        </member>
+        <member name="T:IBatisNet.Common.Provider">
+            <summary>
+            Information about a data provider.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Provider.#ctor">
+            <summary>
+            Do not use direclty, only for serialization.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Provider.Initialisation">
+            <summary>
+            Init the provider.
+            </summary>
+        </member>
+        <member name="M:IBatisNet.Common.Provider.GetConnection">
+            <summary>
+            Get a connection object for this provider.
+            </summary>
+            <returns>An 'IDbConnection' object.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Provider.GetCommand">
+            <summary>
+            Get a command object for this provider.
+            </summary>
+            <returns>An 'IDbCommand' object.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Provider.GetDataAdapter">
+            <summary>
+            Get a dataAdapter object for this provider.
+            </summary>
+            <returns>An 'IDbDataAdapter' object.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Provider.GetDataParameter">
+            <summary>
+            Get a IDataParameter object for this provider.
+            </summary>
+            <returns>An 'IDataParameter' object.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Provider.GetCommandBuilderType">
+            <summary>
+            Get the CommandBuilder Type for this provider.
+            </summary>
+            <returns>An object.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Provider.Equals(System.Object)">
+            <summary>
+            Equals implemantation.
+            </summary>
+            <param name="obj">The test object.</param>
+            <returns>A boolean.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Provider.GetHashCode">
+            <summary>
+            A hashcode for the provider.
+            </summary>
+            <returns>An integer.</returns>
+        </member>
+        <member name="M:IBatisNet.Common.Provider.ToString">
+            <summary>
+            ToString implementation.
+            </summary>
+            <returns>A string that describes the provider.</returns>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.AssemblyName">
+            <summary>
+            The name of the assembly which conatins the definition of the provider.
+            </summary>
+            <example>Examples : "System.Data", "Microsoft.Data.Odbc"</example>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.IsDefault">
+            <summary>
+            Tell us if it is the default data source.
+            Default false.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.IsEnabled">
+            <summary>
+            Tell us if this provider is enabled.
+            Default true.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.ConnectionClass">
+            <summary>
+            The connection class name to use.
+            </summary>
+            <example>
+            "System.Data.OleDb.OleDbConnection", 
+            "System.Data.SqlClient.SqlConnection", 
+            "Microsoft.Data.Odbc.OdbcConnection"
+            </example>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.UseParameterPrefixInSql">
+            <summary>
+            Does this ConnectionProvider require the use of a Named Prefix in the SQL 
+            statement. 
+            </summary>
+            <remarks>
+            The OLE DB/ODBC .NET Provider does not support named parameters for 
+            passing parameters to an SQL Statement or a stored procedure called 
+            by an IDbCommand when CommandType is set to Text.
+            
+            For example, SqlClient requires select * from simple where simple_id = @simple_id
+            If this is false, like with the OleDb or Obdc provider, then it is assumed that 
+            the ? can be a placeholder for the parameter in the SQL statement when CommandType 
+            is set to Text.		
+            </remarks>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.UseParameterPrefixInParameter">
+            <summary>
+            Does this ConnectionProvider require the use of the Named Prefix when trying
+            to reference the Parameter in the Command's Parameter collection. 
+            </summary>
+            <remarks>
+            This is really only useful when the UseParameterPrefixInSql = true. 
+            When this is true the code will look like IDbParameter param = cmd.Parameters["@paramName"], 
+            if this is false the code will be IDbParameter param = cmd.Parameters["paramName"] - ie - Oracle.
+            </remarks>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.UsePositionalParameters">
+            <summary>
+            The OLE DB/OBDC .NET Provider uses positional parameters that are marked with a 
+            question mark (?) instead of named parameters.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.SetDbParameterSize">
+            <summary>
+            Used to indicate whether or not the provider 
+            supports parameter size.
+            </summary>
+            <remarks>
+            See JIRA-49 about SQLite.Net provider not supporting parameter size.
+            </remarks>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.SetDbParameterPrecision">
+            <summary>
+            Used to indicate whether or not the provider 
+            supports parameter precision.
+            </summary>
+            <remarks>
+            See JIRA-49 about SQLite.Net provider not supporting parameter precision.
+            </remarks>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.SetDbParameterScale">
+            <summary>
+            Used to indicate whether or not the provider 
+            supports a parameter scale.
+            </summary>
+            <remarks>
+            See JIRA-49 about SQLite.Net provider not supporting parameter scale.
+            </remarks>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.UseDeriveParameters">
+            <summary>
+            Used to indicate whether or not the provider 
+            supports DeriveParameters method for procedure.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.CommandClass">
+            <summary>
+            The command class name to use.
+            </summary>
+            <example>
+            "System.Data.SqlClient.SqlCommand"
+            </example>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.ParameterClass">
+            <summary>
+            The parameter class name to use.
+            </summary>
+            <example>
+            "System.Data.SqlClient.SqlParameter"
+            </example>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.ParameterDbTypeClass">
+            <summary>
+            The ParameterDbType class name to use.
+            </summary>			
+            <example>
+            "System.Data.SqlDbType"
+            </example>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.ParameterDbTypeProperty">
+            <summary>
+            The ParameterDbTypeProperty class name to use.
+            </summary>
+            <example >
+            SqlDbType in SqlParamater.SqlDbType, 
+            OracleType in OracleParameter.OracleType.
+            </example>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.DataAdapterClass">
+            <summary>
+            The dataAdapter class name to use.
+            </summary>
+            <example >
+            "System.Data.SqlDbType"
+            </example>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.CommandBuilderClass">
+            <summary>
+            The commandBuilder class name to use.
+            </summary>
+            <example >
+            "System.Data.OleDb.OleDbCommandBuilder", 
+            "System.Data.SqlClient.SqlCommandBuilder", 
+            "Microsoft.Data.Odbc.OdbcCommandBuilder"
+            </example>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.Name">
+            <summary>
+            Name used to identify the provider amongst the others.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.Description">
+            <summary>
+            Description.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.ParameterPrefix">
+            <summary>
+            Parameter prefix use in store procedure.
+            </summary>
+            <example> @ for Sql Server.</example>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.IsObdc">
+            <summary>
+            Check if this provider is Odbc ?
+            </summary>
+        </member>
+        <member name="P:IBatisNet.Common.Provider.ParameterDbType">
+            <summary>
+            Get the ParameterDb Type for this provider.
+            </summary>
+            <returns>An object.</returns>
+        </member>
+    </members>
+</doc>

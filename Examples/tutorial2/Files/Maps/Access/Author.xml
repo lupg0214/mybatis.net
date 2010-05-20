@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap 
+	namespace="Author" 
+	xmlns="http://ibatis.apache.org/mapping" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<!-- XML document for the Author class. -->
+<alias>
+  <typeAlias alias="Author" type="Tutorial2.Domain.Author, Tutorial2.Domain" />
+	</alias>
+
+	<resultMaps>
+    <resultMap id="Author-Result" class="Author">
+      <result property="_id" column="AuthorID" />
+      <result property="Name" column="AuthorName" />
+      <result property="Login" column="AuthorLogin" />
+      <result property="Password" column="AuthorPassword" />
+    </resultMap>
+    
+		<resultMap id="Author-Complete-Result" extends="Author-Result" class="Author">
+      <result property="Blog" resultMapping="Blog.Blog-Result"/>
+		</resultMap>
+	</resultMaps>
+
+	<statements>
+
+    <select id="Author-Select-Basic" parameterClass="int" resultMap="Author-Result">
+      SELECT
+        Authors.ID as AuthorID,
+        Authors.Name as AuthorName,
+        Authors.Login as AuthorLogin,
+        Authors.Password as AuthorPassword
+      FROM [Authors]
+      WHERE
+      ([ID] = #value#)
+    </select>
+
+    <select id="Base-Select" resultMap="Author-Complete-Result">
+      SELECT
+      Authors.ID as AuthorID,
+      Authors.Name as AuthorName,
+      Authors.Login as AuthorLogin,
+      Authors.Password as AuthorPassword,
+      Blogs.ID as BlogID,
+      Blogs.Name as BlogName,
+      Blogs.Description as BlogDescription
+      FROM [Authors], [Blogs]
+    </select>
+    
+    <select id="Author-Select" extends="Base-Select" parameterClass="int" resultMap="Author-Complete-Result">
+      WHERE
+      ([Authors.ID] = #value#)
+      AND
+      ([Blogs.UserID] = [Authors.ID])
+    </select>
+
+
+    <select id="Author-Verify" extends="Base-Select" parameterClass="hashtable" resultMap="Author-Complete-Result">
+      WHERE
+      ([Authors.Login] = #Login#)
+      AND
+      ([Authors.Password] = #Password#)
+      AND
+      ([Blogs.UserID] = [Authors.ID])
+    </select>
+
+    <!-- INSERT -->
+    <insert id="Author-Insert" parameterClass="Author">
+      INSERT INTO [Authors] (
+      [Name],
+      [Login],
+      [Password]
+      ) VALUES (
+      #Name#,
+      #Login#,
+      #Password#
+      )
+
+      <selectKey resultClass="int" property="_id" type="post">
+        select @@IDENTITY
+      </selectKey>
+    </insert>
+
+    <update id="Author-Update" parameterClass="Author">
+      UPDATE [Authors] SET
+      [Name] = #Name#,
+      [Login] = #Login#,
+      [Password] = #Password#
+      WHERE
+      ([ID] = #Id#)
+    </update>
+
+		<delete id="Author-Delete" parameterClass="Author">
+      DELETE FROM [Authors]
+      WHERE
+      ([ID] = #Id#)
+    </delete>
+	</statements>
+</sqlMap>

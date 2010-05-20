@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap 
+	namespace="Blog" 
+	xmlns="http://ibatis.apache.org/mapping" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<alias>
+		<typeAlias alias="Blog" type="Tutorial2.Domain.Blog, Tutorial2.Domain" />
+	</alias>
+
+	<resultMaps>
+		<resultMap id="Blog-Result" class="Blog">
+			<result property="_id" column="BlogID" />
+			<result property="Name" column="BlogName" />
+			<result property="Description" column="BlogDescription" />
+      <result property="Posts" column="BlogID" lazyLoad="true" select="Post-Fill"/>
+		</resultMap>
+	</resultMaps>
+
+	<statements>
+  
+    <select id="Blog-Select" parameterClass="map" resultMap="Blog-Result">
+      SELECT
+        Blogs.ID as BlogID,
+        Blogs.Name as BlogName,
+        Blogs.Description as BlogDescription
+      FROM [Blogs]
+      WHERE
+      ([ID] = #Id#)
+    </select>
+
+    <insert id="Blog-Insert" parameterClass="Blog">
+      INSERT INTO [Blogs] (
+      [UserId],
+      [Name],
+      [Description]
+      ) VALUES (
+      #Author.Id#,
+      #Name#,
+      #Description#
+      )
+
+      <selectKey resultClass="int" property="_id" type="post">
+        select @@IDENTITY
+      </selectKey>
+    </insert>
+
+
+    <update id="Blog-Update" parameterClass="Blog">
+      UPDATE [Blogs] SET
+      [Name] = #Name#,
+      [Description] = #Description#
+      WHERE
+      ([ID] = #Id#)
+    </update>
+
+
+    <delete id="Blog-Delete" parameterClass="Blog">
+      DELETE FROM [Blogs]
+      WHERE
+      ([ID] = #Id#)
+    </delete>
+	</statements>
+</sqlMap>

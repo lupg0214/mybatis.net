@@ -1,0 +1,27 @@
+
+.programlisting {
+    font-family: courier;
+    font-size: 11px;
+    font-weight: normal;
+    font-family: Lucida Console, monospace;
+    background-color: #EEEEEE;
+    padding: 0.25cm;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CCCCCC
+ }
+.sidebar {
+	background-color: #E5ECF9;
+	padding: 0.25cm;
+}
+.navheader,.navfooter{
+	background-color: #809BC8;
+}
+.navheader a {
+    color:#fff;
+    text-decoration: none;
+}
+.navfooter a {
+    color:#fff;
+    text-decoration: none;
+}

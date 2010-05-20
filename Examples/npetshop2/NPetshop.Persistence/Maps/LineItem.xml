@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlMap namespace="LineItem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="LineItem" type="NPetshop.Domain.Billing.LineItem, NPetshop.Domain"/>
+	</alias>
+	<!-- =============================================
+        MAPPED STATEMENTS 
+    ============================================= 
+    -->
+	<statements>
+		<insert id="InsertLineItem" parameterClass="LineItem">
+		Insert Into LinesItem
+		(Order_Id, LineItem_LineNum, Item_Id, LineItem_Quantity, LineItem_UnitPrice)
+		Values	
+		(#Order.Id#, #LineNumber#, #Item.Id#, #Quantity#, #Item.ListPrice#)			
+ 		</insert>
+	</statements>
+</sqlMap>

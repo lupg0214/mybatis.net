@@ -1,0 +1,952 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Web"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{C0EE0335-5733-409B-B4E3-59C3B9799731}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "NPetshop.Web"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Flow"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "NPetshop.Web"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Web.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "NPetshop.Domain"
+                    Project = "{7D1DA776-6341-43C8-B9C7-8FA344996665}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "NPetshop.Presentation"
+                    Project = "{182B5E6F-CAFA-42A6-B0EA-8782F2F3A48A}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "Castle.Windsor"
+                    AssemblyName = "Castle.Windsor"
+                    HintPath = "..\External-bin\Castle.Windsor.dll"
+                />
+                <Reference
+                    Name = "IBatisNet.Common"
+                    AssemblyName = "IBatisNet.Common"
+                    HintPath = "..\External-bin\IBatisNet.Common.dll"
+                />
+                <Reference
+                    Name = "Castle.MVC"
+                    AssemblyName = "Castle.MVC"
+                    HintPath = "..\External-bin\Castle.MVC.dll"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ChangeLog.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asax"
+                    SubType = "Component"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asax.cs"
+                    DependentUpon = "Global.asax"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Global.asax.resx"
+                    DependentUpon = "Global.asax.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "NPetshop.mdb"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "properties.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "readme.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Web.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@css\styles.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\cart.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\iconCritical.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\space.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\splash.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\title.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\top_stripe1.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\top_stripe2.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\top_stripe3.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\bird1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\bird2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\cat1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\cat2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\dog1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\dog2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\dog3.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\dog4.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\dog5.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\dog6.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\fish1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\fish2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\fish3.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\fish4.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\reptile1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "@images\Pets\reptile2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ExtendedRepeater.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\AdviceBanner.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\AdviceBanner.ascx.cs"
+                    DependentUpon = "AdviceBanner.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\AdviceBanner.ascx.resx"
+                    DependentUpon = "AdviceBanner.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Banner.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Banner.ascx.cs"
+                    DependentUpon = "Banner.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Banner.ascx.resx"
+                    DependentUpon = "Banner.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Footer.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Footer.ascx.cs"
+                    DependentUpon = "Footer.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Footer.ascx.resx"
+                    DependentUpon = "Footer.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Header.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Header.ascx.cs"
+                    DependentUpon = "Header.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Header.ascx.resx"
+                    DependentUpon = "Header.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\NPetshopUC.cs"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\SideBar.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\SideBar.ascx.cs"
+                    DependentUpon = "SideBar.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\SideBar.ascx.resx"
+                    DependentUpon = "SideBar.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\StartUp.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\StartUp.ascx.cs"
+                    DependentUpon = "StartUp.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\StartUp.ascx.resx"
+                    DependentUpon = "StartUp.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\TopBar.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\TopBar.ascx.cs"
+                    DependentUpon = "TopBar.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\TopBar.ascx.resx"
+                    DependentUpon = "TopBar.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AccountEdition.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AccountEdition.ascx.cs"
+                    DependentUpon = "AccountEdition.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AccountEdition.ascx.resx"
+                    DependentUpon = "AccountEdition.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AccountUI.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AccountUI.ascx.cs"
+                    DependentUpon = "AccountUI.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AccountUI.ascx.resx"
+                    DependentUpon = "AccountUI.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AddressStatic.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AddressStatic.ascx.cs"
+                    DependentUpon = "AddressStatic.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AddressStatic.ascx.resx"
+                    DependentUpon = "AddressStatic.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AddressUI.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AddressUI.ascx.cs"
+                    DependentUpon = "AddressUI.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\AddressUI.ascx.resx"
+                    DependentUpon = "AddressUI.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\NewAccount.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\NewAccount.ascx.cs"
+                    DependentUpon = "NewAccount.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\NewAccount.ascx.resx"
+                    DependentUpon = "NewAccount.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\SignIn.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\SignIn.ascx.cs"
+                    DependentUpon = "SignIn.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\SignIn.ascx.resx"
+                    DependentUpon = "SignIn.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\SignOut.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\SignOut.ascx.cs"
+                    DependentUpon = "SignOut.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Accounts\SignOut.ascx.resx"
+                    DependentUpon = "SignOut.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Bill.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Bill.ascx.cs"
+                    DependentUpon = "Bill.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Bill.ascx.resx"
+                    DependentUpon = "Bill.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Billing\BillUI.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Billing\BillUI.ascx.cs"
+                    DependentUpon = "BillUI.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Billing\BillUI.ascx.resx"
+                    DependentUpon = "BillUI.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Confirmation.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Confirmation.ascx.cs"
+                    DependentUpon = "Confirmation.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Confirmation.ascx.resx"
+                    DependentUpon = "Confirmation.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Payment.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Payment.ascx.cs"
+                    DependentUpon = "Payment.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Payment.ascx.resx"
+                    DependentUpon = "Payment.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Shipping.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Shipping.ascx.cs"
+                    DependentUpon = "Shipping.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Billing\Shipping.ascx.resx"
+                    DependentUpon = "Shipping.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Category.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Category.ascx.cs"
+                    DependentUpon = "Category.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Category.ascx.resx"
+                    DependentUpon = "Category.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Item.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Item.ascx.cs"
+                    DependentUpon = "Item.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Item.ascx.resx"
+                    DependentUpon = "Item.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\MyList.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\MyList.ascx.cs"
+                    DependentUpon = "MyList.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\MyList.ascx.resx"
+                    DependentUpon = "MyList.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Product.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Product.ascx.cs"
+                    DependentUpon = "Product.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Product.ascx.resx"
+                    DependentUpon = "Product.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Search.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Search.ascx.cs"
+                    DependentUpon = "Search.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\Search.ascx.resx"
+                    DependentUpon = "Search.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\SearchProduct.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\SearchProduct.ascx.cs"
+                    DependentUpon = "SearchProduct.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Catalog\SearchProduct.ascx.resx"
+                    DependentUpon = "SearchProduct.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Shopping\Cart.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Shopping\Cart.ascx.cs"
+                    DependentUpon = "Cart.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Shopping\Cart.ascx.resx"
+                    DependentUpon = "Cart.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\Shopping\Checkout.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\Shopping\Checkout.ascx.cs"
+                    DependentUpon = "Checkout.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\Shopping\Checkout.ascx.resx"
+                    DependentUpon = "Checkout.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\default.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\default.aspx.cs"
+                    DependentUpon = "default.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\default.aspx.resx"
+                    DependentUpon = "default.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\NPetshopView.cs"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Account\AccountEdition.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Account\AccountEdition.aspx.cs"
+                    DependentUpon = "AccountEdition.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Account\AccountEdition.aspx.resx"
+                    DependentUpon = "AccountEdition.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Account\Register.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Account\Register.aspx.cs"
+                    DependentUpon = "Register.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Account\Register.aspx.resx"
+                    DependentUpon = "Register.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Account\SignIn.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Account\SignIn.aspx.cs"
+                    DependentUpon = "SignIn.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Account\SignIn.aspx.resx"
+                    DependentUpon = "SignIn.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Account\SignOut.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Account\SignOut.aspx.cs"
+                    DependentUpon = "SignOut.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Account\SignOut.aspx.resx"
+                    DependentUpon = "SignOut.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Billing\Billing.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Billing\Billing.aspx.cs"
+                    DependentUpon = "Billing.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Billing\Billing.aspx.resx"
+                    DependentUpon = "Billing.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Billing\Confirmation.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Billing\Confirmation.aspx.cs"
+                    DependentUpon = "Confirmation.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Billing\Confirmation.aspx.resx"
+                    DependentUpon = "Confirmation.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Billing\Payment.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Billing\Payment.aspx.cs"
+                    DependentUpon = "Payment.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Billing\Payment.aspx.resx"
+                    DependentUpon = "Payment.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Billing\Shipping.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Billing\Shipping.aspx.cs"
+                    DependentUpon = "Shipping.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Billing\Shipping.aspx.resx"
+                    DependentUpon = "Shipping.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Catalog\Category.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Catalog\Category.aspx.cs"
+                    DependentUpon = "Category.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Catalog\Category.aspx.resx"
+                    DependentUpon = "Category.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Catalog\Item.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Catalog\Item.aspx.cs"
+                    DependentUpon = "Item.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Catalog\Item.aspx.resx"
+                    DependentUpon = "Item.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Catalog\Product.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Catalog\Product.aspx.cs"
+                    DependentUpon = "Product.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Catalog\Product.aspx.resx"
+                    DependentUpon = "Product.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Catalog\SearchProduct.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Catalog\SearchProduct.aspx.cs"
+                    DependentUpon = "SearchProduct.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Catalog\SearchProduct.aspx.resx"
+                    DependentUpon = "SearchProduct.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Shopping\Cart.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Shopping\Cart.aspx.cs"
+                    DependentUpon = "Cart.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Shopping\Cart.aspx.resx"
+                    DependentUpon = "Cart.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Views\Shopping\Checkout.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Views\Shopping\Checkout.aspx.cs"
+                    DependentUpon = "Checkout.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Views\Shopping\Checkout.aspx.resx"
+                    DependentUpon = "Checkout.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

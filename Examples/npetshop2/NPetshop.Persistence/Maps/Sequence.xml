@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlMap namespace="Sequence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="Sequence" type="NPetshop.Domain.Sequence, NPetshop.Domain"/>
+	</alias>
+	<resultMaps>
+		<resultMap id="SequenceResult" class="Sequence">
+			<result property="Name" column="Sequence_Name"/>
+			<result property="NextId" column="Sequence_NextId"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="GetSequence" resultMap="SequenceResult" parameterClass="Sequence">
+			select Sequence_Name, Sequence_NextId 
+			from Sequences 
+			where Sequence_Name = #Name#
+		</select>
+		<update id="UpdateSequence" parameterClass="Sequence">
+			update Sequences
+			set Sequence_NextId = #NextId# where Sequence_Name = #Name#
+		</update>
+	</statements>
+</sqlMap>
