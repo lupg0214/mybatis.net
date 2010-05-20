@@ -1,0 +1,6 @@
+#summary One-sentence summary of this page.
+
+== Pages ==
+
+  * Welcome
+  * List
