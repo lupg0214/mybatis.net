@@ -1,0 +1,13 @@
+#summary Archive of all MyBatis.NET related downloads.
+
+= Downloads =
+
+Please select a filter to find the downloads most relevant to your needs:
+
+  *  *[http://code.google.com/p/mybatisnet/downloads/list?can=3 Featured Downloads]* -- All files that we currently recommend for use.
+
+  *  *[http://code.google.com/p/mybatisnet/downloads/list?can=2 Current Downloads]* -- All files that are still relevant and supported.
+
+  *  *[http://code.google.com/p/mybatisnet/downloads/list?can=1 All Downloads]* -- A complete list of all files, but might show more than you're looking for.
+
+  *  *[http://code.google.com/p/mybatisnet/downloads/list?can=4 Deprecated Downloads]* -- Files that we no longer recommend for use.
