@@ -14,7 +14,7 @@
   <sect1>
     <title>Installing the DataMapper for .NET</title>
 
-    <para>There are four steps to using iBATIS DataMapper with your
+    <para>There are three steps to using iBATIS DataMapper with your
     application for the first time. <orderedlist>
         <listitem>
            Setup the distribution 
@@ -22,10 +22,6 @@
 
         <listitem>
            Add assembly references 
-        </listitem>
-
-        <listitem>
-           Visual Studio.NET Integration 
         </listitem>
 
         <listitem>
@@ -38,16 +34,16 @@
 
       <para>The official site for iBATIS DataMapper for .NET is our Apache
       site &lt;<ulink
-      url="http://ibatis.apache.org/">http://ibatis.apache.org/</ulink>&gt;.
+      url="http://incubator.apache.org/ibatis/site/">http://incubator.apache.org/ibatis/</ulink>&gt;.
       The DataMapper is availabe in 2 types of distributions: a binary
       distribution that includes the required DataMapper assemblies and a
       source distribution that includes a VSN solution. To download either of
       the distributions, follow the link to the Downloads area on our web
       site, and select the either the binary or source distribution for the
-      iBATIS .NET DataMapper release (if you download the binary distribution,
-      extract the files using a utility like WinZip or the extractor built
-      into newer versions of Windows and skip ahead to the Add Assembly
-      References section).</para>
+      iBATIS .NET DataMapper V1.2 or later release (if you download the binary
+      distribution, extract the files using a utility like WinZip or the
+      extractor built into newer versions of Windows and skip ahead to the Add
+      Assembly References section).</para>
 
       <para>The DataMapper source distribution includes a VSN solution and a
       number of C# projects. The distribution is in the form of a ZIP archive.
@@ -83,12 +79,6 @@
 
                 <entry>Assembly of classes shared by DataAccess and
                 DataMapper</entry>
-              </row>
-
-              <row>
-                <entry>IBatisNet.Common.Logging.Log4Net</entry>
-
-                <entry>Log4Net factory adapter classes</entry>
               </row>
 
               <row>
@@ -140,26 +130,12 @@
       are seven projects in the solution, and all should succeed. The
       assemblies we need will be created under
       <filename>\source\IBatisNet.DataMapper\bin\Debug</filename>. The created
-      assemblies are : <orderedlist>
-          <listitem>
-            <filename>IBatisNet.Common.dll</filename>
-          </listitem>
-
-          <listitem>
-            <filename>iBatisNet.DataMapper.dll</filename>
-          </listitem>
-        </orderedlist> The DataMapper has external dependencies on :
-      <orderedlist>
-          <listitem>
-             
-
-            <filename>Castle.DynamicProxy.dll</filename>
-
-             (creating proxies) 
-          </listitem>
-        </orderedlist> This dependencies can be found in the External-Bin
-      folder and/or in the bin\Debug folder after building the
-      solution.</para>
+      assemblies are : <filename>IBatisNet.Common.dll</filename> and
+      <filename>iBatisNet.DataMapper.dll</filename>. The DataMapper has
+      external dependencies on <filename>Castle.DynamicProxy.dll</filename>
+      (creating proxies) and <filename>log4net.dll</filename> (logging). Both
+      of these dependencies are found in the External-Bin folder and can also
+      be found in the bin\Debug folder after building the solution.</para>
 
       <tip>
         <para>If you will not be using the DataAccess framework and NHibernate
@@ -194,20 +170,24 @@
           <listitem>
              Castle.DynamicProxy.dll (implied) 
           </listitem>
+
+          <listitem>
+            <para>log4net.dll (implied)</para>
+          </listitem>
         </orderedlist></para>
 
       <para>If you are using the <classname>Mapper</classname> singleton (see
       section 4.4.1), then the only reference you will need is to the
-      DataMapper assembly. The Common and Castle.DynamicProxy assemblies are
-      needed at runtime, but Visual Studio.NET will resolve the dependencies
-      for you. If you are using the Data Access Objects framework, then you
-      will need a reference to the DataAccess assembly too. So, start with the
-      first, and add the others only if needed.</para>
+      DataMapper assembly. The Common, Castle.DynamicProxy, and log4net
+      assemblies are needed at runtime, but Visual Studio.NET will resolve the
+      dependencies for you. If you are using the Data Access Objects
+      framework, then you will need a reference to the DataAccess assembly
+      too. So, start with the first, and add the others only if needed.</para>
 
       <para>If you have built the IBatisNet solution as described in Section
-      4.2.1, the three assemblies (IBatisNet.DataMapper.dll,
-      IBatisNet.Common.dll, and Castle.DynamicProxy.dll) that you will need
-      should be in the <filename>bin/Debug</filename> folder of the
+      4.2.1, the four assemblies (IBatisNet.DataMapper.dll,
+      IBatisNet.Common.dll, Castle.DynamicProxy.dll, and log4net.dll) that you
+      will need should be in the <filename>bin/Debug</filename> folder of the
       IBatisNet.DataMapper project.</para>
     </sect2>
 
@@ -250,68 +230,19 @@
                 <entry>Windows, Library, or Test projects (using NUnit or
                 equivalent)</entry>
 
-                <entry>This would be the binary folder (such as /bin/debug)
-                with the assembly (.dll) files and the
-                <filename>App.config</filename> file</entry>
+                <entry>With the assembly (.dll) files and the
+                <filename>app.config</filename> file</entry>
               </row>
 
               <row>
                 <entry>Web projects</entry>
 
-                <entry>In the application root, where the
-                <filename>Web.config</filename> file is located.</entry>
+                <entry>In the project base directory, with the
+                <filename>web.config</filename> file</entry>
               </row>
             </tbody>
           </tgroup>
         </table></para>
-    </sect2>
-
-    <sect2>
-      <title>Visual Studio.NET Integration</title>
-
-      <para>Each configuration file (SqlMap.config, mappping file,
-      providers.config) is associated to a schema. The benefits of associating
-      an XML document with a schema are to validate the document (which is
-      done at runtime) and to use editing features such as
-      IntelliSense/content completion assistance.</para>
-
-      <para>To allow association of the schemas in VS.NET XML editor to yours
-      configuration files, you should add the schema files
-      (<filename>SqlMap.xsd</filename>, <filename>SqlMapConfig.xsd</filename>,
-      <filename>providers.xsd</filename>) to either your VS.NET project or in
-      your VS.NET installation directory. The VS.NET directory will be
-      either</para>
-
-      <para><filename>C:\Program Files\Microsoft Visual Studio 8\Xml\Schemas for VS.NET 2005</filename></para>
-
-      <para>or</para>
-
-      <para><filename>C:\Program Files\Microsoft Visual Studio .NET
-      2003\Common7\Packages\schemas\xml for VS.NET 2003</filename></para>
-
-      <para>or</para>
-
-      <para><filename>C:\Program Files\Microsoft Visual Studio
-      .NET\Common7\Packages\schemas\xml for VS.NET 2002</filename></para>
-
-      <para>depending on your version of VS.NET. It is typically easier to
-      place the file in the well known location under the VS.NET installation
-      directory than to copy the XSD file for each project you create.</para>
-
-      <para>Once you have registered the schema with VS.NET you will be enough
-      to get IntelliSense and validation of the configuration file from within
-      VS.NET.</para>
-
-      <figure>
-        <title>IntelliSense example</title>
-
-        <mediaobject>
-          <imageobject>
-            <imagedata align="center" fileref="images/intellisense.gif"
-                       format="GIF" />
-          </imageobject>
-        </mediaobject>
-      </figure>
     </sect2>
   </sect1>
 
@@ -360,11 +291,15 @@
           same directory as web.config)</title>
 
           <programlisting>&lt;?xml version="1.0" encoding="utf-8"?&gt; 
-&lt;sqlMapConfig xmlns="http://ibatis.apache.org/dataMapper" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
+&lt;sqlMapConfig 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="SqlMapConfig.xsd"&gt;
 
   &lt;!-- Optional --&gt;
   &lt;properties resource="properties.config"/&gt;
+
+  &lt;!-- Not required if providers.config is located in default location --&gt;
+  &lt;providers embedded="resources.providers.config, IBatisNet.Test"/&gt;
 
   &lt;settings&gt;
     &lt;setting useStatementNamespaces="false"/&gt;
@@ -372,16 +307,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
     &lt;setting validateSqlMap="false"/&gt;
   &lt;/settings&gt;
 
-  &lt;!-- Not required if providers.config is located in default location --&gt;
-  &lt;providers embedded="resources.providers.config, IBatisNet.Test"/&gt;
-
   &lt;database&gt;
     &lt;provider name="sqlServer1.1"/&gt;
     &lt;dataSource name="NPetshop" 
                 connectionString="user id=${username};
-                password=${password};
-                data source=${datasource};
-                database=${database};"/&gt;
+                  password=${password};
+                  data source=${datasource};
+                  database=${database};"/&gt;
   &lt;/database&gt;
 
   &lt;alias&gt;
@@ -417,7 +349,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
         value in the properties file becomes a <emphasis>shell</emphasis>
         variable that can be used in the DataMapper configuration file and
         your Data Map definition files (see Section 3). For example, if the
-        "properties" file contains</para>
+        properties file contains</para>
 
         <informalexample>
           <programlisting>&lt;?xml version="1.0" encoding="utf-8" ?&gt; 
@@ -426,7 +358,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
 &lt;/settings&gt;</programlisting>
         </informalexample>
 
-        <para>then all elements in the DataMapper configuration can use the
+        <para>then many elements in the DataMapper configuration can use the
         variable <varname>${username}</varname> to insert the value
         "<emphasis>albert</emphasis>". For example:</para>
 
@@ -468,7 +400,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
 
                   <entry>Specify the properties file to be loaded through an
                   absolute path.<programlisting>url="<filename>c:\Web\MyApp\Resources\properties</filename>.config"
--or-
+or
 url="file://<filename>c:\Web\MyApp\Resources\properties</filename>.config"</programlisting></entry>
                 </row>
 
@@ -527,7 +459,7 @@ url="file://<filename>c:\Web\MyApp\Resources\properties</filename>.config"</prog
 
                   <entry>Specify the properties file to be loaded through an
                   absolute path.<programlisting>url="<filename>c:\Web\MyApp\Resources\properties</filename>.config"
--or-
+or
 url="file://<filename>c:\Web\MyApp\Resources\properties</filename>.config"</programlisting></entry>
                 </row>
 
@@ -562,7 +494,7 @@ url="file://<filename>c:\Web\MyApp\Resources\properties</filename>.config"</prog
       </sect3>
 
       <sect3>
-        <title>The &lt;providers&gt; Element</title>
+        <title>The &lt;providers&gt; Element<!--  <emphasis role="updated">Updated</emphasis> --></title>
 
         <para>Under ADO.NET, a database system is accessed through a provider.
         A database system can use a custom provider or a generic ODBC
@@ -588,18 +520,6 @@ url="file://<filename>c:\Web\MyApp\Resources\properties</filename>.config"</prog
 
             <listitem>
                Odbc1.1 - Odbc provider available with .NET Framework 1.1 
-            </listitem>
-
-            <listitem>
-               sqlServer2.0 -Microsoft SQL Server 7.0/2000/2005 provider available with .NET Framework 2.0
-            </listitem>
-
-            <listitem>
-               OleDb2.0 - OleDb provider available with .NET Framework 2.0
-            </listitem>
-
-            <listitem>
-               Odbc2.0 - Odbc provider available with .NET Framework 2.0 
             </listitem>
 
             <listitem>
@@ -638,10 +558,6 @@ url="file://<filename>c:\Web\MyApp\Resources\properties</filename>.config"</prog
                iDb2.10 - IBM DB2 iSeries provider V10.0.0.0 
             </listitem>
           </itemizedlist></para>
-
-		  <para>
-			<note>If you use SQL Server 2005, you can configure the provider to allow Multiple Active Result Set (allowMARS="true") and add MultipleActiveResultSets=true in your connection string.</note>
-		  </para>
 
         <para>The <filename>providers.config</filename> file can be found
         under <filename>\source\IBatisNet.DataMapper.Test\bin\Debug</filename>
@@ -742,7 +658,7 @@ url="file://<filename>c:\Web\MyApp\Resources\properties</filename>.config"</prog
 
                   <entry>Specify the providers.config to be loaded through an
                   absolute path.<programlisting>url="<filename>c:\Web\MyApp\</filename>Resources\providers.config"
--or-
+or
 url="file://<filename>c:\</filename><filename><filename>Web\MyApp\</filename>Resources\</filename>providers.config"</programlisting></entry>
                 </row>
 
@@ -815,15 +731,6 @@ Default: false (disabled)</programlisting></entry>
                 schema. This can come in handy for
                 debugging.</para><programlisting>Example: validateSqlMap=”false”
 Default: false (disabled)</programlisting></entry>
-              </row>
-
-			  <row>
-                <entry><emphasis>useReflectionOptimizer </emphasis></entry>
-
-                <entry><para>This setting globally enables or disables the
-               usage of reflection to access property/filed value of C# object. The reflection optimizer use will emit types for retrieving, populating, instantiating parameter and result objects. 
-</para><programlisting>Example: useReflectionOptimizer=”true”
-Default: true (enabled)</programlisting></entry>
               </row>
             </tbody>
           </tgroup>
@@ -1081,9 +988,7 @@ IBatisNet.Test"</programlisting></entry>
                     <entry><emphasis>dbType</emphasis></entry>
 
                     <entry>Indicates the provider dbType to
-                    handle<programlisting>dbType="Varchar2"</programlisting>Note:
-                    Omit this attribute if you want the type handler to
-                    replace the default iBATIS type handler.</entry>
+                    handle<programlisting>dbType="Varchar2"</programlisting></entry>
                   </row>
 
                   <row>
@@ -1292,7 +1197,7 @@ namespace IBatisNet.DataMapper
 {
  public class Mapper
  {
-  private static volatile ISqlMapper _mapper = null;
+  private static volatile SqlMapper _mapper = null;
 
   protected static void Configure (object obj)
   {
@@ -1306,7 +1211,7 @@ namespace IBatisNet.DataMapper
    _mapper = builder.ConfigureAndWatch(handler);
   }
 
-  public static ISqlMapper Instance()
+  public static SqlMapper Instance()
   {
    if (_mapper == null)
    {
@@ -1321,7 +1226,7 @@ namespace IBatisNet.DataMapper
    return _mapper;
   }
   
-  public static ISqlMapper Get()
+  public static SqlMapper Get()
   {
    return Instance();
   }
@@ -1329,11 +1234,11 @@ namespace IBatisNet.DataMapper
 }</programlisting>
         </example></para>
 
-      <para>To obtain the <classname>ISqlMapper</classname> instance, just
+      <para>To obtain the <classname>SqlMapper</classname> instance, just
       call</para>
 
       <para><programlisting>[C#]
-ISqlMapper mapper = Mapper.Instance();</programlisting></para>
+SqlMapper mapper = Mapper.Instance();</programlisting></para>
 
       <para>anywhere in your application, and specify one of the
       <classname>SqlMapper</classname> methods (see Section 5.3.2) . Here's an
@@ -1375,7 +1280,7 @@ IList list = Mapper.Instance().QueryForList("PermitNoForYearList", values);</pro
       instead:</para>
 
       <para><programlisting>[C#]
-ISqlMapper mapper = builder.Configure();</programlisting></para>
+SqlMapper mapper = builder.Configure();</programlisting></para>
 
       <sect3>
         <title>Multiple Databases</title>
@@ -1387,15 +1292,15 @@ ISqlMapper mapper = builder.Configure();</programlisting></para>
         <methodname>ConfigureAndWatch</methodname> to</para>
 
         <para><programlisting>[C#]
-ISqlMapper mapper = builder.ConfigureAndWatch("anotherSqlMapConfig.config", handler);</programlisting></para>
+SqlMapper mapper = builder.ConfigureAndWatch("anotherSqlMapConfig.config", handler);</programlisting></para>
 
         <para>and substitute the name of your configuration file. Each
         database then has their own singleton you can call from your
         application:</para>
 
         <para><programlisting>[C#]
-ISqlMapper sqlServer = SqlServerMapper.Get();
-ISqlMapper access = AccessMapper.Get();</programlisting></para>
+SqlMapper sqlServer = SqlServerMapper.Get();
+SqlMapper access = AccessMapper.Get();</programlisting></para>
       </sect3>
 
       <sect3>
@@ -1419,7 +1324,7 @@ ISqlMapper access = AccessMapper.Get();</programlisting></para>
         <example>
           <title>Basic SqlMapper Configuration Call</title>
 
-          <programlisting>ISqlMapper mapper = builder.Configure();</programlisting>
+          <programlisting>SqlMapper mapper = builder.Configure();</programlisting>
         </example>
 
         <para>If you have named your configuration file something other than
@@ -1435,7 +1340,7 @@ ISqlMapper access = AccessMapper.Get();</programlisting></para>
           <programlisting><emphasis role="comment">/* Configure a SqlMapper from a file path.
    Uses a relative resource path from your application root 
    or an absolute file path such as "file:\\c:\dir\a.config" */
-</emphasis>ISqlMapper mapper = builder.Configure(strPath);</programlisting>
+</emphasis>SqlMapper mapper = builder.Configure(strPath);</programlisting>
         </example>
 
         <tip>
@@ -1460,11 +1365,11 @@ ISqlMapper access = AccessMapper.Get();</programlisting></para>
 
           <programlisting><emphasis role="comment">/* Configure a SqlMapper with FileInfo. */</emphasis>
 FileInfo aFileInfo = someSupportClass.GetDynamicFileInfo();
-ISqlMapper mapper = builder.Configure(aFileInfo);
+SqlMapper mapper = builder.Configure(aFileInfo);
 
 <emphasis role="comment">/* Configure a SqlMapper through a Uri. */</emphasis>
 Uri aUri = someSupportClass.GetDynamicUri();
-ISqlMapper anotherMapper = builder.Configure(aUri);</programlisting>
+SqlMapper anotherMapper = builder.Configure(aUri);</programlisting>
         </example>
 
         <para>If you find that you already have loaded your DataMapper
@@ -1479,11 +1384,11 @@ ISqlMapper anotherMapper = builder.Configure(aUri);</programlisting>
 
           <programlisting><emphasis role="comment">/* Configure a SqlMapper with an XmlDocument */</emphasis>
 XmlDocument anXmlDoc = someSupportClass.GetDynamicXmlDocument();
-ISqlMapper mapper = builder.Configure(anXmlDoc);
+SqlMapper mapper = builder.Configure(anXmlDoc);
 
 <emphasis role="comment">/* Configure a SqlMapper from a stream. */</emphasis>
 Stream aStream = someSupportClass.GetDynamicStream();
-ISqlMapper anotherMapper = builder.Configure(aStream);</programlisting>
+SqlMapper anotherMapper = builder.Configure(aStream);</programlisting>
         </example>
 
         <para>The <classname>DomSqlMapBuilder</classname> API provides
@@ -1533,88 +1438,26 @@ ISqlMapper anotherMapper = builder.Configure(aStream);</programlisting>
    and automatically reconfigure the SqlMapper. 
    This basic ConfigureAndWatch method looks for a file with the 
    default name of SqlMap.config in the application root directory. */
-</emphasis>public ISqlMapper ConfigureAndWatch(ConfigureHandler configureDelegate)
+</emphasis>public SqlMapper ConfigureAndWatch(ConfigureHandler configureDelegate)
 
 <emphasis role="comment">/* Configure and monitor the configuration file for modifications 
    and automatically reconfigure the SqlMapper. 
    Uses a relative path from your application root 
    or an absolute file path such as "file:\\c:\dir\a.config" */
-</emphasis>public ISqlMapper ConfigureAndWatch( string resource, ConfigureHandler configureDelegate )
+</emphasis>public SqlMapper ConfigureAndWatch( string resource, ConfigureHandler configureDelegate )
 
 <emphasis role="comment">/* Configure and monitor the configuration file for modifications 
    and automatically reconfigure the SqlMapper. 
    Uses a FileInfo instance for your config file. */</emphasis>
-public ISqlMapper ConfigureAndWatch( FileInfo resource, ConfigureHandler configureDelegate )</programlisting>
+public SqlMapper ConfigureAndWatch( FileInfo resource, ConfigureHandler configureDelegate )</programlisting>
         </example>
       </sect3>
-
-	  <sect3>
-        <title>DomSqlMapBuilder : Advanced settings</title>
-			<para>Before launching the 'Configure' method to build the ISqlMapper instance, you can set those porperties.</para>
-			
-			<para>
-			<table>
-          <title>Advanced settings</title>
-
-          <tgroup cols="2">
-            <thead>
-              <row>
-                <entry>Propertie</entry>
-
-                <entry>Description</entry>
-              </row>
-            </thead>
-
-            <tbody>
-              <row>
-                <entry>Properties</entry>
-
-                <entry>Allow to set properties before configuration. Those properties will be added to the properties list defined in the properties.config.
-<programlisting>NameValueCollection properties = new NameValueCollection();
-properties.Add("connectionString", "...");
-builder.Properties = properties;
-
-ISqlMapper mapper = builder.Configure("sqlMap.config");</programlisting>
-				</entry>
-              </row>
-			  <row>
-                <entry>GetAccessorFactory</entry>
-
-                <entry>Allows to set a custom get accessor factory before configuration, see IGetAccessorFactory interface which defines the contract for the factory responsible to build set accessor for a member object in iBATIS.
-				</entry>
-              </row>
-			  <row>
-                <entry>SetAccessorFactory</entry>
-
-                <entry>Allows to set a custom set accessor factory before configuration, see ISetAccessorFactory interface which defines the contract for the factory responsible to build get accessor for a member object in iBATIS.
-				</entry>
-              </row>
-			  <row>
-                <entry>ObjectFactory</entry>
-                <entry>Allows to set a custom object factory before configuration, see IObjectFactory interface which defines the contract for the factory responsible for object creation in iBATIS.
-				</entry>
-              </row>
-			   <row>
-                <entry>SqlMapper</entry>
-                <entry>Allows to set a custom SqlMapper before configuration, see ISqlMapper interface.
-				</entry>
-              </row>
-			  <row>
-                <entry>ValidateSqlMapConfig</entry>
-                <entry>Enable whether or not the validation of configuration document before configuration </entry>
-              </row>
-			  </tbody>
-          </tgroup>
-        </table>
-		</para>
-
-		</sect3>
     </sect2>
 
     <sect2>
       <title>Exploring the DataMapper API through the SqlMapper</title>
 
-      <para>The <classname>ISqlMapper</classname> instance acts as a facade to
+      <para>The <classname>SqlMapper</classname> instance acts as a facade to
       provide access the rest of the DataMapper framework. The DataMapper API
       methods are shown in Example 4.11.</para>
 
@@ -1629,36 +1472,23 @@ public int Update(string statementName, object parameterObject);
 public int Delete(string statementName, object parameterObject);
 
 public object QueryForObject(string statementName, object parameterObject);
-public T QueryForObject&lt;T&gt;(string statementName, object parameterObject);
 public object QueryForObject(string statementName, object parameterObject, object resultObject);
-public T QueryForObject&lt;T&gt;(string statementName, object parameterObject, T resultObject);
 
 public IList QueryForList(string statementName, object parameterObject);
-public IList&lt;T&gt; QueryForList&lt;T&gt;(string statementName, object parameterObject);
 public void QueryForList(string statementName, object parameterObject, IList resultObject);
-public void QueryForList&lt;T&gt;(string statementName, object parameterObject, IList&lt;T&gt; resultObject);
 public IList QueryForList(string statementName, object parameterObject, 
-                          int skipResults, int maxResults);
-public IList&lt;T&gt; QueryForList&lt;T&gt;(string statementName, object parameterObject, 
                           int skipResults, int maxResults);
 
 public IList QueryWithRowDelegate(string statementName, object parameterObject, 
                                   RowDelegate rowDelegate);
-public IList&lt;T&gt; QueryWithRowDelegate&lt;T&gt;(string statementName, object parameterObject, 
-                                SqlMapper.RowDelegate&lt;T&gt; rowDelegate);
 
-<emphasis role="comment">[Obsolete]</emphasis>
 public PaginatedList QueryForPaginatedList(String statementName, object parameterObject, 
                                            int pageSize);
 
 public IDictionary QueryForDictionary(string statementName, object parameterObject, 
                                       string keyProperty)
-IDictionary&lt;K, V&gt; QueryForDictionary&lt;K, V&gt;(string statementName, object parameterObject, 
-                                      string keyProperty);
 public IDictionary QueryForDictionary(string statementName, object parameterObject, 
                                       string keyProperty, string valueProperty)
-public IDictionary&lt;K, V&gt; QueryForDictionary&lt;K, V&gt;(string statementName, object parameterObject, 
-                                      string keyProperty, string valueProperty);
 public IDictionary QueryForMap(string statementName, object parameterObject, string keyProperty)
 public IDictionary QueryForMap(string statementName, object parameterObject, 
                                string keyProperty, string valueProperty)
@@ -1692,26 +1522,6 @@ public void RollBackTransaction(bool closeConnection)
         sections describe how the API methods work.</para>
       </example>
 
-	  <note> <para>The DatatMapper component store his working ISqlMapSession on different session store. 
-	   <para>On Web environnement, the session is stored Http.Request.Items.</para>
-	   <para>On windows environnement on the current thread. </para>
-	   <para>You can configure the session storage by specifing the property ISessionStore on ISqlMapper.</para>
-	  This will allow to set a custom session store like the <emphasis role="blue">HybridWebThreadSessionStore</emphasis>
-	  This is used for scenarios where most of the you need per request session, but you also does some work outside a 
-	  request (in a thread pool thread, for instance).</para>
-
-	   <para>Set it after the configuration and before use of the ISqlMapper.</para>
-	  <example>
-        <title>Custom ISessionStore</title>
-
-        <programlisting>
-sqlMapper.SessionStore = new HybridWebThreadSessionStore( sqlMapper.Id );
-...
-sqlMapper.QueryOject(...)
-		</programlisting>
-		</example>
-</note>
-
       <sect3>
         <title>Insert, Update, Delete</title>
 
@@ -1740,12 +1550,8 @@ public int Delete(string statementName,
                              object parameterObject);
 public object QueryForObject(string statementName, 
                              object parameterObject,
-                             object resultObject);
+                             object resultObject);</programlisting></para>
 
-public T QueryForObject&lt;T&gt;(string statementName, object parameterObject);
-public T QueryForObject&lt;T&gt;(string statementName, object parameterObject, T resultObject);
-
-</programlisting></para>
         <para>If a Mapped Statement is expected to select a single row, then
         call it using <methodname>QueryForObject</methodname>. Since the
         Mapped Statement definition specifies the result class expected, the
@@ -1767,16 +1573,7 @@ public void QueryForList(string statementName,
 public IList QueryForList(string statementName,
                           object parameterObject,
                           int skipResults,
-                          int maxResults);
-
-public IList&lt;T&gt; QueryForList&lt;T&gt;(string statementName, object parameterObject);
-public void QueryForList&lt;T&gt;(string statementName, 
-                                  object parameterObject, 
-								  IList&lt;T&gt; resultObject);
-public IList&lt;T&gt; QueryForList&lt;T&gt;(string statementName, 
-                                            object parameterObject,
-                                            int skipResults, int maxResults);						  
-						  </programlisting></para>
+                          int maxResults);</programlisting></para>
 
         <para>If a Mapped Statement is expected to select multiple rows, then
         call it using <methodname>QueryForList</methodname> . Each entry in
@@ -1789,13 +1586,9 @@ public IList&lt;T&gt; QueryForList&lt;T&gt;(string statementName,
         to return, as the <parameter>skipResults</parameter> and
         <parameter>maxResults</parameter> parameters. The
         <methodname>PaginatedList</methodname> method provides the same
-        functionality but in a more convenient wrapper. 
-		</para>
-		
-		<para>The
+        functionality but in a more convenient wrapper. The
         <methodname>QueryWithRowDelegate</methodname> method also works with
         multiple rows, but provides a post-processing feature.</para>
-
       </sect3>
 
       <sect3>
@@ -1803,14 +1596,9 @@ public IList&lt;T&gt; QueryForList&lt;T&gt;(string statementName,
 
         <para><programlisting>public delegate void RowDelegate(object obj,
                                  IList list);
-
 public IList QueryWithRowDelegate(string statementName,
                                   object parameterObject, 
-                                  RowDelegate rowDelegate);
-
-public IList&lt;T&gt; QueryWithRowDelegate&lt;T&gt;(string statementName, object parameterObject, 
-                                SqlMapper.RowDelegate&lt;T&gt; rowDelegate);								  
-								  </programlisting></para>
+                                  RowDelegate rowDelegate);</programlisting></para>
 
         <para>No matter how well our database is designed or how cleverly we
         describe our maps, the result objects we get back may not be ideal.
@@ -1831,44 +1619,7 @@ public IList&lt;T&gt; QueryWithRowDelegate&lt;T&gt;(string statementName, object
       </sect3>
 
       <sect3>
-        <title> QueryForMapWithRowDelegate</title>
-
-        <para><programlisting>public delegate void DictionaryRowDelegate(object key, 
-                                           object value, 
-                                           object parameterObject, 
-                                           IDictionary dictionary);
-
-public IDictionary QueryForMapWithRowDelegate(string statementName,
-                                              object parameterObject, 
-                                              string keyProperty, 
-                                              string valueProperty, 
-                                              DictionaryRowDelegate rowDelegate);</programlisting></para>
-
-        <para>No matter how well our database is designed or how cleverly we
-        describe our maps, the result objects we get back may not be ideal.
-        You may need to perform some post-processing task on the result
-        objects. You might even want to omit an entry omitted from the
-        dictionary. Or, you might want to use the result object to create some
-        other, more useful object. To save filtering the result objects from
-        to one dictionary to another, you can pass a
-        <classname>DictionaryRowDelegate</classname> to the method to do the
-        dirty work. The <classname>SqlMapper</classname> will go through each
-        of the result objects and give the delegate a chance to modify the
-        object and determine if the object should be added to the
-        <interfacename>IDictionary </interfacename> that will be returned.
-        <important>
-            <para>It is your responsibility to add the objects you want
-            returned to the dictionary. If an object is not added, it is not
-            returned.</para>
-          </important></para>
-      </sect3>
-
-      <sect3>
         <title>QueryForPaginatedList</title>
-<para></para>
-		<note>
-		The method <emphasis role="comment">PaginatedList</emphasis> has been made as obsolete and will not be supported in future version.
-		</note>
 
         <para><programlisting>public PaginatedList QueryForPaginatedList(string statementName,
                                            object parameterObject,
@@ -1904,7 +1655,7 @@ public IDictionary QueryForMapWithRowDelegate(string statementName,
             the database provider and the smaller set extracted by the
             framework. The higher the page, the larger set that will be
             returned and thrown away. For very large sets, you may want to use
-            a stored procedure or your own query that uses
+            a stored procedure or your own query that used
             <parameter>skipResults</parameter> and
             <parameter>maxResults</parameter> as parameters. Unfortunately,
             the semantics for the returning partial data sets is not
@@ -1919,18 +1670,10 @@ public IDictionary QueryForMapWithRowDelegate(string statementName,
         <para><programlisting>public IDictionary QueryForDictionary(string statementName,
                                       object parameterObject,
                                       string keyProperty)
-public IDictionary&lt;K, V&gt; QueryForDictionary&lt;K, V&gt;(string statementName, 
-                                      object parameterObject, 
-                                      string keyProperty);
 public IDictionary QueryForDictionary(string statementName,
                                       object parameterObject,
                                       string keyProperty,
                                       string valueProperty)
-public IDictionary&lt;K, V&gt; QueryForDictionary&lt;K, V&gt;(string statementName, 
-                                     object parameterObject, 
-                                      string keyProperty, 
-									  string valueProperty);
-
 public IDictionary QueryForMap(string statementName,
                                object parameterObject, 
                                string keyProperty)
@@ -1983,6 +1726,7 @@ public IDictionary QueryForMap(string statementName,
 
       <para>In the iBATIS DataMapper framework, a session is a container for
       an ADO connection and transaction.</para>
+
       <para>The DataMapper's <classname>IDalSession</classname> implements the
       <classname>IDisposable</classname> interface. So you can use it with the
       <methodname>using</methodname> syntax.</para>
@@ -2054,11 +1798,11 @@ using ( IDalSession session = <emphasis role="blue">sqlMap.OpenConnection()</emp
 
         <para><programlisting>[C#]
 Item item = (Item) sqlMap.executeQueryForObject ("GetItem", itemId);
-item.Description = "test";
+item.Description = “TX1”;
 <emphasis role="comment">// No session demarcated, so open/close connection will be automatic (implied)</emphasis>
 sqlMap.Update("UpdateItem", item);
 item.Description = newDescription;
-item.Description = "test2";
+item.Description = “TX2”;
 <emphasis role="comment">// No transaction demarcated, so open/close connection will be automatic (implied)</emphasis>
 sqlMap.Update("UpdateItem", item);</programlisting></para>
       </example>
@@ -2276,192 +2020,32 @@ Product p = (Product) map[“EST-93”];</programlisting>
   </sect1>
 
   <sect1>
-    <title>Logging SqlMap Activity</title>
+    <title>Logging SqlMap Activity with Apache Log4Net</title>
 
-    <para>The iBATIS DataMapper framework records its interaction with the
-    database through an internal logging mechanism patterned after Apache
-    Log4Net. The internal logging mechanism can use one of the three built-in
-    loggers (NoOpLogger, ConsoleOutLogger, TraceLogger) or external logging
-    packages such as Apache Log4Net. In order for iBATIS to generate log
-    messages, the application's config file (App.Config or Web.Config) must
-    contain an appropriate configSection node:</para>
-
-    <example>
-      <title>iBATIS Configuration Section Handler for logging</title>
-
-      <programlisting>&lt;configSections&gt;
- &lt;sectionGroup name="iBATIS"&gt;
-  &lt;section name="logging" type="IBatisNet.Common.Logging.ConfigurationSectionHandler, IBatisNet.Common" /&gt;
- &lt;/sectionGroup&gt;
-&lt;/configSections&gt;</programlisting>
-    </example>
-
-    <para>The application's config file must declare one logger
-    implementation. See the examples below on how to configure one of the
-    three built-in loggers.</para>
-
-    <para><programlisting>&lt;iBATIS&gt;
- &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.ConsoleOutLoggerFA, IBatisNet.Common"&gt;
-   &lt;arg key="showLogName" value="true" /&gt;
-   &lt;arg key="showDataTime" value="true" /&gt;
-   &lt;arg key="level" value="ALL" /&gt;
-   &lt;arg key="dateTimeFormat" value="yyyy/MM/dd HH:mm:ss:SSS" /&gt;
-  &lt;/logFactoryAdapter&gt;
- &lt;/logging&gt;
-&lt;/iBATIS&gt;
-</programlisting><programlisting>&lt;iBATIS&gt;
- &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.NoOpLoggerFA, IBatisNet.Common" /&gt;
- &lt;/logging&gt;
-&lt;/iBATIS&gt;
-</programlisting><programlisting>&lt;iBATIS&gt;
- &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.TraceLoggerFA, IBatisNet.Common" /&gt;
- &lt;/logging&gt;
-&lt;/iBATIS&gt;</programlisting></para>
-
-    <para>To configure iBATIS to use another logger implementation, simple
-    specify the appropriate logFactoryAdapter type. To use Apache Log4Net with
-    the iBATIS DataMapper framework, use the following configuration
-    setting:</para>
-
-    <para><programlisting>&lt;iBATIS&gt;
- &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.Log4NetLoggerFA, IBatisNet.Common.Logging.Log4Net"&gt;
-   &lt;arg key="configType" value="inline" /&gt;
-  &lt;/logFactoryAdapter&gt;
- &lt;/logging&gt;
-&lt;/iBATIS&gt;</programlisting></para>
-
-    <para><programlisting>&lt;iBATIS&gt;
- &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.Log4NetLoggerFA, IBatisNet.Common.Logging.Log4Net"&gt;
-   &lt;arg key="configType" value="file" /&gt;
-   &lt;arg key="configFile" value="log4Net.config" /&gt;
-  &lt;/logFactoryAdapter&gt;
- &lt;/logging&gt;
-&lt;/iBATIS&gt;</programlisting></para>
-
-    <para>The Log4NetLoggerFA supports the following values for the
-    configTypes argument:<table>
-        <title>Valid configType values</title>
-
-        <tgroup cols="2">
-          <thead>
-            <row>
-              <entry>configType</entry>
-
-              <entry>Description</entry>
-            </row>
-          </thead>
-
-          <tbody>
-            <row>
-              <entry>inline</entry>
-
-              <entry>log4net node will use the log4net node in the
-              App.Config/Web.Config file when it is configured</entry>
-            </row>
-
-            <row>
-              <entry>file</entry>
-
-              <entry>(also requires configFile argument) - log4net will use an
-              external file for its configuration</entry>
-            </row>
-
-            <row>
-              <entry>file-watch</entry>
-
-              <entry> (also requires configFile argument) - log4net will use
-              an external file for its configuration and will re-configure
-              itself if this file changes</entry>
-            </row>
-
-            <row>
-              <entry>external</entry>
-
-              <entry>iBATIS will not attempt to configure log4net.</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table></para>
+    <para>The iBATIS DataMapper framework provides logging information through
+    the use of Apache Log4Net (http://logging.apache.org/log4net/). The
+    specifics of Log4Net are beyond the scope of this document. This section
+    provides a sample configuration to help you get started.</para>
 
     <sect2>
-      <title>Sample Logging Configurations</title>
+      <title>Log Configuration</title>
 
-      <para>The simplest logging configuration is to output log messages to
-      Console.Out:</para>
-
-      <para><programlisting>&lt;configuration&gt;
- &lt;configSections&gt;
-  &lt;sectionGroup name="iBATIS"&gt;
-   &lt;section name="logging" type="IBatisNet.Common.Logging.ConfigurationSectionHandler, IBatisNet.Common" /&gt;
-  &lt;/sectionGroup&gt;
- &lt;/configSections&gt;
- &lt;iBATIS&gt;
-  &lt;logging&gt;
-   &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.ConsoleLoggerFA, IBatisNet.Common.Logging" /&gt;
-  &lt;/logging&gt;
- &lt;/iBATIS&gt;
-&lt;/configuration&gt;</programlisting></para>
-
-      <para>A common logging configuration is to use Apache Log4Net. To use
-      Log4Net with your own application, you need to provide your own Log4Net
+      <para>The framework uses Log4Net internally and will automatically
+      include the assembly when your project is built. To use Log4Net with
+      your own application, you just need to provide your own Log4Net
       configuration. You can do this by adding a configuration file for your
       assembly that includes a &lt;log4Net&gt; element. The configuration file
       is named after your assembly but adds a <filename>.config</filename>
-      extension, and is stored in the same folder as your assembly. This is an
-      example of a basic Log4Net configuration block
-      (IBatisNet.DataMapper.Test.dll.Config) that also creates a log4net.txt
-      which contains debug information from log4net. If log4net is not
-      producing output, check the log4net.txt file.</para>
-
-      <para><programlisting>&lt;configuration&gt;
- &lt;configSections&gt;
-  &lt;sectionGroup name="iBATIS"&gt;
-   &lt;section name="logging" type="IBatisNet.Common.Logging.ConfigurationSectionHandler, IBatisNet.Common" /&gt;
-  &lt;/sectionGroup&gt;
-  &lt;section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" /&gt;
- &lt;/configSections&gt;
- &lt;appSettings&gt;
-  &lt;add key="log4net.Internal.Debug" value="true"/&gt;
- &lt;/appSettings&gt;
- &lt;system.diagnostics&gt;
- &lt;trace autoflush="true"&gt;
-   &lt;listeners&gt;
-    &lt;add name="textWriterTraceListener" 
-     type="System.Diagnostics.TextWriterTraceListener"
-     initializeData="C:\\inetpub\\wwwroot\\log4net.txt" /&gt;
-   &lt;/listeners&gt;
-  &lt;/trace&gt;
- &lt;/system.diagnostics&gt;
- &lt;iBATIS&gt;
-  &lt;logging&gt;
-   &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.Log4NetLoggerFA, IBatisNet.Common.Logging.Log4Net"&gt;
-    &lt;arg key="configType" value="inline" /&gt;
-   &lt;/logFactoryAdapter&gt;
-  &lt;/logging&gt;
- &lt;/iBATIS&gt;
- &lt;log4net&gt;
-  &lt;appender name="FileAppender" type="log4net.Appender.FileAppender"&gt;
-   &lt;file value="log.txt" /&gt;
-   &lt;appendToFile value="true" /&gt;
-   &lt;layout type="log4net.Layout.SimpleLayout" /&gt;
-  &lt;/appender&gt;
-  &lt;root&gt;
-   &lt;level value="ALL" /&gt;
-   &lt;appender-ref ref="FileAppender" /&gt;
-  &lt;/root&gt;
- &lt;/log4net&gt;
-&lt;/configuration&gt;</programlisting></para>
+      extension, and is stored in the same folder as your assembly. Example
+      4.26 shows the configuration for the framework's Test project.</para>
 
       <example>
-        <title>A complete Log4Net configuration block
+        <title>A sample Log4Net configuration block
         (IBatisNet.DataMapper.Test.dll.Config)</title>
 
-        <programlisting>&lt;configuration&gt;
+        <programlisting>
+
+&lt;configuration&gt;
  <emphasis role="comment">&lt;!-- Register a section handler for the log4net section --&gt;</emphasis>
  &lt;configSections&gt;
   &lt;section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" /&gt;
@@ -2535,97 +2119,12 @@ Product p = (Product) map[“EST-93”];</programlisting>
 
       <para>To log all Prepared SQL command text, enable the logger for
       <classname>IBatisNet.DataMapper.Configuration.Statements.DefaultPreparedCommand</classname>.
-      This will display the statement, parameters, and parameter types used by
-      the DataMapper.</para>
-
-      <example>
-        <title>Sample DefaultPreparedCommand logger output</title>
-
-        <programlisting>2005-06-08 01:39:33 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand - 
-Statement Id: [User.Update] PreparedStatement : [UPDATE [User] SET [DateLastUpdated] = NOW() WHERE [UserId] = ?]
-2005-06-08 01:39:43 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand - 
-Statement Id: [User.Update] Parameters: [param0=[UserId,1]]
-2005-06-08 01:39:53 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand - 
-Statement Id: [User.Update] Types: [param0=[String, System.Int32]]
-</programlisting>
-      </example>
-
-      <para>If your statements are named the same across all sqlMap files, its
-      possible to filter log messages when using Apache Log4Net. The example
-      below only logs Insert, Update, and Delete statements sent to the
-      database. Select or GetMany statements are not logged:</para>
-
-      <para><example>
-          <title>Sample Apache Log4Net appender node that will log Insert,
-          Update, and Delete statements to a file</title>
-
-          <programlisting>&lt;appender name="FileAppender" type="log4net.Appender.FileAppender"&gt;
- &lt;file value="InsertsUpdatesDeletes.txt" /&gt;
- &lt;layout type="log4net.Layout.SimpleLayout" /&gt;
- &lt;filter type="log4net.Filter.StringMatchFilter"&gt;
-  &lt;regExToMatch value="^(?!Statement Id:)|Statement Id: \[\w+?\.(?:Insert|Update|Delete)" /&gt;
- &lt;/filter&gt;
- &lt;filter type="log4net.Filter.DenyAllFilter" /&gt;
-&lt;/appender&gt;</programlisting>
-        </example>If you would like to log cache usage in your application,
-      enable the logger for
-      <classname>IBatisNet.DataMapper.Configuration.Cache.CacheModel</classname>.</para>
-
-      <example>
-        <title>Sample CacheModel logger output</title>
-
-        <programlisting>2005-06-08 01:38:34,403 [3648] DEBUG IBatisNet.DataMapper.Configuration.Cache.CacheModel - 
-Flush cacheModel named Account.account-cache for statement 'UpdateAccountViaParameterMap'</programlisting>
-      </example>
-
-      <para>To keep track of DataMapper session information, enable the logger
-      for <classname>IBatisNet.DataMapper.SqlMapSession</classname>.</para>
-
-      <example>
-        <title>Sample SqlMapSession logger output</title>
-
-        <programlisting><emphasis role="blue">2005-06-08 01:39:42,660 [3872] DEBUG IBatisNet.DataMapper.SqlMapSession [] - 
-  Open Connection "3194" 
-  to "Microsoft SQL Server 7.0/2000, provider V1.0.5000.0 in framework .NET V1.1".
-</emphasis>2005-06-08 01:39:42,660 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
-  PreparedStatement : [select * from Orders where Order_ID =  @param0 ]
-2005-06-08 01:39:42,660 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
-  Parameters: [@param0=[value,1]]
-2005-06-08 01:39:42,660 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
-  Types: [@param0=[Int32, System.Int32]]
-<emphasis role="blue">2005-06-08 01:39:42,676 [3872] DEBUG IBatisNet.DataMapper.SqlMapSession [] - 
-  Close Connection "3194" to 
-  "Microsoft SQL Server 7.0/2000, provider V1.0.5000.0 in framework .NET V1.1".</emphasis></programlisting>
-      </example>
-
-      <para>To get information about lazyload usage by the DataMapper, enable
-      the logger for
-      <classname>IBatisNet.DataMapper.LazyLoadList</classname>.</para>
-
-      <example>
-        <title>Sample LazyLoadList logger output</title>
-
-        <programlisting><emphasis role="blue">2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.LazyLoadList [] - 
-  Proxyfying call to get_Count
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.LazyLoadList [] - 
-  Proxyfying call, query statement GetLineItemsForOrder</emphasis>
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.SqlMapSession [] - 
-  Open Connection "3463" to 
-  "Microsoft SQL Server 7.0/2000, provider V1.0.5000.0 in framework .NET V1.1".
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
-  PreparedStatement : [select LineItem_ID as Id, LineItem_Code as Code,      
-  LineItem_Quantity as Quantity, LineItem_Price as Price     
-  from LineItems where Order_ID =  @param0 ]
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
-  Parameters: [@param0=[value,1]]
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
-  Types: [@param0=[Int32, System.Int32]]
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.SqlMapSession [] - 
-  Close Connection "3463" to 
-  "Microsoft SQL Server 7.0/2000, provider V1.0.5000.0 in framework .NET V1.1".
-<emphasis role="blue">2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.LazyLoadList [] - 
-  End of proxyfied call to get_Count</emphasis></programlisting>
-      </example>
+      To log cache usage, enable the logger for
+      <classname>IBatisNet.DataMapper.Configuration.Cache.CacheModel</classname>.
+      To log lazyload usage, enable the logger for
+      <classname>IBatisNet.DataMapper.LazyLoadList</classname>. To log
+      DataMapper session information, enable the logger for
+      <classname>IBatisNet.DataMapper.SqlMapSession</classname>.</para>
     </sect2>
   </sect1>
 </chapter>

@@ -72,7 +72,7 @@
 
       <programlisting>DomDaoManagerBuilder builder = new DomDaoManagerBuilder();
 builder.Configure();
-IDaoManager daoManager = DaoManager.GetInstance("SqlMapDaoContext");</programlisting>
+DaoManager daoManager = DaoManager.GetInstance("SqlMapDaoContext");</programlisting>
     </example>
 
     <para>If you have named your configuration file something other than
@@ -86,10 +86,10 @@ IDaoManager daoManager = DaoManager.GetInstance("SqlMapDaoContext");</programlis
 
       <programlisting><emphasis role="comment">/* Configure from a file path.
    Uses a relative resource path from your application root 
-   or an absolute file path such as "file://c:\dir\a.config" */
+   or an absolute file path such as "file:\\c:\dir\a.config" */
 </emphasis>DomDaoManagerBuilder builder = new DomDaoManagerBuilder();
 builder.Configure(strPath);
-IDaoManager daoManager = DaoManager.GetInstance("AnotherContext");</programlisting>
+DaoManager daoManager = DaoManager.GetInstance("AnotherContext");</programlisting>
     </example>
 
     <tip>
@@ -115,13 +115,13 @@ IDaoManager daoManager = DaoManager.GetInstance("AnotherContext");</programlisti
 FileInfo aFileInfo = someSupportClass.GetDynamicFileInfo();
 DomDaoManagerBuilder builder = new DomDaoManagerBuilder();
 builder.Configure(aFileInfo);
-IDaoManager daoManager = DaoManager.GetInstance("NHibernateContext");
+DaoManager daoManager = DaoManager.GetInstance("NHibernateContext");
 
 <emphasis role="comment">/* Configure through a Uri. */</emphasis>
 Uri aUri = someSupportClass.GetDynamicUri();
 DomDaoManagerBuilder builder = new DomDaoManagerBuilder();
 builder.Configure(aUri);
-IDaoManager daoManager = DaoManager.GetInstance("SimpleDao");</programlisting>
+DaoManager daoManager = DaoManager.GetInstance("SimpleDao");</programlisting>
     </example>
 
     <para>If you find that you already have loaded your DAO configuration
@@ -138,13 +138,13 @@ IDaoManager daoManager = DaoManager.GetInstance("SimpleDao");</programlisting>
 XmlDocument anXmlDoc = someSupportClass.GetDynamicXmlDocument();
 DomDaoManagerBuilder builder = new DomDaoManagerBuilder();
 builder.Configure(anXmlDoc);
-IDaoManager daoManager = DaoManager.GetInstance("Petstore");
+DaoManager daoManager = DaoManager.GetInstance("Petstore");
 
 <emphasis role="comment">/* Configure from a stream. */</emphasis>
 Stream aStream = someSupportClass.GetDynamicStream();
 DomDaoManagerBuilder builder = new DomDaoManagerBuilder();
 builder.Configure(aStream);
-IDaoManager daoManager = DaoManager.GetInstance("AnotherPetstore");</programlisting>
+DaoManager daoManager = DaoManager.GetInstance("AnotherPetstore");</programlisting>
     </example>
 
     <para>In addition to the straightforward
@@ -157,7 +157,7 @@ IDaoManager daoManager = DaoManager.GetInstance("AnotherPetstore");</programlist
     <classname>ConfigureHandler</classname> (callback delegate) to the
     <classname>DomDaoManagerBuilder</classname> so that it knows the method
     for resetting your application's <classname>DaoManager</classname>
-    instances.</para>
+    instances. </para>
 
     <para>Since the configuration files need to be watched for changes, your
     <filename>dao.config</filename> file must be accessible through the file
@@ -212,7 +212,7 @@ public void ConfigureAndWatch( FileInfo resource, ConfigureHandler configureDele
     method <literal>DaoManager[type]</literal>) For example:</para>
 
     <programlisting>[C#]
-IDaoManager daoManager = DaoManager.GetInstance("daoContextName"); 
+DaoManager daoManager = DaoManager.GetInstance("daoContextName"); 
 <emphasis role="comment">// gets the dao of type 'ICategoryDao'</emphasis>
 ICategoryDao categoryDao = daoManager.GetDao(typeof(ICategoryDao)) as ICategoryDao; 
 <emphasis role="comment">// same thing, just using the indexer</emphasis>
@@ -237,12 +237,12 @@ Category c 1= new Category()
 c1.Add(p1);
 c2.Add(p2);
 
-IDaoManager daoManager = DaoManager.GetInstance("PetStore"); 
+DaoManager daoManager = DaoManager.GetInstance("PetStore"); 
 ICategoryDao categoryDao = daoManager[typeof(ICategoryDao)] as ICategoryDao;
 IProductDao productDao = daoManager[typeof(IProductDao)] as IProductDao;
+daoManager.BeginTransaction();
 
 try {
-      daoManager.BeginTransaction();
       productDao.Insert(p1);
       productDao.Insert(p2);
       categoryDao.Insert(c1);
@@ -261,17 +261,13 @@ catch {
     <literal>catch</literal> block. The call to
     <methodname>RollBackTransaction()</methodname> will rollback any changes
     you’ve made in case an exception is thrown before the call to
-    <methodname>CommitTransaction()</methodname>. Be aware that if an
-    exception occurs before <methodname>BeginTransaction()</methodname>
-    completes and is caught in the <literal>catch</literal> block,
-    RollBackTransaction() will also throw another exception since a
-    transaction was not started.</para>
+    <methodname>CommitTransaction()</methodname>.</para>
 
     <para>When you deal with a connection and transaction, you can also use
     the <methodname>using</methodname> syntax as in the examples below.</para>
 
     <para><programlisting>[C#]
-IDaoManager daoManager = DaoManager.GetInstance("PetStore"); 
+DaoManager daoManager = DaoManager.GetInstance("PetStore"); 
 IAccountDao accountDao = daoManager[typeof(IAccountDao)] as IAccountDao;
 
 using ( IDalSession session = daoManager.OpenConnection() )
@@ -306,12 +302,12 @@ using ( IDalSession session = daoManager.BeginTransaction() )
       <title>Example AutoConnection</title>
 
       <programlisting>[C#]
-<emphasis role="comment">// Open/close first Connection</emphasis>
+<emphasis role="comment">// Open/close Connection 1</emphasis>
 Product product = productDao.GetProduct (5); 
 product.Description = "New description.";
-<emphasis role="comment">// Open/close second Connection</emphasis>
+<emphasis role="comment">// Open/close Connection 2</emphasis>
 productDao.UpdateProduct(product);
-<emphasis role="comment">// Open/close third Connection</emphasis>
+<emphasis role="comment">// Open/close Connection 3</emphasis>
 product = productDao.GetProduct (5);</programlisting>
     </example>
 

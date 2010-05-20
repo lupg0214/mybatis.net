@@ -1,0 +1,8 @@
+IBatisNet Common Change Log
+
+------------------------------
+1.2.* - XX/XX/XXXX
+------------------------------
+- Added Resources.BaseDirectory (name of the directory used to probe the assemblies.) 
+- Renamed Resources.RootApplication to Resources.ApplicationBase in IBatisNet.Common.Utilities 
+  + fixed issue in init of ApplicationBase

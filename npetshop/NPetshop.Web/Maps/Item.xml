@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlMap namespace="Item" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="Item"  type="NPetshop.Domain.Catalog.Item, NPetshop.Domain"/>
+		<typeAlias alias="Supplier" type="NPetshop.Domain.Catalog.Supplier, NPetshop.Domain"/>
+	</alias>
+	<resultMaps>
+		<resultMap id="ItemResult" class="Item">
+			<result property="Id" column="Item_Id"/>
+			<result property="ListPrice" column="Item_ListPrice"/>
+			<result property="UnitCost" column="Item_UnitCost"/>
+			<result property="Product" resultMapping="Product.ProductResult"/>
+		</resultMap>
+		<resultMap id="ResultWithQuantity" class="Item" extends="ItemResult">
+			<result property="Photo" column="Item_Photo"/>
+			<result property="Attribute1" column="Item_Attr1"/>
+			<result property="Quantity" column="Inventory_Quantity"/>
+			<result property="Supplier" resultMapping="Item.SupplierResult"/>
+		</resultMap>
+		<resultMap id="SupplierResult" class="Supplier">
+			<result property="Id" column="Supplier_Id"/>
+			<result property="Name" column="Supplier_Name"/>
+		</resultMap>
+	</resultMaps>
+	<!-- =============================================
+        MAPPED STATEMENTS 
+    ============================================= 
+    -->
+	<statements>
+		<select id="GetItemListByProduct" resultMap="ItemResult" parameterClass="string">
+			select
+			Item_Id, Item_ListPrice, Item_UnitCost,Item_Attr1,
+			I.Product_ID, Product_Name, Product_Description
+			from Items as I, Products as P 
+			where P.Product_ID = I.Product_ID and I.Product_ID = #value#		
+		
+		</select>
+		<select id="GetItem" resultMap="ResultWithQuantity" parameterClass="string">
+			select
+				I.Item_Id, Item_ListPrice, Item_UnitCost,Item_Attr1,Item_Photo,  
+				I.Product_ID, Product_Name, Product_Description,
+				Inventory_Quantity,
+				S.Supplier_Id, Supplier_Name
+			from Items as I, Products as P, Inventories as IV, Suppliers as S 
+			where 
+				P.Product_ID = I.Product_ID and 
+				IV.Item_ID = I.Item_Id and
+				S.Supplier_ID = I.Supplier_ID and
+				I.Item_ID = #value#	
+		 </select>
+		<select id="GetInventoryQuantity" resultClass="int" parameterClass="string">
+			select Inventory_Quantity as val 
+			from Inventories 
+			where Item_ID = #value#
+		</select>
+		<update id="UpdateInventoryQuantity" parameterClass="map">
+			update Inventories 
+			set Inventory_Quantity = Inventory_Quantity - #Increment# 
+			where Item_ID = #ItemId#
+		</update>
+	</statements>
+</sqlMap>

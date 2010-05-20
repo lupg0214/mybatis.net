@@ -42,47 +42,6 @@
   </sect1>
 
   <sect1>
-    <title>Release change log</title>
-
-	    <sidebar>
-        <para><emphasis>Version 1.6.0</emphasis></para>
-		<itemizedlist>
-			<listitem>
-             Resolution of N+1 select problem using groupBy attribute
-          </listitem>
-		  <listitem>
-            Added support of reuse SQL fragement via &lt;include/&gt; tag
-          </listitem>
-		   <listitem>
-            Added lazy load support for single class 
-          </listitem>
-		   <listitem>
-		  Added support for IDictionary&lt;K, V&gt; QueryForDictionary&lt;K, V&gt;(...)
-		   </listitem>
-		  <listitem>
-		  Marked QueryForPaginatedList as obsolete
-		   </listitem>
-		    <listitem>
-		  Allowed procedure statement without parameterMap
-		   </listitem>
-		   <listitem>
-		   Removed obsoletes methods on SqlMapper : 
-		   <para>Configure(XmlDocument document), Configure(),</para> 
-		   <para>Configure(string resource),</para> 
-		   <para>ConfigureAndWatch(ConfigureHandler configureDelegate),</para>  
-		   <para>ConfigureAndWatch(string resource, ConfigureHandler configureDelegate)</para> 
-		</listitem>
-		<listitem>
-		   Extended use of ISqlMapper in DataMapper + allowed use of a custom ISqlMapper.
-		</listitem>
-		<listitem>
-		   Allowed custom ISessionStore.
-		</listitem>
-		</itemizedlist>
-      </sidebar>
-  </sect1>
-
-  <sect1>
     <title>License Information</title>
 
     <para>iBATIS.NET is licensed according to the terms of the Apache License,
@@ -101,7 +60,7 @@
     <para>Mailing lists and bug trackers are available (courtesy of Apache
     Software Foundation) at iBATIS’s Apache project page. Just direct your
     browser to <ulink
-    url="http://ibatis.apache.org/">http://ibatis.apache.org/</ulink>.</para>
+    url="http://incubator.apache.org/ibatis/">http://incubator.apache.org/ibatis/</ulink>.</para>
   </sect1>
 
   <sect1>

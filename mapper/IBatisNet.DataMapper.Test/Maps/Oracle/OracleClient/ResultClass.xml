@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<sqlMap namespace="ResultClass" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+
+	<statements>	
+		<statement id="GetBoolean"
+					parameterClass="Int"
+					resultClass="bool" >
+			select 1 from dual where 1 = #dummy#
+		</statement>	
+
+		<statement id="GetByte"
+					parameterClass="Int"
+					resultClass="byte" >
+			select 155 from dual where 1 = #value#
+		</statement>	
+		
+		<statement id="GetChar"
+					parameterClass="Int"
+					resultClass="char" >
+			select cast('a' as char) from dual where 1 = #value#
+		</statement>
+		
+		<statement id="GetDate"
+					parameterClass="Int"
+					resultClass="date" >
+			select TO_DATE('2003-02-15 8:15:00', 'YYYY-MM-DD HH:MI:SS') from dual where 1 = #value#
+		</statement>
+									
+		<statement id="GetDecimal"
+					parameterClass="Int"
+					resultClass="decimal" >
+			select 1.56 from dual where 1 = #value#
+		</statement>
+
+		<statement id="GetDouble"
+					parameterClass="Int"
+					resultClass="double" >
+			select 99.5 from dual where 1 = #value#
+		</statement>
+
+		<statement id="GetGuid"
+					parameterClass="Int"
+					resultClass="guid" >
+			select 'CD5ABF17-4BBC-4C86-92F1-257735414CF4' from dual where 1 = #value#
+		</statement>
+		
+		<statement id="GetInt16"
+					parameterClass="Int"
+					resultClass="short" >
+			select 32111 from dual where 1 = #value#
+		</statement>	
+		
+		<statement id="GetInt32"
+					parameterClass="Int"
+					resultClass="int" >
+			select 999999 from dual where 1 = #value#
+		</statement>
+		
+		<statement id="GetInt64"
+					parameterClass="Int"
+					resultClass="long" >
+			select 9223372036854775800 from dual where 1 = #value#
+		</statement>
+		
+		<statement id="GetSingle"
+					parameterClass="Int"
+					resultClass="float" >
+			select 92233.5 from dual where 1 = #value#
+		</statement>
+						
+		<statement id="GetString"
+					parameterClass="Int"
+					resultClass="string" >
+			select 'VISA'
+			from dual where 1 = #value#
+		</statement>
+	</statements>
+
+</sqlMap>

@@ -34,9 +34,8 @@
         <title>A simple Data Map (.NET)</title>
 
         <programlisting>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-  &lt;sqlMap namespace="LineItem" 
-xmlns="http://ibatis.apache.org/mapping" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
+ &lt;sqlMap namespace="LineItem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:noNamespaceSchemaLocation="SqlMap.xsd"&gt;
 
   <emphasis role="comment">&lt;!--Type aliases allow you to use a shorter name for long fully qualified class names.--&gt;</emphasis>
   &lt;alias&gt;
@@ -104,16 +103,15 @@ Mapper.Instance().Insert("InsertLineItem",lineItem);</programlisting></para>
         <title>A Data Map definition file with some bells and whistles</title>
 
         <programlisting>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-  &lt;sqlMap namespace="Product" 
-xmlns="http://ibatis.apache.org/mapping" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
+&lt;sqlMap namespace="Product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:noNamespaceSchemaLocation="SqlMap.xsd"&gt;
 
 <emphasis role="alias">  &lt;alias&gt;
     &lt;typeAlias alias="Product" type="Example.Domain.Product, Example.Domain" /&gt;
   &lt;/alias&gt;</emphasis><emphasis role="cache">
 
   &lt;cacheModels&gt;
-    &lt;cacheModel id="productCache" implementation="LRU"&gt;
+    &lt;cacheModel id="productCache" type="LRU"&gt;
       &lt;flushInterval hours="24"/&gt;
       &lt;property name="CacheSize" value="1000" /&gt;
     &lt;/cacheModel&gt;
@@ -186,7 +184,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
   [resultClass="<emphasis role="blue">class.name|alias</emphasis>"]
   [listClass="<emphasis role="blue">class.name|alias</emphasis>"]
   [cacheModel="<emphasis role="blue">cache.name</emphasis>"]
-  [extends="<emphasis role="blue">statement.name</emphasis>"]
 &gt;
 
   select * from Products where Product_Id = [?|#propertyName#]
@@ -399,7 +396,6 @@ All query methods</programlisting></entry>
           parameter direction, size, precision, and scale are usually
           auto-discovered by the framework (via the CommandBuilder) depending
           on your provider.</para>
-		  <para>If your stored procedure have no parmeters, the parameterMap attribute on the procedure tag is optionnal.</para>
         </note></para>
     </sect2>
 
@@ -417,75 +413,6 @@ All query methods</programlisting></entry>
       <para>If standard, static SQL isn't enough, iBATIS can help you build a
       dynamic SQL statement. See Section 3.9 for more about Dynamic
       SQL.</para>
-
-      <sect3>
-        <title>Reusing SQL Fragments</title>
-
-		<para>When writing SqlMaps, you often encounter duplicate fragments of SQL, for example a FROM-clause or
-		constraint-statement. iBATIS offers a simple yet powerful tag to reuse them. For the sake of simplicity, let's
-		assume we want to get some items and we want to do a count on them. Normally, you would write
-		something like this :
-		
-		<example>
-            <title>Reusing SQL Fragments (Before)</title>
-
-            <programlisting>&lt;select id="SelectItemCount" resultClass="int"&gt;
-SELECT COUNT(*) AS total
-FROM items
-WHERE parentid = 6
-&lt;/select&gt;
-
-&lt;select id="SelectItems" resultClass="Item"&gt;
-SELECT id, name
-FROM items
-WHERE parentid = 6
-&lt;/select&gt;</programlisting>
-          </example>
-
-		  To eliminate this duplication, we use the tags &lt;sql&gt; and &lt;include&gt;. The &lt;sql&gt; tag contains the fragment to reuse, the &lt;include&gt; tag includes such a fragment in a statement. For example:
-		
-			<example>
-            <title>Reusing SQL Fragments (After)</title>
-
-            <programlisting>&lt;sql id="selectItem_fragment"&gt;
-FROM items
-WHERE parentid = 6
-&lt;/sql&gt;
-
-&lt;select id="selectItemCount" resultClass="int"&gt;
-SELECT COUNT(*) AS total
-&lt;include refid="selectItem_fragment"/&gt;
-&lt;/select&gt;
-
-&lt;select id="selectItems" resultClass="Item"&gt;
-SELECT id, name
-&lt;include refid="selectItem_fragment"/&gt;
-&lt;/select&gt;</programlisting>
-          </example>
-
-		  The &lt;include&gt; tag is namespace aware so you can refer to fragments even when they are located in another map (however, due to the way iBATIS loads the SqlMaps, the included fragment should be loaded before the including statement).
-		  The fragments are included and processed on query-execution so parameters can be used too :
-		</para>
-
-<programlisting>&lt;sql id="selectItem_fragment"&gt;
-FROM items
-WHERE parentid = #value#
-&lt;/sql&gt;
-
-&lt;select id="selectItemCount" parameterClass="int" resultClass="int"&gt;
-SELECT COUNT(*) AS total
-&lt;include refid="selectItem_fragment"/&gt;
-&lt;/select&gt;
-
-&lt;select id="selectItems" parameterClass="int" resultClass="Item"&gt;
-SELECT id, name
-&lt;include refid="selectItem_fragment"/&gt;
-&lt;/select&gt;</programlisting>
-
-		<note>
-          <para>In many case, you can also use the <emphasis role="comment">extends</emphasis> attribute on statement tag to achieve the same goal.</para>
-        </note>
-      </sect3>
 
       <sect3>
         <title>Escaping XML symbols</title>
@@ -974,31 +901,6 @@ namespace WebShop.Domain
             Models, see Section 3.8.</para>
           </example></para>
       </sect3>
-
-      <sect3>
-        <title>extends</title>
-
-        <para>When writing Sql, you often encounter duplicate fragments of
-        SQL. iBATIS offers a simple yet powerful attribute to reuse
-        them.</para>
-
-        <para><programlisting>
-&lt;select id="<emphasis role="blue">GetAllAccounts</emphasis>"
-  resultMap="indexed-account-result"&gt;
-select
-  Account_ID,
-  Account_FirstName,
-  Account_LastName,
-  Account_Email
-from Accounts
-&lt;/select&gt;
-		
-&lt;select id="GetAllAccountsOrderByName"
-  extends="<emphasis role="blue">GetAllAccounts</emphasis>"
-  resultMap="indexed-account-result"&gt;
-    order by Account_FirstName
-&lt;/select&gt;</programlisting></para>
-      </sect3>
     </sect2>
   </sect1>
 
@@ -1145,7 +1047,7 @@ from Accounts
         <title>property</title>
 
         <para>The <parameter>property</parameter> attribute of
-        &lt;parameter&gt; is the name of a field or property of the parameter object.
+        &lt;parameter&gt; is the name of a property of the parameter object.
         It may also be the name of an entry in a
         <interfacename>IDictionary</interfacename> object. The name can be
         used more than once depending on the number of times it is needed in
@@ -1473,18 +1375,6 @@ from Accounts
            [class="<emphasis role="blue">fullyQualifiedClassName, assembly|typeAlias</emphasis>"] 
            [extends="<emphasis role="blue">[sqlMapNamespace.]resultMapId</emphasis>"]&gt;
 
-   &lt;constructor &gt; 
-       &lt;argument property="<emphasis role="blue">argumentName</emphasis>" 
-           column="<emphasis role="blue">columnName</emphasis>"
-           [columnIndex="<emphasis role="blue">columnIndex</emphasis>"] 
-           [dbType="<emphasis role="blue">databaseType</emphasis>"] 
-           [type="<emphasis role="blue">propertyCLRType</emphasis>"]
-           [resultMapping="<emphasis role="blue">resultMapName</emphasis>"]
-           [nullValue="<emphasis role="blue">nullValueReplacement</emphasis>"] 
-           [select="<emphasis role="blue">someOtherStatementName</emphasis>"] 
-           [typeHandler="<emphasis role="blue">fullyQualifiedClassName, assembly|typeAlias</emphasis>"] /&gt;
-   &lt;/constructor &gt; 
-
    &lt;result property="<emphasis role="blue">propertyName</emphasis>" 
            column="<emphasis role="blue">columnName</emphasis>"
            [columnIndex="<emphasis role="blue">columnIndex</emphasis>"] 
@@ -1574,147 +1464,8 @@ from Accounts
         result map to inherit all of the properties of the "super" resultMap
         that it extends.</para>
       </sect3>
-
-	  <sect3>
-        <title>groupBy</title>
-
-        <para>The optional <parameter>groupBy</parameter> attribute specifies a list of .NET property names of the result object build by the resultMap. They are used to identify unique rows in the returned result set. Rows with equal values for the specified properties will only generate one result object. Use groupBy in combination with nested resultMaps to solve the N+1 query problem. Exemple : "Id" or "Desciption, Date".(see  paragraph 3.5.13).</para>
-      </sect3>
     </sect2>
 
-	<sect2>
-      <title>&lt;constructor&gt; element</title>
-
-	<para>The &lt;constructor&gt; element must match the signature of one of the result class constructor. If specify, this element is used by iBATIS to instanciate the result object.</para>
-
-		 <para>The &lt;constructor&gt; element holds one or more &lt;argument&gt;
-      child elements that map SQL resultsets to object argument constructor.</para>
-
-		<para>
-        <example>
-          <title>Constructor element example</title>
-
-          <programlisting>&lt;resultMap id="account-result-constructor" class="Account" &gt;
-	 <emphasis role="blue">&lt;constructor&gt;
-		&lt;argument argumentName="id" column="Account_ID"/&gt;
-		&lt;argument argumentName="firstName" column="Account_FirstName"/&gt;
-		&lt;argument argumentName="lastName" column="Account_LastName"/&gt;
-	&lt;/constructor&gt;</emphasis>
-	&lt;result property="EmailAddress" column="Account_Email" nullValue="no_email@provided.com"/&gt;
-	&lt;result property="BannerOption" column="Account_Banner_Option" dbType="Varchar" type="bool"/&gt;
-	&lt;result property="CartOption"	column="Account_Cart_Option" typeHandler="HundredsBool"/&gt;
-&lt;/resultMap&gt;</programlisting>
-        </example>
-		</para>
-
-		<sect3>
-        <title>argumentName</title>
-
-        <para>The <parameter>argumentName</parameter> attribute is the name of a
-        constructor argument of the result object that will be returned by the Mapped
-        Statement.</para>
-      </sect3>
-
-      <sect3>
-        <title>column</title>
-
-        <para>The <parameter>column</parameter> attribute value is the name of
-        the column in the result set from which the value will be used to
-        populate the argument.</para>
-      </sect3>
-
-      <sect3>
-        <title>columnIndex</title>
-
-        <para>As an optional (minimal) performance enhancement, the
-        <parameter>columnIndex</parameter> attribute value is the index of the
-        column in the ResultSet from which the value will be used to populate
-        the object argument. This is not likely needed in 99% of applications
-        and sacrifices maintainability and readability for speed. Some
-        providers may not realize any performance benefit, while others will
-        speed up dramatically.</para>
-      </sect3>
-
-      <sect3>
-        <title>dbType</title>
-
-        <para>The dbType attribute is used to explicitly specify the database
-        column type of the ResultSet column that will be used to populate the
-        argument. Although Result Maps do not have the same
-        difficulties with null values, specifying the type can be useful for
-        certain mapping types such as Date properties. Because an application
-        language has one Date value type and SQL databases may have many
-        (usually at least 3), specifying the date may become necessary in some
-        cases to ensure that dates (or other types) are set correctly.
-        Similarly, String types may be populated by a VarChar, Char or CLOB,
-        so specifying the type might be needed in those cases too.</para>
-      </sect3>
-
-      <sect3>
-        <title>type</title>
-
-        <para>The type attribute is used to explicitly specify the CLR
-        argument type. Normally this can be derived
-        from a argument through reflection, but certain mappings that use
-        objects such as a Map cannot provide the type to the framework. If the
-        attribute type is not set and the framework cannot otherwise determine
-        the type, the type is assumed to be Object. Section 6 details the CLR
-        types and available aliases that are supported by the
-        framework.</para>
-      </sect3>
-
-      <sect3>
-        <title>resultMapping</title>
-
-        <para>The <parameter>resultMapping</parameter> attribute can be set to
-        the name of another resultMap used to fill the argument. If the
-        resultMap is in an other mapping file, you must specified the fully
-        qualified name.</para>
-      </sect3>
-
-      <sect3>
-        <title>nullValue</title>
-
-        <para>The <parameter>nullValue</parameter> attribute can be set to any
-        valid value (based on argument type). The result element's
-        <parameter>nullValue</parameter> attribute is used to specify an
-        inbound null value replacement. What this means is that when the value
-        is detected in a query's result column, the corresponding object
-        argument will be set to the the <parameter>nullValue</parameter>
-        attribute's value. This allows you to use a "magic" null number in
-        your application for types that do not support null values (such as
-        <classname>int</classname>, <classname>double</classname>,
-        <classname>float</classname>).</para>
-
-      </sect3>
-
-      <sect3>
-        <title>select</title>
-
-        <para>The select attribute is used to describe a relationship between
-        objects and to automatically load complex (i.e. user defined) property
-        types. The value of the statement property must be the name of another
-        mapped statement. The value of the database column (the column
-        attribute) that is defined in the same property element as this
-        statement attribute will be passed to the related mapped statement as
-        the parameter. More information about supported primitive types and
-        complex property mappings/relationships is discussed later in this
-        document. The lazyLoad attribute can be specified with the
-        select</para>
-      </sect3>
-
-      <sect3>
-        <title>typeHandler</title>
-
-        <para>The typeHandler attribute allows the use of a Custom Type
-        Handler (see the Custom Type Handler section). This allows you to
-        extend the DataMapper's capabilities in handling types that are
-        specific to your database provider, are not handled by your database
-        provider, or just happen to be a part of your application design. You
-        can create custom type handlers to deal with storing and retrieving
-        booleans and Guids from your database for example.</para>
-      </sect3>
-	</sect2>
     <sect2>
       <title>&lt;result&gt; Elements</title>
 
@@ -1725,7 +1476,7 @@ from Accounts
         <title>property</title>
 
         <para>The <parameter>property</parameter> attribute is the name of a
-        field or a property of the result object that will be returned by the Mapped
+        property of the result object that will be returned by the Mapped
         Statement. The name can be used more than once depending on the number
         of times it is needed to populate the results.</para>
       </sect3>
@@ -1796,15 +1547,17 @@ resultMapping="LineItem.LineItem"
         <title>nullValue</title>
 
         <para>The <parameter>nullValue</parameter> attribute can be set to any
-        valid value (based on property type). The result element's
+        valid value (based on property type). The
         <parameter>nullValue</parameter> attribute is used to specify an
-        inbound null value replacement. What this means is that when the value
-        is detected in a query's result column, the corresponding object
-        property will be set to the the <parameter>nullValue</parameter>
-        attribute's value. This allows you to use a "magic" null number in
-        your application for types that do not support null values (such as
+        outgoing null value replacement. What this means is that when the
+        value is detected in the object property, a NULL will be written to
+        the database (the opposite behavior of an inbound null value
+        replacement). This allows you to use a "magic" null number in your
+        application for types that do not support null values (such as
         <classname>int</classname>, <classname>double</classname>,
-        <classname>float</classname>).</para>
+        <classname>float</classname>). When these types of properties contain
+        a matching null value (say, –9999), a NULL will be written to the
+        database instead of the value.</para>
 
         <para>If your database has a NULLABLE column, but you want your
         application to represent NULL with a constant value, you can specify
@@ -1850,100 +1603,6 @@ resultMapping="LineItem.LineItem"
         whether or not the select statement's results should be lazy loaded.
         This can provide a performance boost by delaying the loading of the
         select statement's results until they are needed/accessed.</para>
-		
-		<para>Lazy loading is supported transparently for IList and IList&lt;T&gt; implementation.</para>
-		<para>Lazy loading is supported on strongly typed collection via Castle.DynamicProxy component. In this case you must set the listClass attribute and declare all methods/properties of the typed collection that you want to proxy as virtual.</para>
-		<para>Lazy loading is supported on concrete class via Castle.DynamicProxy component. In this case, you must declare all methods/properties of the class that you want to proxy as virtual.</para>
-
-<para>
-		<example>
-          <title>Sample of strongly typed collection used with proxy call</title>
-
-		<programlisting>
-[C#]
-
-[Serializable]
-public class LineItemCollection : CollectionBase 
-{
-	public LineItemCollection() {}
-
-	public virtual LineItem this[int index] 
-	{
-		get	{ return (LineItem)List[index]; }
-		set { List[index] = value; }
-	}
-
-	public virtual int Add(LineItem value) 
-	{
-		return List.Add(value);
-	}
-
-	public virtual void AddRange(LineItem[] value) 
-	{
-		for (int i = 0;	i &lt; value.Length; i++) 
-		{
-			Add(value[i]);
-		}
-	}
-
-	public virtual void AddRange(LineItemCollection value) 
-	{
-		for (int i = 0;	i &lt; value.Count; i++) 
-		{
-			Add(value[i]);
-		}
-	}
-
-	public virtual bool Contains(LineItem value) 
-	{
-		return List.Contains(value);
-	}
-
-	public virtual void CopyTo(LineItem[] array, int index) 
-	{
-		List.CopyTo(array, index);
-	}
-
-	public virtual int IndexOf(LineItem value) 
-	{
-		return List.IndexOf(value);
-	}
-	
-	public virtual void Insert(int index, LineItem value) 
-	{
-		List.Insert(index, value);
-	}
-	
-	public virtual void Remove(LineItem value) 
-	{
-		List.Remove(value);
-	}
-
-	public new virtual int Count
-	{
-		get {return this.List.Count;}
-	}
-}
-</programlisting>
-</example> 
-		<example>
-          <title>Concrete class</title>
-
-		<programlisting>
-[C#]
-
-[Serializable]
-public class Person
-{
-...
-	public virtual string Name
-	{
-		get {return _name;}
-	}
-...
-}
-</programlisting>
-</example></para>
       </sect3>
 
       <sect3>
@@ -2734,7 +2393,7 @@ public class Newspaper : Document
       large lists of data.</para>
 
       <example>
-        <title>N+1 Select Lists (1:M and M:N), example of problem</title>
+        <title>N+1 Select Lists (1:M and M:N)</title>
 
         <programlisting>
 &lt;resultMaps&gt;
@@ -2742,10 +2401,10 @@ public class Newspaper : Document
   &lt;resultMap id="select-category-result" class="Category"&gt;
     &lt;result property="Id" column="CAT_ID"/&gt;
     &lt;result property="Description" column="CAT_DESCRIPTION"/&gt;
-   <emphasis role="blue">&lt;result property="ProductList" column="CAT_ID" select="selectProductsByCatId"/&gt;</emphasis>
+    <emphasis role="blue">&lt;result property="ProductList" column="CAT_ID" select="selectProductsByCatId"/&gt;</emphasis>
   &lt;/resultMap&gt;
 
-  &lt;resultMap id="Product-result" class="Product"&gt;
+  &lt;resultMap id="select-product-result" class="Product"&gt;
     &lt;result property="Id" column="PRD_ID"/&gt;
     &lt;result property="Description" column="PRD_DESCRIPTION"/&gt;
   &lt;/resultMap&gt;
@@ -2766,54 +2425,9 @@ public class Newspaper : Document
 &lt;/statements&gt;</programlisting>
       </example>
 
-	  <para>iBATIS fully solves the N+1 selects problem. Here is the same example solved :</para>
-
-      <example>
-        <title>N+1 Select Lists (1:M and M:N) resolution</title>
-
-        <programlisting>
-&lt;sqlMap namespace="ProductCategory"&gt;
-&lt;resultMaps&gt;
-
-  &lt;resultMap id="Category-result" class="Category" <emphasis role="blue">groupBy="Id"</emphasis>&gt;
-    &lt;result property="Id" column="CAT_ID"/&gt;
-    &lt;result property="Description" column="CAT_DESCRIPTION"/&gt;
-    <emphasis role="blue">&lt;result property="ProductList" resultMapping="ProductCategory.Product-result"/&gt;</emphasis>
-  &lt;/resultMap&gt;
-
-  &lt;resultMap id="Product-result" class="Product"&gt;
-    &lt;result property="Id" column="PRD_ID"/&gt;
-    &lt;result property="Description" column="PRD_DESCRIPTION"/&gt;
-  &lt;/resultMap&gt;
-&lt;resultMaps&gt;
-
-&lt;statements&gt;
-
-  <emphasis role="comment">&lt;!-- This statement executes 1 time --&gt;</emphasis>
-  &lt;statement id="SelectCategory" parameterClass="int" resultMap="Category-result"&gt;
-    select C.CAT_ID, C.CAT_DESCRIPTION, P.PRD_ID, P.PRD_DESCRIPTION
-    from CATEGORY C
-    left outer join PRODUCT P
-    on C.CAT_ID = P.PRD_CAT_ID
-    where CAT_ID = #value#
-  &lt;/statement&gt;
-
-</programlisting>
-      </example>
-
-<para>When you call...</para>
-<programlisting>IList myList = sqlMap.QueryForList("SelectCategory", 1002);</programlisting>
-<para>...the main query is executed, and the results are stored in the myList variable containing .NET type
-"Category" element . Each object in that List will have a "ProductList" property that is also a List
-populated from the same query, but using the "Product-result" result map to populate the element in the child
-list. So, you end up with a list containing sub-lists, and only one database query is executed.</para>
-<para>The important items here are the...</para>
-<para><emphasis role="term"><emphasis role="blue">groupBy="Id"</emphasis></emphasis></para>
-<para>...attribute and the...</para>
-<para><emphasis role="term">&lt;result property="ProductList" <emphasis role="blue">resultMapping="ProductCategory.Product-result"</emphasis>/&gt;</emphasis></para>
-<para>...property mapping in the "Category-result" result map. One other important detail is that the result mapping
-for the ProductList property is namespace aware - had it been simply "Product-result" it would not work.
-Using this approach, you can solve any N+1 problem of any depth or breadth.</para>
+      <para>1:N &amp; M:N Solution? Currently the feature that resolves this
+      issue not implemented, but the development discussions are active, and
+      we expect it to be included in a future release.</para>
 
       <sidebar>
         <para><emphasis>Lazy Loading vs. Joins (1:M and M:N)</emphasis></para>
@@ -2855,7 +2469,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
       statement. This comes in handy for situations where a composite key
       relationship exists, or even if you simply want to use a parameter of
       some name other than #value#. The alternate syntax for the column
-      attribute is simply param1=column1, param2=column2, …, paramN=columnN.
+      attribute is simply {param1=column1, param2=column2, …, paramN=columnN}.
       Consider the example below where the PAYMENT table is keyed by both
       Customer ID and Order ID:</para>
 
@@ -2868,7 +2482,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
     &lt;result property="id" column="ORD_ID"/&gt;
     &lt;result property="customerId" column="ORD_CST_ID"/&gt;
     ...
-    &lt;result property="payments" column="<emphasis role="blue">itemId=ORD_ID, custId=ORD_CST_ID</emphasis>"
+    &lt;result property="payments" column="<emphasis role="blue">{itemId=ORD_ID, custId=ORD_CST_ID}</emphasis>"
       select="<emphasis role="blue">selectOrderPayments"</emphasis>/&gt;
   &lt;/resultMap&gt;
 &lt;resultMaps&gt;
@@ -2887,7 +2501,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
       they're in the same order as the parameters. For example:</para>
 
       <informalexample>
-        <programlisting><emphasis role="blue">ORD_ID, ORD_CST_ID</emphasis></programlisting>
+        <programlisting><emphasis role="blue">{ORD_ID, ORD_CST_ID}</emphasis></programlisting>
       </informalexample>
 
       <para>As usual, this is a slight performance gain with an impact on
@@ -2913,14 +2527,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
 
     <para>Table 3.4 shows the basic Supported Types for Parameter Maps and
     Result Maps for .NET. You can extend the framework's support for
-    additional types by using a Custom Type Handler.</para>
-	
-	<note>
-	<para>Nuallable type from .NET 2.0 are fully supported by iBATIS.NET.</para>
-	</note>
-
-	<para>
-	<table>
+    additional types by using a Custom Type Handler.<table>
         <title>Supported Types for Parameter Maps and Result Maps
         (.NET)</title>
 
@@ -3127,133 +2734,6 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
 
               <entry>Ulong, ulong</entry>
             </row>
-
-			<row>
-              <entry>Nullable&lt;bool&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>bool?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;byte&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>byte?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;char&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>char?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;DateTime&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>DateTime?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;decimal&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>decimal?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;double&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>double?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;Int16&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Int16?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;Int32&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Int32?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;Int64&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Int64?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;SByte&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>SByte?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;Single&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Single?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;UInt16&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>UInt16?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;UInt32&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>UInt32?</entry>
-            </row>
-			<row>
-              <entry>Nullable&lt;UInt64&gt;</entry>
-
-              <entry>Yes</entry>
-
-              <entry>Yes</entry>
-
-              <entry>UInt64?</entry>
-            </row>
           </tbody>
         </tgroup>
       </table></para>
@@ -3266,10 +2746,6 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
     Result Maps for .NET that come with the System.Data and
     System.Data.OracleClient assemblies. See the .NET Developer Guide section
     on configuring the DataMapper to work with your provider's DbTypes.</para>
-
-	<note>
-	<para>Nuallable type from .NET 2.0 are fully supported by iBATIS.NET.</para>
-	</note>
 
     <para>The .NET Framework data provider type of a Parameter object is
     inferred from the .NET Framework type of the Value of the Parameter
@@ -3315,7 +2791,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>Boolean, bool?</entry>
+              <entry>Boolean</entry>
 
               <entry>Yes</entry>
 
@@ -3329,9 +2805,9 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>Byte, byte?</entry>
+              <entry>Byte</entry>
 
-              <entry>Yes</entry>
+              <entry>-</entry>
 
               <entry>TinyInt</entry>
 
@@ -3343,7 +2819,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>DateTime, DateTime?</entry>
+              <entry>DateTime</entry>
 
               <entry>Yes</entry>
 
@@ -3357,7 +2833,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>char, char?</entry>
+              <entry>char</entry>
 
               <entry>Yes</entry>
 
@@ -3371,7 +2847,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>Decimal, decimal?</entry>
+              <entry>Decimal</entry>
 
               <entry>Yes</entry>
 
@@ -3385,7 +2861,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>Double, double?</entry>
+              <entry>Double</entry>
 
               <entry>Yes</entry>
 
@@ -3399,7 +2875,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>Guid, Guid?</entry>
+              <entry>Guid</entry>
 
               <entry>Yes</entry>
 
@@ -3413,7 +2889,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>Int16, Int16?</entry>
+              <entry>Int16</entry>
 
               <entry>Yes</entry>
 
@@ -3427,7 +2903,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>Int32, Int32?</entry>
+              <entry>Int32</entry>
 
               <entry>Yes</entry>
 
@@ -3441,7 +2917,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>Int64, Int64?</entry>
+              <entry>Int64</entry>
 
               <entry>Yes</entry>
 
@@ -3455,7 +2931,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>Single, Single?</entry>
+              <entry>Single</entry>
 
               <entry>Yes</entry>
 
@@ -3497,7 +2973,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>UInt16, UInt16?</entry>
+              <entry>UInt16</entry>
 
               <entry>yes</entry>
 
@@ -3511,7 +2987,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>UInt32, UInt32?</entry>
+              <entry>UInt32</entry>
 
               <entry>yes</entry>
 
@@ -3525,7 +3001,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             </row>
 
             <row>
-              <entry>UInt64, UInt64?</entry>
+              <entry>UInt64</entry>
 
               <entry>yes</entry>
 
@@ -3560,7 +3036,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
     <example>
       <title>Configuation a cache using the Cache Model element</title>
 
-      <programlisting>&lt;cacheModel id="<emphasis role="blue">product-cache</emphasis>" implementation="LRU" readOnly="true" serialize="false"&gt;
+      <programlisting>&lt;cacheModel id="<emphasis role="blue">product-cache</emphasis>" implementation="LRU" &gt;
   &lt;flushInterval hours="24"/&gt;
   &lt;flushOnExecute  statement="insertProduct"/&gt;
   &lt;flushOnExecute  statement="updateProduct"/&gt;
@@ -3592,22 +3068,6 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
   select * from PRODUCT where PRD_CAT_ID = #value#
 &lt;/statement&gt;</programlisting>
     </example>
-
-    <sect2>
-       
-
-      <title>Read-Only vs. Read/Write</title>
-
-       The framework supports both read-only and read/write caches. Read-only caches are shared among all users and therefore offer greater performance benefit. However, objects read from a read-only cache should not be modified. Instead, a new object should be read from the database (or a read/write cache) for updating. On the other hand, if there is an intention to use objects for retrieval and modification, a read/write cache is recommended (i.e. required). To use a read-only cache, set readOnly="true" on the cache model element. To use a read/write cache, set readOnly="false". The default is read-only (true). 
-    </sect2>
-
-    <sect2>
-       
-
-      <title>Serializable Read/Write Caches</title>
-
-       As you may agree, caching per-session as described above may offer little benefit to global application performance. Another type of read/write cache that can offer a performance benefit to the entire application (i.e. not just per session) is a serializable read/write cache. This cache will return different instances (copies) of the cached object to each session. Therefore each session can safely modify the instance returned. Realize the difference in semantics here, usually you would expect the same instance to be returned from a cache, but in this case you'll get a different one. Also note that every object stored by a serializable cache must be serializable. This means that you will have difficulty using both lazy loading features combined with a serializable cache, because lazy proxies are not serializable. The best way to figure out what combination of caching, lazy loading and table joining is simply to try it out. To use a serializable cache, set readOnly="false" and serialize="true". By default cache models are read-only and non-serializable. Read-only caches will not be serialized (there's no benefit). 
-    </sect2>
 
     <sect2>
       <title>Cache Implementation</title>
@@ -4168,7 +3628,7 @@ ADOLESCENT = ‘TRUE'
                   <entry>Iterates over a property that is of type IList
                   Example Usage:<programlisting>&lt;iterate prepend="AND" property="UserNameList"
   open="(" close=")" conjunction="OR"&gt;
-  username=<emphasis role="blue">#UserNameList[]#</emphasis>
+  username=<emphasis role="blue">#userNameList[]#</emphasis>
 &lt;/iterate&gt;</programlisting>Note: It is very important to include the
                   square brackets[] at the end of the List property name when
                   using the Iterate element. These brackets distinguish this

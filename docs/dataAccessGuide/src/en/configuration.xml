@@ -24,16 +24,16 @@
       <title>Setup the Distribution</title>
 
       <para>The official site for iBATIS for .NET is our Apache site
-      &lt;http://ibatis.apache.org/&gt;. The DataAccess framework is availabe
-      in 2 types of distributions: a binary distribution that includes the
-      required DataAccess assemblies and a source distribution that includes a
-      VSN solution. To download either of the distributions, follow the link
-      to the Downloads area on our web site, and select the either the binary
-      or source distribution for the iBATIS .NET DataAccess V1.6.1 or later
-      release (if you download the binary distribution, extract the files
-      using a utility like WinZip or the extractor built into newer versions
-      of Windows and skip ahead to the Add Assembly References
-      section).</para>
+      &lt;http://incubator.apache.org/ibatis/&gt;. The DataAccess framework is
+      availabe in 2 types of distributions: a binary distribution that
+      includes the required DataAccess assemblies and a source distribution
+      that includes a VSN solution. To download either of the distributions,
+      follow the link to the Downloads area on our web site, and select the
+      either the binary or source distribution for the iBATIS .NET DataAccess
+      V1.5.1 or later release (if you download the binary distribution,
+      extract the files using a utility like WinZip or the extractor built
+      into newer versions of Windows and skip ahead to the Add Assembly
+      References section).</para>
 
       <para>The source distribution includes a VSN solution and a number of C#
       projects. The distribution is in the form of a ZIP archive. You can
@@ -122,26 +122,12 @@
       are seven projects in the solution, and all should succeed. The
       assemblies we need will be created under
       <filename>\source\IBatisNet.DataAccess\bin\Debug</filename>. The created
-      assemblies are : 
-	  <orderedlist>
-        <listitem>
-           <filename>IBatisNet.Common.dll</filename>
-        </listitem>
-
-        <listitem>
-           <filename>iBatisNet.DataAccess.dll</filename>
-        </listitem>
-      </orderedlist>
-
-      The core DataAccess
+      assemblies are : <filename>IBatisNet.Common.dll</filename> and
+      <filename>iBatisNet.DataAccess.dll</filename>. The core DataAccess
       framework has external dependencies on
-	   <orderedlist>
-        <listitem>
-          <filename>Castle.DynamicProxy.dll</filename> (creating proxies)
-        </listitem>
-
-      </orderedlist>
-      The dependency is found in the <filename>External-Bin</filename> folder and can also
+      <filename>Castle.DynamicProxy.dll</filename> (creating proxies) and
+      <filename>log4net.dll</filename> (logging). Both of these dependencies
+      are found in the <filename>External-Bin</filename> folder and can also
       be found in the <filename>bin\Debug</filename> folder after building the
       solution. In addition, the framework's
       <filename>IBatisNet.DataAccess.Extensions</filename> and
@@ -190,13 +176,30 @@
 
             <tbody>
               <row>
-                <entry>Castle dynamic proxy 1.1.5.0</entry>
+                <entry>Castle dynamic proxy 1.0.3.0</entry>
 
                 <entry>Dynamic proxy generator</entry>
 
                 <entry>Castle.DynamicProxy.dll</entry>
               </row>
 
+              <row>
+                <entry>Log4NET 1.2.0.30714</entry>
+
+                <entry>Logging framework</entry>
+
+                <entry>log4net.dll</entry>
+              </row>
+
+              <row>
+                <entry>NHibernate 0.6</entry>
+
+                <entry>Object persistence library; required if using
+                NHibernate DAO Session Handler</entry>
+
+                <entry>HashCodeProvider.dll NHibernate.dll
+                Iesi.Collections.dll</entry>
+              </row>
             </tbody>
           </tgroup>
         </table></para>
@@ -256,237 +259,8 @@
         </tgroup>
       </table>
     </sect2>
-
-<sect2>
-      <title>Visual Studio.NET Integration</title>
-
-      <para>The configuration file (dao.config) is associated to a schema. The benefits of associating
-      an XML document with a schema are to validate the document (which is
-      done at runtime) and to use editing features such as
-      IntelliSense/content completion assistance.</para>
-
-      <para>To allow association of the schemas in VS.NET XML editor to your
-      configuration file, you should add the schema file
-      (<filename>DaoConfig.xsd</filename>  to either your VS.NET project or in
-      your VS.NET installation directory. The VS.NET directory will be
-      either</para>
-
-      <para><filename>C:\Program Files\Microsoft Visual Studio 8\Xml\Schemas for VS.NET 2005</filename></para>
-
-      <para>or</para>
-
-      <para><filename>C:\Program Files\Microsoft Visual Studio .NET
-      2003\Common7\Packages\schemas\xml for VS.NET 2003</filename></para>
-
-      <para>or</para>
-
-      <para><filename>C:\Program Files\Microsoft Visual Studio
-      .NET\Common7\Packages\schemas\xml for VS.NET 2002</filename></para>
-
-      <para>depending on your version of VS.NET. It is typically easier to
-      place the file in the well known location under the VS.NET installation
-      directory than to copy the XSD file for each project you create.</para>
-
-      <para>Once you have registered the schema with VS.NET you will be enough
-      to get IntelliSense and validation of the configuration file from within
-      VS.NET.</para>
-
-      <figure>
-        <title>IntelliSense example</title>
-
-        <mediaobject>
-          <imageobject>
-            <imagedata align="center" fileref="images/intellisense.gif"
-                       format="GIF" />
-          </imageobject>
-        </mediaobject>
-      </figure>
-    </sect2>
   </sect1>
 
- <sect1>
-    <title>Logging Activity</title>
-
-    <para>The iBATIS DataAccess framework records its interaction with the
-    database through an internal logging mechanism patterned after Apache
-    Log4Net. The internal logging mechanism can use one of the three built-in
-    loggers (NoOpLogger, ConsoleOutLogger, TraceLogger) or external logging
-    packages such as Apache Log4Net. In order for iBATIS to generate log
-    messages, the application's config file (App.Config or Web.Config) must
-    contain an appropriate configSection node:</para>
-
-    <example>
-      <title>iBATIS Configuration Section Handler for logging</title>
-
-      <programlisting>&lt;configSections&gt;
- &lt;sectionGroup name="iBATIS"&gt;
-  &lt;section name="logging" type="IBatisNet.Common.Logging.ConfigurationSectionHandler, IBatisNet.Common" /&gt;
- &lt;/sectionGroup&gt;
-&lt;/configSections&gt;</programlisting>
-    </example>
-
-    <para>The application's config file must declare one logger
-    implementation. See the examples below on how to configure one of the
-    three built-in loggers.</para>
-
-    <para><programlisting>&lt;iBATIS&gt;
- &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.ConsoleOutLoggerFA, IBatisNet.Common"&gt;
-   &lt;arg key="showLogName" value="true" /&gt;
-   &lt;arg key="showDataTime" value="true" /&gt;
-   &lt;arg key="level" value="ALL" /&gt;
-   &lt;arg key="dateTimeFormat" value="yyyy/MM/dd HH:mm:ss:SSS" /&gt;
-  &lt;/logFactoryAdapter&gt;
- &lt;/logging&gt;
-&lt;/iBATIS&gt;
-</programlisting><programlisting>&lt;iBATIS&gt;
- &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.NoOpLoggerFA, IBatisNet.Common" /&gt;
- &lt;/logging&gt;
-&lt;/iBATIS&gt;
-</programlisting><programlisting>&lt;iBATIS&gt;
- &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.TraceLoggerFA, IBatisNet.Common" /&gt;
- &lt;/logging&gt;
-&lt;/iBATIS&gt;</programlisting></para>
-
-    <para>To configure iBATIS to use another logger implementation, simple
-    specify the appropriate logFactoryAdapter type. To use Apache Log4Net with
-    the iBATIS framework, use the following configuration
-    setting:</para>
-
-    <para><programlisting>&lt;iBATIS&gt;
- &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.Log4NetLoggerFA, IBatisNet.Common.Logging.Log4Net"&gt;
-   &lt;arg key="configType" value="inline" /&gt;
-  &lt;/logFactoryAdapter&gt;
- &lt;/logging&gt;
-&lt;/iBATIS&gt;</programlisting></para>
-
-    <para><programlisting>&lt;iBATIS&gt;
- &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.Log4NetLoggerFA, IBatisNet.Common.Logging.Log4Net"&gt;
-   &lt;arg key="configType" value="file" /&gt;
-   &lt;arg key="configFile" value="log4Net.config" /&gt;
-  &lt;/logFactoryAdapter&gt;
- &lt;/logging&gt;
-&lt;/iBATIS&gt;</programlisting></para>
-
-    <para>The Log4NetLoggerFA supports the following values for the
-    configTypes argument:<table>
-        <title>Valid configType values</title>
-
-        <tgroup cols="2">
-          <thead>
-            <row>
-              <entry>configType</entry>
-
-              <entry>Description</entry>
-            </row>
-          </thead>
-
-          <tbody>
-            <row>
-              <entry>inline</entry>
-
-              <entry>log4net node will use the log4net node in the
-              App.Config/Web.Config file when it is configured</entry>
-            </row>
-
-            <row>
-              <entry>file</entry>
-
-              <entry>(also requires configFile argument) - log4net will use an
-              external file for its configuration</entry>
-            </row>
-
-            <row>
-              <entry>file-watch</entry>
-
-              <entry> (also requires configFile argument) - log4net will use
-              an external file for its configuration and will re-configure
-              itself if this file changes</entry>
-            </row>
-
-            <row>
-              <entry>external</entry>
-
-              <entry>iBATIS will not attempt to configure log4net.</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table></para>
-
-	  <sect2>
-      <title>Sample Logging Configurations</title>
-
-      <para>The simplest logging configuration is to output log messages to
-      Console.Out:</para>
-
-      <para><programlisting>&lt;configuration&gt;
- &lt;configSections&gt;
-  &lt;sectionGroup name="iBATIS"&gt;
-   &lt;section name="logging" type="IBatisNet.Common.Logging.ConfigurationSectionHandler, IBatisNet.Common" /&gt;
-  &lt;/sectionGroup&gt;
- &lt;/configSections&gt;
- &lt;iBATIS&gt;
-  &lt;logging&gt;
-   &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.ConsoleLoggerFA, IBatisNet.Common.Logging" /&gt;
-  &lt;/logging&gt;
- &lt;/iBATIS&gt;
-&lt;/configuration&gt;</programlisting></para>
-
-      <para>A common logging configuration is to use Apache Log4Net. To use
-      Log4Net with your own application, you need to provide your own Log4Net
-      configuration. You can do this by adding a configuration file for your
-      assembly that includes a &lt;log4Net&gt; element. The configuration file
-      is named after your assembly but adds a <filename>.config</filename>
-      extension, and is stored in the same folder as your assembly. This is an
-      example of a basic Log4Net configuration block
-      (IBatisNet.DataMapper.Test.dll.Config) that also creates a log4net.txt
-      which contains debug information from log4net. If log4net is not
-      producing output, check the log4net.txt file.</para>
-
-      <para><programlisting>&lt;configuration&gt;
- &lt;configSections&gt;
-  &lt;sectionGroup name="iBATIS"&gt;
-   &lt;section name="logging" type="IBatisNet.Common.Logging.ConfigurationSectionHandler, IBatisNet.Common" /&gt;
-  &lt;/sectionGroup&gt;
-  &lt;section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" /&gt;
- &lt;/configSections&gt;
- &lt;appSettings&gt;
-  &lt;add key="log4net.Internal.Debug" value="true"/&gt;
- &lt;/appSettings&gt;
- &lt;system.diagnostics&gt;
- &lt;trace autoflush="true"&gt;
-   &lt;listeners&gt;
-    &lt;add name="textWriterTraceListener" 
-     type="System.Diagnostics.TextWriterTraceListener"
-     initializeData="C:\\inetpub\\wwwroot\\log4net.txt" /&gt;
-   &lt;/listeners&gt;
-  &lt;/trace&gt;
- &lt;/system.diagnostics&gt;
- &lt;iBATIS&gt;
-  &lt;logging&gt;
-   &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.Log4NetLoggerFA, IBatisNet.Common.Logging.Log4Net"&gt;
-    &lt;arg key="configType" value="inline" /&gt;
-   &lt;/logFactoryAdapter&gt;
-  &lt;/logging&gt;
- &lt;/iBATIS&gt;
- &lt;log4net&gt;
-  &lt;appender name="FileAppender" type="log4net.Appender.FileAppender"&gt;
-   &lt;file value="log.txt" /&gt;
-   &lt;appendToFile value="true" /&gt;
-   &lt;layout type="log4net.Layout.SimpleLayout" /&gt;
-  &lt;/appender&gt;
-  &lt;root&gt;
-   &lt;level value="ALL" /&gt;
-   &lt;appender-ref ref="FileAppender" /&gt;
-  &lt;/root&gt;
- &lt;/log4net&gt;
-&lt;/configuration&gt;</programlisting></para>
-    </sect2>
-  </sect1>
   <sect1>
     <title>The Configuration File (dao.config)</title>
 
@@ -525,8 +299,8 @@
        Example dao.config file 
 
       <programlisting>&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;daoConfig  xmlns="http://ibatis.apache.org/dataAccess" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+&lt;daoConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="DaoConfig.xsd"&gt;
 
 &lt;providers resource="providers.config"&gt;
 
@@ -590,7 +364,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
     environments (DEVT, Q/A, PROD), you can also make use of the optional
     <literal>&lt;properties&gt;</literal> element as shown above. This allows
     you to use placeholders in the place of literal value elements. If you
-    have a "properties" file with the following values:</para>
+    have a properties file with the following values:</para>
 
     <example>
       <title>Example properties file</title>

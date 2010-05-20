@@ -1,0 +1,2399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Coverage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../print.css" media="print"/>
+  </head>
+  <body>
+    <table class="coverageTable" cellspacing="0" cellpadding="2">
+      <tr><td class="reportHeader" colspan="6">
+  <table width="100%">
+    <tr><td valign="top">
+      <h1 class="titleText">
+        Clover.NET coverage report - 
+                  Coverage 
+              </h1>
+      <p class="timestamp">
+        <span class="heading">Coverage timestamp:</span>&nbsp;Friday, May 20, 2005 9:17:00 PM
+      </p>
+      <p class="navBar">
+                  <a class="navBarModeLink" href="../../overview.html">Overview</a>
+          &nbsp;&nbsp;
+          <a class="navBarModeLink" href="../../namespaces/IBatisNet.DataMapper.TypeHandlers/ns-summary.html">Namespace</a>
+          &nbsp;&nbsp;
+          <span class="navBarCurrent">File</span>
+              </p>
+      <p class="navBar">
+        &nbsp;&nbsp;&nbsp;
+                  <a class="navBarLink" href="../../index.html" target="_top">FRAMES</a>&nbsp;&nbsp;
+          <a class="navBarLink" href="../../files/TypeHandlers/TypeHandlerFactory.html" target="_top">NO FRAMES</a>&nbsp;&nbsp;
+              </p>
+      
+    </td><td align="right" valign="top" class="stats">
+      <table cellpadding="1">
+        <tr>
+                      <td  rowspan="3" valign="top">File Stats:</td>
+                    <td align="right">LOC:</td>
+          <td align="right">239</td>
+          <td rowspan="3">&nbsp;</td>
+          <td align="right">Methods:</td>
+          <td align="right">8</td>
+        </tr>
+        <tr>
+          <td align="right">NCLOC:</td>
+          <td align="right">132</td>
+          <td align="right">Classes:</td>
+          <td align="right">1</td>
+        </tr>
+              </table>
+    </td></tr>
+  </table>
+</td></tr>
+
+
+      <tr><td class="hbreak" colspan="6">&nbsp;</td></tr>
+      
+              <tr>
+    <td class="graphHeaderLeft">Source File</td>
+    <td class="graphHeader">Conditionals</td>
+    <td class="graphHeader">Statements</td>
+    <td class="graphHeader">Methods</td>
+    <td class="graphBarHeader" colspan="2">TOTAL</td>
+  </tr>   
+  <tr>
+    <td class="graphItem">
+                        TypeHandlers\TypeHandlerFactory.cs
+                  </td>
+    
+    <td class="graphPercent">93.8 %</td>
+    <td class="graphPercent">100.0 %</td>
+    <td class="graphPercent">100.0 %</td>
+    <td class="graphBarLeft">98.8 %</td>
+    <td class="graphBar">
+              <table cellspacing="0" cellpadding="0">
+          <tr>
+                          <td class="covered"><img alt="coverage" src="../../img/green.gif"
+                  width="197" height="12"/></td>
+              <td class="uncovered"><img alt="coverage" src="../../img/red.gif"
+                  width="3" height="12"/></td>
+                      </tr>
+        </table>
+          </td>
+  </tr>     </table>
+    
+    <table cellspacing="0" cellpadding="0" class="srcView">
+          <tr>
+        <td class="lineNumber">
+                  1
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  2
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#region Apache Notice</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  3
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment">/*****************************************************************************</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  4
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Header: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  5
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Revision: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  6
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Date: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  7
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  8
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * iBATIS.NET Data Mapper</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  9
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Copyright (C) 2004 - Gilles Bayon</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  10
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> *  </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  11
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  12
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Licensed under the Apache License, Version 2.0 (the "License");</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  13
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * you may not use this file except in compliance with the License.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  14
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * You may obtain a copy of the License at</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  15
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  16
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  17
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  18
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Unless required by applicable law or agreed to in writing, software</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  19
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * distributed under the License is distributed on an "AS IS" BASIS,</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  20
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  21
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * See the License for the specific language governing permissions and</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  22
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * limitations under the License.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  23
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  24
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> ********************************************************************************/</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  25
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  26
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  27
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#region Using</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  28
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  29
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  30
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Collections.Specialized;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  31
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  32
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#endregion </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  33
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  34
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">namespace</span> IBatisNet.DataMapper.TypeHandlers</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  35
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">{</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  36
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  37
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// <span class="docContent">Not much of a suprise, this is a factory class for TypeHandler objects.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  38
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  39
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="keyword">internal</span> <span class="keyword">class</span> TypeHandlerFactory</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  40
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  41
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  42
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Fields</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  43
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  44
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> HybridDictionary _typeHandlerMap = <span class="keyword">new</span> HybridDictionary();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  45
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> ITypeHandler _unknownTypeHandler = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  46
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keyword">string</span> NULL = <span class="string">"_NULL_TYPE_"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  47
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  48
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  49
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  50
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Constructor</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  51
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  52
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  53
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Constructor</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  54
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  55
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 55: Constructor TypeHandlerFactory entered 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times.">        <span class="keyword">public</span> TypeHandlerFactory() </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  56
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  57
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 57: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 57: Statement executed 170 times.">            ITypeHandler handler = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  58
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  59
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 59: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 59: Statement executed 170 times.">            handler = <span class="keyword">new</span> BooleanTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  60
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 60: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 60: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(<span class="keyword">bool</span>), handler); <span class="lineComment">// key= "System.Boolean"</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  61
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  62
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 62: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 62: Statement executed 170 times.">            handler = <span class="keyword">new</span> ByteTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  63
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 63: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 63: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(Byte), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  64
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  65
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 65: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 65: Statement executed 170 times.">            handler = <span class="keyword">new</span> CharTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  66
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 66: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 66: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(Char), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  67
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  68
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 68: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 68: Statement executed 170 times.">            handler = <span class="keyword">new</span> DateTimeTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  69
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 69: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 69: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(DateTime), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  70
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  71
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 71: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 71: Statement executed 170 times.">            handler = <span class="keyword">new</span> DecimalTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  72
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 72: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 72: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(Decimal), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  73
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  74
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 74: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 74: Statement executed 170 times.">            handler = <span class="keyword">new</span> DoubleTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  75
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 75: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 75: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(Double), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  76
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  77
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 77: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 77: Statement executed 170 times.">            handler = <span class="keyword">new</span> Int16TypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  78
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 78: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 78: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(Int16), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  79
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  80
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 80: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 80: Statement executed 170 times.">            handler = <span class="keyword">new</span> Int32TypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  81
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 81: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 81: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(Int32), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  82
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  83
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 83: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 83: Statement executed 170 times.">            handler = <span class="keyword">new</span> Int64TypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  84
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 84: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 84: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(Int64), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  85
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  86
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 86: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 86: Statement executed 170 times.">            handler = <span class="keyword">new</span> SingleTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  87
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 87: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 87: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(Single), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  88
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  89
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 89: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 89: Statement executed 170 times.">            handler = <span class="keyword">new</span> StringTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  90
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 90: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 90: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(String), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  91
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  92
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 92: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 92: Statement executed 170 times.">            handler = <span class="keyword">new</span> GuidTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  93
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 93: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 93: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(Guid), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  94
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  95
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 95: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 95: Statement executed 170 times.">            handler = <span class="keyword">new</span> TimeSpanTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  96
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 96: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 96: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(TimeSpan), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  97
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  98
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 98: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 98: Statement executed 170 times.">            handler = <span class="keyword">new</span> ByteArrayTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  99
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 99: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 99: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(Byte[]), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  100
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  101
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 101: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 101: Statement executed 170 times.">            handler = <span class="keyword">new</span> ObjectTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  102
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 102: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 102: Statement executed 170 times.">            <span class="keyword">this</span>.Register(<span class="keyword">typeof</span>(<span class="keyword">object</span>), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  103
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  104
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 104: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 104: Statement executed 170 times.">            handler = <span class="keyword">new</span> EnumTypeHandler();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  105
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 105: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 105: Statement executed 170 times.">            <span class="keyword">this</span>.Register( <span class="keyword">typeof</span>(System.Enum), handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  106
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  107
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 107: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 107: Statement executed 170 times.">            _unknownTypeHandler = <span class="keyword">new</span> UnknownTypeHandler(<span class="keyword">this</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  108
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  109
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 55: Constructor TypeHandlerFactory entered 170 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  110
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  111
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  112
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  113
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Methods</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  114
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  115
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  116
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Get a TypeHandler for a Type</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  117
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  118
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="type"><span class="docContent">the Type you want a TypeHandler for</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  119
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns><span class="docContent">the handler</span>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  120
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 120: Method GetTypeHandler entered 613 times.">613</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 120: Method GetTypeHandler entered 613 times.">        <span class="keyword">public</span> ITypeHandler GetTypeHandler(Type type)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  121
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 120: Method GetTypeHandler entered 613 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  122
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 122: Statement executed 613 times.">613</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 122: Statement executed 613 times.">            <span class="keyword">return</span> GetTypeHandler(type, <span class="keyword">null</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  123
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 120: Method GetTypeHandler entered 613 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  124
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  125
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  126
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Get a TypeHandler for a type</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  127
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  128
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="type"><span class="docContent">the type you want a TypeHandler for</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  129
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="dbType"><span class="docContent">the database type</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  130
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns><span class="docContent">the handler</span>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  131
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 131: Method GetTypeHandler entered 78613 times.">78613</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 131: Method GetTypeHandler entered 78613 times.">        <span class="keyword">public</span> ITypeHandler GetTypeHandler(Type type, <span class="keyword">string</span> dbType) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  132
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 131: Method GetTypeHandler entered 78613 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  133
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 133: Expression evaluated to true 529 times, false 78084 times.">78613</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 133: Expression evaluated to true 529 times, false 78084 times.">            <span class="keyword">if</span> (type.IsEnum)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  134
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 133: Statement executed 78613 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  135
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 135: Statement executed 529 times.">529</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 135: Statement executed 529 times.">                <span class="keyword">return</span> <span class="keyword">this</span>.GetPrivateTypeHandler(<span class="keyword">typeof</span>(System.Enum), dbType);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  136
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 133: Statement executed 78613 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  137
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 133: Statement executed 78613 times.">            <span class="keyword">else</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  138
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 133: Statement executed 78613 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  139
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 139: Statement executed 78084 times.">78084</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Statement executed 78084 times.">                <span class="keyword">return</span> <span class="keyword">this</span>.GetPrivateTypeHandler(type, dbType);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  140
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 133: Statement executed 78613 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  141
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 131: Method GetTypeHandler entered 78613 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  142
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  143
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  144
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">///  <span class="docContent">Get a TypeHandler for a type and a dbType type</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  145
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  146
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="type"><span class="docContent">the type</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  147
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="dbType"><span class="docContent">the dbType type</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  148
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns><span class="docContent">the handler</span>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  149
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 149: Method GetPrivateTypeHandler entered 78613 times.">78613</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 149: Method GetPrivateTypeHandler entered 78613 times.">        <span class="keyword">private</span> ITypeHandler GetPrivateTypeHandler(Type type, <span class="keyword">string</span> dbType) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  150
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 149: Method GetPrivateTypeHandler entered 78613 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  151
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 151: Statement executed 78613 times.">78613</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 151: Statement executed 78613 times.">            HybridDictionary dbTypeHandlerMap = (HybridDictionary) _typeHandlerMap[ type ];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  152
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 152: Statement executed 78613 times.">78613</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 152: Statement executed 78613 times.">            ITypeHandler handler = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  153
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 149: Method GetPrivateTypeHandler entered 78613 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  154
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 154: Expression evaluated to true 47671 times, false 30942 times.">78613</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 154: Expression evaluated to true 47671 times, false 30942 times.">            <span class="keyword">if</span> (dbTypeHandlerMap != <span class="keyword">null</span>) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  155
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 154: Statement executed 78613 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  156
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 156: Expression evaluated to true 43720 times, false 3951 times.">47671</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 156: Expression evaluated to true 43720 times, false 3951 times.">                <span class="keyword">if</span> (dbType==<span class="keyword">null</span>)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  157
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 156: Statement executed 47671 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  158
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 158: Statement executed 43720 times.">43720</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 158: Statement executed 43720 times.">                    handler = (ITypeHandler) dbTypeHandlerMap[ NULL ];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  159
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 156: Statement executed 47671 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  160
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 156: Statement executed 47671 times.">                <span class="keyword">else</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  161
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 156: Statement executed 47671 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  162
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 162: Statement executed 3951 times.">3951</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 162: Statement executed 3951 times.">                    handler = (ITypeHandler) dbTypeHandlerMap[ dbType ];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  163
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 163: Expression evaluated to true 3611 times, false 340 times.">3951</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 163: Expression evaluated to true 3611 times, false 340 times.">                    <span class="keyword">if</span> (handler == <span class="keyword">null</span>) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  164
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 163: Statement executed 3951 times.">                    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  165
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 165: Statement executed 3611 times.">3611</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 165: Statement executed 3611 times.">                        handler = (ITypeHandler) dbTypeHandlerMap[ NULL ];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  166
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 163: Statement executed 3951 times.">                    }                   </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  167
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 156: Statement executed 47671 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  168
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 154: Statement executed 78613 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  169
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 154: Statement executed 78613 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  170
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 170: Statement executed 78613 times.">78613</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 170: Statement executed 78613 times.">            <span class="keyword">return</span> handler;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  171
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 149: Method GetPrivateTypeHandler entered 78613 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  172
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  173
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  174
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  175
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Register (add) a type handler for a type</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  176
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  177
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="type"><span class="docContent">the type</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  178
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="handler"><span class="docContent">the handler instance</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  179
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 179: Method Register entered 2720 times.">2720</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 179: Method Register entered 2720 times.">        <span class="keyword">public</span> <span class="keyword">void</span> Register(Type type, ITypeHandler handler) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  180
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 179: Method Register entered 2720 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  181
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 181: Statement executed 2720 times.">2720</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 181: Statement executed 2720 times.">            <span class="keyword">this</span>.Register(type, <span class="keyword">null</span>, handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  182
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 179: Method Register entered 2720 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  183
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  184
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  185
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Register (add) a type handler for a type and dbType</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  186
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  187
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="type"><span class="docContent">the type</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  188
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="dbType"><span class="docContent">the dbType</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  189
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="handler"><span class="docContent">the handler instance</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  190
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 190: Method Register entered 2890 times.">2890</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 190: Method Register entered 2890 times.">        <span class="keyword">public</span> <span class="keyword">void</span> Register(Type type, <span class="keyword">string</span> dbType, ITypeHandler handler) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  191
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 190: Method Register entered 2890 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  192
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 192: Statement executed 2890 times.">2890</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 192: Statement executed 2890 times.">            HybridDictionary map = (HybridDictionary) _typeHandlerMap[ type ];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  193
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 193: Expression evaluated to true 2720 times, false 170 times.">2890</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 193: Expression evaluated to true 2720 times, false 170 times.">            <span class="keyword">if</span> (map == <span class="keyword">null</span>) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  194
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 193: Statement executed 2890 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  195
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 195: Statement executed 2720 times.">2720</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 195: Statement executed 2720 times.">                map = <span class="keyword">new</span> HybridDictionary();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  196
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 196: Statement executed 2720 times.">2720</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 196: Statement executed 2720 times.">                _typeHandlerMap.Add(type, map)  ;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  197
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 193: Statement executed 2890 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  198
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 198: Expression evaluated to true 2720 times, false 170 times.">2890</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 198: Expression evaluated to true 2720 times, false 170 times.">            <span class="keyword">if</span> (dbType==<span class="keyword">null</span>)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  199
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 198: Statement executed 2890 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  200
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 200: Statement executed 2720 times.">2720</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 200: Statement executed 2720 times.">                map.Add(NULL, handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  201
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 198: Statement executed 2890 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  202
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 198: Statement executed 2890 times.">            <span class="keyword">else</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  203
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 198: Statement executed 2890 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  204
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 204: Statement executed 170 times.">170</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 204: Statement executed 170 times.">                map.Add(dbType, handler);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  205
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 198: Statement executed 2890 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  206
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 190: Method Register entered 2890 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  207
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  208
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  209
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">When in doubt, get the "unknown" type handler</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  210
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  211
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns><span class="docContent">if I told you, it would not be unknown, would it?</span>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  212
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 212: Method GetUnkownTypeHandler entered 89128 times.">89128</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 212: Method GetUnkownTypeHandler entered 89128 times.">        <span class="keyword">public</span> ITypeHandler GetUnkownTypeHandler() </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  213
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 212: Method GetUnkownTypeHandler entered 89128 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  214
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 214: Statement executed 89128 times.">89128</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 214: Statement executed 89128 times.">            <span class="keyword">return</span> _unknownTypeHandler;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  215
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 212: Method GetUnkownTypeHandler entered 89128 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  216
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  217
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  218
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  219
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  220
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="type">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  221
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  222
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 222: Method IsSimpleType entered 385 times.">385</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 222: Method IsSimpleType entered 385 times.">        <span class="keyword">public</span> <span class="keyword">bool</span> IsSimpleType(Type type) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  223
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 222: Method IsSimpleType entered 385 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  224
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 224: Statement executed 385 times.">385</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 224: Statement executed 385 times.">            <span class="keyword">bool</span> result = <span class="keyword">false</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  225
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 225: Expression evaluated to true 385 times, false 0 times.">385</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 225: Expression evaluated to true 385 times, false 0 times.">            <span class="keyword">if</span> (type != <span class="keyword">null</span>) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  226
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 225: Statement executed 385 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  227
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 227: Statement executed 385 times.">385</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 227: Statement executed 385 times.">                ITypeHandler handler = <span class="keyword">this</span>.GetTypeHandler(type, <span class="keyword">null</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  228
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 228: Expression evaluated to true 213 times, false 172 times.">385</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Expression evaluated to true 213 times, false 172 times.">                <span class="keyword">if</span> (handler != <span class="keyword">null</span>) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  229
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Statement executed 385 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  230
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 230: Statement executed 213 times.">213</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 230: Statement executed 213 times.">                    result = handler.IsSimpleType;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  231
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Statement executed 385 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  232
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 225: Statement executed 385 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  233
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 233: Statement executed 385 times.">385</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 233: Statement executed 385 times.">            <span class="keyword">return</span> result;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  234
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 222: Method IsSimpleType entered 385 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  235
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  236
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  237
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  238
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">}</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  239
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+        </table>
+
+    <table class="coverageTable" cellspacing="0" cellpadding="2">
+      <tr><td class="hbreak" colspan="6">&nbsp;</td></tr>
+      <tr>
+  <td class="footer" colspan="6">
+    <table>
+      <tr>
+        <td><a target="_new" href="http://cenqua.com/clover.net/">
+          <img class="linkImage" alt="Clover.NET" src="../../img/logo.gif"/></a>
+        </td>
+        <td>Report generated by 
+          <a class="footerLink" target="_new" href="http://cenqua.com/clover.net/">Clover.NET v1.2.1941</a>
+          <br />Saturday, May 21, 2005 11:01:44 AM.
+        </td>
+        <td class="footerMessage">Open Source License registered to the iBATIS.NET Project. This license of Clover.NET is provided to support the development of iBATIS.NET only.<br /></td>
+      </tr>
+    </table>
+  </td>
+</tr>    </table>
+  </body>
+</html>

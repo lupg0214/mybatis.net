@@ -1,0 +1,1749 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Coverage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../print.css" media="print"/>
+  </head>
+  <body>
+    <table class="coverageTable" cellspacing="0" cellpadding="2">
+      <tr><td class="reportHeader" colspan="6">
+  <table width="100%">
+    <tr><td valign="top">
+      <h1 class="titleText">
+        Clover.NET coverage report - 
+                  Coverage 
+              </h1>
+      <p class="timestamp">
+        <span class="heading">Coverage timestamp:</span>&nbsp;Friday, May 20, 2005 9:17:00 PM
+      </p>
+      <p class="navBar">
+                  <a class="navBarModeLink" href="../overview.html">Overview</a>
+          &nbsp;&nbsp;
+          <a class="navBarModeLink" href="../namespaces/IBatisNet.DataMapper/ns-summary.html">Namespace</a>
+          &nbsp;&nbsp;
+          <span class="navBarCurrent">File</span>
+              </p>
+      <p class="navBar">
+        &nbsp;&nbsp;&nbsp;
+                  <a class="navBarLink" href="../index.html" target="_top">FRAMES</a>&nbsp;&nbsp;
+          <a class="navBarLink" href="../files/CacheKey.html" target="_top">NO FRAMES</a>&nbsp;&nbsp;
+              </p>
+      
+    </td><td align="right" valign="top" class="stats">
+      <table cellpadding="1">
+        <tr>
+                      <td  rowspan="3" valign="top">File Stats:</td>
+                    <td align="right">LOC:</td>
+          <td align="right">173</td>
+          <td rowspan="3">&nbsp;</td>
+          <td align="right">Methods:</td>
+          <td align="right">5</td>
+        </tr>
+        <tr>
+          <td align="right">NCLOC:</td>
+          <td align="right">95</td>
+          <td align="right">Classes:</td>
+          <td align="right">1</td>
+        </tr>
+              </table>
+    </td></tr>
+  </table>
+</td></tr>
+
+
+      <tr><td class="hbreak" colspan="6">&nbsp;</td></tr>
+      
+              <tr>
+    <td class="graphHeaderLeft">Source File</td>
+    <td class="graphHeader">Conditionals</td>
+    <td class="graphHeader">Statements</td>
+    <td class="graphHeader">Methods</td>
+    <td class="graphBarHeader" colspan="2">TOTAL</td>
+  </tr>   
+  <tr>
+    <td class="graphItem">
+                        CacheKey.cs
+                  </td>
+    
+    <td class="graphPercent">42.9 %</td>
+    <td class="graphPercent">68.8 %</td>
+    <td class="graphPercent">80.0 %</td>
+    <td class="graphBarLeft">60.5 %</td>
+    <td class="graphBar">
+              <table cellspacing="0" cellpadding="0">
+          <tr>
+                          <td class="covered"><img alt="coverage" src="../img/green.gif"
+                  width="120" height="12"/></td>
+              <td class="uncovered"><img alt="coverage" src="../img/red.gif"
+                  width="80" height="12"/></td>
+                      </tr>
+        </table>
+          </td>
+  </tr>     </table>
+    
+    <table cellspacing="0" cellpadding="0" class="srcView">
+          <tr>
+        <td class="lineNumber">
+                  1
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  2
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#region Apache Notice</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  3
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment">/*****************************************************************************</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  4
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Header: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  5
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Revision: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  6
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Date: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  7
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  8
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * iBATIS.NET Data Mapper</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  9
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Copyright (C) 2004 - Gilles Bayon</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  10
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> *  </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  11
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  12
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Licensed under the Apache License, Version 2.0 (the "License");</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  13
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * you may not use this file except in compliance with the License.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  14
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * You may obtain a copy of the License at</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  15
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  16
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  17
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  18
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Unless required by applicable law or agreed to in writing, software</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  19
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * distributed under the License is distributed on an "AS IS" BASIS,</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  20
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  21
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * See the License for the specific language governing permissions and</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  22
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * limitations under the License.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  23
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  24
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> ********************************************************************************/</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  25
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  26
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  27
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#region Using</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  28
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  29
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  30
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Collections;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  31
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> IBatisNet.Common.Utilities.Objects;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  32
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> IBatisNet.DataMapper.TypeHandlers;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  33
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  34
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  35
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  36
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  37
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">namespace</span> IBatisNet.DataMapper</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  38
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">{</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  39
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  40
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// <span class="docContent">Summary description for FlushInterval.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  41
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  42
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    [Serializable]</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  43
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="keyword">internal</span> <span class="keyword">class</span> CacheKey</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  44
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  45
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Fields</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  46
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">string</span>[] _properties = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  47
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">object</span> _parameter = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  48
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">string</span> _sql = <span class="keyword">string</span>.Empty;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  49
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">string</span> _statementName = <span class="keyword">string</span>.Empty;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  50
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">int</span> _maxResults = 0 ;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  51
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">int</span> _skipRecords = 0;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  52
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> CacheKeyType _type = CacheKeyType.Object;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  53
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> TypeHandlerFactory _typeHandlerFactory = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  54
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  55
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">string</span> _hashCodeString = <span class="keyword">string</span>.Empty;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  56
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">int</span> _hashCode = 0;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  57
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  58
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  59
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  60
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  61
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  62
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="statementName">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  63
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="sql">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  64
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="parameter">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  65
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="properties">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  66
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="skipRecords">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  67
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="maxResults">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  68
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="type">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  69
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="typeHandlerFactory">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  70
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 70: Constructor CacheKey entered 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 70: Constructor CacheKey entered 13 times.">        <span class="keyword">internal</span> CacheKey(TypeHandlerFactory typeHandlerFactory, <span class="keyword">string</span> statementName, <span class="keyword">string</span> sql, <span class="keyword">object</span> parameter, <span class="keyword">string</span>[] properties, </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  71
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 70: Constructor CacheKey entered 13 times.">            <span class="keyword">int</span> skipRecords, <span class="keyword">int</span> maxResults, CacheKeyType type)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  72
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 70: Constructor CacheKey entered 13 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  73
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 73: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 73: Statement executed 13 times.">            _typeHandlerFactory = typeHandlerFactory;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  74
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 74: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 74: Statement executed 13 times.">            _statementName = statementName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  75
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 75: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 75: Statement executed 13 times.">            _sql = sql;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  76
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 76: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 76: Statement executed 13 times.">            _parameter = parameter;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  77
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 77: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 77: Statement executed 13 times.">            _properties = properties;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  78
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 78: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 78: Statement executed 13 times.">            _skipRecords = skipRecords;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  79
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 79: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 79: Statement executed 13 times.">            _maxResults = maxResults;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  80
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 80: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 80: Statement executed 13 times.">            _type = type;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  81
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 81: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 81: Statement executed 13 times.">            _hashCode = GenerateHashCode();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  82
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 82: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 82: Statement executed 13 times.">            _hashCodeString = Convert.ToString(_hashCode);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  83
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 70: Constructor CacheKey entered 13 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  84
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  85
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  86
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="lineComment">// name.GetHashCode() ^  age.GetHashCode(); </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  87
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="lineComment">// hash algorithms </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  88
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  89
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  90
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  91
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  92
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  93
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  94
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 94: Method GenerateHashCode entered 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 94: Method GenerateHashCode entered 13 times.">        <span class="keyword">private</span> <span class="keyword">int</span> GenerateHashCode() </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  95
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 94: Method GenerateHashCode entered 13 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  96
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 96: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 96: Statement executed 13 times.">            <span class="keyword">int</span> result = 0;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  97
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 94: Method GenerateHashCode entered 13 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  98
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 98: Expression evaluated to true 0 times, false 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 98: Expression evaluated to true 0 times, false 13 times.">            <span class="keyword">if</span> (_parameter <span class="keyword">is</span> Hashtable) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  99
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 98: Statement executed 13 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  100
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 100: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 100: Statement not executed.">                result = (_parameter != <span class="keyword">null</span> ? _parameter.GetHashCode() : 0);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  101
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 98: Statement executed 13 times.">            } </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  102
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 102: Expression evaluated to true 1 time, false 12 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 102: Expression evaluated to true 1 time, false 12 times.">            <span class="keyword">else</span> <span class="keyword">if</span> ( _parameter != <span class="keyword">null</span> &amp;&amp; _typeHandlerFactory.IsSimpleType(_parameter.GetType()) ) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  103
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 102: Statement executed 13 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  104
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 104: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 104: Statement executed 1 time.">                result = (_parameter != <span class="keyword">null</span> ? _parameter.GetHashCode() : 0);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  105
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 102: Statement executed 13 times.">            } </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  106
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 102: Statement executed 13 times.">            <span class="keyword">else</span> </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  107
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 102: Statement executed 13 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  108
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 108: Statement executed 12 times.">12</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 108: Statement executed 12 times.">                result = (_parameter != <span class="keyword">null</span> ? ObjectProbe.ObjectHashCode(_parameter, _properties) : 0);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  109
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 102: Statement executed 13 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  110
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 110: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 110: Statement executed 13 times.">            result = 29 * result + (_statementName != <span class="keyword">null</span> ? _statementName.GetHashCode() : 0);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  111
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 111: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 111: Statement executed 13 times.">            result = 29 * result + (_sql != <span class="keyword">null</span> ? _sql.GetHashCode() : 0);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  112
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 112: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 112: Statement executed 13 times.">            result = 29 * result + _maxResults;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  113
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 113: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 113: Statement executed 13 times.">            result = 29 * result + _skipRecords;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  114
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 114: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 114: Statement executed 13 times.">            result = 29 * result + (<span class="keyword">int</span>)_type;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  115
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 115: Statement executed 13 times.">13</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 115: Statement executed 13 times.">            <span class="keyword">return</span> result;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  116
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 94: Method GenerateHashCode entered 13 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  117
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  118
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  119
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  120
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  121
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="obj">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  122
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  123
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 123: Method Equals entered 5 times.">5</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 123: Method Equals entered 5 times.">        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">bool</span> Equals(<span class="keyword">object</span> obj) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  124
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 123: Method Equals entered 5 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  125
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 123: Method Equals entered 5 times.">            <span class="lineComment">//-----------------------------------</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  126
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 126: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 126: Statement not executed.">            <span class="keyword">if</span> (<span class="keyword">this</span> == obj) <span class="keyword">return</span> <span class="keyword">true</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  127
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 127: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 127: Statement not executed.">            <span class="keyword">if</span> (!(obj <span class="keyword">is</span> CacheKey)) <span class="keyword">return</span> <span class="keyword">false</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  128
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 123: Method Equals entered 5 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  129
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 129: Statement executed 5 times.">5</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 129: Statement executed 5 times.">            CacheKey cacheKey = (CacheKey)obj;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  130
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 123: Method Equals entered 5 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  131
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 131: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 131: Statement not executed.">            <span class="keyword">if</span> (_maxResults != cacheKey._maxResults) <span class="keyword">return</span> <span class="keyword">false</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  132
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 132: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 132: Statement not executed.">            <span class="keyword">if</span> (_skipRecords != cacheKey._skipRecords) <span class="keyword">return</span> <span class="keyword">false</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  133
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 133: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 133: Statement not executed.">            <span class="keyword">if</span> (_type != cacheKey._type) <span class="keyword">return</span> <span class="keyword">false</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  134
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 134: Expression evaluated to true 0 times, false 5 times.">5</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 134: Expression evaluated to true 0 times, false 5 times.">            <span class="keyword">if</span> (_parameter <span class="keyword">is</span> Hashtable) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  135
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 134: Statement executed 5 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  136
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 136: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 136: Statement not executed.">                <span class="keyword">if</span> (_hashCode != cacheKey._hashCode) <span class="keyword">return</span> <span class="keyword">false</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  137
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 137: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 137: Statement not executed.">                <span class="keyword">if</span> (!_parameter.Equals(cacheKey._parameter)) <span class="keyword">return</span> <span class="keyword">false</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  138
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 134: Statement executed 5 times.">            } </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  139
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 139: Expression evaluated to true 0 times, false 5 times.">5</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 139: Expression evaluated to true 0 times, false 5 times.">            <span class="keyword">else</span> <span class="keyword">if</span> (_parameter != <span class="keyword">null</span> &amp;&amp; _typeHandlerFactory.IsSimpleType(_parameter.GetType())) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  140
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Statement executed 5 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  141
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 141: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 141: Statement not executed.">                <span class="keyword">if</span> (_parameter != <span class="keyword">null</span> ? !_parameter.Equals(cacheKey._parameter) : cacheKey._parameter != <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  142
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Statement executed 5 times.">            } </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  143
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Statement executed 5 times.">            <span class="keyword">else</span> </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  144
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Statement executed 5 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  145
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 145: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 145: Statement not executed.">                <span class="keyword">if</span> (_hashCode != cacheKey._hashCode) <span class="keyword">return</span> <span class="keyword">false</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  146
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Statement executed 5 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  147
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 147: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 147: Statement not executed.">            <span class="keyword">if</span> (_sql != <span class="keyword">null</span> ? !_sql.Equals(cacheKey._sql) : cacheKey._sql != <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  148
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 123: Method Equals entered 5 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  149
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 149: Statement executed 5 times.">5</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 149: Statement executed 5 times.">            <span class="keyword">return</span> <span class="keyword">true</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  150
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 123: Method Equals entered 5 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  151
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  152
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  153
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  154
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Get the HashCode for this CacheKey</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  155
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  156
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  157
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 157: Method GetHashCode entered 21 times.">21</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 157: Method GetHashCode entered 21 times.">        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">int</span> GetHashCode() </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  158
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 157: Method GetHashCode entered 21 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  159
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 159: Statement executed 21 times.">21</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 159: Statement executed 21 times.">            <span class="keyword">return</span> _hashCode;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  160
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 157: Method GetHashCode entered 21 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  161
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  162
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  163
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">ToString implementation.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  164
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  165
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns><span class="docContent">A string that give the CacheKey HashCode.</span>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  166
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 166: Method ToString not entered.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 166: Method ToString not entered.">        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">string</span> ToString() </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  167
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 166: Method ToString not entered.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  168
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 166: Method ToString not entered.">            <span class="keyword">return</span> _hashCodeString;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  169
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 166: Method ToString not entered.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  170
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  171
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  172
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">}</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  173
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+        </table>
+
+    <table class="coverageTable" cellspacing="0" cellpadding="2">
+      <tr><td class="hbreak" colspan="6">&nbsp;</td></tr>
+      <tr>
+  <td class="footer" colspan="6">
+    <table>
+      <tr>
+        <td><a target="_new" href="http://cenqua.com/clover.net/">
+          <img class="linkImage" alt="Clover.NET" src="../img/logo.gif"/></a>
+        </td>
+        <td>Report generated by 
+          <a class="footerLink" target="_new" href="http://cenqua.com/clover.net/">Clover.NET v1.2.1941</a>
+          <br />Saturday, May 21, 2005 11:01:44 AM.
+        </td>
+        <td class="footerMessage">Open Source License registered to the iBATIS.NET Project. This license of Clover.NET is provided to support the development of iBATIS.NET only.<br /></td>
+      </tr>
+    </table>
+  </td>
+</tr>    </table>
+  </body>
+</html>

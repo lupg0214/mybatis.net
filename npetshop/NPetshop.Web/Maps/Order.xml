@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlMap namespace="Order" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="Order" type="NPetshop.Domain.Billing.Order, NPetshop.Domain"/>
+	</alias>
+	<!-- =============================================
+        MAPPED STATEMENTS 
+    ============================================= 
+    -->
+	<statements>
+		<insert id="InsertOrder" parameterClass="Order">
+			Insert Into Orders
+			(Order_ID,Account_ID, Order_Date, 
+			Order_ShipToFirstName, Order_ShipToLastName, Order_ShipAddr1, Order_ShipAddr2, 
+			Order_ShipCity, Order_ShipState, Order_ShipZip, Order_ShipCountry, 
+			Order_BillToFirstName, Order_BillToLastName, Order_BillAddr1, Order_BillAddr2,
+			Order_BillCity, Order_BillState, Order_BillZip, Order_BillCountry, 
+			Order_TotalPrice, 
+			Order_CreditCard, Order_ExprDate, Order_CardType)
+			Values 
+			(#Id#,#Account.Login#, #OrderDate#, 
+			#ShippingAddress.FirstName#, #ShippingAddress.LastName#, #ShippingAddress.Address1#, #ShippingAddress.Address2#,
+			#ShippingAddress.City#, #ShippingAddress.State#, #ShippingAddress.Zip#, #ShippingAddress.Country#,
+			#BillingAddress.FirstName#, #BillingAddress.LastName#, #BillingAddress.Address1#, #BillingAddress.Address2#,
+			#BillingAddress.City#, #BillingAddress.State#, #BillingAddress.Zip#, #BillingAddress.Country#,
+			#TotalPrice#,
+			#CreditCard.CardNumber#, #CreditCard.CardExpiration#, #CreditCard.CardType#)
+ 		</insert>
+	</statements>
+</sqlMap>

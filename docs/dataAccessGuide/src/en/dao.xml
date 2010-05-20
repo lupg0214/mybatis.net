@@ -50,19 +50,12 @@
         </thead>
 
         <tbody>
-		
-		 <row>
-            
-			<entry>DomDaoManagerBuilder</entry>
+          <row>
+            <entry>DaoManager (Facade)</entry>
 
             <entry>Responsible for configuration of the DAO framework (via
-            dao.config), instantiating DAO implementations and IDaoManager instances.</entry>
-          </row>
-
-		<row>
-			<entry>IDaoManager (Facade)</entry>
-
-            <entry>Acting as a façade to the rest of the API.</entry>
+            dao.config), instantiating DAO implementations, and acting as a
+            façade to the rest of the API.</entry>
           </row>
 
           <row>

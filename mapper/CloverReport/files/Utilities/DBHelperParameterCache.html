@@ -1,0 +1,2443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Coverage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../print.css" media="print"/>
+  </head>
+  <body>
+    <table class="coverageTable" cellspacing="0" cellpadding="2">
+      <tr><td class="reportHeader" colspan="6">
+  <table width="100%">
+    <tr><td valign="top">
+      <h1 class="titleText">
+        Clover.NET coverage report - 
+                  Coverage 
+              </h1>
+      <p class="timestamp">
+        <span class="heading">Coverage timestamp:</span>&nbsp;Friday, May 20, 2005 9:17:00 PM
+      </p>
+      <p class="navBar">
+                  <a class="navBarModeLink" href="../../overview.html">Overview</a>
+          &nbsp;&nbsp;
+          <a class="navBarModeLink" href="../../namespaces/IBatisNet.Common.Utilities/ns-summary.html">Namespace</a>
+          &nbsp;&nbsp;
+          <span class="navBarCurrent">File</span>
+              </p>
+      <p class="navBar">
+        &nbsp;&nbsp;&nbsp;
+                  <a class="navBarLink" href="../../index.html" target="_top">FRAMES</a>&nbsp;&nbsp;
+          <a class="navBarLink" href="../../files/Utilities/DBHelperParameterCache.html" target="_top">NO FRAMES</a>&nbsp;&nbsp;
+              </p>
+      
+    </td><td align="right" valign="top" class="stats">
+      <table cellpadding="1">
+        <tr>
+                      <td  rowspan="3" valign="top">File Stats:</td>
+                    <td align="right">LOC:</td>
+          <td align="right">249</td>
+          <td rowspan="3">&nbsp;</td>
+          <td align="right">Methods:</td>
+          <td align="right">10</td>
+        </tr>
+        <tr>
+          <td align="right">NCLOC:</td>
+          <td align="right">123</td>
+          <td align="right">Classes:</td>
+          <td align="right">1</td>
+        </tr>
+              </table>
+    </td></tr>
+  </table>
+</td></tr>
+
+
+      <tr><td class="hbreak" colspan="6">&nbsp;</td></tr>
+      
+              <tr>
+    <td class="graphHeaderLeft">Source File</td>
+    <td class="graphHeader">Conditionals</td>
+    <td class="graphHeader">Statements</td>
+    <td class="graphHeader">Methods</td>
+    <td class="graphBarHeader" colspan="2">TOTAL</td>
+  </tr>   
+  <tr>
+    <td class="graphItem">
+                        Utilities\DBHelperParameterCache.cs
+                  </td>
+    
+    <td class="graphPercent">56.3 %</td>
+    <td class="graphPercent">75.6 %</td>
+    <td class="graphPercent">60.0 %</td>
+    <td class="graphBarLeft">69.0 %</td>
+    <td class="graphBar">
+              <table cellspacing="0" cellpadding="0">
+          <tr>
+                          <td class="covered"><img alt="coverage" src="../../img/green.gif"
+                  width="138" height="12"/></td>
+              <td class="uncovered"><img alt="coverage" src="../../img/red.gif"
+                  width="62" height="12"/></td>
+                      </tr>
+        </table>
+          </td>
+  </tr>     </table>
+    
+    <table cellspacing="0" cellpadding="0" class="srcView">
+          <tr>
+        <td class="lineNumber">
+                  1
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  2
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#region Apache Notice</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  3
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment">/*****************************************************************************</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  4
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Header: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  5
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Revision: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  6
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Date: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  7
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  8
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * iBATIS.NET Data Mapper</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  9
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Copyright (C) 2004 - Gilles Bayon</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  10
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> *  </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  11
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  12
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Licensed under the Apache License, Version 2.0 (the "License");</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  13
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * you may not use this file except in compliance with the License.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  14
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * You may obtain a copy of the License at</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  15
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  16
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  17
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  18
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Unless required by applicable law or agreed to in writing, software</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  19
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * distributed under the License is distributed on an "AS IS" BASIS,</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  20
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  21
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * See the License for the specific language governing permissions and</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  22
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * limitations under the License.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  23
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  24
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> ********************************************************************************/</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  25
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  26
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  27
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  28
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Collections;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  29
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Data;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  30
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Data.Common;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  31
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Reflection;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  32
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  33
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> IBatisNet.Common.Exceptions;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  34
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  35
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">namespace</span> IBatisNet.Common.Utilities</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  36
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">{</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  37
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  38
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// <span class="docContent">DBHelperParameterCache provides functions to leverage a </span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  39
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// <span class="docContent">static cache of procedure parameters, and the</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  40
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// <span class="docContent">ability to discover parameters for stored procedures at run-time.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  41
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  42
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="keyword">public</span> <span class="keyword">class</span> DBHelperParameterCache</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  43
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  44
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="lineComment">//Since this class provides only static methods, make the default constructor private to prevent </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  45
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="lineComment">//instances from being created.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  46
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 46: Constructor DBHelperParameterCache not entered.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 46: Constructor DBHelperParameterCache not entered.">        <span class="keyword">private</span> DBHelperParameterCache() {}</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  47
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  48
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Private fields</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  49
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">static</span> Hashtable _paramCache = Hashtable.Synchronized(<span class="keyword">new</span> Hashtable());</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  50
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  51
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  52
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region private methods</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  53
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  54
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  55
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Resolve at run time the appropriate set of Parameters for a stored procedure</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  56
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  57
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="session"><span class="docContent">a valid session</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  58
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="spName"><span class="docContent">the name of the stored procedure</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  59
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="includeReturnValueParameter"><span class="docContent">whether or not to include their return value parameter</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  60
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  61
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 61: Method DiscoverSpParameterSet entered 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 61: Method DiscoverSpParameterSet entered 4 times.">        <span class="keyword">private</span> <span class="keyword">static</span> IDataParameter[] DiscoverSpParameterSet(IDalSession session, <span class="keyword">string</span> spName, <span class="keyword">bool</span> includeReturnValueParameter)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  62
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 61: Method DiscoverSpParameterSet entered 4 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  63
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 63: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 63: Statement executed 4 times.">            <span class="keyword">using</span> (IDbConnection connection = session.DataSource.Provider.GetConnection())</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  64
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 63: Statement executed 4 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  65
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 65: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 65: Statement executed 4 times.">                connection.ConnectionString = session.DataSource.ConnectionString;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  66
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 66: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 66: Statement executed 4 times.">                connection.Open();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  67
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 67: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 67: Statement executed 4 times.">                <span class="keyword">return</span> InternalDiscoverSpParameterSet(session.DataSource.Provider, connection, spName, includeReturnValueParameter);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  68
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 63: Statement executed 4 times.">            }       </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  69
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 61: Method DiscoverSpParameterSet entered 4 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  70
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  71
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  72
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">resolve at run time the appropriate set of Parameters for a stored procedure</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  73
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  74
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="provider">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  75
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="connection"><span class="docContent">a valid open IDbConnection</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  76
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="spName"><span class="docContent">the name of the stored procedure</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  77
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="includeReturnValueParameter"><span class="docContent">whether or not to include their return value parameter</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  78
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  79
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 79: Method InternalDiscoverSpParameterSet entered 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 79: Method InternalDiscoverSpParameterSet entered 4 times.">        <span class="keyword">private</span> <span class="keyword">static</span> IDataParameter[] InternalDiscoverSpParameterSet(Provider provider,</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  80
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 79: Method InternalDiscoverSpParameterSet entered 4 times.">            IDbConnection connection, <span class="keyword">string</span> spName, <span class="keyword">bool</span> includeReturnValueParameter)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  81
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 79: Method InternalDiscoverSpParameterSet entered 4 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  82
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 82: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 82: Statement executed 4 times.">            <span class="keyword">using</span> (IDbCommand cmd = connection.CreateCommand())</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  83
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 82: Statement executed 4 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  84
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 84: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 84: Statement executed 4 times.">                cmd.CommandType = CommandType.StoredProcedure;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  85
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 85: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 85: Statement executed 4 times.">                cmd.CommandText = spName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  86
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 82: Statement executed 4 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  87
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 87: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 87: Statement executed 4 times.">                DeriveParameters(provider, cmd);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  88
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 82: Statement executed 4 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  89
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 89: Expression evaluated to true 4 times, false 0 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 89: Expression evaluated to true 4 times, false 0 times.">                <span class="keyword">if</span> (cmd.Parameters.Count > 0) {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  90
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 90: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 90: Statement executed 4 times.">                    IDataParameter firstParameter = (IDataParameter)cmd.Parameters[0];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  91
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 91: Expression evaluated to true 4 times, false 0 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 91: Expression evaluated to true 4 times, false 0 times.">                    <span class="keyword">if</span> (firstParameter.Direction == ParameterDirection.ReturnValue) {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  92
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 92: Expression evaluated to true 4 times, false 0 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 92: Expression evaluated to true 4 times, false 0 times.">                        <span class="keyword">if</span> (!includeReturnValueParameter) {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  93
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 93: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 93: Statement executed 4 times.">                            cmd.Parameters.RemoveAt(0);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  94
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 92: Statement executed 4 times.">                        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  95
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 91: Statement executed 4 times.">                    }   </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  96
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 89: Statement executed 4 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  97
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 82: Statement executed 4 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  98
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 82: Statement executed 4 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  99
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 99: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 99: Statement executed 4 times.">                IDataParameter[] discoveredParameters = <span class="keyword">new</span> IDataParameter[cmd.Parameters.Count];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  100
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 82: Statement executed 4 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  101
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 101: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 101: Statement executed 4 times.">                cmd.Parameters.CopyTo(discoveredParameters, 0);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  102
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 82: Statement executed 4 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  103
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 103: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 4 times.">                <span class="keyword">return</span> discoveredParameters;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  104
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 82: Statement executed 4 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  105
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 79: Method InternalDiscoverSpParameterSet entered 4 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  106
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  107
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 107: Method DeriveParameters entered 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 107: Method DeriveParameters entered 4 times.">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> DeriveParameters(Provider provider, IDbCommand command)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  108
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 107: Method DeriveParameters entered 4 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  109
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 109: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 109: Statement executed 4 times.">            Type commandBuilderType;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  110
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 107: Method DeriveParameters entered 4 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  111
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 107: Method DeriveParameters entered 4 times.">            <span class="lineComment">// Find the CommandBuilder</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  112
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 112: Expression evaluated to true 0 times, false 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 112: Expression evaluated to true 0 times, false 4 times.">            <span class="keyword">if</span> (provider == <span class="keyword">null</span>)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  113
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 113: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 113: Statement not executed.">                <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentNullException(<span class="string">"provider"</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  114
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 114: Expression evaluated to true 0 times, false 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 114: Expression evaluated to true 0 times, false 4 times.">            <span class="keyword">if</span> ((provider.CommandBuilderClass == <span class="keyword">null</span>) || (provider.CommandBuilderClass.Length &lt; 1))</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  115
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 115: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 115: Statement not executed.">                <span class="keyword">throw</span> <span class="keyword">new</span> Exception(String.Format(</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  116
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 115: Statement not executed.">                    <span class="string">"CommandBuilderClass not defined for provider \"{0}\"."</span>,</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  117
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 115: Statement not executed.">                    provider.Name));</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  118
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 118: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 118: Statement executed 4 times.">            commandBuilderType = provider.GetCommandBuilderType();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  119
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 107: Method DeriveParameters entered 4 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  120
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 107: Method DeriveParameters entered 4 times.">            <span class="lineComment">// Invoke the static DeriveParameter method on the CommandBuilder class</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  121
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 107: Method DeriveParameters entered 4 times.">            <span class="lineComment">// NOTE: OracleCommandBuilder has no DeriveParameter method</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  122
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 122: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 122: Statement executed 4 times.">            <span class="keyword">try</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  123
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 122: Statement executed 4 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  124
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 124: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 124: Statement executed 4 times.">                commandBuilderType.InvokeMember(<span class="string">"DeriveParameters"</span>,</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  125
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 124: Statement executed 4 times.">                    BindingFlags.Public | BindingFlags.InvokeMethod | BindingFlags.Static, <span class="keyword">null</span>, <span class="keyword">null</span>,</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  126
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 124: Statement executed 4 times.">                    <span class="keyword">new</span> <span class="keyword">object</span>[] {command});</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  127
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 122: Statement executed 4 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  128
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 122: Statement executed 4 times.">            <span class="keyword">catch</span>(Exception ex)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  129
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 122: Statement executed 4 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  130
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 130: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 130: Statement not executed.">                <span class="keyword">throw</span> <span class="keyword">new</span> IBatisNetException(<span class="string">"Could not retrieve parameters for the store procedure named "</span>+command.CommandText, ex);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  131
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 122: Statement executed 4 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  132
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 107: Method DeriveParameters entered 4 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  133
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  134
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  135
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Deep copy of cached IDataParameter array.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  136
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  137
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="originalParameters">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  138
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  139
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 139: Method CloneParameters entered 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Method CloneParameters entered 6 times.">        <span class="keyword">private</span> <span class="keyword">static</span> IDataParameter[] CloneParameters(IDataParameter[] originalParameters)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  140
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Method CloneParameters entered 6 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  141
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 141: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 141: Statement executed 6 times.">            IDataParameter[] clonedParameters = <span class="keyword">new</span> IDataParameter[originalParameters.Length];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  142
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Method CloneParameters entered 6 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  143
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 143: Expression evaluated to true 21 times, false 6 times.">27</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 143: Expression evaluated to true 21 times, false 6 times.">            <span class="keyword">for</span> (<span class="keyword">int</span> i = 0, j = originalParameters.Length; i &lt; j; i++)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  144
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 143: Statement executed 6 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  145
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 145: Statement executed 21 times.">21</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 145: Statement executed 21 times.">                clonedParameters[i] = (IDataParameter) ((ICloneable) originalParameters[i]).Clone();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  146
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 143: Statement executed 6 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  147
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Method CloneParameters entered 6 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  148
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 148: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 148: Statement executed 6 times.">            <span class="keyword">return</span> clonedParameters;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  149
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 139: Method CloneParameters entered 6 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  150
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  151
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion private methods, variables, and constructors</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  152
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  153
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region caching functions</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  154
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  155
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  156
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Add parameter array to the cache</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  157
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  158
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="connectionString"><span class="docContent">a valid connection string for an IDbConnection</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  159
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="commandText"><span class="docContent">the stored procedure name or SQL command</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  160
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="commandParameters"><span class="docContent">an array of IDataParameters to be cached</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  161
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 161: Method CacheParameterSet not entered.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 161: Method CacheParameterSet not entered.">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> CacheParameterSet(<span class="keyword">string</span> connectionString, <span class="keyword">string</span> commandText, <span class="keyword">params</span> IDataParameter[] commandParameters)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  162
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 161: Method CacheParameterSet not entered.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  163
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 161: Method CacheParameterSet not entered.">            <span class="keyword">string</span> hashKey = connectionString + <span class="string">":"</span> + commandText;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  164
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 161: Method CacheParameterSet not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  165
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 161: Method CacheParameterSet not entered.">            _paramCache[hashKey] = commandParameters;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  166
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 161: Method CacheParameterSet not entered.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  167
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  168
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  169
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="lineComment">// FM Added</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  170
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  171
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Clear the parameter cache.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  172
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  173
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 173: Method Clear not entered.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 173: Method Clear not entered.">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> Clear()</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  174
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 173: Method Clear not entered.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  175
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 173: Method Clear not entered.">            _paramCache.Clear();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  176
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 173: Method Clear not entered.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  177
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  178
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  179
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">retrieve a parameter array from the cache</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  180
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  181
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="connectionString"><span class="docContent">a valid connection string for an IDbConnection</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  182
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="commandText"><span class="docContent">the stored procedure name or SQL command</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  183
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns><span class="docContent">an array of IDataParameters</span>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  184
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 184: Method GetCachedParameterSet not entered.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">        <span class="keyword">public</span> <span class="keyword">static</span> IDataParameter[] GetCachedParameterSet(<span class="keyword">string</span> connectionString, <span class="keyword">string</span> commandText)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  185
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  186
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">            <span class="keyword">string</span> hashKey = connectionString + <span class="string">":"</span> + commandText;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  187
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  188
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">            IDataParameter[] cachedParameters = (IDataParameter[]) _paramCache[hashKey];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  189
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">            </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  190
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">            <span class="keyword">if</span> (cachedParameters == <span class="keyword">null</span>)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  191
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">            {           </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  192
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">                <span class="keyword">return</span> <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  193
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  194
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">            <span class="keyword">else</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  195
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  196
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">                <span class="keyword">return</span> CloneParameters(cachedParameters);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  197
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  198
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 184: Method GetCachedParameterSet not entered.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  199
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  200
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion caching functions</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  201
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  202
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Parameter Discovery Functions</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  203
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  204
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  205
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Retrieves the set of IDataParameters appropriate for the stored procedure</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  206
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  207
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;remarks></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  208
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">This method will query the database for this information, and then store it in a cache for future requests.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  209
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/remarks></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  210
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="session"><span class="docContent">a valid session</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  211
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="spName"><span class="docContent">the name of the stored procedure</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  212
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns><span class="docContent">an array of IDataParameters</span>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  213
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 213: Method GetSpParameterSet entered 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 213: Method GetSpParameterSet entered 6 times.">        <span class="keyword">public</span> <span class="keyword">static</span> IDataParameter[] GetSpParameterSet(IDalSession session, <span class="keyword">string</span> spName)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  214
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 213: Method GetSpParameterSet entered 6 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  215
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 215: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 215: Statement executed 6 times.">            <span class="keyword">return</span> GetSpParameterSet(session, spName, <span class="keyword">false</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  216
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 213: Method GetSpParameterSet entered 6 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  217
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  218
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  219
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Retrieves the set of IDataParameters appropriate for the stored procedure</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  220
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  221
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;remarks></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  222
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">This method will query the database for this information, and then store it in a cache for future requests.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  223
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/remarks></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  224
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="session"><span class="docContent">a valid csession</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  225
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="spName"><span class="docContent">the name of the stored procedure</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  226
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="includeReturnValueParameter"><span class="docContent">a bool value indicating whether the return value parameter should be included in the results</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  227
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns><span class="docContent">an array of IDataParameters</span>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  228
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 228: Method GetSpParameterSet entered 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Method GetSpParameterSet entered 6 times.">        <span class="keyword">public</span> <span class="keyword">static</span> IDataParameter[] GetSpParameterSet(IDalSession session</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  229
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Method GetSpParameterSet entered 6 times.">            , <span class="keyword">string</span> spName, <span class="keyword">bool</span> includeReturnValueParameter)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  230
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Method GetSpParameterSet entered 6 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  231
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 231: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 231: Statement executed 6 times.">            <span class="keyword">string</span> hashKey = session.DataSource.ConnectionString + <span class="string">":"</span> + spName + (includeReturnValueParameter ? <span class="string">":include ReturnValue Parameter"</span>:<span class="string">""</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  232
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Method GetSpParameterSet entered 6 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  233
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 233: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 233: Statement executed 6 times.">            IDataParameter[] cachedParameters;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  234
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Method GetSpParameterSet entered 6 times.">            </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  235
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 235: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 235: Statement executed 6 times.">            cachedParameters = (IDataParameter[]) _paramCache[hashKey];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  236
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Method GetSpParameterSet entered 6 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  237
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 237: Expression evaluated to true 4 times, false 2 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 237: Expression evaluated to true 4 times, false 2 times.">            <span class="keyword">if</span> (cachedParameters == <span class="keyword">null</span>)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  238
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 237: Statement executed 6 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  239
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 239: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 239: Statement executed 4 times.">                _paramCache[hashKey] = DiscoverSpParameterSet(session, spName, includeReturnValueParameter);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  240
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 240: Statement executed 4 times.">4</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 240: Statement executed 4 times.">                cachedParameters = (IDataParameter[]) _paramCache[hashKey];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  241
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 237: Statement executed 6 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  242
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Method GetSpParameterSet entered 6 times.">            </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  243
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 243: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 243: Statement executed 6 times.">            <span class="keyword">return</span> CloneParameters(cachedParameters);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  244
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Method GetSpParameterSet entered 6 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  245
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  246
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion Parameter Discovery Functions</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  247
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  248
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">}</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  249
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+        </table>
+
+    <table class="coverageTable" cellspacing="0" cellpadding="2">
+      <tr><td class="hbreak" colspan="6">&nbsp;</td></tr>
+      <tr>
+  <td class="footer" colspan="6">
+    <table>
+      <tr>
+        <td><a target="_new" href="http://cenqua.com/clover.net/">
+          <img class="linkImage" alt="Clover.NET" src="../../img/logo.gif"/></a>
+        </td>
+        <td>Report generated by 
+          <a class="footerLink" target="_new" href="http://cenqua.com/clover.net/">Clover.NET v1.2.1941</a>
+          <br />Saturday, May 21, 2005 11:01:44 AM.
+        </td>
+        <td class="footerMessage">Open Source License registered to the iBATIS.NET Project. This license of Clover.NET is provided to support the development of iBATIS.NET only.<br /></td>
+      </tr>
+    </table>
+  </td>
+</tr>    </table>
+  </body>
+</html>

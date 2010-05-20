@@ -21,7 +21,7 @@ P, DL, DT, DD, BLOCKQUOTE {
     margin-bottom: 3px;
     margin-top: 3px;
     padding-top: 0px;
-    text-align: left;
+    text-align: justify;
     /*border: 1px solid black;*/
 }
 

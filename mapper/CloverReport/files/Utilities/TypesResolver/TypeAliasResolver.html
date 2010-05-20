@@ -1,0 +1,3584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Coverage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../../../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../print.css" media="print"/>
+  </head>
+  <body>
+    <table class="coverageTable" cellspacing="0" cellpadding="2">
+      <tr><td class="reportHeader" colspan="6">
+  <table width="100%">
+    <tr><td valign="top">
+      <h1 class="titleText">
+        Clover.NET coverage report - 
+                  Coverage 
+              </h1>
+      <p class="timestamp">
+        <span class="heading">Coverage timestamp:</span>&nbsp;Friday, May 20, 2005 9:17:00 PM
+      </p>
+      <p class="navBar">
+                  <a class="navBarModeLink" href="../../../overview.html">Overview</a>
+          &nbsp;&nbsp;
+          <a class="navBarModeLink" href="../../../namespaces/IBatisNet.Common.Utilities.TypesResolver/ns-summary.html">Namespace</a>
+          &nbsp;&nbsp;
+          <span class="navBarCurrent">File</span>
+              </p>
+      <p class="navBar">
+        &nbsp;&nbsp;&nbsp;
+                  <a class="navBarLink" href="../../../index.html" target="_top">FRAMES</a>&nbsp;&nbsp;
+          <a class="navBarLink" href="../../../files/Utilities/TypesResolver/TypeAliasResolver.html" target="_top">NO FRAMES</a>&nbsp;&nbsp;
+              </p>
+      
+    </td><td align="right" valign="top" class="stats">
+      <table cellpadding="1">
+        <tr>
+                      <td  rowspan="3" valign="top">File Stats:</td>
+                    <td align="right">LOC:</td>
+          <td align="right">370</td>
+          <td rowspan="3">&nbsp;</td>
+          <td align="right">Methods:</td>
+          <td align="right">4</td>
+        </tr>
+        <tr>
+          <td align="right">NCLOC:</td>
+          <td align="right">155</td>
+          <td align="right">Classes:</td>
+          <td align="right">1</td>
+        </tr>
+              </table>
+    </td></tr>
+  </table>
+</td></tr>
+
+
+      <tr><td class="hbreak" colspan="6">&nbsp;</td></tr>
+      
+              <tr>
+    <td class="graphHeaderLeft">Source File</td>
+    <td class="graphHeader">Conditionals</td>
+    <td class="graphHeader">Statements</td>
+    <td class="graphHeader">Methods</td>
+    <td class="graphBarHeader" colspan="2">TOTAL</td>
+  </tr>   
+  <tr>
+    <td class="graphItem">
+                        Utilities\TypesResolver\TypeAliasResolver.cs
+                  </td>
+    
+    <td class="graphPercent">75.0 %</td>
+    <td class="graphPercent">85.5 %</td>
+    <td class="graphPercent">75.0 %</td>
+    <td class="graphBarLeft">84.4 %</td>
+    <td class="graphBar">
+              <table cellspacing="0" cellpadding="0">
+          <tr>
+                          <td class="covered"><img alt="coverage" src="../../../img/green.gif"
+                  width="168" height="12"/></td>
+              <td class="uncovered"><img alt="coverage" src="../../../img/red.gif"
+                  width="32" height="12"/></td>
+                      </tr>
+        </table>
+          </td>
+  </tr>     </table>
+    
+    <table cellspacing="0" cellpadding="0" class="srcView">
+          <tr>
+        <td class="lineNumber">
+                  1
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  2
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#region Apache Notice</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  3
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment">/*****************************************************************************</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  4
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Header: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  5
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Revision: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  6
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Date: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  7
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  8
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * iBATIS.NET Data Mapper</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  9
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Copyright (C) 2004 - Gilles Bayon</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  10
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> *  </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  11
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  12
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Licensed under the Apache License, Version 2.0 (the "License");</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  13
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * you may not use this file except in compliance with the License.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  14
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * You may obtain a copy of the License at</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  15
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  16
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  17
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  18
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Unless required by applicable law or agreed to in writing, software</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  19
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * distributed under the License is distributed on an "AS IS" BASIS,</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  20
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  21
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * See the License for the specific language governing permissions and</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  22
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * limitations under the License.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  23
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  24
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> ********************************************************************************/</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  25
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  26
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  27
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#region Imports</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  28
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  29
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Collections;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  30
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Collections.Specialized;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  31
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  32
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> IBatisNet.Common.Exceptions;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  33
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  34
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  35
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">namespace</span> IBatisNet.Common.Utilities.TypesResolver</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  36
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">{</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  37
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  38
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// <span class="docContent">Provides (and resolves) alias' for the common types.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  39
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  40
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;remarks></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  41
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;p></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  42
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// <span class="docContent">It's really just syntactic sugar so that a type definition</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  43
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// <span class="docContent">(in, say, a config file) can use 'int' instead of 'System.Int32'.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  44
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;/p></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  45
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;/remarks></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  46
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="keyword">public</span> <span class="keyword">class</span> TypeAliasResolver</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  47
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  48
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Constants</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  49
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  50
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  51
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'list' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  52
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  53
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> ArrayListAlias1 = <span class="string">"arraylist"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  54
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  55
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'list' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  56
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  57
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> ArrayListAlias2 = <span class="string">"list"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  58
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  59
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  60
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'bool' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  61
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  62
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> BoolAlias1 = <span class="string">"boolean"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  63
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  64
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'bool' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  65
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  66
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> BoolAlias2 = <span class="string">"bool"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  67
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  68
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  69
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'byte' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  70
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  71
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> ByteAlias = <span class="string">"byte"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  72
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  73
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  74
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'char' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  75
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  76
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> CharAlias = <span class="string">"char"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  77
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  78
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  79
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'DateTime' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  80
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  81
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> DateAlias1 = <span class="string">"datetime"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  82
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  83
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'DateTime' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  84
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  85
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> DateAlias2 = <span class="string">"date"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  86
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  87
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  88
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'decimal' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  89
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  90
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> DecimalAlias = <span class="string">"decimal"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  91
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  92
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  93
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'double' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  94
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  95
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> DoubleAlias = <span class="string">"double"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  96
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  97
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  98
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'float' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  99
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  100
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> FloatAlias1 = <span class="string">"float"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  101
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  102
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'float' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  103
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  104
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> FloatAlias2 = <span class="string">"single"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  105
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  106
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  107
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'guid' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  108
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  109
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> GuidAlias = <span class="string">"guid"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  110
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  111
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  112
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'Hashtable' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  113
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  114
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> HashtableAlias1 = <span class="string">"hashtable"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  115
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  116
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'Hashtable' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  117
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  118
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> HashtableAlias2 = <span class="string">"map"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  119
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  120
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'Hashtable' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  121
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  122
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> HashtableAlias3 = <span class="string">"hashmap"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  123
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  124
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  125
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'short' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  126
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  127
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> Int16Alias1 = <span class="string">"int16"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  128
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  129
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'short' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  130
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  131
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> Int16Alias2 = <span class="string">"short"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  132
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  133
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  134
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'int' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  135
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  136
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> Int32Alias1 = <span class="string">"Int32"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  137
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  138
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'int' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  139
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  140
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> Int32Alias2 = <span class="string">"int"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  141
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  142
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'int' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  143
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  144
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> Int32Alias3 = <span class="string">"integer"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  145
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  146
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  147
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'long' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  148
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  149
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> Int64Alias1 = <span class="string">"int64"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  150
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  151
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'long' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  152
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  153
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> Int64Alias2 = <span class="string">"long"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  154
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  155
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  156
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'unsigned short' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  157
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  158
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> UInt16Alias1 = <span class="string">"uint16"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  159
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  160
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'unsigned short' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  161
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  162
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> UInt16Alias2 = <span class="string">"ushort"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  163
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  164
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  165
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'unsigned int' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  166
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  167
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> UInt32Alias1 = <span class="string">"uint32"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  168
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  169
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'unsigned int' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  170
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  171
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> UInt32Alias2 = <span class="string">"uint"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  172
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  173
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  174
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'unsigned long' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  175
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  176
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> UInt64Alias1 = <span class="string">"uint64"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  177
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  178
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">An other alias around the 'unsigned long' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  179
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  180
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> UInt64Alias2 = <span class="string">"ulong"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  181
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  182
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  183
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'SByte' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  184
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  185
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> SByteAlias = <span class="string">"sbyte"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  186
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  187
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  188
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'string' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  189
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  190
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> StringAlias = <span class="string">"string"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  191
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  192
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  193
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">The alias around the 'TimeSpan' type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  194
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  195
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> TimeSpanAlias = <span class="string">"timespan"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  196
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  197
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  198
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  199
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Fields</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  200
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">static</span> StringDictionary _aliases = <span class="keyword">new</span> StringDictionary();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  201
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  202
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  203
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Constructor (s) / Destructor</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  204
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  205
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Creates a new instance of the TypeAliasFactory class.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  206
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  207
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;remarks></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  208
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;p></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  209
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">This is a utility class, and as such has no publicly visible</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  210
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">constructors.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  211
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/p></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  212
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/remarks></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  213
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 213: Constructor TypeAliasResolver not entered.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 213: Constructor TypeAliasResolver not entered.">        <span class="keyword">private</span> TypeAliasResolver() {}</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  214
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  215
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  216
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Initialises the static properties of the TypeAliasResolver class.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  217
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  218
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 218: Constructor TypeAliasResolver entered 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time.">        <span class="keyword">static</span> TypeAliasResolver()</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  219
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  220
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time.">            <span class="lineComment">// Initialize a dictionary with some fully qualifiaed name </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  221
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 221: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 221: Statement executed 1 time.">            _aliases [TypeAliasResolver.ArrayListAlias1] = <span class="keyword">typeof</span> (ArrayList).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  222
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 222: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 222: Statement executed 1 time.">            _aliases [TypeAliasResolver.ArrayListAlias2] = <span class="keyword">typeof</span> (ArrayList).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  223
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  224
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 224: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 224: Statement executed 1 time.">            _aliases [TypeAliasResolver.BoolAlias1] = <span class="keyword">typeof</span> (<span class="keyword">bool</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  225
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 225: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 225: Statement executed 1 time.">            _aliases [TypeAliasResolver.BoolAlias2] = <span class="keyword">typeof</span> (<span class="keyword">bool</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  226
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  227
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 227: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 227: Statement executed 1 time.">            _aliases [TypeAliasResolver.ByteAlias] = <span class="keyword">typeof</span> (<span class="keyword">byte</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  228
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  229
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 229: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 229: Statement executed 1 time.">            _aliases [TypeAliasResolver.CharAlias] = <span class="keyword">typeof</span> (<span class="keyword">char</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  230
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  231
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 231: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 231: Statement executed 1 time.">            _aliases [TypeAliasResolver.DateAlias1] = <span class="keyword">typeof</span> (DateTime).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  232
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 232: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 232: Statement executed 1 time.">            _aliases [TypeAliasResolver.DateAlias2] = <span class="keyword">typeof</span> (DateTime).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  233
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  234
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 234: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 234: Statement executed 1 time.">            _aliases [TypeAliasResolver.DecimalAlias] = <span class="keyword">typeof</span> (<span class="keyword">decimal</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  235
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  236
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 236: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 236: Statement executed 1 time.">            _aliases [TypeAliasResolver.DoubleAlias] = <span class="keyword">typeof</span> (<span class="keyword">double</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  237
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  238
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 238: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 238: Statement executed 1 time.">            _aliases [TypeAliasResolver.FloatAlias1] = <span class="keyword">typeof</span> (<span class="keyword">float</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  239
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 239: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 239: Statement executed 1 time.">            _aliases [TypeAliasResolver.FloatAlias2] = <span class="keyword">typeof</span> (<span class="keyword">float</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  240
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  241
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 241: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 241: Statement executed 1 time.">            _aliases [TypeAliasResolver.GuidAlias] = <span class="keyword">typeof</span> (System.Guid).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  242
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  243
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 243: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 243: Statement executed 1 time.">            _aliases [TypeAliasResolver.HashtableAlias1] = <span class="keyword">typeof</span> (Hashtable).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  244
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 244: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 244: Statement executed 1 time.">            _aliases [TypeAliasResolver.HashtableAlias2] = <span class="keyword">typeof</span> (Hashtable).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  245
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 245: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 245: Statement executed 1 time.">            _aliases [TypeAliasResolver.HashtableAlias3] = <span class="keyword">typeof</span> (Hashtable).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  246
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  247
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 247: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 247: Statement executed 1 time.">            _aliases [TypeAliasResolver.Int16Alias1] = <span class="keyword">typeof</span> (<span class="keyword">short</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  248
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 248: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 248: Statement executed 1 time.">            _aliases [TypeAliasResolver.Int16Alias2] = <span class="keyword">typeof</span> (<span class="keyword">short</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  249
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  250
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 250: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 250: Statement executed 1 time.">            _aliases [TypeAliasResolver.Int32Alias1] = <span class="keyword">typeof</span> (<span class="keyword">int</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  251
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 251: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 251: Statement executed 1 time.">            _aliases [TypeAliasResolver.Int32Alias2] = <span class="keyword">typeof</span> (<span class="keyword">int</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  252
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 252: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 252: Statement executed 1 time.">            _aliases [TypeAliasResolver.Int32Alias3] = <span class="keyword">typeof</span> (<span class="keyword">int</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  253
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  254
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 254: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 254: Statement executed 1 time.">            _aliases [TypeAliasResolver.Int64Alias1] = <span class="keyword">typeof</span> (<span class="keyword">long</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  255
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 255: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 255: Statement executed 1 time.">            _aliases [TypeAliasResolver.Int64Alias2] = <span class="keyword">typeof</span> (<span class="keyword">long</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  256
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  257
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 257: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 257: Statement executed 1 time.">            _aliases [TypeAliasResolver.UInt16Alias1] = <span class="keyword">typeof</span> (<span class="keyword">ushort</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  258
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 258: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 258: Statement executed 1 time.">            _aliases [TypeAliasResolver.UInt16Alias2] = <span class="keyword">typeof</span> (<span class="keyword">ushort</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  259
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  260
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 260: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 260: Statement executed 1 time.">            _aliases [TypeAliasResolver.UInt32Alias1] = <span class="keyword">typeof</span> (<span class="keyword">uint</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  261
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 261: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 261: Statement executed 1 time.">            _aliases [TypeAliasResolver.UInt32Alias2] = <span class="keyword">typeof</span> (<span class="keyword">uint</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  262
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  263
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 263: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 263: Statement executed 1 time.">            _aliases [TypeAliasResolver.UInt64Alias1] = <span class="keyword">typeof</span> (<span class="keyword">ulong</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  264
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 264: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 264: Statement executed 1 time.">            _aliases [TypeAliasResolver.UInt64Alias2] = <span class="keyword">typeof</span> (<span class="keyword">ulong</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  265
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  266
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 266: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 266: Statement executed 1 time.">            _aliases [TypeAliasResolver.SByteAlias] = <span class="keyword">typeof</span> (<span class="keyword">sbyte</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  267
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  268
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 268: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 268: Statement executed 1 time.">            _aliases [TypeAliasResolver.StringAlias] = <span class="keyword">typeof</span> (<span class="keyword">string</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  269
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  270
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 270: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 270: Statement executed 1 time.">            _aliases [TypeAliasResolver.TimeSpanAlias] = <span class="keyword">typeof</span> (<span class="keyword">string</span>).FullName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  271
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  272
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 218: Constructor TypeAliasResolver entered 1 time.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  273
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  274
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  275
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Methods</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  276
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  277
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  278
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Resolves the supplied type name.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  279
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  280
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;remarks></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  281
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;p></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  282
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">If the supplied type name is an alias, the fully resolved</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  283
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">type name is returned. If no alias could be found that matches</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  284
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">the supplied type name, then the type name will be returned as is.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  285
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/p></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  286
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/remarks></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  287
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="type"><span class="docContent">The supplied type name.</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  288
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  289
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">If the supplied type name is an alias, the fully resolved</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  290
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">type name is returned. If no alias could be found that matches</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  291
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">the supplied type name, then the type name will be returned as is.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  292
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  293
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 293: Method Resolve entered 37 times.">37</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 293: Method Resolve entered 37 times.">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">string</span> Resolve (<span class="keyword">string</span> type) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  294
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 293: Method Resolve entered 37 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  295
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 295: Expression evaluated to true 37 times, false 0 times.">37</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 295: Expression evaluated to true 37 times, false 0 times.">            <span class="keyword">if</span> (type != <span class="keyword">null</span>)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  296
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 295: Statement executed 37 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  297
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 297: Expression evaluated to true 21 times, false 16 times.">37</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 297: Expression evaluated to true 21 times, false 16 times.">                <span class="keyword">if</span> (_aliases.ContainsKey (type.ToLower ())) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  298
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 297: Statement executed 37 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  299
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 299: Statement executed 21 times.">21</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 299: Statement executed 21 times.">                    <span class="keyword">return</span> _aliases [type] <span class="keyword">as</span> <span class="keyword">string</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  300
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 297: Statement executed 37 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  301
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 295: Statement executed 37 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  302
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 302: Statement executed 16 times.">16</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 302: Statement executed 16 times.">            <span class="keyword">return</span> type;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  303
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 293: Method Resolve entered 37 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  304
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  305
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  306
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  307
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Instantiate a 'Primitive' Type.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  308
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  309
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="typeCode"><span class="docContent">a typeCode.</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  310
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;returns><span class="docContent">An object.</span>&lt;/returns></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  311
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 311: Method InstantiatePrimitiveType entered 48 times.">48</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 311: Method InstantiatePrimitiveType entered 48 times.">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">object</span> InstantiatePrimitiveType(TypeCode typeCode)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  312
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 311: Method InstantiatePrimitiveType entered 48 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  313
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 313: Statement executed 48 times.">48</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 313: Statement executed 48 times.">            <span class="keyword">object</span> resultObject = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  314
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 311: Method InstantiatePrimitiveType entered 48 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  315
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 315: Statement executed 48 times.">48</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">            <span class="keyword">switch</span>(typeCode)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  316
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  317
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.Boolean :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  318
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 318: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 318: Statement executed 1 time.">                    resultObject = <span class="keyword">new</span> Boolean();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  319
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 319: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 319: Statement executed 1 time.">                    <span class="keyword">break</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  320
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.Byte :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  321
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 321: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 321: Statement executed 1 time.">                    resultObject = <span class="keyword">new</span> Byte();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  322
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 322: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 322: Statement executed 1 time.">                    <span class="keyword">break</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  323
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.Char :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  324
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 324: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 324: Statement executed 1 time.">                    resultObject = <span class="keyword">new</span> Char();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  325
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 325: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 325: Statement executed 1 time.">                    <span class="keyword">break</span>;                      </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  326
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.DateTime :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  327
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 327: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 327: Statement not executed.">                    resultObject = <span class="keyword">new</span> DateTime();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  328
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 328: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 328: Statement not executed.">                    <span class="keyword">break</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  329
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.Decimal :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  330
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 330: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 330: Statement executed 1 time.">                    resultObject = <span class="keyword">new</span> Decimal();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  331
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 331: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 331: Statement executed 1 time.">                    <span class="keyword">break</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  332
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.Double :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  333
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 333: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 333: Statement executed 1 time.">                    resultObject = <span class="keyword">new</span> Double();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  334
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 334: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 334: Statement executed 1 time.">                    <span class="keyword">break</span>;  </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  335
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.Int16 :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  336
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 336: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 336: Statement executed 1 time.">                    resultObject = <span class="keyword">new</span> Int16();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  337
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 337: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 337: Statement executed 1 time.">                    <span class="keyword">break</span>;  </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  338
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.Int32 :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  339
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 339: Statement executed 12 times.">12</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 339: Statement executed 12 times.">                    resultObject = <span class="keyword">new</span> Int32();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  340
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 340: Statement executed 12 times.">12</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 340: Statement executed 12 times.">                    <span class="keyword">break</span>;  </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  341
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.Int64 :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  342
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 342: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 342: Statement executed 1 time.">                    resultObject = <span class="keyword">new</span> Int64();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  343
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 343: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 343: Statement executed 1 time.">                    <span class="keyword">break</span>;  </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  344
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.SByte :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  345
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 345: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 345: Statement not executed.">                    resultObject = <span class="keyword">new</span> SByte();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  346
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 346: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 346: Statement not executed.">                    <span class="keyword">break</span>;  </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  347
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.Single :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  348
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 348: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 348: Statement executed 1 time.">                    resultObject = <span class="keyword">new</span> Single();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  349
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 349: Statement executed 1 time.">1</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 349: Statement executed 1 time.">                    <span class="keyword">break</span>;  </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  350
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.String :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  351
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 351: Statement executed 28 times.">28</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 351: Statement executed 28 times.">                    resultObject = <span class="string">""</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  352
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 352: Statement executed 28 times.">28</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 352: Statement executed 28 times.">                    <span class="keyword">break</span>;  </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  353
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.UInt16 :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  354
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 354: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 354: Statement not executed.">                    resultObject = <span class="keyword">new</span> UInt16();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  355
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 355: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 355: Statement not executed.">                    <span class="keyword">break</span>;      </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  356
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.UInt32 :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  357
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 357: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 357: Statement not executed.">                    resultObject = <span class="keyword">new</span> UInt32();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  358
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 358: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 358: Statement not executed.">                    <span class="keyword">break</span>;  </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  359
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">                <span class="keyword">case</span> TypeCode.UInt64 :</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  360
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 360: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 360: Statement not executed.">                    resultObject = <span class="keyword">new</span> UInt64();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  361
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 361: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 361: Statement not executed.">                    <span class="keyword">break</span>;      </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  362
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 315: Statement executed 48 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  363
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 363: Statement executed 48 times.">48</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 363: Statement executed 48 times.">            <span class="keyword">return</span> resultObject;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  364
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 311: Method InstantiatePrimitiveType entered 48 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  365
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  366
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  367
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  368
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  369
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">}</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  370
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+        </table>
+
+    <table class="coverageTable" cellspacing="0" cellpadding="2">
+      <tr><td class="hbreak" colspan="6">&nbsp;</td></tr>
+      <tr>
+  <td class="footer" colspan="6">
+    <table>
+      <tr>
+        <td><a target="_new" href="http://cenqua.com/clover.net/">
+          <img class="linkImage" alt="Clover.NET" src="../../../img/logo.gif"/></a>
+        </td>
+        <td>Report generated by 
+          <a class="footerLink" target="_new" href="http://cenqua.com/clover.net/">Clover.NET v1.2.1941</a>
+          <br />Saturday, May 21, 2005 11:01:44 AM.
+        </td>
+        <td class="footerMessage">Open Source License registered to the iBATIS.NET Project. This license of Clover.NET is provided to support the development of iBATIS.NET only.<br /></td>
+      </tr>
+    </table>
+  </td>
+</tr>    </table>
+  </body>
+</html>
