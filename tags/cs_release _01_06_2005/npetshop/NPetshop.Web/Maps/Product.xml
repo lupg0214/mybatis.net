@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlMap namespace="Product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="Product" type="NPetshop.Domain.Catalog.Product, NPetshop.Domain"/>
+	</alias>
+	<cacheModels>
+		<cacheModel id="ProductList-cache" implementation="MEMORY">
+			<flushInterval hours="24"/>
+			<property name="Type" value="Weak"/>
+		</cacheModel>
+	</cacheModels>
+	<resultMaps>
+		<resultMap id="ProductResult" class="Product">
+			<result property="Id" column="Product_Id"/>
+			<result property="Name" column="Product_Name"/>
+			<result property="Description" column="Product_Description"/>
+		</resultMap>
+		<resultMap id="ProductList" class="Product" extends="ProductResult">
+			<result property="Category" resultMapping="Category.CategoryResult"/>
+		</resultMap>
+	</resultMaps>
+	<!-- =============================================
+        MAPPED STATEMENTS 
+    ============================================= 
+    -->
+	<statements>
+		<select id="GetProductListByCategory" cacheModel="ProductList-cache" resultMap="ProductList" parameterClass="string">
+			select 
+				Product_Id, 
+				Product_Name, 
+				Product_Description,
+				P.Category_Id, 
+				Category_Name, 
+				Category_Description 
+			from Products as P, Categories as C 
+			where C.Category_ID= P.Category_ID and
+				P.Category_Id = #value#
+		</select>
+		<select id="GetProduct" resultMap="ProductResult" parameterClass="string">
+			select 
+				Product_Id, 
+				Product_Name, 
+				Product_Description 
+			from Products 
+			where Product_Id = #value#
+		</select>
+		<select id="SearchProductList" resultMap="ProductResult">
+			select 
+				Product_Id, 
+				Product_Name, 
+				Product_Description
+			from Products 
+			<dynamic prepend="WHERE">
+				<iterate property="KeywordList" open="" close="" conjunction="OR">
+					lower(Product_Name) like #KeywordList[]# OR lower(Category_ID) like #KeywordList[]# OR lower(Product_Description) like #KeywordList[]#
+				</iterate>
+			</dynamic>
+		</select>
+	</statements>
+</sqlMap>

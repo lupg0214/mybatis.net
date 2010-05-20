@@ -1,0 +1,4245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Coverage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../../../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../print.css" media="print"/>
+  </head>
+  <body>
+    <table class="coverageTable" cellspacing="0" cellpadding="2">
+      <tr><td class="reportHeader" colspan="6">
+  <table width="100%">
+    <tr><td valign="top">
+      <h1 class="titleText">
+        Clover.NET coverage report - 
+                  Coverage 
+              </h1>
+      <p class="timestamp">
+        <span class="heading">Coverage timestamp:</span>&nbsp;Friday, May 20, 2005 9:17:00 PM
+      </p>
+      <p class="navBar">
+                  <a class="navBarModeLink" href="../../../overview.html">Overview</a>
+          &nbsp;&nbsp;
+          <a class="navBarModeLink" href="../../../namespaces/IBatisNet.DataMapper.Configuration.Statements/ns-summary.html">Namespace</a>
+          &nbsp;&nbsp;
+          <span class="navBarCurrent">File</span>
+              </p>
+      <p class="navBar">
+        &nbsp;&nbsp;&nbsp;
+                  <a class="navBarLink" href="../../../index.html" target="_top">FRAMES</a>&nbsp;&nbsp;
+          <a class="navBarLink" href="../../../files/Configuration/Statements/PreparedStatementFactory.html" target="_top">NO FRAMES</a>&nbsp;&nbsp;
+              </p>
+      
+    </td><td align="right" valign="top" class="stats">
+      <table cellpadding="1">
+        <tr>
+                      <td  rowspan="3" valign="top">File Stats:</td>
+                    <td align="right">LOC:</td>
+          <td align="right">439</td>
+          <td rowspan="3">&nbsp;</td>
+          <td align="right">Methods:</td>
+          <td align="right">6</td>
+        </tr>
+        <tr>
+          <td align="right">NCLOC:</td>
+          <td align="right">282</td>
+          <td align="right">Classes:</td>
+          <td align="right">1</td>
+        </tr>
+              </table>
+    </td></tr>
+  </table>
+</td></tr>
+
+
+      <tr><td class="hbreak" colspan="6">&nbsp;</td></tr>
+      
+              <tr>
+    <td class="graphHeaderLeft">Source File</td>
+    <td class="graphHeader">Conditionals</td>
+    <td class="graphHeader">Statements</td>
+    <td class="graphHeader">Methods</td>
+    <td class="graphBarHeader" colspan="2">TOTAL</td>
+  </tr>   
+  <tr>
+    <td class="graphItem">
+                        Configuration\Statements\PreparedStatementFactory.cs
+                  </td>
+    
+    <td class="graphPercent">39.4 %</td>
+    <td class="graphPercent">59.3 %</td>
+    <td class="graphPercent">83.3 %</td>
+    <td class="graphBarLeft">53.3 %</td>
+    <td class="graphBar">
+              <table cellspacing="0" cellpadding="0">
+          <tr>
+                          <td class="covered"><img alt="coverage" src="../../../img/green.gif"
+                  width="106" height="12"/></td>
+              <td class="uncovered"><img alt="coverage" src="../../../img/red.gif"
+                  width="94" height="12"/></td>
+                      </tr>
+        </table>
+          </td>
+  </tr>     </table>
+    
+    <table cellspacing="0" cellpadding="0" class="srcView">
+          <tr>
+        <td class="lineNumber">
+                  1
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  2
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#region Apache Notice</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  3
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment">/*****************************************************************************</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  4
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Header: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  5
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Revision: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  6
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * $Date: $</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  7
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  8
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * iBATIS.NET Data Mapper</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  9
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Copyright (C) 2004 - Gilles Bayon</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  10
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> *  </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  11
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  12
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Licensed under the Apache License, Version 2.0 (the "License");</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  13
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * you may not use this file except in compliance with the License.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  14
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * You may obtain a copy of the License at</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  15
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  16
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  17
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  18
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * Unless required by applicable law or agreed to in writing, software</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  19
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * distributed under the License is distributed on an "AS IS" BASIS,</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  20
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  21
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * See the License for the specific language governing permissions and</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  22
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * limitations under the License.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  23
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> * </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  24
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="blockComment"> ********************************************************************************/</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  25
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  26
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  27
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#region Using</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  28
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  29
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  30
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Collections;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  31
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Collections.Specialized;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  32
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Data;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  33
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Reflection;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  34
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> System.Text;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  35
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> IBatisNet.Common;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  36
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> IBatisNet.Common.Utilities;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  37
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> IBatisNet.Common.Utilities.Objects;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  38
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> IBatisNet.DataMapper.Configuration.ParameterMapping;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  39
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> IBatisNet.DataMapper.Exceptions;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  40
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> IBatisNet.DataMapper.Scope;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  41
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">using</span> log4net;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  42
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  43
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  44
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  45
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"><span class="keyword">namespace</span> IBatisNet.DataMapper.Configuration.Statements</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  46
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">{</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  47
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  48
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// <span class="docContent">Summary description for PreparedStatementFactory.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  49
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  50
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    <span class="keyword">public</span> <span class="keyword">class</span> PreparedStatementFactory</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  51
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  52
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  53
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Fields</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  54
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  55
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> PreparedStatement _preparedStatement = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  56
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  57
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">string</span> _parameterPrefix = <span class="keyword">string</span>.Empty;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  58
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> IStatement _statement = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  59
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> IDalSession _session = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  60
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">string</span> _commandText = <span class="keyword">string</span>.Empty;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  61
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> RequestScope _request = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  62
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="lineComment">// (property, DbParameter)</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  63
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> HybridDictionary _propertyDbParameterMap = <span class="keyword">new</span> HybridDictionary();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  64
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  65
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> ILog _logger = LogManager.GetLogger( MethodBase.GetCurrentMethod().DeclaringType );</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  66
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  67
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  68
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  69
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  70
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Constructor</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  71
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  72
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="session">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  73
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="statement">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  74
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="commandText">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  75
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="request">&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  76
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 76: Constructor PreparedStatementFactory entered 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 76: Constructor PreparedStatementFactory entered 20460 times.">        <span class="keyword">public</span> PreparedStatementFactory(IDalSession session, RequestScope request, IStatement statement, <span class="keyword">string</span> commandText)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  77
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 76: Constructor PreparedStatementFactory entered 20460 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  78
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 78: Statement executed 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 78: Statement executed 20460 times.">            _session = session;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  79
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 79: Statement executed 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 79: Statement executed 20460 times.">            _request = request;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  80
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 80: Statement executed 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 80: Statement executed 20460 times.">            _statement = statement;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  81
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 81: Statement executed 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 81: Statement executed 20460 times.">            _commandText = commandText;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  82
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 76: Constructor PreparedStatementFactory entered 20460 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  83
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  84
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  85
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  86
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Create a list of IDataParameter for the statement and build the sql string.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  87
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  88
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 88: Method Prepare entered 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 88: Method Prepare entered 20460 times.">        <span class="keyword">public</span> PreparedStatement Prepare()</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  89
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 88: Method Prepare entered 20460 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  90
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 90: Statement executed 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 90: Statement executed 20460 times.">            _preparedStatement = <span class="keyword">new</span> PreparedStatement();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  91
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 91: Statement executed 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 91: Statement executed 20460 times.">            _parameterPrefix = _session.DataSource.Provider.ParameterPrefix;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  92
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 88: Method Prepare entered 20460 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  93
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 93: Statement executed 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 93: Statement executed 20460 times.">            _preparedStatement.PreparedSql = _commandText;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  94
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 88: Method Prepare entered 20460 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  95
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 95: Expression evaluated to true 20454 times, false 6 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 95: Expression evaluated to true 20454 times, false 6 times.">            <span class="keyword">if</span> (_statement.CommandType == CommandType.Text)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  96
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 95: Statement executed 20460 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  97
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 97: Expression evaluated to true 16199 times, false 4255 times.">20454</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 97: Expression evaluated to true 16199 times, false 4255 times.">                <span class="keyword">if</span> (_request.ParameterMap != <span class="keyword">null</span>) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  98
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 97: Statement executed 20454 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  99
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 99: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 99: Statement executed 16199 times.">                    CreateParametersForTextCommand();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  100
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 100: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 100: Statement executed 16199 times.">                    EvaluateParameterMap();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  101
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 97: Statement executed 20454 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  102
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 95: Statement executed 20460 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  103
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 103: Expression evaluated to true 6 times, false 0 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 103: Expression evaluated to true 6 times, false 0 times.">            <span class="keyword">else</span> <span class="keyword">if</span> (_statement.CommandType == CommandType.StoredProcedure) <span class="lineComment">// StoredProcedure</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  104
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  105
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 105: Expression evaluated to true 0 times, false 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 105: Expression evaluated to true 0 times, false 6 times.">                <span class="keyword">if</span> (_request.ParameterMap == <span class="keyword">null</span>) <span class="lineComment">// No parameterMap --> error</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  106
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 105: Statement executed 6 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  107
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 107: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 107: Statement not executed.">                    <span class="keyword">throw</span> <span class="keyword">new</span> DataMapperException(<span class="string">"A procedure statement tag must have a parameterMap attribute, which is not the case for the procedure '"</span>+_statement.Id+<span class="string">"."</span>); </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  108
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 105: Statement executed 6 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  109
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 105: Statement executed 6 times.">                <span class="keyword">else</span> <span class="lineComment">// use the parameterMap</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  110
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 105: Statement executed 6 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  111
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 111: Expression evaluated to true 6 times, false 0 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 111: Expression evaluated to true 6 times, false 0 times.">                    <span class="keyword">if</span> (_session.DataSource.Provider.UseDeriveParameters)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  112
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 111: Statement executed 6 times.">                    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  113
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 113: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 113: Statement executed 6 times.">                        DiscoverParameter(_session);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  114
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 111: Statement executed 6 times.">                    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  115
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 111: Statement executed 6 times.">                    <span class="keyword">else</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  116
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 111: Statement executed 6 times.">                    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  117
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 117: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 117: Statement not executed.">                        CreateParametersForProcedureCommand();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  118
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 111: Statement executed 6 times.">                        <span class="lineComment">// EvaluateParameterMap(); // Did we need that ? I don't think for the procedure</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  119
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 111: Statement executed 6 times.">                    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  120
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 105: Statement executed 6 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  121
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  122
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="ppdirec">#region Fix for Odbc</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  123
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="lineComment">// Although executing a parameterized stored procedure using the ODBC .NET Provider </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  124
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="lineComment">// is slightly different from executing the same procedure using the SQL or </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  125
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="lineComment">// the OLE DB Provider, there is one important difference </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  126
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="lineComment">// -- the stored procedure must be called using the ODBC CALL syntax rather than </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  127
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="lineComment">// the name of the stored procedure. </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  128
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="lineComment">// For additional information on this CALL syntax, </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  129
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="lineComment">// see the page entitled "Procedure Calls" in the ODBC Programmer's Reference </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  130
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="lineComment">// in the MSDN Library. </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  131
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="lineComment">//http://support.microsoft.com/default.aspx?scid=kb;EN-US;Q309486</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  132
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  133
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 133: Expression evaluated to true 0 times, false 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 133: Expression evaluated to true 0 times, false 6 times.">                <span class="keyword">if</span> ( _session.DataSource.Provider.IsObdc == <span class="keyword">true</span> )</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  134
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 133: Statement executed 6 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  135
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 135: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 135: Statement not executed.">                    StringBuilder commandTextBuilder = <span class="keyword">new</span> StringBuilder(<span class="string">"{ call "</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  136
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 136: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 136: Statement not executed.">                    commandTextBuilder.Append( _commandText );</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  137
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 133: Statement executed 6 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  138
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 138: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 138: Statement not executed.">                    <span class="keyword">if</span> (_preparedStatement.DbParameters.Count >0)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  139
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 138: Statement not executed.">                    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  140
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 138: Statement not executed.">                        commandTextBuilder.Append(<span class="string">" ("</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  141
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 138: Statement not executed.">                        <span class="keyword">int</span> supIndex = _preparedStatement.DbParameters.Count-1;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  142
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 138: Statement not executed.">                        <span class="keyword">for</span>(<span class="keyword">int</span> i=0;i&lt;supIndex;i++)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  143
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 138: Statement not executed.">                        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  144
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 138: Statement not executed.">                            commandTextBuilder.Append(<span class="string">"?,"</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  145
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 138: Statement not executed.">                        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  146
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 138: Statement not executed.">                        commandTextBuilder.Append(<span class="string">"?) }"</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  147
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 138: Statement not executed.">                    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  148
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 148: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 148: Statement not executed.">                    _preparedStatement.PreparedSql = commandTextBuilder.ToString();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  149
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 133: Statement executed 6 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  150
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  151
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">                <span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  152
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 103: Statement executed 6 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  153
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 88: Method Prepare entered 20460 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  154
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 154: Expression evaluated to true 0 times, false 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 154: Expression evaluated to true 0 times, false 20460 times.">            <span class="keyword">if</span> (_logger.IsDebugEnabled) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  155
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 154: Statement executed 20460 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  156
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 156: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 156: Statement not executed.">                _logger.Debug(<span class="string">"SQL for statement '"</span>+ _statement.Id +<span class="string">"' :"</span> + _preparedStatement.PreparedSql);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  157
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 154: Statement executed 20460 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  158
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 88: Method Prepare entered 20460 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  159
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 159: Statement executed 20460 times.">20460</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 159: Statement executed 20460 times.">            <span class="keyword">return</span> _preparedStatement;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  160
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 88: Method Prepare entered 20460 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  161
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  162
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  163
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#region Private methods</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  164
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  165
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  166
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">For store procedure, auto discover IDataParameters for stored procedures at run-time.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  167
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  168
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;param name="session"><span class="docContent">The current session.</span>&lt;/param></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  169
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 169: Method DiscoverParameter entered 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 169: Method DiscoverParameter entered 6 times.">        <span class="keyword">private</span> <span class="keyword">void</span> DiscoverParameter(IDalSession session)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  170
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 169: Method DiscoverParameter entered 6 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  171
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 169: Method DiscoverParameter entered 6 times.">            <span class="lineComment">// pull the parameters for this stored procedure from the parameter cache </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  172
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 169: Method DiscoverParameter entered 6 times.">            <span class="lineComment">// (or discover them &amp; populate the cache)</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  173
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 173: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 173: Statement executed 6 times.">            IDataParameter[] commandParameters = DBHelperParameterCache.GetSpParameterSet(session, _commandText);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  174
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 169: Method DiscoverParameter entered 6 times.">            </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  175
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 175: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 175: Statement executed 6 times.">            <span class="keyword">int</span> start = session.DataSource.Provider.ParameterPrefix.Length;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  176
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 176: Statement executed 6 times.">6</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 176: Statement executed 6 times.">            <span class="keyword">foreach</span>(IDataParameter dataParameter <span class="keyword">in</span> commandParameters)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  177
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 176: Statement executed 6 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  178
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 178: Expression evaluated to true 0 times, false 21 times.">21</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 178: Expression evaluated to true 0 times, false 21 times.">                <span class="keyword">if</span> (session.DataSource.Provider.UseParameterPrefixInParameter == <span class="keyword">false</span>)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  179
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 178: Statement executed 21 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  180
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 180: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 180: Statement not executed.">                    <span class="keyword">if</span> (dataParameter.ParameterName.StartsWith(session.DataSource.Provider.ParameterPrefix)) {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  181
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 180: Statement not executed.">                        dataParameter.ParameterName = dataParameter.ParameterName.Substring(start);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  182
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 180: Statement not executed.">                    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  183
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 178: Statement executed 21 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  184
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 184: Statement executed 21 times.">21</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 184: Statement executed 21 times.">                _preparedStatement.DbParametersName.Add( dataParameter.ParameterName );</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  185
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 185: Statement executed 21 times.">21</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 185: Statement executed 21 times.">                _preparedStatement.DbParameters.Add( dataParameter );</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  186
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 176: Statement executed 6 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  187
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 169: Method DiscoverParameter entered 6 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  188
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  189
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  190
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  191
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Create IDataParameters for command text statement.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  192
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  193
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 193: Method CreateParametersForTextCommand entered 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 193: Method CreateParametersForTextCommand entered 16199 times.">        <span class="keyword">private</span> <span class="keyword">void</span> CreateParametersForTextCommand()</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  194
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 193: Method CreateParametersForTextCommand entered 16199 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  195
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 195: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 195: Statement executed 16199 times.">            <span class="keyword">string</span> sqlParamName = <span class="keyword">string</span>.Empty;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  196
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 196: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 196: Statement executed 16199 times.">            <span class="keyword">string</span> dbTypePropertyName = _session.DataSource.Provider.ParameterDbTypeProperty;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  197
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 197: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 197: Statement executed 16199 times.">            Type enumDbType = _session.DataSource.Provider.ParameterDbType;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  198
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 198: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 198: Statement executed 16199 times.">            IList list = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  199
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 199: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 199: Statement executed 16199 times.">            <span class="keyword">int</span> i = 0;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  200
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 193: Method CreateParametersForTextCommand entered 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  201
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 201: Expression evaluated to true 0 times, false 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 201: Expression evaluated to true 0 times, false 16199 times.">            <span class="keyword">if</span> (_session.DataSource.Provider.UsePositionalParameters) <span class="lineComment">//obdc/oledb</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  202
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 201: Statement executed 16199 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  203
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 203: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 203: Statement not executed.">                list = _request.ParameterMap.Properties;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  204
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 201: Statement executed 16199 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  205
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 201: Statement executed 16199 times.">            <span class="keyword">else</span> </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  206
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 201: Statement executed 16199 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  207
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 207: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 207: Statement executed 16199 times.">                list = _request.ParameterMap.PropertiesList;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  208
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 201: Statement executed 16199 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  209
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 193: Method CreateParametersForTextCommand entered 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  210
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 210: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times.">            <span class="keyword">foreach</span>(ParameterProperty property <span class="keyword">in</span> list)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  211
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  212
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 212: Expression evaluated to true 32184 times, false 0 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 212: Expression evaluated to true 32184 times, false 0 times.">                <span class="keyword">if</span> (_session.DataSource.Provider.UseParameterPrefixInParameter)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  213
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 212: Statement executed 32184 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  214
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 212: Statement executed 32184 times.">                    <span class="lineComment">// From Ryan Yao: JIRA-27, used "param" + i++ for sqlParamName</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  215
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 215: Statement executed 32184 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 215: Statement executed 32184 times.">                    sqlParamName = _parameterPrefix + <span class="string">"param"</span> + i++;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  216
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 212: Statement executed 32184 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  217
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 212: Statement executed 32184 times.">                <span class="keyword">else</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  218
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 212: Statement executed 32184 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  219
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 219: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 219: Statement not executed.">                    sqlParamName = <span class="string">"param"</span> + i++;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  220
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 212: Statement executed 32184 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  221
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  222
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 222: Statement executed 32184 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 222: Statement executed 32184 times.">                IDataParameter dataParameter = _session.CreateCommand(_statement.CommandType).CreateParameter();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  223
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  224
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times.">                <span class="lineComment">// Manage dbType attribute if any</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  225
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 225: Expression evaluated to true 3911 times, false 28273 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 225: Expression evaluated to true 3911 times, false 28273 times.">                <span class="keyword">if</span> (property.DbType != <span class="keyword">null</span> &amp;&amp; property.DbType.Length >0) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  226
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 225: Statement executed 32184 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  227
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 225: Statement executed 32184 times.">                    <span class="lineComment">// Exemple : Enum.parse(System.Data.SqlDbType, 'VarChar')</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  228
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 228: Statement executed 3911 times.">3911</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 228: Statement executed 3911 times.">                    <span class="keyword">object</span> dbType = Enum.Parse( enumDbType, property.DbType, <span class="keyword">true</span> );</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  229
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 225: Statement executed 32184 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  230
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 225: Statement executed 32184 times.">                    <span class="lineComment">// Exemple : ObjectHelper.SetProperty(sqlparameter, 'SqlDbType', SqlDbType.Int);</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  231
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 231: Statement executed 3911 times.">3911</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 231: Statement executed 3911 times.">                    ObjectProbe.SetPropertyValue(dataParameter, dbTypePropertyName, dbType);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  232
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 225: Statement executed 32184 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  233
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  234
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times.">                <span class="lineComment">// Set IDbDataParameter</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  235
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times.">                <span class="lineComment">// JIRA-49 Fixes (size, precision, and scale)</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  236
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 236: Expression evaluated to true 32184 times, false 0 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 236: Expression evaluated to true 32184 times, false 0 times.">                <span class="keyword">if</span> (_session.DataSource.Provider.SetDbParameterSize) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  237
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 236: Statement executed 32184 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  238
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 238: Expression evaluated to true 0 times, false 32184 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 238: Expression evaluated to true 0 times, false 32184 times.">                    <span class="keyword">if</span> (property.Size != -1)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  239
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 238: Statement executed 32184 times.">                    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  240
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 240: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 240: Statement not executed.">                        ((IDbDataParameter)dataParameter).Size = property.Size;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  241
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 238: Statement executed 32184 times.">                    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  242
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 236: Statement executed 32184 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  243
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  244
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 244: Expression evaluated to true 32184 times, false 0 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 244: Expression evaluated to true 32184 times, false 0 times.">                <span class="keyword">if</span> (_session.DataSource.Provider.SetDbParameterPrecision) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  245
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 244: Statement executed 32184 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  246
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 246: Statement executed 32184 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 246: Statement executed 32184 times.">                    ((IDbDataParameter)dataParameter).Precision = property.Precision;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  247
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 244: Statement executed 32184 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  248
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times.">                </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  249
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 249: Expression evaluated to true 32184 times, false 0 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 249: Expression evaluated to true 32184 times, false 0 times.">                <span class="keyword">if</span> (_session.DataSource.Provider.SetDbParameterScale) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  250
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 249: Statement executed 32184 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  251
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 251: Statement executed 32184 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 251: Statement executed 32184 times.">                    ((IDbDataParameter)dataParameter).Scale = property.Scale;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  252
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 249: Statement executed 32184 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  253
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times.">                </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  254
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times.">                <span class="lineComment">// Set as direction parameter</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  255
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 255: Statement executed 32184 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 255: Statement executed 32184 times.">                dataParameter.Direction = property.Direction;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  256
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  257
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 257: Statement executed 32184 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 257: Statement executed 32184 times.">                dataParameter.ParameterName = sqlParamName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  258
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  259
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 259: Statement executed 32184 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 259: Statement executed 32184 times.">                _preparedStatement.DbParametersName.Add( property.PropertyName );</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  260
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 260: Statement executed 32184 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 260: Statement executed 32184 times.">                _preparedStatement.DbParameters.Add( dataParameter );   </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  261
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  262
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 262: Expression evaluated to true 32184 times, false 0 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 262: Expression evaluated to true 32184 times, false 0 times.">                <span class="keyword">if</span> ( _session.DataSource.Provider.UsePositionalParameters == <span class="keyword">false</span>)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  263
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 262: Statement executed 32184 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  264
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 264: Statement executed 32184 times.">32184</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 264: Statement executed 32184 times.">                    _propertyDbParameterMap.Add(property, dataParameter);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  265
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 262: Statement executed 32184 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  266
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 210: Statement executed 16199 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  267
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 193: Method CreateParametersForTextCommand entered 16199 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  268
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  269
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  270
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  271
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Create IDataParameters for procedure statement.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  272
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  273
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 273: Method CreateParametersForProcedureCommand not entered.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">        <span class="keyword">private</span> <span class="keyword">void</span> CreateParametersForProcedureCommand()</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  274
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  275
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            <span class="keyword">string</span> sqlParamName = <span class="keyword">string</span>.Empty;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  276
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            <span class="keyword">string</span> dbTypePropertyName = _session.DataSource.Provider.ParameterDbTypeProperty;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  277
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            Type enumDbType = _session.DataSource.Provider.ParameterDbType;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  278
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            IList list = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  279
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  280
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            <span class="keyword">if</span> (_session.DataSource.Provider.UsePositionalParameters) <span class="lineComment">//obdc/oledb</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  281
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  282
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                list = _request.ParameterMap.Properties;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  283
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  284
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            <span class="keyword">else</span> </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  285
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  286
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                list = _request.ParameterMap.PropertiesList;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  287
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  288
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  289
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            <span class="lineComment">// ParemeterMap are required for procedure and we tested existance in Prepare() method</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  290
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            <span class="lineComment">// so we don't have to test existence here.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  291
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            <span class="lineComment">// A ParameterMap used in CreateParametersForProcedureText must</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  292
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            <span class="lineComment">// have property and column attributes set.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  293
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            <span class="lineComment">// The column attribute is the name of a procedure parameter.</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  294
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            <span class="keyword">foreach</span>(ParameterProperty property <span class="keyword">in</span> list)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  295
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  296
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="keyword">if</span> (_session.DataSource.Provider.UseParameterPrefixInParameter)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  297
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  298
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    sqlParamName = _parameterPrefix + property.ColumnName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  299
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  300
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="keyword">else</span> <span class="lineComment">//obdc/oledb</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  301
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  302
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    sqlParamName =  property.ColumnName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  303
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  304
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  305
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                IDataParameter dataParameter = _session.CreateCommand(_statement.CommandType).CreateParameter();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  306
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  307
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="lineComment">// Manage dbType attribute if any</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  308
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="keyword">if</span> (property.DbType!=<span class="keyword">null</span> &amp;&amp; property.DbType.Length >0) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  309
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  310
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    <span class="lineComment">// Exemple : Enum.parse(System.Data.SqlDbType, 'VarChar')</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  311
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    <span class="keyword">object</span> dbType = Enum.Parse( enumDbType, property.DbType, <span class="keyword">true</span> );</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  312
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  313
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    <span class="lineComment">// Exemple : ObjectHelper.SetProperty(sqlparameter, 'SqlDbType', SqlDbType.Int);</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  314
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    ObjectProbe.SetPropertyValue(dataParameter, dbTypePropertyName, dbType);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  315
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  316
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  317
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="lineComment">// Set IDbDataParameter</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  318
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="lineComment">// JIRA-49 Fixes (size, precision, and scale)</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  319
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="keyword">if</span> (_session.DataSource.Provider.SetDbParameterSize) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  320
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  321
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    <span class="keyword">if</span> (property.Size != -1)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  322
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  323
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                        ((IDbDataParameter)dataParameter).Size = property.Size;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  324
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  325
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  326
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  327
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="keyword">if</span> (_session.DataSource.Provider.SetDbParameterPrecision) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  328
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  329
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    ((IDbDataParameter)dataParameter).Precision = property.Precision;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  330
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  331
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  332
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="keyword">if</span> (_session.DataSource.Provider.SetDbParameterScale) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  333
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  334
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    ((IDbDataParameter)dataParameter).Scale = property.Scale;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  335
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  336
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  337
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="lineComment">// Set as direction parameter</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  338
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                dataParameter.Direction = property.Direction;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  339
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  340
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                dataParameter.ParameterName = sqlParamName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  341
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  342
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                _preparedStatement.DbParametersName.Add( property.PropertyName );</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  343
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                _preparedStatement.DbParameters.Add( dataParameter );   </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  344
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  345
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                <span class="keyword">if</span> ( _session.DataSource.Provider.UsePositionalParameters == <span class="keyword">false</span>)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  346
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  347
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                    _propertyDbParameterMap.Add(property, dataParameter);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  348
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  349
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  350
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 273: Method CreateParametersForProcedureCommand not entered.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  351
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  352
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  353
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  354
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// <span class="docContent">Parse sql command text.</span></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  355
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="docComment">/// &lt;/summary></span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  356
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 356: Method EvaluateParameterMap entered 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 356: Method EvaluateParameterMap entered 16199 times.">        <span class="keyword">private</span> <span class="keyword">void</span> EvaluateParameterMap()</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  357
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 356: Method EvaluateParameterMap entered 16199 times.">        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  358
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 358: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 358: Statement executed 16199 times.">            <span class="keyword">string</span> delimiter = <span class="string">"?"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  359
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 359: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 359: Statement executed 16199 times.">            <span class="keyword">string</span> token = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  360
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 360: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 360: Statement executed 16199 times.">            <span class="keyword">int</span> index = 0;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  361
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 361: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 361: Statement executed 16199 times.">            <span class="keyword">string</span> sqlParamName = <span class="keyword">string</span>.Empty;         </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  362
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 362: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 362: Statement executed 16199 times.">            StringTokenizer parser = <span class="keyword">new</span> StringTokenizer(_commandText, delimiter, <span class="keyword">true</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  363
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 363: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 363: Statement executed 16199 times.">            StringBuilder newCommandTextBuffer = <span class="keyword">new</span> StringBuilder();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  364
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 356: Method EvaluateParameterMap entered 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  365
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 365: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 365: Statement executed 16199 times.">            IEnumerator enumerator = parser.GetEnumerator();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  366
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 356: Method EvaluateParameterMap entered 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  367
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 367: Expression evaluated to true 80560 times, false 16199 times.">96759</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 367: Expression evaluated to true 80560 times, false 16199 times.">            <span class="keyword">while</span> (enumerator.MoveNext()) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  368
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 367: Statement executed 16199 times.">            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  369
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 369: Statement executed 80560 times.">80560</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 369: Statement executed 80560 times.">                token = (<span class="keyword">string</span>)enumerator.Current;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  370
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 367: Statement executed 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  371
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 371: Expression evaluated to true 32699 times, false 47861 times.">80560</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 371: Expression evaluated to true 32699 times, false 47861 times.">                <span class="keyword">if</span> (delimiter.Equals(token)) <span class="lineComment">// ?</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  372
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 371: Statement executed 80560 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  373
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 373: Statement executed 32699 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 373: Statement executed 32699 times.">                    ParameterProperty property = (ParameterProperty)_request.ParameterMap.Properties[index];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  374
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 374: Statement executed 32699 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 374: Statement executed 32699 times.">                    IDataParameter dataParameter = <span class="keyword">null</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  375
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 371: Statement executed 80560 times.">                    </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  376
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 376: Expression evaluated to true 0 times, false 32699 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 376: Expression evaluated to true 0 times, false 32699 times.">                    <span class="keyword">if</span> (_session.DataSource.Provider.UsePositionalParameters)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  377
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  378
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                        <span class="lineComment">// TODO Refactor?</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  379
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 379: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                        <span class="keyword">if</span> (_parameterPrefix.Equals(<span class="string">":"</span>))</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  380
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  381
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                            <span class="lineComment">// ODP.NET uses positional parameters by default</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  382
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                            <span class="lineComment">// but uses ":0" or ":1" instead of "?"</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  383
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                            sqlParamName = <span class="string">":"</span> + index; </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  384
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  385
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                        <span class="keyword">else</span> </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  386
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  387
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                            <span class="lineComment">// OLEDB/OBDC doesn't support named parameters !!!</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  388
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                            sqlParamName = <span class="string">"?"</span>;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  389
+                </td>
+                  <td class="coverageCountWarning">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 379: Statement not executed.">                        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  390
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                        </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  391
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  392
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                    <span class="keyword">else</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  393
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                    {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  394
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 394: Statement executed 32699 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 394: Statement executed 32699 times.">                        dataParameter = (IDataParameter) _propertyDbParameterMap[property];</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  395
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                        </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  396
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                        <span class="lineComment">// 5 May 2004</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  397
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                        <span class="lineComment">// Need to check UseParameterPrefixInParameter here </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  398
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                        <span class="lineComment">// since CreateParametersForStatementText now does</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  399
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                        <span class="lineComment">// a check for UseParameterPrefixInParameter before </span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  400
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                        <span class="lineComment">// creating the parameter name!</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  401
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 401: Expression evaluated to true 32699 times, false 0 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 401: Expression evaluated to true 32699 times, false 0 times.">                        <span class="keyword">if</span> (_session.DataSource.Provider.UseParameterPrefixInParameter) </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  402
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 401: Statement executed 32699 times.">                        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  403
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 401: Statement executed 32699 times.">                            <span class="lineComment">// Fix ByteFX.Data.MySqlClient.MySqlParameter</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  404
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 401: Statement executed 32699 times.">                            <span class="lineComment">// who strip prefix in Parameter Name ?!</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  405
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 405: Expression evaluated to true 0 times, false 32699 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 405: Expression evaluated to true 0 times, false 32699 times.">                            <span class="keyword">if</span> (_session.DataSource.Provider.Name.IndexOf(<span class="string">"ByteFx"</span>)>=0)</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  406
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 405: Statement executed 32699 times.">                            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  407
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 407: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 407: Statement not executed.">                                sqlParamName = _parameterPrefix+dataParameter.ParameterName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  408
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 405: Statement executed 32699 times.">                            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  409
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 405: Statement executed 32699 times.">                            <span class="keyword">else</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  410
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 405: Statement executed 32699 times.">                            {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  411
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 411: Statement executed 32699 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 411: Statement executed 32699 times.">                                sqlParamName = dataParameter.ParameterName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  412
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 405: Statement executed 32699 times.">                            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  413
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 401: Statement executed 32699 times.">                        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  414
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 401: Statement executed 32699 times.">                        <span class="keyword">else</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  415
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 401: Statement executed 32699 times.">                        {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  416
+                </td>
+                  <td class="coverageCountWarning">
+                          <a title="Line 416: Statement not executed.">0</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLineWarning" title="Line 416: Statement not executed.">                            sqlParamName = _parameterPrefix+dataParameter.ParameterName;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  417
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 401: Statement executed 32699 times.">                        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  418
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 376: Statement executed 32699 times.">                    }           </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  419
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 371: Statement executed 80560 times.">        </span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  420
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 420: Statement executed 32699 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 420: Statement executed 32699 times.">                    newCommandTextBuffer.Append(<span class="string">" "</span>);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  421
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 421: Statement executed 32699 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 421: Statement executed 32699 times.">                    newCommandTextBuffer.Append(sqlParamName);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  422
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 371: Statement executed 80560 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  423
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 423: Statement executed 32699 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 423: Statement executed 32699 times.">                    sqlParamName = <span class="keyword">string</span>.Empty;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  424
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 424: Statement executed 32699 times.">32699</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 424: Statement executed 32699 times.">                    index ++;</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  425
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 371: Statement executed 80560 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  426
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 371: Statement executed 80560 times.">                <span class="keyword">else</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  427
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 371: Statement executed 80560 times.">                {</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  428
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 428: Statement executed 47861 times.">47861</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 428: Statement executed 47861 times.">                    newCommandTextBuffer.Append(token);</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  429
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 371: Statement executed 80560 times.">                }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  430
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 367: Statement executed 16199 times.">            }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  431
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 356: Method EvaluateParameterMap entered 16199 times."></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  432
+                </td>
+                  <td class="coverageCountHilight">
+                          <a title="Line 432: Statement executed 16199 times.">16199</a>
+                      </td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 432: Statement executed 16199 times.">            _preparedStatement.PreparedSql = newCommandTextBuffer.ToString();</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumberHilight">
+                  433
+                </td>
+                  <td class="coverageCountHilight">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine" title="Line 356: Method EvaluateParameterMap entered 16199 times.">        }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  434
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  435
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  436
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">        <span class="ppdirec">#endregion</span></span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  437
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">    }</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  438
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine">}</span>
+                  </td>
+      </tr>        
+          <tr>
+        <td class="lineNumber">
+                  439
+                </td>
+                  <td class="coverageCount">&nbsp;</td>
+                          <td class="srcCell">
+                              <span class="srcLine"></span>
+                  </td>
+      </tr>        
+        </table>
+
+    <table class="coverageTable" cellspacing="0" cellpadding="2">
+      <tr><td class="hbreak" colspan="6">&nbsp;</td></tr>
+      <tr>
+  <td class="footer" colspan="6">
+    <table>
+      <tr>
+        <td><a target="_new" href="http://cenqua.com/clover.net/">
+          <img class="linkImage" alt="Clover.NET" src="../../../img/logo.gif"/></a>
+        </td>
+        <td>Report generated by 
+          <a class="footerLink" target="_new" href="http://cenqua.com/clover.net/">Clover.NET v1.2.1941</a>
+          <br />Saturday, May 21, 2005 11:01:44 AM.
+        </td>
+        <td class="footerMessage">Open Source License registered to the iBATIS.NET Project. This license of Clover.NET is provided to support the development of iBATIS.NET only.<br /></td>
+      </tr>
+    </table>
+  </td>
+</tr>    </table>
+  </body>
+</html>

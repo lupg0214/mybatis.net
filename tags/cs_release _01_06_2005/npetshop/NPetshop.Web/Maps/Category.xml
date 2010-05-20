@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlMap namespace="Category" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="Category" type="NPetshop.Domain.Catalog.Category, NPetshop.Domain"/>
+	</alias>
+	<resultMaps>
+		<resultMap id="CategoryResult" class="Category">
+			<result property="Id" column="Category_Id"/>
+			<result property="Name" column="Category_Name"/>
+			<result property="Description" column="Category_Description"/>
+		</resultMap>
+	</resultMaps>
+	<!-- =============================================
+        MAPPED STATEMENTS 
+    ============================================= 
+    -->
+	<statements>
+		<select id="GetCategory" resultMap="CategoryResult" parameterClass="string">
+			select 
+				Category_Id, 
+				Category_Name, 
+				Category_Description 
+			from Categories 
+			where Category_Id = #value#
+		</select>
+	</statements>
+</sqlMap>

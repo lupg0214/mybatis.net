@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisNet.Common", "IBatisNet.Common\IBatisNet.Common.csproj", "{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisNet.DataMapper", "IBatisNet.DataMapper\IBatisNet.DataMapper.csproj", "{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisNet.DataMapper.Test", "IBatisNet.DataMapper.Test\IBatisNet.DataMapper.Test.csproj", "{998B79D9-800F-493F-A263-306F06906E2F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}.Debug.ActiveCfg = Debug|.NET
+		{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}.Debug.Build.0 = Debug|.NET
+		{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}.Release.ActiveCfg = Release|.NET
+		{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}.Release.Build.0 = Release|.NET
+		{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}.Debug.ActiveCfg = Debug|.NET
+		{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}.Debug.Build.0 = Debug|.NET
+		{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}.Release.ActiveCfg = Release|.NET
+		{72F70057-B2E1-4DAD-BA6C-E2962745EEA5}.Release.Build.0 = Release|.NET
+		{998B79D9-800F-493F-A263-306F06906E2F}.Debug.ActiveCfg = Debug|.NET
+		{998B79D9-800F-493F-A263-306F06906E2F}.Debug.Build.0 = Debug|.NET
+		{998B79D9-800F-493F-A263-306F06906E2F}.Release.ActiveCfg = Release|.NET
+		{998B79D9-800F-493F-A263-306F06906E2F}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

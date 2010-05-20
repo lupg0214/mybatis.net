@@ -1,0 +1,100 @@
+--------------------
+DataMapper 1.2
+--------------------
+ + Include Sample-SqlMap.config file
+ + Source distribution needs DataAccess to have updated Castle.DynamicProxy assembly (but NHibernate dependency!)
+ + providers.config file needs to have enabled="false" for all providers except sqlServer1.1, OleDb, and Odbc
+
+
+--------------------
+DataAccess 1.5.1
+--------------------
+ + Include Sample-dao.config file
+ + Source distribution needs DataAccess to have updated Castle.DynamicProxy assembly (but NHibernate dependency!)
+ + providers.config file needs to have enabled="false" for all providers except sqlServer1.1, OleDb, and Odbc
+
+
+--------------------
+Docs
+--------------------
+ + IN PROGRESS Proofread!
+ + Add more .NET DataMapper coding examples (at least the code!)
+
+ + DONE Update references in text to section #s and example #s in DataMapper and DataAccess guides resulting from edits
+ + DONE Add new API to DomDaoManagerBuilder.Configure(...)/DomDaoManagerBuilder.Configure(...)
+   [tell that old API SqlMApper.Configure(...) are marked as  obsolete]
+ + DONE DataAccess Configuration changes
+ + DONE DataAccess : New syntax to configure daoSessionHandler (old is too supported)
+   <daoSessionHandler id="SqlMap">
+       <property name="resource" value="SqlMap_MSSQL_SqlClient.config"/>
+       <property name="url" value="E:\Projet\iBatis\trunk\cs\mapper\IBatisNet.DataAccess.Test\bin\Debug\SqlMap_MSSQL_SqlClient.config"/>
+       <property name="embedded" value="bin.Debug.SqlMap_MSSQL_SqlClient.config, IBatisNet.DataAccess.Test"/> 			
+   </daoSessionHandler>
+ + DONE Tutorial changes for SqlMap.config (with properties variable for relative path) and new DomSqlMapBuilder configuration API
+ + DONE DataMapper Configuration changes (ex: properties support in diff't SqlMap.config elements)
+ + DONE Add doc for providers tag with attribute resource/embedded/url
+ + DONE Update NAnt doc.build for 1.2?
+ + DONE Basic CTH explanation
+ + DONE Update for basic TypeHandler support
+ + DONE New SqlMap element attributes
+ + DONE Updated SqlMap element attributes
+ + DONE Update inline parameter maps syntax and add text/examples for composite key syntax
+
+
+--------------------
+Wiki
+--------------------
+
+ + DONE FAQ Explanation for Oracle and multiple SQL statements in one <statement> (as in TestDeleteWithComments)
+ + FAQ CTH explanation for Oracle ODP.NET 10g and Boolean parameters
+ + FAQ CTH explanation for Oracle Decimals and Hashtable resultClass
+
+
+--------------------
+DataMapper
+--------------------
+
+MySql/MySql 1.0.4
+ + ICloneable exception with no connectionstring
+
+Oracle/ODP.NET 10g
+ + ResultClassTest.TestSingle invalid cast provider/db issue
+ + ResultClassTest.TestDouble invalid cast provider/db issue
+
+ + DONE ResultMapTest.TestDynamiqueCompositeMapping needs dbType (int vs Decimal) for resultMap column specification
+
+PostgreSQL/Npgsql 0.7
+ + StatementGenerate.TestSelectByPK
+ + Add Stored function NUnit tests
+ + Clean-up SqlMap files
+
+Firebird/Firebird 1.7
+ + ICloneable exception with no connectionstring
+
+Clover.NET
+ + Add NUnit tests to cover IBatisNet.Common.Exceptions
+ + Add NUnit tests to cover LRU Cache
+ + Add NUnit tests to cover FIFO Cache
+
+
+--------------------
+DataAccess
+--------------------
+
+ + Castle.DynamicProxy update (tested?)
+ + Merge with DataMapper NUnit tests or keep seperate and update (need to add PostgreSQL!)?
+ + Create NHibernate stub classes/methods
+
+
+--------------------
+Tutorial
+--------------------
+
+ + DONE (did it 2 months ago but forgot!) Update for DataMapper 1.1 GA release
+
+
+--------------------
+NPetshop
+--------------------
+
+ + DONE (did it 2 months ago but forgot!) Update for DataMapper 1.1 GA release

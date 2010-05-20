@@ -1,0 +1,211 @@
+b, #categoryMenu a, #splashMenu a, .gridHead td, .label, .title
+{
+	color: #023030;
+	font-weight: bold;		
+}
+
+body
+{
+	background-color: #ffffff;
+	color: #000000;
+	margin: 0px;
+}
+
+.pageHeader
+{
+    font-family: Verdana;
+    color: #003300;
+    font-size: 16pt;
+}
+
+.header
+{
+    font-family: Verdana, Arial;
+    color: #003300;
+    font-size: 9pt;
+ 	font-weight: bold;
+}
+
+.fieldHeader
+{
+    font-family: Verdana, Arial;
+    color: #003300;
+    font-size: 9pt;
+   	font-weight: bold;
+}
+
+.errText
+{
+    font-family: Verdana, Arial;
+    color: #990000;
+    font-size: 9pt;
+}
+
+.text
+{
+    font-family: Verdana, Arial;
+    color: #000000;
+    font-size: 9pt;
+}
+A.text
+{
+    font-family: Verdana, Arial;
+    color: #000000;
+    font-size: 9pt;
+	text-decoration: none;
+}
+A.text:hover
+{
+	color: #003399;
+    text-decoration: underline;
+}
+
+.tableHeader
+{
+	font-weight: bold;
+	font-size: 10pt;
+	color: #003300;
+	font-style: italic;
+	font-family: Arial;
+}
+
+.menuOrange
+{
+	font-weight: bold;
+	font-size: 8pt;
+	color: #fe9901;
+	font-family: Arial;
+	text-decoration: none;
+}
+A.menuOrange
+{
+	font-weight: bold;
+	font-size: 8pt;
+	color: #fe9901;
+	font-family: Arial;
+	text-decoration: none;
+}
+A.webServiceTestLabel
+{
+	font-weight: bold;
+	font-size: 12pt;
+	color: #fe9901;
+	font-family: Arial;
+	text-decoration: none;
+}
+A.webServiceTestLabel:hover
+{
+    text-decoration: underline;
+}
+A.menuOrange:hover
+{
+    text-decoration: underline;
+}
+
+.menuBlack
+{
+	font-weight: bold;
+	font-size: 9pt;
+	color: #333333;
+	font-family: Arial;
+	text-decoration: none;
+}
+A.menuBlack
+{
+	font-weight: bold;
+	font-size: 9pt;
+	color: #333333;
+	font-family: Arial;
+	text-decoration: none;
+}
+A.menuBlack:hover
+{
+    text-decoration: underline;
+}
+
+A.catLink
+{
+	font-family: Arial;
+	font-size: 14pt;
+	color: #003300;
+	font-style: italic;
+	text-decoration: none;
+}
+A.catLink:hover
+{
+    text-decoration: underline;
+}
+.gridHead td
+{
+	border-bottom: solid 2px black;
+}
+
+.gridItem td, .gridFoot td
+{
+	border-bottom: 1px solid black;
+	height: 25px;
+}
+
+.gridHead td, .gridItem td, .gridFoot td
+{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.gridFoot
+{
+	background: gainsboro;
+}
+
+.gridNav
+{
+	padding-top: 10px;
+}
+
+.label
+{
+	padding-right: 5px;
+	text-align: right;
+}
+
+.num
+{
+	text-align: right;
+}
+
+.numFooter
+{
+	background: gainsboro;
+	text-align: right;
+}
+
+.textBox{
+	background-color: transparent;
+	padding: 3px;
+	line-height: normal !important;
+	border-style: none;
+	border-bottom: 1px solid #8E959E;
+	color: #023030
+}
+
+.textBox-on {
+	background-color: transparent;
+	padding: 3px;
+	line-height: normal !important;
+	border-style: none;
+	border-bottom: 1px solid #f30;
+	color: #333
+}
+.select {
+    background-color: #EDF7FF;
+    border: 1px inset;
+	font-family: tahoma,arial,geneva,verdana,lucida,helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 2px;
+    color: #023030
+}
+.btnImage {cursor: pointer; cursor: hand;margin:1px 2px}
+
+
+
