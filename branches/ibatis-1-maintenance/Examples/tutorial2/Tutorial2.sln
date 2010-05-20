@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial2.Domain", "Tutorial2.Domain\Tutorial2.Domain.csproj", "{8F74B099-C14F-4DE8-8F3F-30846C931EA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial2.Test", "Tutorial2.Test\Tutorial2.Test.csproj", "{13A64291-3A95-4D23-8579-AFB2091012D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial2.Application", "Tutorial2.Application\Tutorial2.Application.csproj", "{063AA034-BD5A-4792-8539-C0A066D7E4FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial2.Service", "Tutorial2.Service\Tutorial2.Service.csproj", "{767A1F9F-FBF4-4F73-A8F1-9531DC69C320}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial2.WinUI", "Tutorial2.WinUI\Tutorial2.WinUI.csproj", "{692233FA-A826-4F1E-9790-D01D980F0210}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{919C21FD-F97A-4731-B21A-8E9C1C5D85D6}"
+	ProjectSection(SolutionItems) = preProject
+		Files\Maps\Access\Author.xml = Files\Maps\Access\Author.xml
+		Files\Maps\Access\Blog.xml = Files\Maps\Access\Blog.xml
+		Files\Blogs.mdb = Files\Blogs.mdb
+		Files\dao.config = Files\dao.config
+		Files\Maps\Access\Post.xml = Files\Maps\Access\Post.xml
+		Files\properties.config = Files\properties.config
+		Files\sqlMap.config = Files\sqlMap.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F74B099-C14F-4DE8-8F3F-30846C931EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F74B099-C14F-4DE8-8F3F-30846C931EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F74B099-C14F-4DE8-8F3F-30846C931EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F74B099-C14F-4DE8-8F3F-30846C931EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13A64291-3A95-4D23-8579-AFB2091012D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A64291-3A95-4D23-8579-AFB2091012D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A64291-3A95-4D23-8579-AFB2091012D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A64291-3A95-4D23-8579-AFB2091012D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{063AA034-BD5A-4792-8539-C0A066D7E4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{063AA034-BD5A-4792-8539-C0A066D7E4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{063AA034-BD5A-4792-8539-C0A066D7E4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{063AA034-BD5A-4792-8539-C0A066D7E4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{767A1F9F-FBF4-4F73-A8F1-9531DC69C320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767A1F9F-FBF4-4F73-A8F1-9531DC69C320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767A1F9F-FBF4-4F73-A8F1-9531DC69C320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767A1F9F-FBF4-4F73-A8F1-9531DC69C320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{692233FA-A826-4F1E-9790-D01D980F0210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692233FA-A826-4F1E-9790-D01D980F0210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692233FA-A826-4F1E-9790-D01D980F0210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692233FA-A826-4F1E-9790-D01D980F0210}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

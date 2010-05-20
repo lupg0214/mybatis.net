@@ -1,0 +1,48 @@
+<VisualStudioProject>
+    <CSHARP LastOpenVersion = "7.10.3077" >
+        <Build>
+            <Settings ReferencePath = "C:\projects\ibatis\asf\trunk\cs\tutorial\Model\bin\Debug\;C:\projects\Apache\ibatisnet\Source1\IBatisNet.DataMapper\bin\Debug\;C:\projects\SourceForge\ibatisnet1\Source1\IBatisNet.DataMapper\bin\Debug\;C:\projects\SourceForge\ibatisnet\Source1\IBatisNet.DataMapper\bin\Debug\;C:\iBatisNet\iBatisNet.DataMapper\bin\Debug\;C:\projects\ibatis\asf\trunk\cs\mapper\IBatisNet.DataMapper\bin\Debug\" >
+                <Config
+                    Name = "Debug"
+                    EnableASPDebugging = "false"
+                    EnableASPXDebugging = "false"
+                    EnableUnmanagedDebugging = "false"
+                    EnableSQLServerDebugging = "false"
+                    RemoteDebugEnabled = "false"
+                    RemoteDebugMachine = ""
+                    StartAction = "Program"
+                    StartArguments = ""
+                    StartPage = ""
+                    StartProgram = "C:\Program Files\NUnit 2.2\bin\nunit-gui.exe"
+                    StartURL = ""
+                    StartWorkingDirectory = ""
+                    StartWithIE = "true"
+                />
+                <Config
+                    Name = "Release"
+                    EnableASPDebugging = "false"
+                    EnableASPXDebugging = "false"
+                    EnableUnmanagedDebugging = "false"
+                    EnableSQLServerDebugging = "false"
+                    RemoteDebugEnabled = "false"
+                    RemoteDebugMachine = ""
+                    StartAction = "Project"
+                    StartArguments = ""
+                    StartPage = ""
+                    StartProgram = ""
+                    StartURL = ""
+                    StartWorkingDirectory = ""
+                    StartWithIE = "true"
+                />
+            </Settings>
+        </Build>
+        <OtherProjectSettings
+            CopyProjectDestinationFolder = ""
+            CopyProjectUncPath = ""
+            CopyProjectOption = "0"
+            ProjectView = "ProjectFiles"
+            ProjectTrust = "0"
+        />
+    </CSHARP>
+</VisualStudioProject>
+

@@ -1,0 +1,61 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPetshop.Presentation", "NPetshop.Presentation\NPetshop.Presentation.csproj", "{182B5E6F-CAFA-42A6-B0EA-8782F2F3A48A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPetshop.Service", "NPetshop.Service\NPetshop.Service.csproj", "{AFD8E8A6-C647-4107-B069-DE24C617CFA7}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPetshop.Domain", "NPetshop.Domain\NPetshop.Domain.csproj", "{7D1DA776-6341-43C8-B9C7-8FA344996665}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPetshop.Persistence", "NPetshop.Persistence\NPetshop.Persistence.csproj", "{CD60B882-160E-4BC9-A580-3A8079A60499}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPetshop.Web", "http://localhost/NPetshop.Web/NPetshop.Web.csproj", "{C0EE0335-5733-409B-B4E3-59C3B9799731}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPetshop.Test", "NPetshop.Test\NPetshop.Test.csproj", "{BD25CBA1-38E2-4BD1-A32B-6632B55C938B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{182B5E6F-CAFA-42A6-B0EA-8782F2F3A48A}.Debug.ActiveCfg = Debug|.NET
+		{182B5E6F-CAFA-42A6-B0EA-8782F2F3A48A}.Debug.Build.0 = Debug|.NET
+		{182B5E6F-CAFA-42A6-B0EA-8782F2F3A48A}.Release.ActiveCfg = Release|.NET
+		{182B5E6F-CAFA-42A6-B0EA-8782F2F3A48A}.Release.Build.0 = Release|.NET
+		{AFD8E8A6-C647-4107-B069-DE24C617CFA7}.Debug.ActiveCfg = Debug|.NET
+		{AFD8E8A6-C647-4107-B069-DE24C617CFA7}.Debug.Build.0 = Debug|.NET
+		{AFD8E8A6-C647-4107-B069-DE24C617CFA7}.Release.ActiveCfg = Release|.NET
+		{AFD8E8A6-C647-4107-B069-DE24C617CFA7}.Release.Build.0 = Release|.NET
+		{7D1DA776-6341-43C8-B9C7-8FA344996665}.Debug.ActiveCfg = Debug|.NET
+		{7D1DA776-6341-43C8-B9C7-8FA344996665}.Debug.Build.0 = Debug|.NET
+		{7D1DA776-6341-43C8-B9C7-8FA344996665}.Release.ActiveCfg = Release|.NET
+		{7D1DA776-6341-43C8-B9C7-8FA344996665}.Release.Build.0 = Release|.NET
+		{CD60B882-160E-4BC9-A580-3A8079A60499}.Debug.ActiveCfg = Debug|.NET
+		{CD60B882-160E-4BC9-A580-3A8079A60499}.Debug.Build.0 = Debug|.NET
+		{CD60B882-160E-4BC9-A580-3A8079A60499}.Release.ActiveCfg = Release|.NET
+		{CD60B882-160E-4BC9-A580-3A8079A60499}.Release.Build.0 = Release|.NET
+		{C0EE0335-5733-409B-B4E3-59C3B9799731}.Debug.ActiveCfg = Debug|.NET
+		{C0EE0335-5733-409B-B4E3-59C3B9799731}.Debug.Build.0 = Debug|.NET
+		{C0EE0335-5733-409B-B4E3-59C3B9799731}.Release.ActiveCfg = Release|.NET
+		{C0EE0335-5733-409B-B4E3-59C3B9799731}.Release.Build.0 = Release|.NET
+		{BD25CBA1-38E2-4BD1-A32B-6632B55C938B}.Debug.ActiveCfg = Debug|.NET
+		{BD25CBA1-38E2-4BD1-A32B-6632B55C938B}.Debug.Build.0 = Debug|.NET
+		{BD25CBA1-38E2-4BD1-A32B-6632B55C938B}.Release.ActiveCfg = Release|.NET
+		{BD25CBA1-38E2-4BD1-A32B-6632B55C938B}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,694 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Castle.MVC</name>
+    </assembly>
+    <members>
+        <member name="T:Castle.MVC.Configuration.CommandsSetting">
+            <summary>
+            Represents a commands configuration file.
+            </summary>
+        </member>
+        <member name="F:Castle.MVC.Configuration.CommandsSetting.NODE_COMMAND_XPATH">
+            <summary>
+            Key used to retrieve command configuation element.
+            </summary>
+        </member>
+        <member name="F:Castle.MVC.Configuration.CommandsSetting.ATTRIBUTE_VIEW">
+            <summary>
+            Key used to retrieve id view attribute.
+            </summary>
+        </member>
+        <member name="F:Castle.MVC.Configuration.CommandsSetting.ATTRIBUTE_ID">
+            <summary>
+            Key used to retrieve id command attribute.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Configuration.CommandsSetting.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Initializes an instance of the NodeSettings class using the specified configNode.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="P:Castle.MVC.Configuration.CommandsSetting.Item(System.String)">
+            <summary>
+            Gets the specifed view id to navigate.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Configuration.CommandsSetting.View">
+            <summary>
+            Gets the view name.
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.Configuration.ConfigurationSectionHandler">
+            <summary>
+            The configuration section handler for the Castle.MVC section of the configuration file. 
+            </summary>
+            <remarks>
+            Usage
+            MVCConfigSettings ctx = ConfigurationSettings.GetConfig("castle/mvc") as MVCConfigSettings; 
+            </remarks>
+        </member>
+        <member name="M:Castle.MVC.Configuration.ConfigurationSectionHandler.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Configuration.ConfigurationSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)">
+            <summary>
+            Factory method that creates a configuration handler for a specific section of 
+            XML in the app.config.
+            </summary>
+            <param name="parent">
+            The configuration settings in a corresponding parent
+            configuration section.
+            </param>
+            <param name="configContext">
+            The configuration context when called from the ASP.NET
+            configuration system. Otherwise, this parameter is reserved and
+            is a null reference.
+            </param>
+            <param name="section">
+            The <see cref="T:System.Xml.XmlNode"/> for the section.
+            </param>
+            <returns>MVCConfigSettings for the section.</returns>
+        </member>
+        <member name="M:Castle.MVC.Configuration.ConfigurationSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode,System.IFormatProvider)">
+            <summary>
+            Factory method that creates a configuration handler for a specific section of XML in the app.config.
+            </summary>
+            <param name="parent">
+            The configuration settings in a corresponding parent
+            configuration section.
+            </param>
+            <param name="configContext">
+            The configuration context when called from the ASP.NET
+            configuration system. Otherwise, this parameter is reserved and
+            is a null reference.
+            </param>
+            <param name="section">
+            The <see cref="T:System.Xml.XmlNode"/> for the section.
+            </param>
+            <param name="formatProvider">The format provider.
+            </param>
+            <returns>MVCConfigSettings for the section.</returns>
+        </member>
+        <member name="T:Castle.MVC.Configuration.ConfigUtil">
+            <summary>
+            Utility to access the configuration elements.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Configuration.ConfigUtil.Settings">
+            <summary>
+            Access the configuration element
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.Configuration.MVCConfigSettings">
+            <summary>
+            MVCConfigSettings.
+            </summary>
+        </member>
+        <member name="F:Castle.MVC.Configuration.MVCConfigSettings.NODE_WEB_VIEW_XPATH">
+            <summary>
+            Token to retrieve configuration node
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Configuration.MVCConfigSettings.#ctor(System.Xml.XmlNode,System.IFormatProvider)">
+            <summary>
+            Creates MVCConfigSettings from an XmlNode read of the web.config and an IFormatProvider.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+            <param name="formatProvider">The provider.</param>
+        </member>
+        <member name="M:Castle.MVC.Configuration.MVCConfigSettings.LoadGlobalCommand(System.Xml.XmlNode)">
+            <summary>
+            Load the global commands
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="M:Castle.MVC.Configuration.MVCConfigSettings.LoadCommandMapping(System.Xml.XmlNode)">
+            <summary>
+            Load the command mapping
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="M:Castle.MVC.Configuration.MVCConfigSettings.LoadWebViews(System.Xml.XmlNode,System.IFormatProvider)">
+            <summary>
+            Load the views
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+            <param name="formatProvider">The provider.</param>
+        </member>
+        <member name="M:Castle.MVC.Configuration.MVCConfigSettings.LoadWinViews(System.Xml.XmlNode,System.IFormatProvider)">
+            <summary>
+            Load the windows views
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+            <param name="formatProvider">The provider.</param>
+        </member>
+        <member name="M:Castle.MVC.Configuration.MVCConfigSettings.GetUrl(System.String)">
+            <summary>
+            Looks up a url view based on view name.
+            </summary>  
+            <param name="viewName">The name of the view to retrieve the settings for.</param>
+        </member>
+        <member name="M:Castle.MVC.Configuration.MVCConfigSettings.GetView(System.String)">
+            <summary>
+             Looks up a web view based on his url.
+            </summary>  
+            <param name="url">The URL.</param>
+        </member>
+        <member name="M:Castle.MVC.Configuration.MVCConfigSettings.GetView(System.Type)">
+            <summary>
+             Looks up a windows view based on his type.
+            </summary>  
+            <param name="type">The view type.</param>
+        </member>
+        <member name="M:Castle.MVC.Configuration.MVCConfigSettings.GetNextView(System.String,System.String)">
+            <summary>
+            Looks up a next view based on current command id and and current view id.
+            </summary>  
+            <param name="commandID">The id of the current command.</param>
+            <param name="viewID">The id of the current view.</param>
+            <returns>The next web view to go.</returns>
+        </member>
+        <member name="T:Castle.MVC.Controllers.Controller">
+            <summary>
+            Abstract base class to control the navigation between views.
+            You must inherit from this class when developing yours controllers.
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.Controllers.IController">
+            <summary>
+            Interface controller.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Controllers.IController.NextView">
+            <summary>
+            Provides access to the next view to display. 
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Controllers.IController.State">
+            <summary>
+            Provides access to the state associated with this controller.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Controllers.IController.Navigator">
+            <summary>
+            Access the navigator which coordinates the interactions of views and controllers. 
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Controllers.Controller.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Controllers.Controller.Navigate">
+            <summary>
+            Calls the Navigate method on the appropriate navigator
+            and navigate to the next view according to the config file.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Controllers.Controller.Navigate(System.String)">
+            <summary>
+            Calls the Navigate method on the appropriate navigator
+            </summary>
+            <param name="view">the Next View To Display</param>
+        </member>
+        <member name="P:Castle.MVC.Controllers.Controller.NextView">
+            <summary>
+            The next view to display.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Controllers.Controller.State">
+            <summary>
+            Get the user process state.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Controllers.Controller.Navigator">
+            <summary>
+            The navigator coordinates the interactions of views and controllers 
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.Navigation.DefaultNavigator">
+            <summary>
+            Description résumée de WebNavigator.
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.Navigation.INavigator">
+            <summary>
+            Manages transitions between views.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Navigation.INavigator.Navigate">
+            <summary>
+            Natvigate to the next view.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Navigation.INavigator.CurrentState">
+            <summary>
+            The current state.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Navigation.DefaultNavigator.#ctor(Castle.MVC.Views.IViewManager,Castle.MVC.StatePersister.IStatePersister)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="viewManager">A view manager</param>
+            <param name="statePersister">A state persister</param>
+        </member>
+        <member name="M:Castle.MVC.Navigation.DefaultNavigator.Navigate">
+            <summary>
+            Natvigate to the next view.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Navigation.DefaultNavigator.CurrentState">
+            <summary>
+             The current state.
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.StatePersister.IStatePersister">
+            <summary>
+            This interface defines how State maintains.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.IStatePersister.Save(Castle.MVC.States.IState)">
+            <summary>
+            Save the state on the persistence medium.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.IStatePersister.Load">
+            <summary>
+            Loads the saved state.
+            </summary>
+            <returns>The saved state</returns>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.IStatePersister.Release(Castle.MVC.States.IState)">
+            <summary>
+            Release a state
+            </summary>
+            <param name="state">The state to release.</param>
+        </member>
+        <member name="P:Castle.MVC.StatePersister.IStatePersister.StateFactory">
+            <summary>
+            State factory
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.StatePersister.MemoryStatePersister">
+            <summary>
+            This class provides simple memory-based state persister for Windows Forms applications. 
+            It is a singleton build by Castle IOC framework.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.MemoryStatePersister.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.MemoryStatePersister.Save(Castle.MVC.States.IState)">
+            <summary>
+            Saves the State object in memory.
+            </summary>
+            <param name="state">A valid State object.</param>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.MemoryStatePersister.Load">
+            <summary>
+            Loads the saved state.
+            </summary>
+            <returns>The saved state</returns>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.MemoryStatePersister.Release(Castle.MVC.States.IState)">
+            <summary>
+            Release a state
+            </summary>
+            <param name="state">The state to release.</param>
+        </member>
+        <member name="P:Castle.MVC.StatePersister.MemoryStatePersister.StateFactory">
+            <summary>
+            State factory
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.StatePersister.SessionPersister">
+            <summary>
+            This class provides simple session-based state persister for Web applications. 
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.SessionPersister.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.SessionPersister.Save(Castle.MVC.States.IState)">
+            <summary>
+            Saves state to the Session object.
+            </summary>
+            <param name="state">The state to save.</param>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.SessionPersister.Load">
+            <summary>
+            Loads the saved state.
+            </summary>
+            <returns>The saved state</returns>
+        </member>
+        <member name="M:Castle.MVC.StatePersister.SessionPersister.Release(Castle.MVC.States.IState)">
+            <summary>
+            Release a state
+            </summary>
+            <param name="state">The state to release.</param>
+        </member>
+        <member name="P:Castle.MVC.StatePersister.SessionPersister.StateFactory">
+            <summary>
+            State factory
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.States.BaseState">
+            <summary>
+            Represent the base State.
+            You could inherit from this class when developing your state.
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.States.IState">
+            <summary>
+            Maintains user process state.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.States.IState.Reset">
+            <summary>
+            Reset volatile items and command.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.States.IState.Save">
+            <summary>
+            Save the state
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.IState.StatePersister">
+            <summary>
+            A state persister provider.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.IState.Item(System.String)">
+            <summary>
+            Gets or sets an element saved on the state with the specified key.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.IState.Command">
+            <summary>
+            Gets or sets the command id value. This value determines 
+            which view is the next view in the mapping graph.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.IState.CurrentView">
+            <summary>
+            Gets or sets the current view.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.IState.PreviousView">
+            <summary>
+            Gets or sets the previous view.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.IState.Items">
+            <summary>
+            Provides access to a dictionary of volative items.
+            </summary>
+        </member>
+        <member name="F:Castle.MVC.States.BaseState.SESSION_KEY">
+            <summary>
+            Key used to retrieve the session.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.States.BaseState.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.States.BaseState.Reset">
+            <summary>
+            Reset state.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.States.BaseState.Save">
+            <summary>
+            Save the state
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.BaseState.StatePersister">
+            <summary>
+            A state persister provider.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.BaseState.Command">
+            <summary>
+            Gets or sets the command id value. This value determines 
+            which view is the next view in the navigation graph.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.BaseState.CurrentView">
+            <summary>
+            Gets or sets the current view name.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.BaseState.PreviousView">
+            <summary>
+            Gets or sets the previous view.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.BaseState.Items">
+            <summary>
+            Provides access to a dictionary of volative items.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.States.BaseState.Item(System.String)">
+            <summary>
+            Gets or sets an element saved on the state with the specified key.
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.States.IStateFactory">
+            <summary>
+            Summary description for IStateFactory.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.States.IStateFactory.Create">
+            <summary>
+            Create an IState
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Castle.MVC.States.IStateFactory.Release(Castle.MVC.States.IState)">
+            <summary>
+            Release an IState
+            </summary>
+            <param name="handler">The IState to release</param>
+        </member>
+        <member name="T:Castle.MVC.Views.IView">
+            <summary>
+             Represents a view used in Web or Windows applications.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Views.IView.View">
+            <summary>
+            Gets the view id.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Views.IView.State">
+            <summary>
+            Provides access to the associated state .
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.Views.IViewManager">
+            <summary>
+            Represents a view manager. 
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Views.IViewManager.ActivateView(Castle.MVC.Navigation.INavigator)">
+            <summary>
+            Activates the specified view.
+            </summary>
+            <param name="navigator">The current navigator</param>
+        </member>
+        <member name="T:Castle.MVC.Views.MockViewManager">
+            <summary>
+            Represent a mock View Manager to use in unit test.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Views.MockViewManager.ActivateView(Castle.MVC.Navigation.INavigator)">
+            <summary>
+            Activates the specified view.
+            </summary>
+            <param name="navigator">A navigator</param>
+        </member>
+        <member name="T:Castle.MVC.Views.WebFormView">
+            <summary>
+            Base class for user interaction in Web application. You can inherit from
+            this class when developing your Web forms.
+            </summary>
+        </member>
+        <member name="F:Castle.MVC.Views.WebFormView.BINDING_FLAGS_SET">
+            <summary>
+            Binding token
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Views.WebFormView.#ctor">
+            <summary>
+            Default cosntructor
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Views.WebFormView.SetFocus(System.String)">
+            <summary>
+            Set the focus on a control
+            </summary>
+            <param name="clientID">The client id of the control.</param>
+        </member>
+        <member name="M:Castle.MVC.Views.WebFormView.SetFocus(System.Web.UI.WebControls.WebControl)">
+            <summary>
+            Set the focus on a control
+            </summary>
+            <param name="control">The control</param>
+        </member>
+        <member name="M:Castle.MVC.Views.WebFormView.ToString">
+            <summary>
+            ToString Override
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Castle.MVC.Views.WebFormView.View">
+            <summary>
+            Gets the current view name.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Views.WebFormView.State">
+            <summary>
+            Gets access to the user process state.
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.Views.WebUserControlView">
+            <summary>
+            Represent a Web UserControl, give you access to the current state and page controller.
+            </summary>
+        </member>
+        <member name="F:Castle.MVC.Views.WebUserControlView.BINDING_FLAGS_SET">
+            <summary>
+            Binding token
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Views.WebUserControlView.#ctor">
+            <summary>
+            Default cosntructor
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Views.WebUserControlView.SetFocus(System.String)">
+            <summary>
+            Set the focus on a control
+            </summary>
+            <param name="clientID">The client id of the control.</param>
+        </member>
+        <member name="M:Castle.MVC.Views.WebUserControlView.SetFocus(System.Web.UI.WebControls.WebControl)">
+            <summary>
+            Set the focus on a control
+            </summary>
+            <param name="control">The control</param>
+        </member>
+        <member name="P:Castle.MVC.Views.WebUserControlView.State">
+            <summary>
+            Gets the user process state.
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.Views.WinFormView">
+            <summary>
+            Base class for user interaction in windows application. You can inherit from
+            this class when developing your windows forms.
+            </summary>
+        </member>
+        <member name="F:Castle.MVC.Views.WinFormView.BINDING_FLAGS_SET">
+            <summary>
+            Binding token
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Views.WinFormView.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Views.WinFormView.View">
+            <summary>
+            Gets the current view name.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Views.WinFormView.State">
+            <summary>
+            Gets access to the user process state.
+            </summary>
+        </member>
+        <member name="T:Castle.MVC.Views.XmlWebViewManager">
+            <summary>
+            Represent a web ViewManager to use in conjuntion with an application section configuration.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Views.XmlWebViewManager.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Views.XmlWebViewManager.ActivateView(Castle.MVC.Navigation.INavigator)">
+            <summary>
+            Activates the specified view.
+            </summary>
+            <param name="navigator">A navigator to access the next view id.</param>
+        </member>
+        <member name="T:Castle.MVC.ContainerWebAccessorUtil">
+            <summary>
+            Uses the HttpContext and the <see cref="T:Castle.Windsor.IContainerAccessor"/> 
+            to access the container instance.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.ContainerWebAccessorUtil.ObtainContainer">
+            <summary>
+            Obtains the conatainer form the application instance
+            </summary>
+            <returns>Retunr a IWindsorContainer</returns>
+        </member>
+        <member name="T:Castle.MVC.Resource">
+            <summary>
+            Access to resource data.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Resource.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Castle.MVC.Resource.GetStream(System.String)">
+            <summary>
+            Gets a resource stream.
+            </summary>
+            <param name="name">The resource key.</param>
+            <returns>A resource stream.</returns>
+        </member>
+        <member name="M:Castle.MVC.Resource.FormatMessage(System.String,System.Object[])">
+            <summary>
+            Formats a message stored in the assembly resource file.
+            </summary>
+            <param name="key">The resource key.</param>
+            <param name="format">The format arguments.</param>
+            <returns>A formatted string.</returns>
+        </member>
+        <member name="P:Castle.MVC.Resource.ResourceManager">
+            <summary>
+            Gets a resource manager for the assembly resource file.
+            </summary>
+        </member>
+        <member name="P:Castle.MVC.Resource.Item(System.String)">
+            <summary>
+            Gets the message with the specified key from the assembly resource file.
+            </summary>
+            <param name="key">Key of the item to retrieve from the resource file.</param>
+            <returns>Value from the resource file identified by the key.</returns>
+        </member>
+        <member name="T:Castle.MVC.Resource.MessageKeys">
+            <summary>
+            Class used to expose constants that represent keys in the resource file.
+            </summary>
+        </member>
+    </members>
+</doc>

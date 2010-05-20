@@ -1,0 +1,5 @@
+
+- Full MVC with Castle.MVC (see web.config to see web flow)
+- IOC integration with Castle.Winstor (inject service, controller, ...) but Dao is always by iBATIS
+( an next version will also inject the Dao in Service)
+- Addes unit test for Dao, Presentation, Web (vias NunitAsp), Service layers

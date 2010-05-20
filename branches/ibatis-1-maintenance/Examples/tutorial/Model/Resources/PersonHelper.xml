@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<sqlMap namespace="Account" 
+xmlns="http://ibatis.apache.org/mapping" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+
+
+	<!-- XML "behind" document for the People service class. -->
+
+	<alias>
+		<typeAlias alias="Person" type="iBatisTutorial.Model.Person, iBatisTutorial.Model" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="SelectResult" class="Person">
+			<result property="Id" column="PER_ID" />
+			<result property="FirstName" column="PER_FIRST_NAME" />
+			<result property="LastName" column="PER_LAST_NAME" />
+			<result property="BirthDate" column="PER_BIRTH_DATE" />
+			<result property="WeightInKilograms" column="PER_WEIGHT_KG" />
+			<result property="HeightInMeters" column="PER_HEIGHT_M" />
+		</resultMap>
+	</resultMaps>
+	
+	<statements>
+	
+		<select id="Select" parameterClass="int" resultMap="SelectResult">
+			select
+			PER_ID,
+			PER_FIRST_NAME,
+			PER_LAST_NAME,
+			PER_BIRTH_DATE,
+			PER_WEIGHT_KG,
+			PER_HEIGHT_M
+			from PERSON
+			<dynamic prepend="WHERE">
+				<isParameterPresent>
+					PER_ID = #value#
+				</isParameterPresent>
+			</dynamic>
+		</select>
+
+		<insert id="Insert" parameterClass="Person" resultClass="int">
+			insert into PERSON 
+				(PER_ID, PER_FIRST_NAME, PER_LAST_NAME,
+				PER_BIRTH_DATE, PER_WEIGHT_KG, PER_HEIGHT_M)
+			values 
+				(#Id#, #FirstName#, #LastName#, 
+				#BirthDate#, #WeightInKilograms#, #HeightInMeters#)
+		</insert>
+
+		<update id="Update" parameterClass="Person" resultClass="int">
+			update PERSON set
+				PER_FIRST_NAME = #FirstName#,
+				PER_LAST_NAME = #LastName#, 
+				PER_BIRTH_DATE = #BirthDate#,
+				PER_WEIGHT_KG = #WeightInKilograms#,
+				PER_HEIGHT_M = #HeightInMeters#
+			where PER_ID = #Id#
+    </update>
+
+    <delete id="Delete" parameterClass="int" resultClass="int">
+		delete from PERSON
+        where PER_ID = #value#
+    </delete>
+    
+	</statements>
+	
+</sqlMap>

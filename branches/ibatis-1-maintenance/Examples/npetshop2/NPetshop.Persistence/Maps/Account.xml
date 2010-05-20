@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlMap namespace="Account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="Account" type="NPetshop.Domain.Accounts.Account, NPetshop.Domain"/>
+		<typeAlias alias="Address" type="NPetshop.Domain.Accounts.Address, NPetshop.Domain"/>
+		<typeAlias alias="Profile" type="NPetshop.Domain.Accounts.Profile, NPetshop.Domain"/>
+	</alias>
+	<resultMaps>
+		<resultMap id="AccountResult" class="Account">
+			<result property="Login" column="Account_Id"/>
+			<result property="Password" column="SignOn_Password"/>
+			<result property="Email" column="Account_Email"/>
+			<result property="Status" column="Account_Status"/>
+			<result property="Address" resultMapping="Account.AddressResult"/>
+			<result property="Profile" resultMapping="Account.ProfileResult"/>
+		</resultMap>
+		<resultMap id="AddressResult" class="Address">
+			<result property="FirstName" column="Account_FirstName"/>
+			<result property="LastName" column="Account_LastName"/>
+			<result property="Address1" column="Account_Addr1"/>
+			<result property="Address2" column="Account_Addr2"/>
+			<result property="City" column="Account_City"/>
+			<result property="State" column="Account_State"/>
+			<result property="Zip" column="Account_Zip"/>
+			<result property="Country" column="Account_Country"/>
+			<result property="Phone" column="Account_Phone"/>
+		</resultMap>
+		<resultMap id="ProfileResult" class="Profile">
+			<result property="FavoriteLanguage" column="Profile_LangPref"/>
+			<result property="FavouriteCategory" column="Profile_FavCategory" select="GetCategory"/>
+			<result property="IsShowFavorites" column="Profile_MyListOpt"/>
+			<result property="IsShowBanners" column="Profile_BannerOpt"/>
+		</resultMap>
+	</resultMaps>
+	<!-- =============================================
+        MAPPED STATEMENTS 
+    ============================================= 
+    -->
+	<statements>
+		<insert id="InsertAccount" parameterClass="Account">
+			insert into Accounts 
+			( Account_Email, Account_FirstName, Account_LastName, 
+			  Account_Status, Account_Addr1, Account_Addr2, Account_City, Account_State, Account_Zip, 
+			  Account_Country, Account_Phone, Account_Id)
+			values 
+			( #Email#, #Address.FirstName#, #Address.LastName#, 
+			  #Status#, #Address.Address1#,  #Address.Address2#, #Address.City#, #Address.State#, 
+			  #Address.Zip#, #Address.Country#, #Address.Phone#, #Login#)
+		</insert>
+		<update id="UpdateAccount" parameterClass="Account">
+			update Accounts 
+			set Account_Email = #Email#, 
+			Account_FirstName = #Address.FirstName#, 
+			Account_LastName = #Address.LastName#,
+			Account_Status = #Status#, 
+			Account_Addr1 = #Address.Address1#,  
+			Account_Addr2 = #Address.Address2#,  
+			Account_City = #Address.City#,
+			Account_State = #Address.State#, 
+			Account_Zip = #Address.Zip#, 
+			Account_Country = #Address.Country#,
+			Account_Phone = #Address.Phone# 
+			where Account_Id = #Login#
+		</update>
+		
+		<!--
+		NOTE: 
+		Specified bit type for boolean property for SqlServer 1.1 provider
+		Change type for other providers
+		-->
+		<insert id="InsertProfile" parameterClass="Account">
+			insert into Profiles 
+				(Profile_LangPref, Profile_FavCategory, Profile_MyListOpt, Profile_BannerOpt, Account_Id)
+			values 
+				(#Profile.FavoriteLanguage#, #Profile.FavouriteCategory.Id#, #Profile.IsShowFavorites#, #Profile.IsShowBanners#, #Login#)
+		</insert>
+		<update id="UpdateProfile" parameterClass="Account">
+			update Profiles 
+			set Profile_LangPref = #Profile.FavoriteLanguage#, 
+			Profile_FavCategory = #Profile.FavouriteCategory.Id#,
+			Profile_MyListOpt = #Profile.IsShowFavorites#, 
+			Profile_BannerOpt = #Profile.IsShowBanners# 
+			where Account_Id = #Login#
+		</update>
+		<insert id="InsertSignon" parameterClass="Account">
+			insert into SignsOn
+				(SignOn_Password, Account_Id) 
+			values 
+				(#Password#, #Login#)
+		</insert>
+		<update id="UpdateSignon" parameterClass="Account">
+			update SignsOn set SignOn_Password = #Password# where Account_Id = #Login#
+		</update>
+		<select id="GetAccountByLoginAndPassword" resultMap="AccountResult" parameterClass="Account">
+			select
+				S.Account_Id,
+				SignOn_Password,
+				Account_Email,
+				Account_FirstName,
+				Account_LastName,
+				Account_Status,
+				Account_Addr1,
+				Account_Addr2,
+				Account_City,
+				Account_State,
+				Account_Zip,
+				Account_Country,
+				Account_Phone,
+				Profile_LangPref,
+				Profile_FavCategory,
+				Profile_MyListOpt,
+				Profile_BannerOpt
+			from Accounts as A, SignsOn as S, Profiles as P
+			where A.Account_Id = #Login#
+				and SignOn_Password = #Password#
+				and S.Account_Id = A.Account_Id
+				and P.Account_Id = A.Account_Id
+		</select>
+	</statements>
+</sqlMap>

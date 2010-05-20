@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Tutorial2.Domain.EntityBase">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EntityBase.cs</FileName>
+      <HashCode>AAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Tutorial2.Domain.Blog">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Blog.cs</FileName>
+      <HashCode>AAABIAAAAAAgAAQEBAAAAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Posts" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Tutorial2.Domain.Post">
+    <Position X="8.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Post.cs</FileName>
+      <HashCode>AAAIAAAAEoAAAEABBAAAAAAAAAAAAAABAAAAAAAIIAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Blog" />
+    </ShowAsAssociation>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Tutorial2.Domain.User">
+    <Position X="3.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>User.cs</FileName>
+      <HashCode>AAQAIAAAAAAAAAAAAAAAAAQAAEAAAAACAAAQIAAIAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Blogs" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+</ClassDiagram>
