@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using IBatisNet.DataMapper.Test.Domain;
 using NUnit.Framework;
-using NUnit.Framework.SyntaxHelpers;
+
 
 namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
 {
