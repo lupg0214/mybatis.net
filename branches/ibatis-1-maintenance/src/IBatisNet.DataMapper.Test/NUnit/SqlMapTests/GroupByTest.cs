@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using IBatisNet.DataMapper.Test.Domain;
 
 using NUnit.Framework;
-using NUnit.Framework.SyntaxHelpers;
 
 using Category=IBatisNet.DataMapper.Test.Domain.Petshop.Category;
 

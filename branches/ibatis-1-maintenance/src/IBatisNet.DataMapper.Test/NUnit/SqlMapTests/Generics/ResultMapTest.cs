@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Configuration;
 using System.Collections.Generic;
 
 using NUnit.Framework;
 
 using IBatisNet.DataMapper.Test.Domain;
-using NUnit.Framework.SyntaxHelpers;
+
 
 namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.Generics
 {

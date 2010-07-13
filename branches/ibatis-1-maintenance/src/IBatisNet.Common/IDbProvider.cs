@@ -9,6 +9,7 @@ namespace IBatisNet.Common
 	/// </summary>
 	public interface IDbProvider
 	{
+
 		/// <summary>
 		/// The name of the assembly which conatins the definition of the provider.
 		/// </summary>
@@ -36,6 +37,13 @@ namespace IBatisNet.Common
 		/// </summary>
 		[XmlAttribute("allowMultipleActiveDataReaders")]
 		bool AllowMARS { get; set; }
+        
+        /// <summary>
+        /// An optional property to specify the DBCommand Timeout for
+        /// the specified provider.
+        /// </summary>
+        [XmlAttribute("commandTimeout")]        
+        int DbCommandTimeout { get; set; }
 
 		/// <summary>
 		/// The connection class name to use.

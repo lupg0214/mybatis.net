@@ -456,7 +456,7 @@ namespace IBatisNet.DataMapper
 		public IDbCommand CreateCommand(CommandType commandType)
 		{
 			IDbCommand command = _dataSource.DbProvider.CreateCommand();
-
+            command.CommandTimeout = _dataSource.DbProvider.DbCommandTimeout;
 			command.CommandType = commandType;
 			command.Connection = _connection;
 			

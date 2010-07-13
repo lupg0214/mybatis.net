@@ -51,6 +51,7 @@ namespace IBatisNet.Common
 			provider.AssemblyName = prop["assemblyName"];
 			provider.CommandBuilderClass = prop["commandBuilderClass"];
 			provider.DbCommandClass = prop["commandClass"];
+            provider.DbCommandTimeout = NodeUtils.GetIntAttribute(prop,"commandTimeout",30);
 			provider.DbConnectionClass = prop["connectionClass"];
 			provider.DataAdapterClass = prop["dataAdapterClass"];
 			provider.Description = prop["description"];
