@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using System.Security;
 
 
 //
@@ -9,7 +10,7 @@ using System.Reflection;
 //
 #if dotnet2
 [assembly: CLSCompliant(true)]
-
+[assembly: AllowPartiallyTrustedCallers]
 [assembly: AssemblyCompany("http://ibatis.apache.org/")]
 [assembly: AssemblyProduct("iBATIS.NET")]
 [assembly: AssemblyCopyright("Copyright 2007,2005 The Apache Software Foundation")]
