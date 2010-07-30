@@ -24,6 +24,7 @@
 #endregion
 
 using System.Runtime.Remoting.Messaging;
+using System.ServiceModel;
 using System.Web;
 
 namespace IBatisNet.DataMapper.SessionStore
@@ -53,12 +54,18 @@ namespace IBatisNet.DataMapper.SessionStore
 		{
 			get
 			{
-                HttpContext currentContext = HttpContext.Current;
-                if (currentContext == null)
+                HttpContext currentHttpContext = HttpContext.Current;
+                if (currentHttpContext != null)
                 {
-                    return CallContext.GetData(sessionName) as SqlMapSession; 
+                    return currentHttpContext.Items[sessionName] as SqlMapSession;
                 }
-                return currentContext.Items[sessionName] as SqlMapSession;
+			    OperationContext wcfContext = OperationContext.Current;
+                if (wcfContext != null)
+                {
+                    return WcfSessionStore.For(sessionName);
+                }
+                // all else fails, use CallContext
+                return CallContext.GetData(sessionName) as SqlMapSession; 
 			}
 		}
 

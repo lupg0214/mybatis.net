@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{F3E45F39-3224-4EAD-B138-EB5CC0E32824}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -42,6 +42,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -96,8 +97,14 @@
       <Name>System</Name>
     </Reference>
     <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Data">
       <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Web">
       <Name>System.Web</Name>
@@ -573,6 +580,9 @@
     </Compile>
     <Compile Include="SessionStore\AbstractSessionStore.cs" />
     <Compile Include="SessionStore\CallContextSessionStore.cs" />
+    <Compile Include="SessionStore\InstanceItems.cs" />
+    <Compile Include="SessionStore\WcfSessionItemsInstanceExtension.cs" />
+    <Compile Include="SessionStore\WcfSessionStore.cs" />
     <Compile Include="SessionStore\HybridWebThreadSessionStore.cs" />
     <Compile Include="SessionStore\ISessionStore.cs" />
     <Compile Include="SessionStore\SessionStoreFactory .cs" />

@@ -41,17 +41,13 @@ namespace IBatisNet.DataMapper.SessionStore
         /// <param name="sqlMapperId">The SQL mapper id.</param>
         /// <returns></returns>
         static public ISessionStore GetSessionStore(string sqlMapperId)
-		{
-			if (System.Web.HttpContext.Current == null)
+        {
+            if (System.Web.HttpContext.Current == null)
 			{
                 return new CallContextSessionStore(sqlMapperId);
 			}
-			else
-			{
-                return new WebSessionStore(sqlMapperId);
-			}
-		}
-
+            return new WebSessionStore(sqlMapperId);
+        }
 	}
 }
 
