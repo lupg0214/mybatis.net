@@ -517,7 +517,8 @@ namespace IBatisNet.DataMapper.MappedStatements
 			CacheModel cacheModel = _mappedStatement.Statement.CacheModel;
 			if (!cacheModel.IsReadOnly && !cacheModel.IsSerializable) 
 			{
-				cacheKey.Update(request);
+				// read/write, nonserializable cache models need to use per-session caching
+				cacheKey.Update(request.Session);
 			}
 			return cacheKey;
 		}

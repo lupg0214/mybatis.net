@@ -269,6 +269,97 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
 			Assert.AreNotEqual(firstId, thirdId);
 		}
 
+        /// <summary>
+        /// Test MappedStatement Query With Threaded Read Write Cache
+        /// Verifies that calls to the same query from different threads (and thus different
+        /// sessions) do not return the same (cached) object.
+        /// </summary>
+        [Test]
+        public void TestMappedStatementQueryWithThreadedReadWriteNonSerializableCache()
+        {
+            Hashtable results = new Hashtable();
+
+            // run a SELECT query from two different threads.  TestCacheThread.StartThread joins the 
+            // new thread to the current, so test execution does not continue until the new thread completes
+            TestCacheThread.StartThread(sqlMap, results, "GetRWNSCachedAccountsViaResultMap");
+            int firstId = (int)results["id"];
+
+            TestCacheThread.StartThread(sqlMap, results, "GetRWNSCachedAccountsViaResultMap");
+            int secondId = (int)results["id"];
+
+            Assert.AreNotEqual(firstId, secondId);
+
+            IList list = (IList)results["list"];
+
+            Account account = (Account)list[1];
+            account.EmailAddress = "new.toto@somewhere.com";
+            sqlMap.Update("UpdateAccountViaInlineParameters", account);
+
+            list = sqlMap.QueryForList("GetRWNSCachedAccountsViaResultMap", null);
+
+            int thirdId = HashCodeProvider.GetIdentityHashCode(list);
+            Assert.AreNotEqual(firstId, thirdId);
+        }
+
+        /// <summary>
+        /// Test MappedStatement Query With Threaded Read Write Cache with a session.
+        /// Verify that per-session caching (i.e. read/write, non-serializable) works within a given session.
+        /// Nonserializable read/write caches determine the cache keys somewhat differently than
+        /// serializable read/write caches, so separate tests are necessary for both
+        /// </summary>
+        [Test]
+        public void TestMappedStatementQueryWithReadWriteCacheWithSession()
+        {
+            IMappedStatement statement = sqlMap.GetMappedStatement("GetRWNSCachedAccountsViaResultMap");
+            ISqlMapSession session = new SqlMapSession(sqlMap);
+            session.OpenConnection();
+
+            int firstId = 0;
+            int secondId = 0;
+
+            try
+            {
+                // execute the statement twice; the second call should result in a cache hit
+                IList list = statement.ExecuteQueryForList(session, null);
+                firstId = HashCodeProvider.GetIdentityHashCode(list);
+
+                list = statement.ExecuteQueryForList(session, null);
+                secondId = HashCodeProvider.GetIdentityHashCode(list);
+            }
+            finally
+            {
+                session.CloseConnection();
+            }
+
+            Assert.AreEqual(firstId, secondId);
+
+        }
+
+        /// <summary>
+        /// Tests MappedStatement Query With Threaded Read/Write Non-Serializable Cache without a session.
+        /// Per-session caching (i.e. read/write, non-serializable) doesn't work without a session, so
+        /// caching will appear to fail (it actually does the caching but generates a new cache key for
+        /// each request since the requests do not share a common session).  
+        /// </summary>
+        [Test]
+        public void TestMappedStatementQueryWithReadWriteCacheWithoutSession()
+        {
+            // ensure there is no session
+            Assert.IsFalse(sqlMap.IsSessionStarted);
+
+            // run a SELECT query twice and check that the second call returns a different value than the first 
+            IList list = sqlMap.QueryForList("GetRWNSCachedAccountsViaResultMap", null);
+            int firstId = HashCodeProvider.GetIdentityHashCode(list);
+
+            list = sqlMap.QueryForList("GetRWNSCachedAccountsViaResultMap", null);
+            int secondId = HashCodeProvider.GetIdentityHashCode(list);
+
+            // without a common session, the previous two calls should return different objects
+            Assert.AreNotEqual(firstId, secondId);
+
+            // ensure there is still no session in case something else caused it to start
+            Assert.IsFalse(sqlMap.IsSessionStarted);
+        }
 		/// <summary>
 		/// Test Cache Null Object
 		/// </summary>

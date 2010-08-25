@@ -59,8 +59,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 			<flushInterval hours="24"/>
 			<flushOnExecute statement="UpdateAccountViaInlineParameters"/>
 		</cacheModel>
-		
-    </cacheModels>
+
+		<cacheModel id="rw-nonserializable-account-cache" implementation="FIFO" serialize="false" readOnly="false">
+			<flushInterval hours="24"/>
+			<flushOnExecute statement="UpdateAccountViaInlineParameters"/>
+		</cacheModel>
+
+		</cacheModels>
     
 	<alias>
 		<typeAlias alias="HundredsBool" type="IBatisNet.DataMapper.Test.Domain.HundredsTypeHandlerCallback, IBatisNet.DataMapper.Test"/>
@@ -162,8 +167,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 				resultMap="account-result"
 				cacheModel="rw-account-cache" extends="GetCachedAccountsViaResultMap">
 		</select>
-				
-  		<select id="GetNoAccountWithCache"
+
+		<select id="GetRWNSCachedAccountsViaResultMap"
+				resultMap="account-result"
+				cacheModel="rw-nonserializable-account-cache" extends="GetCachedAccountsViaResultMap">
+		</select>
+
+		<select id="GetNoAccountWithCache"
 						parameterClass="Integer"
 						resultMap="account-hashtable-result"
 						cacheModel="account-cache">

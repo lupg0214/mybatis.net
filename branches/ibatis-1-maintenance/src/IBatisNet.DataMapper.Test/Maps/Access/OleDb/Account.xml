@@ -15,8 +15,13 @@ http://ibatis.apache.org/xsd/SqlMap.xsd">
 			<flushInterval hours="24"/>
 			<flushOnExecute statement="UpdateAccountViaInlineParameters"/>
 		</cacheModel>
-		
-    </cacheModels>
+
+		<cacheModel id="rw-nonserializable-account-cache" implementation="FIFO" serialize="false" readOnly="false">
+			<flushInterval hours="24"/>
+			<flushOnExecute statement="UpdateAccountViaInlineParameters"/>
+		</cacheModel>
+
+		</cacheModels>
        
 	<resultMaps>                                    
 		<resultMap id="account-result"  class="Account" >
@@ -105,8 +110,13 @@ http://ibatis.apache.org/xsd/SqlMap.xsd">
 				resultMap="account-result"
 				cacheModel="rw-account-cache" extends="GetCachedAccountsViaResultMap">
 		</select>
-				
-  		<select id="SelectWithProperty"
+
+		<select id="GetRWNSCachedAccountsViaResultMap"
+				resultMap="account-result"
+				cacheModel="rw-nonserializable-account-cache" extends="GetCachedAccountsViaResultMap">
+		</select>
+
+		<select id="SelectWithProperty"
 					resultMap="account-result">
 			select *
 			from Accounts
