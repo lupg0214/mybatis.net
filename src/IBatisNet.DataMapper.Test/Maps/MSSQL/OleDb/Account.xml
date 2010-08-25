@@ -15,8 +15,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<flushInterval hours="24"/>
 			<flushOnExecute statement="UpdateAccountViaInlineParameters"/>
 		</cacheModel>
-		
-    </cacheModels>
+
+		<cacheModel id="rw-nonserializable-account-cache" implementation="FIFO" serialize="false" readOnly="false">
+			<flushInterval hours="24"/>
+			<flushOnExecute statement="UpdateAccountViaInlineParameters"/>
+		</cacheModel>
+
+		</cacheModels>
  
  	<alias>
 		<typeAlias alias="HundredsBool" type="IBatisNet.DataMapper.Test.Domain.HundredsTypeHandlerCallback, IBatisNet.DataMapper.Test"/>
