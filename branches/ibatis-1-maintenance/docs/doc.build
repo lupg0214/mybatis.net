@@ -4,18 +4,40 @@
 	<property name="project.dao.version" value="1.9.1" unless="${property::exists('project.dao.version')}" />
 	<property name="project.sqlMap.version" value="1.6.1" unless="${property::exists('project.sqlMap.version')}" />
 
+
+	<!-- properties for docbook, xsltproc and fop libraries and executables -->
+        <include buildfile="doc.build.include.windows" />
+        <!--
+        In preparation for an attempt to build the doc on linux, where it is
+        easier to setup docbook and related tools.
+        Roger Champagne, 2010-Oct-22 
+          -->
+        <!--  
+        <include buildfile="doc.build.include.linux" />
+        -->
+        
+	<!-- The current Guide and version
+	
+	     THESE PROPERTIES ARE REDUNDENT WITH THE ONES IN daoDoc, sqlMapDoc
+	     and totorialDoc TARGETS.
+	     
+	     THESE PROPERTIES ARE LIKELY ONLY USED BY THE docHTML TARGET WHEN
+	     CALLED DIRECTLY.
+	     
+	     CONSIDER REMOVING OR REARRANGING, THIS IS CONFUSING.
+	     
+	     SHOULD docHTML BE CALLED DIRECTLY? USEFUL FOR TESTING DOCBOOK,
+	     BUT NOT MUCH ELSE.
+	  
+	  Roger Champagne, 2010-Oct-23
+	  -->
 	<property name="project.name" value="Data Access Guide" />
-
-	<!-- docbook libraries and dependencies -->
-	<property name="docbook.lib.dir" value="docbook" />
-	<!-- xsltproc libraries and dependencies -->
-	<property name="xsltproc.lib.dir" value="xsltproc" />
-	<!-- fop libraries and dependencies -->
-	<property name="fop.lib.dir" value="fop" />
-
-	<!-- The current Guide -->
+	<property name="guide.dir" value="dataMapperGuide" />
+	<property name="project.version" value="project.sqlMap.version" />
+	<!--
 	<property name="guide.dir" value="dataAccessGuide" />
-
+	<property name="project.version" value="project.dao.version" />
+        -->
 	<!-- the current language  -->	
 	<property name="src.lang" value="en" />
 	<property name="xml.src.dir" value="${guide.dir}/src/${src.lang}" />
@@ -31,7 +53,7 @@
 	<property name="doc.ref.output.dir" value="${doc.output.dir}" />
 
 	<!-- the main source code directory for the iBATIS.NET codebase  -->	
-	<property name="src.dir" value="../mapper" />
+	<property name="src.dir" value="../src" />
 
 	<target name="clean" description="Delete output and temporary directories.">
 		<delete dir="${doc.output.dir}" failonerror="false"/>
@@ -49,7 +71,7 @@
 
  		<call target="prepareDaoDocs" />
 		<call target="docHtmlHelp" />
-		<call target="docPDF" />
+		<!-- <call target="docPDF" /> -->
 	</target>
 
 	<target name="sqlMapDoc" description="Generate DataMapper documentation">
@@ -62,7 +84,7 @@
 
 		<call target="prepareSqlMapDocs" />
 		<call target="docHtmlHelp" />
-		<call target="docPDF" />
+		<!-- <call target="docPDF" /> -->
 	</target>
 
 	<target name="tutorialDoc" description="Generate DataMapper tutorial">
@@ -74,14 +96,14 @@
 		<property name="style.src.dir" value="${guide.dir}/styles" />
 
 		<call target="docHtmlHelp" />
-		<call target="docPDF" />
+		<!-- <call target="docPDF" /> -->
 	</target>
 
 	<target name="docHTML" depends="prepareDocsHTML" description="Build reference documentation to html">
 
-		<exec program="${xsltproc.lib.dir}/xsltproc.exe" 
+		<exec program="${xsltproc.lib.dir}/${xsltproc.program}" 
 		 failonerror="false"
-		 commandline="--nonet ${style.src.dir}/html.xsl ${xml.src.dir}/index.xml -o ${doc.ref.output.dir}/${guide.dir}/${src.lang}/html/" />
+		 commandline="--nonet -o ${doc.ref.output.dir}/${guide.dir}/${src.lang}/html/ ${style.src.dir}/html.xsl ${xml.src.dir}/index.xml" />
 
 		<!-- copy dev guide images -->
 		<copy todir="${doc.ref.output.dir}/${guide.dir}/${src.lang}/html/images">
@@ -148,11 +170,11 @@
 		  </fileset>
 		</copy>
 
-	   	<exec program="${xsltproc.lib.dir}/xsltproc.exe" 
+	   	<exec program="${xsltproc.lib.dir}/${xsltproc.program}" 
 		 failonerror="false"
-		 commandline="--nonet ${style.src.dir}/fopdf.xsl ${xml.src.dir}/index.xml -o ${doc.ref.output.dir}/${guide.dir}/${src.lang}/pdf/${guide.dir}_temp.fo" />
+		 commandline="--nonet -o ${doc.ref.output.dir}/${guide.dir}/${src.lang}/pdf/${guide.dir}_temp.fo ${style.src.dir}/fopdf.xsl ${xml.src.dir}/index.xml" />
 
-	   	<exec program="${fop.lib.dir}/fop.bat" 
+	   	<exec program="${fop.lib.dir}/${fop.program}" 
 		 failonerror="false"
 		 commandline="${doc.ref.output.dir}/${guide.dir}/${src.lang}/pdf/${guide.dir}_temp.fo ${doc.ref.output.dir}/${guide.dir}/${src.lang}/pdf/${guide.dir}.pdf" />
 
