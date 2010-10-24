@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><TITLE>mybatisnet - building documentation </TITLE></HEAD>
+<BODY>
+
+<h1 align="center">mybastisnet documentation repository</h1>
+<p>This document aims at describing the essential characteristics of the mybatisnet
+documentation repository, and more specifically to guide documentation contributors
+on how to:</p>
+<ul>
+  <li>setup the tools required to build the documentation from source;</li>
+  <li>perform the build, targeting various output formats (currently CHM and PDF).</li>
+</ul>
+
+<h1>Tools required</h1>
+<p>The mybatisnet documentation source is in <b>docbook format</b>. More
+  information on this format and associated tools can be found in
+  <a href="docbook/README.html" target="_blank">docbook/README.html</a>.
+  The complete set of tools required to build the documentation bundle is the
+  following:</p>
+<ul>
+  <li><b>nant</b>, to run the documentation build script (see
+    <a href="http://nant.sourceforge.net/" target="_blank">
+    http://nant.sourceforge.net/</a> to download and setup nant);</li>
+  <li><b>docbook DTD and stylesheets</b> (see
+    <a href="docbook/README.html" target="_blank">docbook/README.html</a> for
+      instructions on obtaining and setting these up);</li>
+  <li><b>xlstproc</b>, to convert the source documentation from docbook format
+    to other formats (HTML, CHM, PDF,...) by applying XML stylesheets and then using
+    other tools (see
+    <a href="xsltproc/README.html" target="_blank">xsltproc/README.html</a> for
+    instructions on obtaining and setting up the required xsltproc utilities);</li>
+  <li><b>fop</b>, required to produce the PDF version of the documentation (see
+    <a href="http://xmlgraphics.apache.org/fop/download.html" target="_blank">http://xmlgraphics.apache.org/fop/download.html</a>
+    for instructions on obtaining and setting up fop).
+    Note that FOP is implemented in Java, so you will need a properly set-up
+    java runtime (JRE) to use it.</li>
+  <li><b>HTML Help Workshop</b>, required to produce the CHM version of the
+    documentation (see
+    <a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=00535334-c8a6-452f-9aa0-d597d16580cc&displaylang=en" target="_blank">http://www.microsoft.com/downloads/en/details.aspx?FamilyID=00535334-c8a6-452f-9aa0-d597d16580cc&displaylang=en</a>
+    for instructions on obtaining and setting up HTML Help Workshop).<br><br>
+    <b><u>NOTE:</u></b> The workshop is actually bundled with other Microsoft
+    products (not sure which, perhaps Windows itself). However, recent versions
+    of the workshop (e.g., the one under Windows 7) don't seem to include
+    <b>hhc.exe</b>, the command-line tool this project needs. It might therefore
+    still be required that you install the workshop, even if you already have it.</li>
+</ul>
+
+<h1>Building the documentation under Windows</h1>
+
+<p>Once the tools described above have been installed in the right places:</p>
+<ol>
+  <li>Open a command prompt, cd to this directory, and make sure you have doc.build
+    available;</li>
+  <li>Run <tt><b>nant refDoc</b></tt> to produce CHM and PDF versions of
+    DataMapperGuide and DataAccesGuide;</li>  
+  <li>Run <tt><b>nant tutorialDoc</b></tt> to produce CHM and PDF versions of
+    the tutorial.</li>  
+</ol>
+
+<p>The build script also contains other targets, please see doc.build for details.</p>
+
+<p>Also note that as of this writing, the production of PDF output is not working and
+  is actually commented ou in the build script. Also note that as a byproduct of
+  the CHM output, the documentation is also generated in HTML format, which is
+  prerequisite for the production of the CHM version.</p>
+</body>
+</html>
