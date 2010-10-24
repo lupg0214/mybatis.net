@@ -1,0 +1,18 @@
+<root>
+    <!-- docbook libraries and dependencies -->
+    <property name="docbook.lib.dir" value="docbook" />
+
+    <!-- xsltproc libraries and dependencies -->
+    <property name="xsltproc.lib.dir" value="xsltproc" />
+
+    <!-- fop libraries and dependencies -->
+    <property name="fop.lib.dir" value="fop" />
+
+    <!-- Additions by R. Champagne -->
+
+    <!-- xsltproc executable -->
+    <property name="xsltproc.program" value="xsltproc.exe" />
+
+    <!-- fop executable -->
+    <property name="fop.program" value="fop.bat" />
+</root>
