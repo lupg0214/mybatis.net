@@ -71,7 +71,7 @@
 
  		<call target="prepareDaoDocs" />
 		<call target="docHtmlHelp" />
-		<!-- <call target="docPDF" /> -->
+		<call target="docPDF" />
 	</target>
 
 	<target name="sqlMapDoc" description="Generate DataMapper documentation">
@@ -84,7 +84,7 @@
 
 		<call target="prepareSqlMapDocs" />
 		<call target="docHtmlHelp" />
-		<!-- <call target="docPDF" /> -->
+		<call target="docPDF" />
 	</target>
 
 	<target name="tutorialDoc" description="Generate DataMapper tutorial">
@@ -96,7 +96,7 @@
 		<property name="style.src.dir" value="${guide.dir}/styles" />
 
 		<call target="docHtmlHelp" />
-		<!-- <call target="docPDF" /> -->
+		<call target="docPDF" />
 	</target>
 
 	<target name="docHTML" depends="prepareDocsHTML" description="Build reference documentation to html">
@@ -172,7 +172,7 @@
 
 	   	<exec program="${xsltproc.lib.dir}/${xsltproc.program}" 
 		 failonerror="false"
-		 commandline="--nonet -o ${doc.ref.output.dir}/${guide.dir}/${src.lang}/pdf/${guide.dir}_temp.fo ${style.src.dir}/fopdf.xsl ${xml.src.dir}/index.xml" />
+		 commandline="--stringparam fop1.extensions 1 --stringparam fop.extensions 0 --nonet -o ${doc.ref.output.dir}/${guide.dir}/${src.lang}/pdf/${guide.dir}_temp.fo ${style.src.dir}/fopdf.xsl ${xml.src.dir}/index.xml" />
 
 	   	<exec program="${fop.lib.dir}/${fop.program}" 
 		 failonerror="false"
