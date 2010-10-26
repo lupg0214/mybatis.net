@@ -1,0 +1,1 @@
+This is the placeholder for the docbook stylesheets (docbook-xsl-ns).
