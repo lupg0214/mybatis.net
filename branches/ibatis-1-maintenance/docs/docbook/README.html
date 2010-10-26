@@ -11,14 +11,9 @@
 <ol>
   <li>an XML DTD (docbookx.dtd). This is available in many, many versions. From
     the headers in the mybatisnet source docbook documents, I deduced version
-    4.1.2 is the one the source files are expecting.
-    <ol type="a">
-      <li>Get the DTD and its dependencies at
-        <a href="http://www.oasis-open.org/docbook/xml/4.1.2/docbkx412.zip" target="_blank">http://www.oasis-open.org/docbook/xml/4.1.2/docbkx412.zip</a>.</li>
-      <li>Unzip the contents in docs/docbook/docbook-dtd. This location is 
-      currently hardcoded in the mybatisnet docbook stylesheets, so it's
-      important to unzip the files in the right place.</li>
-     </ol></li>   
+    4.1.2 is the one the source files are expecting. You will find the docbook
+    DTD and its dependencies in the .\dtd folder. The original source for the DTD
+    is <a href="http://www.oasis-open.org/docbook/xml/4.1.2/" target="_blank">http://www.oasis-open.org/docbook/xml/4.1.2/</a>.
   <li>a set of XML stylesheets (xsl files), which are provided at
     <a href="http://sourceforge.net/projects/docbook" target="_blank">http://sourceforge.net/projects/docbook</a>.
       These instruction were tested with the latest stable release, which as of this
@@ -27,7 +22,7 @@
       <li>Download the stylesheets bundle at
       <a href="http://sourceforge.net/projects/docbook/files/docbook-xsl-ns/1.76.0/docbook-xsl-ns-1.76.0.zip/download" target="_blank">http://sourceforge.net/projects/docbook/files/docbook-xsl-ns/1.76.0/docbook-xsl-ns-1.76.0.zip/download</a>.</li>
       <li>extract the contents of the top-level folder from the ZIP archive in
-      docs/docbook. You should wind up with the following folders under docs/docbook:
+      the .\styles folder. You should wind up with the following folders under docs/docbook/styles:
       common, docsrc, eclipse, ... As for the DTD, these file locations are 
       currently hardcoded in the mybatisnet docbook stylesheets, so it's
       important to unzip the files in the right place.</li>
