@@ -101,8 +101,10 @@
         <xsl:attribute name="font-family">
             <xsl:value-of select="$body.font.family"/>
         </xsl:attribute>
+    <!--    
         <xsl:attribute name="margin-left">-5em</xsl:attribute>
         <xsl:attribute name="margin-right">-5em</xsl:attribute>
+      -->
     </xsl:attribute-set>
 
 <!--###################################################
@@ -310,7 +312,7 @@
     ################################################### -->
 
     <!-- The table width should be adapted to the paper size -->
-    <xsl:param name="default.table.width">17.4cm</xsl:param>
+    <xsl:param name="default.table.width">15.5cm</xsl:param>
 
     <!-- Some padding inside tables -->    
     <xsl:attribute-set name="table.cell.padding">
@@ -321,8 +323,8 @@
     </xsl:attribute-set>
     
     <!-- Only hairlines as frame and cell borders in tables -->
-    <xsl:param name="table.frame.border.thickness">0.1pt</xsl:param>
-    <xsl:param name="table.cell.border.thickness">0.1pt</xsl:param>
+    <xsl:param name="table.frame.border.thickness">1.0pt</xsl:param>
+    <xsl:param name="table.cell.border.thickness">1.0pt</xsl:param>
         
 <!--###################################################
                          Labels
