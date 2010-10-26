@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding="UTF-8"?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
-                      "../../../docbook/docbook-dtd/docbookx.dtd"
+                      "../../../docbook/dtd/docbookx.dtd"
 [
 <!ENTITY introduction SYSTEM "introduction.xml">
 <!ENTITY architecture SYSTEM "architecture.xml">

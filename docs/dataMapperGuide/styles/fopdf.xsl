@@ -15,8 +15,8 @@
 -->
 
 <!DOCTYPE xsl:stylesheet [
-    <!ENTITY db_xsl_path        "../../docbook/">
-    <!ENTITY admon_gfx_path     "../../docbook/images">
+    <!ENTITY db_xsl_path        "../../docbook/styles">
+    <!ENTITY admon_gfx_path     "../../docbook/styles/images">
 ]>
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -40,7 +40,7 @@
                 <fo:table-body>
                     <fo:table-row>
                         <fo:table-cell text-align="center">
-                             <fo:block>
+                            <fo:block>
                                 <fo:external-graphic src="file:images/ibatisnet.gif"/>
                             </fo:block> 
                             <fo:block font-family="Helvetica" font-size="22pt" padding-before="10mm">

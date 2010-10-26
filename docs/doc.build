@@ -4,7 +4,6 @@
 	<property name="project.dao.version" value="1.9.1" unless="${property::exists('project.dao.version')}" />
 	<property name="project.sqlMap.version" value="1.6.1" unless="${property::exists('project.sqlMap.version')}" />
 
-
 	<!-- properties for docbook, xsltproc and fop libraries and executables -->
         <include buildfile="doc.build.include.windows" />
         <!--
@@ -59,6 +58,8 @@
 		<delete dir="${doc.output.dir}" failonerror="false"/>
 	</target>
 
+	<target name="allDoc" depends="clean, daoDoc, sqlMapDoc, tutorialDoc" description="Generate iBATIS.NET documentation" />
+	
 	<target name="refDoc" depends="clean, daoDoc, sqlMapDoc" description="Generate iBATIS.NET documentation" />
 
 	<target name="daoDoc" description="Generate DataAccess documentation">
@@ -101,7 +102,7 @@
 
 	<target name="docHTML" depends="prepareDocsHTML" description="Build reference documentation to html">
 
-		<exec program="${xsltproc.lib.dir}/${xsltproc.program}" 
+		<exec program="${xsltproc.program}" 
 		 failonerror="false"
 		 commandline="--nonet -o ${doc.ref.output.dir}/${guide.dir}/${src.lang}/html/ ${style.src.dir}/html.xsl ${xml.src.dir}/index.xml" />
 
@@ -117,7 +118,7 @@
 
 		<!-- copy docBook images -->
 		<copy todir="${doc.ref.output.dir}/${guide.dir}/${src.lang}/html/images">
-		  <fileset basedir="${docbook.lib.dir}/images">
+		  <fileset basedir="${docbook.styles.dir}/images">
 			<include name="**/*.gif"/>
 			<include name="**/*.png"/>
 		  </fileset>
@@ -164,17 +165,17 @@
 
 		<!-- copy docBook images -->
 		<copy todir="${doc.ref.output.dir}/${guide.dir}/${src.lang}/html/images">
-		  <fileset basedir="${docbook.lib.dir}/images">
+		  <fileset basedir="${docbook.styles.dir}/images">
 			<include name="**/*.gif"/>
 			<include name="**/*.png"/>
 		  </fileset>
 		</copy>
 
-	   	<exec program="${xsltproc.lib.dir}/${xsltproc.program}" 
+	   	<exec program="${xsltproc.program}" 
 		 failonerror="false"
 		 commandline="--stringparam fop1.extensions 1 --stringparam fop.extensions 0 --nonet -o ${doc.ref.output.dir}/${guide.dir}/${src.lang}/pdf/${guide.dir}_temp.fo ${style.src.dir}/fopdf.xsl ${xml.src.dir}/index.xml" />
 
-	   	<exec program="${fop.lib.dir}/${fop.program}" 
+	   	<exec program="${fop.program}" 
 		 failonerror="false"
 		 commandline="${doc.ref.output.dir}/${guide.dir}/${src.lang}/pdf/${guide.dir}_temp.fo ${doc.ref.output.dir}/${guide.dir}/${src.lang}/pdf/${guide.dir}.pdf" />
 
