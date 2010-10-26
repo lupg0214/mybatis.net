@@ -15,8 +15,8 @@
 -->
 
 <!DOCTYPE xsl:stylesheet [
-    <!ENTITY db_xsl_path        "../../docbook/">
-    <!ENTITY admon_gfx_path     "../../docbook/images">
+    <!ENTITY db_xsl_path        "../../docbook/styles">
+    <!ENTITY admon_gfx_path     "../../docbook/styles/images">
 ]>
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

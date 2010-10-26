@@ -1,18 +1,12 @@
 <root>
-    <!-- docbook libraries and dependencies -->
-    <property name="docbook.lib.dir" value="docbook" />
+    <!-- root of docbook stylesheets and images -->
+    <property name="docbook.styles.dir" value="docbook/styles" />
 
-    <!-- xsltproc libraries and dependencies -->
-    <property name="xsltproc.lib.dir" value="xsltproc" />
-
-    <!-- fop libraries and dependencies -->
-    <property name="fop.lib.dir" value="fop" />
-
-    <!-- Additions by R. Champagne -->
-
-    <!-- xsltproc executable -->
+    <!-- xsltproc executable - assumed to be on the path -->
     <property name="xsltproc.program" value="xsltproc.exe" />
 
-    <!-- fop executable -->
-    <property name="fop.program" value="fop.bat" />
+    <!-- fop executable - Since this is a batch file, the full path is required,
+         even if the folder is on the path. 
+      -->
+    <property name="fop.program" value="C:/fop/fop.bat" />
 </root>
