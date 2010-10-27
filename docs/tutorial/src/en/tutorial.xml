@@ -382,7 +382,7 @@ namespace IBatisNet.DataMapper
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="images/figure01.gif" />
+          <imagedata fileref="images/figure01.gif" scalefit="1" width="100%" contentdepth="100%" />
         </imageobject>
       </mediaobject>
     </figure>
@@ -481,7 +481,7 @@ namespace iBatisTutorial.Web.Forms
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="images/figure02.gif" />
+          <imagedata fileref="images/figure02.gif" scalefit="1" width="100%" contentdepth="100%" />
         </imageobject>
       </mediaobject>
     </figure>
@@ -905,7 +905,7 @@ namespace iBatisTutorial.Model
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="images/figure03.gif" />
+          <imagedata fileref="images/figure03.gif" scalefit="1" width="100%" contentdepth="100%" />
         </imageobject>
       </mediaobject>
     </figure>

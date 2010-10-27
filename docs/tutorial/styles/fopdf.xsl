@@ -31,8 +31,8 @@
 
 <!--###################################################
                    Custom Title Page
-    ################################################### --> 
-    
+    ################################################### -->
+<!--    
     <xsl:template name="book.titlepage.recto">
         <fo:block>
             <fo:table table-layout="fixed" width="175mm">
@@ -83,15 +83,16 @@
             </fo:table>
         </fo:block>
     </xsl:template>
-
+-->
     <!-- Prevent blank pages in output -->    
+<!--
     <xsl:template name="book.titlepage.before.verso">
     </xsl:template>
     <xsl:template name="book.titlepage.verso">
     </xsl:template>
     <xsl:template name="book.titlepage.separator">
     </xsl:template>
-        
+-->        
 <!--###################################################
                       Header
     ################################################### -->  
@@ -185,6 +186,7 @@
     ################################################### -->
     
     <!-- The default DocBook XSL TOC printing is seriously broken... -->
+<!--
     <xsl:template name="toc.line">
         <xsl:variable name="id">
             <xsl:call-template name="object.id"/>
@@ -193,15 +195,18 @@
         <xsl:variable name="label">
             <xsl:apply-templates select="." mode="label.markup"/>
         </xsl:variable>
-
+-->
         <!-- justify-end removed from block attributes (space problem in title.markup) -->
+<!--
         <fo:block  end-indent="{$toc.indent.width}pt"
                    last-line-end-indent="-{$toc.indent.width}pt"
                    white-space-treatment="preserve"
                    text-align="left"
                    white-space-collapse="false">
             <fo:inline keep-with-next.within-line="always">
+-->            
                 <!-- print Chapters in bold style -->
+<!--
                 <xsl:choose>
                     <xsl:when test="local-name(.) = 'chapter'">
                         <xsl:attribute name="font-weight">bold</xsl:attribute>
@@ -231,7 +236,8 @@
             </fo:inline>
         </fo:block>
     </xsl:template>
-    
+-->
+
 <!--###################################################
                       Extensions
     ################################################### -->  

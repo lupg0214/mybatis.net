@@ -43,7 +43,7 @@ public interface IAccountDao : IDao {
 
     <mediaobject>
       <imageobject>
-        <imagedata align="center" fileref="images/DAODesign.gif" format="GIF" />
+        <imagedata align="center" fileref="images/DAODesign.gif" format="GIF" scalefit="1" width="100%" contentdepth="100%" />
       </imageobject>
 
       <caption><para>DAO Implementation Diagram</para></caption>
