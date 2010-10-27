@@ -14,27 +14,26 @@ on how to:</p>
 
 <h1>Tools required</h1>
 <p>The mybatisnet documentation source is in <b>docbook format</b>. More
-  information on this format and associated tools can be found in
-  <a href="docbook/README.html" target="_blank">docbook/README.html</a>.
+  information on this format and associated tools can be found in the
+  <a href="#docbook">docbook</a> section of this document.
   The complete set of tools required to build the documentation bundle is the
   following:</p>
 <ul>
   <li><b>nant</b>, to run the documentation build script (see
     <a href="http://nant.sourceforge.net/" target="_blank">
     http://nant.sourceforge.net/</a> to download and setup nant);</li>
-  <li><b>docbook DTD and stylesheets</b> (see
-    <a href="docbook/README.html" target="_blank">docbook/README.html</a> for
-      instructions on obtaining and setting these up);</li>
+  <li><b>docbook DTD and stylesheets</b> (see the <a href="#docbook">docbook</a>
+    section below for instructions on obtaining and setting these up);</li>
   <li><b>xlstproc</b>, to convert the source documentation from docbook format
     to other formats (HTML, CHM, PDF,...) by applying XML stylesheets and then using
-    other tools (see
-    <a href="xsltproc/README.html" target="_blank">xsltproc/README.html</a> for
-    instructions on obtaining and setting up the required xsltproc utilities);</li>
+    other tools (see the <a href="#xsltproc">xlstproc</a> section below for
+    instructions on obtaining and setting up the required xsltproc utilities under
+    windows);</li>
   <li><b>fop</b>, required to produce the PDF version of the documentation (see
     <a href="http://xmlgraphics.apache.org/fop/download.html" target="_blank">http://xmlgraphics.apache.org/fop/download.html</a>
-    for instructions on obtaining and setting up fop).
-    Note that FOP is implemented in Java, so you will need a properly set-up
-    java runtime (JRE) to use it.</li>
+    for instructions on obtaining and setting up fop). Note that FOP is
+    implemented in Java, so you will need a properly set-up java runtime (JRE)
+    to use it.</li>
   <li><b>HTML Help Workshop</b>, required to produce the CHM version of the
     documentation (see
     <a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=00535334-c8a6-452f-9aa0-d597d16580cc&displaylang=en" target="_blank">http://www.microsoft.com/downloads/en/details.aspx?FamilyID=00535334-c8a6-452f-9aa0-d597d16580cc&displaylang=en</a>
@@ -46,12 +45,59 @@ on how to:</p>
     still be required that you install the workshop, even if you already have it.</li>
 </ul>
 
+<h2><a name="docbook"></a>docbook</h2>
+
+<p>Docbook is a is an XML documentation format specification, essentially
+  implemented in two things that a tool needs to parse a docbook source document
+  (which is in XML):</p>
+<ol>
+  <li>an XML DTD (docbookx.dtd). This is available in many, many versions. The
+    mybatisnet documentation currently uses version 4.1.2. You will find the
+    docbook DTD and its dependencies in the <tt>.\docbook\dtd</tt> folder.
+    The original source for the DTD is
+    <a href="http://www.oasis-open.org/docbook/xml/" target="_blank">http://www.oasis-open.org/docbook/xml/</a>.
+  <li>a set of XML stylesheets (xsl files), which are provided at
+    <a href="http://sourceforge.net/projects/docbook" target="_blank">http://sourceforge.net/projects/docbook</a>.
+      These instruction were tested with the latest stable release, which as of
+      this writing is <b>docbook-xsl-ns&nbsp;v1.76.0</b>.
+    <ol type="a">
+      <li>Download the stylesheets bundle at
+      <a href="http://sourceforge.net/projects/docbook/files/docbook-xsl-ns/1.76.0/docbook-xsl-ns-1.76.0.zip/download" target="_blank">http://sourceforge.net/projects/docbook/files/docbook-xsl-ns/1.76.0/docbook-xsl-ns-1.76.0.zip/download</a>.</li>
+      <li>extract the contents of the top-level folder from the ZIP archive in
+      the <tt>.\docbook\styles</tt> folder. You should wind up with the following folders
+      under <tt>.\docbook\styles</tt>: common, docsrc, eclipse, ... The paths to these
+      stylesheets are currently hardcoded in the mybatisnet docbook stylesheets,
+      so it's important to unzip the files in the right place.</li>
+    </ol>
+  </li>
+</ol>  
+
+<h2><a name="xsltproc"></a>xsltproc</h2>
+
+<p>xsltproc is one of many tools that are able to apply stylesheets to XML
+  documents, with the usual goal of converting the XML to some other format. To
+  deploy a windows version of xlstproc:</p>
+<ol>
+  <li>Download the following files (more recent versions of each are available, but
+    these specific versions are known to work well together):
+    <ol type="a">
+      <li><a href="ftp://ftp.zlatkovic.com/libxml/oldreleases/iconv-1.9.1.win32.zip" target="_blank">ftp://ftp.zlatkovic.com/libxml/oldreleases/iconv-1.9.1.win32.zip</a></li>
+      <li><a href="ftp://ftp.zlatkovic.com/libxml/oldreleases/libxml2-2.6.15.win32.zip" target="_blank">ftp://ftp.zlatkovic.com/libxml/oldreleases/libxml2-2.6.15.win32.zip</a></li>
+      <li><a href="ftp://ftp.zlatkovic.com/libxml/oldreleases/libxmlsec-1.2.6.win32.zip" target="_blank">ftp://ftp.zlatkovic.com/libxml/oldreleases/libxmlsec-1.2.6.win32.zip</a></li>
+      <li><a href="ftp://ftp.zlatkovic.com/libxml/oldreleases/libxslt-1.1.12.win32.zip" target="_blank">ftp://ftp.zlatkovic.com/libxml/oldreleases/libxslt-1.1.12.win32.zip</a></li>
+      <li><a href="ftp://ftp.zlatkovic.com/libxml/oldreleases/zlib-1.2.1.win32.zip" target="_blank">ftp://ftp.zlatkovic.com/libxml/oldreleases/zlib-1.2.1.win32.zip</a></li>
+    </ol></li>
+  <li>Unzip each of the files above in a folder of your choice.</li>
+  <li>Copy the contents of all the bin folders (EXEs and DLLs) in the same folder.</li>
+  <li>Add the folder containing all EXEs and DLLs to your path, so that
+    xsltproc.exe is available from a command prompt.</li>
+</ol>  
+
 <h1>Building the documentation under Windows</h1>
 
 <p>Once the tools described above have been installed in the right places:</p>
 <ol>
-  <li>Open a command prompt, cd to this directory, and make sure you have doc.build
-    available;</li>
+  <li>Open a command prompt and <tt><b>cd</b></tt> to this directory.</li>
   <li>Run <tt><b>nant allDoc</b></tt> to produce CHM and PDF versions of
     DataMapperGuide, DataAccesGuide and the tutorial.</li>  
 </ol>
