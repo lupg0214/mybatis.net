@@ -12,7 +12,13 @@
     <xsl:param name="tablecolumns.extension">0</xsl:param>
     <xsl:param name="callout.extensions">1</xsl:param>
     <xsl:param name="graphicsize.extension">0</xsl:param>
-
+    
+    <!-- this is meant to make the parser ignore image scaling in HTML. The
+         docbook source has sacling for images which is reuired for the PDF
+         version to print out correctly. See bottom of
+         http://www.sagehill.net/docbookxsl/ImageSizing.html -->
+    <xsl:param name="ignore.image.scaling">1</xsl:param>
+    
 <!--###################################################
                       Table Of Contents
     ################################################### -->   
