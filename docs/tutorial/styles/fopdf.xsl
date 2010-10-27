@@ -427,6 +427,7 @@
             <xsl:value-of select="$body.font.small * 1.0"/>
             <xsl:text>pt</xsl:text>
         </xsl:attribute>
+        <xsl:attribute name="wrap-option">wrap</xsl:attribute>
     </xsl:attribute-set>
     
     <xsl:attribute-set name="verbatim.properties">
