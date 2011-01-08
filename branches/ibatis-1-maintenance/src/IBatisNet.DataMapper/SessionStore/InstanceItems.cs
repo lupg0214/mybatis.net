@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using System.ServiceModel;
 
 namespace IBatisNet.DataMapper.SessionStore
@@ -55,17 +55,22 @@ namespace IBatisNet.DataMapper.SessionStore
 
         public void CleanUp(object sender, EventArgs e)
         {
-
-            foreach (var item in Items.Select(item => item.Value))
+            foreach (var item in Items.Values)
             {
-
                 if (item is IDisposable)
                 {
                     ((IDisposable) item).Dispose();
                 }
-
             }
+            //foreach (var item in Items.Select(item => item.Value))
+            //{
 
+            //    if (item is IDisposable)
+            //    {
+            //        ((IDisposable) item).Dispose();
+            //    }
+
+            //}
         }
 
         internal void Hook(InstanceContext instanceContext)
