@@ -54,7 +54,7 @@ namespace IBatisNet.DataMapper.SessionStore
 
         public void CleanUp(object sender, EventArgs e)
         {
-            foreach (var item in Items.Values)
+            foreach (object item in Items.Values)
             {
                 if (item is IDisposable)
                 {
