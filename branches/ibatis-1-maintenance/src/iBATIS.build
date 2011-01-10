@@ -30,6 +30,8 @@
 		<echo message="Nant options:"/>
 		<echo message="	clean:"/>
 		<echo message="    clean all builds and documentation"/>							
+		<echo message="	clean-zip:"/>
+		<echo message="    clean zip file made through nant package option"/>							
 		<echo message="	debug:"/>
 		<echo message="	   build iBatis with debug information"/>		
 		<echo message="	release:"/>
