@@ -579,7 +579,7 @@ namespace IBatisNet.Common
         {
             if ((obj != null) && (obj is IDbProvider))
             {
-                var that = (IDbProvider) obj;
+                IDbProvider that = (IDbProvider)obj;
                 return ((_name == that.Name) &&
                         (_assemblyName == that.AssemblyName) &&
                         (_connectionClass == that.DbConnectionClass));
