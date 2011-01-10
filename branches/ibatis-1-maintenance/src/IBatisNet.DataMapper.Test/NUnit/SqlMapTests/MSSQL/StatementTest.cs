@@ -43,13 +43,13 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         [Test]
         public void TestGuidColumn()
         {
-            var category = new Category();
+            Category category = new Category();
             category.Name = "toto";
             category.Guid = Guid.NewGuid();
 
-            var key = (int) sqlMap.Insert("InsertCategory", category);
+            int key = (int) sqlMap.Insert("InsertCategory", category);
 
-            var categoryTest = (Category) sqlMap.QueryForObject("GetCategory", key);
+            Category categoryTest = (Category) sqlMap.QueryForObject("GetCategory", key);
             Assert.AreEqual(key, categoryTest.Id);
             Assert.AreEqual(category.Name, categoryTest.Name);
             Assert.AreEqual(category.Guid, categoryTest.Guid);
@@ -62,9 +62,9 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         public void TestGuidColumnParameterClass()
         {
             Guid newGuid = Guid.NewGuid();
-            var key = (int) sqlMap.Insert("InsertCategoryGuidParameterClass", newGuid);
+            int key = (int) sqlMap.Insert("InsertCategoryGuidParameterClass", newGuid);
 
-            var categoryTest = (Category) sqlMap.QueryForObject("GetCategory", key);
+            Category categoryTest = (Category)sqlMap.QueryForObject("GetCategory", key);
             Assert.AreEqual(key, categoryTest.Id);
             Assert.AreEqual("toto", categoryTest.Name);
             Assert.AreEqual(newGuid, categoryTest.Guid);
@@ -77,9 +77,9 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         public void TestGuidColumnParameterClassJIRA20()
         {
             Guid newGuid = Guid.NewGuid();
-            var key = (int) sqlMap.Insert("InsertCategoryGuidParameterClassJIRA20", newGuid);
+            int key = (int) sqlMap.Insert("InsertCategoryGuidParameterClassJIRA20", newGuid);
 
-            var categoryTest = (Category) sqlMap.QueryForObject("GetCategory", key);
+            Category categoryTest = (Category)sqlMap.QueryForObject("GetCategory", key);
             Assert.AreEqual(key, categoryTest.Id);
             Assert.AreEqual("toto", categoryTest.Name);
             Assert.AreEqual(newGuid, categoryTest.Guid);
@@ -91,7 +91,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         [Test]
         public void TestInsertAccountViaStoreProcedure()
         {
-            var account = new Account();
+            Account account = new Account();
 
             account.Id = 99;
             account.FirstName = "Achille";
@@ -100,7 +100,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
 
             sqlMap.Insert("InsertAccountViaStoreProcedure", account);
 
-            var testAccount = sqlMap.QueryForObject("GetAccountViaColumnName", 99) as Account;
+            Account testAccount = sqlMap.QueryForObject("GetAccountViaColumnName", 99) as Account;
 
             Assert.IsNotNull(testAccount);
             Assert.AreEqual(99, testAccount.Id);
@@ -112,7 +112,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         [Test]
         public void TestInsertCategoryScope()
         {
-            var category = new Category();
+            Category category = new Category();
             category.Name = "toto";
             category.Guid = Guid.NewGuid();
 
@@ -126,11 +126,11 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         [Test]
         public void TestInsertCategoryViaParameterMap()
         {
-            var category = new Category();
+            Category category = new Category();
             category.Name = "Cat";
             category.Guid = Guid.NewGuid();
 
-            var key = (int) sqlMap.Insert("InsertCategoryViaParameterMap", category);
+            int key = (int) sqlMap.Insert("InsertCategoryViaParameterMap", category);
             Assert.AreEqual(1, key);
         }
 
@@ -141,12 +141,12 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         [Test]
         public void TestInsertCategoryWithProperties()
         {
-            var category = new Category();
+            Category category = new Category();
             category.Guid = Guid.NewGuid();
 
-            var key = (int) sqlMap.Insert("InsertCategoryWithProperties", category);
+            int key = (int) sqlMap.Insert("InsertCategoryWithProperties", category);
 
-            var categoryTest = sqlMap.QueryForObject("GetCategory", key) as Category;
+            Category categoryTest = sqlMap.QueryForObject("GetCategory", key) as Category;
             Assert.AreEqual(key, categoryTest.Id);
             Assert.AreEqual("Film", categoryTest.Name);
             Assert.AreEqual(category.Guid, categoryTest.Guid);
@@ -158,11 +158,11 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         [Test]
         public void TestInsertIdentityViaInsertQuery()
         {
-            var category = new Category();
+            Category category = new Category();
             category.Name = "toto";
             category.Guid = Guid.NewGuid();
 
-            var key = (int) sqlMap.Insert("InsertCategory", category);
+            int key = (int)sqlMap.Insert("InsertCategory", category);
             Assert.AreEqual(1, key);
         }
 
@@ -173,11 +173,11 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         [Test]
         public void TestInsertViaInsertStatement()
         {
-            var category = new Category();
+            Category category = new Category();
             category.Name = "toto";
             category.Guid = Guid.NewGuid();
 
-            var key = (int) sqlMap.Insert("InsertCategoryViaInsertStatement", category);
+            int key = (int)sqlMap.Insert("InsertCategoryViaInsertStatement", category);
             Assert.AreEqual(1, key);
         }
 
@@ -187,7 +187,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         [Test]
         public void TestSelect()
         {
-            var order = (Order) sqlMap.QueryForObject("GetOrderWithAccountViaSP", 1);
+            Order order = (Order)sqlMap.QueryForObject("GetOrderWithAccountViaSP", 1);
             AssertOrder1(order);
             AssertAccount1(order.Account);
         }
@@ -198,11 +198,11 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
         [Test]
         public void TestUpdateCategoryWithExtendParameterMap()
         {
-            var category = new Category();
+            Category category = new Category();
             category.Name = "Cat";
             category.Guid = Guid.NewGuid();
 
-            var key = (int) sqlMap.Insert("InsertCategoryViaParameterMap", category);
+            int key = (int)sqlMap.Insert("InsertCategoryViaParameterMap", category);
             category.Id = key;
 
             category.Name = "Dog";
