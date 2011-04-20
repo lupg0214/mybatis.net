@@ -2,7 +2,7 @@
 <project name="iBATIS.NET reference" default="refDoc" >
 
 	<property name="project.dao.version" value="1.9.1" unless="${property::exists('project.dao.version')}" />
-	<property name="project.sqlMap.version" value="1.6.1" unless="${property::exists('project.sqlMap.version')}" />
+	<property name="project.sqlMap.version" value="1.6.3" unless="${property::exists('project.sqlMap.version')}" />
 
 	<!-- properties for docbook, xsltproc and fop libraries and executables -->
         <include buildfile="doc.build.include.windows" />
