@@ -26,11 +26,11 @@
 
 using System;
 using System.Xml.Serialization;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Handlers;
-using Apache.Ibatis.DataMapper.Scope;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Handlers;
+using MyBatis.DataMapper.Scope;
+using MyBatis.Common.Utilities.Objects.Members;
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements
+namespace MyBatis.DataMapper.Model.Sql.Dynamic.Elements
 {
 	/// <summary>
 	/// Represent an isEmpty sql tag element.

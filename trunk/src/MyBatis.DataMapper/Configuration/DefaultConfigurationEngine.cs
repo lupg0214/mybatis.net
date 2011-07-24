@@ -27,16 +27,17 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.Model;
-using Apache.Ibatis.DataMapper.Configuration.Module;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Model;
+using MyBatis.DataMapper.Configuration.Module;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Resources;
 
-namespace Apache.Ibatis.DataMapper.Configuration
+namespace MyBatis.DataMapper.Configuration
 {
     /// <summary>
     /// The default <see cref="IConfigurationEngine"/> implementation.

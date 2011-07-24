@@ -25,9 +25,9 @@
 #endregion
 
 using System.Runtime.CompilerServices;
-using Apache.Ibatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Model.Cache;
 
-namespace Apache.Ibatis.DataMapper.Model.Cache.Decorators
+namespace MyBatis.DataMapper.Model.Cache.Decorators
 {
     /// <summary>
     /// Cache decorator specifying that each cache method of the delegate cache can only 

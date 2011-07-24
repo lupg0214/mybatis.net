@@ -27,12 +27,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Scope;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements.PropertyStrategy
+namespace MyBatis.DataMapper.MappedStatements.PropertyStrategy
 {
 	/// <summary>
 	/// <see cref="IPropertyStrategy"/> implementation when a 'select' attribute exists

@@ -24,9 +24,9 @@
 #endregion
 
 using System;
-using Apache.Ibatis.Common.Resources;
+using MyBatis.Common.Resources;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config
 {
     /// <summary>
     /// <see cref="IConfigurationInterpreter"/> is reponsible for translating the DataMapper configuration 

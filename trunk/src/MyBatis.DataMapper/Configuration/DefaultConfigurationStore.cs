@@ -28,10 +28,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Data;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Data;
 
-namespace Apache.Ibatis.DataMapper.Configuration
+namespace MyBatis.DataMapper.Configuration
 {
     /// <summary>
 	/// This implementation of <see cref="IConfigurationStore"/>

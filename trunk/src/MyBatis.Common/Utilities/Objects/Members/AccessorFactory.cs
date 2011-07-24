@@ -23,7 +23,7 @@
  ********************************************************************************/
 #endregion
 
-namespace Apache.Ibatis.Common.Utilities.Objects.Members
+namespace MyBatis.Common.Utilities.Objects.Members
 {
     /// <summary>
     /// Accessor factory

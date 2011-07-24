@@ -26,10 +26,10 @@
 using System;
 using System.IO;
 
-namespace Apache.Ibatis.Common.Resources
+namespace MyBatis.Common.Resources
 {
     /// <summary>
-    /// Convenience base class for <see cref="Apache.Ibatis.Common.Resources.IResource"/>
+    /// Convenience base class for <see cref="IResource"/>
     /// implementations, pre-implementing typical behavior.
     /// </summary>
     public abstract class AbstractResource : IResource
@@ -159,7 +159,7 @@ namespace Apache.Ibatis.Common.Resources
         /// This implementation returns the
         /// <see cref="Description"/> of this resource.
         /// </summary>
-        /// <seealso cref="Apache.Ibatis.Common.Resources.IResource.Description"/>
+        /// <seealso cref="IResource.Description"/>
         public override string ToString()
         {
             return Description;

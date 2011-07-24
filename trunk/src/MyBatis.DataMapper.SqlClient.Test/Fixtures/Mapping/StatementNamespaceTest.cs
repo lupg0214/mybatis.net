@@ -1,8 +1,8 @@
 using System;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping
 {
     /// <summary>
     /// To test statement namespaces,

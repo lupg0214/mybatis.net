@@ -26,9 +26,9 @@
 
 using System.Data;
 using System;
-using Apache.Ibatis.DataMapper.Session.Transaction;
+using MyBatis.DataMapper.Session.Transaction;
 
-namespace Apache.Ibatis.DataMapper.Session
+namespace MyBatis.DataMapper.Session
 {
     /// <summary>
     /// The DataMapper Session contract

@@ -24,7 +24,7 @@
 #endregion
 
 
-namespace Apache.Ibatis.DataMapper.Session.Stores
+namespace MyBatis.DataMapper.Session.Stores
 {
 	/// <summary>
 	/// Build a session container for a Windows or Web context.

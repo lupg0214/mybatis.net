@@ -25,9 +25,9 @@
 
 using System;
 using System.Reflection;
-using Apache.Ibatis.DataMapper.Scope;
+using MyBatis.DataMapper.Scope;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements.PostSelectStrategy
+namespace MyBatis.DataMapper.MappedStatements.PostSelectStrategy
 {
     /// <summary>
     /// <see cref="IPostSelectStrategy"/> implementation to exceute a query generic list.

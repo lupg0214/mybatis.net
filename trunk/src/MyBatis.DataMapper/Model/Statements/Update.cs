@@ -27,14 +27,13 @@
 using System;
 using System.Data;
 using System.Xml.Serialization;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.Cache;
 using System.Diagnostics;
-using Apache.Ibatis.DataMapper.Model.Sql.External;
+using MyBatis.DataMapper.Model.Sql.External;
 
-namespace Apache.Ibatis.DataMapper.Model.Statements
+namespace MyBatis.DataMapper.Model.Statements
 {
 	/// <summary>
 	/// Summary description for Update.

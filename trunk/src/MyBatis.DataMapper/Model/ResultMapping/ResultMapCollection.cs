@@ -26,7 +26,7 @@
 
 using System.Collections.Generic;
 
-namespace Apache.Ibatis.DataMapper.Model.ResultMapping
+namespace MyBatis.DataMapper.Model.ResultMapping
 {
     /// <summary>
     /// Collection of <see cref="IResultMap"/>

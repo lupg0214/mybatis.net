@@ -1,12 +1,12 @@
 using System;
 using System.Data;
 using System.Diagnostics;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.Session.Transaction;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper.Session;
+using MyBatis.DataMapper.Session.Transaction;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping.Perf
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping.Perf
 {
     [TestFixture]
     [Category("Performance")]

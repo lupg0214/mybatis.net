@@ -1,13 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Specialized;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
 
-using System.Collections.Generic;
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping.MSSQL
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping.MSSQL
 {
     /// <summary>
     /// Summary description for ProcedureTest.

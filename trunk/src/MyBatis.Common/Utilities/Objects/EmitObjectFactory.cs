@@ -28,7 +28,7 @@ using System.Collections;
 using System.Collections.Specialized;
 using System.Text;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
 	/// <summary>
     /// A <see cref="IObjectFactory"/> implementation that can create objects via IL code

@@ -25,11 +25,11 @@
 
 using System;
 using System.Data;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.TypeHandlers;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements.ArgumentStrategy
+namespace MyBatis.DataMapper.MappedStatements.ArgumentStrategy
 {
 	/// <summary>
 	/// <see cref="IArgumentStrategy"/> implementation when no 'select' or

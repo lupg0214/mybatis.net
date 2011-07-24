@@ -1,7 +1,8 @@
 
-using Apache.Ibatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper;
+using MyBatis.DataMapper.MappedStatements;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain
+namespace MyBatis.DataMapper.SqlClient.Test.Domain
 {
     /// <summary>
     /// Sample implemantation of <see cref="ISqlSource"/>

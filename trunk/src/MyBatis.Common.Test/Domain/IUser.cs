@@ -1,6 +1,6 @@
 
 
-namespace Apache.Ibatis.Common.Test.Domain
+namespace MyBatis.Common.Test.Domain
 {
     public interface IUser : IBaseDomain
     {

@@ -26,9 +26,10 @@
 using System;
 using System.Globalization;
 using System.IO;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
-namespace Apache.Ibatis.Common.Resources
+namespace MyBatis.Common.Resources
 {
     /// <summary>
     /// A <see cref="System.IO.File"/> backed resource.

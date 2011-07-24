@@ -2,15 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Model.Sql.External;
+using MyBatis.DataMapper;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Model.Sql.External;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Logging;
 using NVelocity;
 using NVelocity.App;
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain
+#pragma warning disable 1570
+namespace MyBatis.DataMapper.SqlClient.Test.Domain
 {
     /// <summary>
     /// NVelocity implemantation of <see cref="ISqlSource"/>
@@ -43,7 +45,9 @@ namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain
         /// <param name="parameterObject">The parameter object.</param>
         /// <returns></returns>
         /// <remarks>
+
         /// Paremeters should be typeof IDictionary<string, object>
+
         /// </remarks>
         public string GetSql(IMappedStatement mappedStatement, object parameterObject)
         {
@@ -91,4 +95,5 @@ namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain
 
         #endregion
     }
+#pragma warning restore 1570
 }

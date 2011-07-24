@@ -26,9 +26,9 @@
 using System;
 using System.Data;
 
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
 
-namespace Apache.Ibatis.DataMapper.TypeHandlers.Nullables
+namespace MyBatis.DataMapper.TypeHandlers.Nullables
 {
     /// <summary>
     /// TypeHandler for Nullable double Type

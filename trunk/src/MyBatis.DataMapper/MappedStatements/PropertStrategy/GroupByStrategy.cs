@@ -26,12 +26,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.MappedStatements.PropertyStrategy;
-using Apache.Ibatis.DataMapper.Scope;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.MappedStatements.PropertyStrategy;
+using MyBatis.DataMapper.Scope;
+using MyBatis.Common.Utilities.Objects;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements.PropertStrategy
+namespace MyBatis.DataMapper.MappedStatements.PropertStrategy
 {
     /// <summary>
     /// <see cref="IPropertyStrategy"/> implementation when a 'resultMapping' attribute exists

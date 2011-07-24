@@ -27,17 +27,17 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.DataMapper.Data;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Model.Cache;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Data;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Session;
+using MyBatis.Common.Utilities;
 
-namespace Apache.Ibatis.DataMapper.Model
+namespace MyBatis.DataMapper.Model
 {
     /// <summary>
     /// The default implementation of <see cref="IModelStore"/> contract.

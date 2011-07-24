@@ -1,10 +1,8 @@
-
-using Apache.Ibatis.DataMapper.Model.Cache;
-using Apache.Ibatis.DataMapper.Model.Cache.Implementation;
+using MyBatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Model.Cache.Implementation;
 using NUnit.Framework;
 
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping.Cache
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping.Cache
 {
     [TestFixture]
     public class LruCacheTest

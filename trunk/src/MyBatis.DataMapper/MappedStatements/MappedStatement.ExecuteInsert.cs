@@ -24,12 +24,12 @@
 #endregion
 
 using System.Data;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.Session;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.Common.Utilities.Objects;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements
+namespace MyBatis.DataMapper.MappedStatements
 {
     public partial class MappedStatement
     {

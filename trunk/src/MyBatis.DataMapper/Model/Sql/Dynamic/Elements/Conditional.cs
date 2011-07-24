@@ -28,11 +28,11 @@
 using System;
 using System.Xml.Serialization;
 
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Handlers;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Handlers;
 #endregion
 
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements
+namespace MyBatis.DataMapper.Model.Sql.Dynamic.Elements
 {
 	/// <summary>
 	/// Summary description for Conditional.

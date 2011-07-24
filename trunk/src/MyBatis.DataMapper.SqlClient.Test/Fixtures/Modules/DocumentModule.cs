@@ -1,7 +1,7 @@
-using Apache.Ibatis.DataMapper.Configuration.Module;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper.Configuration.Module;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Modules
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Modules
 {
     /// <summary>
     /// This module will register the resultMaps under the specified namespace Document

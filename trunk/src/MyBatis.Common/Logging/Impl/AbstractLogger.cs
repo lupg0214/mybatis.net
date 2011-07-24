@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Logging.Impl
+namespace MyBatis.Common.Logging.Impl
 {
 	/// <summary>
 	/// Base class that implements the ILog interface.

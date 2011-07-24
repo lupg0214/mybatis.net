@@ -26,7 +26,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
 	/// <summary>
 	/// A factory that can create objects 

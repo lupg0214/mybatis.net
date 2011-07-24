@@ -23,10 +23,10 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
 
-namespace Apache.Ibatis.DataMapper.DataExchange
+namespace MyBatis.DataMapper.DataExchange
 {
 	/// <summary>
 	/// Interface for exchanging data between a parameter map/result map and the related objects

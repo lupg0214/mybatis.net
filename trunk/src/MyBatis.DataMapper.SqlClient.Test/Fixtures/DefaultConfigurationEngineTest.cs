@@ -1,17 +1,15 @@
-using System;
-using System.Collections;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.DataMapper.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml;
-using Apache.Ibatis.DataMapper.Configuration.Module;
-using Apache.Ibatis.DataMapper.Session.Stores;
+using MyBatis.DataMapper;
+using MyBatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml;
+using MyBatis.DataMapper.Configuration.Module;
+using MyBatis.DataMapper.Session.Stores;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Resources;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
-
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
 using System.Collections.Generic;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
 {
     [TestFixture] 
     public class DefaultConfigurationEngineTest

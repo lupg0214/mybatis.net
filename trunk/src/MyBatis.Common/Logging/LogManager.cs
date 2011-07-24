@@ -26,9 +26,9 @@
 
 using System;
 using System.Configuration;
-using Apache.Ibatis.Common.Logging.Impl;
+using MyBatis.Common.Logging.Impl;
 
-namespace Apache.Ibatis.Common.Logging
+namespace MyBatis.Common.Logging
 {
 	/// <summary>
 	/// Uses the specified <see cref="ILoggerFactoryAdapter" /> to create <see cref="ILog" /> instances

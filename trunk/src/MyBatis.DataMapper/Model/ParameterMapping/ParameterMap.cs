@@ -31,14 +31,15 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Reflection;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Logging;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.ParameterMapping
+namespace MyBatis.DataMapper.Model.ParameterMapping
 {
 	/// <summary>
 	/// Summary description for ParameterMap.

@@ -30,13 +30,13 @@ using System;
 using System.Data;
 using System.Reflection;
 using System.Xml.Serialization;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Utilities;
 using System.Diagnostics;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Utilities;
 
 #endregion
 
-namespace Apache.Ibatis.Common.Data
+namespace MyBatis.Common.Data
 {
     /// <summary>
     /// Information about a data provider.

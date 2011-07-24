@@ -25,9 +25,9 @@
 
 using System;
 using System.Data;
-using Apache.Ibatis.DataMapper.Scope;
+using MyBatis.DataMapper.Scope;
 
-namespace Apache.Ibatis.DataMapper.Data
+namespace MyBatis.DataMapper.Data
 {
     /// <summary>
     /// Decorate an <see cref="System.Data.IDbCommand"></see>

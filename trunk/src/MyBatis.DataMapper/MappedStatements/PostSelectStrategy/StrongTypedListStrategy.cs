@@ -25,10 +25,10 @@
 
 using System;
 using System.Collections;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Scope;
+using MyBatis.DataMapper.Scope;
+using MyBatis.Common.Utilities.Objects;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements.PostSelectStrategy
+namespace MyBatis.DataMapper.MappedStatements.PostSelectStrategy
 {
 	/// <summary>
 	/// <see cref="IPostSelectStrategy"/> implementation to exceute a query for 

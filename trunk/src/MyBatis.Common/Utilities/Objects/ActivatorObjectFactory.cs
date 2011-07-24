@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
 	/// <summary>
     /// A <see cref="IObjectFactory"/> implementation that can create objects 

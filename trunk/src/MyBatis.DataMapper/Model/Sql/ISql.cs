@@ -25,11 +25,11 @@
 #endregion
 
 using System.Data;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Session;
 
-namespace Apache.Ibatis.DataMapper.Model.Sql
+namespace MyBatis.DataMapper.Model.Sql
 {
 	/// <summary>
 	/// Summary description for ISql.

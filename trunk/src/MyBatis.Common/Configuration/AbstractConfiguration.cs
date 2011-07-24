@@ -25,9 +25,8 @@
 
 using System;
 using System.Collections.Generic;
-using Apache.Ibatis.Common.Utilities;
 
-namespace Apache.Ibatis.Common.Configuration
+namespace MyBatis.Common.Configuration
 {
 
     /// <summary>

@@ -1,10 +1,10 @@
 using System;
 using System.Threading;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.Common.Utilities;
+using MyBatis.Common.Resources;
+using MyBatis.Common.Utilities;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.Common.Test.Fixtures.ConfigWatcher
+namespace MyBatis.Common.Test.Fixtures.ConfigWatcher
 {
     /// <summary>
     /// Summary description for ConfigWatcherTest.

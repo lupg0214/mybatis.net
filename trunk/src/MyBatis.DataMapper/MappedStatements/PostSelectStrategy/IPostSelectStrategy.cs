@@ -24,10 +24,10 @@
 #endregion
 
 using System.Data;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Scope;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Scope;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements.PostSelectStrategy
+namespace MyBatis.DataMapper.MappedStatements.PostSelectStrategy
 {
 	/// <summary>
 	/// <see cref="IPostSelectStrategy"/> contract to excute a 'select' <see cref="ResultProperty"/>

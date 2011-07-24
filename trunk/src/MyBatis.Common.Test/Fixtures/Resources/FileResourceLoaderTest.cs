@@ -1,12 +1,12 @@
 
 using System;
 using System.IO;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Resources;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Resources;
 using NUnit.Framework;
 
 
-namespace Apache.Ibatis.Common.Test.Fixtures.Resources
+namespace MyBatis.Common.Test.Fixtures.Resources
 {
     [TestFixture]
     public class FileResourceLoaderTest
@@ -63,7 +63,7 @@ namespace Apache.Ibatis.Common.Test.Fixtures.Resources
         [Test]
         public void Test_resource_creation_with_absolute_path_and_slash()
         {
-            string file = "file:///" + Apache.Ibatis.Common.Resources.Resources.ApplicationBase + Path.DirectorySeparatorChar + "SqlMap_MSSQL_SqlClient.config";
+            string file = "file:///" + MyBatis.Common.Resources.Resources.ApplicationBase + Path.DirectorySeparatorChar + "SqlMap_MSSQL_SqlClient.config";
 
             CustomUriBuilder builder = new CustomUriBuilder(file, AppDomain.CurrentDomain.BaseDirectory);
 

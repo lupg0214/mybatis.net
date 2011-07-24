@@ -28,11 +28,10 @@ using System;
 using System.Collections;
 using System.Data;
 using System.IO;
+using MyBatis.Common.Data;
+using MyBatis.Common.Exceptions;
 
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.Common.Exceptions;
-
-namespace Apache.Ibatis.Common.Utilities
+namespace MyBatis.Common.Utilities
 {
 	/// <summary>
 	/// Description résumée de ScriptRunner.

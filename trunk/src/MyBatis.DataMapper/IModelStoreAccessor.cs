@@ -24,9 +24,9 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.DataMapper.Model;
+using MyBatis.DataMapper.Model;
 
-namespace Apache.Ibatis.DataMapper
+namespace MyBatis.DataMapper
 {
     /// <summary>
     /// Provides access to the underlying <see cref="IModelStore"/>

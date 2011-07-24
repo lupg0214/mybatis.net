@@ -1,15 +1,15 @@
 using System;
 using System.Collections;
-using System.Configuration;
 using System.IO;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.DataMapper.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper;
+using MyBatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml;
+using MyBatis.DataMapper.Session;
+using MyBatis.Common.Resources;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Modules
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Modules
 {
     [TestFixture]
     public class ResultMapModuleTest

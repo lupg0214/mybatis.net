@@ -26,9 +26,9 @@
 
 using System;
 
-using Apache.Ibatis.DataMapper.Model.Sql;
+using MyBatis.DataMapper.Model.Sql;
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements
+namespace MyBatis.DataMapper.Model.Sql.Dynamic.Elements
 {
 	/// <summary>
 	/// Summary description for DynamicParent.

@@ -1,18 +1,15 @@
-
-using System;
 using System.IO;
 using System.Xml;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.DataMapper.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml;
+using MyBatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml;
+using MyBatis.Common.Resources;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-
 // http://www.codeplex.com/Json
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain
+namespace MyBatis.DataMapper.SqlClient.Test.Domain
 {
 	public class JsonInterpreter : AbstractInterpreter 
 	{

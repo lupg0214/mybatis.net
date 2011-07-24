@@ -24,10 +24,11 @@
 #endregion
 
 using System;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Module
+namespace MyBatis.DataMapper.Configuration.Module
 {
     /// <summary>
     /// Handles fluent configuration for ResultMapping element

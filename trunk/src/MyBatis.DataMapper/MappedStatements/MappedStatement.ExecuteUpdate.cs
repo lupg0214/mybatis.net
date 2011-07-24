@@ -24,9 +24,9 @@
 #endregion
 
 using System.Data;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Session;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements
+namespace MyBatis.DataMapper.MappedStatements
 {
     public partial class MappedStatement
     {

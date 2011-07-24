@@ -25,10 +25,10 @@
 
 using System.Data;
 using System.Text;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Scope;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Scope;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements
+namespace MyBatis.DataMapper.MappedStatements
 {
 	/// <summary>
 	/// BaseStrategy.

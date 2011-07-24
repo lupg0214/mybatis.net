@@ -28,11 +28,11 @@ using System.IO;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Schema;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Exceptions;
-using CommonExceptions = Apache.Ibatis.Common.Exceptions;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml
 {
 
     /// <summary>

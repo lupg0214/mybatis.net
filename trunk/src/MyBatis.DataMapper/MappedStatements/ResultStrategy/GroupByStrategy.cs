@@ -25,10 +25,10 @@
 
 using System.Collections.Generic;
 using System.Data;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Scope;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Scope;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements.ResultStrategy
+namespace MyBatis.DataMapper.MappedStatements.ResultStrategy
 {
     /// <summary>
     /// <see cref="IResultStrategy"/> implementation when 

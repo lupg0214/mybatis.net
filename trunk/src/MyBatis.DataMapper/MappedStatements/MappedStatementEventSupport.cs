@@ -25,9 +25,9 @@
 
 using System;
 using System.ComponentModel;
-using Apache.Ibatis.DataMapper.Model.Events;
+using MyBatis.DataMapper.Model.Events;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements
+namespace MyBatis.DataMapper.MappedStatements
 {
     /// <summary>
     /// Base implementation for <see cref="IMappedStatementEvents"/>

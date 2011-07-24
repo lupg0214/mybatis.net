@@ -25,12 +25,12 @@
 
 using System;
 
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
+using MyBatis.DataMapper.MappedStatements;
 using System.Collections.Generic;
-using Apache.Ibatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
 
-namespace Apache.Ibatis.DataMapper.Proxy
+namespace MyBatis.DataMapper.Proxy
 {
     /// <summary>
     ///    /// Implementation of <see cref="ILazyFactory"/> to create proxy for an generic IList element.

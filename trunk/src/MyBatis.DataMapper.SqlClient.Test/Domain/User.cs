@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using System.Collections;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain
+namespace MyBatis.DataMapper.SqlClient.Test.Domain
 {
     public class ApplicationUser
     {

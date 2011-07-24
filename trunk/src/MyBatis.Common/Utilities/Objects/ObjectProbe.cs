@@ -27,11 +27,10 @@
 using System;
 using System.Collections;
 using System.Reflection;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Utilities.Objects.Members;
 
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
 	/// <summary>
 	/// Description résumée de ObjectProbe.

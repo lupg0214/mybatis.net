@@ -30,9 +30,9 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Text;
-using Apache.Ibatis.Common.Exceptions;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.Common.Utilities.Objects.Members
+namespace MyBatis.Common.Utilities.Objects.Members
 {
     /// <summary>
     /// A factory to build <see cref="SetAccessorFactory"/> for a type.

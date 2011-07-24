@@ -27,14 +27,14 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Globalization;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
 
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Contracts;
-
-namespace Apache.Ibatis.Common.Resources
+namespace MyBatis.Common.Resources
 {
     /// <summary>
-    /// An <see cref="Apache.Ibatis.Common.Resources.IResource"/> implementation for
+    /// An <see cref="IResource"/> implementation for
     /// resources stored within assemblies.
     /// </summary>
     public class AssemblyResource : AbstractResource

@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
+using MyBatis.DataMapper.Session;
 
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
-using Apache.Ibatis.DataMapper.Session;
-
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping
 {
     /// <summary>
     /// Summary description for ResultMapTest.

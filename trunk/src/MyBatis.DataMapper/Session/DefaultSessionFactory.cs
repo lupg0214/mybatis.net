@@ -26,11 +26,12 @@
 
 using System;
 using System.Data;
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.DataMapper.Session.Transaction;
+using MyBatis.DataMapper.Session.Transaction;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Data;
 
-namespace Apache.Ibatis.DataMapper.Session
+namespace MyBatis.DataMapper.Session
 {
     /// <summary>
     /// Default implementation of the <see cref="ISessionFactory"/> contract. 

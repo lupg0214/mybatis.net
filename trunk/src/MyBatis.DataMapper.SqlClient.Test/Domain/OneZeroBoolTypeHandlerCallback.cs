@@ -1,8 +1,8 @@
 using System;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.TypeHandlers;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain
+namespace MyBatis.DataMapper.SqlClient.Test.Domain
 {
 	/// <summary>
 	/// OneZeroBoolTypeHandlerCallback.

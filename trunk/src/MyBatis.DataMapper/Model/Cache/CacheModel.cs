@@ -29,17 +29,18 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Logging.Impl;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Model.Cache.Decorators;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Model.Cache.Decorators;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Logging.Impl;
+using MyBatis.Common.Utilities;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Cache
+namespace MyBatis.DataMapper.Model.Cache
 {
 
     /// <summary>

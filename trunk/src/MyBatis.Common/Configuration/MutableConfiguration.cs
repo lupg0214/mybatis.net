@@ -27,9 +27,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
-namespace Apache.Ibatis.Common.Configuration
+namespace MyBatis.Common.Configuration
 {
     /// <summary>
     /// 

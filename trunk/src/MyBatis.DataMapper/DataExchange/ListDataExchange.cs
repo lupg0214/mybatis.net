@@ -23,11 +23,11 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.Common.Utilities.Objects;
 
-namespace Apache.Ibatis.DataMapper.DataExchange
+namespace MyBatis.DataMapper.DataExchange
 {
 	/// <summary>
 	/// IDataExchange implementation for IList objects

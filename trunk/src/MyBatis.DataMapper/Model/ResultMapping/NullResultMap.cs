@@ -24,11 +24,11 @@
 #endregion
 
 using System;
-using Apache.Ibatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.DataExchange;
 using System.Collections.Generic;
-using Apache.Ibatis.DataMapper.Model.Events;
+using MyBatis.DataMapper.Model.Events;
 
-namespace Apache.Ibatis.DataMapper.Model.ResultMapping
+namespace MyBatis.DataMapper.Model.ResultMapping
 {
     /// <summary>
     /// Represents a Null ResultMap

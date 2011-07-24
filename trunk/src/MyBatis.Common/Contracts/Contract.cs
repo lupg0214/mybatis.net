@@ -25,8 +25,9 @@
 #endregion
 
 using System;
+using MyBatis.Common.Contracts.Constraints;
 
-namespace Apache.Ibatis.Common.Contracts
+namespace MyBatis.Common.Contracts
 {
     public delegate void ThrowException(string message);
     public delegate bool IsSatisfied();

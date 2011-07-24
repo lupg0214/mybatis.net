@@ -1,11 +1,11 @@
 using System;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.DataMapper.Model.Cache;
-using Apache.Ibatis.DataMapper.Model.Cache.Implementation;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Model.Cache.Implementation;
+using MyBatis.Common.Utilities;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping.Cache
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping.Cache
 {
     /// <summary>
     /// Summary description for CacheKeyTest.

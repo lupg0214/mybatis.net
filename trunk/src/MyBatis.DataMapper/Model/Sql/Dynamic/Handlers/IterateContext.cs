@@ -28,10 +28,10 @@
 using System;
 using System.Collections;
 
-using Apache.Ibatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Exceptions;
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Handlers
+namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
 {
 	/// <summary>
 	/// Summary description for IterateContext.

@@ -24,7 +24,7 @@
 #endregion
 
 
-namespace Apache.Ibatis.Common.Utilities.Objects.Members
+namespace MyBatis.Common.Utilities.Objects.Members
 {
     /// <summary>
     /// The <see cref="IGetAccessor"/> interface defines a field/property get accessor.

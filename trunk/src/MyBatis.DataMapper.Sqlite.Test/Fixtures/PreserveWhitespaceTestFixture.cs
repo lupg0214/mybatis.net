@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Specialized;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Logging.Impl;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Logging.Impl;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.DataMapper.Sqlite.Test.Fixtures
+namespace MyBatis.DataMapper.Sqlite.Test.Fixtures
 {
     [TestFixture]
     public class PreserveWhitespaceTestFixture : BaseTest

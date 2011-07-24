@@ -1,17 +1,16 @@
 using System;
 using System.Xml;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.DataMapper.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Data;
+using MyBatis.Common.Resources;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
 
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
 {
     /// <summary>
     /// Description résumée de ConfigureTest.

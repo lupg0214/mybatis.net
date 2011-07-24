@@ -25,9 +25,9 @@
 #endregion
 
 using System.Data;
-using Apache.Ibatis.Common.Data;
+using MyBatis.Common.Data;
 
-namespace Apache.Ibatis.DataMapper.Session
+namespace MyBatis.DataMapper.Session
 {
     /// <summary>
     /// A factory for <c>ISession</c> instances.

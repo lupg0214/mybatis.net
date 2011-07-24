@@ -28,11 +28,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Apache.Ibatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.DataExchange;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.ResultMapping
+namespace MyBatis.DataMapper.Model.ResultMapping
 {
     /// <summary>
     /// This is a grouping of ResultMapping objects used to map results back to objects

@@ -26,7 +26,7 @@
 using System;
 using System.Reflection;
 
-namespace Apache.Ibatis.Common.Utilities.Objects.Members
+namespace MyBatis.Common.Utilities.Objects.Members
 {
     /// <summary>
     /// The <see cref="ReflectionPropertySetAccessor"/> class provides an reflection set access   

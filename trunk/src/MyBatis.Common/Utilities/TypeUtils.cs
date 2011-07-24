@@ -24,11 +24,10 @@
 #endregion
 
 using System;
-
 using System.Collections.Generic;
-using Apache.Ibatis.Common.Utilities.TypesResolver;
+using MyBatis.Common.Utilities.TypesResolver;
 
-namespace Apache.Ibatis.Common.Utilities
+namespace MyBatis.Common.Utilities
 {
     /// <summary>
     ///  Helper methods with regard to type.

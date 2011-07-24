@@ -24,7 +24,7 @@
  ********************************************************************************/
 #endregion
 
-namespace Apache.Ibatis.Common.Contracts
+namespace MyBatis.Common.Contracts.Constraints
 {
     /// <summary>
     /// AndConstraint succeeds only if both members succeed. 

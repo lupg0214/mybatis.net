@@ -29,10 +29,10 @@
 using System;
 using System.Data;
 
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
 #endregion 
 
-namespace Apache.Ibatis.DataMapper.TypeHandlers
+namespace MyBatis.DataMapper.TypeHandlers
 {
     /// <summary>
     /// TypeHandler for AnsiString dbType

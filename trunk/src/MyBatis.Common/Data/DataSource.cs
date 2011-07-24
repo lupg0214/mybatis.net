@@ -27,12 +27,13 @@
 #region Using
 
 using System;
-using Apache.Ibatis.Common.Contracts;
 using System.Diagnostics;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
 #endregion
 
-namespace Apache.Ibatis.Common.Data
+namespace MyBatis.Common.Data
 {
 	/// <summary>
 	/// Information about a data source.

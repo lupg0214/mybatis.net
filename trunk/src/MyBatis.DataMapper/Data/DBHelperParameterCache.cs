@@ -27,12 +27,12 @@
 using System;
 using System.Data;
 using System.Reflection;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.Common.Data;
+using MyBatis.DataMapper.Session;
 using System.Collections.Generic;
+using MyBatis.Common.Data;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.DataMapper.Data
+namespace MyBatis.DataMapper.Data
 {
 	/// <summary>
 	/// DBHelperParameterCache provides functions to leverage a 

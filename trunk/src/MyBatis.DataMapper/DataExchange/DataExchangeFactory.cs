@@ -25,11 +25,11 @@
 
 using System;
 using System.Collections;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
 
-namespace Apache.Ibatis.DataMapper.DataExchange
+namespace MyBatis.DataMapper.DataExchange
 {
 	/// <summary>
 	/// Factory for DataExchange objects

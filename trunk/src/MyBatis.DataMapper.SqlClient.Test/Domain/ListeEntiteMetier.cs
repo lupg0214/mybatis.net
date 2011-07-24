@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain
+namespace MyBatis.DataMapper.SqlClient.Test.Domain
 {
     [Serializable]
     public class ListeEntiteMetier<T> : List<T>

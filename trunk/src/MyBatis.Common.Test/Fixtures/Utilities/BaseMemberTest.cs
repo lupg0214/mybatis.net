@@ -1,11 +1,11 @@
 using System;
 using System.Reflection;
-using Apache.Ibatis.Common.Test.Domain;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
+using MyBatis.Common.Test.Domain;
+using MyBatis.Common.Utilities;
+using MyBatis.Common.Utilities.Objects.Members;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.Common.Test.Fixtures.Utilities
+namespace MyBatis.Common.Test.Fixtures.Utilities
 {
     	/// <summary>
 	/// Summary description for FieldAccessorTest.

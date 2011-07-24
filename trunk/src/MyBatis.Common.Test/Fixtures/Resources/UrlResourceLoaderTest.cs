@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using Apache.Ibatis.Common.Resources;
+using MyBatis.Common.Resources;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.Common.Test.Fixtures.Resources
+namespace MyBatis.Common.Test.Fixtures.Resources
 {
     [TestFixture]
     public class UrlResourceLoaderTest
@@ -41,7 +41,7 @@ namespace Apache.Ibatis.Common.Test.Fixtures.Resources
         }
 
         [Test]
-        [ExpectedException(typeof(Apache.Ibatis.Common.Exceptions.ResourceException))]
+        [ExpectedException(typeof(MyBatis.Common.Exceptions.ResourceException))]
         public void Url_should_raise_exception_FileNotFoundException_on_FileInfo_property()
         {
             string uri = "http://www.apache.org/";

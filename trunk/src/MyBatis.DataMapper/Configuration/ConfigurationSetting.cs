@@ -23,14 +23,13 @@
  ********************************************************************************/
 #endregion
 
-
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.Common.Data;
+using MyBatis.DataMapper.Session;
 using System.Collections.Generic;
+using MyBatis.Common.Data;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
 
-namespace Apache.Ibatis.DataMapper.Configuration
+namespace MyBatis.DataMapper.Configuration
 {
     /// <summary>
     /// The <see cref="ConfigurationSetting"/> class allows the user to set by code some

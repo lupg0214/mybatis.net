@@ -25,11 +25,11 @@
 #endregion
 
 using System;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.Common.Configuration;
 
 
-namespace Apache.Ibatis.DataMapper.Configuration
+namespace MyBatis.DataMapper.Configuration
 {
     public partial class DefaultModelBuilder
     {

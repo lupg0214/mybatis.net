@@ -26,7 +26,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Logging
+namespace MyBatis.Common.Logging
 {
 
 	/// <summary>

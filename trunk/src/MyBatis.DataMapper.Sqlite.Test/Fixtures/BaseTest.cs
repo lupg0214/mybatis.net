@@ -1,14 +1,15 @@
 ﻿using System.Collections.Specialized;
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Logging.Impl;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.DataMapper.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper;
+using MyBatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml;
+using MyBatis.DataMapper.Session;
+using MyBatis.Common.Data;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Logging.Impl;
+using MyBatis.Common.Utilities;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.DataMapper.Sqlite.Test.Fixtures
+namespace MyBatis.DataMapper.Sqlite.Test.Fixtures
 {
     [TestFixture]
     public abstract class BaseTest : ScriptBase

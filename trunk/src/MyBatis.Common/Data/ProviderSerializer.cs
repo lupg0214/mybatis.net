@@ -24,10 +24,12 @@
 #endregion
 
 #region Using
-using Apache.Ibatis.Common.Configuration;
+
+using MyBatis.Common.Configuration;
+
 #endregion 
 
-namespace Apache.Ibatis.Common.Data
+namespace MyBatis.Common.Data
 {
     public sealed class ProviderSerializer
     {

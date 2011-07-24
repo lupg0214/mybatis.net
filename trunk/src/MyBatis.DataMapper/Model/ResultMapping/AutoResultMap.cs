@@ -29,15 +29,16 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.Model.Events;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Model.Events;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Utilities;
+using MyBatis.Common.Utilities.Objects;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.ResultMapping
+namespace MyBatis.DataMapper.Model.ResultMapping
 {
     /// <summary>
     /// Implementation of <see cref="IResultMap"/> interface for auto mapping

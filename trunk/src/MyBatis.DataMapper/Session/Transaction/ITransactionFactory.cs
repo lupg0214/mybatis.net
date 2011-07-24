@@ -25,7 +25,7 @@
 #endregion
 
 
-namespace Apache.Ibatis.DataMapper.Session.Transaction
+namespace MyBatis.DataMapper.Session.Transaction
 {
     /// <summary>
     /// A factory for <c>ITransaction</c> instances.

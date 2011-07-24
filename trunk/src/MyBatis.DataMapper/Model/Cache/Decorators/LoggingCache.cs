@@ -26,9 +26,9 @@
 
 using System;
 using System.Reflection;
-using Apache.Ibatis.Common.Logging;
+using MyBatis.Common.Logging;
 
-namespace Apache.Ibatis.DataMapper.Model.Cache.Decorators
+namespace MyBatis.DataMapper.Model.Cache.Decorators
 {
     /// <summary>
     /// A cache decorator that logs all cache access

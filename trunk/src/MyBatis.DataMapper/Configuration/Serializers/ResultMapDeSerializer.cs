@@ -28,18 +28,18 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Model.ResultMapping;
 using System.Data;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Utilities.Objects;
 
 #endregion 
 
-namespace Apache.Ibatis.DataMapper.Configuration.Serializers
+namespace MyBatis.DataMapper.Configuration.Serializers
 {
 	/// <summary>
 	/// Summary description for ResultMapDeSerializer.

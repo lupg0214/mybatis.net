@@ -24,9 +24,9 @@
 #endregion
 
 using System.Data;
-using Apache.Ibatis.Common.Data;
+using MyBatis.Common.Data;
 
-namespace Apache.Ibatis.DataMapper.Data
+namespace MyBatis.DataMapper.Data
 {
 	/// <summary>
 	/// For <see cref="IDataReader"/> which don't support M.A.R.S, wraps the current <see cref="IDataReader"/>

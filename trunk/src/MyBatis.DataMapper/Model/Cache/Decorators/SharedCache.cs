@@ -27,9 +27,9 @@
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Apache.Ibatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Exceptions;
 
-namespace Apache.Ibatis.DataMapper.Model.Cache.Decorators
+namespace MyBatis.DataMapper.Model.Cache.Decorators
 {
     /// <summary>
     /// Cache decorator that uses serialization to return different instances (copies) of 

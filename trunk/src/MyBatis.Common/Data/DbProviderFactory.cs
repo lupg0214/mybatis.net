@@ -24,11 +24,10 @@
 #endregion
 
 using System.Collections.Generic;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Exceptions;
-using CommonExceptions = Apache.Ibatis.Common.Exceptions;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.Common.Data
+namespace MyBatis.Common.Data
 {
     /// <summary>
     /// Create DbProviders based on configuration information from resource

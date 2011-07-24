@@ -26,12 +26,12 @@
 
 using System.Collections;
 
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Model;
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Model;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.Session;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements
+namespace MyBatis.DataMapper.MappedStatements
 {
 	/// <summary>
 	/// Summary description for UpdateMappedStatement.

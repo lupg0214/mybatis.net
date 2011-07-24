@@ -1,6 +1,4 @@
-using System;
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain
+namespace MyBatis.DataMapper.SqlClient.Test.Domain
 {
 	/// <summary>
 	/// Summary description for B.

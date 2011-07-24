@@ -27,7 +27,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Apache.Ibatis.Common.Configuration
+namespace MyBatis.Common.Configuration
 {
     /// <summary>
     /// <see cref="IConfiguration"/>  is a interface encapsulating a configuration node

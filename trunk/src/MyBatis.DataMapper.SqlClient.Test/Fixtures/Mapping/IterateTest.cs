@@ -1,9 +1,9 @@
 using System.Collections;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping
 {
     /// <summary>
     /// Summary description for DynamicTest.

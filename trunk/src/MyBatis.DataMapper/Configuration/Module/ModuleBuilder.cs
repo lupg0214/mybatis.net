@@ -23,12 +23,13 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Module
+namespace MyBatis.DataMapper.Configuration.Module
 {
     /// <summary>
     /// Used to incrementally build <see cref="IConfiguration"/> element.

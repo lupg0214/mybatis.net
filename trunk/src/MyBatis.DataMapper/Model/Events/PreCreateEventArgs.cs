@@ -25,9 +25,9 @@
 #endregion
 
 using System;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
 
-namespace Apache.Ibatis.DataMapper.Model.Events
+namespace MyBatis.DataMapper.Model.Events
 {
     /// <summary>
     /// Event lauchs before creating an instance of the <see cref="IResultMap"/> object.

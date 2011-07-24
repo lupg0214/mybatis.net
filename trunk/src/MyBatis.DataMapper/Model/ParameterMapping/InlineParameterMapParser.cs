@@ -29,16 +29,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic;
-using Apache.Ibatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Model.Sql.Dynamic;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Utilities;
 
 #endregion 
 
-namespace Apache.Ibatis.DataMapper.Model.ParameterMapping
+namespace MyBatis.DataMapper.Model.ParameterMapping
 {
 	/// <summary>
 	/// Builds Paremeter property for Inline Parameter Map.

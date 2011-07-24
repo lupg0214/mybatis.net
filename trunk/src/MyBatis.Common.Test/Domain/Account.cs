@@ -1,6 +1,6 @@
 using System;
 
-namespace Apache.Ibatis.Common.Test.Domain
+namespace MyBatis.Common.Test.Domain
 {
 	/// <summary>
 	/// Account.

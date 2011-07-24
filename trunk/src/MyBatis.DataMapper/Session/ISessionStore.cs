@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Apache.Ibatis.DataMapper.Session
+namespace MyBatis.DataMapper.Session
 {
 
 	/// <summary>

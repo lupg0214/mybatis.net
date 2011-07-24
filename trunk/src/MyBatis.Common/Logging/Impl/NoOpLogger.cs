@@ -26,7 +26,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Logging.Impl
+namespace MyBatis.Common.Logging.Impl
 {
 	/// <summary>
 	/// Silently ignores all log messages.

@@ -27,10 +27,10 @@ using System;
 using System.Collections;
 using System.Collections.Specialized;
 using System.Data;
-using Apache.Ibatis.Common;
-using Apache.Ibatis.DataMapper.Exceptions;
+using MyBatis.Common;
+using MyBatis.DataMapper.Exceptions;
 
-namespace Apache.Ibatis.DataMapper.Data
+namespace MyBatis.DataMapper.Data
 {
 	/// <summary>
 	/// An implementation of <see cref="IDataReader"/> that will copy the contents

@@ -2,7 +2,7 @@ using System;
 using System.Data;
 using System.Xml.Serialization;
 
-namespace Apache.Ibatis.Common.Data
+namespace MyBatis.Common.Data
 {
 	/// <summary>
 	/// Factory interface to create provider specific ado.net objects.

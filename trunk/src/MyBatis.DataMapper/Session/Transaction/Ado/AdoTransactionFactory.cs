@@ -26,7 +26,7 @@
 
 using System.Data;
 
-namespace Apache.Ibatis.DataMapper.Session.Transaction.Ado
+namespace MyBatis.DataMapper.Session.Transaction.Ado
 {
     /// <summary>
     /// Create <see cref="ITransaction" /> instance that will use ADO.NET <see cref="IDbTransaction"/>

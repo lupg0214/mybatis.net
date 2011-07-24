@@ -25,9 +25,9 @@
 
 using System.Collections.Generic;
 using System.Xml;
-using Apache.Ibatis.Common.Exceptions;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.Common.Configuration
+namespace MyBatis.Common.Configuration
 {
     /// <summary>
     ///  Various utility methods relating to attribute configuration reading.

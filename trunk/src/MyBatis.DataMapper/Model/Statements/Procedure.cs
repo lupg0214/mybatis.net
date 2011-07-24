@@ -28,19 +28,18 @@
 using System;
 using System.Data;
 using System.Xml.Serialization;
-
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Model.Sql.External;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Model.Sql.External;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.Cache;
 using System.Diagnostics;
+using MyBatis.Common.Utilities.Objects;
+
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Statements
+namespace MyBatis.DataMapper.Model.Statements
 {
 	/// <summary>
 	/// Represent a store Procedure.

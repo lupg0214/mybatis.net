@@ -27,11 +27,12 @@
 #region Imports
 using System;
 using System.Xml.Serialization;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Handlers;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Handlers;
+using MyBatis.Common.Utilities.Objects.Members;
+
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements
+namespace MyBatis.DataMapper.Model.Sql.Dynamic.Elements
 {
 	/// <summary>
 	/// Represent an isNotEmpty sql tag element.

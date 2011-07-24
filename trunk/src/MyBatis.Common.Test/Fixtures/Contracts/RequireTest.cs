@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Contracts.Exceptions;
-using Apache.Ibatis.Common.Test.Domain;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Exceptions;
+using MyBatis.Common.Test.Domain;
 using NUnit.Framework;
-using Is=Apache.Ibatis.Common.Contracts.Is;
+using Is = MyBatis.Common.Contracts.Constraints.Is;
 
-namespace Apache.Ibatis.Common.Test.Fixtures.Contracts
+namespace MyBatis.Common.Test.Fixtures.Contracts
 {
     [TestFixture]
     public class RequireTest

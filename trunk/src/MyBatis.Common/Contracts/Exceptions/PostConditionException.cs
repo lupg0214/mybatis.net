@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Contracts.Exceptions
+namespace MyBatis.Common.Contracts.Exceptions
 {
     /// <summary>
     /// Design By Contract Exception raised when a postcondition fails.

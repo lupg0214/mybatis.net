@@ -31,7 +31,7 @@ using System.Data;
 
 #endregion 
 
-namespace Apache.Ibatis.DataMapper.Model.Statements
+namespace MyBatis.DataMapper.Model.Statements
 {
 	/// <summary>
 	/// Construct the list of IDataParameters for the statement and prepare the sql. 

@@ -26,7 +26,7 @@
 
 using System;
 
-namespace Apache.Ibatis.DataMapper
+namespace MyBatis.DataMapper
 {
 	/// <summary>
 	/// Summary description for ExecuteEventArgs.

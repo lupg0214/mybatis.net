@@ -24,9 +24,9 @@
 #endregion
 
 using System;
-using Apache.Ibatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.MappedStatements;
 
-namespace Apache.Ibatis.DataMapper
+namespace MyBatis.DataMapper
 {
     /// <summary>
     /// Give access to the sql command text

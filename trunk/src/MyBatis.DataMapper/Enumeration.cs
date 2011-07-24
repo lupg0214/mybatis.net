@@ -26,7 +26,7 @@
 
 using System;
 
-namespace Apache.Ibatis.DataMapper
+namespace MyBatis.DataMapper
 {
 	/// <summary>
 	/// Indicate if the generated key by a selectKey statement

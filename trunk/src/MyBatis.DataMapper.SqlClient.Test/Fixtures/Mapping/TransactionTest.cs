@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.Session.Transaction;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Session;
+using MyBatis.DataMapper.Session.Transaction;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping
 {
     /// <summary>
     /// Summary description for TransactionTest.

@@ -23,7 +23,7 @@
  ********************************************************************************/
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Events
+namespace MyBatis.DataMapper.Model.Events
 {
     /// <summary>
     /// Base class for pre <see cref="BaseStatementEventArgs"/>

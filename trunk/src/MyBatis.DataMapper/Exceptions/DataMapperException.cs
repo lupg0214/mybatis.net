@@ -26,10 +26,9 @@
 
 using System;
 using System.Runtime.Serialization;
+using MyBatis.Common.Exceptions;
 
-using Apache.Ibatis.Common.Exceptions;
-
-namespace Apache.Ibatis.DataMapper.Exceptions
+namespace MyBatis.DataMapper.Exceptions
 {
 	/// <summary>
 	/// The DataMapperException is thrown when an error in the SqlMapper component occurs.

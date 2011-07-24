@@ -1,8 +1,8 @@
 using System;
-using Apache.Ibatis.Common.Test.Domain;
+using MyBatis.Common.Test.Domain;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.Common.Test.Fixtures.Utilities
+namespace MyBatis.Common.Test.Fixtures.Utilities
 {
 	/// <summary>
 	/// Summary description for FieldAccessorTest.

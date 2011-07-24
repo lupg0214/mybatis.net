@@ -1,13 +1,12 @@
 using System;
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.DataMapper.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Module;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration.Module;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.Common.Data;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
 
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Modules
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Modules
 {
 
     /// <summary>

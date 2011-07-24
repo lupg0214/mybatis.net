@@ -30,17 +30,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using Apache.Ibatis.DataMapper.Data;
-using Apache.Ibatis.DataMapper.Model;
-using Apache.Ibatis.DataMapper.Model.Cache;
-using Apache.Ibatis.DataMapper.Model.Events;
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Data;
+using MyBatis.DataMapper.Model;
+using MyBatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Model.Events;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Session;
 
 #endregion 
 
-namespace Apache.Ibatis.DataMapper.MappedStatements
+namespace MyBatis.DataMapper.MappedStatements
 {
 	/// <summary>
     /// Acts as a decorator arounf an <see cref="IMappedStatement"/> to add cache functionality

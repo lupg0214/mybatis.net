@@ -28,7 +28,7 @@ using System;
 using System.Globalization;
 using System.Text;
 
-namespace Apache.Ibatis.Common.Logging.Impl
+namespace MyBatis.Common.Logging.Impl
 {
 	/// <summary>
 	/// Sends log messages to <see cref="Console.Out" />.

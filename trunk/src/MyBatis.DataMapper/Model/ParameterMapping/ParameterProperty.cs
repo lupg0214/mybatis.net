@@ -31,17 +31,18 @@ using System.Collections;
 using System.Data;
 using System.Diagnostics;
 using System.Xml.Serialization;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Utilities;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.ParameterMapping
+namespace MyBatis.DataMapper.Model.ParameterMapping
 {
 	/// <summary>
 	/// Summary description for ParameterProperty.

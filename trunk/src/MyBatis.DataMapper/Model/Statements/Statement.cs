@@ -31,18 +31,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Model.Sql;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Model.Cache;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Model.Sql.External;
+using MyBatis.DataMapper.Model.Sql;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.Sql.External;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Utilities.Objects;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Statements
+namespace MyBatis.DataMapper.Model.Statements
 {
     /// <summary>
     /// Summary description for Statement.

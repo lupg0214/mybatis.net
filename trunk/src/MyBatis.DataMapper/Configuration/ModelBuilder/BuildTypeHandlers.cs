@@ -24,14 +24,14 @@
 #endregion
 
 using System;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Serializers;
-using Apache.Ibatis.DataMapper.TypeHandlers;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.DataMapper.Model.Alias;
+using MyBatis.DataMapper.Configuration.Serializers;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.Model.Alias;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Exceptions;
 
 
-namespace Apache.Ibatis.DataMapper.Configuration
+namespace MyBatis.DataMapper.Configuration
 {
     public partial class DefaultModelBuilder
     {

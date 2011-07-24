@@ -23,10 +23,10 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.Common.Configuration;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor
 {
     public partial class XmlMappingProcessor
     {

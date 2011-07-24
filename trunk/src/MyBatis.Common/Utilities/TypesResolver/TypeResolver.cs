@@ -31,18 +31,17 @@
 #region Using
 
 using System;
-
 using System.Collections.Generic;
 using System.Reflection;
-
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
 #endregion
 
-namespace Apache.Ibatis.Common.Utilities.TypesResolver
+namespace MyBatis.Common.Utilities.TypesResolver
 {
 	/// <summary>
 	/// Resolves a <see cref="System.Type"/> by name.

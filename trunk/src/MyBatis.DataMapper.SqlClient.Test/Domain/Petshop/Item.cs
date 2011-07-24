@@ -1,6 +1,6 @@
 
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Petshop
+namespace MyBatis.DataMapper.SqlClient.Test.Domain.Petshop
 {
     /// <summary>
     /// Summary description for Item.

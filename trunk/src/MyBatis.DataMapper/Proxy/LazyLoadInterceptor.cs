@@ -29,14 +29,14 @@
 using System;
 using System.Collections;
 using System.Reflection;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.MappedStatements;
 using Castle.Core.Interceptor;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Utilities.Objects.Members;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Proxy
+namespace MyBatis.DataMapper.Proxy
 {
 	/// <summary>
 	/// Default implementation of the interceptor reponsible of load the lazy element

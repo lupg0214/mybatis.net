@@ -26,14 +26,14 @@
 using System;
 using System.Reflection;
 using System.Xml;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor;
-using CommonExceptions = Apache.Ibatis.Common.Exceptions;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Resources;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml
 {
     /// <summary>
     /// <see cref="XmlConfigurationInterpreter"/> is reponsible for translating the DataMapper configuration 

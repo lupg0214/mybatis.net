@@ -25,12 +25,10 @@
 #endregion
 
 using System.Collections;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using System.Collections.Generic;
 using System;
 
-namespace Apache.Ibatis.Common.Utilities
+namespace MyBatis.Common.Utilities
 {
     /// <summary>
     /// Wraps an existing ICollection as read only, following the pattern of 

@@ -24,12 +24,13 @@
 #endregion
 
 using System.Collections.Generic;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.Model;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Model;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Serializers
+namespace MyBatis.DataMapper.Configuration.Serializers
 {
 	/// <summary>
 	/// Summary description for DeSerializerFactory.

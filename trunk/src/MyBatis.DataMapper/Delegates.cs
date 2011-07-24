@@ -28,7 +28,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-namespace Apache.Ibatis.DataMapper
+namespace MyBatis.DataMapper
 {
     
     /// <summary>

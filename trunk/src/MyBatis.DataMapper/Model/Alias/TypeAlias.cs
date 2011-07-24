@@ -25,11 +25,12 @@
 #endregion
 
 using System;
-using Apache.Ibatis.Common.Utilities;
 using System.Diagnostics;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Utilities;
 
-namespace Apache.Ibatis.DataMapper.Model.Alias
+namespace MyBatis.DataMapper.Model.Alias
 {
     /// <summary>
     /// Represent a type alias

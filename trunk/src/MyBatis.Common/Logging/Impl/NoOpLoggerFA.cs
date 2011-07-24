@@ -27,7 +27,7 @@
 using System;
 using System.Collections.Specialized;
 
-namespace Apache.Ibatis.Common.Logging.Impl
+namespace MyBatis.Common.Logging.Impl
 {
 	/// <summary>
 	/// Factory for creating "no operation" loggers that do nothing and whose Is*Enabled properties always 
