@@ -8,15 +8,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Solution-Items\providers.config = Solution-Items\providers.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apache.Ibatis.Common", "Apache.Ibatis.Common\Apache.Ibatis.Common.csproj", "{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBatis.Common", "MyBatis.Common\MyBatis.Common.csproj", "{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apache.Ibatis.Common.Test", "Apache.Ibatis.Common.Test\Apache.Ibatis.Common.Test.csproj", "{5961F3DE-CB5E-40FE-AE89-D00D6E453907}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBatis.Common.Test", "MyBatis.Common.Test\MyBatis.Common.Test.csproj", "{5961F3DE-CB5E-40FE-AE89-D00D6E453907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apache.Ibatis.DataMapper", "Apache.Ibatis.DataMapper\Apache.Ibatis.DataMapper.csproj", "{F3E45F39-3224-4EAD-B138-EB5CC0E32824}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBatis.DataMapper", "MyBatis.DataMapper\MyBatis.DataMapper.csproj", "{F3E45F39-3224-4EAD-B138-EB5CC0E32824}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apache.Ibatis.DataMapper.SqlClient.Test", "Apache.Ibatis.DataMapper.SqlClient.Test\Apache.Ibatis.DataMapper.SqlClient.Test.csproj", "{8A1F6390-1D7C-47CA-AE8D-818408DD54E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBatis.DataMapper.SqlClient.Test", "MyBatis.DataMapper.SqlClient.Test\MyBatis.DataMapper.SqlClient.Test.csproj", "{8A1F6390-1D7C-47CA-AE8D-818408DD54E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apache.Ibatis.DataMapper.Sqlite.Test", "Apache.Ibatis.DataMapper.Sqlite.Test\Apache.Ibatis.DataMapper.Sqlite.Test.csproj", "{885CB96C-3038-496D-8F37-0A76C767B52D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBatis.DataMapper.Sqlite.Test", "MyBatis.DataMapper.Sqlite.Test\MyBatis.DataMapper.Sqlite.Test.csproj", "{885CB96C-3038-496D-8F37-0A76C767B52D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
