@@ -1,8 +1,8 @@
 using System;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping.MSSQL
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping.MSSQL
 {
     /// <summary>
     /// Summary description for StatementTest.

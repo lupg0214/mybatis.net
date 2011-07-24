@@ -1,9 +1,9 @@
 using System.IO;
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.Common.Utilities;
+using MyBatis.Common.Data;
+using MyBatis.Common.Resources;
+using MyBatis.Common.Utilities;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
 {
     public abstract class ScriptBase
     {

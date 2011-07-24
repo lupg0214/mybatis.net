@@ -27,7 +27,7 @@ using System;
 using System.Reflection;
 using System.Reflection.Emit;
 
-namespace Apache.Ibatis.Common.Utilities.Objects.Members
+namespace MyBatis.Common.Utilities.Objects.Members
 {
     /// <summary>
     /// The <see cref="EmitPropertyGetAccessor"/> class provides an IL-based get access   

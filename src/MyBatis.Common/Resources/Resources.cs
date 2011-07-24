@@ -31,13 +31,14 @@ using System.IO;
 using System.Reflection;
 using System.Security.Permissions;
 using System.Xml;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Logging;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Logging;
 
 #endregion
 
-namespace Apache.Ibatis.Common.Resources
+namespace MyBatis.Common.Resources
 {
 	/// <summary>
 	/// A class to simplify access to resources.

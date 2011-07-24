@@ -24,11 +24,11 @@
 #endregion
 
 using System;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic;
-using Apache.Ibatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Model.Sql.Dynamic;
+using MyBatis.DataMapper.Model.Statements;
 
-namespace Apache.Ibatis.DataMapper.Model.ParameterMapping
+namespace MyBatis.DataMapper.Model.ParameterMapping
 {
     /// <summary>
     /// Inline Paremeter MapBuilder

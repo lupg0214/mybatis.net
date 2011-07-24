@@ -25,12 +25,12 @@
 #endregion
 
 using System;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.Configuration.Module;
-using Apache.Ibatis.DataMapper.Model;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Configuration.Module;
+using MyBatis.DataMapper.Model;
+using MyBatis.Common.Resources;
 
-namespace Apache.Ibatis.DataMapper.Configuration
+namespace MyBatis.DataMapper.Configuration
 {
 
     /// <summary>

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.DataMapper.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml;
-using Apache.Ibatis.DataMapper.Sqlite.Test.Domain;
+using MyBatis.DataMapper;
+using MyBatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Data;
+using MyBatis.DataMapper.Sqlite.Test.Domain;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.DataMapper.Sqlite.Test.Fixtures
+namespace MyBatis.DataMapper.Sqlite.Test.Fixtures
 {
     [TestFixture]
     public class CodeConfigurationInterpreterTestFixture : BaseTest

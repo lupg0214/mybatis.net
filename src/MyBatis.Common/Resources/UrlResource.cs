@@ -26,10 +26,11 @@
 using System;
 using System.IO;
 using System.Net;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.Common.Resources
+namespace MyBatis.Common.Resources
 {
 
     /// <summary>
@@ -40,7 +41,7 @@ namespace Apache.Ibatis.Common.Resources
     /// <example>
     /// <p>
     /// Some examples of the strings that can be used to initialize a new
-    /// instance of the <see cref="Apache.Ibatis.Common.Resources.UrlResource"/> class
+    /// instance of the <see cref="UrlResource"/> class
     /// include...
     /// <list type="bullet">
     /// <item>

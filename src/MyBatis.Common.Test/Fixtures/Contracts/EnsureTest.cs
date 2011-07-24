@@ -1,9 +1,9 @@
-﻿using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Contracts.Exceptions;
+﻿using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Exceptions;
 using NUnit.Framework;
-using Is=Apache.Ibatis.Common.Contracts.Is;
+using Is = MyBatis.Common.Contracts.Constraints.Is;
 
-namespace Apache.Ibatis.Common.Test.Fixtures.Contracts
+namespace MyBatis.Common.Test.Fixtures.Contracts
 {
     [TestFixture]
     public class EnsureTest

@@ -27,9 +27,9 @@
 using System.Collections;
 using System.IO;
 using System.Threading;
-using Apache.Ibatis.Common.Logging;
+using MyBatis.Common.Logging;
 
-namespace Apache.Ibatis.Common.Utilities
+namespace MyBatis.Common.Utilities
 {
 
 	/// <summary>

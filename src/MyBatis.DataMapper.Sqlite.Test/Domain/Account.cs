@@ -1,4 +1,4 @@
-namespace Apache.Ibatis.DataMapper.Sqlite.Test.Domain
+namespace MyBatis.DataMapper.Sqlite.Test.Domain
 {
     public class Account
     {

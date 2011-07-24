@@ -24,10 +24,10 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Elements;
+using MyBatis.Common.Utilities.Objects.Members;
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Handlers
+namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
 {
 	/// <summary>
 	/// Summary description for IsNotNullTagHandler.

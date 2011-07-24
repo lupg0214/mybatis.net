@@ -25,12 +25,11 @@
 #endregion
 
 using System;
+using System.Reflection;
 
-namespace Apache.Ibatis.Common.Utilities
+namespace MyBatis.Common.Utilities
 {
-	using System.Reflection;
-
-	/// <summary>
+    /// <summary>
 	/// Summary description for HashCodeProvider.
 	/// </summary>
 	public sealed class HashCodeProvider

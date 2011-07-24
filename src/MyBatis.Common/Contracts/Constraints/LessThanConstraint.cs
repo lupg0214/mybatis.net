@@ -26,7 +26,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Contracts
+namespace MyBatis.Common.Contracts.Constraints
 {
     /// <summary>
     /// Checks that an object is less than another

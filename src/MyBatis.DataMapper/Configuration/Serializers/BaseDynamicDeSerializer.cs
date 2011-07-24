@@ -27,16 +27,15 @@
 
 using System.Collections.Specialized;
 using System.Xml;
-using Apache.Ibatis.Common.Xml;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.Common.Configuration;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Elements;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Utilities.Objects.Members;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Configuration.Serializers
+namespace MyBatis.DataMapper.Configuration.Serializers
 {
     /// <summary>
     /// Summary description for DynamicDeSerializer.

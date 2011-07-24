@@ -26,7 +26,7 @@
 
 using System;
 
-namespace Apache.Ibatis.DataMapper.Model.Cache.Decorators
+namespace MyBatis.DataMapper.Model.Cache.Decorators
 {
     /// <summary>
     /// Cache decorator which clears the delegate cache on interval

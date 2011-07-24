@@ -26,7 +26,7 @@
 using System.Runtime.Remoting.Messaging;
 using System.Web;
 
-namespace Apache.Ibatis.DataMapper.Session.Stores
+namespace MyBatis.DataMapper.Session.Stores
 
 {
     /// <summary>

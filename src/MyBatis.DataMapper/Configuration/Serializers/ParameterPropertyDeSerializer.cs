@@ -27,16 +27,16 @@
 
 using System.Collections.Specialized;
 using System.Xml;
-using Apache.Ibatis.Common.Xml;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.DataExchange;
 using System;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.Common.Configuration;
+
 #endregion 
 
-namespace Apache.Ibatis.DataMapper.Configuration.Serializers
+namespace MyBatis.DataMapper.Configuration.Serializers
 {
 	/// <summary>
 	/// Summary description for ParameterPropertyDeSerializer.

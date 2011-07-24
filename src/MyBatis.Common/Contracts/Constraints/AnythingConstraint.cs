@@ -24,9 +24,7 @@
  ********************************************************************************/
 #endregion
 
-using System;
-
-namespace Apache.Ibatis.Common.Contracts
+namespace MyBatis.Common.Contracts.Constraints
 {
     /// <summary>
     /// A constraint that always returns <code>true</code>.

@@ -31,18 +31,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Model.Alias;
-using Apache.Ibatis.DataMapper.TypeHandlers.Nullables;
-using CommonExceptions = Apache.Ibatis.Common.Exceptions;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Model.Alias;
+using MyBatis.DataMapper.TypeHandlers.Nullables;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Utilities;
+using MyBatis.Common.Utilities.Objects;
 
 #endregion 
 
-namespace Apache.Ibatis.DataMapper.TypeHandlers
+namespace MyBatis.DataMapper.TypeHandlers
 {
 	/// <summary>
 	/// Not much of a suprise, this is a factory class for TypeHandler objects.

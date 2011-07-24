@@ -23,9 +23,9 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.Common.Configuration;
+using MyBatis.Common.Configuration;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Module
+namespace MyBatis.DataMapper.Configuration.Module
 {
     /// <summary>
     /// Represents a set of mapping code configuration and related functionality

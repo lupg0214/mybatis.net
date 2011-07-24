@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
 	/// <summary>
 	/// Create objects via Activator.CreateInstance

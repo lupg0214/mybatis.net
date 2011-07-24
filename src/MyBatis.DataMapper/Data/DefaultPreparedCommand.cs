@@ -28,17 +28,17 @@ using System.Collections.Specialized;
 using System.Data;
 using System.Reflection;
 using System.Text;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.Common.Data;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Session;
+using MyBatis.Common.Data;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Utilities.Objects;
 
-namespace Apache.Ibatis.DataMapper.Data
+namespace MyBatis.DataMapper.Data
 {
 	/// <summary>
 	/// Summary description for DefaultPreparedCommand.

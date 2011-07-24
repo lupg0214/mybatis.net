@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Petshop
+namespace MyBatis.DataMapper.SqlClient.Test.Domain.Petshop
 {
     /// <summary>
     /// Business entity used to model category

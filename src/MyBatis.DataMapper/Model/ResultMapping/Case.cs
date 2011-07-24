@@ -28,11 +28,12 @@
 
 using System;
 using System.Diagnostics;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.ResultMapping
+namespace MyBatis.DataMapper.Model.ResultMapping
 {
 	/// <summary>
 	/// Summary description for Case.

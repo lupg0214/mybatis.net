@@ -26,29 +26,29 @@
 
 using System.Reflection;
 using System.Collections.Generic;
+using MyBatis.DataMapper.Model.Alias;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Model;
+using MyBatis.DataMapper.Model.Cache.Implementation;
+using MyBatis.DataMapper.Session.Transaction;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Configuration.Serializers;
+using MyBatis.DataMapper.Session;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Session.Stores;
+using MyBatis.DataMapper.Session.Transaction.Ado;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Data;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
 
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.Model.Alias;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.Model;
-using Apache.Ibatis.DataMapper.Model.Cache.Implementation;
-using Apache.Ibatis.DataMapper.Session.Transaction;
-using Apache.Ibatis.DataMapper.TypeHandlers;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Configuration.Serializers;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Model.Cache;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.DataMapper.Session.Stores;
-using Apache.Ibatis.DataMapper.Session.Transaction.Ado;
-
-namespace Apache.Ibatis.DataMapper.Configuration
+namespace MyBatis.DataMapper.Configuration
 {
     public delegate void WaitResultPropertyResolution(ResultProperty property);
     public delegate void WaitDiscriminatorResolution(Discriminator discriminator);

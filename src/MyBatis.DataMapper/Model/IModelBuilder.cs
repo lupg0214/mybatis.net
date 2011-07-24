@@ -24,9 +24,9 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration;
 
-namespace Apache.Ibatis.DataMapper.Model
+namespace MyBatis.DataMapper.Model
 {
     /// <summary>
     /// The contract used by the <see cref="IConfigurationEngine"/> to build

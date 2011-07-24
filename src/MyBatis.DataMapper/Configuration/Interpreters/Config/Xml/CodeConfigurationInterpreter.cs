@@ -1,12 +1,13 @@
 using System;
 using System.Xml;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Data;
+using MyBatis.Common.Resources;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml
 {
     /// <summary>
     /// Allows most of the XML normally contained in SqlMapConfig.xml to be expressed in code. SqlMap items 
@@ -25,7 +26,7 @@ namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml
     ///    &lt;dataSource name="ibatisnet.sqlmap" connectionString="Data Source=ibatisnet.sqlite;Version=3;"/&gt;
     ///   &lt;/database&gt;  
     ///   &lt;alias&gt;
-    ///    &lt;typeAlias alias="Account" type="Apache.Ibatis.DataMapper.Sqlite.Test.Domain.Account, Apache.Ibatis.DataMapper.Sqlite.Test"/&gt;
+    ///    &lt;typeAlias alias="Account" type="Apache.Ibatis.DataMapper.Sqlite.Test.Domain.Account, MyBatis.DataMapper.Sqlite.Test"/&gt;
     ///   &lt;/alias&gt;  
     ///   &lt;sqlMaps&gt;
     ///    &lt;sqlMap uri="file://../../Maps/Account.xml"/&gt;
@@ -72,7 +73,7 @@ namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml
         /// <example>
         /// <code>
         /// &lt;alias&gt;
-        ///	 &lt;typeAlias alias="Account" type="Apache.Ibatis.DataMapper.Sqlite.Test.Domain.Account, Apache.Ibatis.DataMapper.Sqlite.Test"/&gt;
+        ///	 &lt;typeAlias alias="Account" type="Apache.Ibatis.DataMapper.Sqlite.Test.Domain.Account, MyBatis.DataMapper.Sqlite.Test"/&gt;
 	    /// &lt;/alias&gt;
         /// </code>
         /// </example>

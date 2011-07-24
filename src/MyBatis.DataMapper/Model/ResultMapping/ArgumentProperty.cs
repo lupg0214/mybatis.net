@@ -28,16 +28,16 @@
 
 using System;
 using System.Diagnostics;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.MappedStatements.ArgumentStrategy;
-using Apache.Ibatis.DataMapper.TypeHandlers;
-using CommonExceptions = Apache.Ibatis.Common.Exceptions;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.MappedStatements.ArgumentStrategy;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
 #endregion
 
 
-namespace Apache.Ibatis.DataMapper.Model.ResultMapping
+namespace MyBatis.DataMapper.Model.ResultMapping
 {
 	/// <summary>
 	/// Summary description for ArgumentProperty.

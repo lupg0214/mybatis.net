@@ -27,20 +27,20 @@
 
 using System;
 using System.Data;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.Model;
-using Apache.Ibatis.DataMapper.Model.Cache;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Model.Sql.External;
-using Apache.Ibatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Model;
+using MyBatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.Sql.External;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Utilities.Objects;
 
 #endregion 
 
-namespace Apache.Ibatis.DataMapper.Configuration.Serializers
+namespace MyBatis.DataMapper.Configuration.Serializers
 {
     /// <summary>
     /// Base class for StatementDeserializer

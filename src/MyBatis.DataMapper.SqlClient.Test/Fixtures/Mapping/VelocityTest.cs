@@ -1,14 +1,14 @@
 using System.Collections.Generic;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.DataMapper.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Modules;
+using MyBatis.DataMapper;
+using MyBatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml;
+using MyBatis.DataMapper.Session;
+using MyBatis.Common.Resources;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper.SqlClient.Test.Fixtures.Modules;
 using NUnit.Framework;
 
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping
 {
     [TestFixture]
     public class VelocityTest : ScriptBase

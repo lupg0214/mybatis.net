@@ -24,9 +24,9 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Exceptions;
 
-namespace Apache.Ibatis.DataMapper.Model.Cache
+namespace MyBatis.DataMapper.Model.Cache
 {
     /// <summary>
     /// Base Cache class implements a template method pattern for subclasses.

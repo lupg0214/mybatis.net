@@ -27,13 +27,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.Model;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Session;
+using MyBatis.DataMapper.Model;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
-namespace Apache.Ibatis.DataMapper
+namespace MyBatis.DataMapper
 {
     /// <summary>
     /// The default implementation of the <see cref="IDataMapper"/>  

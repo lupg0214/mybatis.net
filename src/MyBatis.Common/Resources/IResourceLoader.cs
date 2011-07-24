@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Resources
+namespace MyBatis.Common.Resources
 {
     /// <summary>
     /// Return an <see cref="Apache.Ibatis.Common.Utilities.Resources.IResource"/> handle for the

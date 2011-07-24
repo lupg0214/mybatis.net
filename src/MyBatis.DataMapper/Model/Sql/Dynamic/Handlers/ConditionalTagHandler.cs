@@ -27,14 +27,14 @@
 #region Imports
 using System;
 using System.Text;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements;
-using Apache.Ibatis.Common.Utilities.Objects;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Elements;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Handlers
+namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
 {
 	/// <summary>
 	/// Description résumée de ConditionalTagHandler.

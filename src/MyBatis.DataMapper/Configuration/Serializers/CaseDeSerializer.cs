@@ -23,12 +23,11 @@
  ********************************************************************************/
 #endregion
 
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.Common.Configuration;
 
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-
-namespace Apache.Ibatis.DataMapper.Configuration.Serializers
+namespace MyBatis.DataMapper.Configuration.Serializers
 {
 	/// <summary>
 	/// Summary description for CaseDeSerializer.

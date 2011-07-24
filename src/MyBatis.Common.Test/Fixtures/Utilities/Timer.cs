@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace Apache.Ibatis.Common.Test.Fixtures.Utilities
+namespace MyBatis.Common.Test.Fixtures.Utilities
 {
     public class Timer
     {

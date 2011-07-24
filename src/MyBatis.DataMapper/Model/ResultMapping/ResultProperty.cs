@@ -33,22 +33,23 @@ using System.Data;
 using System.Diagnostics;
 using System.Globalization;
 using System.Reflection;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.MappedStatements.ArgumentStrategy;
-using Apache.Ibatis.DataMapper.MappedStatements.PropertyStrategy;
-using Apache.Ibatis.DataMapper.Proxy;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.MappedStatements.ArgumentStrategy;
+using MyBatis.DataMapper.MappedStatements.PropertyStrategy;
+using MyBatis.DataMapper.Proxy;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Utilities;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.ResultMapping
+namespace MyBatis.DataMapper.Model.ResultMapping
 {
 	/// <summary>
 	/// Summary description for ResultProperty.

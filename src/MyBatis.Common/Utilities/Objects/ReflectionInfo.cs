@@ -28,11 +28,10 @@ using System;
 using System.Collections;
 using System.Collections.Specialized;
 using System.Reflection;
-
-using Apache.Ibatis.Common.Exceptions;
 using System.Collections.Generic;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
 	/// <summary>
 	/// This class represents a cached set of class definition information that

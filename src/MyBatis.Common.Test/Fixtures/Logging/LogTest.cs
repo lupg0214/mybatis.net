@@ -1,11 +1,11 @@
 using System;
 using System.IO;
 using System.Reflection;
-using Apache.Ibatis.Common.Logging;
+using MyBatis.Common.Logging;
 using NUnit.Framework;
 
 
-namespace Apache.Ibatis.Common.Test.Fixtures.Logging
+namespace MyBatis.Common.Test.Fixtures.Logging
 {
 	/// <summary>
 	/// Summary description for LogTest.

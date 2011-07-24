@@ -1,12 +1,12 @@
 using System;
 using System.Reflection;
-using Apache.Ibatis.Common.Test.Domain;
-using Apache.Ibatis.Common.Test.Fixtures.Utilities;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
+using MyBatis.Common.Test.Domain;
+using MyBatis.Common.Test.Fixtures.Utilities;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.Common.Test.NUnit.CommonTests.Utilities
+namespace MyBatis.Common.Test.NUnit.CommonTests.Utilities
 {
     [TestFixture]
     public class PropertyAccessorPerformance

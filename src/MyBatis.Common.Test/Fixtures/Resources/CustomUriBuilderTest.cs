@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using Apache.Ibatis.Common.Resources;
+using MyBatis.Common.Resources;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.Common.Test.Fixtures.Resources
+namespace MyBatis.Common.Test.Fixtures.Resources
 {
     [TestFixture]
     public class CustomUriBuilderTest

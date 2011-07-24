@@ -30,13 +30,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Logging;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.ResultMapping
+namespace MyBatis.DataMapper.Model.ResultMapping
 {
 	/// <summary>
 	/// Summary description for Discriminator.

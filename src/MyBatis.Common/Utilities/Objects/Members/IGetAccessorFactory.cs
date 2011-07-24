@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Utilities.Objects.Members
+namespace MyBatis.Common.Utilities.Objects.Members
 {
     /// <summary>
     /// Factory contact to build <see cref="IGetAccessor"/> for a type.

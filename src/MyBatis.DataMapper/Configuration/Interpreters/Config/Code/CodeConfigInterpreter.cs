@@ -23,7 +23,7 @@
  ********************************************************************************/
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Code
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Code
 {
     public class CodeConfigInterpreter
     {

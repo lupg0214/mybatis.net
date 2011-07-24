@@ -1,12 +1,11 @@
-﻿using Apache.Ibatis.DataMapper.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml;
-using Apache.Ibatis.DataMapper.Model;
-
+﻿using MyBatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml;
+using MyBatis.DataMapper.Model;
 using NUnit.Framework;
 using System;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
 {
     [TestFixture] 
     public class DefaultModelBuilderTest

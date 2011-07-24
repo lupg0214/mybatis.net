@@ -1,18 +1,17 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using Apache.Ibatis.Common.Utilities;
-
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Model.Cache.Implementation;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Model.Cache.Implementation;
+using MyBatis.Common.Utilities;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
-using Apache.Ibatis.DataMapper.Model.Cache;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Session;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping
 {
     /// <summary>
     /// Summary description for ParameterMapTest.

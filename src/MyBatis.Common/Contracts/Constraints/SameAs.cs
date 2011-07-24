@@ -24,7 +24,7 @@
  ********************************************************************************/
 #endregion
 
-namespace Apache.Ibatis.Common.Contracts
+namespace MyBatis.Common.Contracts.Constraints
 {
     /// <summary>
     /// Checks whether the actual value is the same object as the supplied

@@ -26,7 +26,7 @@
 
 using System;
 
-namespace Apache.Ibatis.DataMapper.Model.Cache
+namespace MyBatis.DataMapper.Model.Cache
 {
 	/// <summary>
 	/// Summary description for ICache.

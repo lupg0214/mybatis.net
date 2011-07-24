@@ -24,11 +24,10 @@
 #endregion
 
 using System.Xml;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Resources;
 
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Resources;
-
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor
 {
     public partial class XmlConfigProcessor
     {

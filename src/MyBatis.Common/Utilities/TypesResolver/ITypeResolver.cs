@@ -29,7 +29,7 @@
 
 using System;
 
-namespace Apache.Ibatis.Common.Utilities.TypesResolver
+namespace MyBatis.Common.Utilities.TypesResolver
 {
     /// <summary>
     /// Resolves a <see cref="System.Type"/> by name.

@@ -26,10 +26,10 @@
 using System;
 using System.Reflection;
 using System.Reflection.Emit;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Logging;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Logging;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
 	/// <summary>
 	/// Build IFactory object via IL 

@@ -26,9 +26,9 @@
 using System;
 using System.Reflection;
 using System.Reflection.Emit;
-using Apache.Ibatis.Common.Exceptions;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
     /// <summary>
     /// A <see cref="IFactory"/> implementation that builds object via DynamicMethod.

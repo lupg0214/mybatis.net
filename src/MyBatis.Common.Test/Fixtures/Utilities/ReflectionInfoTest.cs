@@ -1,10 +1,10 @@
 using System;
-using Apache.Ibatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects;
 using NUnit.Framework;
 
 
-using Apache.Ibatis.Common.Test.Domain;
-namespace Apache.Ibatis.Common.Test.Fixtures.Utilities
+using MyBatis.Common.Test.Domain;
+namespace MyBatis.Common.Test.Fixtures.Utilities
 {
 	/// <summary>
 	/// Summary description for ReflectionInfoTest.

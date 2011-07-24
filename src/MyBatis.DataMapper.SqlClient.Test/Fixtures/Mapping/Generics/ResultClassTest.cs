@@ -1,9 +1,7 @@
 using System;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures;
 using NUnit.Framework;
 
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping.Generics
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping.Generics
 {
     /// <summary>
     /// Summary description for ResultClassTest.

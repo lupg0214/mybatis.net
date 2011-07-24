@@ -26,7 +26,7 @@
 
 using System.Collections;
 
-namespace Apache.Ibatis.Common.Utilities
+namespace MyBatis.Common.Utilities
 {
 		
 	/// <summary>

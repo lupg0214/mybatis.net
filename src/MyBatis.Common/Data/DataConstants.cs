@@ -23,7 +23,7 @@
  ********************************************************************************/
 #endregion
 
-namespace Apache.Ibatis.Common.Data
+namespace MyBatis.Common.Data
 {
     /// <summary>
     /// Constants to identifies <see cref="IDataSource"/> or <see cref="IDbProvider"/> 

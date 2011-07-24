@@ -29,9 +29,9 @@ using System.Collections.Specialized;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
-using Apache.Ibatis.Common.Logging;
+using MyBatis.Common.Logging;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
     /// <summary>
     /// A <see cref="IObjectFactory"/> implementation that can create objects via DynamicMethod.

@@ -25,9 +25,9 @@
 
 using System;
 using System.ComponentModel;
-using Apache.Ibatis.DataMapper.Model.Events;
+using MyBatis.DataMapper.Model.Events;
 
-namespace Apache.Ibatis.DataMapper.Model.ResultMapping
+namespace MyBatis.DataMapper.Model.ResultMapping
 {
     /// <summary>
     /// Base implementation for <see cref="IResultPropertySupportEvents"/>

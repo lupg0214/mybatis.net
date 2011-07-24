@@ -25,15 +25,15 @@
 
 #region Using
 
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Model.Cache;
+using MyBatis.Common.Configuration;
 
 #endregion 
 
 
-namespace Apache.Ibatis.DataMapper.Configuration.Serializers
+namespace MyBatis.DataMapper.Configuration.Serializers
 {
 	/// <summary>
 	/// Summary description for CacheModelDeSerializer.

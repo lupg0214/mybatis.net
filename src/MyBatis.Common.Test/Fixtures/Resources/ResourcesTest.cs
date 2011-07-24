@@ -2,7 +2,7 @@ using System.IO;
 using System.Xml;
 using NUnit.Framework;
 
-namespace Apache.Ibatis.Common.Test.Fixtures.CommonTests
+namespace MyBatis.Common.Test.Fixtures.CommonTests
 {
     /*
      

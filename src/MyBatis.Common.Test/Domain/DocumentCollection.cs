@@ -1,7 +1,7 @@
 
 using System.Collections;
 
-namespace Apache.Ibatis.Common.Test.Domain
+namespace MyBatis.Common.Test.Domain
 {
     public class DocumentCollection : CollectionBase
     {

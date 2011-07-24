@@ -28,7 +28,7 @@
 using System;
 using System.Data;
 
-namespace Apache.Ibatis.DataMapper.Session.Transaction.External
+namespace MyBatis.DataMapper.Session.Transaction.External
 {
     public class ExternalTransaction : ITransaction
     {

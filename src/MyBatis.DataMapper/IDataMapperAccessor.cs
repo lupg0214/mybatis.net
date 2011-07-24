@@ -24,7 +24,7 @@
  ********************************************************************************/
 #endregion
 
-namespace Apache.Ibatis.DataMapper
+namespace MyBatis.DataMapper
 {
     /// <summary>
     /// Provides access to the underlying <see cref="IDataMapper"/>

@@ -24,9 +24,9 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.Common.Contracts.Exceptions;
+using MyBatis.Common.Contracts.Exceptions;
 
-namespace Apache.Ibatis.Common.Contracts
+namespace MyBatis.Common.Contracts
 {
     /// <summary>
     /// Helper class for assertion checks

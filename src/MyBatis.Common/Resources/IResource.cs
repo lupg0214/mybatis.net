@@ -26,7 +26,7 @@
 using System;
 using System.IO;
 
-namespace Apache.Ibatis.Common.Resources
+namespace MyBatis.Common.Resources
 {
     /// <summary>
     /// The central abstraction for iBATIS.NET's access to resources.

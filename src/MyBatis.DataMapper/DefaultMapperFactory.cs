@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Apache.Ibatis.DataMapper
+namespace MyBatis.DataMapper
 {
     /// <summary>
     /// The default implementation of the <see cref="IMapperFactory"/>  

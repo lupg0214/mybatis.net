@@ -26,7 +26,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Apache.Ibatis.Common.Configuration
+namespace MyBatis.Common.Configuration
 {
     /// <summary>
     /// A collection of <see cref="IConfiguration"/> objects.

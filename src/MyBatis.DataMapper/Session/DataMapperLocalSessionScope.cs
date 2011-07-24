@@ -25,9 +25,9 @@
 #endregion
 
 using System;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Session;
 
-namespace Apache.Ibatis.DataMapper.Session
+namespace MyBatis.DataMapper.Session
 {
     /// <summary>
     /// Local SessionScope management

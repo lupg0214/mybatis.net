@@ -27,11 +27,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Session;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements
+namespace MyBatis.DataMapper.MappedStatements
 {
     public partial class MappedStatement
     {

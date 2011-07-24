@@ -27,13 +27,14 @@
 #region using
 
 using System.Text;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements;
-using Apache.Ibatis.Common.Utilities.Objects;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Elements;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
+
 #endregion
 
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Handlers
+namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
 {
 	/// <summary>
 	/// Summary description for IterateTagHandler.

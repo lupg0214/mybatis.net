@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace Apache.Ibatis.DataMapper.Model.ParameterMapping
+namespace MyBatis.DataMapper.Model.ParameterMapping
 {
 	/// <summary>
 	/// A ParameterProperty Collection.

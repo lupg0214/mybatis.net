@@ -24,10 +24,10 @@
 #endregion
 
 using System.Data;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Scope;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Scope;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements.PropertyStrategy
+namespace MyBatis.DataMapper.MappedStatements.PropertyStrategy
 {
 	/// <summary>
 	/// <see cref="IPropertyStrategy"/> implementation when a 'resultMapping' attribute exists

@@ -30,18 +30,18 @@ using System;
 using System.Collections;
 using System.Data;
 using System.Reflection;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.TypeHandlers;
 using System.Collections.Generic;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.MappedStatements
+namespace MyBatis.DataMapper.MappedStatements
 {
     /// <summary>
     /// Build a dynamic instance of a <see cref="ResultPropertyCollection"/>

@@ -26,7 +26,7 @@
 using System;
 using System.IO;
 
-namespace Apache.Ibatis.Common.Resources
+namespace MyBatis.Common.Resources
 {
     /// <summary>
     /// Event generated when processing a <see cref="FileResource"/>

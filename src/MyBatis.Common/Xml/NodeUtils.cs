@@ -27,7 +27,7 @@ using System.Collections.Specialized;
  ********************************************************************************/
 #endregion
 
-namespace Apache.Ibatis.Common.Xml
+namespace MyBatis.Common.Xml
 {
 	/// <summary>
 	/// Summary description for NodeUtils.

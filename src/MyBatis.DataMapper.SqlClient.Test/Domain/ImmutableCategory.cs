@@ -1,6 +1,6 @@
 using System;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain 
+namespace MyBatis.DataMapper.SqlClient.Test.Domain 
 {
 	public class ImmutableCategory 
 	{

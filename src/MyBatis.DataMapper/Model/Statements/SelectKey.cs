@@ -28,12 +28,12 @@
 
 using System;
 using System.Diagnostics;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Model.Sql.External;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.Sql.External;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Statements
+namespace MyBatis.DataMapper.Model.Statements
 {
 	/// <summary>
 	/// Represent a SelectKey tag element.

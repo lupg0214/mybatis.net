@@ -25,15 +25,15 @@
 
 #region Using
 
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.DataMapper.Model;
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Model;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.Common.Configuration;
 
 #endregion 
 
-namespace Apache.Ibatis.DataMapper.Configuration.Serializers
+namespace MyBatis.DataMapper.Configuration.Serializers
 {
 	/// <summary>
 	/// Summary description for ProcedureDeSerializer.

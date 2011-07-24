@@ -25,11 +25,11 @@
 
 using System;
 using System.IO;
-using System.Text;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.Common.Resources
+namespace MyBatis.Common.Resources
 {
     /// <summary>
     /// Provides a custom constructor for uniform resource identifiers (URIs)

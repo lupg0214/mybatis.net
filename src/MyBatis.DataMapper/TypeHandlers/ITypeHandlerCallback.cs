@@ -25,7 +25,7 @@
 #endregion
 
 
-namespace Apache.Ibatis.DataMapper.TypeHandlers
+namespace MyBatis.DataMapper.TypeHandlers
 {
 	/// <summary>
 	/// A simple interface for implementing custom type handlers.

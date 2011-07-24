@@ -27,14 +27,14 @@
 #region Imports
 using System;
 using System.Collections;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements;
-using Apache.Ibatis.Common.Utilities.Objects;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Elements;
+using MyBatis.Common.Utilities.Objects;
+using MyBatis.Common.Utilities.Objects.Members;
 
 #endregion
 
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Handlers
+namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
 {
 	/// <summary>
 	/// IsEmptyTagHandler represent a isEmpty tag element in a dynamic mapped statement.

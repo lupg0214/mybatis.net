@@ -33,7 +33,7 @@ using System.Data;
 
 #endregion
 
-namespace Apache.Ibatis.Common.Utilities.TypesResolver
+namespace MyBatis.Common.Utilities.TypesResolver
 {
 	/// <summary> 
 	/// Provides access to a central registry of aliased <see cref="System.Type"/>s.

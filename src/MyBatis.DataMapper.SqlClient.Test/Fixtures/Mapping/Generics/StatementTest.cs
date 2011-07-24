@@ -23,17 +23,16 @@
  ********************************************************************************/
 #endregion
 
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures;
+using MyBatis.DataMapper;
+using MyBatis.Common.Utilities;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Session;
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping.Generics
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping.Generics
 {
     [TestFixture]
     public class StatementTest : BaseTest

@@ -30,23 +30,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Data;
-using Apache.Ibatis.DataMapper.Model;
-using Apache.Ibatis.DataMapper.Model.Events;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.MappedStatements.ResultStrategy;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.MappedStatements.PostSelectStrategy;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.TypeHandlers;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Data;
+using MyBatis.DataMapper.Model;
+using MyBatis.DataMapper.Model.Events;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.MappedStatements.ResultStrategy;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.MappedStatements.PostSelectStrategy;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.Session;
 using System.Diagnostics;
+using MyBatis.Common.Utilities.Objects;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.MappedStatements
+namespace MyBatis.DataMapper.MappedStatements
 {
     /// <summary>
     /// Base implementation of <see cref="IMappedStatement"/>.

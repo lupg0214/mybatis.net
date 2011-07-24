@@ -26,17 +26,18 @@
 
 #region Imports
 
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.Data;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Session;
+using MyBatis.DataMapper.Data;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Static
+namespace MyBatis.DataMapper.Model.Sql.Static
 {
 	/// <summary>
 	/// Represents a simple (not a procedure) mapped statement without any dynamic element.

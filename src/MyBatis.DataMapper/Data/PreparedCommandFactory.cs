@@ -29,7 +29,7 @@
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Data
+namespace MyBatis.DataMapper.Data
 {
 	/// <summary>
 	/// Summary description for PreparedCommandFactory.

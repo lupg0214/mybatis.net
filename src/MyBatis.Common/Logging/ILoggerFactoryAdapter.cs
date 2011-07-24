@@ -26,9 +26,9 @@
 
 using System;
 using System.Collections.Specialized;
-using Apache.Ibatis.Common.Logging.Impl;
+using MyBatis.Common.Logging.Impl;
 
-namespace Apache.Ibatis.Common.Logging
+namespace MyBatis.Common.Logging
 {
 	/// <summary>
 	/// Defines the members that logging implementations must implement.

@@ -26,9 +26,9 @@
 using System;
 using System.Reflection;
 using System.Text;
-using Apache.Ibatis.Common.Logging;
+using MyBatis.Common.Logging;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
 	/// <summary>
     /// A wrapper arround an <see cref="IFactory"/> implementation which logs argument type and value

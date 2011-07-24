@@ -1,8 +1,7 @@
 using System;
+using MyBatis.DataMapper.TypeHandlers;
 
-using Apache.Ibatis.DataMapper.TypeHandlers;
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Domain
+namespace MyBatis.DataMapper.SqlClient.Test.Domain
 {
 	/// <summary>
 	/// OuiNonBoolTypeHandlerCallback.

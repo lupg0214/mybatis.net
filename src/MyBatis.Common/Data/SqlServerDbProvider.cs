@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Apache.Ibatis.Common.Data
+namespace MyBatis.Common.Data
 {
     /// <summary>
     /// System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089

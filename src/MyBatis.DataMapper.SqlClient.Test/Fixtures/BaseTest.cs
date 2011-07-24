@@ -1,22 +1,21 @@
 using System;
 using System.Collections;
-using System.Configuration;
-using System.IO;
 using System.Reflection;
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.DataMapper.Configuration;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Modules;
+using MyBatis.DataMapper;
+using MyBatis.DataMapper.Configuration;
+using MyBatis.DataMapper.Configuration.Interpreters.Config.Xml;
+using MyBatis.DataMapper.Session;
+using MyBatis.Common.Data;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Utilities;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
+using MyBatis.DataMapper.SqlClient.Test.Fixtures.Modules;
 using NUnit.Framework;
+
 // DataSource definition
     // ScriptRunner definition
 
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
 {
     public delegate string KeyConvert(string key);
 

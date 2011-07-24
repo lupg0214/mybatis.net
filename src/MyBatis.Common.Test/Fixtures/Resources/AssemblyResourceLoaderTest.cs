@@ -1,12 +1,12 @@
 
 using System;
 using System.IO;
-using Apache.Ibatis.Common.Resources;
+using MyBatis.Common.Resources;
 using NUnit.Framework;
 
-using Apache.Ibatis.Common.Exceptions;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.Common.Test.Fixtures.Resources
+namespace MyBatis.Common.Test.Fixtures.Resources
 {
     [TestFixture] 
     public class AssemblyResourceLoaderTest

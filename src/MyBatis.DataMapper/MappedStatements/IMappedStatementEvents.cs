@@ -24,9 +24,9 @@
 #endregion
 
 using System;
-using Apache.Ibatis.DataMapper.Model.Events;
+using MyBatis.DataMapper.Model.Events;
 
-namespace Apache.Ibatis.DataMapper.MappedStatements
+namespace MyBatis.DataMapper.MappedStatements
 {
     /// <summary>
     /// Defines the contract for events generated during statement execution.

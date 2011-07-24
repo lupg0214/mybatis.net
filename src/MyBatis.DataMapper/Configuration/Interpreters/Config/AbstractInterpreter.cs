@@ -24,10 +24,11 @@
 #endregion
 
 using System;
-using Apache.Ibatis.Common.Resources;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Resources;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config
 {
     /// <summary>
     /// Provides common methods for those who wants 

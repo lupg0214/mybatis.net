@@ -1,10 +1,8 @@
 using System;
-using Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures;
+using MyBatis.DataMapper.SqlClient.Test.Domain;
 using NUnit.Framework;
 
-using Apache.Ibatis.DataMapper.SqlClient.Test.Domain;
-
-namespace Apache.Ibatis.DataMapper.SqlClient.Test.Fixtures.Mapping
+namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping
 {
     /// <summary>
     /// Summary description for ResultClassTest.

@@ -28,17 +28,17 @@
 
 using System.Data;
 using System.Runtime.CompilerServices;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Session;
 using System.Collections.Generic;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Scope
+namespace MyBatis.DataMapper.Scope
 {
     /// <summary>
     /// Hold data during the process of a mapped statement.

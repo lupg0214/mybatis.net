@@ -27,7 +27,7 @@ using System;
 using System.Reflection.Emit;
 using System.Collections.Generic;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
     /// <summary>  
     /// Helper class that returns appropriate boxing opcode based on type  

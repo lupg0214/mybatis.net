@@ -28,7 +28,7 @@
 using System.Data;
 using System;
 
-namespace Apache.Ibatis.DataMapper.Session.Transaction
+namespace MyBatis.DataMapper.Session.Transaction
 {
     /// <summary>
     /// Represents a transaction abstraction to be performed at a data source.

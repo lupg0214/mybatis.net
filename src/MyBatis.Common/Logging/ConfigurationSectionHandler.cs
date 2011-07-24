@@ -29,10 +29,10 @@ using System.Collections;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Xml;
-using Apache.Ibatis.Common.Logging.Impl;
-using ConfigurationException = Apache.Ibatis.Common.Exceptions.ConfigurationException;
+using MyBatis.Common.Logging.Impl;
+using ConfigurationException = MyBatis.Common.Exceptions.ConfigurationException;
 
-namespace Apache.Ibatis.Common.Logging
+namespace MyBatis.Common.Logging
 {
 	/// <summary>
 	/// Used in an application's configuration file (App.Config or Web.Config) to configure the logging subsystem.

@@ -26,9 +26,9 @@
 
 using System.Collections.Generic;
 using System.Text;
-using Apache.Ibatis.Common.Utilities;
+using MyBatis.Common.Utilities;
 
-namespace Apache.Ibatis.DataMapper.Model.Cache
+namespace MyBatis.DataMapper.Model.Cache
 {
 
 	/// <summary>

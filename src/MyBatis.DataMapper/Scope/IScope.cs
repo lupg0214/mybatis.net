@@ -1,7 +1,5 @@
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.Common.Utilities.Objects.Members;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.TypeHandlers;
 
 #region Apache Notice
 /*****************************************************************************
@@ -28,7 +26,7 @@ using Apache.Ibatis.DataMapper.TypeHandlers;
  ********************************************************************************/
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Scope
+namespace MyBatis.DataMapper.Scope
 {
 	/// <summary>
 	/// 

@@ -24,9 +24,9 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.ParameterMapping;
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic
+namespace MyBatis.DataMapper.Model.Sql.Dynamic
 {
 	/// <summary>
 	/// Summary description for SqlText.

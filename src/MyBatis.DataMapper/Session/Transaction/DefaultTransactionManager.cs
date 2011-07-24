@@ -25,9 +25,10 @@
 #endregion
 
 using System.Data;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
-namespace Apache.Ibatis.DataMapper.Session.Transaction
+namespace MyBatis.DataMapper.Session.Transaction
 {
     /// <summary>
     /// Default implementation of the <see cref="ITransactionManager"/> interface. 

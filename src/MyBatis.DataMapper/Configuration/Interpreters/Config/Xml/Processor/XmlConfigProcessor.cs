@@ -23,9 +23,9 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.Common.Data;
+using MyBatis.Common.Data;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor
 {
     /// <summary>
     /// Analyse the iBATIS XML configuration and import their configurations in the <see cref="IConfigurationStore"/>

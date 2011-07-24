@@ -27,7 +27,7 @@
 using System.Collections;
 using System;
 
-namespace Apache.Ibatis.Common.Contracts
+namespace MyBatis.Common.Contracts.Constraints
 {
     /// <summary>
     /// Checks whether a string or collection is empty

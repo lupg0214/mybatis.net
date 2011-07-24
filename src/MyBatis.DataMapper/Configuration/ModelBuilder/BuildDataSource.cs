@@ -23,10 +23,10 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Data;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Data;
 
-namespace Apache.Ibatis.DataMapper.Configuration
+namespace MyBatis.DataMapper.Configuration
 {
     public partial class DefaultModelBuilder
     {

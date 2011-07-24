@@ -25,22 +25,23 @@
 
 using System;
 using System.Text;
-using Apache.Ibatis.Common.Configuration;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.DataMapper.Configuration.Interpreters.Config;
-using Apache.Ibatis.DataMapper.Configuration.Serializers;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements;
-using Apache.Ibatis.DataMapper.Model.Sql.External;
-using Apache.Ibatis.DataMapper.Model.Sql.SimpleDynamic;
-using Apache.Ibatis.DataMapper.Model.Sql.Static;
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Configuration.Interpreters.Config;
+using MyBatis.DataMapper.Configuration.Serializers;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.Sql.Dynamic;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Elements;
+using MyBatis.DataMapper.Model.Sql.External;
+using MyBatis.DataMapper.Model.Sql.SimpleDynamic;
+using MyBatis.DataMapper.Model.Sql.Static;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.Session;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.DataMapper.Configuration
+namespace MyBatis.DataMapper.Configuration
 {
     /// <summary>
     /// This implementation of <see cref="IConfigurationStore"/>, builds all statement.

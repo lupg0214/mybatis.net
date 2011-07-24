@@ -24,7 +24,7 @@
  ********************************************************************************/
 #endregion
 
-namespace Apache.Ibatis.Common.Logging
+namespace MyBatis.Common.Logging
 {
     /// <summary>
     /// The logging levels used by Log are (in order): 

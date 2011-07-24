@@ -29,19 +29,21 @@
 using System.Collections;
 using System.Text;
 
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.Data;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Session;
+using MyBatis.DataMapper.Data;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Utilities;
+using MyBatis.Common.Utilities.Objects;
+
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.SimpleDynamic
+namespace MyBatis.DataMapper.Model.Sql.SimpleDynamic
 {
 	/// <summary>
     /// Represents a sql commqnd text which contains $property$ (old syntax) or ${property}

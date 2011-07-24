@@ -28,7 +28,7 @@
 using System;
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic
+namespace MyBatis.DataMapper.Model.Sql.Dynamic
 {
 	/// <summary>
 	/// Summary description for ISqlChild.

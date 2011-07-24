@@ -29,22 +29,23 @@
 using System.Collections;
 using System.Data;
 using System.Text;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Elements;
-using Apache.Ibatis.DataMapper.Model.Sql.Dynamic.Handlers;
-using Apache.Ibatis.DataMapper.Model.Sql.SimpleDynamic;
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Scope;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Elements;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Handlers;
+using MyBatis.DataMapper.Model.Sql.SimpleDynamic;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Scope;
 using System.Collections.Generic;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.Data;
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.DataMapper.Session;
+using MyBatis.DataMapper.Data;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Sql.Dynamic
+namespace MyBatis.DataMapper.Model.Sql.Dynamic
 {
 	/// <summary>
 	/// DynamicSql represent the root element of a dynamic sql statement

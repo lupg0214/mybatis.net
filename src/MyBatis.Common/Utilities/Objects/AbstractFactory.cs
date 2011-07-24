@@ -24,9 +24,9 @@
 #endregion
 
 using System;
-using Apache.Ibatis.Common.Exceptions;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.Common.Utilities.Objects
+namespace MyBatis.Common.Utilities.Objects
 {
 	/// <summary>
 	/// A <see cref="IObjectFactory"/> implementation that for abstract type

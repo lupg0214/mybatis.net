@@ -24,9 +24,9 @@
 #endregion
 
 using System.Web;
-using Apache.Ibatis.Common.Exceptions;
+using MyBatis.Common.Exceptions;
 
-namespace Apache.Ibatis.DataMapper.Session.Stores
+namespace MyBatis.DataMapper.Session.Stores
 {
 
 	/// <summary>

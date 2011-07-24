@@ -25,9 +25,9 @@
 
 using System.Xml;
 using System.Collections.Generic;
-using Apache.Ibatis.Common.Configuration;
+using MyBatis.Common.Configuration;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor
 {
     /// <summary>
     /// Represents an Xml node

@@ -30,16 +30,17 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Exceptions;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.TypeHandlers;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.TypeHandlers;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Exceptions;
+using MyBatis.Common.Utilities;
+using MyBatis.Common.Utilities.Objects;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.ResultMapping
+namespace MyBatis.DataMapper.Model.ResultMapping
 {
     /// <summary>
     /// Main implementation of ResultMap interface

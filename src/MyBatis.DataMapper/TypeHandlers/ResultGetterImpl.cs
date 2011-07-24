@@ -25,7 +25,7 @@
 
 using System.Data;
 
-namespace Apache.Ibatis.DataMapper.TypeHandlers
+namespace MyBatis.DataMapper.TypeHandlers
 {
 	/// <summary>
 	/// Description résumée de ResultGetterImpl.

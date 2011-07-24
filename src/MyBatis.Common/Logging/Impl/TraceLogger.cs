@@ -28,7 +28,7 @@ using System;
 using System.Globalization;
 using System.Text;
 
-namespace Apache.Ibatis.Common.Logging.Impl
+namespace MyBatis.Common.Logging.Impl
 {
 	/// <summary>
 	/// Logger that sends output to the <see cref="System.Diagnostics.Trace" /> sub-system.

@@ -26,13 +26,13 @@
 
 #region Imports
 
-using Apache.Ibatis.DataMapper.Model.Statements;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Model.Statements;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Session;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Data
+namespace MyBatis.DataMapper.Data
 {
 	/// <summary>
 	/// Summary description for IPreparedCommand.

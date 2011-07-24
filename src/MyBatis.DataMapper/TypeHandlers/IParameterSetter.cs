@@ -26,7 +26,7 @@
 
 using System.Data;
 
-namespace Apache.Ibatis.DataMapper.TypeHandlers
+namespace MyBatis.DataMapper.TypeHandlers
 {
 	/// <summary>
 	/// Allows parameters to be set on the underlying prepared IDbCommand.

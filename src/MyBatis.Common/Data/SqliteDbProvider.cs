@@ -1,4 +1,4 @@
-﻿namespace Apache.Ibatis.Common.Data
+﻿namespace MyBatis.Common.Data
 {
     /// <summary>
     /// System.Data.SQLite, Version=1.0.61.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139

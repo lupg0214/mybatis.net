@@ -24,15 +24,15 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.DataMapper.Data;
-using Apache.Ibatis.DataMapper.DataExchange;
-using Apache.Ibatis.DataMapper.MappedStatements;
-using Apache.Ibatis.DataMapper.Model.Cache;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Model.ResultMapping;
-using Apache.Ibatis.DataMapper.Session;
+using MyBatis.DataMapper.Data;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.MappedStatements;
+using MyBatis.DataMapper.Model.Cache;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Model.ResultMapping;
+using MyBatis.DataMapper.Session;
 
-namespace Apache.Ibatis.DataMapper.Model
+namespace MyBatis.DataMapper.Model
 {
     /// <summary>
     /// Holds all the iBATIS core model (statement, alias, resultMap, parameterMap, dataSource).

@@ -26,9 +26,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using Apache.Ibatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Exceptions;
 
-namespace Apache.Ibatis.DataMapper
+namespace MyBatis.DataMapper
 {
     ///<summary>
     /// Main interface the the dataMapper

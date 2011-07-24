@@ -24,7 +24,7 @@
 #endregion
 
 
-namespace Apache.Ibatis.DataMapper.Configuration.Interpreters.Config
+namespace MyBatis.DataMapper.Configuration.Interpreters.Config
 {
     ///<summary>
     /// Constants for nodes and attributes name in iBATIS configuration

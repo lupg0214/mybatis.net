@@ -25,13 +25,11 @@
 
 #region Using
 
-using System.Collections.Specialized;
-using System.Xml;
-using Apache.Ibatis.Common.Xml;
-using Apache.Ibatis.Common.Configuration;
+using MyBatis.Common.Configuration;
+
 #endregion 
 
-namespace Apache.Ibatis.Common.Data
+namespace MyBatis.Common.Data
 {
 
     public sealed class ProviderDeSerializer

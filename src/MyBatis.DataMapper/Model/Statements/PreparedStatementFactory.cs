@@ -32,20 +32,21 @@ using System.Collections.Specialized;
 using System.Data;
 using System.Reflection;
 using System.Text;
-using Apache.Ibatis.Common.Logging;
-using Apache.Ibatis.Common.Utilities;
-using Apache.Ibatis.Common.Utilities.Objects;
-using Apache.Ibatis.DataMapper.Model.ParameterMapping;
-using Apache.Ibatis.DataMapper.Exceptions;
-using Apache.Ibatis.DataMapper.Scope;
-using Apache.Ibatis.Common.Contracts;
-using Apache.Ibatis.Common.Data;
-using Apache.Ibatis.DataMapper.Session;
-using Apache.Ibatis.DataMapper.Data;
+using MyBatis.DataMapper.Model.ParameterMapping;
+using MyBatis.DataMapper.Exceptions;
+using MyBatis.DataMapper.Scope;
+using MyBatis.DataMapper.Session;
+using MyBatis.DataMapper.Data;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
+using MyBatis.Common.Data;
+using MyBatis.Common.Logging;
+using MyBatis.Common.Utilities;
+using MyBatis.Common.Utilities.Objects;
 
 #endregion
 
-namespace Apache.Ibatis.DataMapper.Model.Statements
+namespace MyBatis.DataMapper.Model.Statements
 {
 	/// <summary>
 	/// Summary description for PreparedStatementFactory.

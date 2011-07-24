@@ -27,11 +27,10 @@
 // Inpspired from Spring.NET
 #endregion
 
-
 using System;
 using System.Collections.Generic;
 
-namespace Apache.Ibatis.Common.Utilities.TypesResolver
+namespace MyBatis.Common.Utilities.TypesResolver
 {
     /// <summary>
     /// Resolves (instantiates) a <see cref="System.Type"/> by it's (possibly
@@ -52,10 +51,10 @@ namespace Apache.Ibatis.Common.Utilities.TypesResolver
 
         #region Constructor (s) / Destructor
         /// <summary>
-        /// Creates a new instance of the <see cref="Apache.Ibatis.Common.Utilities.TypesResolver.CachedTypeResolver"/> class.
+        /// Creates a new instance of the <see cref="CachedTypeResolver"/> class.
         /// </summary>
         /// <param name="typeResolver">
-        /// The <see cref="Apache.Ibatis.Common.Utilities.TypesResolver.ITypeResolver"/> that this instance will delegate
+        /// The <see cref="ITypeResolver"/> that this instance will delegate
         /// actual <see cref="System.Type"/> resolution to if a <see cref="System.Type"/>
         /// cannot be found in this instance's <see cref="System.Type"/> cache.
         /// </param>

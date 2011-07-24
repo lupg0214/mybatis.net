@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Apache.Ibatis.DataMapper.Model.Events
+namespace MyBatis.DataMapper.Model.Events
 {
     /// <summary>
     /// Base class for event statement

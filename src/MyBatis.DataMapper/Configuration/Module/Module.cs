@@ -24,9 +24,10 @@
  ********************************************************************************/
 #endregion
 
-using Apache.Ibatis.Common.Contracts;
+using MyBatis.Common.Contracts;
+using MyBatis.Common.Contracts.Constraints;
 
-namespace Apache.Ibatis.DataMapper.Configuration.Module
+namespace MyBatis.DataMapper.Configuration.Module
 {
     /// <summary>
     /// Base class for code configuration modules. 
