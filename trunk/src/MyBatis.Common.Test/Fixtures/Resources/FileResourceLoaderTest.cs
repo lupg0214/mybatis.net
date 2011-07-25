@@ -44,7 +44,7 @@ namespace MyBatis.Common.Test.Fixtures.Resources
         [Test]
         public void Test_resource_creation_with_absolute_path()
         {
-            string file = "file://"+Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\NUnit\CommonTests\Utilities\sample.txt");
+            string file = "file://"+Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Fixtures\Utilities\sample.txt");
 
             CustomUriBuilder builder = new CustomUriBuilder(file, AppDomain.CurrentDomain.BaseDirectory);
 
@@ -82,7 +82,7 @@ namespace MyBatis.Common.Test.Fixtures.Resources
         [Test(Description = "Create With Relative Path")]
         public void Test_resource_creation_with_relative_path()
         {
-            string file = @"../../NUnit/CommonTests/Utilities/sample.txt";
+            string file = @"../../Fixtures/Utilities/sample.txt";
 
             CustomUriBuilder builder = new CustomUriBuilder(file, AppDomain.CurrentDomain.BaseDirectory);
 

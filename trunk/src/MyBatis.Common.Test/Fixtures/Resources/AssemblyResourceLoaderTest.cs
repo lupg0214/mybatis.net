@@ -33,7 +33,7 @@ namespace MyBatis.Common.Test.Fixtures.Resources
         #endregion
 
         private readonly IResourceLoader loader = new AssemblyResourceLoader();
-        private readonly string assemblyName = "Apache.Ibatis.Common.Test";
+        private readonly string assemblyName = "MyBatis.Common.Test";
         private readonly string resPath = "Fixtures.Utilities";
 
         [Test]
