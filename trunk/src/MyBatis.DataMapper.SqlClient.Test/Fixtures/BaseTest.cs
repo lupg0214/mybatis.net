@@ -45,7 +45,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
             //DateTime start = DateTime.Now;
 
             configurationSetting = new ConfigurationSetting();
-            configurationSetting.Properties.Add("collection2Namespace", "Apache.Ibatis.DataMapper.SqlClient.Test.Domain.LineItemCollection2, Apache.Ibatis.DataMapper.SqlClient.Test");
+            configurationSetting.Properties.Add("collection2Namespace", "MyBatis.DataMapper.SqlClient.Test.Domain.LineItemCollection2, MyBatis.DataMapper.SqlClient.Test");
             configurationSetting.Properties.Add("nullableInt", "int?");
 
             string resource = "sqlmap.config";

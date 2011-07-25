@@ -4,7 +4,7 @@ xmlns="http://ibatis.apache.org/mapping"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	
 	<alias>
-		<typeAlias alias="Category" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Category, Apache.Ibatis.DataMapper.SqlClient.Test"/>
+		<typeAlias alias="Category" type="MyBatis.DataMapper.SqlClient.Test.Domain.Category, MyBatis.DataMapper.SqlClient.Test"/>
 	</alias>
 
   <resultMaps>

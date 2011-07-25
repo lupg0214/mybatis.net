@@ -5,7 +5,7 @@ xmlns="http://ibatis.apache.org/mapping"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 
   <alias>
-    <typeAlias alias="Coupon" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Coupon, Apache.Ibatis.DataMapper.SqlClient.Test" />
+    <typeAlias alias="Coupon" type="MyBatis.DataMapper.SqlClient.Test.Domain.Coupon, MyBatis.DataMapper.SqlClient.Test" />
   </alias>
 
   <!-- If the type is not specified, ADO.NET infers the 

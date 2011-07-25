@@ -4,8 +4,8 @@ xmlns="http://ibatis.apache.org/mapping"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <alias>
-    <typeAlias alias="Search" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Search, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-    <typeAlias alias="Query" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Query, Apache.Ibatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="Search" type="MyBatis.DataMapper.SqlClient.Test.Domain.Search, MyBatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="Query" type="MyBatis.DataMapper.SqlClient.Test.Domain.Query, MyBatis.DataMapper.SqlClient.Test"/>
   </alias>
 
   <statements>

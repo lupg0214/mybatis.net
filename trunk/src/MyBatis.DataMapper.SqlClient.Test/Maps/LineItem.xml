@@ -5,10 +5,10 @@ xmlns="http://ibatis.apache.org/mapping"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 
 	<alias>
-		<typeAlias alias="LineItem" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.LineItem, Apache.Ibatis.DataMapper.SqlClient.Test" />
-		<typeAlias alias="LineItemCollection" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, Apache.Ibatis.DataMapper.SqlClient.Test" />
+		<typeAlias alias="LineItem" type="MyBatis.DataMapper.SqlClient.Test.Domain.LineItem, MyBatis.DataMapper.SqlClient.Test" />
+		<typeAlias alias="LineItemCollection" type="MyBatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, MyBatis.DataMapper.SqlClient.Test" />
     <typeAlias alias="LineItemCollection2" type="${collection2Namespace}" />
-    <typeAlias alias="GenericListLineItem" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.ListeEntiteMetier`1[[Apache.Ibatis.DataMapper.SqlClient.Test.Domain.LineItem, Apache.Ibatis.DataMapper.SqlClient.Test]], Apache.Ibatis.DataMapper.SqlClient.Test" />
+    <typeAlias alias="GenericListLineItem" type="MyBatis.DataMapper.SqlClient.Test.Domain.ListeEntiteMetier`1[[MyBatis.DataMapper.SqlClient.Test.Domain.LineItem, MyBatis.DataMapper.SqlClient.Test]], MyBatis.DataMapper.SqlClient.Test" />
   </alias>
 	
 	<resultMaps>  	

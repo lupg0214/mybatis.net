@@ -4,9 +4,9 @@ xmlns="http://ibatis.apache.org/mapping"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 
 	<alias>
-		<typeAlias alias="Book" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Book, Apache.Ibatis.DataMapper.SqlClient.Test" />
-		<typeAlias alias="DocumentCollection" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.DocumentCollection, Apache.Ibatis.DataMapper.SqlClient.Test" />
-		<typeAlias alias="CustomInheritance" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.CustomInheritance, Apache.Ibatis.DataMapper.SqlClient.Test"/>	
+		<typeAlias alias="Book" type="MyBatis.DataMapper.SqlClient.Test.Domain.Book, MyBatis.DataMapper.SqlClient.Test" />
+		<typeAlias alias="DocumentCollection" type="MyBatis.DataMapper.SqlClient.Test.Domain.DocumentCollection, MyBatis.DataMapper.SqlClient.Test" />
+		<typeAlias alias="CustomInheritance" type="MyBatis.DataMapper.SqlClient.Test.Domain.CustomInheritance, MyBatis.DataMapper.SqlClient.Test"/>	
 	</alias>
 	
 	<resultMaps>  	

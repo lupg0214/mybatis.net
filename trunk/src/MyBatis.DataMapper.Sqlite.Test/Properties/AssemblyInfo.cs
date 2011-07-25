@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Apache.Ibatis.DataMapper.Sqlite.Test")]
+[assembly: AssemblyTitle("MyBatis.DataMapper.Sqlite.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany(".")]
-[assembly: AssemblyProduct("Apache.Ibatis.DataMapper.Sqlite.Test")]
+[assembly: AssemblyProduct("MyBatis.DataMapper.Sqlite.Test")]
 [assembly: AssemblyCopyright("Copyright © . 2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

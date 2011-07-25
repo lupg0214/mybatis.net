@@ -4,9 +4,9 @@ xmlns="http://ibatis.apache.org/mapping"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 
 	<alias>
-		<typeAlias alias="HundredsBool" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.HundredsTypeHandlerCallback, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-    <typeAlias alias="Category2" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Category, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-    <typeAlias alias="genericList" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.ListeEntiteMetier`1[[Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Account, Apache.Ibatis.DataMapper.SqlClient.Test]], Apache.Ibatis.DataMapper.SqlClient.Test" />
+		<typeAlias alias="HundredsBool" type="MyBatis.DataMapper.SqlClient.Test.Domain.HundredsTypeHandlerCallback, MyBatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="Category2" type="MyBatis.DataMapper.SqlClient.Test.Domain.Category, MyBatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="genericList" type="MyBatis.DataMapper.SqlClient.Test.Domain.ListeEntiteMetier`1[[MyBatis.DataMapper.SqlClient.Test.Domain.Account, MyBatis.DataMapper.SqlClient.Test]], MyBatis.DataMapper.SqlClient.Test" />
   </alias>       
   
   <cacheModels>

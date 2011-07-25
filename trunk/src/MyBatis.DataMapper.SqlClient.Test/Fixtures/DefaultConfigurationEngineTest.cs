@@ -53,7 +53,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         [Test]
         public void ResultMap_configuration_via_code_should_override_file_configuration()
         {
-            string uri = "assembly://Apache.Ibatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
+            string uri = "assembly://MyBatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
             IResource resource = ResourceLoaderRegistry.GetResource(uri);
 
             // Before have 4 properties
@@ -81,7 +81,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         [Test]
         public void Should_contains_ResultMap_DocumentBook_with_5_properties()
         {
-            string uri = "assembly://Apache.Ibatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
+            string uri = "assembly://MyBatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
             IResource resource = ResourceLoaderRegistry.GetResource(uri);
 
             IConfigurationEngine engine = new DefaultConfigurationEngine();
@@ -101,7 +101,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         [Test]
         public void Should_contains_ParameterMap_OrderInsertExtend_with_10_properties()
         {
-            string uri = "assembly://Apache.Ibatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
+            string uri = "assembly://MyBatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
             IResource resource = ResourceLoaderRegistry.GetResource(uri);
 
             IConfigurationEngine engine = new DefaultConfigurationEngine();
@@ -127,7 +127,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         [Test]
         public void Should_contains_statement_GetAllAccountsOrderByName_with_2_child()
         {
-            string uri = "assembly://Apache.Ibatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
+            string uri = "assembly://MyBatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
             IResource resource = ResourceLoaderRegistry.GetResource(uri);
 
             IConfigurationEngine engine = new DefaultConfigurationEngine();
@@ -147,7 +147,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         [Test]
         public void Can_plug_HybridWebThreadSessionStore()
         {
-            string uri = "assembly://Apache.Ibatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
+            string uri = "assembly://MyBatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
             IResource resource = ResourceLoaderRegistry.GetResource(uri);
 
             ConfigurationSetting setting = new ConfigurationSetting();

@@ -4,8 +4,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 
 	<alias>
-		<typeAlias alias="HundredsBool" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.HundredsTypeHandlerCallback, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-		<typeAlias alias="Category2" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Category, Apache.Ibatis.DataMapper.SqlClient.Test"/>
+		<typeAlias alias="HundredsBool" type="MyBatis.DataMapper.SqlClient.Test.Domain.HundredsTypeHandlerCallback, MyBatis.DataMapper.SqlClient.Test"/>
+		<typeAlias alias="Category2" type="MyBatis.DataMapper.SqlClient.Test.Domain.Category, MyBatis.DataMapper.SqlClient.Test"/>
 	</alias>       
   
   <cacheModels>

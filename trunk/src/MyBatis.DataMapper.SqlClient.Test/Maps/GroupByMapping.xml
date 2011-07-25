@@ -4,13 +4,13 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <alias>
-    <typeAlias alias="NCategory" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Petshop.Category, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-    <typeAlias alias="NProduct" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Petshop.Product, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-    <typeAlias alias="NItem" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Petshop.Item, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-    <typeAlias alias="Application" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Application, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-    <typeAlias alias="ApplicationUser" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.ApplicationUser, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-    <typeAlias alias="Role" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Role, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-    <typeAlias alias="Address" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Address, Apache.Ibatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="NCategory" type="MyBatis.DataMapper.SqlClient.Test.Domain.Petshop.Category, MyBatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="NProduct" type="MyBatis.DataMapper.SqlClient.Test.Domain.Petshop.Product, MyBatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="NItem" type="MyBatis.DataMapper.SqlClient.Test.Domain.Petshop.Item, MyBatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="Application" type="MyBatis.DataMapper.SqlClient.Test.Domain.Application, MyBatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="ApplicationUser" type="MyBatis.DataMapper.SqlClient.Test.Domain.ApplicationUser, MyBatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="Role" type="MyBatis.DataMapper.SqlClient.Test.Domain.Role, MyBatis.DataMapper.SqlClient.Test"/>
+    <typeAlias alias="Address" type="MyBatis.DataMapper.SqlClient.Test.Domain.Address, MyBatis.DataMapper.SqlClient.Test"/>
 
   </alias>
 
