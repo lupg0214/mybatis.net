@@ -231,9 +231,7 @@
   <ItemGroup>
     <EmbeddedResource Include="properties.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Fixtures\CommonTests\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>

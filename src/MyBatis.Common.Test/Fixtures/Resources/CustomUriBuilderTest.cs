@@ -34,7 +34,7 @@ namespace MyBatis.Common.Test.Fixtures.Resources
             FileInfo file = new FileInfo(Path.GetFullPath(
                 Path.Combine(AppDomain.CurrentDomain.BaseDirectory, TemporaryFileName)));
 
-            CustomUriBuilder builder = new CustomUriBuilder("file://~/../" + TemporaryFileName, null);
+            CustomUriBuilder builder = new CustomUriBuilder("file://~/../" + TemporaryFileName, string.Empty);
 
             string fileNameOneDirectoryUp = file.Directory.Parent.FullName + "\\" + TemporaryFileName;
             Assert.AreEqual(fileNameOneDirectoryUp, builder.Uri.LocalPath,
