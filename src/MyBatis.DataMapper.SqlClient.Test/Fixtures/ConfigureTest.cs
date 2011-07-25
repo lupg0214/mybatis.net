@@ -118,7 +118,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         [Test]
         public void Test_XmlConfigurationInterpreter_via_AssemblyUri()
         {
-            string uri = "assembly://Apache.Ibatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
+            string uri = "assembly://MyBatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
 
             IConfigurationStore store = new DefaultConfigurationStore();
 
@@ -136,7 +136,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         [Test]
         public void Test_DefaultConfigurationEngine_via_Assembly_Resource()
         {
-            string uri = "assembly://Apache.Ibatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
+            string uri = "assembly://MyBatis.DataMapper.SqlClient.Test/bin.Debug/SqlMap_Test_Configure.config";
             IResource resource = ResourceLoaderRegistry.GetResource(uri);
 
             IConfigurationEngine engine = new DefaultConfigurationEngine();
@@ -195,7 +195,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
             Assert.That(datasource.Type, Is.EqualTo(DataConstants.ELEMENT_DATASOURCE));
 
             Assert.That(store.Alias.Length, Is.EqualTo(12));
-            Assert.That(store.GetAliasConfiguration("Account").Value, Is.EqualTo("Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Account, Apache.Ibatis.DataMapper.SqlClient.Test"));
+            Assert.That(store.GetAliasConfiguration("Account").Value, Is.EqualTo("MyBatis.DataMapper.SqlClient.Test.Domain.Account, MyBatis.DataMapper.SqlClient.Test"));
 
             Assert.That(store.TypeHandlers.Length, Is.EqualTo(2));
             Assert.That(store.GetTypeHandlerConfiguration("bool").Attributes.Count, Is.EqualTo(3));
@@ -276,7 +276,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         //    DomSqlMapBuilder builder = new DomSqlMapBuilder();
 
         //    NameValueCollection properties = new NameValueCollection();
-        //    properties.Add("collection2Namespace", "Apache.Ibatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, Apache.Ibatis.DataMapper.SqlClient.Test");
+        //    properties.Add("collection2Namespace", "MyBatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, MyBatis.DataMapper.SqlClient.Test");
         //    properties.Add("nullableInt", "int");
 
         //    builder.Properties = properties;
@@ -298,7 +298,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         //    DomSqlMapBuilder builder = new DomSqlMapBuilder();
 
         //    NameValueCollection properties = new NameValueCollection();
-        //    properties.Add("collection2Namespace", "Apache.Ibatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, Apache.Ibatis.DataMapper.SqlClient.Test");
+        //    properties.Add("collection2Namespace", "MyBatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, MyBatis.DataMapper.SqlClient.Test");
         //    properties.Add("nullableInt", "int");
 
         //    builder.Properties = properties;
@@ -320,7 +320,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         //    DomSqlMapBuilder builder = new DomSqlMapBuilder();
 
         //    NameValueCollection properties = new NameValueCollection();
-        //    properties.Add("collection2Namespace", "Apache.Ibatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, Apache.Ibatis.DataMapper.SqlClient.Test");
+        //    properties.Add("collection2Namespace", "MyBatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, MyBatis.DataMapper.SqlClient.Test");
         //    properties.Add("nullableInt", "int");
 
         //    builder.Properties = properties;
@@ -344,7 +344,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         //    DomSqlMapBuilder builder = new DomSqlMapBuilder();
 
         //    NameValueCollection properties = new NameValueCollection();
-        //    properties.Add("collection2Namespace", "Apache.Ibatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, Apache.Ibatis.DataMapper.SqlClient.Test");
+        //    properties.Add("collection2Namespace", "MyBatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, MyBatis.DataMapper.SqlClient.Test");
         //    properties.Add("nullableInt", "int");
 
         //    builder.Properties = properties;
@@ -373,7 +373,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         //    DomSqlMapBuilder builder = new DomSqlMapBuilder();
 
         //    NameValueCollection properties = new NameValueCollection();
-        //    properties.Add("collection2Namespace", "Apache.Ibatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, Apache.Ibatis.DataMapper.SqlClient.Test");
+        //    properties.Add("collection2Namespace", "MyBatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, MyBatis.DataMapper.SqlClient.Test");
         //    properties.Add("nullableInt", "int");
 
         //    builder.Properties = properties;
@@ -417,7 +417,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
         //    DomSqlMapBuilder builder = new DomSqlMapBuilder();
 
         //    NameValueCollection properties = new NameValueCollection();
-        //    properties.Add("collection2Namespace", "Apache.Ibatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, Apache.Ibatis.DataMapper.SqlClient.Test");
+        //    properties.Add("collection2Namespace", "MyBatis.DataMapper.SqlClient.Test.Domain.LineItemCollection, MyBatis.DataMapper.SqlClient.Test");
         //    properties.Add("nullableInt", "int");
 
         //    builder.Properties = properties;

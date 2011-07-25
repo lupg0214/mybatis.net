@@ -43,7 +43,7 @@ namespace MyBatis.Common.Resources
     /// </remarks>
     /// <example>
     /// iBATIS V1 
-    /// "Apache.Ibatis.Common.Test.properties.xml, Apache.Ibatis.Common.Test"
+    /// "Apache.Ibatis.Common.Test.properties.xml, MyBatis.Common.Test"
     /// 
     /// iBATIS V2
     /// assembly://Apache.Ibatis.Common.Test/Apache.Ibatis.Common.Test/properties.xml

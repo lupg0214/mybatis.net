@@ -26,7 +26,7 @@ namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml
     ///    &lt;dataSource name="ibatisnet.sqlmap" connectionString="Data Source=ibatisnet.sqlite;Version=3;"/&gt;
     ///   &lt;/database&gt;  
     ///   &lt;alias&gt;
-    ///    &lt;typeAlias alias="Account" type="Apache.Ibatis.DataMapper.Sqlite.Test.Domain.Account, MyBatis.DataMapper.Sqlite.Test"/&gt;
+    ///    &lt;typeAlias alias="Account" type="MyBatis.DataMapper.Sqlite.Test.Domain.Account, MyBatis.DataMapper.Sqlite.Test"/&gt;
     ///   &lt;/alias&gt;  
     ///   &lt;sqlMaps&gt;
     ///    &lt;sqlMap uri="file://../../Maps/Account.xml"/&gt;
@@ -73,7 +73,7 @@ namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml
         /// <example>
         /// <code>
         /// &lt;alias&gt;
-        ///	 &lt;typeAlias alias="Account" type="Apache.Ibatis.DataMapper.Sqlite.Test.Domain.Account, MyBatis.DataMapper.Sqlite.Test"/&gt;
+        ///	 &lt;typeAlias alias="Account" type="MyBatis.DataMapper.Sqlite.Test.Domain.Account, MyBatis.DataMapper.Sqlite.Test"/&gt;
 	    /// &lt;/alias&gt;
         /// </code>
         /// </example>

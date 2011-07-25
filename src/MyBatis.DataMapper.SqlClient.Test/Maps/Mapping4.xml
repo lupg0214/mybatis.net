@@ -4,8 +4,8 @@ xmlns="http://ibatis.apache.org/mapping"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 
   <alias>
-    <typeAlias alias="Document" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Document, Apache.Ibatis.DataMapper.SqlClient.Test" />
-    <typeAlias alias="Newspaper" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Newspaper, Apache.Ibatis.DataMapper.SqlClient.Test" />
+    <typeAlias alias="Document" type="MyBatis.DataMapper.SqlClient.Test.Domain.Document, MyBatis.DataMapper.SqlClient.Test" />
+    <typeAlias alias="Newspaper" type="MyBatis.DataMapper.SqlClient.Test.Domain.Newspaper, MyBatis.DataMapper.SqlClient.Test" />
   </alias>
 
   <resultMaps>

@@ -55,9 +55,9 @@ namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml
             try
             {
                 //Validate the document using a schema               
-                schemaXSD = Assembly.GetExecutingAssembly().GetManifestResourceStream("Apache.Ibatis.DataMapper." + schemaFileName); ;
+                schemaXSD = Assembly.GetExecutingAssembly().GetManifestResourceStream("MyBatis.DataMapper." + schemaFileName); ;
 
-                Contract.Assert.That(schemaXSD, Is.Not.Null).When("loading embedded resource [Apache.Ibatis.DataMapper." + schemaFileName + "]. If you are building from source, verfiy the file is marked as an embedded resource.");
+                Contract.Assert.That(schemaXSD, Is.Not.Null).When("loading embedded resource [MyBatis.DataMapper." + schemaFileName + "]. If you are building from source, verfiy the file is marked as an embedded resource.");
 
                 XmlSchema schema = XmlSchema.Read(schemaXSD, delegate(object sender, ValidationEventArgs args)
                                                        {

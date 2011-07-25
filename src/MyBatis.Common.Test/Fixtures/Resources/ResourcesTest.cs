@@ -43,7 +43,7 @@ namespace MyBatis.Common.Test.Fixtures.CommonTests
 		{
 			XmlDocument doc = null;
 
-			doc = Resources.GetEmbeddedResourceAsXmlDocument("Apache.Ibatis.Common.Test.properties.xml, Apache.Ibatis.Common.Test");
+			doc = Resources.GetEmbeddedResourceAsXmlDocument("Apache.Ibatis.Common.Test.properties.xml, MyBatis.Common.Test");
 
 			Assert.IsNotNull(doc);
 			Assert.IsTrue(doc.HasChildNodes);

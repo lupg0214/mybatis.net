@@ -33,7 +33,7 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures
 		            <dataSource name="ibatisnet.sqlmap" connectionString="Data Source=ibatisnet.sqlite;Version=3;"/>
 	            </database>  
 	            <alias>
-		            <typeAlias alias="Account" type="Apache.Ibatis.DataMapper.Sqlite.Test.Domain.Account, Apache.Ibatis.DataMapper.Sqlite.Test"/>
+		            <typeAlias alias="Account" type="MyBatis.DataMapper.Sqlite.Test.Domain.Account, MyBatis.DataMapper.Sqlite.Test"/>
 	            </alias>  
               <sqlMaps>
 		            <sqlMap uri="file://../../Maps/Account.xml"/>

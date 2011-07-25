@@ -64,7 +64,7 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures
             //Assert.That(datasource.Type, Is.EqualTo(DataConstants.ELEMENT_DATASOURCE));
 
             //Assert.That(store.Alias.Length, Is.EqualTo(12));
-            //Assert.That(store.GetAliasConfiguration("Account").Value, Is.EqualTo("Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Account, Apache.Ibatis.DataMapper.SqlClient.Test"));
+            //Assert.That(store.GetAliasConfiguration("Account").Value, Is.EqualTo("MyBatis.DataMapper.SqlClient.Test.Domain.Account, MyBatis.DataMapper.SqlClient.Test"));
 
             //Assert.That(store.TypeHandlers.Length, Is.EqualTo(2));
             //Assert.That(store.GetTypeHandlerConfiguration("bool").Attributes.Count, Is.EqualTo(3));

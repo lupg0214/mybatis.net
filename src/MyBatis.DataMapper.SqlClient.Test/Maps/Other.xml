@@ -4,13 +4,13 @@ xmlns="http://ibatis.apache.org/mapping"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 	
 	<alias>
-		<typeAlias alias="Other" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.Other, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-		<typeAlias alias="A" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.A, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-		<typeAlias alias="B" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.B, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-		<typeAlias alias="C" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.C, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-		<typeAlias alias="D" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.D, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-		<typeAlias alias="E" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.E, Apache.Ibatis.DataMapper.SqlClient.Test"/>
-		<typeAlias alias="F" type="Apache.Ibatis.DataMapper.SqlClient.Test.Domain.F, Apache.Ibatis.DataMapper.SqlClient.Test"/>
+		<typeAlias alias="Other" type="MyBatis.DataMapper.SqlClient.Test.Domain.Other, MyBatis.DataMapper.SqlClient.Test"/>
+		<typeAlias alias="A" type="MyBatis.DataMapper.SqlClient.Test.Domain.A, MyBatis.DataMapper.SqlClient.Test"/>
+		<typeAlias alias="B" type="MyBatis.DataMapper.SqlClient.Test.Domain.B, MyBatis.DataMapper.SqlClient.Test"/>
+		<typeAlias alias="C" type="MyBatis.DataMapper.SqlClient.Test.Domain.C, MyBatis.DataMapper.SqlClient.Test"/>
+		<typeAlias alias="D" type="MyBatis.DataMapper.SqlClient.Test.Domain.D, MyBatis.DataMapper.SqlClient.Test"/>
+		<typeAlias alias="E" type="MyBatis.DataMapper.SqlClient.Test.Domain.E, MyBatis.DataMapper.SqlClient.Test"/>
+		<typeAlias alias="F" type="MyBatis.DataMapper.SqlClient.Test.Domain.F, MyBatis.DataMapper.SqlClient.Test"/>
 
 	</alias>	
 	
