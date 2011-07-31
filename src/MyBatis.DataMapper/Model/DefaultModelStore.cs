@@ -128,11 +128,12 @@ namespace MyBatis.DataMapper.Model
         /// <returns>The ResultMap</returns>
         public IResultMap GetResultMap(string resultMapId)
         {
-            if (resultMaps.ContainsKey(resultMapId) == false)
+            IResultMap result;
+            if (!resultMaps.TryGetValue(resultMapId,  out result))
             {
                 throw new DataMapperException("The DataMapper does not contain an ResultMap named " + resultMapId);
             }
-            return resultMaps[resultMapId];
+            return result;
         }
 
         /// <summary>
@@ -155,11 +156,12 @@ namespace MyBatis.DataMapper.Model
         /// <returns>The ParameterMap</returns>
         public ParameterMap GetParameterMap(string parameterMapId)
         {
-            if (!parameterMaps.ContainsKey(parameterMapId))
+            ParameterMap result;
+            if (!parameterMaps.TryGetValue(parameterMapId, out result))
             {
                 throw new DataMapperException("The DataMapper does not contain an ParameterMap named " + parameterMapId + ".  ");
             }
-            return parameterMaps[parameterMapId];
+            return result;
         }
 
         /// <summary>
@@ -182,11 +184,13 @@ namespace MyBatis.DataMapper.Model
         /// <returns> The MappedStatement</returns>
         public IMappedStatement GetMappedStatement(string mappedStatementId)
         {
-            if (!mappedStatements.ContainsKey(mappedStatementId))
+            // switched to TryGetValue
+            IMappedStatement result;
+            if (!mappedStatements.TryGetValue(mappedStatementId, out result))
             {
                 throw new DataMapperException("The DataMapper does not contain a MappedStatement named " + mappedStatementId);
             }
-            return mappedStatements[mappedStatementId];
+            return result;
         }
 
         /// <summary>
@@ -210,11 +214,12 @@ namespace MyBatis.DataMapper.Model
         /// <returns>The cache model</returns>
         public CacheModel GetCacheModel(string cacheModelId)
         {
-            if (!cacheModels.ContainsKey(cacheModelId))
+            CacheModel result;
+            if (!cacheModels.TryGetValue(cacheModelId, out result))
             {
                 throw new DataMapperException("The DataMapper does not contain a CacheModel named " + cacheModelId);
             }
-            return cacheModels[cacheModelId];
+            return result;
         }
 
 
