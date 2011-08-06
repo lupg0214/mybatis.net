@@ -52,9 +52,15 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\External-Bin\Net\2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.5.2.9222, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External-Bin\Net\2.0\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="NVelocity">
+      <HintPath>..\External-Bin\Net\2.0\NVelocity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -64,6 +70,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External-Bin\Net\2.0\System.Data.SQLite.DLL</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -74,15 +81,104 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\A.cs" />
     <Compile Include="Domain\Account.cs" />
+    <Compile Include="Domain\AccountBis.cs" />
+    <Compile Include="Domain\AccountCollection.cs" />
+    <Compile Include="Domain\Address.cs" />
+    <Compile Include="Domain\Application.cs" />
+    <Compile Include="Domain\B.cs" />
+    <Compile Include="Domain\Book.cs" />
+    <Compile Include="Domain\C.cs" />
+    <Compile Include="Domain\Category.cs" />
+    <Compile Include="Domain\Child.cs" />
+    <Compile Include="Domain\Complex.cs" />
+    <Compile Include="Domain\Coupon.cs" />
+    <Compile Include="Domain\CustomInheritance.cs" />
+    <Compile Include="Domain\D.cs" />
+    <Compile Include="Domain\Document.cs" />
+    <Compile Include="Domain\DocumentCollection.cs" />
+    <Compile Include="Domain\E.cs" />
+    <Compile Include="Domain\Enumeration.cs" />
+    <Compile Include="Domain\F.cs" />
+    <Compile Include="Domain\GuidStringTypeHandlerCallback.cs" />
+    <Compile Include="Domain\HundredsTypeHandlerCallback.cs" />
+    <Compile Include="Domain\ImmutableCategory.cs" />
+    <Compile Include="Domain\ImmutableCategoryPropertyContainer.cs" />
+    <Compile Include="Domain\Item.cs" />
+    <Compile Include="Domain\JsonInterpreter.cs" />
+    <Compile Include="Domain\LineItem.cs" />
+    <Compile Include="Domain\LineItemCollection.cs" />
+    <Compile Include="Domain\LineItemCollection2.cs" />
+    <Compile Include="Domain\ListeEntiteMetier.cs" />
+    <Compile Include="Domain\Newspaper.cs" />
+    <Compile Include="Domain\Nullable.cs" />
+    <Compile Include="Domain\NVelocityDynamicEngine.cs" />
+    <Compile Include="Domain\OneZeroBoolTypeHandlerCallback.cs" />
+    <Compile Include="Domain\Order.cs" />
+    <Compile Include="Domain\Other.cs" />
+    <Compile Include="Domain\OuiNonBoolTypeHandlerCallback.cs" />
+    <Compile Include="Domain\Parent.cs" />
+    <Compile Include="Domain\Petshop\Category.cs" />
+    <Compile Include="Domain\Petshop\Item.cs" />
+    <Compile Include="Domain\Petshop\Product.cs" />
+    <Compile Include="Domain\Product.cs" />
+    <Compile Include="Domain\Query.cs" />
+    <Compile Include="Domain\Role.cs" />
+    <Compile Include="Domain\Sample.cs" />
+    <Compile Include="Domain\Search.cs" />
+    <Compile Include="Domain\Simple.cs" />
+    <Compile Include="Domain\SimpleSqlSource.cs" />
+    <Compile Include="Domain\SqlSourceWithInlineParameter.cs" />
+    <Compile Include="Domain\SqlSourceWithParameter.cs" />
+    <Compile Include="Domain\User.cs" />
     <Compile Include="Fixtures\BaseTest.cs" />
     <Compile Include="Fixtures\CodeConfigurationInterpreterTestFixture.cs" />
+    <Compile Include="Fixtures\DefaultModelBuilderTest.cs" />
+    <Compile Include="Fixtures\Mapping\CacheTest.cs" />
+    <Compile Include="Fixtures\Modules\AccountModule.cs" />
+    <Compile Include="Fixtures\Modules\AliasModule.cs" />
+    <Compile Include="Fixtures\Modules\DocumentModule.cs" />
+    <Compile Include="Fixtures\Modules\EventModule.cs" />
+    <Compile Include="Fixtures\Modules\ModuleConfigurationTest.cs" />
+    <Compile Include="Fixtures\Modules\ParameterMapModuleTest.cs" />
+    <Compile Include="Fixtures\Modules\ResultMapModuleTest.cs" />
     <Compile Include="Fixtures\PreserveWhitespaceTestFixture.cs" />
     <Compile Include="Fixtures\ScriptBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Maps\Account.xml" />
+    <Content Include="Maps\AccountModule.xml" />
+    <Content Include="Maps\Category.xml" />
+    <Content Include="Maps\Complex.xml" />
+    <Content Include="Maps\ConstructorInjection.xml" />
+    <Content Include="Maps\Coupons.xml" />
+    <Content Include="Maps\Document.xml" />
+    <Content Include="Maps\DocumentModule.xml" />
+    <Content Include="Maps\Dynamic.Velocity.xml" />
+    <Content Include="Maps\DynamicAccount.xml" />
+    <Content Include="Maps\EmbedParameter.xml" />
+    <Content Include="Maps\Enumeration.xml" />
+    <Content Include="Maps\Event.xml" />
+    <Content Include="Maps\GroupByMapping.xml" />
+    <Content Include="Maps\Iterate.xml" />
+    <Content Include="Maps\LineItem.xml" />
+    <Content Include="Maps\Mapping1.xml" />
+    <EmbeddedResource Include="Maps\Mapping2.xml" />
+    <Content Include="Maps\Mapping3.xml" />
+    <Content Include="Maps\Mapping4.xml" />
+    <EmbeddedResource Include="Maps\Mapping5.xml" />
+    <Content Include="Maps\NewsPaper.xml" />
+    <Content Include="Maps\Nullable.xml" />
+    <Content Include="Maps\Order.xml" />
+    <Content Include="Maps\Other.xml" />
+    <Content Include="Maps\ParameterClass.xml" />
+    <Content Include="Maps\ParentChild1.xml" />
+    <Content Include="Maps\ParentChild2.xml" />
+    <Content Include="Maps\ResultClass.xml" />
+    <Content Include="Maps\Simple.xml" />
+    <Content Include="Scripts\account-procedure.sql" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SqlMap.config">

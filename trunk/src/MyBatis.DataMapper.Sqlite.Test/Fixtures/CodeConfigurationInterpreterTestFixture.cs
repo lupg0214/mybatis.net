@@ -75,7 +75,7 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures
             assertConfiguration(baseStore.Statements, store.Statements);
             assertConfiguration(baseStore.ParameterMaps, store.ParameterMaps);
 
-            InitScript(SessionFactory.DataSource, "../../Scripts/account-init.sql");
+            InitScript(sessionFactory.DataSource, "../../Scripts/account-init.sql");
 
             ICollection items = localDataMapper.QueryForList("Account.GetAllAccounts1", null);
             Assert.IsTrue(items.Count > 1);

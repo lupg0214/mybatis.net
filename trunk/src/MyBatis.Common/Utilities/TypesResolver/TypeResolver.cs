@@ -153,7 +153,7 @@ namespace MyBatis.Common.Utilities.TypesResolver
         /// If the supplied <paramref name="typeName"/> could not be resolved
         /// to a <see cref="System.Type"/>.
         /// </exception>
-        private static Type ResolveType(string typeName)
+        public static Type ResolveType(string typeName)
         {
             Contract.Require.That(typeName, Is.Not.Null & Is.Not.Empty).When("retrieving argument typeName for ResolveType method");
 

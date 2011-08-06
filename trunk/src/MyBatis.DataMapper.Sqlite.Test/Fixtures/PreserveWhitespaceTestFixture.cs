@@ -14,12 +14,12 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures
         {
             LogManager.Adapter = new ConsoleOutLoggerFA(new NameValueCollection());
 
-            InitScript(SessionFactory.DataSource, "../../Scripts/account-init.sql");
+            InitScript(sessionFactory.DataSource, "../../Scripts/account-init.sql");
 
-            ICollection items = DataMapper.QueryForList("Account.GetAllAccounts1", null);
+            ICollection items = dataMapper.QueryForList("Account.GetAllAccounts1", null);
             Assert.IsTrue(items.Count > 1);
 
-            items = DataMapper.QueryForList("Account.GetAllAccounts2", null);
+            items = dataMapper.QueryForList("Account.GetAllAccounts2", null);
             Assert.IsTrue(items.Count > 1);
         }
     }
