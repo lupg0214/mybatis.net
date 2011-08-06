@@ -13,7 +13,7 @@ To pass tests for MS Sql Server
 			- 'Odbc' to run test via Odbc provider.
 3/ With the help of the DataBase-Template.config
    create a file named DataBase.config with your own value for datasource.
-   Place this file in the root folder of the Apache.Ibatis.DataMapper.SqlClient.Test project
+   Place this file in the root folder of the MyBatis.DataMapper.SqlClient.Test project
    (WARNInG : don't included it in the solution and don't commit it in SVN)
    Put it in the bin/debug directory
    
