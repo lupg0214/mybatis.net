@@ -5,20 +5,20 @@
   <sect1>
     <title>Introduction</title>
 
-    <para>If you want to know how to configure and install iBATIS, see the
+    <para>If you want to know how to configure and install MyBATIS, see the
     Developer Guide section for your platform. But if you want to know how
-    iBATIS <emphasis>really</emphasis> works, continue from here.</para>
+    MyBATIS <emphasis>really</emphasis> works, continue from here.</para>
 
     <para>The Data Map definition file is where the interesting stuff happens.
     Here, you define how your application interacts with your database. As
     mentioned, the Data Map definition is an XML descriptor file. By using a
-    service routine provided by iBATIS, the XML descriptors are rendered into
+    service routine provided by MyBATIS, the XML descriptors are rendered into
     a client object (or <classname>Mapper</classname>). To access your Data
     Maps, your application calls the client object and passes in the name of
     the statement you need.</para>
 
-    <para>The real work of using iBATIS is not so much in the application
-    code, but in the XML descriptors that iBATIS renders. Instead of monkeying
+    <para>The real work of using MyBATIS is not so much in the application
+    code, but in the XML descriptors that MyBATIS renders. Instead of monkeying
     with application source code, you monkey with XML descriptors instead. The
     benefit is that the XML descriptors are much better suited to the task of
     mapping your object properties to database entities. At least, that's our
@@ -35,7 +35,7 @@
 
         <programlisting>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
   &lt;sqlMap namespace="LineItem" 
-xmlns="http://ibatis.apache.org/mapping" 
+xmlns="http://MyBATIS.apache.org/mapping" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
 
   <emphasis role="comment">&lt;!--Type aliases allow you to use a shorter name for long fully qualified class names.--&gt;</emphasis>
@@ -66,7 +66,7 @@ Mapper.Instance().Insert("InsertLineItem",lineItem);</programlisting></para>
     statement.</para>
 
     <para>In Example 3.1, we use SQL aliasing to map columns to our object
-    properties and an iBATIS inline parameter (see sidebar) to insert a
+    properties and an MyBATIS inline parameter (see sidebar) to insert a
     runtime value. Easy as pie.</para>
 
     <sidebar>
@@ -105,7 +105,7 @@ Mapper.Instance().Insert("InsertLineItem",lineItem);</programlisting></para>
 
         <programlisting>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
   &lt;sqlMap namespace="Product" 
-xmlns="http://ibatis.apache.org/mapping" 
+xmlns="http://MyBATIS.apache.org/mapping" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
 
 <emphasis role="alias">  &lt;alias&gt;
@@ -206,7 +206,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
       </example></para>
 
     <para>Example 3.4 is obviously unlikely, unless you are running a test.
-    But it does shows that you can use iBATIS to execute arbitrary SQL
+    But it does shows that you can use MyBATIS to execute arbitrary SQL
     statements. More likely, you will use the object mapping features with
     Parameter Maps (Section 3.4) and Result Maps (Section 3.5) since that's
     where the magic happens.</para>
@@ -349,7 +349,7 @@ All query methods</programlisting></entry>
     <sect2>
       <title>Stored Procedures</title>
 
-      <para>iBATIS DataMapper treats stored procedures as yet another
+      <para>MyBATIS DataMapper treats stored procedures as yet another
       statement type. Example 3.5 shows a simple Data Map hosting a stored
       procedure. <example>
           <title>A Data Map using a stored procedure</title>
@@ -408,13 +408,13 @@ All query methods</programlisting></entry>
 
       <para>If you are not using stored procedures, the most important part of
       a statement-type element is the SQL. You can use any SQL statement that
-      is valid for your database system. Since iBATIS passes the SQL through
+      is valid for your database system. Since MyBATIS passes the SQL through
       to the standard libraries ( ADO.NET), you can use any statement with
-      iBATIS that you could use without iBATIS. You can use whatever functions
+      MyBATIS that you could use without MyBATIS. You can use whatever functions
       your database system supports, and even send multiple statements, so
       long as your driver or provider supports them.</para>
 
-      <para>If standard, static SQL isn't enough, iBATIS can help you build a
+      <para>If standard, static SQL isn't enough, MyBATIS can help you build a
       dynamic SQL statement. See Section 3.9 for more about Dynamic
       SQL.</para>
 
@@ -422,7 +422,7 @@ All query methods</programlisting></entry>
         <title>Reusing SQL Fragments</title>
 
 		<para>When writing SqlMaps, you often encounter duplicate fragments of SQL, for example a FROM-clause or
-		constraint-statement. iBATIS offers a simple yet powerful tag to reuse them. For the sake of simplicity, let's
+		constraint-statement. MyBATIS offers a simple yet powerful tag to reuse them. For the sake of simplicity, let's
 		assume we want to get some items and we want to do a count on them. Normally, you would write
 		something like this :
 		
@@ -463,7 +463,7 @@ SELECT id, name
 &lt;/select&gt;</programlisting>
           </example>
 
-		  The &lt;include&gt; tag is namespace aware so you can refer to fragments even when they are located in another map (however, due to the way iBATIS loads the SqlMaps, the included fragment should be loaded before the including statement).
+		  The &lt;include&gt; tag is namespace aware so you can refer to fragments even when they are located in another map (however, due to the way MyBATIS loads the SqlMaps, the included fragment should be loaded before the including statement).
 		  The fragments are included and processed on query-execution so parameters can be used too :
 		</para>
 
@@ -550,7 +550,7 @@ SELECT id, name
       <sect3>
         <title>&lt;generate&gt; tag</title>
 
-        <para>You can use iBATIS to execute any SQL statement your application
+        <para>You can use MyBATIS to execute any SQL statement your application
         requires. When the requirements for a statement are simple and
         obvious, you may not even need to write a SQL statement at all. The
         &lt;generate&gt; tag can be used to create simple SQL statements
@@ -722,7 +722,7 @@ SELECT id, name
         <property>id</property> property. The second is replaced with the
         <property>description</property> property.</para>
 
-        <para>iBATIS also supports named, inline parameters, which most
+        <para>MyBATIS also supports named, inline parameters, which most
         developers seem to prefer. However, Parameter Maps are useful when the
         SQL must be kept in a standard form or when extra information needs to
         be provided. For more about Parameter Maps see Section 3.4.</para>
@@ -979,7 +979,7 @@ namespace WebShop.Domain
         <title>extends</title>
 
         <para>When writing Sql, you often encounter duplicate fragments of
-        SQL. iBATIS offers a simple yet powerful attribute to reuse
+        SQL. MyBATIS offers a simple yet powerful attribute to reuse
         them.</para>
 
         <para><programlisting>
@@ -1015,7 +1015,7 @@ from Accounts
 
     <para><note>
         <para>Preceding sections briefly touched on inline parameters, which
-        automatically map properties to named parameters. Many iBATIS
+        automatically map properties to named parameters. Many MyBATIS
         developers prefer this approach. But others prefer to stick to the
         standard, anonymous approach to SQL parameters by using parameter
         maps. Sometimes people need to retain the purity of the SQL
@@ -1585,7 +1585,7 @@ from Accounts
 	<sect2>
       <title>&lt;constructor&gt; element</title>
 
-	<para>The &lt;constructor&gt; element must match the signature of one of the result class constructor. If specify, this element is used by iBATIS to instanciate the result object.</para>
+	<para>The &lt;constructor&gt; element must match the signature of one of the result class constructor. If specify, this element is used by MyBATIS to instanciate the result object.</para>
 
 		 <para>The &lt;constructor&gt; element holds one or more &lt;argument&gt;
       child elements that map SQL resultsets to object argument constructor.</para>
@@ -1966,17 +1966,17 @@ public class Person
       capabilities in handling types that are specific to your database
       provider, not handled by your database provider, or just happen to be
       part of your application design. The .NET DataMapper provides an
-      interface, IBatisNet.DataMappers.TypeHandlers.ITypeHandlerCallback, for
+      interface, MyBATISNet.DataMappers.TypeHandlers.ITypeHandlerCallback, for
       you to use in implementing your custom type handler.</para>
 
       <para><example>
           <title>ITypeHandlerCallback interface</title>
 
           <programlisting>using System.Data;
-using IBatisNet.DataMapper.Configuration.ParameterMapping;
+using MyBATISNet.DataMapper.Configuration.ParameterMapping;
 
 
-namespace IBatisNet.DataMapper.TypeHandlers
+namespace MyBATISNet.DataMapper.TypeHandlers
 {
  public interface ITypeHandlerCallback
  {
@@ -2052,7 +2052,7 @@ namespace IBatisNet.DataMapper.TypeHandlers
           <title>Guid String Type Handler</title>
 
           <programlisting>using System;
-using IBatisNet.DataMapper.TypeHandlers;
+using MyBATISNet.DataMapper.TypeHandlers;
 
 namespace BigApp.Common.TypeHandlers
 {
@@ -2167,7 +2167,7 @@ namespace BigApp.Common.TypeHandlers
     <sect2>
       <title>Inheritance Mapping</title>
 
-      <para>The iBATIS DataMapper supports the implementation of
+      <para>The MyBATIS DataMapper supports the implementation of
       object-oriented inheritance (subclassing) in your object model. There
       are several developer options for mapping entity classes and subclasses
       to database results:<itemizedlist>
@@ -2296,7 +2296,7 @@ public class Newspaper : Document
 
       <para>The DataMapper compares the data found in the discriminator column
       to the different &lt;submap&gt; values using the column value's string
-      equivalence. Based on this string value, iBATIS DataMapper will use the
+      equivalence. Based on this string value, MyBATIS DataMapper will use the
       resultMap named "Book" or "Newspaper" as defined in the &lt;submap&gt;
       elements or it will use the "super" resultMap "Document" if neither of
       the submap values satisfy the comparison. With these resultMaps, we can
@@ -2312,7 +2312,7 @@ public class Newspaper : Document
 
         <programlisting><emphasis role="blue">&lt;alias&gt;
   &lt;typeAlias alias="CustomInheritance" 
-  type="IBatisNet.DataMapper.Test.Domain.CustomInheritance, IBatisNet.DataMapper.Test"/&gt;
+  type="MyBATISNet.DataMapper.Test.Domain.CustomInheritance, MyBATISNet.DataMapper.Test"/&gt;
 &lt;/alias&gt;</emphasis>
 
 &lt;resultMaps&gt;
@@ -2414,13 +2414,13 @@ public class Newspaper : Document
 
       <para>Case sensitivity can also be an issue with implicit result maps.
       Conceivably, you could have an object with a "FirstName" property and a
-      "Firstname" property. When iBATIS tries to match property and column,
+      "Firstname" property. When MyBATIS tries to match property and column,
       the heurstic is case-insensitive and we cannot guarantee which property
       would match. (Of course, very few developers would have two property
       names that were so simiilar.)</para>
 
       <para>A final issue is that there is some performance overhead when
-      iBATIS has to map the column and property names automatically. The
+      MyBATIS has to map the column and property names automatically. The
       difference can be dramatic if using a third-party NET database provider
       with poor support for ResultSetMetaData.</para>
     </sect2>
@@ -2430,7 +2430,7 @@ public class Newspaper : Document
 
       <para>Many times, we don't need to return an object with multiple
       properties. We just need a String, Integer, Boolean, and so forth. If
-      you don't need to populate an object, iBATIS can return one of the
+      you don't need to populate an object, MyBATIS can return one of the
       primitive types instead. If you just need the value, you can use a
       standard type as a result class, as shown in Example 3.35.<example>
           <title>Selecting a standard type</title>
@@ -2679,7 +2679,7 @@ public class Newspaper : Document
       is on the "one side" of the relationship and the objects in the list are
       on the "many side". To load an IList of objects, there is no change to
       the statement (see example above). The only difference required to cause
-      the iBATIS DataMapper framework to load the property as an IList is that
+      the MyBATIS DataMapper framework to load the property as an IList is that
       the property on the business object must be of type
       System.Collections.IList. For example, if a Category has a IList of
       Product instances, the mapping would look like this (assuming Category
@@ -2766,7 +2766,7 @@ public class Newspaper : Document
 &lt;/statements&gt;</programlisting>
       </example>
 
-	  <para>iBATIS fully solves the N+1 selects problem. Here is the same example solved :</para>
+	  <para>MyBATIS fully solves the N+1 selects problem. Here is the same example solved :</para>
 
       <example>
         <title>N+1 Select Lists (1:M and M:N) resolution</title>
@@ -2893,7 +2893,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
       <para>As usual, this is a slight performance gain with an impact on
       readability and maintainability.</para>
 
-      <para>Important! Currently the iBATIS DataMapper framework does not
+      <para>Important! Currently the MyBATIS DataMapper framework does not
       automatically resolve circular relationships. Be aware of this when
       implementing parent/child relationships (trees). An easy workaround is
       to simply define a second result map for one of the cases that does not
@@ -2916,7 +2916,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
     additional types by using a Custom Type Handler.</para>
 	
 	<note>
-	<para>Nuallable type from .NET 2.0 are fully supported by iBATIS.NET.</para>
+	<para>Nuallable type from .NET 2.0 are fully supported by MyBATIS.NET.</para>
 	</note>
 
 	<para>
@@ -3268,7 +3268,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
     on configuring the DataMapper to work with your provider's DbTypes.</para>
 
 	<note>
-	<para>Nuallable type from .NET 2.0 are fully supported by iBATIS.NET.</para>
+	<para>Nuallable type from .NET 2.0 are fully supported by MyBATIS.NET.</para>
 	</note>
 
     <para>The .NET Framework data provider type of a Parameter object is
@@ -3287,7 +3287,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
             <row>
               <entry>CLR Type</entry>
 
-              <entry>iBATIS support</entry>
+              <entry>MyBATIS support</entry>
 
               <entry>SqlDbType</entry>
 
@@ -3547,7 +3547,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
 
     <para>Some values in a database are know to change slower than others. To
     improve performance, many developers like to cache often-used data to
-    avoid making unnecessary trips back to the database. iBATIS provides its
+    avoid making unnecessary trips back to the database. MyBATIS provides its
     own caching system, that you configure through a &lt;cacheModel&gt;
     element.</para>
 
@@ -3787,7 +3787,7 @@ Using this approach, you can solve any N+1 problem of any depth or breadth.</par
     included at all. The typical solution is usually a mess of conditional
     if-else statements and horrid string concatenations. The desired result is
     often a query by example, where a query can be built to find objects that
-    are similar to the example object. The iBATIS DataMapper API provides a
+    are similar to the example object. The MyBATIS DataMapper API provides a
     relatively elegant solution that can be applied to any mapped statement
     element. Here is a simple example:</para>
 

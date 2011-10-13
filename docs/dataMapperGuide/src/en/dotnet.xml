@@ -5,7 +5,7 @@
   <sect1>
     <title>Introduction</title>
 
-    <para>This section explains how to install, configure, and use the iBATIS
+    <para>This section explains how to install, configure, and use the MyBATIS
     DataMapper with your .NET application. It is assumed that you are using
     Microsoft Visual Studio .NET (VSN). If you are using another IDE, please
     modify these instructions accordingly.</para>
@@ -14,7 +14,7 @@
   <sect1>
     <title>Installing the DataMapper for .NET</title>
 
-    <para>There are four steps to using iBATIS DataMapper with your
+    <para>There are four steps to using MyBATIS DataMapper with your
     application for the first time. <orderedlist>
         <listitem>
            Setup the distribution 
@@ -36,15 +36,15 @@
     <sect2>
       <title>Setup the Distribution</title>
 
-      <para>The official site for iBATIS DataMapper for .NET is our Apache
+      <para>The official site for MyBATIS DataMapper for .NET is our parent
       site &lt;<ulink
-      url="http://ibatis.apache.org/">http://ibatis.apache.org/</ulink>&gt;.
+      url="http://www.mybatis.org/">http://www.mybatis.org/</ulink>&gt;.
       The DataMapper is availabe in 2 types of distributions: a binary
       distribution that includes the required DataMapper assemblies and a
       source distribution that includes a VSN solution. To download either of
       the distributions, follow the link to the Downloads area on our web
       site, and select the either the binary or source distribution for the
-      iBATIS .NET DataMapper release (if you download the binary distribution,
+      MyBATIS .NET DataMapper release (if you download the binary distribution,
       extract the files using a utility like WinZip or the extractor built
       into newer versions of Windows and skip ahead to the Add Assembly
       References section).</para>
@@ -53,13 +53,13 @@
       number of C# projects. The distribution is in the form of a ZIP archive.
       You can extract the distribution using a utility like WinZip or the
       extractor built into newer versions of Windows. We suggest that you
-      create an <filename>ibatisnet</filename> folder in your VSN project
+      create an <filename>MyBATISnet</filename> folder in your VSN project
       directory and extract the distribution there.</para>
 
       <para>Under the distribution's <filename>source</filename> folder are
-      eight folders that make up the iBATIS.NET distribution, as shown in
+      eight folders that make up the MyBATIS.NET distribution, as shown in
       Table 4.1.<table>
-          <title>Folders found in the iBATIS.NET source distribution</title>
+          <title>Folders found in the MyBATIS.NET source distribution</title>
 
           <tgroup cols="2">
             <thead>
@@ -79,54 +79,54 @@
               </row>
 
               <row>
-                <entry>IBatisNet.Common</entry>
+                <entry>MyBATISNet.Common</entry>
 
                 <entry>Assembly of classes shared by DataAccess and
                 DataMapper</entry>
               </row>
 
               <row>
-                <entry>IBatisNet.Common.Logging.Log4Net</entry>
+                <entry>MyBATISNet.Common.Logging.Log4Net</entry>
 
                 <entry>Log4Net factory adapter classes</entry>
               </row>
 
               <row>
-                <entry>IBatisNet.Common.Test</entry>
+                <entry>MyBATISNet.Common.Test</entry>
 
-                <entry>Test project for IBatisNet.Common that can be used with
+                <entry>Test project for MyBATISNet.Common that can be used with
                 NUnit</entry>
               </row>
 
               <row>
-                <entry>IBatisNet.DataAccess</entry>
+                <entry>MyBATISNet.DataAccess</entry>
 
                 <entry>The Data Access Objects framework (see separate DAO
                 Guide)</entry>
               </row>
 
               <row>
-                <entry>IBatisNet.DataAccess.Extensions</entry>
+                <entry>MyBATISNet.DataAccess.Extensions</entry>
 
                 <entry>Contains a C# project for extensions to the DataAccess
                 framework such as NHibernate support</entry>
               </row>
 
               <row>
-                <entry>IBatisNet.DataAccess.Test</entry>
+                <entry>MyBATISNet.DataAccess.Test</entry>
 
                 <entry>Test project for the DataAccess framework that can be
                 used with NUnit</entry>
               </row>
 
               <row>
-                <entry>iBatisNet.DataMapper</entry>
+                <entry>MyBATISNet.DataMapper</entry>
 
                 <entry>The DataMapper framework</entry>
               </row>
 
               <row>
-                <entry>IBatisNet.DataMapper.Test</entry>
+                <entry>MyBATISNet.DataMapper.Test</entry>
 
                 <entry>Test project for the DataMapper that can be used with
                 NUnit</entry>
@@ -135,18 +135,18 @@
           </tgroup>
         </table></para>
 
-      <para>You can load the <filename>IBatisNet.sln</filename> solution file
+      <para>You can load the <filename>MyBATISNet.sln</filename> solution file
       into VSN and build the solution to generate the needed assemblies. There
       are seven projects in the solution, and all should succeed. The
       assemblies we need will be created under
-      <filename>\source\IBatisNet.DataMapper\bin\Debug</filename>. The created
+      <filename>\source\MyBATISNet.DataMapper\bin\Debug</filename>. The created
       assemblies are : <orderedlist>
           <listitem>
-            <filename>IBatisNet.Common.dll</filename>
+            <filename>MyBATISNet.Common.dll</filename>
           </listitem>
 
           <listitem>
-            <filename>iBatisNet.DataMapper.dll</filename>
+            <filename>MyBATISNet.DataMapper.dll</filename>
           </listitem>
         </orderedlist> The DataMapper has external dependencies on :
       <orderedlist>
@@ -164,8 +164,8 @@
       <tip>
         <para>If you will not be using the DataAccess framework and NHibernate
         and you have a problem building the solution due to the dependency on
-        NHibernate, simply remove the IBatisNet.DataAccess.Extensions and
-        IBatisNet.DataAccess.Test projects from the solution before
+        NHibernate, simply remove the MyBATISNet.DataAccess.Extensions and
+        MyBATISNet.DataAccess.Test projects from the solution before
         building.</para>
       </tip>
     </sect2>
@@ -174,21 +174,21 @@
       <title>Add Assembly References</title>
 
       <para>Switching to your own solution, open the project that will be
-      using the iBATIS .NET DataMapper. Depending on how you organize your
+      using the MyBATIS .NET DataMapper. Depending on how you organize your
       solutions, this may or may not be the project for your Windows or Web
       application. It may be a library project that your application project
       references. You will need to add one or two references to your project:
       <orderedlist>
           <listitem>
-             IBatisNet.DataMapper.dll 
+             MyBATISNet.DataMapper.dll 
           </listitem>
 
           <listitem>
-             IBatisNet.DataAccess.dll (optional) 
+             MyBATISNet.DataAccess.dll (optional) 
           </listitem>
 
           <listitem>
-             IBatisNet.Common.dll (implied) 
+             MyBATISNet.Common.dll (implied) 
           </listitem>
 
           <listitem>
@@ -204,11 +204,11 @@
       will need a reference to the DataAccess assembly too. So, start with the
       first, and add the others only if needed.</para>
 
-      <para>If you have built the IBatisNet solution as described in Section
-      4.2.1, the three assemblies (IBatisNet.DataMapper.dll,
-      IBatisNet.Common.dll, and Castle.DynamicProxy.dll) that you will need
+      <para>If you have built the MyBATISNet solution as described in Section
+      4.2.1, the three assemblies (MyBATISNet.DataMapper.dll,
+      MyBATISNet.Common.dll, and Castle.DynamicProxy.dll) that you will need
       should be in the <filename>bin/Debug</filename> folder of the
-      IBatisNet.DataMapper project.</para>
+      MyBATISNet.DataMapper project.</para>
     </sect2>
 
     <sect2>
@@ -318,13 +318,13 @@
   <sect1>
     <title>Configuring the DataMapper for .NET</title>
 
-    <para>The iBATIS DataMapper is configured using a central XML descriptor
+    <para>The MyBATIS DataMapper is configured using a central XML descriptor
     file, usually named <filename>SqlMap.config</filename>, which provides the
     details for your data source, data maps, and other features like caching,
     transactions, and thread management. At runtime, your application code
-    will call a class method provided by the iBATIS library to read and parse
+    will call a class method provided by the MyBATIS library to read and parse
     your <filename>SqlMap.config</filename> file. After parsing the
-    configuration file, a DataMapper client will be returned by iBATIS for
+    configuration file, a DataMapper client will be returned by MyBATIS for
     your application to use.</para>
 
     <sect2>
@@ -360,7 +360,7 @@
           same directory as web.config)</title>
 
           <programlisting>&lt;?xml version="1.0" encoding="utf-8"?&gt; 
-&lt;sqlMapConfig xmlns="http://ibatis.apache.org/dataMapper" 
+&lt;sqlMapConfig xmlns="http://MyBATIS.apache.org/dataMapper" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
 
   &lt;!-- Optional --&gt;
@@ -373,7 +373,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
   &lt;/settings&gt;
 
   &lt;!-- Not required if providers.config is located in default location --&gt;
-  &lt;providers embedded="resources.providers.config, IBatisNet.Test"/&gt;
+  &lt;providers embedded="resources.providers.config, MyBATISNet.Test"/&gt;
 
   &lt;database&gt;
     &lt;provider name="sqlServer1.1"/&gt;
@@ -385,9 +385,9 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
   &lt;/database&gt;
 
   &lt;alias&gt;
-    &lt;typeAlias alias="Account" type="IBatisNet.Test.Domain.Account, IBatisNet.Test"/&gt;
+    &lt;typeAlias alias="Account" type="MyBATISNet.Test.Domain.Account, MyBATISNet.Test"/&gt;
     &lt;typeAlias alias="YesNoBool"
-         type="IBatisNet.Test.Domain.YesNoBoolTypeHandlerCallback, IBatisNet.Test"/&gt;
+         type="MyBATISNet.Test.Domain.YesNoBoolTypeHandlerCallback, MyBATISNet.Test"/&gt;
   &lt;/alias&gt;
 
   &lt;typeHandlers&gt;
@@ -498,7 +498,7 @@ url="file://<filename>c:\Web\MyApp\Resources\properties</filename>.config"</prog
             <programlisting>&lt;properties&gt;
  &lt;property resource="myProperties.config"/&gt;
  &lt;property resource="anotherProperties.config"/&gt;
- &lt;property key="host" value="ibatis.com" /&gt;
+ &lt;property key="host" value="MyBATIS.com" /&gt;
 &lt;/properties&gt;</programlisting>
           </informalexample>
 
@@ -566,10 +566,10 @@ url="file://<filename>c:\Web\MyApp\Resources\properties</filename>.config"</prog
 
         <para>Under ADO.NET, a database system is accessed through a provider.
         A database system can use a custom provider or a generic ODBC
-        provider. The iBATIS .NET DataMapper uses a pluggable approach to
+        provider. The MyBATIS .NET DataMapper uses a pluggable approach to
         using providers. Each provider is represented by an XML descriptor
         element found in a file called <filename>providers.config</filename>.
-        The iBATIS .NET DataMapper distribution includes a standard
+        The MyBATIS .NET DataMapper distribution includes a standard
         <filename>providers.config</filename> file with a set of thirteen
         prewritten provider elements:</para>
 
@@ -644,8 +644,8 @@ url="file://<filename>c:\Web\MyApp\Resources\properties</filename>.config"</prog
 		  </para>
 
         <para>The <filename>providers.config</filename> file can be found
-        under <filename>\source\IBatisNet.DataMapper.Test\bin\Debug</filename>
-        in the iBATIS .NET source distribution or in the root folder of the
+        under <filename>\source\MyBATISNet.DataMapper.Test\bin\Debug</filename>
+        in the MyBATIS .NET source distribution or in the root folder of the
         .NET DataMapper binary distribution.</para>
 
         <para>A provider may require libraries that you do not have
@@ -871,8 +871,8 @@ Default: true (enabled)</programlisting></entry>
 
                     <entry>The fully-qualified classname, including namespace
                     reference<programlisting>type=
-"IBatisNet.Test.Domain.Category, 
-IBatisNet.Test"</programlisting></entry>
+"MyBATISNet.Test.Domain.Category, 
+MyBATISNet.Test"</programlisting></entry>
                   </row>
                 </tbody>
               </tgroup>
@@ -1083,7 +1083,7 @@ IBatisNet.Test"</programlisting></entry>
                     <entry>Indicates the provider dbType to
                     handle<programlisting>dbType="Varchar2"</programlisting>Note:
                     Omit this attribute if you want the type handler to
-                    replace the default iBATIS type handler.</entry>
+                    replace the default MyBATIS type handler.</entry>
                   </row>
 
                   <row>
@@ -1138,7 +1138,7 @@ IBatisNet.Test"</programlisting></entry>
 <emphasis role="comment">&lt;!-- Connecting to Oracle --&gt;</emphasis>
 &lt;database&gt;
   &lt;provider name="oracleClient1.0"/&gt;
-  &lt;dataSource name="iBatisNet" 
+  &lt;dataSource name="MyBATISNet" 
        connectionString="Data Source=${datasource};User Id=${userid};Password=${password}"/&gt;
 &lt;/database&gt;
  
@@ -1223,9 +1223,9 @@ IBatisNet.Test"</programlisting></entry>
   </sect1>
 
   <sect1>
-    <title>Programming with iBATIS DataMapper: The .NET API</title>
+    <title>Programming with MyBATIS DataMapper: The .NET API</title>
 
-    <para>The IBATIS.NET DataMapper API provides four core functions:
+    <para>The MyBATIS.NET DataMapper API provides four core functions:
     <orderedlist>
         <listitem>
           <para>build a <classname>SqlMapper</classname> instance from a
@@ -1267,7 +1267,7 @@ IBatisNet.Test"</programlisting></entry>
       <para>An XML document is a wonderful tool for describing a database
       configuration (Section 4.3) or defining a set of data mappings (Section
       3), but you can't <emphasis>execute</emphasis> XML. In order to use the
-      iBATIS.NET configuration and definitions in your .NET application, you
+      MyBATIS.NET configuration and definitions in your .NET application, you
       need a class you can call.</para>
 
       <para>The framework provides service methods that you can call which
@@ -1284,11 +1284,11 @@ IBatisNet.Test"</programlisting></entry>
           applications</title>
 
           <programlisting role="java">[C#]
-using IBatisNet.Common.Utilities;
-using IBatisNet.DataMapper;
-using IBatisNet.DataMapper.Configuration;
+using MyBATISNet.Common.Utilities;
+using MyBATISNet.DataMapper;
+using MyBATISNet.DataMapper.Configuration;
 
-namespace IBatisNet.DataMapper
+namespace MyBATISNet.DataMapper
 {
  public class Mapper
  {
@@ -1401,7 +1401,7 @@ ISqlMapper access = AccessMapper.Get();</programlisting></para>
       <sect3>
         <title>DomSqlMapBuilder Configuration Options</title>
 
-        <para>iBATIS offers you a plethora of other options for loading your
+        <para>MyBATIS offers you a plethora of other options for loading your
         <filename>SqlMap.config</filename> file such as loading it through a
         <classname>Stream</classname>, <classname>Uri</classname>,
         <classname>FileInfo</classname>, or <classname>XmlDocument</classname>
@@ -1580,18 +1580,18 @@ ISqlMapper mapper = builder.Configure("sqlMap.config");</programlisting>
 			  <row>
                 <entry>GetAccessorFactory</entry>
 
-                <entry>Allows to set a custom get accessor factory before configuration, see IGetAccessorFactory interface which defines the contract for the factory responsible to build set accessor for a member object in iBATIS.
+                <entry>Allows to set a custom get accessor factory before configuration, see IGetAccessorFactory interface which defines the contract for the factory responsible to build set accessor for a member object in MyBATIS.
 				</entry>
               </row>
 			  <row>
                 <entry>SetAccessorFactory</entry>
 
-                <entry>Allows to set a custom set accessor factory before configuration, see ISetAccessorFactory interface which defines the contract for the factory responsible to build get accessor for a member object in iBATIS.
+                <entry>Allows to set a custom set accessor factory before configuration, see ISetAccessorFactory interface which defines the contract for the factory responsible to build get accessor for a member object in MyBATIS.
 				</entry>
               </row>
 			  <row>
                 <entry>ObjectFactory</entry>
-                <entry>Allows to set a custom object factory before configuration, see IObjectFactory interface which defines the contract for the factory responsible for object creation in iBATIS.
+                <entry>Allows to set a custom object factory before configuration, see IObjectFactory interface which defines the contract for the factory responsible for object creation in MyBATIS.
 				</entry>
               </row>
 			   <row>
@@ -1981,7 +1981,7 @@ public IDictionary QueryForMap(string statementName,
     <sect2>
       <title>Session</title>
 
-      <para>In the iBATIS DataMapper framework, a session is a container for
+      <para>In the MyBATIS DataMapper framework, a session is a container for
       an ADO connection and transaction.</para>
       <para>The DataMapper's <classname>IDalSession</classname> implements the
       <classname>IDisposable</classname> interface. So you can use it with the
@@ -2143,7 +2143,7 @@ catch {
       resource managers, such as SQL Server and Oracle, and reconcile
       transactions among them.</para>
 
-      <para>iBATIS.NET introduces a new
+      <para>MyBATIS.NET introduces a new
       <classname>TransactionScope</classname> class mimicking the new
       <classname>TransactionScope</classname> found in the
       <classname>System.Transactions</classname> namespace (.NET Framework
@@ -2162,7 +2162,7 @@ catch {
         <title>Using distributed transactions</title>
 
         <para><programlisting>[C#]
-using IBatisNet.Common.Transaction;
+using MyBATISNet.Common.Transaction;
 
 <emphasis role="blue">using (TransactionScope tx = new TransactionScope())</emphasis>
 {
@@ -2278,20 +2278,20 @@ Product p = (Product) map[“EST-93”];</programlisting>
   <sect1>
     <title>Logging SqlMap Activity</title>
 
-    <para>The iBATIS DataMapper framework records its interaction with the
+    <para>The MyBATIS DataMapper framework records its interaction with the
     database through an internal logging mechanism patterned after Apache
     Log4Net. The internal logging mechanism can use one of the three built-in
     loggers (NoOpLogger, ConsoleOutLogger, TraceLogger) or external logging
-    packages such as Apache Log4Net. In order for iBATIS to generate log
+    packages such as Apache Log4Net. In order for MyBATIS to generate log
     messages, the application's config file (App.Config or Web.Config) must
     contain an appropriate configSection node:</para>
 
     <example>
-      <title>iBATIS Configuration Section Handler for logging</title>
+      <title>MyBATIS Configuration Section Handler for logging</title>
 
       <programlisting>&lt;configSections&gt;
- &lt;sectionGroup name="iBATIS"&gt;
-  &lt;section name="logging" type="IBatisNet.Common.Logging.ConfigurationSectionHandler, IBatisNet.Common" /&gt;
+ &lt;sectionGroup name="MyBATIS"&gt;
+  &lt;section name="logging" type="MyBATISNet.Common.Logging.ConfigurationSectionHandler, MyBATISNet.Common" /&gt;
  &lt;/sectionGroup&gt;
 &lt;/configSections&gt;</programlisting>
     </example>
@@ -2300,48 +2300,48 @@ Product p = (Product) map[“EST-93”];</programlisting>
     implementation. See the examples below on how to configure one of the
     three built-in loggers.</para>
 
-    <para><programlisting>&lt;iBATIS&gt;
+    <para><programlisting>&lt;MyBATIS&gt;
  &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.ConsoleOutLoggerFA, IBatisNet.Common"&gt;
+  &lt;logFactoryAdapter type="MyBATISNet.Common.Logging.Impl.ConsoleOutLoggerFA, MyBATISNet.Common"&gt;
    &lt;arg key="showLogName" value="true" /&gt;
    &lt;arg key="showDataTime" value="true" /&gt;
    &lt;arg key="level" value="ALL" /&gt;
    &lt;arg key="dateTimeFormat" value="yyyy/MM/dd HH:mm:ss:SSS" /&gt;
   &lt;/logFactoryAdapter&gt;
  &lt;/logging&gt;
-&lt;/iBATIS&gt;
-</programlisting><programlisting>&lt;iBATIS&gt;
+&lt;/MyBATIS&gt;
+</programlisting><programlisting>&lt;MyBATIS&gt;
  &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.NoOpLoggerFA, IBatisNet.Common" /&gt;
+  &lt;logFactoryAdapter type="MyBATISNet.Common.Logging.Impl.NoOpLoggerFA, MyBATISNet.Common" /&gt;
  &lt;/logging&gt;
-&lt;/iBATIS&gt;
-</programlisting><programlisting>&lt;iBATIS&gt;
+&lt;/MyBATIS&gt;
+</programlisting><programlisting>&lt;MyBATIS&gt;
  &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.TraceLoggerFA, IBatisNet.Common" /&gt;
+  &lt;logFactoryAdapter type="MyBATISNet.Common.Logging.Impl.TraceLoggerFA, MyBATISNet.Common" /&gt;
  &lt;/logging&gt;
-&lt;/iBATIS&gt;</programlisting></para>
+&lt;/MyBATIS&gt;</programlisting></para>
 
-    <para>To configure iBATIS to use another logger implementation, simple
+    <para>To configure MyBATIS to use another logger implementation, simple
     specify the appropriate logFactoryAdapter type. To use Apache Log4Net with
-    the iBATIS DataMapper framework, use the following configuration
+    the MyBATIS DataMapper framework, use the following configuration
     setting:</para>
 
-    <para><programlisting>&lt;iBATIS&gt;
+    <para><programlisting>&lt;MyBATIS&gt;
  &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.Log4NetLoggerFA, IBatisNet.Common.Logging.Log4Net"&gt;
+  &lt;logFactoryAdapter type="MyBATISNet.Common.Logging.Impl.Log4NetLoggerFA, MyBATISNet.Common.Logging.Log4Net"&gt;
    &lt;arg key="configType" value="inline" /&gt;
   &lt;/logFactoryAdapter&gt;
  &lt;/logging&gt;
-&lt;/iBATIS&gt;</programlisting></para>
+&lt;/MyBATIS&gt;</programlisting></para>
 
-    <para><programlisting>&lt;iBATIS&gt;
+    <para><programlisting>&lt;MyBATIS&gt;
  &lt;logging&gt;
-  &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.Log4NetLoggerFA, IBatisNet.Common.Logging.Log4Net"&gt;
+  &lt;logFactoryAdapter type="MyBATISNet.Common.Logging.Impl.Log4NetLoggerFA, MyBATISNet.Common.Logging.Log4Net"&gt;
    &lt;arg key="configType" value="file" /&gt;
    &lt;arg key="configFile" value="log4Net.config" /&gt;
   &lt;/logFactoryAdapter&gt;
  &lt;/logging&gt;
-&lt;/iBATIS&gt;</programlisting></para>
+&lt;/MyBATIS&gt;</programlisting></para>
 
     <para>The Log4NetLoggerFA supports the following values for the
     configTypes argument:<table>
@@ -2382,7 +2382,7 @@ Product p = (Product) map[“EST-93”];</programlisting>
             <row>
               <entry>external</entry>
 
-              <entry>iBATIS will not attempt to configure log4net.</entry>
+              <entry>MyBATIS will not attempt to configure log4net.</entry>
             </row>
           </tbody>
         </tgroup>
@@ -2396,15 +2396,15 @@ Product p = (Product) map[“EST-93”];</programlisting>
 
       <para><programlisting>&lt;configuration&gt;
  &lt;configSections&gt;
-  &lt;sectionGroup name="iBATIS"&gt;
-   &lt;section name="logging" type="IBatisNet.Common.Logging.ConfigurationSectionHandler, IBatisNet.Common" /&gt;
+  &lt;sectionGroup name="MyBATIS"&gt;
+   &lt;section name="logging" type="MyBATISNet.Common.Logging.ConfigurationSectionHandler, MyBATISNet.Common" /&gt;
   &lt;/sectionGroup&gt;
  &lt;/configSections&gt;
- &lt;iBATIS&gt;
+ &lt;MyBATIS&gt;
   &lt;logging&gt;
-   &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.ConsoleLoggerFA, IBatisNet.Common.Logging" /&gt;
+   &lt;logFactoryAdapter type="MyBATISNet.Common.Logging.Impl.ConsoleLoggerFA, MyBATISNet.Common.Logging" /&gt;
   &lt;/logging&gt;
- &lt;/iBATIS&gt;
+ &lt;/MyBATIS&gt;
 &lt;/configuration&gt;</programlisting></para>
 
       <para>A common logging configuration is to use Apache Log4Net. To use
@@ -2414,14 +2414,14 @@ Product p = (Product) map[“EST-93”];</programlisting>
       is named after your assembly but adds a <filename>.config</filename>
       extension, and is stored in the same folder as your assembly. This is an
       example of a basic Log4Net configuration block
-      (IBatisNet.DataMapper.Test.dll.Config) that also creates a log4net.txt
+      (MyBATISNet.DataMapper.Test.dll.Config) that also creates a log4net.txt
       which contains debug information from log4net. If log4net is not
       producing output, check the log4net.txt file.</para>
 
       <para><programlisting>&lt;configuration&gt;
  &lt;configSections&gt;
-  &lt;sectionGroup name="iBATIS"&gt;
-   &lt;section name="logging" type="IBatisNet.Common.Logging.ConfigurationSectionHandler, IBatisNet.Common" /&gt;
+  &lt;sectionGroup name="MyBATIS"&gt;
+   &lt;section name="logging" type="MyBATISNet.Common.Logging.ConfigurationSectionHandler, MyBATISNet.Common" /&gt;
   &lt;/sectionGroup&gt;
   &lt;section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" /&gt;
  &lt;/configSections&gt;
@@ -2437,13 +2437,13 @@ Product p = (Product) map[“EST-93”];</programlisting>
    &lt;/listeners&gt;
   &lt;/trace&gt;
  &lt;/system.diagnostics&gt;
- &lt;iBATIS&gt;
+ &lt;MyBATIS&gt;
   &lt;logging&gt;
-   &lt;logFactoryAdapter type="IBatisNet.Common.Logging.Impl.Log4NetLoggerFA, IBatisNet.Common.Logging.Log4Net"&gt;
+   &lt;logFactoryAdapter type="MyBATISNet.Common.Logging.Impl.Log4NetLoggerFA, MyBATISNet.Common.Logging.Log4Net"&gt;
     &lt;arg key="configType" value="inline" /&gt;
    &lt;/logFactoryAdapter&gt;
   &lt;/logging&gt;
- &lt;/iBATIS&gt;
+ &lt;/MyBATIS&gt;
  &lt;log4net&gt;
   &lt;appender name="FileAppender" type="log4net.Appender.FileAppender"&gt;
    &lt;file value="log.txt" /&gt;
@@ -2459,7 +2459,7 @@ Product p = (Product) map[“EST-93”];</programlisting>
 
       <example>
         <title>A complete Log4Net configuration block
-        (IBatisNet.DataMapper.Test.dll.Config)</title>
+        (MyBATISNet.DataMapper.Test.dll.Config)</title>
 
         <programlisting>&lt;configuration&gt;
  <emphasis role="comment">&lt;!-- Register a section handler for the log4net section --&gt;</emphasis>
@@ -2502,31 +2502,31 @@ Product p = (Product) map[“EST-93”];</programlisting>
   &lt;/root&gt;
 
  <emphasis role="comment"> &lt;!-- Print only messages of level DEBUG or above in the packages --&gt;</emphasis>
-  &lt;logger name="IBatisNet.DataMapper.Commands.DefaultPreparedCommand"&gt;
+  &lt;logger name="MyBATISNet.DataMapper.Commands.DefaultPreparedCommand"&gt;
    &lt;level value="DEBUG" /&gt;
   &lt;/logger&gt;
-  &lt;logger name="IBatisNet.DataMapper.Configuration.Cache.CacheModel"&gt;
+  &lt;logger name="MyBATISNet.DataMapper.Configuration.Cache.CacheModel"&gt;
    &lt;level value="DEBUG" /&gt;
   &lt;/logger&gt;
-  &lt;logger name="IBatisNet.DataMapper.LazyLoadList"&gt;
+  &lt;logger name="MyBATISNet.DataMapper.LazyLoadList"&gt;
    &lt;level value="DEBUG" /&gt;
   &lt;/logger&gt;
-  &lt;logger name="IBatisNet.DataMapper.SqlMapSession"&gt;
+  &lt;logger name="MyBATISNet.DataMapper.SqlMapSession"&gt;
    &lt;level value="DEBUG" /&gt;
   &lt;/logger&gt;
-  &lt;logger name="IBatisNet.Common.Transaction.TransactionScope"&gt;
+  &lt;logger name="MyBATISNet.Common.Transaction.TransactionScope"&gt;
    &lt;level value="DEBUG" /&gt;
   &lt;/logger&gt;
-  &lt;logger name="IBatisNet.DataAccess.DaoSession"&gt;
+  &lt;logger name="MyBATISNet.DataAccess.DaoSession"&gt;
    &lt;level value="DEBUG" /&gt;
   &lt;/logger&gt;
-  &lt;logger name="IBatisNet.DataAccess.Configuration.DaoProxy"&gt;
+  &lt;logger name="MyBATISNet.DataAccess.Configuration.DaoProxy"&gt;
    &lt;level value="DEBUG" /&gt;
   &lt;/logger&gt;
-  &lt;logger name="IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory"&gt;
+  &lt;logger name="MyBATISNet.DataMapper.Configuration.Statements.PreparedStatementFactory"&gt;
    &lt;level value="OFF" /&gt;
   &lt;/logger&gt;
-  &lt;logger name="IBatisNet.DataMapper.Commands.IPreparedCommand"&gt;
+  &lt;logger name="MyBATISNet.DataMapper.Commands.IPreparedCommand"&gt;
    &lt;level value="OFF" /&gt;
   &lt;/logger&gt;  
  &lt;/log4net&gt;
@@ -2534,18 +2534,18 @@ Product p = (Product) map[“EST-93”];</programlisting>
       </example>
 
       <para>To log all Prepared SQL command text, enable the logger for
-      <classname>IBatisNet.DataMapper.Configuration.Statements.DefaultPreparedCommand</classname>.
+      <classname>MyBATISNet.DataMapper.Configuration.Statements.DefaultPreparedCommand</classname>.
       This will display the statement, parameters, and parameter types used by
       the DataMapper.</para>
 
       <example>
         <title>Sample DefaultPreparedCommand logger output</title>
 
-        <programlisting>2005-06-08 01:39:33 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand - 
+        <programlisting>2005-06-08 01:39:33 [3872] DEBUG MyBATISNet.DataMapper.Commands.DefaultPreparedCommand - 
 Statement Id: [User.Update] PreparedStatement : [UPDATE [User] SET [DateLastUpdated] = NOW() WHERE [UserId] = ?]
-2005-06-08 01:39:43 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand - 
+2005-06-08 01:39:43 [3872] DEBUG MyBATISNet.DataMapper.Commands.DefaultPreparedCommand - 
 Statement Id: [User.Update] Parameters: [param0=[UserId,1]]
-2005-06-08 01:39:53 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand - 
+2005-06-08 01:39:53 [3872] DEBUG MyBATISNet.DataMapper.Commands.DefaultPreparedCommand - 
 Statement Id: [User.Update] Types: [param0=[String, System.Int32]]
 </programlisting>
       </example>
@@ -2569,61 +2569,61 @@ Statement Id: [User.Update] Types: [param0=[String, System.Int32]]
 &lt;/appender&gt;</programlisting>
         </example>If you would like to log cache usage in your application,
       enable the logger for
-      <classname>IBatisNet.DataMapper.Configuration.Cache.CacheModel</classname>.</para>
+      <classname>MyBATISNet.DataMapper.Configuration.Cache.CacheModel</classname>.</para>
 
       <example>
         <title>Sample CacheModel logger output</title>
 
-        <programlisting>2005-06-08 01:38:34,403 [3648] DEBUG IBatisNet.DataMapper.Configuration.Cache.CacheModel - 
+        <programlisting>2005-06-08 01:38:34,403 [3648] DEBUG MyBATISNet.DataMapper.Configuration.Cache.CacheModel - 
 Flush cacheModel named Account.account-cache for statement 'UpdateAccountViaParameterMap'</programlisting>
       </example>
 
       <para>To keep track of DataMapper session information, enable the logger
-      for <classname>IBatisNet.DataMapper.SqlMapSession</classname>.</para>
+      for <classname>MyBATISNet.DataMapper.SqlMapSession</classname>.</para>
 
       <example>
         <title>Sample SqlMapSession logger output</title>
 
-        <programlisting><emphasis role="blue">2005-06-08 01:39:42,660 [3872] DEBUG IBatisNet.DataMapper.SqlMapSession [] - 
+        <programlisting><emphasis role="blue">2005-06-08 01:39:42,660 [3872] DEBUG MyBATISNet.DataMapper.SqlMapSession [] - 
   Open Connection "3194" 
   to "Microsoft SQL Server 7.0/2000, provider V1.0.5000.0 in framework .NET V1.1".
-</emphasis>2005-06-08 01:39:42,660 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
+</emphasis>2005-06-08 01:39:42,660 [3872] DEBUG MyBATISNet.DataMapper.Commands.DefaultPreparedCommand [] - 
   PreparedStatement : [select * from Orders where Order_ID =  @param0 ]
-2005-06-08 01:39:42,660 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
+2005-06-08 01:39:42,660 [3872] DEBUG MyBATISNet.DataMapper.Commands.DefaultPreparedCommand [] - 
   Parameters: [@param0=[value,1]]
-2005-06-08 01:39:42,660 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
+2005-06-08 01:39:42,660 [3872] DEBUG MyBATISNet.DataMapper.Commands.DefaultPreparedCommand [] - 
   Types: [@param0=[Int32, System.Int32]]
-<emphasis role="blue">2005-06-08 01:39:42,676 [3872] DEBUG IBatisNet.DataMapper.SqlMapSession [] - 
+<emphasis role="blue">2005-06-08 01:39:42,676 [3872] DEBUG MyBATISNet.DataMapper.SqlMapSession [] - 
   Close Connection "3194" to 
   "Microsoft SQL Server 7.0/2000, provider V1.0.5000.0 in framework .NET V1.1".</emphasis></programlisting>
       </example>
 
       <para>To get information about lazyload usage by the DataMapper, enable
       the logger for
-      <classname>IBatisNet.DataMapper.LazyLoadList</classname>.</para>
+      <classname>MyBATISNet.DataMapper.LazyLoadList</classname>.</para>
 
       <example>
         <title>Sample LazyLoadList logger output</title>
 
-        <programlisting><emphasis role="blue">2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.LazyLoadList [] - 
+        <programlisting><emphasis role="blue">2005-06-08 01:39:42,316 [3872] DEBUG MyBATISNet.DataMapper.LazyLoadList [] - 
   Proxyfying call to get_Count
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.LazyLoadList [] - 
+2005-06-08 01:39:42,316 [3872] DEBUG MyBATISNet.DataMapper.LazyLoadList [] - 
   Proxyfying call, query statement GetLineItemsForOrder</emphasis>
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.SqlMapSession [] - 
+2005-06-08 01:39:42,316 [3872] DEBUG MyBATISNet.DataMapper.SqlMapSession [] - 
   Open Connection "3463" to 
   "Microsoft SQL Server 7.0/2000, provider V1.0.5000.0 in framework .NET V1.1".
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
+2005-06-08 01:39:42,316 [3872] DEBUG MyBATISNet.DataMapper.Commands.DefaultPreparedCommand [] - 
   PreparedStatement : [select LineItem_ID as Id, LineItem_Code as Code,      
   LineItem_Quantity as Quantity, LineItem_Price as Price     
   from LineItems where Order_ID =  @param0 ]
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
+2005-06-08 01:39:42,316 [3872] DEBUG MyBATISNet.DataMapper.Commands.DefaultPreparedCommand [] - 
   Parameters: [@param0=[value,1]]
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [] - 
+2005-06-08 01:39:42,316 [3872] DEBUG MyBATISNet.DataMapper.Commands.DefaultPreparedCommand [] - 
   Types: [@param0=[Int32, System.Int32]]
-2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.SqlMapSession [] - 
+2005-06-08 01:39:42,316 [3872] DEBUG MyBATISNet.DataMapper.SqlMapSession [] - 
   Close Connection "3463" to 
   "Microsoft SQL Server 7.0/2000, provider V1.0.5000.0 in framework .NET V1.1".
-<emphasis role="blue">2005-06-08 01:39:42,316 [3872] DEBUG IBatisNet.DataMapper.LazyLoadList [] - 
+<emphasis role="blue">2005-06-08 01:39:42,316 [3872] DEBUG MyBATISNet.DataMapper.LazyLoadList [] - 
   End of proxyfied call to get_Count</emphasis></programlisting>
       </example>
     </sect2>
