@@ -5,12 +5,12 @@
   <sect1>
     <title>Overview</title>
 
-    <para>The iBATIS DataMapper framework makes it easier to use a database
-    with a Java or .NET application. iBATIS DataMapper couples objects with
+    <para>The MyBATIS DataMapper framework makes it easier to use a database
+    with a Java or .NET application. MyBATIS DataMapper couples objects with
     stored procedures or SQL statements using a XML descriptor. Simplicity is
-    the biggest advantage of the iBATIS DataMapper over object relational
-    mapping tools. To use iBATIS DataMapper you rely on your own objects, XML,
-    and SQL. There is little to learn that you don't already know. With iBATIS
+    the biggest advantage of the MyBATIS DataMapper over object relational
+    mapping tools. To use MyBATIS DataMapper you rely on your own objects, XML,
+    and SQL. There is little to learn that you don't already know. With MyBATIS
     DataMapper you have the full power of both SQL and stored procedures at
     your fingertips.</para>
   </sect1>
@@ -18,11 +18,11 @@
   <sect1>
     <title>What's covered here</title>
 
-    <para>This Guide covers the .NET implementations of iBATIS DataMapper. The
+    <para>This Guide covers the .NET implementations of MyBATIS DataMapper. The
     Java implementation offers the same services with some changes in the
     API.</para>
 
-    <para>Since iBATIS relies on an XML descriptor to create the mappings,
+    <para>Since MyBATIS relies on an XML descriptor to create the mappings,
     much of the material applies to both implementations.</para>
 
     <para>For installation instructions, see the section called the .NET
@@ -34,7 +34,7 @@
     <tip>
       <para>If you would like to get the latest development (unreleased)
       version of this Guide, please see the <ulink
-      url="http://opensource.atlassian.com/confluence/oss/display/IBATIS/">iBATIS
+      url="http://opensource.atlassian.com/confluence/oss/display/MyBATIS/">MyBATIS
       Wiki FAQ</ulink>. The FAQ entry explains how you can access our SVN
       source repository and generate CHM and PDF files of the latest
       development documentation for the DataMapper.</para>
@@ -85,30 +85,30 @@
   <sect1>
     <title>License Information</title>
 
-    <para>iBATIS.NET is licensed according to the terms of the Apache License,
+    <para>MyBATIS.NET is licensed according to the terms of the Apache License,
     Version 2.0. The full text of this license are available online at <ulink
     url="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</ulink>
     (<ulink url="http://www.apache.org/licenses/LICENSE-2.0.txt">TXT</ulink>
     or <ulink
     url="http://www.apache.org/licenses/LICENSE-2.0.html">HTML</ulink>). You
     can also view the full text of any of these licenses in the doc
-    subdirectory of the iBATIS.NET distribution.</para>
+    subdirectory of the MyBATIS.NET distribution.</para>
   </sect1>
 
   <sect1>
     <title>Support</title>
 
     <para>Mailing lists and bug trackers are available (courtesy of Apache
-    Software Foundation) at iBATIS’s Apache project page. Just direct your
+    Software Foundation) at MyBATIS’s Apache project page. Just direct your
     browser to <ulink
-    url="http://ibatis.apache.org/">http://ibatis.apache.org/</ulink>.</para>
+    url="http://MyBATIS.apache.org/">http://MyBATIS.apache.org/</ulink>.</para>
   </sect1>
 
   <sect1>
     <title>Disclaimer</title>
 
     <blockquote>
-      <para>iBATIS MAKES NO WARRANTIES, EXPRESS OR IMPLIED, AS TO THE
+      <para>MyBATIS MAKES NO WARRANTIES, EXPRESS OR IMPLIED, AS TO THE
       INFORMATION IN THIS DOCUMENT. The names of actual companies and products
       mentioned herein may be the trademarks of their respective
       owners.</para>
