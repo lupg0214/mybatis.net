@@ -1,0 +1,157 @@
+<?xml version="1.0" ?>
+<project name="iBATIS.Net" default="help" xmlns="http://nant.sf.net/schemas/nant.xsd">	
+	<!--  Default properties values --> 
+	<property name="Nant_output" value="Nant" />		
+	<property name="build.debug" value="true" />
+	<property name="target" value="net-4.0"/>	
+	<property name="nant.settings.currentframework" value="net-4.0"/>	
+	<property name="nowarn.numbers" value="3021"/>
+	<property name="IBatis_version" value="1.6.2"/>
+	
+	<target name="clean">		
+		<delete verbose="true">
+		 <fileset basedir="${Nant_output}/">
+				<include name="*.dll" />
+				<include name="*.pdb" />
+				<include name="*.xml" />
+				<include name="*.txt" />
+            </fileset>
+		</delete>
+	</target>
+	
+	<target name="clean-zip">		
+		<delete verbose="true">
+		 <fileset basedir="${Nant_output}/">
+                <include name="*.zip" />
+            </fileset>
+		</delete>
+	</target>
+		
+	<target name="help">
+		<echo message="Nant options:"/>
+		<echo message="	clean:"/>
+		<echo message="    clean all builds and documentation"/>							
+		<echo message="	clean-zip:"/>
+		<echo message="    clean zip file made through nant package option"/>							
+		<echo message="	debug:"/>
+		<echo message="	   build iBatis with debug information"/>		
+		<echo message="	release:"/>
+		<echo message="    build iBatis without debug information"/>
+		<echo message="	package:"/>
+		<echo message="    create Zip file with release files, xsd and documentacion"/>		
+		<echo message="	"/>		
+		<echo message="	Supported .Net version: (-t:net-[value])"/>		
+		<echo message="    net-2.0, net-3.0, net-3.5"/>
+	</target>	
+	
+	<target name="debug" depends="clean, clean-zip, copy-lib">
+		<property name="build.debug" value="true" />				
+		<nant buildfile="IBatisNet.Common/IBatisNet.Common.build" target="build" />
+		<nant buildfile="IBatisNet.Common.Logging.Log4Net/IBatisNet.Common.Logging.Log4Net.build" target="build" />
+		<nant buildfile="IBatisNet.DataMapper/IBatisNet.DataMapper.build" target="build" />
+	</target>
+	
+	<target name="copy-lib">
+		<copy todir="${Nant_output}">
+			<fileset basedir="External-Bin/Net/4.0">
+				<include name="*.*" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="release" depends="clean, clean-zip, copy-lib">
+		<property name="build.debug" value="false" />		
+		<nant buildfile="IBatisNet.Common/IBatisNet.Common.build" target="build" />
+		<nant buildfile="IBatisNet.Common.Logging.Log4Net/IBatisNet.Common.Logging.Log4Net.build" target="build" />
+		<nant buildfile="IBatisNet.DataMapper/IBatisNet.DataMapper.build" target="build" />
+	</target>
+	
+	<target name="package" depends="release">
+		<zip zipfile="${Nant_output}/IBatis.DataMapper.${IBatis_version}.bin.zip">
+			<fileset basedir="IBatisNet.DataMapper">
+				<include name="SqlMap.xsd" />
+				<include name="SqlMapConfig.xsd" />
+				
+			</fileset>
+			<fileset basedir="IBatisNet.Common">
+				<include name="provider.xsd" />
+			</fileset>
+			<fileset basedir="${Nant_output}">
+				<include name="*" />
+			</fileset>
+		</zip>
+		<call target="clean"/>		
+	</target>
+	
+	<!--
+	<target name="ndoc">
+         use ndoc to build sdk doc if they are not uptodate
+        <ifnot uptodatefile="${build.dir}/doc/sdk-help/*.chm">
+            <comparefiles basedir="${build.dir}/${project.config}/bin">
+                <includes name="IBatisNet.*.dll" />
+            </comparefiles>
+            <ndoc>
+                <assemblies basedir="${build.dir}/${project.config}/bin">
+                    <includes name="IBatisNet.*.dll" />
+                    <excludes name="*Test*.dll" />
+                </assemblies>
+                <summaries basedir=".">
+                    <includes name="doc/NamespaceSummary.xml" />
+                </summaries>
+                <documenters>
+                    <documenter name="MSDN">
+                        <property name="OutputDirectory" value="${build.dir}/doc/sdk-web" />
+                        <property name="OutputTarget" value="HtmlHelpAndWeb" />
+                        <property name="LinkToSdkDocVersion" value="${link.sdkdoc.version}" />
+                        <property name="HtmlHelpName" value="iBATISNET-SDK" />
+                        <property name="IncludeFavorites" value="False" />
+                        <property name="Title" value="iBATIS .NET SDK Documentation - v.${project.version}" />
+                        <property name="SplitTOCs" value="False" />
+                        <property name="DefaulTOC" value="" />
+						<property name="BinaryTOC" value="true" />
+						<property name="IncludeHierarchy" value="False" />
+                        <property name="ShowVisualBasic" value="True" />
+						<property name="RootPageContainsNamespaces" value="True" />
+						<property name="RootPageFileName" value="${nant.project.basedir}/HtmlHelpOverview.html" />
+						<property name="SortTOCByNamespace" value="True" />
+                        <property name="ShowMissingSummaries" value="${build.debug}" />
+                        <property name="ShowMissingRemarks" value="${build.debug}" />
+                        <property name="ShowMissingParams" value="${build.debug}" />
+                        <property name="ShowMissingReturns" value="${build.debug}" />
+                        <property name="ShowMissingValues" value="${build.debug}" />
+                        <property name="DocumentAttributes" value="True" />
+                        <property name="ShowTypeIdInAttributes" value="True" />
+                        <property name="DocumentInternals" value="False" />
+                        <property name="DocumentPrivates" value="False" />
+                        <property name="DocumentProtected" value="True" />
+						<property name="DocumentProtectedInternalAsProtected" value="False" />
+                        <property name="DocumentEmptyNamespaces" value="False" />
+                        <property name="IncludeAssemblyVersion" value="False" />
+						<property name="SkipNamespacesWithoutSummaries" value="False" />
+						<property name="UseNamespaceDocSummaries" value="False" />
+						<property name="AutoPropertyBackerSummaries" value="False" />
+						<property name="AutoDocumentConstructors" value="True" />
+						<property name="DocumentAttributes" value="False" />
+						<property name="ShowTypeIdInAttributes" value="False" />
+                        <property name="CopyrightText" value="Copyright 2003-2005 The Apache Software Foundation" />
+                        <property name="CopyrightHref" value="http://ibatis.apache.org/" />
+                        <property name="EditorBrowsableFilter" value="Off" />
+						<property name="FilesToInclude" value="${build.dir}/testResults/UnitTests.html" />
+                    </documenter>
+                </documenters>
+            </ndoc>
+            
+			<mkdir dir="${build.dir}/doc/sdk-web" />
+			<move file="${build.dir}/doc/sdk-web/iBATISNET-SDK.chm" tofile="${build.dir}/doc/sdk-help/iBATISNET-SDK.chm" />
+        </ifnot>
+
+		copy cover schema 
+        <mkdir dir="${build.dir}/doc/schemas" />
+        <copy todir="${build.dir}/doc/schemas">
+    	    <fileset basedir=".">
+                <include name="**/*.xsd" />
+            </fileset>
+	    </copy>
+    </target>
+	-->
+</project>
