@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="IBatisNet.Common.Logging.Log4Net" default="build">
+    <target name="build">
+        <csc target="library" warnaserror="false" define="dotnet2" keyfile="../AssemblyKey.snk"
+		debug="${build.debug}" output="../${Nant_output}/${project::get-name()}.dll" doc="../${Nant_output}/${project::get-name()}.xml">			
+			<nowarn>
+				<warning number="${nowarn.numbers}" />
+			</nowarn>
+			<sources failonempty="true">
+                <include name="**/*.cs" />
+            </sources>
+			<references>
+				<include name="../External-Bin/Net/4.0/log4net.dll" />				
+				<include name="../${Nant_output}/IBatisNet.Common.dll" />
+			</references>			
+        </csc>
+    </target>
+</project>
