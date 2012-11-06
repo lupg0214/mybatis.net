@@ -94,8 +94,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net">
-      <Name>log4net</Name>
-      <HintPath>..\External-Bin\Net\1.1\log4net.dll</HintPath>
+      <HintPath>..\External-Bin\Net\4.0\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
