@@ -12,8 +12,7 @@
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
     <AssemblyName>IBatisNet.Common.Logging.Log4Net</AssemblyName>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>AssemblyKey.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
@@ -92,6 +91,9 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net">
       <HintPath>..\External-Bin\Net\4.0\log4net.dll</HintPath>
@@ -145,11 +147,21 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="AssemblyKey.snk" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="$(ProjectDir)$(OutputPath)$(AssemblyName).dll"
+          DestinationFiles="$(MSBuildProjectDirectory)\..\MSBuild\$(AssemblyName).dll"/>
+    <Copy SourceFiles="$(ProjectDir)$(OutputPath)$(AssemblyName).xml"
+          DestinationFiles="$(MSBuildProjectDirectory)\..\MSBuild\$(AssemblyName).xml"/>
+    <Copy SourceFiles="$(ProjectDir)$(OutputPath)$(AssemblyName).pdb"
+          DestinationFiles="$(MSBuildProjectDirectory)\..\MSBuild\$(AssemblyName).pdb"
+          Condition="Exists('$(ProjectDir)$(OutputPath)$(AssemblyName).pdb')"/>
+  </Target>
 </Project>
