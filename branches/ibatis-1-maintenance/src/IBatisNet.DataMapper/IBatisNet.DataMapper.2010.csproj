@@ -92,7 +92,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.DynamicProxy, Version=1.1.5.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
@@ -750,20 +750,17 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent></PreBuildEvent>
-    <PostBuildEvent></PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
-  <Target Name="BeforeBuild">
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\..\$(AssemblyOriginatorKeyFile)"
-          DestinationFolder="$(ProjectDir)$(AssemblyOriginatorKeyFile)"/>
-  </Target>
+  <!--<Target Name="BeforeBuild">
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\..\$(AssemblyOriginatorKeyFile)" DestinationFolder="$(ProjectDir)$(AssemblyOriginatorKeyFile)" />
+  </Target>-->
   <Target Name="AfterBuild">
-    <Copy SourceFiles="$(ProjectDir)$(OutputPath)$(AssemblyName).dll"
-          DestinationFiles="$(MSBuildProjectDirectory)\..\MSBuild\$(AssemblyName).dll"/>
-    <Copy SourceFiles="$(ProjectDir)$(OutputPath)$(AssemblyName).xml"
-          DestinationFiles="$(MSBuildProjectDirectory)\..\MSBuild\$(AssemblyName).xml"/>
-    <Copy SourceFiles="$(ProjectDir)$(OutputPath)$(AssemblyName).pdb"
-          DestinationFiles="$(MSBuildProjectDirectory)\..\MSBuild\$(AssemblyName).pdb"
-          Condition="Exists('$(ProjectDir)$(OutputPath)$(AssemblyName).pdb')"/>
+    <Copy SourceFiles="$(ProjectDir)$(OutputPath)$(AssemblyName).dll" DestinationFiles="$(MSBuildProjectDirectory)\..\MSBuild\$(AssemblyName).dll" />
+    <Copy SourceFiles="$(ProjectDir)$(OutputPath)$(AssemblyName).xml" DestinationFiles="$(MSBuildProjectDirectory)\..\MSBuild\$(AssemblyName).xml" />
+    <Copy SourceFiles="$(ProjectDir)$(OutputPath)$(AssemblyName).pdb" DestinationFiles="$(MSBuildProjectDirectory)\..\MSBuild\$(AssemblyName).pdb" Condition="Exists('$(ProjectDir)$(OutputPath)$(AssemblyName).pdb')" />
   </Target>
 </Project>
