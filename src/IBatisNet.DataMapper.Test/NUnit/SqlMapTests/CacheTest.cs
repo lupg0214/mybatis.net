@@ -24,6 +24,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
 		[SetUp] 
 		public void SetUp() 
 		{
+            
 			InitScript( sqlMap.DataSource, ScriptDirectory + "account-init.sql" );
 			InitScript( sqlMap.DataSource, ScriptDirectory + "account-procedure.sql", false );
 		}

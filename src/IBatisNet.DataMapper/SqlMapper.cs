@@ -587,6 +587,8 @@ namespace IBatisNet.DataMapper
 
         #endregion
 
+
+        #endregion
         #region QueryForObject .NET 2.0
 #if dotnet2
         /// <summary>
@@ -1652,6 +1654,6 @@ namespace IBatisNet.DataMapper
             return session;
         }
 
-		#endregion
+		
 	}
 }

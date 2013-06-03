@@ -527,6 +527,38 @@
     <Content Include="Scripts\PostgreSQL\simple-init.sql" />
     <Content Include="Scripts\PostgreSQL\swap-procedure.sql" />
     <Content Include="Scripts\PostgreSQL\user-init.sql" />
+    <Content Include="Scripts\SQLite3\account-init.sql" />
+    <Content Include="Scripts\SQLite3\account-procedure.sql" />
+    <Content Include="Scripts\SQLite3\category-init.sql" />
+    <Content Include="Scripts\SQLite3\category-procedure.sql" />
+    <Content Include="Scripts\SQLite3\category-procedureWithReturn.sql" />
+    <Content Include="Scripts\SQLite3\child-parent-init.sql" />
+    <Content Include="Scripts\SQLite3\coupons-init.sql" />
+    <Content Include="Scripts\SQLite3\DataBase.sql" />
+    <Content Include="Scripts\SQLite3\DBCreation.sql" />
+    <Content Include="Scripts\SQLite3\documents-init.sql" />
+    <Content Include="Scripts\SQLite3\embed-param-setup-init.sql" />
+    <Content Include="Scripts\SQLite3\embed-param-test-init.sql" />
+    <Content Include="Scripts\SQLite3\enumeration-init.sql" />
+    <Content Include="Scripts\SQLite3\groupby-init.sql" />
+    <Content Include="Scripts\SQLite3\groupby-schema.sql" />
+    <Content Include="Scripts\SQLite3\line-item-init.sql" />
+    <Content Include="Scripts\SQLite3\more-account-records.sql" />
+    <Content Include="Scripts\SQLite3\Nullable-init.sql" />
+    <Content Include="Scripts\SQLite3\order-init.sql" />
+    <Content Include="Scripts\SQLite3\other-init.sql" />
+    <Content Include="Scripts\SQLite3\petstore-drop.sql" />
+    <Content Include="Scripts\SQLite3\petstore-init.sql" />
+    <Content Include="Scripts\SQLite3\petstore-schema.sql" />
+    <Content Include="Scripts\SQLite3\ps_SelectAccount.sql" />
+    <Content Include="Scripts\SQLite3\ps_SelectAllAccount.sql" />
+    <Content Include="Scripts\SQLite3\ps_SelectLineItem.sql" />
+    <Content Include="Scripts\SQLite3\README-embed-param.txt" />
+    <Content Include="Scripts\SQLite3\simple-init.sql" />
+    <Content Include="Scripts\SQLite3\swap-procedure.sql" />
+    <Content Include="Scripts\SQLite3\user-init.sql" />
+    <EmbeddedResource Include="bin\Debug\SqlMap_SQLite3_SQLite3.config" />
+    <None Include="Scripts\SQLite3\ps_SelectByIdList.sql" />
     <None Include="bin\Debug\IBatisNet.DataMapper.Test.dll.config" />
     <None Include="bin\Debug\SqlMap_Access_OleDb.config" />
     <None Include="bin\Debug\SqlMap_MSSQL_Odbc.config" />
@@ -575,6 +607,7 @@
       <Name>IBatisNet.DataMapper.Net45.2012</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
