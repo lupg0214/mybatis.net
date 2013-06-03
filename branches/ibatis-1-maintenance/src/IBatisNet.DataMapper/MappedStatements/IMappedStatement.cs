@@ -252,6 +252,7 @@ namespace IBatisNet.DataMapper.MappedStatements
 
 		#endregion
 
+
         #region ExecuteForObject .NET 2.0
 #if dotnet2
 

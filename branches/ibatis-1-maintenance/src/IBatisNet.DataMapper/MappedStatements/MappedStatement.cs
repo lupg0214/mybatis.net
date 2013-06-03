@@ -238,7 +238,72 @@ namespace IBatisNet.DataMapper.MappedStatements
 
             return obj;
         }
+#if dotnet4
 
+        public dynamic ExecuteQueryForDynamicObject(ISqlMapSession session, object parameterObject)
+        {
+            
+            RequestScope request = _statement.Sql.GetRequestScope(this, parameterObject, session);
+
+            _preparedCommand.Create(request, session, this.Statement, parameterObject);
+
+            dynamic obj = RunQueryForDynamicObject(request, session, parameterObject);
+
+            return obj;            
+        }
+
+        /// <summary>
+        /// Executes an SQL statement that returns a single row as an Object of the type of
+        /// the resultObject passed in as a parameter.
+        /// </summary>
+        /// <param name="request">The request scope.</param>
+        /// <param name="session">The session used to execute the statement.</param>
+        /// <param name="parameterObject">The object used to set the parameters in the SQL.</param>
+        /// <param name="resultObject">The result object.</param>
+        /// <returns>The object</returns>
+        internal dynamic RunQueryForDynamicObject(RequestScope request, ISqlMapSession session, object parameterObject)
+        {
+            dynamic resultObject = default(dynamic);
+
+            using (IDbCommand command = request.IDbCommand)
+            {
+                IDataReader reader = command.ExecuteReader();
+                try
+                {
+                    while (reader.Read())
+                    {
+                        object obj = _resultStrategy.Process(request, ref reader, resultObject);
+                        if (obj != BaseStrategy.SKIP)
+                        {
+                            resultObject = obj;
+                        }
+                    }
+                }
+                catch
+                {
+                    throw;
+                }
+                finally
+                {
+                    reader.Close();
+                    reader.Dispose();
+                }
+
+                ExecutePostSelect(request);
+
+                #region remark
+                // If you are using the OleDb data provider (as you are), you need to close the
+                // DataReader before output parameters are visible.
+                #endregion
+
+                RetrieveOutputParameters(request, session, command, parameterObject);
+            }
+
+            RaiseExecuteEvent();
+
+            return resultObject;
+        }
+#endif
 
         /// <summary>
         /// Executes an SQL statement that returns a single row as an Object of the type of
