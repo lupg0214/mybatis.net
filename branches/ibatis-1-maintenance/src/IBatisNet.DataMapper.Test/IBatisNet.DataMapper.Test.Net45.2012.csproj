@@ -572,7 +572,9 @@
     <None Include="DataBase-Template.config" />
     <None Include="IBatisNet.Test.build" />
     <None Include="Scripts\MSSQL\ps_SelectByIdList.sql" />
-    <EmbeddedResource Include="bin\Debug\providers.config" />
+    <EmbeddedResource Include="bin\Debug\providers.config">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\SqlMap_MSSQL_SqlClient.config" />
     <EmbeddedResource Include="Maps\MSSQL\SqlClient\Account.xml" />
   </ItemGroup>
