@@ -264,16 +264,25 @@ namespace IBatisNet.DataMapper.Configuration.Statements
 
                 IDbDataParameter dataParameter = _session.CreateDataParameter();
 
+
 				// Manage dbType attribute if any
 				if (property.DbType != null && property.DbType.Length >0) 
 				{
-					// Exemple : Enum.parse(System.Data.SqlDbType, 'VarChar')
-					object dbType = Enum.Parse( enumDbType, property.DbType, true );
+                    try
+                    {
+                        // Exemple : Enum.parse(System.Data.SqlDbType, 'VarChar')
+                        object dbType = Enum.Parse(enumDbType, property.DbType, true);
 
-					// Exemple : ObjectHelper.SetProperty(sqlparameter, 'SqlDbType', SqlDbType.Int);
-					ObjectProbe.SetMemberValue(dataParameter, dbTypePropertyName, dbType, 
-						_request.DataExchangeFactory.ObjectFactory, 
-                        _request.DataExchangeFactory.AccessorFactory );
+                        // Exemple : ObjectHelper.SetProperty(sqlparameter, 'SqlDbType', SqlDbType.Int);
+                        ObjectProbe.SetMemberValue(dataParameter, dbTypePropertyName, dbType,
+                            _request.DataExchangeFactory.ObjectFactory,
+                            _request.DataExchangeFactory.AccessorFactory);
+                    }
+                    catch (System.ArgumentException exception)
+                    {
+                        //TODO:
+                        string message = exception.Message;
+                    }
 				}
 
 				// Set IDbDataParameter
