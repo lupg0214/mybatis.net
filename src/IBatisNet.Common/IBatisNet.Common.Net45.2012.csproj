@@ -331,7 +331,7 @@
     </PostBuildEvent>
   </PropertyGroup>
   <Target Name="AfterBuild">
-    <CreateItem Include="$(MSBuildProjectDirectory)\..\MSBuild\*.*">
+    <CreateItem Include="$(MSBuildProjectDirectory)\..\MSBuild\*.*" exclude="$(MSBuildProjectDirectory)\..\MSBuild\README.txt">
       <Output TaskParameter="Include" ItemName="ExternalFilesToDelete" />
     </CreateItem>
     <Delete Files="@(ExternalFilesToDelete)" />
