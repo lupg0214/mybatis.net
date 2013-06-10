@@ -332,7 +332,9 @@
     <Content Include="Maps\Access\OleDb\Other.xml" />
     <Content Include="Maps\Access\OleDb\ParameterClass.xml" />
     <Content Include="Maps\Access\OleDb\ResultClass.xml" />
-    <Content Include="Maps\MSSQL\Odbc\Account.xml" />
+    <Content Include="Maps\MSSQL\Odbc\Account.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Maps\MSSQL\Odbc\Category.xml" />
     <Content Include="Maps\MSSQL\Odbc\Complex.xml" />
     <Content Include="Maps\MSSQL\Odbc\Document.xml" />
@@ -556,6 +558,7 @@
     <Content Include="Scripts\SQLite3\README-embed-param.txt" />
     <Content Include="Scripts\SQLite3\simple-init.sql" />
     <Content Include="Scripts\SQLite3\swap-procedure.sql" />
+    <Content Include="Scripts\SQLite3\teardown.sql" />
     <Content Include="Scripts\SQLite3\user-init.sql" />
     <EmbeddedResource Include="bin\Debug\SqlMap_SQLite3_SQLite3.config" />
     <None Include="Scripts\SQLite3\ps_SelectByIdList.sql" />

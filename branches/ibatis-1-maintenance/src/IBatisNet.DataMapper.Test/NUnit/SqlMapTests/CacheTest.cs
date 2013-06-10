@@ -37,7 +37,12 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
 		/// </summary>
 		[TearDown] 
 		public void TearDown()
-		{ /* ... */ } 
+		{
+            if (sqlMap.DataSource.DbProvider.Name == "SQLite3")
+            {
+                InitScript(sqlMap.DataSource, ScriptDirectory + "teardown.sql");
+            }
+        } 
 
 		#endregion
 
