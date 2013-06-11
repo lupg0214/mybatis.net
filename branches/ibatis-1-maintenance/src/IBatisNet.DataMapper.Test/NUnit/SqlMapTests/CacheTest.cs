@@ -25,11 +25,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
 		public void SetUp() 
 		{
 			InitScript( sqlMap.DataSource, ScriptDirectory + "account-init.sql" );
-
-            if (sqlMap.DataSource.DbProvider.Name != "SQLite3")
-            {
-                InitScript(sqlMap.DataSource, ScriptDirectory + "account-procedure.sql", false);    
-            }
+            InitScript(sqlMap.DataSource, ScriptDirectory + "account-procedure.sql", false);    
 		}
 
 		/// <summary>
