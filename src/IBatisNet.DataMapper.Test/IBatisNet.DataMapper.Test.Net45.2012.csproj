@@ -453,6 +453,7 @@
     <Content Include="Scripts\Access\order-init.sql" />
     <Content Include="Scripts\Access\other-init.sql" />
     <Content Include="Scripts\Access\swap-procedure.sql" />
+    <Content Include="Scripts\Access\teardown.sql" />
     <Content Include="Scripts\Access\user-init.sql" />
     <Content Include="Scripts\MSSQL\account-init.sql" />
     <Content Include="Scripts\MSSQL\account-procedure.sql" />
@@ -483,6 +484,7 @@
     <Content Include="Scripts\MSSQL\README-embed-param.txt" />
     <Content Include="Scripts\MSSQL\simple-init.sql" />
     <Content Include="Scripts\MSSQL\swap-procedure.sql" />
+    <Content Include="Scripts\MSSQL\teardown.sql" />
     <Content Include="Scripts\MSSQL\user-init.sql" />
     <Content Include="Scripts\MySql\account-init.sql" />
     <Content Include="Scripts\MySql\account-procedure.sql" />
@@ -497,6 +499,7 @@
     <Content Include="Scripts\MySql\other-init.sql" />
     <Content Include="Scripts\MySql\simple-init.sql" />
     <Content Include="Scripts\MySql\swap-procedure.sql" />
+    <Content Include="Scripts\MySql\teardown.sql" />
     <Content Include="Scripts\MySql\user-init.sql" />
     <Content Include="Scripts\Oracle\account-init.sql" />
     <Content Include="Scripts\Oracle\account-procedure.sql" />
@@ -513,6 +516,7 @@
     <Content Include="Scripts\Oracle\order-init.sql" />
     <Content Include="Scripts\Oracle\other-init.sql" />
     <Content Include="Scripts\Oracle\swap-procedure.sql" />
+    <Content Include="Scripts\Oracle\teardown.sql" />
     <Content Include="Scripts\Oracle\user-init.sql" />
     <Content Include="Scripts\PostgreSQL\account-init.sql" />
     <Content Include="Scripts\PostgreSQL\account-procedure.sql" />
@@ -528,6 +532,7 @@
     <Content Include="Scripts\PostgreSQL\other-init.sql" />
     <Content Include="Scripts\PostgreSQL\simple-init.sql" />
     <Content Include="Scripts\PostgreSQL\swap-procedure.sql" />
+    <Content Include="Scripts\PostgreSQL\teardown.sql" />
     <Content Include="Scripts\PostgreSQL\user-init.sql" />
     <Content Include="Scripts\SQLite3\account-init.sql" />
     <Content Include="Scripts\SQLite3\account-procedure.sql" />
