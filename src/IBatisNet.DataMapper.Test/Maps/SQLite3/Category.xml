@@ -46,12 +46,12 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 				
 		<!-- Test for statement as insert -->
 		<statement id="InsertCategory" parameterClass="Category" resultClass="int">
-			insert into Categories  
-				(Category_Name, Category_Guid) 
-			values 
-				(#Name#, #Guid:UniqueIdentifier#);
-			select SCOPE_IDENTITY() as value
-		</statement><!--Guid for Oledb, UniqueIdentifier for SqlClient,Odbc -->
+      insert into Categories
+      (Category_Name, Category_Guid)
+      values
+      (#Name#, #Guid:UniqueIdentifier#);
+      select LAST_INSERT_ROWID() as value;
+    </statement><!--Guid for Oledb, UniqueIdentifier for SqlClient,Odbc -->
 
     <statement id="InsertCategoryScope" parameterClass="Category" resultMap="resultMapScope">
       insert into Categories
