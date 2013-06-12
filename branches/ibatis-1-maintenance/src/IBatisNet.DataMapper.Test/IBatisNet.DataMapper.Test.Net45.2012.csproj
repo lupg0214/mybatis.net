@@ -439,7 +439,9 @@
     <Content Include="Maps\PostgreSQL\Npgsql\ParameterClass.xml" />
     <Content Include="Maps\PostgreSQL\Npgsql\ResultClass.xml" />
     <Content Include="Maps\SQLite3\Account.xml" />
-    <Content Include="Maps\SQLite3\Category.xml" />
+    <Content Include="Maps\SQLite3\Category.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Maps\SQLite3\Complex.xml" />
     <Content Include="Maps\SQLite3\ConstructorInjection.xml" />
     <Content Include="Maps\SQLite3\Coupons.xml" />
