@@ -135,8 +135,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 				
 		<insert id="InsertCategoryGenerate" parameterMap="insert-generate-params">
 			<selectKey property="Id" type="post" resultClass="int">
-				select @@IDENTITY as value
-            </selectKey>
+        select LAST_INSERT_ROWID() as value
+      </selectKey>
             <generate table="Categories" />
 		</insert>
 		
