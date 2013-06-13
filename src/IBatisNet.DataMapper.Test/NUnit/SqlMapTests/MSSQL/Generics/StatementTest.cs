@@ -53,19 +53,26 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL.Generics
 		[Test]
         public void GenericTestInsertAccountViaStoreProcedure() 
 		{
-			Account account = new Account();
+            try
+            {
+                Account account = new Account();
 
-			account.Id = 99;
-			account.FirstName = "Achille";
-			account.LastName = "Talon";
-			account.EmailAddress = "Achille.Talon@somewhere.com";
+                account.Id = 99;
+                account.FirstName = "Achille";
+                account.LastName = "Talon";
+                account.EmailAddress = "Achille.Talon@somewhere.com";
 
-			sqlMap.Insert("InsertAccountViaStoreProcedure", account);
+                sqlMap.Insert("InsertAccountViaStoreProcedure", account);
 
-            Account testAccount = sqlMap.QueryForObject<Account>("GetAccountViaColumnName", 99);
+                Account testAccount = sqlMap.QueryForObject<Account>("GetAccountViaColumnName", 99);
 
-			Assert.IsNotNull(testAccount);
-			Assert.AreEqual(99, testAccount.Id);
+                Assert.IsNotNull(testAccount);
+                Assert.AreEqual(99, testAccount.Id);
+            }
+            catch (NotSupportedException)
+            {
+                Assert.Ignore("Current DbProvider does not support stored procedures");
+            }
 		}
 
 		/// <summary>
