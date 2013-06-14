@@ -173,9 +173,16 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL.Generics
 		[Test]
         public void GenericTestSelect()
 		{
-			Order order = sqlMap.QueryForObject<Order>("GetOrderWithAccountViaSP", 1);
-			AssertOrder1(order);
-			AssertAccount1(order.Account);
+            try
+            {
+                Order order = sqlMap.QueryForObject<Order>("GetOrderWithAccountViaSP", 1);
+                AssertOrder1(order);
+                AssertAccount1(order.Account);
+            }
+            catch (NotSupportedException)
+            {
+                Assert.Ignore("Current DbProvider does not support stored procedures");
+            }
 		}
 
         /// <summary>
@@ -184,17 +191,22 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL.Generics
         [Test]
         public void TestGenericCollectionMappingViaSP()
         {
-            Order order = sqlMap.QueryForObject<Order>("GetOrderWithGenericViaSP", 1);
+            try
+            {
+                Order order = sqlMap.QueryForObject<Order>("GetOrderWithGenericViaSP", 1);
 
-            AssertOrder1(order);
+                AssertOrder1(order);
 
-            // Check generic collection
-            Assert.IsNotNull(order.LineItemsCollection);
-            Assert.AreEqual(3, order.LineItemsCollection.Count);
+                // Check generic collection
+                Assert.IsNotNull(order.LineItemsCollection);
+                Assert.AreEqual(3, order.LineItemsCollection.Count);
+            }
+            catch (NotSupportedException)
+            {
+                Assert.Ignore("Current DbProvider does not support stored procedures");
+            }
         }
 		#endregion
-
-
 	}
 }
 #endif
