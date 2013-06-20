@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections;
+using System.IO;
 using System.Threading;
 using IBatisNet.Common.Utilities;
 using IBatisNet.DataMapper.Configuration.Cache;
@@ -34,7 +35,13 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
 		[TearDown] 
 		public void TearDown()
 		{
-            InitScript(sqlMap.DataSource, ScriptDirectory + "teardown.sql");
+		    string path = ScriptDirectory + "teardown.sql";
+            // does a teardown exist?
+            if ((!File.Exists(path)) || (new FileInfo(path).Length == 0))
+            {
+                return;
+            }
+            InitScript(sqlMap.DataSource, path);
         } 
 
 		#endregion

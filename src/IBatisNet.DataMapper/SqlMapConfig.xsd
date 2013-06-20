@@ -112,6 +112,13 @@ vs:defaultnsprefix="">
 			<xs:attribute name="embedded" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
+  <xs:element name="sqlMapModule">
+    <xs:complexType>
+      <xs:attribute name="resource" type="xs:string"/>
+      <xs:attribute name="url" type="xs:string"/>
+      <xs:attribute name="embedded" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>  
 	<xs:annotation>
 		<xs:documentation>
 		 The document root.
@@ -126,10 +133,18 @@ vs:defaultnsprefix="">
 				<xs:element ref="database" minOccurs="0"/>
 				<xs:element ref="alias" minOccurs="0"/>
 				<xs:element ref="typeHandlers" minOccurs="0"/>
-				<xs:element ref="sqlMaps" minOccurs="0"/>
-			</xs:sequence>
+        <xs:element ref="sqlMaps" minOccurs="0"/>
+        <xs:element ref="sqlMapModules" minOccurs="0"/>
+      </xs:sequence>
 		</xs:complexType>
 	</xs:element>
+  <xs:element name="sqlMapModules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sqlMapModule" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 	<xs:element name="sqlMaps">
 		<xs:complexType>
 			<xs:sequence>

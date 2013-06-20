@@ -38,14 +38,17 @@ namespace IBatisNet.DataMapper.SessionStore
     /// request (in a thread pool thread, for instance).
     /// </remarks>
     public class HybridWebThreadSessionStore : AbstractSessionStore
-	{
+    {
+        private ThreadSessionStore _threadSessionStore;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSessionStore"/> class.
         /// </summary>
         /// <param name="sqlMapperId">The SQL mapper id.</param>
-        public HybridWebThreadSessionStore(string sqlMapperId): base(sqlMapperId)
-		{}
+        public HybridWebThreadSessionStore(string sqlMapperId) : base(sqlMapperId)
+        {
+            _threadSessionStore = new ThreadSessionStore(sqlMapperId);
+        }
 
 		/// <summary>
 		/// Get the local session
@@ -64,8 +67,9 @@ namespace IBatisNet.DataMapper.SessionStore
                 {
                     return WcfSessionStore.For(sessionName);
                 }
-                // all else fails, use CallContext
-                return CallContext.GetData(sessionName) as SqlMapSession; 
+                // all else fails, use ThreadContext
+			    return _threadSessionStore.LocalSession;
+			    //  return CallContext.GetData(sessionName) as SqlMapSession; 
 			}
 		}
 
@@ -78,7 +82,8 @@ namespace IBatisNet.DataMapper.SessionStore
             HttpContext currentContext = HttpContext.Current;
             if (currentContext == null)
             {
-                CallContext.SetData(sessionName, session);
+                _threadSessionStore.Store(session);
+             //   CallContext.SetData(sessionName, session);
             }
 		    else
             {
@@ -94,7 +99,8 @@ namespace IBatisNet.DataMapper.SessionStore
             HttpContext currentContext = HttpContext.Current;
             if (currentContext == null)
             {
-                CallContext.SetData(sessionName, null);
+                _threadSessionStore.Dispose();
+            //    CallContext.SetData(sessionName, null);
             }
 		    else
             {

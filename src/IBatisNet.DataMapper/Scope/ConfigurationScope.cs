@@ -64,6 +64,7 @@ namespace IBatisNet.DataMapper.Scope
 
 		private XmlDocument _sqlMapConfigDocument = null;
 		private XmlDocument _sqlMapDocument = null;
+	    private XmlDocument _sqlMapModuleDocument = null;
 		private XmlNode _nodeContext = null;
 
 		private bool _useConfigFileWatcher = false;
@@ -213,6 +214,14 @@ namespace IBatisNet.DataMapper.Scope
 			set { _sqlMapDocument = value; }
 			get { return _sqlMapDocument; }
 		}
+        /// <summary>
+        /// A XML SqlMap file
+        /// </summary>
+        public XmlDocument SqlMapModuleDocument
+        {
+            set { _sqlMapModuleDocument = value; }
+            get { return _sqlMapModuleDocument; }
+        }
 
 		/// <summary>
 		/// Tell us if we use Configuration File Watcher

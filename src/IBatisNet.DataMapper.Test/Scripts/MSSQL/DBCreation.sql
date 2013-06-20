@@ -76,7 +76,7 @@ GO
 if not exists (select * from master.dbo.syslogins where loginname = N'IBatisNet')
 BEGIN
 	declare @logindb nvarchar(132),  @loginpass nvarchar(132), @loginlang nvarchar(132) 
-	select @logindb = N'IBatisNet', @loginpass=N'test', @loginlang = N'us_english'
+	select @logindb = N'IBatisNet', @loginpass=N'IbatisNet9Teset!!', @loginlang = N'us_english'
 	exec sp_addlogin N'IBatisNet', @loginpass, @logindb, @loginlang
 END
 GO

@@ -1350,9 +1350,19 @@
             Token for xml path to global type alias elements.
             </summary>
         </member>
+        <member name="F:IBatisNet.DataMapper.Configuration.DomSqlMapBuilder.XML_GLOBAL_MAPMODULE">
+            <summary>
+            Token for xml path to global type alias elements.
+            </summary>
+        </member>
         <member name="F:IBatisNet.DataMapper.Configuration.DomSqlMapBuilder.XML_SQLMAP">
             <summary>
             Token for xml path to sqlMap elements.
+            </summary>
+        </member>
+        <member name="F:IBatisNet.DataMapper.Configuration.DomSqlMapBuilder.XML_MODULE_MAP">
+            <summary>
+            Token for xml path to module sqlMap elements.
             </summary>
         </member>
         <member name="F:IBatisNet.DataMapper.Configuration.DomSqlMapBuilder.XML_MAPPING_ROOT">
@@ -1686,9 +1696,16 @@
             <param name="elementName"></param>
             <returns></returns>
         </member>
+        <member name="M:IBatisNet.DataMapper.Configuration.DomSqlMapBuilder.ApplyModuleNamespacePrefix(System.String)">
+            <summary>
+            Apply the module namespace prefix
+            </summary>
+            <param name="elementName"></param>
+            <returns></returns>
+        </member>
         <member name="M:IBatisNet.DataMapper.Configuration.DomSqlMapBuilder.ApplyMappingNamespacePrefix(System.String)">
             <summary>
-            Apply the provider namespace prefix
+            Apply the module namespace prefix
             </summary>
             <param name="elementName"></param>
             <returns></returns>
@@ -8978,6 +8995,11 @@
             A XML SqlMap file
             </summary>
         </member>
+        <member name="P:IBatisNet.DataMapper.Scope.ConfigurationScope.SqlMapModuleDocument">
+            <summary>
+            A XML SqlMap file
+            </summary>
+        </member>
         <member name="P:IBatisNet.DataMapper.Scope.ConfigurationScope.UseConfigFileWatcher">
             <summary>
             Tell us if we use Configuration File Watcher
@@ -9239,6 +9261,28 @@
             </summary>
         </member>
         <member name="P:IBatisNet.DataMapper.SessionStore.CallContextSessionStore.LocalSession">
+            <summary>
+            Get the local session
+            </summary>
+        </member>
+        <member name="M:IBatisNet.DataMapper.SessionStore.ThreadSessionStore.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IBatisNet.DataMapper.SessionStore.CallContextSessionStore"/> class.
+            </summary>
+            <param name="sqlMapperId">The SQL mapper id.</param>
+        </member>
+        <member name="M:IBatisNet.DataMapper.SessionStore.ThreadSessionStore.Store(IBatisNet.DataMapper.ISqlMapSession)">
+            <summary>
+            Store the specified session.
+            </summary>
+            <param name="session">The session to store</param>
+        </member>
+        <member name="M:IBatisNet.DataMapper.SessionStore.ThreadSessionStore.Dispose">
+            <summary>
+            Remove the local session.
+            </summary>
+        </member>
+        <member name="P:IBatisNet.DataMapper.SessionStore.ThreadSessionStore.LocalSession">
             <summary>
             Get the local session
             </summary>

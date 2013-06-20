@@ -44,7 +44,8 @@ namespace IBatisNet.DataMapper.SessionStore
         {
             if (System.Web.HttpContext.Current == null)
 			{
-                return new CallContextSessionStore(sqlMapperId);
+                return new ThreadSessionStore(sqlMapperId);
+           //     return new CallContextSessionStore(sqlMapperId);
 			}
             return new WebSessionStore(sqlMapperId);
         }
