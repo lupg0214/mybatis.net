@@ -590,6 +590,7 @@
     <Compile Include="SessionStore\AbstractSessionStore.cs" />
     <Compile Include="SessionStore\CallContextSessionStore.cs" />
     <Compile Include="SessionStore\InstanceItems.cs" />
+    <Compile Include="SessionStore\ThreadSessionStore.cs" />
     <Compile Include="SessionStore\WcfSessionItemsInstanceExtension.cs" />
     <Compile Include="SessionStore\WcfSessionStore.cs" />
     <Compile Include="SessionStore\HybridWebThreadSessionStore.cs" />
@@ -716,6 +717,9 @@
       <SubType>
       </SubType>
     </EmbeddedResource>
+    <None Include="SqlMapModule.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

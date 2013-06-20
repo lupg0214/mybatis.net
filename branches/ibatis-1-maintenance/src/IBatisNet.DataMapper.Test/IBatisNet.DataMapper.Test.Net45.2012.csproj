@@ -249,6 +249,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="NUnit\SqlMapTests\ConstructorTest.cs" />
+    <Compile Include="NUnit\SqlMapTests\ModuleTest.cs" />
     <Compile Include="NUnit\SqlMapTests\DynamicPrependTest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -361,6 +362,10 @@
     <Content Include="Maps\MSSQL\SqlClient\Category.xml" />
     <Content Include="Maps\MSSQL\SqlClient\Complex.xml" />
     <Content Include="Maps\MSSQL\SqlClient\ConstructorInjection.xml" />
+    <EmbeddedResource Include="Maps\MSSQL\SqlClient\MapModule.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Maps\MSSQL\SqlClient\Module\Order2.xml" />
     <Content Include="Maps\MSSQL\SqlClient\Coupons.xml" />
     <Content Include="Maps\MSSQL\SqlClient\Document.xml" />
     <Content Include="Maps\MSSQL\SqlClient\DynamicAccount.xml" />
