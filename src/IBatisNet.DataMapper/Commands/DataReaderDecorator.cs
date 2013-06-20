@@ -26,6 +26,8 @@
 using System;
 using System.Data;
 using IBatisNet.DataMapper.Scope;
+using System.Configuration;
+using System.Globalization;
 
 namespace IBatisNet.DataMapper.Commands
 {
@@ -248,6 +250,13 @@ namespace IBatisNet.DataMapper.Commands
         /// <exception cref="System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"></see>. </exception>
         DateTime IDataRecord.GetDateTime(int i)
         {
+            string dateTimeFormat = ConfigurationManager.AppSettings["dateTimeFormat"];
+
+            if (!string.IsNullOrWhiteSpace(dateTimeFormat))
+            {
+                return DateTime.ParseExact(_innerDataReader.GetString(i), dateTimeFormat, CultureInfo.InvariantCulture);
+            }
+            
             return _innerDataReader.GetDateTime(i);
         }
 
