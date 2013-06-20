@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMapModule
+xmlns="http://ibatis.apache.org/module"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <sqlMaps>
+    <sqlMap resource="../../Maps/MSSQL/SqlClient/Module/Order2.xml"/>
+  </sqlMaps>
+</sqlMapModule>
