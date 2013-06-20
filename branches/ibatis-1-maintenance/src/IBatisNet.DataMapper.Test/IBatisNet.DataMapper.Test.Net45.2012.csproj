@@ -456,6 +456,7 @@
     <Content Include="Maps\SQLite3\Enumeration.xml" />
     <Content Include="Maps\SQLite3\GroupByMapping.xml" />
     <Content Include="Maps\SQLite3\LineItem.xml" />
+    <EmbeddedResource Include="Maps\SQLite3\Module\Order2.xml" />
     <Content Include="Maps\SQLite3\NewsPaper.xml" />
     <Content Include="Maps\SQLite3\Nullable.xml" />
     <Content Include="Maps\SQLite3\Order.xml" />
@@ -592,7 +593,9 @@
     <Content Include="Scripts\SQLite3\swap-procedure.sql" />
     <Content Include="Scripts\SQLite3\teardown.sql" />
     <Content Include="Scripts\SQLite3\user-init.sql" />
-    <EmbeddedResource Include="bin\Debug\SqlMap_SQLite3_SQLite3.config" />
+    <EmbeddedResource Include="bin\Debug\SqlMap_SQLite3_SQLite3.config">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="Scripts\SQLite3\ps_SelectByIdList.sql" />
     <None Include="bin\Debug\IBatisNet.DataMapper.Test.dll.config" />
     <None Include="bin\Debug\SqlMap_Access_OleDb.config" />
