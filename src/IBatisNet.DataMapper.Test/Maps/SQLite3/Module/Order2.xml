@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<sqlMap namespace="Order2" 
+xmlns="http://ibatis.apache.org/mapping" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <resultMaps>
+    <resultMap id="order-with-generic-list-lineitem-module" class="Order">
+      <result property="Id"         column="Order_ID"/>
+      <result property="Date"       column="Order_Date" nullValue="01/01/0001 00:00:00"/>
+      <result property="CardExpiry" column="Order_CardExpiry"/>
+      <result property="CardType"   column="Order_CardType"/>
+      <result property="CardNumber" column="Order_CardNumber"/>
+      <result property="Street"     column="Order_Street"/>
+      <result property="City"       column="Order_City"/>
+      <result property="Province"   column="Order_Province"/>
+      <result property="PostalCode" column="Order_PostalCode"/>
+      <result property="LineItemsGenericList" column="Order_ID" select="GetLineItemsForOrder" />
+    </resultMap>
+  </resultMaps>
+  <statements>
+    
+    <statement id="GetOrderWithGenericListLineItemViaModule"
+      parameterClass="Integer"
+      resultMap="order-with-generic-list-lineitem-module" >
+      select * from Orders where Order_ID = #value#
+    </statement>
+  
+  </statements>
+</sqlMap>
