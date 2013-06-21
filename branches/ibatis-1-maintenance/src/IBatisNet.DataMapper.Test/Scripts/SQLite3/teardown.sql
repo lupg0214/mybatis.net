@@ -1,5 +1,5 @@
-DROP TABLE Accounts;
+DROP TABLE IF EXISTS Accounts;
 
-DROP TABLE Orders;
+DROP TABLE IF EXISTS Orders;
 
-DROP TABLE LineItems;
+DROP TABLE IF EXISTS LineItems;
