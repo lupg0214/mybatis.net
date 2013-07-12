@@ -43,6 +43,7 @@ using IBatisNet.DataMapper.Configuration.ResultMapping;
 using IBatisNet.DataMapper.DataExchange;
 using IBatisNet.DataMapper.Exceptions;
 using IBatisNet.DataMapper.MappedStatements;
+using IBatisNet.DataMapper.Scope;
 using IBatisNet.DataMapper.SessionStore;
 using IBatisNet.DataMapper.TypeHandlers;
 
@@ -1136,6 +1137,55 @@ namespace IBatisNet.DataMapper
 #endif
         #endregion
 
+        #region QueryForDataTable
+
+        /// <summary>
+        /// Executes the SQL and retuns all rows selected.
+        /// <p/>
+        /// </summary>
+        /// <param name="statementName">Name of the statement.</param>
+        /// <param name="parameterObject">The parameter object.</param>
+        /// <returns></returns>
+        public DataTable QueryForDataTable(string statementName, object parameterObject)
+        {
+
+            bool isSessionLocal = false;
+            ISqlMapSession session = _sessionStore.LocalSession;
+            DataTable dataTable = null;
+
+            if (session == null)
+            {
+                session = CreateSqlMapSession();
+                isSessionLocal = true;
+            }
+
+            try
+            {
+                IMappedStatement statement = GetMappedStatement(statementName);
+                dataTable = new DataTable(statementName);
+                RequestScope request = statement.Statement.Sql.GetRequestScope(statement, parameterObject, session);
+                statement.PreparedCommand.Create(request, session, statement.Statement, parameterObject);
+
+                using (request.IDbCommand)
+                {
+                    dataTable.Load(request.IDbCommand.ExecuteReader());
+
+                }
+
+
+            }
+            finally
+            {
+                if (isSessionLocal)
+                {
+                    session.CloseConnection();
+                }
+            }
+
+            return dataTable;
+
+        }
+#endregion
 		#region QueryForPaginatedList
 		/// <summary>
 		/// Executes the SQL and retuns a subset of the results in a dynamic PaginatedList that can be used to

@@ -101,15 +101,15 @@ namespace IBatisNet.DataMapper
         bool IsCacheModelsEnabled { get;set; }
         
         /// <summary>
-		/// Factory for DataExchange objects
-		/// </summary>
+        /// Factory for DataExchange objects
+        /// </summary>
         DataExchangeFactory DataExchangeFactory { get; }
         
         /// <summary>
-		/// The TypeHandlerFactory
-		/// </summary>
+        /// The TypeHandlerFactory
+        /// </summary>
         TypeHandlerFactory TypeHandlerFactory { get; }
-		
+        
         /// <summary>
         /// The meta factory for object factory
         /// </summary>
@@ -121,64 +121,64 @@ namespace IBatisNet.DataMapper
         AccessorFactory AccessorFactory { get; }
         
         /// <summary>
-		/// Get a ParameterMap by name
-		/// </summary>
-		/// <param name="name">The name of the ParameterMap</param>
-		/// <returns>The ParameterMap</returns>
+        /// Get a ParameterMap by name
+        /// </summary>
+        /// <param name="name">The name of the ParameterMap</param>
+        /// <returns>The ParameterMap</returns>
         ParameterMap GetParameterMap(string name); 
         
         /// <summary>
-		/// Adds a (named) ParameterMap.
-		/// </summary>
-		/// <param name="parameterMap">the ParameterMap to add</param>
+        /// Adds a (named) ParameterMap.
+        /// </summary>
+        /// <param name="parameterMap">the ParameterMap to add</param>
         void AddParameterMap(ParameterMap parameterMap);
         
         /// <summary>
-		/// Gets a ResultMap by name
-		/// </summary>
-		/// <param name="name">The name of the result map</param>
-		/// <returns>The ResultMap</returns>
+        /// Gets a ResultMap by name
+        /// </summary>
+        /// <param name="name">The name of the result map</param>
+        /// <returns>The ResultMap</returns>
         IResultMap GetResultMap(string name);
         
         /// <summary>
-		/// Adds a (named) ResultMap
-		/// </summary>
-		/// <param name="resultMap">The ResultMap to add</param>
+        /// Adds a (named) ResultMap
+        /// </summary>
+        /// <param name="resultMap">The ResultMap to add</param>
         void AddResultMap(IResultMap resultMap);
         
         /// <summary>
-		/// The ParameterMap collection
-		/// </summary>
+        /// The ParameterMap collection
+        /// </summary>
         HybridDictionary ParameterMaps { get; }
         
         /// <summary>
-		/// The ResultMap collection
-		/// </summary>
+        /// The ResultMap collection
+        /// </summary>
         HybridDictionary ResultMaps { get; }
         
         /// <summary>
-		/// The MappedStatements collection
-		/// </summary>
+        /// The MappedStatements collection
+        /// </summary>
         HybridDictionary MappedStatements { get; }
         
         /// <summary>
-		/// Gets a cache by name
-		/// </summary>
-		/// <param name="name">The name of the cache to get</param>
-		/// <returns>The cache object</returns>
+        /// Gets a cache by name
+        /// </summary>
+        /// <param name="name">The name of the cache to get</param>
+        /// <returns>The cache object</returns>
         CacheModel GetCache(string name);
         
         /// <summary>
-		/// Adds a (named) cache.
-		/// </summary>
-		/// <param name="cache">The cache to add</param>
+        /// Adds a (named) cache.
+        /// </summary>
+        /// <param name="cache">The cache to add</param>
         void AddCache(CacheModel cache);
         
         /// <summary>
-		/// Adds a (named) MappedStatement.
-		/// </summary>
-		/// <param name="key"> The key name</param>
-		/// <param name="mappedStatement">The statement to add</param>
+        /// Adds a (named) MappedStatement.
+        /// </summary>
+        /// <param name="key"> The key name</param>
+        /// <param name="mappedStatement">The statement to add</param>
         void AddMappedStatement(string key, IMappedStatement mappedStatement);
         
         /// <summary>
@@ -276,10 +276,10 @@ namespace IBatisNet.DataMapper
         string GetDataCacheStats();
 
         /// <summary>
-		/// Gets a MappedStatement by name
-		/// </summary>
-		/// <param name="id"> The id of the statement</param>
-		/// <returns> The MappedStatement</returns>
+        /// Gets a MappedStatement by name
+        /// </summary>
+        /// <param name="id"> The id of the statement</param>
+        /// <returns> The MappedStatement</returns>
         IMappedStatement GetMappedStatement(string id);
 
         /// <summary>
@@ -597,6 +597,15 @@ namespace IBatisNet.DataMapper
         /// <param name="rowDelegate"></param>
         /// <returns>A List of result objects.</returns>
         IList<T> QueryWithRowDelegate<T>(string statementName, object parameterObject, RowDelegate<T> rowDelegate);
+        /// <summary>
+        /// Executes the SQL and retuns all rows selected.
+        /// <p/>
+        /// </summary>
+        /// <param name="statementName">Name of the statement.</param>
+        /// <param name="parameterObject">The parameter object.</param>
+        /// <returns></returns>
+        DataTable QueryForDataTable(string statementName, object parameterObject);
+
 
 #endif
     }

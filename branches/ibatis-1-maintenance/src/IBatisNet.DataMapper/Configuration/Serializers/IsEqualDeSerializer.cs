@@ -1,8 +1,9 @@
 #region Apache Notice
+
 /*****************************************************************************
  * $Header: $
  * $Revision: 408164 $
- * $Date: 2006-05-21 06:27:09 -0600 (Sun, 21 May 2006) $
+ * $Date: 2006-05-21 05:27:09 -0700 (Sun, 21 May 2006) $
  * 
  * iBATIS.NET Data Mapper
  * Copyright (C) 2004 - Gilles Bayon
@@ -21,6 +22,7 @@
  * limitations under the License.
  * 
  ********************************************************************************/
+
 #endregion
 
 #region Using
@@ -31,46 +33,47 @@ using IBatisNet.Common.Xml;
 using IBatisNet.DataMapper.Configuration.Sql.Dynamic.Elements;
 using IBatisNet.DataMapper.Scope;
 
-#endregion 
+#endregion
 
 namespace IBatisNet.DataMapper.Configuration.Serializers
 {
-	/// <summary>
-	/// Summary description for IsEqualDeSerializer.
-	/// </summary>
-	public sealed class IsEqualDeSerializer : IDeSerializer
-	{
-		private ConfigurationScope _configScope = null;
+    /// <summary>
+    /// Summary description for IsEqualDeSerializer.
+    /// </summary>
+    public sealed class IsEqualDeSerializer : IDeSerializer
+    {
+        private readonly ConfigurationScope _configScope;
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="configScope"></param>
-		public IsEqualDeSerializer(ConfigurationScope configScope)
-		{
-			_configScope = configScope;
-		}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configScope"></param>
+        public IsEqualDeSerializer(ConfigurationScope configScope)
+        {
+            _configScope = configScope;
+        }
 
-		#region IDeSerializer Members
+        #region IDeSerializer Members
 
-		/// <summary>
-		/// Deserialize a Dynamic object
-		/// </summary>
-		/// <param name="node"></param>
-		/// <returns></returns>
-		public SqlTag Deserialize(XmlNode node)
-		{
-			IsEqual isEqual = new IsEqual(_configScope.DataExchangeFactory.AccessorFactory);
+        /// <summary>
+        /// Deserialize a Dynamic object
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public SqlTag Deserialize(XmlNode node)
+        {
+            var isEqual = new IsEqual(_configScope.DataExchangeFactory.AccessorFactory);
 
-			NameValueCollection prop = NodeUtils.ParseAttributes(node, _configScope.Properties);
-			isEqual.Prepend = NodeUtils.GetStringAttribute(prop, "prepend");
-			isEqual.Property = NodeUtils.GetStringAttribute(prop, "property");
-			isEqual.CompareProperty = NodeUtils.GetStringAttribute(prop, "compareProperty");
-			isEqual.CompareValue = NodeUtils.GetStringAttribute(prop, "compareValue");
+            NameValueCollection prop = NodeUtils.ParseAttributes(node, _configScope.Properties);
+            isEqual.Literal = NodeUtils.GetStringAttribute(prop, "literal");
+            isEqual.Prepend = NodeUtils.GetStringAttribute(prop, "prepend");
+            isEqual.Property = NodeUtils.GetStringAttribute(prop, "property");
+            isEqual.CompareProperty = NodeUtils.GetStringAttribute(prop, "compareProperty");
+            isEqual.CompareValue = NodeUtils.GetStringAttribute(prop, "compareValue");
 
-			return isEqual;
-		}
+            return isEqual;
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

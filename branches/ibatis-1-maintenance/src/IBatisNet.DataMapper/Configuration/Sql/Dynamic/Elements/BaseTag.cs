@@ -1,9 +1,9 @@
-
 #region Apache Notice
+
 /*****************************************************************************
  * $Header: $
  * $Revision: 638571 $
- * $Date: 2008-03-18 15:11:57 -0600 (Tue, 18 Mar 2008) $
+ * $Date: 2008-03-18 14:11:57 -0700 (Tue, 18 Mar 2008) $
  * 
  * iBATIS.NET Data Mapper
  * Copyright (C) 2004 - Gilles Bayon
@@ -22,42 +22,51 @@
  * limitations under the License.
  * 
  ********************************************************************************/
+
 #endregion
 
 #region Imports
+
 using System;
 using System.Xml.Serialization;
+
 #endregion
 
 namespace IBatisNet.DataMapper.Configuration.Sql.Dynamic.Elements
 {
-	/// <summary>
-	/// Summary description for BaseTag.
-	/// </summary>
-	[Serializable]
-	public abstract class BaseTag : SqlTag
-	{
-		#region Fields
-		
-		[NonSerialized]
-		private string _property = string.Empty;
+    /// <summary>
+    /// Summary description for BaseTag.
+    /// </summary>
+    [Serializable]
+    public abstract class BaseTag : SqlTag
+    {
+        #region Fields
 
-		#endregion
+        [NonSerialized]
+        private string _property = string.Empty;
+        [NonSerialized]
+        private string _literal = string.Empty;
 
-		/// <summary>
-		/// Property attribute
-		/// </summary>
-		[XmlAttribute("property")]
-		public string Property
-		{
-			get
-			{
-				return _property;
-			}
-			set
-			{
-				_property = value;
-			}
-		}
-	}
+        #endregion
+
+        /// <summary>
+        /// Property attribute
+        /// </summary>
+        [XmlAttribute("property")]
+        public string Property
+        {
+            get { return _property; }
+            set { _property = value; }
+        }
+
+        /// <summary>
+        /// Property attribute
+        /// </summary>
+        [XmlAttribute("literal")]
+        public string Literal
+        {
+            get { return _literal; }
+            set { _literal = value; }
+        }
+    }
 }

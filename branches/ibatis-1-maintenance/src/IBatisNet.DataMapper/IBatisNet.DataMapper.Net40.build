@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<project name="IBatisNet.DataMapper" default="build">
+<project name="IBatisNet.DataMapper.2010" default="build">
     <target name="build">
-		<csc target="library" warnaserror="false" define="dotnet2" keyfile="../AssemblyKey.snk"
-		debug="${build.debug}" output="../${Nant_output}/${project::get-name()}.dll" doc="../${Nant_output}/${project::get-name()}.xml">
+		<csc target="library" warnaserror="false" define="dotnet2 dotnet4" keyfile="../AssemblyKey.snk"
+		debug="${build.debug}" output="../${Nant_output}/IBatisNet.DataMapper.dll" doc="../${Nant_output}/IBatisNet.DataMapper.xml">
             <nowarn>
 				<warning number="${nowarn.numbers}" />
 			</nowarn>
@@ -24,7 +24,7 @@
                 <include name="**/*" />
             </resources>
             <references>
-                <include name="../External-Bin/Net/4.0/Castle.DynamicProxy.dll" />	
+                <include name="../External-Bin/Net/4.0/Castle.Core.dll" />	
                 <include name="../${Nant_output}/IBatisNet.Common.dll" />
 				<include name="System" />
 				<include name="System.Configuration" />
