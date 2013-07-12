@@ -1,4 +1,5 @@
 #region Apache Notice
+
 /*****************************************************************************
  * $Header: $
  * $Revision: 378715 $
@@ -21,10 +22,10 @@
  * limitations under the License.
  * 
  ********************************************************************************/
+
 #endregion
 
 using System.Runtime.Remoting.Messaging;
-using System.ServiceModel;
 using System.Web;
 
 namespace IBatisNet.DataMapper.SessionStore
@@ -39,75 +40,62 @@ namespace IBatisNet.DataMapper.SessionStore
     /// </remarks>
     public class HybridWebThreadSessionStore : AbstractSessionStore
     {
-        private ThreadSessionStore _threadSessionStore;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSessionStore"/> class.
         /// </summary>
         /// <param name="sqlMapperId">The SQL mapper id.</param>
-        public HybridWebThreadSessionStore(string sqlMapperId) : base(sqlMapperId)
+        public HybridWebThreadSessionStore(string sqlMapperId)
+            : base(sqlMapperId)
         {
-            _threadSessionStore = new ThreadSessionStore(sqlMapperId);
         }
 
-		/// <summary>
-		/// Get the local session
-		/// </summary>
+        /// <summary>
+        /// Get the local session
+        /// </summary>
         public override ISqlMapSession LocalSession
-		{
-			get
-			{
-                HttpContext currentHttpContext = HttpContext.Current;
-                if (currentHttpContext != null)
+        {
+            get
+            {
+                HttpContext currentContext = HttpContext.Current;
+                if (currentContext == null)
                 {
-                    return currentHttpContext.Items[sessionName] as SqlMapSession;
+                    return CallContext.GetData(sessionName) as SqlMapSession;
                 }
-			    OperationContext wcfContext = OperationContext.Current;
-                if (wcfContext != null)
-                {
-                    return WcfSessionStore.For(sessionName);
-                }
-                // all else fails, use ThreadContext
-			    return _threadSessionStore.LocalSession;
-			    //  return CallContext.GetData(sessionName) as SqlMapSession; 
-			}
-		}
+                return currentContext.Items[sessionName] as SqlMapSession;
+            }
+        }
 
-		/// <summary>
-		/// Store the specified session.
-		/// </summary>
-		/// <param name="session">The session to store</param>
+        /// <summary>
+        /// Store the specified session.
+        /// </summary>
+        /// <param name="session">The session to store</param>
         public override void Store(ISqlMapSession session)
-		{
+        {
             HttpContext currentContext = HttpContext.Current;
             if (currentContext == null)
             {
-                _threadSessionStore.Store(session);
-             //   CallContext.SetData(sessionName, session);
+                CallContext.SetData(sessionName, session);
             }
-		    else
+            else
             {
                 currentContext.Items[sessionName] = session;
             }
-		}
+        }
 
-		/// <summary>
-		/// Remove the local session.
-		/// </summary>
-		public override void Dispose()
-		{
+        /// <summary>
+        /// Remove the local session.
+        /// </summary>
+        public override void Dispose()
+        {
             HttpContext currentContext = HttpContext.Current;
             if (currentContext == null)
             {
-                _threadSessionStore.Dispose();
-            //    CallContext.SetData(sessionName, null);
+                CallContext.SetData(sessionName, null);
             }
-		    else
+            else
             {
- 			    currentContext.Items.Remove(sessionName);
+                currentContext.Items.Remove(sessionName);
             }
-		}
-
-
-	}
+        }
+    }
 }

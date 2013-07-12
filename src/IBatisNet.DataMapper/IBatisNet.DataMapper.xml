@@ -3771,6 +3771,11 @@
             Property attribute
             </summary>
         </member>
+        <member name="P:IBatisNet.DataMapper.Configuration.Sql.Dynamic.Elements.BaseTag.Literal">
+            <summary>
+            Property attribute
+            </summary>
+        </member>
         <member name="T:IBatisNet.DataMapper.Configuration.Sql.Dynamic.Elements.Conditional">
             <summary>
             Summary description for Conditional.
@@ -6105,6 +6110,15 @@
             <param name="rowDelegate"></param>
             <returns>A List of result objects.</returns>
         </member>
+        <member name="M:IBatisNet.DataMapper.ISqlMapper.QueryForDataTable(System.String,System.Object)">
+            <summary>
+            Executes the SQL and retuns all rows selected.
+            <p/>
+            </summary>
+            <param name="statementName">Name of the statement.</param>
+            <param name="parameterObject">The parameter object.</param>
+            <returns></returns>
+        </member>
         <member name="P:IBatisNet.DataMapper.ISqlMapper.Id">
             <summary>
             Name used to identify the the <see cref="T:IBatisNet.DataMapper.SqlMapper"/>
@@ -6872,17 +6886,6 @@
             Executes an SQL statement that returns a single row as an Object of the type of
             the resultObject passed in as a parameter.
             </summary>
-            <param name="session">The session used to execute the statement.</param>
-            <param name="parameterObject">The object used to set the parameters in the SQL.</param>
-            <param name="resultObject">The result object.</param>
-            <returns>The object</returns>
-        </member>
-        <member name="M:IBatisNet.DataMapper.MappedStatements.MappedStatement.RunQueryForDynamicObject(IBatisNet.DataMapper.Scope.RequestScope,IBatisNet.DataMapper.ISqlMapSession,System.Object)">
-            <summary>
-            Executes an SQL statement that returns a single row as an Object of the type of
-            the resultObject passed in as a parameter.
-            </summary>
-            <param name="request">The request scope.</param>
             <param name="session">The session used to execute the statement.</param>
             <param name="parameterObject">The object used to set the parameters in the SQL.</param>
             <param name="resultObject">The result object.</param>
@@ -8850,26 +8853,26 @@
             Static Constructor for a lazy list loader
             </summary>
         </member>
-        <member name="M:IBatisNet.DataMapper.Proxy.LazyLoadInterceptor.#ctor(IBatisNet.DataMapper.MappedStatements.IMappedStatement,System.Object,System.Object,IBatisNet.Common.Utilities.Objects.Members.ISetAccessor)">
+        <member name="M:IBatisNet.DataMapper.Proxy.LazyLoadInterceptor.#ctor(IBatisNet.DataMapper.ISqlMapper,IBatisNet.DataMapper.MappedStatements.IMappedStatement,System.Object,System.Object,IBatisNet.Common.Utilities.Objects.Members.ISetAccessor)">
             <summary>
             Constructor for a lazy list loader
             </summary>
+            <param name="dataMapper">The data mapper.</param>
             <param name="mappedSatement">The mapped statement used to build the list</param>
             <param name="param">The parameter object used to build the list</param>
-            <param name="setAccessor">The proxified member accessor.</param>
             <param name="target">The target object which contains the property proxydied.</param>
+            <param name="setAccessor">The proxified member accessor.</param>
         </member>
-        <member name="M:IBatisNet.DataMapper.Proxy.LazyLoadInterceptor.Intercept(Castle.DynamicProxy.IInvocation,System.Object[])">
+        <member name="M:IBatisNet.DataMapper.Proxy.LazyLoadInterceptor.Intercept(Castle.DynamicProxy.IInvocation)">
             <summary>
-            Intercepts the specified invocation.
+            Intercepts the specified invocation., params object[] arguments
             </summary>
             <param name="invocation">The invocation.</param>
-            <param name="arguments">The target arguments.</param>
             <returns></returns>
         </member>
         <member name="T:IBatisNet.DataMapper.Proxy.LazyLoadProxyFactory">
             <summary>
-            This class is responsible of create lazy load proxies for a concrete class with virtual method.
+            Proxy Factory for Lazy Load
             </summary>
         </member>
         <member name="M:IBatisNet.DataMapper.Proxy.LazyLoadProxyFactory.CreateProxy(IBatisNet.DataMapper.MappedStatements.IMappedStatement,System.Object,System.Object,IBatisNet.Common.Utilities.Objects.Members.ISetAccessor)">
@@ -8880,7 +8883,9 @@
             <param name="param">The parameter object used to build lazy loaded object.</param>
             <param name="target">The target object which contains the property proxydied..</param>
             <param name="setAccessor">The proxified member accessor.</param>
-            <returns>Return a proxy object</returns>
+            <returns>
+            Return a proxy object
+            </returns>
         </member>
         <member name="T:IBatisNet.DataMapper.Scope.ConfigurationScope">
             <summary>
@@ -9717,6 +9722,15 @@
             <param name="statementName">The name of the sql statement to execute.</param>
             <param name="parameterObject">The object used to set the parameters in the SQL.</param>
             <param name="resultObject">An Ilist object used to hold the objects.</param>
+        </member>
+        <member name="M:IBatisNet.DataMapper.SqlMapper.QueryForDataTable(System.String,System.Object)">
+            <summary>
+            Executes the SQL and retuns all rows selected.
+            <p/>
+            </summary>
+            <param name="statementName">Name of the statement.</param>
+            <param name="parameterObject">The parameter object.</param>
+            <returns></returns>
         </member>
         <member name="M:IBatisNet.DataMapper.SqlMapper.QueryForPaginatedList(System.String,System.Object,System.Int32)">
             <summary>

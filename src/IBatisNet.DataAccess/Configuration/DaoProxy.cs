@@ -80,22 +80,15 @@ namespace IBatisNet.DataAccess.Configuration
 		{
 			ProxyGenerator proxyGenerator = new ProxyGenerator();
 			IInterceptor handler = new DaoProxy(dao);
-			Type[] interfaces = {dao.DaoInterface, typeof(IDao)};
+//			Type[] interfaces = {dao.DaoInterface, typeof(IDao)};
+		    return proxyGenerator.CreateInterfaceProxyWithTarget(dao.DaoInstance,handler);
 
-			return (proxyGenerator.CreateProxy(interfaces, handler, dao.DaoInstance) as IDao);
 		}
 		#endregion
 
 		#region IInterceptor menbers
-
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="invocation"></param>
-		/// <param name="arguments"></param>
-		/// <returns></returns>
-		public object Intercept(IInvocation invocation, params object[] arguments)
-		{
+        public void Intercept(IInvocation invocation)
+        {
 			Object result = null;
 
 			#region Logging
@@ -109,7 +102,7 @@ namespace IBatisNet.DataAccess.Configuration
 			{
 				try 
 				{
-					result = invocation.Method.Invoke( _daoImplementation.DaoInstance, arguments);
+                    result = invocation.Method.Invoke(_daoImplementation.DaoInstance, invocation.Arguments);
 				} 
 				catch (Exception e) 
 				{
@@ -123,7 +116,7 @@ namespace IBatisNet.DataAccess.Configuration
 				{
 					try 
 					{
-						result = invocation.Method.Invoke(_daoImplementation.DaoInstance, arguments);
+                        result = invocation.Method.Invoke(_daoImplementation.DaoInstance, invocation.Arguments);
 					} 
 					catch (Exception e) 
 					{
@@ -142,7 +135,7 @@ namespace IBatisNet.DataAccess.Configuration
 					try 
 					{
 						daoManager.OpenConnection();
-						result = invocation.Method.Invoke(_daoImplementation.DaoInstance, arguments);
+                        result = invocation.Method.Invoke(_daoImplementation.DaoInstance, invocation.Arguments);
 					} 
 					catch (Exception e) 
 					{
@@ -162,7 +155,7 @@ namespace IBatisNet.DataAccess.Configuration
 			}
 			#endregion
 
-			return result;
+			
 		}
 
 		private Exception UnWrapException(Exception ex, string methodName) 

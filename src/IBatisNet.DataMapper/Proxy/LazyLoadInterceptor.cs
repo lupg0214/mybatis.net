@@ -1,12 +1,11 @@
 
 #region Apache Notice
 /*****************************************************************************
- * $Revision: 374175 $
- * $LastChangedDate: 2006-04-25 19:40:27 +0200 (mar., 25 avr. 2006) $
- * $LastChangedBy: gbayon $
+ * $LastChangedDate: 2013-07-11  $
+ * $LastChangedBy: mmccurrey $
  * 
  * iBATIS.NET Data Mapper
- * Copyright (C) 2006/2005 - The Apache Software Foundation
+ * Copyright (C) 2008/2005 - The Apache Software Foundation
  *  
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,118 +28,129 @@
 using System;
 using System.Collections;
 using System.Reflection;
+
 using Castle.DynamicProxy;
 using IBatisNet.Common.Logging;
-using IBatisNet.Common.Utilities.Objects;
 using IBatisNet.Common.Utilities.Objects.Members;
-using IBatisNet.Common.Utilities.Proxy;
 using IBatisNet.DataMapper.MappedStatements;
-#if dotnet2
-using System.Collections.Generic;
-#endif
+
 #endregion
 
 namespace IBatisNet.DataMapper.Proxy
 {
-	/// <summary>
-	/// Default implementation of the interceptor reponsible of load the lazy element
-	/// Could load collections and single objects
-	/// </summary>
-	[Serializable]
-	internal class LazyLoadInterceptor : IInterceptor
-	{
-		#region Fields
-		private object _param = null;
-		private object _target = null;
-		private ISetAccessor _setAccessor= null;
-		private ISqlMapper _sqlMap = null;
-		private string _statementName = string.Empty;
-		private bool _loaded = false;
-		private object _lazyLoadedItem = null;
-		//private IList _innerList = null;
-		private object _loadLock = new object();
-		private static ArrayList _passthroughMethods = new ArrayList();
+    /// <summary>
+    /// Default implementation of the interceptor reponsible of load the lazy element
+    /// Could load collections and single objects
+    /// </summary>
+    [Serializable]
+    public class LazyLoadInterceptor : IInterceptor
+    {
+        #region Fields
+        private readonly object param = null;
+        private readonly object target = null;
+        private readonly ISetAccessor setAccessor = null;
+        private readonly ISqlMapper sqlMapper = null;
+        private readonly string statementName = string.Empty;
+        private bool loaded = false;
+        private object lazyLoadedItem = null;
+        private readonly object syncLock = new object();
+        private readonly static ArrayList passthroughMethods = new ArrayList();
 
-		private static readonly ILog _logger = LogManager.GetLogger( MethodBase.GetCurrentMethod().DeclaringType );
-		#endregion
+        private static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        #endregion
 
-		#region  Constructor (s) / Destructor
+        #region  Constructor (s) / Destructor
 
-		/// <summary>
-		/// Static Constructor for a lazy list loader
-		/// </summary>
-		static LazyLoadInterceptor()
-		{
-			_passthroughMethods.Add("GetType");
-		}
+        /// <summary>
+        /// Static Constructor for a lazy list loader
+        /// </summary>
+        static LazyLoadInterceptor()
+        {
+            passthroughMethods.Add("GetType");
+        }
 
-		/// <summary>
-		/// Constructor for a lazy list loader
-		/// </summary>
-		/// <param name="mappedSatement">The mapped statement used to build the list</param>
-		/// <param name="param">The parameter object used to build the list</param>
-		/// <param name="setAccessor">The proxified member accessor.</param>
-		/// <param name="target">The target object which contains the property proxydied.</param>
-		internal LazyLoadInterceptor(IMappedStatement mappedSatement, object param,
-			object target, ISetAccessor setAccessor)
-		{
-			_param = param;
-			_statementName = mappedSatement.Id;
-			_sqlMap = mappedSatement.SqlMap;
-			_target = target;
-			_setAccessor = setAccessor;
-		}		
-		#endregion
+        /// <summary>
+        /// Constructor for a lazy list loader
+        /// </summary>
+        /// <param name="dataMapper">The data mapper.</param>
+        /// <param name="mappedSatement">The mapped statement used to build the list</param>
+        /// <param name="param">The parameter object used to build the list</param>
+        /// <param name="target">The target object which contains the property proxydied.</param>
+        /// <param name="setAccessor">The proxified member accessor.</param>
+        public LazyLoadInterceptor(
+            ISqlMapper sqlMapper,
+            IMappedStatement mappedSatement, object param,
+            object target, ISetAccessor setAccessor)
+        {
+            this.param = param;
+            statementName = mappedSatement.Id;
+            this.sqlMapper = sqlMapper;
+            this.target = target;
+            this.setAccessor = setAccessor;
+        }
+        #endregion
 
-		#region IInterceptor member
+        #region IInterceptor member
 
-		/// <summary>
-		/// Intercepts the specified invocation.
-		/// </summary>
-		/// <param name="invocation">The invocation.</param>
-		/// <param name="arguments">The target arguments.</param>
-		/// <returns></returns>
-		public object Intercept(IInvocation invocation, params object[] arguments)
-		{
-			if (_logger.IsDebugEnabled) 
-			{
-				_logger.Debug("Proxyfying call to " + invocation.Method.Name);
-			}
+        /// <summary>
+        /// Intercepts the specified invocation., params object[] arguments
+        /// </summary>
+        /// <param name="invocation">The invocation.</param>
+        /// <returns></returns>
+        public virtual void Intercept(IInvocation invocation)
+        {
+            if (_logger.IsDebugEnabled)
+            {
+                _logger.Debug("Proxyfying call to " + invocation.Method.Name);
+            }
 
-			lock(_loadLock)
-			{
-				if ((_loaded == false) && (!_passthroughMethods.Contains(invocation.Method.Name)))
-				{
-					if (_logger.IsDebugEnabled) 
-					{
-						_logger.Debug("Proxyfying call, query statement " + _statementName);
-					}
-		
-					//Perform load
-                    if (typeof(IList).IsAssignableFrom(_setAccessor.MemberType))
-					{
-						_lazyLoadedItem = _sqlMap.QueryForList(_statementName, _param);
-					}
-					else
-					{
-						_lazyLoadedItem = _sqlMap.QueryForObject(_statementName, _param);
-					}
+            lock (syncLock)
+            {
+                if ((loaded == false) && (!passthroughMethods.Contains(invocation.Method.Name)))
+                {
+                    if (_logger.IsDebugEnabled)
+                    {
+                        _logger.Debug("Proxyfying call, query statement " + statementName);
+                    }
 
-					_loaded = true;
-					_setAccessor.Set(_target, _lazyLoadedItem);
-				}
-			}
+                    //Perform load
+                    if (typeof(IList).IsAssignableFrom(setAccessor.MemberType))
+                    {
+                        lazyLoadedItem = sqlMapper.QueryForList(statementName, param);
+                    }
+                    else
+                    {
+                        lazyLoadedItem = sqlMapper.QueryForObject(statementName, param);
+                    }
 
-			object returnValue = invocation.Method.Invoke( _lazyLoadedItem, arguments);		
+                    loaded = true;
+                    setAccessor.Set(target, lazyLoadedItem);
+                }
+            }
 
-			if (_logger.IsDebugEnabled) 
-			{
-				_logger.Debug("End of proxyfied call to " + invocation.Method.Name);
-			}
+            try
+            {
+                invocation.ReturnValue = invocation.Method.Invoke(lazyLoadedItem, invocation.Arguments);
+            }
+            catch (TargetInvocationException exception)
+            {
+                PreserveStackTrace(exception);
+                throw;
+            }
 
-			return returnValue;
-		}
+            if (_logger.IsDebugEnabled)
+            {
+                _logger.Debug("End of proxyfied call to " + invocation.Method.Name);
+            }
+        }
 
-		#endregion
-	}
+        #endregion
+
+        private void PreserveStackTrace(Exception exception)
+        {
+            MethodInfo preserveStackTrace = typeof(Exception).GetMethod("InternalPreserveStackTrace",
+              BindingFlags.Instance | BindingFlags.NonPublic);
+            preserveStackTrace.Invoke(exception, null);
+        }
+    }
 }
