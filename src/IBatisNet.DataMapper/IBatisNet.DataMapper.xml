@@ -6891,6 +6891,17 @@
             <param name="resultObject">The result object.</param>
             <returns>The object</returns>
         </member>
+        <member name="M:IBatisNet.DataMapper.MappedStatements.MappedStatement.RunQueryForDynamicObject(IBatisNet.DataMapper.Scope.RequestScope,IBatisNet.DataMapper.ISqlMapSession,System.Object)">
+            <summary>
+            Executes an SQL statement that returns a single row as an Object of the type of
+            the resultObject passed in as a parameter.
+            </summary>
+            <param name="request">The request scope.</param>
+            <param name="session">The session used to execute the statement.</param>
+            <param name="parameterObject">The object used to set the parameters in the SQL.</param>
+            <param name="resultObject">The result object.</param>
+            <returns>The object</returns>
+        </member>
         <member name="M:IBatisNet.DataMapper.MappedStatements.MappedStatement.RunQueryForObject(IBatisNet.DataMapper.Scope.RequestScope,IBatisNet.DataMapper.ISqlMapSession,System.Object,System.Object)">
             <summary>
             Executes an SQL statement that returns a single row as an Object of the type of

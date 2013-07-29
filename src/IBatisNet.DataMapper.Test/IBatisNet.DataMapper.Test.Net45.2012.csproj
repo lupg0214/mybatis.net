@@ -12,7 +12,8 @@
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
     <AssemblyName>IBatisNet.DataMapper.Test</AssemblyName>
-    <AssemblyOriginatorKeyFile>AssemblyKey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
@@ -607,7 +608,6 @@
     <EmbeddedResource Include="bin\Debug\SqlMap_SQLite3_SQLite3.config">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="AssemblyKey.snk" />
     <None Include="Scripts\SQLite3\ps_SelectByIdList.sql" />
     <None Include="bin\Debug\IBatisNet.DataMapper.Test.dll.config">
       <SubType>Designer</SubType>
