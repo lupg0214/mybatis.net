@@ -252,7 +252,7 @@ namespace IBatisNet.DataMapper.Commands
         {
             string dateTimeFormat = ConfigurationManager.AppSettings["dateTimeFormat"];
 
-            if (!string.IsNullOrWhiteSpace(dateTimeFormat))
+            if ((!string.IsNullOrWhiteSpace(dateTimeFormat)) && (_innerDataReader.GetFieldType(i)==typeof(string)))
             {
                 return DateTime.ParseExact(_innerDataReader.GetString(i), dateTimeFormat, CultureInfo.InvariantCulture);
             }
