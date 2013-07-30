@@ -39,7 +39,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<statement id="GetDate"
 					parameterClass="Int"
 					resultClass="date" >
-      select datetime(strftime('%s','now'), 'unixepoch', 'localtime') from Orders where Order_ID  = #value#
+      select datetime(strftime('%s','2003-02-15 08:15:00'), 'unixepoch') from Orders where Order_ID  = #value#
     </statement>
 		<statement id="GetDateWithoutResultClass"
 					parameterClass="Int"
