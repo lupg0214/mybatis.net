@@ -47,7 +47,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\$(TargetFrameworkVersion)\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
@@ -72,7 +72,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\$(TargetFrameworkVersion)\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
@@ -476,7 +476,9 @@
     <Content Include="Maps\SQLite3\ParameterClass.xml" />
     <Content Include="Maps\SQLite3\ParentChild1.xml" />
     <Content Include="Maps\SQLite3\ParentChild2.xml" />
-    <Content Include="Maps\SQLite3\ResultClass.xml" />
+    <Content Include="Maps\SQLite3\ResultClass.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Maps\SQLite3\Simple.xml" />
     <Content Include="NUnit\SqlMapTests\Generics\GenericListTests.txt" />
     <Content Include="ReadMe.txt" />
