@@ -74,7 +74,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.Generics
 		public void TestDateTime() 
 		{
 			DateTime orderDate = sqlMap.QueryForObject<DateTime>("GetDate", 1);
-            System.DateTime date = DateTime.Now;
+			System.DateTime date = new DateTime(2003, 2, 15, 8, 15, 00);
 
 			Assert.AreEqual(date.ToString(), orderDate.ToString());
 		}
