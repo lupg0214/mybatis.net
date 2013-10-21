@@ -38,7 +38,6 @@ namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
 	/// </summary>
 	public abstract class BaseTagHandler : ISqlTagHandler
 	{
-
 		#region Const
 		/// <summary>
 		/// BODY TAG

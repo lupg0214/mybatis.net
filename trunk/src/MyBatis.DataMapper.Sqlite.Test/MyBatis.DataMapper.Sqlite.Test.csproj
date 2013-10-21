@@ -93,6 +93,13 @@
     <Compile Include="Domain\Category.cs" />
     <Compile Include="Domain\Child.cs" />
     <Compile Include="Domain\Complex.cs" />
+    <Compile Include="Domain\ComplexStructure\ColumnDataTypeEnum.cs" />
+    <Compile Include="Domain\ComplexStructure\CustomField.cs" />
+    <Compile Include="Domain\ComplexStructure\Compare.cs" />
+    <Compile Include="Domain\ComplexStructure\DateCompare.cs" />
+    <Compile Include="Domain\ComplexStructure\Filter.cs" />
+    <Compile Include="Domain\ComplexStructure\Operator.cs" />
+    <Compile Include="Domain\ComplexStructure\Rules.cs" />
     <Compile Include="Domain\Coupon.cs" />
     <Compile Include="Domain\CustomInheritance.cs" />
     <Compile Include="Domain\D.cs" />
@@ -134,6 +141,7 @@
     <Compile Include="Domain\User.cs" />
     <Compile Include="Fixtures\BaseTest.cs" />
     <Compile Include="Fixtures\CodeConfigurationInterpreterTestFixture.cs" />
+    <Compile Include="Fixtures\ComplexBindNestedIterateTestFixture.cs" />
     <Compile Include="Fixtures\DefaultModelBuilderTest.cs" />
     <Compile Include="Fixtures\Mapping\CacheTest.cs" />
     <Compile Include="Fixtures\Modules\AccountModule.cs" />
@@ -153,6 +161,8 @@
     <Content Include="Maps\Category.xml" />
     <Content Include="Maps\Complex.xml" />
     <Content Include="Maps\ConstructorInjection.xml" />
+    <Content Include="Maps\SQLiteLineItem.xml" />
+    <Content Include="Maps\SQLiteCategory.xml" />
     <Content Include="Maps\Coupons.xml" />
     <Content Include="Maps\Document.xml" />
     <Content Include="Maps\DocumentModule.xml" />
@@ -165,10 +175,12 @@
     <Content Include="Maps\Iterate.xml" />
     <Content Include="Maps\LineItem.xml" />
     <Content Include="Maps\Mapping1.xml" />
+    <Content Include="Scripts\nested-iterate.sql" />
     <EmbeddedResource Include="Maps\Mapping2.xml" />
     <Content Include="Maps\Mapping3.xml" />
     <Content Include="Maps\Mapping4.xml" />
     <EmbeddedResource Include="Maps\Mapping5.xml" />
+    <Content Include="Maps\ComplexBindNestedIterate.xml" />
     <Content Include="Maps\NewsPaper.xml" />
     <Content Include="Maps\Nullable.xml" />
     <Content Include="Maps\Order.xml" />

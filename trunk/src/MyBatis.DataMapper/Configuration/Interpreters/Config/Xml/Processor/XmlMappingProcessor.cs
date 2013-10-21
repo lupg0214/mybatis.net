@@ -68,6 +68,8 @@ namespace MyBatis.DataMapper.Configuration.Interpreters.Config.Xml.Processor
             RegisterElementHandler(ConfigConstants.ELEMENT_SELECTKEY, ProcessDynamicElement);
             RegisterElementHandler(ConfigConstants.ELEMENT_DYNAMIC, ProcessDynamicElement);
             RegisterElementHandler(ConfigConstants.ELEMENT_ISEMPTY, ProcessDynamicElement);
+            // Richard Beacroft: 11\10\2013, Description: Added bind element to be used as a variable, typically within an iterate element.
+            RegisterElementHandler(ConfigConstants.ELEMENT_BIND, ProcessDynamicElement);
             RegisterElementHandler(ConfigConstants.ELEMENT_ISEQUAL, ProcessDynamicElement);
             RegisterElementHandler(ConfigConstants.ELEMENT_ISGREATEREQUAL, ProcessDynamicElement);
             RegisterElementHandler(ConfigConstants.ELEMENT_ISGREATERTHAN, ProcessDynamicElement);

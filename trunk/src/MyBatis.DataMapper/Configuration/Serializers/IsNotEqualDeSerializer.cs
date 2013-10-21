@@ -64,8 +64,9 @@ namespace MyBatis.DataMapper.Configuration.Serializers
 
 			isNotEqual.Prepend = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "prepend");
 			isNotEqual.Property = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "property");
-			isNotEqual.CompareProperty = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "compareProperty");
+            isNotEqual.CompareProperty = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "compareProperty");
 			isNotEqual.CompareValue = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "compareValue");
+            isNotEqual.BindName = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "bindName");
 
 			return isNotEqual;
 		}

@@ -63,6 +63,7 @@ namespace MyBatis.DataMapper.Configuration.Serializers
 
 			isNotNull.Prepend = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "prepend");
 			isNotNull.Property = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "property");
+            isNotNull.BindName = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "bindName");
 
 			return isNotNull;
 		}

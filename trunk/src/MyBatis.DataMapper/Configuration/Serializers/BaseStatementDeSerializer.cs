@@ -1,44 +1,45 @@
 ﻿#region Apache Notice
+
 /*****************************************************************************
  * $Header: $
  * $Revision: 469233 $
  * $Date: 2009-06-28 10:11:37 -0600 (Sun, 28 Jun 2009) $
- * 
+ *
  * iBATIS.NET Data Mapper
  * Copyright (C) 2008/2005 - The Apache Software Foundation
- *  
- * 
+ *
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  ********************************************************************************/
-#endregion
+
+#endregion Apache Notice
 
 #region Using
 
 using System;
 using System.Data;
+using MyBatis.Common.Configuration;
+using MyBatis.Common.Utilities.Objects;
 using MyBatis.DataMapper.Configuration.Interpreters.Config;
 using MyBatis.DataMapper.DataExchange;
 using MyBatis.DataMapper.Model;
 using MyBatis.DataMapper.Model.Cache;
 using MyBatis.DataMapper.Model.ParameterMapping;
 using MyBatis.DataMapper.Model.ResultMapping;
-using MyBatis.DataMapper.Model.Sql.External;
 using MyBatis.DataMapper.Model.Statements;
-using MyBatis.Common.Configuration;
-using MyBatis.Common.Utilities.Objects;
 
-#endregion 
+#endregion Using
 
 namespace MyBatis.DataMapper.Configuration.Serializers
 {
@@ -76,10 +77,20 @@ namespace MyBatis.DataMapper.Configuration.Serializers
         /// <param name="config">The config.</param>
         /// <param name="configurationSetting">Default settings.</param>
         /// <returns></returns>
+        /// <remarks>
+        /// Updated By: Richard Beacroft
+        /// Updated Date: 11\10\2013
+        /// Description: configurationSetting can be null and therefore references to it have to assume that it could be null.
+        /// </remarks>
         protected void BaseDeserialize(IModelStore modelStore, IConfiguration config, ConfigurationSetting configurationSetting)
         {
+            // DefaultModelBuilderTest.Test_DefaultModelBuilder assumes that configurationSetting can be null - added code accordingly.
+            // Typically, no public method should allow null to be passed-in, best handled by overloading method to exclude parameter, or in .NET 4, use optional parameter.
+            var preserveWhitespace = (configurationSetting == null) ? false : configurationSetting.PreserveWhitespace;
+            bool useStatementNamespaces = (configurationSetting == null) ? false : configurationSetting.UseStatementNamespaces;
+
             nameSpace = ConfigurationUtils.GetStringAttribute(config.Attributes, ConfigConstants.ATTRIBUTE_NAMESPACE);
-            id = configurationSetting.UseStatementNamespaces ? ApplyNamespace(nameSpace, config.Id) : config.Id;
+            id = useStatementNamespaces ? ApplyNamespace(nameSpace, config.Id) : config.Id;
             cacheModelName = ConfigurationUtils.GetStringAttribute(config.Attributes, ConfigConstants.ATTRIBUTE_CACHEMODEL);
             extendsName = ConfigurationUtils.GetStringAttribute(config.Attributes, ConfigConstants.ATTRIBUTE_EXTENDS);
             listClassName = ConfigurationUtils.GetStringAttribute(config.Attributes, ConfigConstants.ATTRIBUTE_LISTCLASS);
@@ -89,7 +100,7 @@ namespace MyBatis.DataMapper.Configuration.Serializers
             resultMapName = ConfigurationUtils.GetStringAttribute(config.Attributes, ConfigConstants.ATTRIBUTE_RESULTMAP);
             remapResults = ConfigurationUtils.GetBooleanAttribute(config.Attributes, ConfigConstants.ATTRIBUTE_REMAPRESULTS, false);
             sqlSourceClassName = ConfigurationUtils.GetStringAttribute(config.Attributes, ConfigConstants.ATTRIBUTE_SQLSOURCE);
-            preserveWhitespace = ConfigurationUtils.GetBooleanAttribute(config.Attributes, ConfigConstants.ATTRIBUTE_PRESERVEWHITSPACE, configurationSetting.PreserveWhitespace);
+            preserveWhitespace = ConfigurationUtils.GetBooleanAttribute(config.Attributes, ConfigConstants.ATTRIBUTE_PRESERVEWHITSPACE, preserveWhitespace);
 
             // Gets the results Map
             if (resultMapName.Length > 0)
@@ -101,6 +112,7 @@ namespace MyBatis.DataMapper.Configuration.Serializers
                     resultsMap.Add(modelStore.GetResultMap(name));
                 }
             }
+
             // Gets the results class
             if (resultClassName.Length > 0)
             {
@@ -126,6 +138,7 @@ namespace MyBatis.DataMapper.Configuration.Serializers
             {
                 parameterMap = modelStore.GetParameterMap(parameterMapName);
             }
+
             // Gets the ParameterClass
             if (parameterClassName.Length > 0)
             {
@@ -144,6 +157,7 @@ namespace MyBatis.DataMapper.Configuration.Serializers
             {
                 cacheModel = modelStore.GetCacheModel(cacheModelName);
             }
+
             // Gets the SqlSource
             if (sqlSourceClassName.Length > 0)
             {

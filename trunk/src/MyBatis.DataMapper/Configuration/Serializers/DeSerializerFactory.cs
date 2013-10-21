@@ -54,14 +54,16 @@ namespace MyBatis.DataMapper.Configuration.Serializers
             serializerMap.Add(ConfigConstants.ELEMENT_ISLESSTHAN, new IsLessThanDeSerializer(modelStore.DataExchangeFactory.AccessorFactory));
             serializerMap.Add(ConfigConstants.ELEMENT_ISNOTEMPTY, new IsNotEmptyDeSerializer(modelStore.DataExchangeFactory.AccessorFactory));
             serializerMap.Add(ConfigConstants.ELEMENT_ISEMPTY, new IsEmptyDeSerializer(modelStore.DataExchangeFactory.AccessorFactory));
+            // Richard Beacroft: 11\10\2013, Description: Added bind element to be used as a variable, typically within an iterate element.
+            serializerMap.Add(ConfigConstants.ELEMENT_BIND, new BindDeSerializer(modelStore.DataExchangeFactory.AccessorFactory));
             serializerMap.Add(ConfigConstants.ELEMENT_ISNOTNULL, new IsNotNullDeSerializer(modelStore.DataExchangeFactory.AccessorFactory));
             serializerMap.Add(ConfigConstants.ELEMENT_ISNOTPARAMETERPRESENT, new IsNotParameterPresentDeSerializer(modelStore.DataExchangeFactory.AccessorFactory));
             serializerMap.Add(ConfigConstants.ELEMENT_ISNOTPROPERTYAVAILABLE, new IsNotPropertyAvailableDeSerializer(modelStore.DataExchangeFactory.AccessorFactory));
             serializerMap.Add(ConfigConstants.ELEMENT_ISNULL, new IsNullDeSerializer(modelStore.DataExchangeFactory.AccessorFactory));
             serializerMap.Add(ConfigConstants.ELEMENT_ISPARAMETERPRESENT, new IsParameterPresentDeSerializer(modelStore.DataExchangeFactory.AccessorFactory));
             serializerMap.Add(ConfigConstants.ELEMENT_ISPROPERTYAVAILABLE, new IsPropertyAvailableDeSerializer(modelStore.DataExchangeFactory.AccessorFactory));
-            serializerMap.Add(ConfigConstants.ELEMENT_ITERATE, new IterateSerializer(modelStore.DataExchangeFactory.AccessorFactory));		
-		}
+            serializerMap.Add(ConfigConstants.ELEMENT_ITERATE, new IterateSerializer(modelStore.DataExchangeFactory.AccessorFactory));
+        }
 
 
         /// <summary>

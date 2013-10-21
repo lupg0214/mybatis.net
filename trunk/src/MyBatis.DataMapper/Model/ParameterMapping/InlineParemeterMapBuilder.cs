@@ -103,7 +103,9 @@ namespace MyBatis.DataMapper.Model.ParameterMapping
                         modelStore.SessionFactory.DataSource.DbProvider.UsePositionalParameters
                         )
                         ;
+
                     int lenght = sqlText.Parameters.Length;
+
                     for (int index = 0; index < lenght; index++)
                     {
                         map.AddParameterProperty(sqlText.Parameters[index]);

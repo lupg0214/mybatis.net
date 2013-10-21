@@ -65,6 +65,7 @@ namespace MyBatis.DataMapper.Configuration.Serializers
 			isLessThan.Property = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "property");
 			isLessThan.CompareProperty = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "compareProperty");
 			isLessThan.CompareValue = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "compareValue");
+            isLessThan.BindName = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "bindName");
 
 			return isLessThan;
 		}

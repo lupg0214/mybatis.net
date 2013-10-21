@@ -295,6 +295,7 @@
     <Compile Include="Utilities\ScriptRunner.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Utilities\StringHandler.cs" />
     <Compile Include="Utilities\StringTokenizer.cs">
       <SubType>Code</SubType>
     </Compile>

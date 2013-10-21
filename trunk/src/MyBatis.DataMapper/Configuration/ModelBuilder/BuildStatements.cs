@@ -354,6 +354,7 @@ namespace MyBatis.DataMapper.Configuration
                     }
 
                     SqlText sqlText = null;
+
                     if (postParseRequired)
                     {
                         sqlText = new SqlText();
@@ -363,6 +364,9 @@ namespace MyBatis.DataMapper.Configuration
                     {
                         sqlText = InlineParameterMapParser.ParseInlineParameterMap(modelStore.DataExchangeFactory, statementConfig.Id, null, childValueString);
                     }
+
+                    // Richard Beacroft: 11\10\2013, Description: Added setting of parent node for use within iterate elements.
+                    sqlText.Parent = dynamic;
 
                     dynamic.AddChild(sqlText);
                     sqlBuffer.Append(" " + childValueString);
@@ -376,6 +380,7 @@ namespace MyBatis.DataMapper.Configuration
                     if (serializer != null)
                     {
                         isDynamic = true;
+
                         SqlTag tag;
 
                         tag = serializer.Deserialize(child);
