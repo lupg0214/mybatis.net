@@ -67,6 +67,7 @@ namespace MyBatis.DataMapper.Configuration.Serializers
             iterate.Close = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "close");
             iterate.Conjunction = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "conjunction");
             iterate.Open = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "open");
+            iterate.BindName = ConfigurationUtils.GetStringAttribute(configuration.Attributes, "bindName");
 
 			return iterate;
 		}

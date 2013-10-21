@@ -1,28 +1,29 @@
-
 #region Apache Notice
+
 /*****************************************************************************
  * $Revision: 575902 $
  * $LastChangedDate: 2008-10-19 05:25:12 -0600 (Sun, 19 Oct 2008) $
  * $LastChangedBy: gbayon $
- * 
+ *
  * iBATIS.NET Data Mapper
  * Copyright (C) 2008/2005 - The Apache Software Foundation
- *  
- * 
+ *
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  ********************************************************************************/
-#endregion
+
+#endregion Apache Notice
 
 #region Using
 
@@ -31,200 +32,236 @@ using System.Collections;
 using System.Data;
 using System.Diagnostics;
 using System.Xml.Serialization;
-using MyBatis.DataMapper.DataExchange;
-using MyBatis.DataMapper.TypeHandlers;
 using MyBatis.Common.Contracts;
 using MyBatis.Common.Contracts.Constraints;
 using MyBatis.Common.Exceptions;
 using MyBatis.Common.Utilities;
 using MyBatis.Common.Utilities.Objects;
 using MyBatis.Common.Utilities.Objects.Members;
+using MyBatis.DataMapper.DataExchange;
+using MyBatis.DataMapper.Model.Binding;
+using MyBatis.DataMapper.Model.Sql.Dynamic;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Handlers;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Parsers;
+using MyBatis.DataMapper.TypeHandlers;
 
-#endregion
+#endregion Using
 
 namespace MyBatis.DataMapper.Model.ParameterMapping
 {
-	/// <summary>
-	/// Summary description for ParameterProperty.
-	/// </summary>
-	[Serializable]
+    /// <summary>
+    /// Summary description for ParameterProperty.
+    /// </summary>
+    [Serializable]
     [DebuggerDisplay("ParameterProperty: {propertyName}-{columnName}")]
     public class ParameterProperty
-	{
+    {
+        #region Fields
 
-		#region Fields
-		[NonSerialized]
-        private readonly string nullValue = null;
-		[NonSerialized]
-        private readonly string propertyName = string.Empty;
-		[NonSerialized]
-		private ParameterDirection direction = ParameterDirection.Input;
-		[NonSerialized]
-        private readonly string directionAttribute = string.Empty;
-		[NonSerialized]
-        private readonly string dbType = null;
-		[NonSerialized]
-        private readonly int size = -1;
-		[NonSerialized]
-        private readonly byte scale = 0;
-		[NonSerialized]
-        private readonly byte precision = 0;
-		[NonSerialized]
-        private readonly string columnName = string.Empty; // used only for store procedure
-		[NonSerialized]
-        private ITypeHandler typeHandler = null;
-		[NonSerialized]
-        private readonly string clrType = string.Empty;
-		[NonSerialized]
+        [NonSerialized]
+        private readonly DataExchangeFactory _dataExchangeFactory;
+
+        [NonSerialized]
+        private readonly Type _parameterClass;
+
+        [NonSerialized]
+        private readonly string _propertyPlaceholder = string.Empty;
+
+        [NonSerialized]
         private readonly string callBackName = string.Empty;
-		[NonSerialized]
+
+        [NonSerialized]
+        private readonly string clrType = string.Empty;
+
+        [NonSerialized]
+        private readonly string columnName = string.Empty;
+
+        [NonSerialized]
+        private readonly string dbType = null;
+
+        [NonSerialized]
+        private readonly string directionAttribute = string.Empty;
+
+        [NonSerialized]
         private readonly IGetAccessor getAccessor = null;
-		[NonSerialized]
-		private readonly bool isComplexMemberName = false;
 
-		#endregion
+        [NonSerialized]
+        private readonly bool isComplexMemberName = false;
 
-		#region Properties
+        [NonSerialized]
+        private readonly string nullValue = null;
 
-		/// <summary>
-		/// Indicate if we have a complex member name as [avouriteLineItem.Id]
-		/// </summary>
-		public bool IsComplexMemberName
-		{
-			get { return isComplexMemberName; }
-		}
+        [NonSerialized]
+        private readonly byte precision = 0;
 
-		/// <summary>
-		/// Specify the custom type handlers to used.
-		/// </summary>
-		/// <remarks>Will be an alias to a class wchic implement ITypeHandlerCallback</remarks>
-		public string CallBackName
-		{
-			get { return callBackName; }
-		}
+        [NonSerialized]
+        private readonly byte scale = 0;
 
-		/// <summary>
-		/// Specify the CLR type of the parameter.
-		/// </summary>
-		/// <remarks>
-		/// The type attribute is used to explicitly specify the property type to be read.
-		/// Normally this can be derived from a property through reflection, but certain mappings such as
-		/// HashTable cannot provide the type to the framework.
-		/// </remarks>
-		public string CLRType
-		{
-			get { return clrType; }
-		}
+        [NonSerialized]
+        private readonly int size = -1;
 
-		/// <summary>
-		/// The typeHandler used to work with the parameter.
-		/// </summary>
-		public ITypeHandler TypeHandler
-		{
-			get { return typeHandler; }
-			set { typeHandler = value; }
-		}
+        [NonSerialized]
+        private string _currentPropertyName = string.Empty;
 
-		/// <summary>
-		/// Column Name for output parameter 
-		/// in store proccedure.
-		/// </summary>
-		public string ColumnName
-		{
-			get { return columnName; }
-		}
+        [NonSerialized]
+        private ParameterDirection direction = ParameterDirection.Input;
 
-		/// <summary>
-		/// Column size.
-		/// </summary>
-		[XmlAttribute("size")]
-		public int Size
-		{
-			get { return size; }
-		}
+        // used only for store procedure
+        [NonSerialized]
+        private ITypeHandler typeHandler = null;
 
-		/// <summary>
-		/// Column Scale.
-		/// </summary>
-		public byte Scale
-		{
-			get { return scale; }
-		}
+        #endregion Fields
 
-		/// <summary>
-		/// Column Precision.
-		/// </summary>
-		public byte Precision
-		{
-			get { return precision; }
-		}
-		/// <summary>
-		/// Give an entry in the 'DbType' enumeration
-		/// </summary>
-		/// <example >
-		/// For Sql Server, give an entry of SqlDbType : Bit, Decimal, Money...
-		/// <br/>
-		/// For Oracle, give an OracleType Enumeration : Byte, Int16, Number...
-		/// </example>
-		public string DbType
-		{
-			get { return dbType; }
-		}
+        #region Properties
 
-		/// <summary>
-		/// The direction attribute of the XML parameter.
-		/// </summary>
-		/// <example> Input, Output, InputOutput</example>
-		public string DirectionAttribute
-		{
-			get { return directionAttribute; }
-		}
+        /// <summary>
+        /// Specify the custom type handlers to used.
+        /// </summary>
+        /// <remarks>Will be an alias to a class which implement ITypeHandlerCallback</remarks>
+        public string CallBackName
+        {
+            get { return callBackName; }
+        }
 
-		/// <summary>
-		/// Indicate the direction of the parameter.
-		/// </summary>
-		/// <example> Input, Output, InputOutput</example>
-		public ParameterDirection Direction
-		{
-			get { return direction; }
+        /// <summary>
+        /// Specify the CLR type of the parameter.
+        /// </summary>
+        /// <remarks>
+        /// The type attribute is used to explicitly specify the property type to be read.
+        /// Normally this can be derived from a property through reflection, but certain mappings such as
+        /// HashTable cannot provide the type to the framework.
+        /// </remarks>
+        public string CLRType
+        {
+            get { return clrType; }
+        }
+
+        /// <summary>
+        /// Column Name for output parameter
+        /// in store proccedure.
+        /// </summary>
+        public string ColumnName
+        {
+            get { return columnName; }
+        }
+
+        /// <summary>
+        /// Give an entry in the 'DbType' enumeration
+        /// </summary>
+        /// <example >
+        /// For Sql Server, give an entry of SqlDbType : Bit, Decimal, Money...
+        /// <br/>
+        /// For Oracle, give an OracleType Enumeration : Byte, Int16, Number...
+        /// </example>
+        public string DbType
+        {
+            get { return dbType; }
+        }
+
+        /// <summary>
+        /// Indicate the direction of the parameter.
+        /// </summary>
+        /// <example> Input, Output, InputOutput</example>
+        public ParameterDirection Direction
+        {
+            get { return direction; }
             set { direction = value; }
-		}
+        }
 
-		/// <summary>
-		/// Property name used to identify the property amongst the others.
-		/// </summary>
-		/// <example>EmailAddress</example>
-		public string PropertyName
-		{
-			get { return propertyName; }
-		}
+        /// <summary>
+        /// The direction attribute of the XML parameter.
+        /// </summary>
+        /// <example> Input, Output, InputOutput</example>
+        public string DirectionAttribute
+        {
+            get { return directionAttribute; }
+        }
 
-		/// <summary>
-		/// Tell if a nullValue is defined._nullValue!=null
-		/// </summary>
-		public bool HasNullValue
-		{
-			get { return (nullValue!=null); }
-		}
-
-		/// <summary>
-		/// Null value replacement.
-		/// </summary>
-		/// <example>"no_email@provided.com"</example>
-		public string NullValue
-		{
-			get { return nullValue; }
-		}
-
-		/// <summary>
-		/// Defines a field/property get accessor
-		/// </summary>
+        /// <summary>
+        /// Defines a field/property get accessor
+        /// </summary>
         public IGetAccessor GetAccessor
-		{
+        {
             get { return getAccessor; }
-		}
+        }
 
-		#endregion
+        /// <summary>
+        /// Tell if a nullValue is defined._nullValue!=null
+        /// </summary>
+        public bool HasNullValue
+        {
+            get { return (nullValue != null); }
+        }
+
+        /// <summary>
+        /// Indicate if we have a complex member name as [avouriteLineItem.Id]
+        /// </summary>
+        public bool IsComplexMemberName
+        {
+            get { return isComplexMemberName; }
+        }
+
+        /// <summary>
+        /// Null value replacement.
+        /// </summary>
+        /// <example>"no_email@provided.com"</example>
+        public string NullValue
+        {
+            get { return nullValue; }
+        }
+
+        /// <summary>
+        /// Column Precision.
+        /// </summary>
+        public byte Precision
+        {
+            get { return precision; }
+        }
+
+        /// <summary>
+        /// Property name used to identify the property amongst the others.
+        /// </summary>
+        /// <example>EmailAddress</example>
+        public string PropertyName
+        {
+            get { return _currentPropertyName; }
+        }
+
+        /// <summary>
+        /// Column Scale.
+        /// </summary>
+        public byte Scale
+        {
+            get { return scale; }
+        }
+
+        /// <summary>
+        /// Column size.
+        /// </summary>
+        [XmlAttribute("size")]
+        public int Size
+        {
+            get { return size; }
+        }
+
+        /// <summary>
+        /// The typeHandler used to work with the parameter.
+        /// </summary>
+        public ITypeHandler TypeHandler
+        {
+            get { return typeHandler; }
+            set { typeHandler = value; }
+        }
+
+        public ParameterProperty Clone()
+        {
+            return new ParameterProperty(
+                   PropertyName, columnName, callBackName, clrType, dbType,
+                   directionAttribute, nullValue, precision, scale, size,
+                   _parameterClass, _dataExchangeFactory);
+        }
+
+        #endregion Properties
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ParameterProperty"/> class.
@@ -253,8 +290,8 @@ namespace MyBatis.DataMapper.Model.ParameterMapping
             Byte scale,
             int size,
             Type parameterClass,
-            DataExchangeFactory dataExchangeFactory 
-            )   
+            DataExchangeFactory dataExchangeFactory
+            )
         {
             Contract.Require.That(propertyName, Is.Not.Null & Is.Not.Empty).When("retrieving argument propertyName in ParameterProperty constructor");
 
@@ -266,17 +303,24 @@ namespace MyBatis.DataMapper.Model.ParameterMapping
             this.precision = precision;
             this.scale = scale;
             this.size = size;
+            this._parameterClass = parameterClass;
+            this._dataExchangeFactory = dataExchangeFactory;
 
             #region Direction
+
             if (directionAttribute.Length > 0)
             {
                 direction = (ParameterDirection)Enum.Parse(typeof(ParameterDirection), directionAttribute, true);
                 this.directionAttribute = direction.ToString();
-            } 
-            #endregion
-                
+            }
+
+            #endregion Direction
+
             #region Property Name
-            this.propertyName = propertyName;
+
+            this._currentPropertyName = propertyName;
+            this._propertyPlaceholder = propertyName;
+
             if (propertyName.IndexOf('.') < 0)
             {
                 isComplexMemberName = false;
@@ -284,10 +328,12 @@ namespace MyBatis.DataMapper.Model.ParameterMapping
             else // complex member name FavouriteLineItem.Id
             {
                 isComplexMemberName = true;
-            }  
-            #endregion     
-                
+            }
+
+            #endregion Property Name
+
             #region GetAccessor
+
             if (!typeof(IDictionary).IsAssignableFrom(parameterClass) // Hashtable parameter map
                 && parameterClass != null // value property
                 && !dataExchangeFactory.TypeHandlerFactory.IsSimpleType(parameterClass)) // value property
@@ -306,10 +352,12 @@ namespace MyBatis.DataMapper.Model.ParameterMapping
                     IGetAccessorFactory getAccessorFactory = dataExchangeFactory.AccessorFactory.GetAccessorFactory;
                     getAccessor = getAccessorFactory.CreateGetAccessor(parentType, memberName);
                 }
-            } 
-            #endregion 
+            }
+
+            #endregion GetAccessor
 
             #region TypeHandler
+
             if (CallBackName.Length > 0)
             {
                 try
@@ -355,12 +403,11 @@ namespace MyBatis.DataMapper.Model.ParameterMapping
                     }
                 }
             }
-            
-            #endregion
 
+            #endregion TypeHandler
         }
 
-		#region Methods
+        #region Methods
 
         /// <summary>
         /// Determines whether the specified <see cref="System.Object"></see> is equal to the current <see cref="System.Object"></see>.
@@ -369,14 +416,13 @@ namespace MyBatis.DataMapper.Model.ParameterMapping
         /// <returns>
         /// true if the specified <see cref="System.Object"></see> is equal to the current <see cref="System.Object"></see>; otherwise, false.
         /// </returns>
-		public override bool Equals(object obj) 
-		{
-			//Check for null and compare run-time types.
-			if (obj == null || GetType() != obj.GetType()) return false;
-			ParameterProperty p = (ParameterProperty)obj;
-			return (PropertyName == p.PropertyName);
-		}
-
+        public override bool Equals(object obj)
+        {
+            //Check for null and compare run-time types.
+            if (obj == null || GetType() != obj.GetType()) return false;
+            ParameterProperty p = (ParameterProperty)obj;
+            return (PropertyName == p.PropertyName);
+        }
 
         /// <summary>
         /// Serves as a hash function for a particular type. <see cref="System.Object.GetHashCode"></see> is suitable for use in hashing algorithms and data structures like a hash table.
@@ -384,11 +430,36 @@ namespace MyBatis.DataMapper.Model.ParameterMapping
         /// <returns>
         /// A hash code for the current <see cref="System.Object"></see>.
         /// </returns>
-		public override int GetHashCode() 
-		{
-			return propertyName.GetHashCode();
-		}
-		#endregion
+        public override int GetHashCode()
+        {
+            return _propertyPlaceholder.GetHashCode();
+        }
 
+        internal void ApplyIteratePropertyReferenceHandling(SqlTagContext ctx, SqlText sqlText)
+        {
+            if (ctx == null)
+                throw new ArgumentNullException("ctx");
+            if (sqlText == null)
+                throw new ArgumentNullException("sqlText");
+
+            if (_propertyPlaceholder != null)
+            {
+                var parsedPropertyName = ReflectionMapper.GetReflectedFullName(ctx, sqlText, this._propertyPlaceholder);
+
+                this._currentPropertyName = parsedPropertyName;
+            }
+        }
+
+        internal void ReplaceBindingName(BindingReplacement replacement)
+        {
+            if (replacement == null)
+                throw new ArgumentNullException("replacement");
+
+            this._currentPropertyName = this._propertyPlaceholder;
+
+            replacement.Replace(ref _currentPropertyName);
+        }
+
+        #endregion Methods
     }
 }

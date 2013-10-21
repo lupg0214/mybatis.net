@@ -297,7 +297,7 @@ namespace MyBatis.DataMapper.Model.Statements
 				}
 
                 IDbDataParameter dataParameter = dbProvider.CreateDataParameter();
-
+                
 				// Manage dbType attribute if any
 				if (!string.IsNullOrEmpty(property.DbType)) 
 				{

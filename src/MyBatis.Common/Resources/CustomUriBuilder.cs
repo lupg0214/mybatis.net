@@ -66,6 +66,7 @@ namespace MyBatis.Common.Resources
         /// <param name="resourceUri">The specified path or fragment identifier</param>
         /// <param name="basePath">The base directory</param>
         /// <exception cref="ResourceException">Thrown when the resource doesn't exist for the supplied URI</exception>
+        [System.Diagnostics.DebuggerStepThrough]
         public CustomUriBuilder(string resourceUri, string basePath)
         {
             string originalResourceName = resourceUri;

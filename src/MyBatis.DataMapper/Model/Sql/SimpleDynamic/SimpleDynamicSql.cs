@@ -40,6 +40,7 @@ using MyBatis.Common.Contracts;
 using MyBatis.Common.Contracts.Constraints;
 using MyBatis.Common.Utilities;
 using MyBatis.Common.Utilities.Objects;
+using MyBatis.DataMapper.Model.Sql.Dynamic.Parsers;
 
 #endregion
 
@@ -130,68 +131,9 @@ namespace MyBatis.DataMapper.Model.Sql.SimpleDynamic
         /// <returns></returns>
         private string ProcessDynamicElementsOldSyntax(object parameterObject)
         {
-            // define which character is seperating fields
-
-            StringTokenizer parser = new StringTokenizer(sqlStatement, ELEMENT_TOKEN, true);
-
-            StringBuilder newSql = new StringBuilder();
-
-            string lastToken = null;
-
-            IEnumerator enumerator = parser.GetEnumerator();
-
-            while (enumerator.MoveNext())
-            {
-                string token = ((string)enumerator.Current);
-
-                if (ELEMENT_TOKEN.Equals(lastToken))
-                {
-                    if (ELEMENT_TOKEN.Equals(token))
-                    {
-                        newSql.Append(ELEMENT_TOKEN);
-                        token = null;
-                    }
-                    else
-                    {
-                        object value = null;
-                        if (parameterObject != null)
-                        {
-                            if (dataExchangeFactory.TypeHandlerFactory.IsSimpleType(parameterObject.GetType()))
-                            {
-                                value = parameterObject;
-                            }
-                            else
-                            {
-                                value = ObjectProbe.GetMemberValue(parameterObject, token, dataExchangeFactory.AccessorFactory);
-                            }
-                        }
-                        if (value != null)
-                        {
-                            newSql.Append(value.ToString());
-                        }
-
-                        enumerator.MoveNext();
-                        token = ((string)enumerator.Current);
-
-                        if (!ELEMENT_TOKEN.Equals(token))
-                        {
-                            throw new DataMapperException("Unterminated dynamic element in sql (" + sqlStatement + ").");
-                        }
-                        token = null;
-                    }
-                }
-                else
-                {
-                    if (!ELEMENT_TOKEN.Equals(token))
-                    {
-                        newSql.Append(token);
-                    }
-                }
-
-                lastToken = token;
-            }
-
-            return newSql.ToString();
+            var textPropertyProbe = new TextPropertyProbe(sqlStatement);
+            // code that was here has been moved as is into appropriate classes using a strategy pattern.
+            return textPropertyProbe.Process(new SimpleDynamicSqlTextTokenHandler(this.dataExchangeFactory, parameterObject));
         }
 
 	    #region ISql Members
