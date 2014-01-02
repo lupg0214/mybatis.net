@@ -150,6 +150,7 @@ namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
         }
 
         /// <summary>
+        /// NOTE: Seems as though this class was written to not have knowledge of BaseTag, I just don't understand why.
         /// </summary>
         /// <param name="tag"></param>
         public void RememberBinding(Bind tag)
@@ -220,6 +221,15 @@ namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
             var binding = _bindings.SingleOrDefault(w => w.Name == bindName);
 
             return binding;
+        }
+
+        internal string ReplaceBindingVariables(string body)
+        {
+            var builder = new StringBuilder(body);
+
+            ReplaceBindingVariables(builder);
+
+            return builder.ToString();
         }
 
         internal void ReplaceBindingVariables(StringBuilder body)
