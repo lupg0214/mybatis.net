@@ -87,15 +87,14 @@ namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
             if (iterate.IsCompleted)
                 return INCLUDE_BODY;
 
-            var baseTag = ((BaseTag)tag);
-
-            string propertyName = baseTag.Property;
+            var iterateTag = ((Iterate)tag);
+            var propertyName = iterateTag.Property;
 
             if (propertyName == null)
                 propertyName = String.Empty;
 
             // build full reflection path
-            if (!ReflectionMapper.ReplacePropertyIndexerWithFullName(ctx, baseTag, bodyContent))
+            if (!ReflectionMapper.ReplacePropertyIndexerWithFullName(ctx, iterateTag, bodyContent))
             {
                 string find = propertyName + ReflectionMapper.ENUMERATOR_PLACEHOLDER;
                 string replace = propertyName + "[" + iterate.Index + "]"; //Parameter-index-Dynamic
@@ -105,29 +104,25 @@ namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
 
             if (iterate.IsFirst)
             {
-                string open = ((Iterate)tag).Open;
-                if (open != null)
+                if (iterateTag.Open != null)
                 {
-                    bodyContent.Insert(0, open);
+                    bodyContent.Insert(0, ctx.ReplaceBindingVariables(iterateTag.Open));
                     bodyContent.Insert(0, ' ');
                 }
             }
 
             if (iterate.IsLast)
             {
-                string close = ((Iterate)tag).Close;
-                if (close != null)
+                if (iterateTag.Close != null)
                 {
-                    bodyContent.Append(close);
+                    bodyContent.Append(ctx.ReplaceBindingVariables(iterateTag.Close));
                 }
             }
             else
             {
-                string conjunction = ((Iterate)tag).Conjunction;
-
-                if (conjunction != null)
+                if (iterateTag.Conjunction != null)
                 {
-                    bodyContent.Append(conjunction);
+                    bodyContent.Append(ctx.ReplaceBindingVariables(iterateTag.Conjunction));
                     bodyContent.Append(' ');
                 }
             }
@@ -207,6 +202,8 @@ namespace MyBatis.DataMapper.Model.Sql.Dynamic.Handlers
                 // if there is another item in the iterate array, then we need to include the body.
                 if (iterate.MoveNext())
                     return INCLUDE_BODY;
+
+                iterate.IsCompleted = true;
 
                 return SKIP_BODY;
             }
