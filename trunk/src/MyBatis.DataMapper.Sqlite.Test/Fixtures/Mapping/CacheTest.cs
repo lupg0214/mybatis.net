@@ -156,11 +156,11 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures.Mapping
         [Test]
         public void TestJIRA104()
         {
-            IList list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            IList list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
 
             int firstId = HashCodeProvider.GetIdentityHashCode(list);
 
-            list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
 
             int secondId = HashCodeProvider.GetIdentityHashCode(list);
 
@@ -173,11 +173,11 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures.Mapping
         [Test] 
         public void TestQueryWithCache() 
         {
-            IList list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            IList list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
 
             int firstId = HashCodeProvider.GetIdentityHashCode(list);
 
-            list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
 
             //Console.WriteLine(sqlMap.GetDataCacheStats());
 
@@ -189,7 +189,7 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures.Mapping
             account.EmailAddress  = "somebody@cache.com";
             dataMapper.Update("UpdateAccountViaInlineParameters", account);
 
-            list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
 
             int thirdId = HashCodeProvider.GetIdentityHashCode(list);
 
@@ -205,11 +205,11 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures.Mapping
         [Test] 
         public void TestFlushDataCache() 
         {
-            IList list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            IList list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
 
             int firstId = HashCodeProvider.GetIdentityHashCode(list);
 
-            list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
 
             int secondId = HashCodeProvider.GetIdentityHashCode(list);
 
@@ -217,7 +217,7 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures.Mapping
 
             ((IModelStoreAccessor)dataMapper).ModelStore.FlushCaches();
 
-            list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
 
             int thirdId = HashCodeProvider.GetIdentityHashCode(list);
 
@@ -227,15 +227,15 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures.Mapping
         [Test]
         public void TestFlushDataCacheOnExecute()
         {
-            IList list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            IList list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
             int firstId = HashCodeProvider.GetIdentityHashCode(list);
 			
-            list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
             int secondId = HashCodeProvider.GetIdentityHashCode(list);
             Assert.AreEqual(firstId, secondId);
 		    
             dataMapper.Update("UpdateAccountViaInlineParameters", list[0]);
-            list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
             int thirdId = HashCodeProvider.GetIdentityHashCode(list);
             Assert.AreNotEqual(firstId ,thirdId);
         }
@@ -248,10 +248,10 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures.Mapping
         {
             Hashtable results = new Hashtable();
 
-            TestCacheThread.StartThread(dataMapper, results, "GetCachedAccountsViaResultMap");
+            TestCacheThread.StartThread(dataMapper, results, "Account.GetCachedAccountsViaResultMap");
             int firstId = (int) results["id"];
 
-            TestCacheThread.StartThread(dataMapper, results, "GetCachedAccountsViaResultMap");
+            TestCacheThread.StartThread(dataMapper, results, "Account.GetCachedAccountsViaResultMap");
             int secondId = (int) results["id"];
 
             Assert.AreEqual(firstId, secondId);
@@ -262,7 +262,7 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures.Mapping
             account.EmailAddress = "new.toto@somewhere.com";
             dataMapper.Update("UpdateAccountViaInlineParameters", account);
 
-            list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
 
             int thirdId = HashCodeProvider.GetIdentityHashCode(list);
 
@@ -291,7 +291,7 @@ namespace MyBatis.DataMapper.Sqlite.Test.Fixtures.Mapping
             account.EmailAddress = "new.toto@somewhere.com";
             dataMapper.Update("UpdateAccountViaInlineParameters", account);
 
-            list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
 
             int thirdId = HashCodeProvider.GetIdentityHashCode(list);
 
