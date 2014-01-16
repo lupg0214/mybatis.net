@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Campaign" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <alias>
+        <typeAlias alias="Filter" type="MyBatis.DataMapper.Sqlite.Test.Domain.ComplexStructure.Filter, MyBatis.DataMapper.Sqlite.Test" />
+    </alias>
+
+    <statements>
+
+        <select id="IterateWithPrepend" parameterClass="Filter" resultClass="data">
+            <iterate prepend="SELECT " property="Rules.UniqueCustomColumnNames" open="" close="" conjunction=",">
+                <![CDATA['$Rules.UniqueCustomColumnNames[]$']]>
+            </iterate>
+        </select>
+
+        <select id="FilterPeople" parameterClass="Filter" resultClass="data">
+            <include refid="select-person-custom-field" />
+            <include refid="join" />
+        </select>
+
+        <sql id="select-person-custom-field">
+            <dynamic>
+                <![CDATA[SELECT DISTINCT]]>
+                <isNotEmpty property="Rules.CustomFields">
+                    <iterate prepend="" property="Rules.UniqueCustomColumnNames" open="" close="" conjunction=",">
+                        <![CDATA[CP.[$Rules.UniqueCustomColumnNames[]$]]]>
+                    </iterate>
+                </isNotEmpty>
+            </dynamic>
+        </sql>
+
+        <sql id="join">
+            <include refid="from-person" />
+            <include refid="where-person-custom-field" />
+        </sql>
+
+        <sql id="from-person">
+            <![CDATA[
+                FROM PERSON CP
+            ]]>
+        </sql>
+
+        <sql id="where-person-custom-field">
+            <dynamic>
+                <![CDATA[WHERE 1=1]]>
+                <isNotEmpty property="Rules.CustomFields">
+                    <iterate property="Rules.CustomFields" open="" close="" conjunction="">
+                        <bind name="column-name" property="[].ColumnName" />
+                        <isEqual property="[].DataType" compareValue="String">
+                            <iterate property="[].Comparisons" open="" close="" conjunction="">
+                                <isNotEmpty property="[].Contains"><![CDATA[AND CP.[$~{column-name}$] LIKE '%' || #[].Contains# || '%']]></isNotEmpty>
+                                <isNotEmpty property="[].Equal"><![CDATA[AND CP.[$~{column-name}$] = #[].Equal#]]></isNotEmpty>
+                                <isNotEmpty property="[].GreaterThan"><![CDATA[AND CP.[$~{column-name}$] > #[].GreaterThan#]]></isNotEmpty>
+                                <isNotEmpty property="[].In">
+                                    <![CDATA[AND CP.[$~{column-name}$] IN]]>
+                                    <iterate property="[].In" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <isEqual property="[].IsEmpty" compareValue="true"><![CDATA[AND (CP.[$~{column-name}$] IS NULL OR CP.[$~{column-name}$] = '')]]></isEqual>
+                                <isNotEmpty property="[].LessThan"><![CDATA[AND CP.[$~{column-name}$] < #[].LessThan#]]></isNotEmpty>
+                                <isNotEmpty property="[].NotContains"><![CDATA[AND CP.[$~{column-name}$] NOT LIKE '%' || #[].NotContains# || '%']]></isNotEmpty>
+                                <isNotEmpty property="[].NotEqual"><![CDATA[AND CP.[$~{column-name}$] <> #[].NotEqual#]]></isNotEmpty>
+                                <isNotEmpty property="[].NotIn">
+                                    <![CDATA[AND CP.[$~{column-name}$] NOT IN]]>
+                                    <iterate property="[].NotIn" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <!-- handle invalid queries -->
+                                <isEqual property="[].IsAnniversary" compareValue="true"><![CDATA[AND 1=0]]></isEqual>
+                                <isNotEmpty property="[].EqualDayMonthYear"><![CDATA[AND 1=0]]></isNotEmpty>
+                            </iterate>
+                        </isEqual>
+                        <isEqual property="[].DataType" compareValue="Integer">
+                            <iterate property="[].Comparisons" open="" close="" conjunction="">
+                                <isNotEmpty property="[].Equal"><![CDATA[AND CAST(CP.[$~{column-name}$] AS INTEGER) = CAST(#[].Equal# AS INTEGER)]]></isNotEmpty>
+                                <isNotEmpty property="[].GreaterThan"><![CDATA[AND CAST(CP.[$~{column-name}$] AS INTEGER) > CAST(#[].GreaterThan# AS INTEGER)]]></isNotEmpty>
+                                <isNotEmpty property="[].In">
+                                    <![CDATA[AND CAST(CP.[$~{column-name}$] AS INTEGER) IN]]>
+                                    <iterate property="[].In" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <isEqual property="[].IsEmpty" compareValue="true"><![CDATA[AND (CAST(CP.[$~{column-name}$] AS INTEGER) IS NULL)]]></isEqual>
+                                <isNotEmpty property="[].LessThan"><![CDATA[AND CAST(CP.[$~{column-name}$] AS INTEGER) < CAST(#[].LessThan# AS INTEGER)]]></isNotEmpty>
+                                <isNotEmpty property="[].NotEqual"><![CDATA[AND CAST(CP.[$~{column-name}$] AS INTEGER) <> CAST(#[].NotEqual# AS INTEGER)]]></isNotEmpty>
+                                <isNotEmpty property="[].NotIn">
+                                    <![CDATA[AND CAST(CP.[$~{column-name}$] AS INTEGER) NOT IN]]>
+                                    <iterate property="[].NotIn" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <!-- handle invalid queries -->
+                                <isNotEmpty property="[].Contains"><![CDATA[AND 1=0]]></isNotEmpty>
+                                <isNotEmpty property="[].NotContains"><![CDATA[AND 1=0]]></isNotEmpty>
+                                <isEqual property="[].IsAnniversary" compareValue="true"><![CDATA[AND 1=0]]></isEqual>
+                                <isNotEmpty property="[].EqualDayMonthYear"><![CDATA[AND 1=0]]></isNotEmpty>
+                            </iterate>
+                        </isEqual>
+                        <isEqual property="[].DataType" compareValue="Boolean">
+                            <iterate property="[].Comparisons" open="" close="" conjunction="">
+                                <isNotEmpty property="[].Equal"><![CDATA[AND CAST(CP.[$~{column-name}$] AS BOOL) = CAST(#[].Equal# AS BOOL)]]></isNotEmpty>
+                                <isNotEmpty property="[].GreaterThan"><![CDATA[AND CAST(CP.[$~{column-name}$] AS BOOL) > CAST(#[].GreaterThan# AS BOOL)]]></isNotEmpty>
+                                <isNotEmpty property="[].In">
+                                    <![CDATA[AND CAST(CP.[$~{column-name}$] AS BOOL) IN]]>
+                                    <iterate property="[].In" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <isEqual property="[].IsEmpty" compareValue="true"><![CDATA[AND (CAST(CP.[$~{column-name}$] AS BOOL) IS NULL)]]></isEqual>
+                                <isNotEmpty property="[].LessThan"><![CDATA[AND CAST(CP.[$~{column-name}$] AS BOOL) < CAST(#[].LessThan# AS BOOL)]]></isNotEmpty>
+                                <isNotEmpty property="[].NotEqual"><![CDATA[AND CAST(CP.[$~{column-name}$] AS BOOL) <> CAST(#[].NotEqual# AS BOOL)]]></isNotEmpty>
+                                <isNotEmpty property="[].NotIn">
+                                    <![CDATA[AND CAST(CP.[$~{column-name}$] AS BOOL) NOT IN]]>
+                                    <iterate property="[].NotIn" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <!-- handle invalid queries -->
+                                <isNotEmpty property="[].Contains"><![CDATA[AND 1=0]]></isNotEmpty>
+                                <isNotEmpty property="[].NotContains"><![CDATA[AND 1=0]]></isNotEmpty>
+                                <isEqual property="[].IsAnniversary" compareValue="true"><![CDATA[AND 1=0]]></isEqual>
+                                <isNotEmpty property="[].EqualDayMonthYear"><![CDATA[AND 1=0]]></isNotEmpty>
+                            </iterate>
+                        </isEqual>
+                        <isEqual property="[].DataType" compareValue="Date">
+                            <iterate property="[].Comparisons" open="" close="" conjunction="">
+                                <isNotEmpty property="[].Equal"><![CDATA[AND CAST(CP.[$~{column-name}$] AS DATE) = CAST(#[].Equal# AS DATE)]]></isNotEmpty>
+                                <isNotEmpty property="[].EqualDayMonthYear">
+                                    <![CDATA[AND]]>
+                                    <![CDATA[CASE WHEN CAST(#[].EqualDayMonthYear.Year# AS INTEGER) = 0 THEN 0 ELSE (strftime('%Y',CAST(CP.[$~{column-name}$] AS DATE))*10000) END +]]>
+                                    <![CDATA[CASE WHEN CAST(#[].EqualDayMonthYear.Month# AS INTEGER) = 0 THEN 0 ELSE (strftime('%m',CAST(CP.[$~{column-name}$] AS DATE))*100) END +]]>
+                                    <![CDATA[CASE WHEN CAST(#[].EqualDayMonthYear.Day# AS INTEGER) = 0 THEN 0 ELSE strftime('%d',CAST(CP.[$~{column-name}$] AS DATE)) END =]]>
+                                    <![CDATA[(CAST(#[].EqualDayMonthYear.Year# AS INTEGER)*10000) + (CAST(#[].EqualDayMonthYear.Month# AS INTEGER)*100) + CAST(#[].EqualDayMonthYear.Day# AS INTEGER)]]>
+                                </isNotEmpty>
+                                <isNotEmpty property="[].GreaterThan"><![CDATA[AND CAST(CP.[$~{column-name}$] AS DATE) > CAST(#[].GreaterThan# AS DATE)]]></isNotEmpty>
+                                <isNotEmpty property="[].In">
+                                    <![CDATA[AND CAST(CP.[$~{column-name}$] AS DATE) IN]]>
+                                    <iterate property="[].In" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <isEqual property="[].IsAnniversary" compareValue="true">
+                                    <![CDATA[AND (strftime('%m',CAST(CP.[$~{column-name}$] AS DATE))*100) + strftime('%d',CAST(CP.[$~{column-name}$] AS DATE)) = (strftime('%m',DATE('NOW'))*100) + strftime('%d',DATE('NOW'))]]>
+                                </isEqual>
+                                <isEqual property="[].IsEmpty" compareValue="true"><![CDATA[AND (CAST(CP.[$~{column-name}$] AS DATE) IS NULL)]]></isEqual>
+                                <isNotEmpty property="[].LessThan"><![CDATA[AND CAST(CP.[$~{column-name}$] AS DATE) < CAST(#[].LessThan# AS DATE)]]></isNotEmpty>
+                                <isNotEmpty property="[].NotEqual"><![CDATA[AND CAST(CP.[$~{column-name}$] AS DATE) <> CAST(#[].NotEqual# AS DATE)]]></isNotEmpty>
+                                <isNotEmpty property="[].NotIn">
+                                    <![CDATA[AND CAST(CP.[$~{column-name}$] AS DATE) NOT IN]]>
+                                    <iterate property="[].NotIn" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <!-- handle invalid queries -->
+                                <isNotEmpty property="[].Contains"><![CDATA[AND 1=0]]></isNotEmpty>
+                                <isNotEmpty property="[].NotContains"><![CDATA[AND 1=0]]></isNotEmpty>
+                            </iterate>
+                        </isEqual>
+                        <isEqual property="[].DataType" compareValue="DateTime">
+                            <iterate property="[].Comparisons" open="" close="" conjunction="">
+                                <isNotEmpty property="[].Equal"><![CDATA[AND CAST(CP.[$~{column-name}$] AS DATETIME) = CAST(#[].Equal# AS DATETIME)]]></isNotEmpty>
+                                <isNotEmpty property="[].EqualDayMonthYear">
+                                    <![CDATA[AND]]>
+                                    <![CDATA[CASE WHEN CAST(#[].EqualDayMonthYear.Year# AS INTEGER) = 0 THEN 0 ELSE (strftime('%Y',CAST(CP.[$~{column-name}$] AS DATE))*10000) END +]]>
+                                    <![CDATA[CASE WHEN CAST(#[].EqualDayMonthYear.Month# AS INTEGER) = 0 THEN 0 ELSE (strftime('%m',CAST(CP.[$~{column-name}$] AS DATE))*100) END +]]>
+                                    <![CDATA[CASE WHEN CAST(#[].EqualDayMonthYear.Day# AS INTEGER) = 0 THEN 0 ELSE strftime('%d',CAST(CP.[$~{column-name}$] AS DATE)) END =]]>
+                                    <![CDATA[(CAST(#[].EqualDayMonthYear.Year# AS INTEGER)*10000) + (CAST(#[].EqualDayMonthYear.Month# AS INTEGER)*100) + CAST(#[].EqualDayMonthYear.Day# AS INTEGER)]]>
+                                </isNotEmpty>
+                                <isNotEmpty property="[].GreaterThan"><![CDATA[AND CAST(CP.[$~{column-name}$] AS DATETIME) > CAST(#[].GreaterThan# AS DATETIME)]]></isNotEmpty>
+                                <isNotEmpty property="[].In">
+                                    <![CDATA[AND CAST(CP.[$~{column-name}$] AS DATETIME) IN]]>
+                                    <iterate property="[].In" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <isEqual property="[].IsAnniversary" compareValue="true">
+                                    <![CDATA[AND (strftime('%m',CAST(CP.[$~{column-name}$] AS DATE))*100) + strftime('%d',CAST(CP.[$~{column-name}$] AS DATE)) = (strftime('%m',DATE('NOW'))*100) + strftime('%d',DATE('NOW'))]]>
+                                </isEqual>
+                                <isEqual property="[].IsEmpty" compareValue="true"><![CDATA[AND (CAST(CP.[$~{column-name}$] AS DATETIME) IS NULL)]]></isEqual>
+                                <isNotEmpty property="[].LessThan"><![CDATA[AND CAST(CP.[$~{column-name}$] AS DATETIME) < CAST(#[].LessThan# AS DATETIME)]]></isNotEmpty>
+                                <isNotEmpty property="[].NotEqual"><![CDATA[AND CAST(CP.[$~{column-name}$] AS DATETIME) <> CAST(#[].NotEqual# AS DATETIME)]]></isNotEmpty>
+                                <isNotEmpty property="[].NotIn">
+                                    <![CDATA[AND CAST(CP.[$~{column-name}$] AS DATETIME) NOT IN]]>
+                                    <iterate property="[].NotIn" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <!-- handle invalid queries -->
+                                <isNotEmpty property="[].Contains"><![CDATA[AND 1=0]]></isNotEmpty>
+                                <isNotEmpty property="[].NotContains"><![CDATA[AND 1=0]]></isNotEmpty>
+                            </iterate>
+                        </isEqual>
+                        <isEqual property="[].DataType" compareValue="Decimal">
+                            <iterate property="[].Comparisons" open="" close="" conjunction="">
+                                <isNotEmpty property="[].Equal"><![CDATA[AND CAST(CP.[$~{column-name}$] AS REAL) = CAST(@{[].Equal,column=null,type=string,dbtype=Decimal,direction=Input,nullValue=null,handler=null} AS REAL)]]></isNotEmpty>
+                                <!--<isNotEmpty property="[].Equal"><![CDATA[AND CAST(CP.[$~{column-name}$] AS REAL) = CAST(#[].Equal# AS REAL)]]></isNotEmpty>-->
+                                <isNotEmpty property="[].GreaterThan"><![CDATA[AND CAST(CP.[$~{column-name}$] AS REAL) > CAST(#[].GreaterThan# AS REAL)]]></isNotEmpty>
+                                <isNotEmpty property="[].In">
+                                    <![CDATA[AND CAST(CP.[$~{column-name}$] AS REAL) IN]]>
+                                    <iterate property="[].In" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <isEqual property="[].IsEmpty" compareValue="true"><![CDATA[AND (CAST(CP.[$~{column-name}$] AS REAL) IS NULL)]]></isEqual>
+                                <isNotEmpty property="[].LessThan"><![CDATA[AND CAST(CP.[$~{column-name}$] AS REAL) < CAST(#[].LessThan# AS REAL)]]></isNotEmpty>
+                                <isNotEmpty property="[].NotEqual"><![CDATA[AND CAST(CP.[$~{column-name}$] AS REAL) <> CAST(#[].NotEqual# AS REAL)]]></isNotEmpty>
+                                <isNotEmpty property="[].NotIn">
+                                    <![CDATA[AND CAST(CP.[$~{column-name}$] AS REAL) NOT IN]]>
+                                    <iterate property="[].NotIn" open="(" close=")" conjunction=","><![CDATA[#[].#]]></iterate>
+                                </isNotEmpty>
+                                <!-- handle invalid queries -->
+                                <isNotEmpty property="[].Contains"><![CDATA[AND 1=0]]></isNotEmpty>
+                                <isNotEmpty property="[].NotContains"><![CDATA[AND 1=0]]></isNotEmpty>
+                                <isEqual property="[].IsAnniversary" compareValue="true"><![CDATA[AND 1=0]]></isEqual>
+                                <isNotEmpty property="[].EqualDayMonthYear"><![CDATA[AND 1=0]]></isNotEmpty>
+                            </iterate>
+                        </isEqual>
+                    </iterate>
+                </isNotEmpty>
+            </dynamic>
+        </sql>
+
+    </statements>
+
+    <resultMaps>
+
+    </resultMaps>
+
+</sqlMap>
