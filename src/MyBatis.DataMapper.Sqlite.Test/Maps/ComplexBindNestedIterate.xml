@@ -15,7 +15,8 @@
 
         <select id="FilterPeople" parameterClass="Filter" resultClass="data">
             <include refid="select-person-custom-field" />
-            <include refid="join" />
+            <include refid="from-person" />
+            <include refid="where-person-custom-field" />
         </select>
 
         <sql id="select-person-custom-field">
@@ -27,11 +28,6 @@
                     </iterate>
                 </isNotEmpty>
             </dynamic>
-        </sql>
-
-        <sql id="join">
-            <include refid="from-person" />
-            <include refid="where-person-custom-field" />
         </sql>
 
         <sql id="from-person">

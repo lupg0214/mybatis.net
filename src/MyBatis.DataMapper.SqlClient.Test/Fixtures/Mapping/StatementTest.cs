@@ -1277,10 +1277,10 @@ namespace MyBatis.DataMapper.SqlClient.Test.Fixtures.Mapping
 
             // taken from TestFlushDataCache()
             // first query is not cached, second query is: 50% cache hit
-            IList list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            IList list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
             int firstId = HashCodeProvider.GetIdentityHashCode(list);
 
-            list = dataMapper.QueryForList("GetCachedAccountsViaResultMap", null);
+            list = dataMapper.QueryForList("Account.GetCachedAccountsViaResultMap", null);
             int secondId = HashCodeProvider.GetIdentityHashCode(list);
 
             Assert.AreEqual(firstId, secondId);

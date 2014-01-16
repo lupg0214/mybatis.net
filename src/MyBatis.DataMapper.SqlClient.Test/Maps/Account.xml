@@ -324,7 +324,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 				order by Account_LastName
 		</select>
 
-		<select id="GetCachedAccountsViaResultMap"
+		<select id="Account.GetCachedAccountsViaResultMap"
 					resultMap="account-result"
 					cacheModel="account-cache" >
 			select *
@@ -342,7 +342,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
   
 		<select id="GetRWCachedAccountsViaResultMap"
 				resultMap="account-result"
-				cacheModel="rw-account-cache" extends="GetCachedAccountsViaResultMap">
+				cacheModel="rw-account-cache" extends="Account.GetCachedAccountsViaResultMap">
 		</select>
   
   		<select id="GetNoAccountWithCache"

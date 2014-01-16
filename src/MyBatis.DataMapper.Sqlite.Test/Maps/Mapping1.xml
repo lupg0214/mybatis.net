@@ -238,7 +238,7 @@
 				order by Account_LastName
 		</select>
 
-		<select id="GetCachedAccountsViaResultMap"
+		<select id="Account.GetCachedAccountsViaResultMap"
 					resultMap="account-result"
 					cacheModel="account-cache" >
 			select *
@@ -248,7 +248,7 @@
   
 		<select id="GetRWCachedAccountsViaResultMap"
 				resultMap="account-result"
-				cacheModel="rw-account-cache" extends="GetCachedAccountsViaResultMap">
+				cacheModel="rw-account-cache" extends="Account.GetCachedAccountsViaResultMap">
       where 1=1
 		</select>
   
